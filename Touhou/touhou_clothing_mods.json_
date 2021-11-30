@@ -1,0 +1,18 @@
+[
+	{
+    "id": "rod_strap",
+	"type": "clothing_mod",
+    "flag": "rod_strapped",
+    "item": "shoulder_strap",
+    "implement_prompt": "Add a strap for the rod",
+    "destroy_prompt": "Remove the strap from the rod",
+    "weight": "100 g",
+    "volume": "250 ml",
+    "integral_volume": "250 ml",
+    "price": 480,
+    "price_postapoc": 10,
+	"location": "sling",
+	"mod_targets": [ "utsuho_rod" ],
+	"flags": [ "IS_ARMOR", "BELTED", "OVERSIZE", "WATER_FRIENDLY" ]
+	},
+]

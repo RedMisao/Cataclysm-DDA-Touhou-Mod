@@ -1,0 +1,128 @@
+[
+	{
+    "id": "bio_remi_gungnir",
+    "type": "GUN",
+    "name": "Summoned Gungnir",
+    "description": "this a pseudo item",
+    "weight": "2000 g",
+	"volume": "2000 ml",
+    "price": 0,
+    "bashing": 5,
+    "cutting": 30,
+	"material": [ "blood" ],
+	"symbol": "(",
+    "color": "light_red",
+    "skill": "throw",
+    "range": 30,
+    "ranged_damage": { 
+		"damage_type": "heat", 
+		"amount": 35, 
+		"armor_penetration": 8 
+	},
+    "dispersion": -8,
+    "durability": 10,
+	"explosion": {
+		"power": 8, 
+		"distance_factor": 0.8, 
+		"max_noise": 18, 
+		"fire": false, 
+		"shrapnel": {
+			"casing_mass": 200, 
+			"fragment_mass": 0.05, 
+			"recovery": 20, 
+			"drop": "blood" 
+		}
+	},
+	"loudness": 12,
+    "reload": 0,
+	"modes": [ [ "DEFAULT", "auto", 5 ] ],
+    "ammo_effects": [ "BEANBAG", "CUSTOM_EXPLOSION", "NEVER_MISFIRES", "LASER" ],
+    "flags": [ "NEVER_JAMS", "TRADER_AVOID", "ZERO_WEIGHT" ],
+  	"//": "Note: these items come from /data/json/items/fake.json and perhaps /data/json/items/gun/bio.json "
+	},
+	{
+    "id": "bio_udonge_gun",
+    "type": "GUN",
+    "name": "Lunatic gun (shot)",
+    "description": "this a pseudo item",
+    "volume": 12,
+    "price": 0,
+    "material": [ "steel", "plastic" ],
+    "symbol": "(",
+    "color": "magenta",
+    "skill": "pistol",
+    "range": 30,
+    "ranged_damage": { 
+		"damage_type": "heat", 
+		"amount": 25, 
+		"armor_penetration": 4 
+		},
+    "dispersion": 10,
+    "durability": 10,
+	"loudness": 7,
+    "reload": 0,
+	"modes": [ [ "DEFAULT", "auto", 5 ] ],
+    "ammo_effects": [ "LASER", "INCENDIARY" ],
+    "flags": [ "NEVER_JAMS", "TRADER_AVOID", "ZERO_WEIGHT" ],
+  	"//": "Note: these items come from /data/json/items/fake.json and perhaps /data/json/items/gun/bio.json "
+	},
+	{
+    "id": "bio_reisen_II_gun",
+    "type": "GUN",
+    "name": "finger gun (semi)",
+    "description": "this a pseudo item",
+    "volume": 12,
+    "price": 0,
+    "material": [ "steel", "plastic" ],
+    "symbol": "(",
+    "color": "magenta",
+    "skill": "pistol",
+    "range": 30,
+    "ranged_damage": { 
+		"damage_type": "heat", 
+		"amount": 22, 
+		"armor_penetration": 4 
+		},
+    "dispersion": 10,
+    "durability": 10,
+    "reload": 0,
+    "ammo_effects": [ "LASER", "INCENDIARY" ],
+    "flags": [ "NEVER_JAMS", "TRADER_AVOID", "ZERO_WEIGHT" ]
+	},
+	{
+    "id": "bio_mokou_gun",
+    "type": "GUN",
+    "name": "fire manipulation",
+    "description": "this a pseudo item",
+    "volume": 12,
+    "price": 0,
+    "material": [ "steel", "plastic" ],
+    "symbol": "(",
+    "color": "magenta",
+    "skill": "pistol",
+    "range": 20,
+    "ranged_damage": 
+		{ "damage_type": "heat", 
+		"amount": 44, 
+		"armor_penetration": 2 
+		},
+    "dispersion": 16,
+    "durability": 10,
+    "reload": 0,
+    "ammo_effects": [ "INCENDIARY" ],
+    "flags": [ "NEVER_JAMS", "TRADER_AVOID", "ZERO_WEIGHT", "FIRESTARTER" ]
+	},
+	{
+    "id": "bio_youjutsu",
+    "type": "BIONIC_ITEM",
+    "category": "bionics",
+	"name": { "str_sp": "Spiritual energy user (test)" },
+    "weight": "0 g",
+    "volume": "0 ml",
+	"symbol": "☯",
+	"looks_like": "bio_int_enhancer",
+    "description": "User of spiritual energy (test).",
+    "price": 1000000,
+	"flags": [ "ZERO_WEIGHT" ]
+	}
+]

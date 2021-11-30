@@ -1,11 +1,10 @@
-	{
-        "type": "MOD_INFO",
-        "mod-type": "SUPPLEMENTAL",
-        "ident": "Touhou",
-        "name": "Touhou Professions",
-        "authors": [ "Taberone" ],
-        "description": "Touhou-inspired professions. Coregame balance not guaranteed.",
-        "category": "touhou",
-		"dependencies": [ "dda" ]
-    }
+{
+    "type": "MOD_INFO",
+    "ident": "Touhou",
+    "name": "Touhou Professions",
+    "authors": [ "Original by Taberone, editions by RedMisao" ],
+    "description": "Touhou-inspired professions. Coregame balance not guaranteed.",
+    "category": "touhou",
+    "dependencies": [ "dda" ]
+}
 

@@ -1,6 +1,138 @@
 [
 	{
         "type": "profession",
+        "ident": "iku_nagae",
+        "name": "Oarfish Messenger",
+        "description": "The last day was very busy. First, you were given a message to deliver to the head of the Hinanawi. After reaching the clan however, you were told by them and your superiors to find Tenshi as soon as possible. You followed her down in Earth, when the event struck. Now you don't only have to complete your mission, but you seem to be stuck here.",
+        "points": 0,
+		"CBMs":[
+				"bio_chain_lightning",
+				"bio_railgun",
+				"bio_faraday",
+				"bio_shock",
+				"bio_shockwave",
+				"bio_power_storage_mkII"
+				],
+        "skills": [
+			{
+                "level": 4,
+                "name": "melee"
+            },
+			{
+                "level": 3,
+                "name": "cutting"
+            },
+			{
+                "level": 3,
+                "name": "bashing"
+            },
+			{
+                "level": 4,
+                "name": "unarmed"
+            },
+			{
+                "level": 3,
+                "name": "throw"
+            },
+            {
+                "level": 4,
+                "name": "dodge"
+            }
+        ],
+        "items": {
+            "both": {
+                "items": [
+				"dress_shoes",
+				"iku_dress_shirt",
+				"iku_fedora",
+				"iku_long_scarf",
+				"iku_skirt",
+				"stockings"
+                ]
+				},
+            "male": [
+                "boxer_shorts"
+            ],
+            "female": [
+                "bra",
+                "panties"
+            ]
+        },
+        "flags" : ["SCEN_ONLY"]
+    },
+	{
+        "type": "profession",
+        "ident": "fujiwara_no_mokou",
+        "name": "Hourai Incarnate",
+        "description": "Your immortal rival that you've been killing constantly (and vice-versa) has mysteriously vanished during the Cataclysm, along with everyone else that you knew. You face the post-Cataclysm world alone with lots and lots of fire.",
+        "points": 6,
+		"spells": [ 
+			{ 
+				"id": "create_lighter", 
+				"level": 3 
+			},
+			{ 
+				"id": "burning_hands", 
+				"level": 5 
+			},
+			{ 
+				"id": "fireball", 
+				"level": 5 
+			},
+			{ 
+				"id": "point_flare", 
+				"level": 3
+			}
+			],
+        "skills": [
+			{
+                "level": 1,
+                "name": "melee"
+            },
+			{
+                "level": 3,
+                "name": "cooking"
+            },
+			{
+                "level": 2,
+                "name": "tailor"
+            },
+			{
+                "level": 3,
+                "name": "unarmed"
+            },
+			{
+                "level": 2,
+                "name": "dodge"
+            }
+        ],
+		"traits": [
+            "HOURAI_SPECIES", 
+			"PROF_MOKOU",
+			"MANA_ADD1",
+			"KELVINIST"
+        ],
+        "items": {
+            "both": {
+                "items": [
+				"dress_shirt",
+				"dress_shoes",
+				"mokou_talisman",
+				"pants_cargo"
+                ]
+            },
+            "male": [
+                "boxer_shorts"
+            ],
+            "female": [
+                "bra",
+                "panties"
+            ]
+        },
+        "flags" : ["SCEN_ONLY"]
+    },
+	{
+        "type": "profession",
         "ident": "nitori_kawashiro",
         "name": "Lateral-Thinking Kappa",
         "description": "WIP.",
@@ -32,7 +164,7 @@
             }
         ],
 		"traits": [
-            "PROF_MOKOU"
+			"PROF_MOKOU"
         ],
         "items": {
             "both": {
@@ -54,382 +186,207 @@
         "flags" : ["SCEN_ONLY"]
     },
 	{
-        "type": "profession",
-        "ident": "fujiwara_no_mokou",
-        "name": "Hourai Incarnate",
-        "description": "Your immortal rival that you've been killing constantly has mysteriously vanished during the cataclysm, along with everyone else that you knew. You face the post-cataclysm world alone with lots and lots of fire.",
-        "points": 6,
-		"spells": [ 
-			{ 
-				"id": "create_lighter", 
-				"level": 3 
-			},
-			{ 
-				"id": "burning_hands", 
-				"level": 5 
-			},
-			{ 
-				"id": "fireball", 
-				"level": 5 
-			},
-			{ 
-				"id": "point_flare", 
-				"level": 3
-			}
+    "type": "profession",
+    "ident": "reisen_udongein_inaba",
+    "name": "Lunatic Moon Rabbit",
+    "description": "The weekly lesson you were being given by your Master was promptly interrupted after receiving some kind of message (from the Moon?). Shortly after, she returned with a serious face and lots of letters directed to the faction leaders. You finished the errand when you noticed you got lost. For some reason, the Network is silent too.",
+    "points": 0,
+	"CBMs": [
+        "bio_udonge_shot", 
+		"bio_ups", 
+		"bio_targeting", 
+        "bio_power_storage_mkII" 
+    ],
+    "skills": [
+        { "level": 2, "name": "dodge" },
+		{ "level": 3, "name": "firstaid" },
+        { "level": 2, "name": "gun" },
+		{ "level": 2, "name": "launcher" },
+		{ "level": 3, "name": "pistol" },
+		{ "level": 2, "name": "shotgun" },
+        { "level": 2, "name": "smg" },
+		{ "level": 3, "name": "rifle" }
+    ],
+	"traits": [
+        "GYOKUTO_SPECIES",
+		"GYOKUTO_TAIL",
+		"GYOKUTO_EARS"
+    ],
+    "items": {
+        "both": {
+            "items": [
+			"lunar_dress_shirt",
+			"lunar_dress_shoes",
+            "lunar_guide1",
+			"lunar_skirt",
+			"lunar_suit",
+			"lunar_tie"
 			],
-        "skills": [
-			{
-                "level": 2,
-                "name": "melee"
-            },
-			{
-                "level": 3,
-                "name": "cooking"
-            },
-			{
-                "level": 3,
-                "name": "tailor"
-            },
-			{
-                "level": 2,
-                "name": "unarmed"
-            },
-			{
-                "level": 2,
-                "name": "dodge"
-            }
+        "entries": [
+            { "item": "lunatic_pistol", "container-item": "holster_reisen" }
+        ]
+		},
+        "male": [
+            "boxer_shorts"
         ],
-		"traits": [
-            "MANA_ADD1",
-			"KELVINIST",
-			"FASTHEALER",
-			"PROF_MOKOU"
+        "female": [
+            "bra",
+            "panties"
         ],
-        "items": {
-            "both": {
-                "items": [
-				"dress_shirt",
-				"dress_shoes",
-				"pants_cargo",
-				"mokou_talisman"
-                ]
-            },
-            "male": [
-                "boxer_shorts"
-            ],
-            "female": [
-                "bra",
-                "panties"
-            ]
-        },
-        "flags" : ["SCEN_ONLY"]
+	"//": "Udonge should stealth at will, for reference it should make her fully undetectable at 10 tiles with a linear fall off",
+	"//2": "her finger bullets should do mind dmg alongside bullet. I need to find a way to implement the Frostfire effect from WOTLK that checks the lower resistance and uses that to deal dmg",
+	"//3": "if possible, implement a shot spread effect with 2-3 bullets on a cone and 8-7 illusionary bullets that deal no damage, and change the sprite because I don't like the current * ",
+	"//4": "Finally, see if I can implement her LoLK bomb, or not if that would be outright broken alongside her stealth passive that should have priority"
+	}
     },
 	{
-        "type": "profession",
-        "ident": "iku_nagae",
-        "name": "Oarfish Messenger",
-        "description": "All your efforts to warn the world about the coming cataclysm were for naught, and now you're trapped here! You've got a weaponized scarf and electricity powers to make survival in this post-cataclysm world easier, however.",
-        "points": 0,
-		"CBMs":[
-                "bio_torsionratchet",
-                "bio_power_storage_mkII",
-				"bio_chain_lightning",
-				"bio_railgun",
-				"bio_faraday",
-				"bio_shock",
-				"bio_shockwave"
-            ],
-        "skills": [
-			{
-                "level": 4,
-                "name": "melee"
-            },
-			{
-                "level": 3,
-                "name": "cutting"
-            },
-			{
-                "level": 3,
-                "name": "bashing"
-            },
-			{
-                "level": 4,
-                "name": "unarmed"
-            },
-			{
-                "level": 3,
-                "name": "throw"
-            },
-            {
-                "level": 4,
-                "name": "dodge"
-            }
-        ],
-        "items": {
-            "both": {
-                "items": [
-				"dress_shirt_iku",
-				"stockings",
-				"skirt_iku",
-				"long_iku_scarf",
-				"fedora_iku",
-				"dress_shoes"
-                ]
-            },
-            "male": [
-                "boxer_shorts"
-            ],
-            "female": [
-                "bra",
-                "panties"
-            ]
+    "type": "profession",
+    "ident": "reisen_II",
+    "name": "Moon Rabbit Recruit",
+    "description": "You were accompanying the Watatsuki sisters on their visit to Earth when the Cataclysm struck! In the chaos and panic that followed the collapse of the Barrier (or that's what you heard from them), you got separated and left alone. To make things worse, you can't contact your peers by use of the Gyokuto network. You've got some skills from your Lunar Defense Corps training, but you'll need more than that to survive...",
+    "points": 0,
+	"CBMs": [
+		"bio_reisen_ability",
+		"bio_teleport",
+		"bio_ups",
+        "bio_power_storage_mkII"
+	],
+    "//": "Reisen should use her special ability at will, for reference it should enable her to tp 2.33 times without any demerits at =<3 tiles, and 1.33 times at =<6 tiles, then recharge over time. This MUST be independent of her Lunarian rifle",
+	"//2": "Her Lunarian rifle should do bullet dmg instead of laser, but consume no ammo",
+	"//3": "Remove the finger gun CMB ",
+	"skills": [
+        { "level": 2, "name": "dodge" },
+		{ "level": 2, "name": "gun" },
+		{ "level": 2, "name": "melee" },
+		{ "level": 2, "name": "rifle" },
+		{ "level": 2, "name": "stabbing" }
+    ],
+	"traits": [
+		"GYOKUTO_SPECIES",
+		"GYOKUTO_TAIL",
+		"GYOKUTO_EARS"
+    ],
+    "items": {
+        "both": {
+            "items": [
+			"lunar_dress_shirt",
+			"lunar_dress_shoes",
+            "lunar_guide1",
+			"lunar_helmet",
+			"lunar_skirt",
+			"lunar_stockings",
+			"lunar_suit",
+			"lunar_tie",
+			"lunar_veil_deactivated"
+			],
+			"entries": [
+            { "item": "lunar_rifle", "contents-item": "shoulder_strap" }
+			]
         },
-        "flags" : ["SCEN_ONLY"]
-    },
+        "male": [
+            "boxer_shorts"
+		],
+        "female": [
+            "bra",
+            "panties"
+		]
+	}
+	},
 	{
-        "type": "profession",
-        "ident": "reisen_II",
-        "name": "Moon Rabbit Recruit",
-        "description": "You were accompanying the Watatsuki sisters on their visit to Earth when the cataclysm struck! In the chaos and panic that followed, you got separated and left all alone. You've got some skills from your Lunar Defense Corps training, but you'll need more than that to survive...",
-        "points": 0,
-		"CBMs":[
-                "bio_torsionratchet",
-                "bio_power_storage_mkII",
-				"bio_reisen_II",
-				"bio_ups",
-				"bio_teleport"
-            ],
-        "skills": [
-			{
-                "level": 2,
-                "name": "melee"
-            },
-			{
-                "level": 2,
-                "name": "stabbing"
-            },
-			{
-                "level": 2,
-                "name": "gun"
-            },
-			{
-                "level": 2,
-                "name": "rifle"
-            },
-            {
-                "level": 2,
-                "name": "dodge"
-            }
-        ],
-		"traits": [
-			"PROF_REISENTAIL",
-            "PROF_REISEN"
-        ],
-        "items": {
-            "both": {
-                "items": [
-				"dress_shirt",
-				"suit_reisen",
-				"tie_reisen",
-				"stockings",
-				"skirt",
-				"knit_scarf",
-				"lunar_helmet",
-				"dress_shoes"
-                ],
-                "entries": [
-                    { "item": "lunar_rifle", "contents-item": "shoulder_strap" }
-                ]
-            },
-            "male": [
-                "boxer_shorts"
-            ],
-            "female": [
-                "bra",
-                "panties"
-            ]
+    "type": "profession",
+    "ident": "remilia_scarlet",
+    "name": "Scarlet Devil",
+    "description": "That scheming youkai refusing to elaborate was part of her plan for you to move.  Both sides knew that, but that's a custom when dealing important matters to you, so you didn't mind.  What pisses you off is that innocent parties are involved with this much of a threat.  This better be interesting.",
+    "points": 0,
+	"CBMs": [
+		"bio_gungnir",
+		"bio_ups",
+        "bio_power_storage_mkII"
+	],
+    "//": "High tier 2hu such as Remi should have above average energy regen and slightly increased energy pool as to spam her abilities",
+	"skills": [
+        { "level": 3, "name": "dodge" },
+		{ "level": 4, "name": "melee" },
+		{ "level": 4, "name": "throw" }
+    ],
+	"traits": [
+		"VAMPIRE_SPECIES",
+		"PROF_REMI"
+    ],
+    "items": {
+        "both": {
+            "items": [
+			"bloomers",
+			"remi_bowbelt",
+            "remi_dress",
+			"remi_hat",
+			"remi_shoes"
+			]
         },
-        "flags" : ["SCEN_ONLY"]
+        "male": [
+            "boxer_shorts"
+		],
+        "female": [
+            "bra",
+            "panties"
+		]
+	},
+    "flags" : ["SCEN_ONLY"]
     },
 	{
         "type": "profession",
         "ident": "sakuya_izayoi",
         "name": "Maid of the Scarlet Devil",
-        "description": "Your mistress's mansion has been destroyed, and she is presumably amongst the billions lost in the cataclysm. Survival is all that matters now, but how long will you last as a time-stopping, knife throwing maid?",
+        "description": "Despite being suspicious of the errand your Mistress' gave you outside the Barrier, you went to carry it out. The Cataclysm struck in the middle of that, however, interrumpting you. How annoying.",
         "points": 0,
 		"CBMs":[
-                "bio_torsionratchet",
 				"bio_time_freeze",
-                "bio_power_storage_mkII",
-				"bio_uncanny_dodge"
-            ],
-        "skills": [
-            {
-                "level": 4,
-                "name": "cutting"
-            },
-			{
-                "level": 4,
-                "name": "throw"
-            },
-            {
-                "level": 4,
-                "name": "melee"
-            },
-			{
-                "level": 6,
-                "name": "cooking"
-            },
-            {
-                "level": 4,
-                "name": "dodge"
-            }
+				"bio_uncanny_dodge",
+				"bio_power_storage_mkII"
         ],
-        "items": {
+        "skills": [
+            { "level": 4, "name": "cutting" },
+			{ "level": 4, "name": "throw" },
+            { "level": 4, "name": "melee" },
+			{ "level": 6, "name": "cooking" },
+            { "level": 4, "name": "dodge" }
+		],
+        "traits": [
+            "PSYCHOPATH"
+		],
+		"//": "Change for something like 'callous' instead, you don't get bonuses or demerits for killing or cooking humans",
+		"//2": "I want to add some deep and mysterious species to her that does nothing other than lore flavor but I'm missing the perfect (and elegant) name",
+		"items": {
             "both": {
                 "items": [
-                "leather_pouch",
-				"stockings",
+				"dress_shoes",
+				"knit_scarf",
+				"leather_pouch",
 				"maid_dress",
 				"maid_hat",
-				"throwing_knife",
-				"throwing_knife",
-				"throwing_knife",
-				"throwing_knife",
-				"throwing_knife",
-				"throwing_knife",
+				"sakuya_pads",
 				"pocketwatch",
-				"dress_shoes",
-				"knit_scarf"
-                ],
+				"stockings",
+				"throwing_knife",
+				"throwing_knife",
+				"throwing_knife",
+				"throwing_knife",
+				"throwing_knife",
+				"throwing_knife"
+				],
                 "entries": [
                     { "item": "knife_combat", "container-item": "sheath" }
-                ]
-            },
+				]
+			},
             "male": [
                 "boxer_shorts"
-            ],
+			],
             "female": [
                 "bra",
                 "panties"
-            ]
-        },
+			]
+		},
         "flags" : ["SCEN_ONLY"]
-    },
-    {
-        "type": "profession",
-        "ident": "tenshi_hinanawi",
-        "name": "Celestial Delinquent",
-        "description": "The carefree lifestyle that came with being a celestial sure was boring until the cataclysm struck. Now the world has irrevocably changed and you're stuck fighting for your life. Isn't that a nice change of pace for once?",
-        "points": 0,
-        "skills": [
-            {
-                "level": 4,
-                "name": "cutting"
-            },
-            {
-                "level": 4,
-                "name": "melee"
-            },
-            {
-                "level": 4,
-                "name": "dodge"
-            }
-        ],
-		"traits": [
-			"TOUGH3",
-			"PAINRESIST",
-            "PROF_TENSHIARMOR"
-        ],
-        "items": {
-            "both": [
-				"bowhat_tenshi",
-				"stockings",
-				"dress_tenshi",
-				"boots",
-				"jian_tenshi",
-				"knit_scarf"
-            ],
-            "male": [
-                "boxer_shorts"
-            ],
-            "female": [
-                "bra",
-                "panties"
-            ]
-        },
-        "flags" : ["SCEN_ONLY"]
-    },
-	{
-        "type": "profession",
-        "ident": "reisen_udongein_inaba",
-        "name": "Lunatic Moon Rabbit",
-        "description": "You were running an errand for your master when the cataclysm struck, rendering you unable to return home. You have your skills as an expert gun slinger, but will that be enough to get you out of this alive?",
-        "points": 0,
-		"CBMs":[
-                "bio_torsionratchet",
-                "bio_power_storage_mkII",
-                "bio_reisen",
-				"bio_ups",
-				"bio_targeting"
-            ],
-        "skills": [
-            {
-                "level": 5,
-                "name": "gun"
-            },
-            {
-                "level": 3,
-                "name": "smg"
-            },
-			{
-                "level": 3,
-                "name": "shotgun"
-            },
-			{
-                "level": 5,
-                "name": "rifle"
-            },
-			{
-                "level": 4,
-                "name": "pistol"
-            },
-			{
-                "level": 3,
-                "name": "launcher"
-            },
-            {
-                "level": 4,
-                "name": "dodge"
-            }
-        ],
-		"traits": [
-            "PROF_REISENTAIL",
-            "PROF_REISEN"
-        ],
-        "items": {
-            "both": {
-                "items": [
-				"dress_shirt",
-				"tie_reisen",
-				"suit_reisen",
-				"stockings",
-				"skirt",
-				"dress_shoes",
-				"knit_scarf"
-                ],
-                "entries": [
-                    { "item": "lunatic_pistol", "container-item": "holster_reisen" }
-                ]
-            },
-            "male": [
-                "boxer_shorts"
-            ],
-            "female": [
-                "bra",
-                "panties"
-            ]
-        }
     },
 	{
         "type": "profession",
@@ -477,15 +434,15 @@
         ],
         "items": {
             "both": [
-				"stockings",
-				"runner_bag",
-				"dress_seiga",
-				"hairstick_seiga",
 				"dress_shoes",
+				"knit_scarf",
+				"runner_bag",
 				"scalpel",
-				"knit_scarf"
+				"seiga_dress",
+				"seiga_hairstick",
+				"socks_long"
             ],
-            "male": [
+			"male": [
                 "boxer_shorts"
             ],
             "female": [
@@ -496,57 +453,128 @@
         "flags" : ["SCEN_ONLY"]
     },
 	{
-        "type": "profession",
-        "ident": "youmu_konpaku",
-        "name": "Phantom Gardener",
-        "description": "You were the faithful half-human, half-phantom servant of your master until the cataclysm struck, separating both of you. You stand alone against the coming darkness with only your swordsmanship skills.",
-        "points": 0,
-		"CBMs":[
-                "bio_torsionratchet",
-                "bio_power_storage",
-                "bio_uncanny_dodge"
-            ],
-        "skills": [
-            {
-                "level": 4,
-                "name": "cutting"
-            },
-            {
-                "level": 4,
-                "name": "melee"
-            },
-            {
-                "level": 4,
-                "name": "dodge"
-            }
+    "type": "profession",
+    "ident": "tenshi_hinanawi",
+    "name": "Celestial Delinquent",
+    "description": "Feeling bored doing basically noting in Heaven, you came down to visit the Shrine and your friends. Something happened in the meantime though. At first you were amused, then became slightly worried, then very, very curious. The outside world looks... different now.",
+    "points": 0,
+    "skills": [
+        { "level": 4, "name": "cutting" },
+        { "level": 3, "name": "melee" },
+        { "level": 2, "name": "dodge" }
+    ],
+	"traits": [
+		"CELESTIAL_SPECIES",
+		"PAINRESIST",
+		"HATES_BOOKS"
+    ],
+    "items": {
+        "both": [
+			"boots",
+			"knit_scarf",
+			"socks",
+			"tenshi_bowbelt",
+			"tenshi_bowhat",
+			"tenshi_jian",
+			"tenshi_shirt",
+			"tenshi_skirt"
         ],
-		"traits": [
-            "PROF_YOUMU",
-			"YOUMU_PHANTOM"
+        "male": [
+            "boxer_shorts"
         ],
-        "items": {
-            "both": {
-                "items": [
-                "stockings",
-				"skirt_youmu",
-				"dress_shirt",
-				"vest_youmu",
-				"knit_scarf",
-				"ribbon_youmu",
-				"dress_shoes"
-                ],
-                "entries": [
-                    { "item": "katana", "container-item": "scabbard" },
-					{ "item": "wakizashi", "container-item": "scabbard" }
-                ]
-            },
-            "male": [
-                "boxer_shorts"
+        "female": [
+            "bra",
+            "panties"
+        ]
+    },
+    "flags" : ["SCEN_ONLY"]
+    },
+	{
+	"type": "profession",
+    "ident": "utsuho_reiuji",
+    "name": "Subterranean sun",
+    "description": "WIP",
+    "points": 0,
+	"CBMs":[
+        "bio_power_storage_mkII"
+	],
+	"//": "Okuu should have an absurd pool number as she's a walking fusion reactor.",
+    "skills": [
+        { "level": 2, "name": "dodge" }
+    ],
+	"traits": [
+        "HELLRAVEN_SPECIES",
+		"PROF_OKUU"
+    ],
+	"items": {
+        "both": {
+            "items": [
+			"dress_shoes",
+			"socks_long",
+			"utsuho_cape",
+			"utsuho_ribbon",
+			"utsuho_rod",
+			"utsuho_shirt",
+			"utsuho_skirt"
+			]
+		},
+		"male": [
+            "boxer_shorts"
+        ],
+        "female": [
+            "bra",
+            "panties"
+        ]
+	},
+		"flags" : ["SCEN_ONLY"]
+	},
+	{
+    "type": "profession",
+    "ident": "youmu_konpaku",
+    "name": "Phantom Gardener",
+    "description": "You were preparing tea for your Mistress when the shikigami of the Gap Youkai came to deliver an urgent private message. Your Mistress then gave you some cryptic errand at the Shrine, and to 'take care'. You didn't understand the last part, until you didn't recognize your surroundings minutes before reaching the Shrine.",
+    "points": 0,
+	"CBMs":[
+        "bio_torsionratchet",
+        "bio_uncanny_dodge",
+        "bio_power_storage_mkII"
+	],
+    "skills": [
+        { "level": 3, "name": "cooking" },
+		{ "level": 4, "name": "cutting" },
+        { "level": 4, "name": "melee" },
+        { "level": 4, "name": "dodge" }
+    ],
+	"traits": [
+        "HALF_PHANTOM_SPECIES",
+		"PROF_YOUMU"
+    ],
+    "//": "Add parry and dual wield somewhere",
+	"items": {
+        "both": {
+            "items": [
+			"bloomers",
+			"dress_shirt",
+			"dress_shoes",
+			"knit_scarf",
+			"stockings",
+			"youmu_ribbon",
+			"youmu_skirt",
+			"youmu_vest"
             ],
-            "female": [
-                "bra",
-                "panties"
+            "entries": [
+                { "item": "katana", "container-item": "scabbard" },
+				{ "item": "wakizashi", "container-item": "scabbard" }
             ]
-        }
-    }
+		},
+		"male": [
+            "boxer_shorts"
+        ],
+        "female": [
+            "bra",
+            "panties"
+        ]
+    },
+    "flags" : ["SCEN_ONLY"]
+	}
 ]

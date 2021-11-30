@@ -1,27 +1,41 @@
 [
-  {
-    "id": "bio_reisen",
+	{
+    "id": "bio_gungnir",
     "type": "bionic",
-    "name": "Finger Burst CBM",
-    "description": "You have the ability to shoot five bullets in quick succession from your fingers.",
+    "name": "Spear the Gungnir",
+    "description": "The famous divine that never misses the mark is your plaything.",
+    "occupied_bodyparts": [ [ "HAND_R", 1 ] ],
+    "act_cost": 40,
+	"time": 0,
+	"fake_item": "bio_remi_gungnir",
+	"included": true,
+	"flags": [ "BIONIC_WEAPON", "BIONIC_SHOCKPROOF" ],
+	"//": "Note: these items come from /data/json/bionics.json NOT /data/json/items/bionics.json"
+	},
+	{
+    "id": "bio_udonge_shot",
+    "type": "bionic",
+    "name": "Lunatic gun",
+    "description": "Your ability, weaponized.",
     "occupied_bodyparts": [ [ "HAND_R", 1 ] ],
     "act_cost": 20,
-    "fake_item": "bio_reisen_gun",
+    "fake_item": "bio_udonge_gun",
 	"included": true,
-	"flags": [ "BIONIC_GUN" ]
-  },
-  {
-    "id": "bio_reisen_II",
+	"flags": [ "BIONIC_GUN", "BIONIC_SHOCKPROOF" ]
+	},
+	{
+    "id": "bio_reisen_ability",
     "type": "bionic",
-    "name": "Finger Gun CBM",
-    "description": "You have the ability to shoot a single bullet from your fingers.",
+    "name": { "str": "[Unknown ability]" },
+    "description": "This is your [Unknown ability]. It allows you to blink. Or vanish? For you, it's just natural.",
     "occupied_bodyparts": [ [ "HAND_R", 1 ] ],
     "act_cost": 20,
     "fake_item": "bio_reisen_II_gun",
 	"included": true,
-	"flags": [ "BIONIC_GUN" ]
-  },
-  {
+	"flags": [ "BIONIC_GUN", "BIONIC_SHOCKPROOF" ],
+	"//": "Seems like bio_teleport is hardcoded. Once I figure how to edit that I need to change this"
+	},
+	{
     "type": "bionic",
     "id": "bio_mokou",
     "name": "Flamethrower CBM",
@@ -30,6 +44,16 @@
     "fake_item": "bio_mokou_gun",
     "description": "You have the ability to shoot fire from your hands.",
 	"included": true,
-    "flags": [ "BIONIC_GUN" ]
-  }
+    "flags": [ "BIONIC_GUN", "BIONIC_SHOCKPROOF" ]
+	},
+	{
+    "id": "bio_youjutsu",
+    "type": "bionic",
+    "name": { "str": "Spiritual energy user" },
+    "description": "Magic, mana, qi, energy, all of it can also be described as spiritual energy. You naturally generate it over time.",
+	"capacity": "200 kJ",
+    "passive_fuel_efficiency": 0.5,
+	"flags": [ "BIONIC_SHOCKPROOF" ],
+	"//": "Need to check if I can use a different resource for lore flavor and stuff"
+	}
 ]

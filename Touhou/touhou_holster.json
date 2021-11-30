@@ -16,10 +16,19 @@
     "encumbrance" : 5,
     "material_thickness" : 1,
     "use_action" : {
-      "type": "holster",
-      "max_volume": 5,
-      "skills": ["pistol", "smg", "rifle", "shotgun", "launcher"]
+      "type": "holster"
     },
-    "flags" : ["WAIST", "OVERSIZE"]
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "holster": true,
+        "min_item_volume": "400 ml",
+        "max_contains_volume": "1200 ml",
+        "max_contains_weight": "1500 g",
+        "max_item_length": "25 cm",
+        "moves": 20
+      }
+    ],
+    "flags" : [ "WAIST", "OVERSIZE" ]
   }
 ]

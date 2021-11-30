@@ -1,13 +1,15 @@
 [
 	{
-        "id": "long_iku_scarf",
+        "id": "iku_long_scarf",
         "type": "TOOL_ARMOR",
         "category" : "clothing",
         "symbol": "[",
         "color": "dark_gray",
-        "name": "oarfish scarf",
-        "name_plural" : "oarfish scarf",
-        "description": "A really long, frilly scarf, worn over the mouth for warmth.  It's long enough to handle nonstandard facial features, accommodate your hands, and whip people to death.  Use it to loosen it if you get too warm.",
+        "name": {
+	"str": "oarfish scarf",
+        "str_pl": "oarfish scarves"
+	},
+        "description": "A really long, frilly scarf, worn over the mouth for warmth.  It's long enough to handle nonstandard facial features, accommodate your hands, and whip people to death.  Use it to loosen it if you get too warm. Seems to be a reference to something.",
         "price": 3000,
 		"price_postapoc": 200,
         "material": ["cotton"],
@@ -19,7 +21,7 @@
         "use_action": {
             "type": "transform",
             "msg": "You loosen your %s.",
-            "target": "long_iku_scarf_loose",
+            "target": "iku_long_scarf_loose",
             "menu_text": "Loosen"
         },
         "covers" : ["MOUTH"],
@@ -31,14 +33,16 @@
         "material_thickness" : 2
     },
     {
-        "id": "long_iku_scarf_loose",
+        "id": "iku_long_scarf_loose",
         "type": "TOOL_ARMOR",
         "category" : "clothing",
         "symbol": "[",
         "color": "dark_gray",
-        "name": "oarfish scarf (loose)",
-        "name_plural" : "oarfish scarf (loose)",
-        "description": "A really long, frilly scarf, worn over the mouth for warmth.  It's long enough to handle nonstandard facial features, accommodate your hands, and whip people to death.  Use it to wear it tighter if you get too warm.",
+        "name": {
+	"str": "oarfish scarf (loose)",
+        "str_pl": "oarfish scarves (loose)"
+	},
+        "description": "A really long, frilly scarf, worn over the mouth for warmth.  It's long enough to handle nonstandard facial features, accommodate your hands, and whip people to death.  Use it to wear it tighter if you get too cold. Seems to be a reference to something.",
         "price": 3000,
 		"price_postapoc": 200,
         "material": ["cotton"],
@@ -50,10 +54,10 @@
         "use_action": {
             "type": "transform",
             "msg": "You wrap your scarf tighter.",
-            "target": "long_iku_scarf",
+            "target": "iku_long_scarf",
             "menu_text": "Wrap tighter"
         },
-        "revert_to": "long_iku_scarf",
+        "revert_to": "iku_long_scarf",
         "covers" : ["MOUTH"],
         "flags" : ["REACH_ATTACK", "REACH3", "WHIP", "OVERSIZE", "POCKETS", "OUTER", "ALLOWS_NATURAL_ATTACKS"],
         "warmth" : 15,

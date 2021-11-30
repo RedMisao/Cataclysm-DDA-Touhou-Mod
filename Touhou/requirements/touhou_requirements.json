@@ -1,0 +1,13 @@
+[
+	{
+    "id": "touhou_lunarian_cloth",
+    "type": "requirement",
+    "qualities": [ 
+		{ "id": "SEW", "level": 2 }, 
+		{ "id": "CUT", "level": 2 } 
+		],
+    "components": [ [ [ "thread", 24 ] ] ],
+	"//": "Note: this comes from data/json/requirements/tailoring.json ",
+	"//2": "This seems to work properly"
+	}
+]
