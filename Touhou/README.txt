@@ -1,1 +1,4 @@
-I'm uploading this as back up only (need to figure how to edit on GitHub), and as a proof I'm working on it
+Things that needs fixing (v 0.9.0.3)
+1. lunarian_cloth and lunarian_leather definitions
+3. bionic_redmagic (test for blood-as-resource storage) not showing
+2. bionic_youjutsu (test for new energy resource storage ) not showing
