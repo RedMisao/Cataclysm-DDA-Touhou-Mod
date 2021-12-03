@@ -1,13 +1,14 @@
 [
-  {
+	{
     "type": "scenario",
     "ident": "touhou_everything",
     "name": "Touhou",
     "points" : 0,
     "description": "Less limits on where to start. All Touhou professions.",
-    "allowed_locs": ["sloc_shelter_a",
-	  "sloc_shelter_b", 
-	  "sloc_shelter_c", 
+    "allowed_locs": [
+		"sloc_shelter_a",
+		"sloc_shelter_b", 
+		"sloc_shelter_c", 
 	  "sloc_house_boarded", 
 	  "sloc_field", 
 	  "sloc_house", 
@@ -64,17 +65,20 @@
 	  "sloc_gas_station",
 	  "sloc_electronics_store",
 	  "sloc_clothes_store"
-	  ],
-    "professions" :
-	["reisen_II", 
-	  "sakuya_izayoi", 
-	  "reisen_udongein_inaba", 
-	  "tenshi_hinanawi", 
-	  "seiga_kaku", 
-	  "iku_nagae", 
-	  "youmu_konpaku", 
-	  "fujiwara_no_mokou"
-	  ],
+	],
+    "professions": [
+		"fujiwara_no_mokou", 
+		"iku_nagae", 
+		"kaenbyou_rin", 
+		"reisen_udongein_inaba", 
+		"reisen_II", 
+		"remilia_scarlet", 
+		"sakuya_izayoi", 
+		"seiga_kaku", 
+		"tenshi_hinanawi", 
+		"utsuho_reiuji", 
+		"youmu_konpaku" 
+		],
 	"start_name" : "Almost Anywhere"
-  }
+	}
 ]

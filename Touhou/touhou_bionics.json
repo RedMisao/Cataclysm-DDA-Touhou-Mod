@@ -3,9 +3,9 @@
     "id": "bio_gungnir",
     "type": "bionic",
     "name": "Spear the Gungnir",
-    "description": "The famous divine that never misses the mark is your plaything.",
+    "description": "Summon the legendary spear.",
     "occupied_bodyparts": [ [ "HAND_R", 1 ] ],
-    "act_cost": 40,
+    "act_cost": 20,
 	"time": 0,
 	"fake_item": "bio_remi_gungnir",
 	"included": true,
@@ -47,13 +47,26 @@
     "flags": [ "BIONIC_GUN", "BIONIC_SHOCKPROOF" ]
 	},
 	{
+    "id": "bio_redmagic",
+    "type": "bionic",
+    "name": { "str": "Red magic user" },
+    "description": "You can store and use blood as energy resource.",
+	"occupied_bodyparts": [ [ "torso", 1 ] ],
+	"act_cost": 0,
+	"fuel_options": [ "blood" ],
+	"fuel_capacity": 2500,
+    "passive_fuel_efficiency": 1,
+	"flags": [ "BIONIC_POWER_SOURCE", "BIONIC_SHOCKPROOF", "BIONIC_TOGGLED" ]
+	},
+	{
     "id": "bio_youjutsu",
     "type": "bionic",
     "name": { "str": "Spiritual energy user" },
     "description": "Magic, mana, qi, energy, all of it can also be described as spiritual energy. You naturally generate it over time.",
+	"occupied_bodyparts": [ [ "torso", 1 ] ],
 	"capacity": "200 kJ",
     "passive_fuel_efficiency": 0.5,
-	"flags": [ "BIONIC_SHOCKPROOF" ],
-	"//": "Need to check if I can use a different resource for lore flavor and stuff"
+	"flags": [ "BIONIC_POWER_SOURCE", "BIONIC_SHOCKPROOF" ],
+	"//": "Need to check if I can use different resources for lore flavor and stuff"
 	}
 ]

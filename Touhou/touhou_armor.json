@@ -21,6 +21,43 @@
     "flags": [ "FANCY" ]
 	},
 	{
+    "id": "socks_long",
+    "type": "ARMOR",
+    "name": { "str": "pair of long socks", "str_pl": "pairs of long socks" },
+    "description": "Long socks, reaching just below the knee.",
+    "weight": "50 g",
+    "volume": "400 ml",
+    "price": 2000,
+    "price_postapoc": 500,
+    "material": [ "cotton" ],
+    "symbol": "[",
+    "looks_like": "socks_wool",
+    "color": "black",
+	"armor_portion_data": [ 
+		{ "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 1, 2 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "coverage": 30, "encumbrance": [ 1, 2 ] }
+	],
+    "warmth": 8,
+    "material_thickness": 0.2,
+    "flags": [ "VARSIZE", "SKINTIGHT" ]
+	},
+	{
+    "id": "ribbon_black",
+    "type": "TOOL_ARMOR",
+	"name": "black ribbon",
+	"description": "A small black ribbon, used to tie your hair.",
+    "repairs_like": "tie_bow",
+	"symbol": "[",
+    "color": "black",
+	"price": 1000,
+	"price_postapoc": 10,
+    "material": [ "cotton" ],
+	"coverage": 1,
+    "weight": "150 g",
+	"volume": "200 ml",
+    "flags": [ "FANCY" ]
+    },
+	{
     "id": "iku_dress_shirt",
 	"type": "ARMOR",
 	"category": "armor",
@@ -76,6 +113,100 @@
     "flags": [ "OUTER", "VARSIZE", "STURDY", "ZERO_WEIGHT", "ALLOWS_NATURAL_ATTACKS" ]
 	},
 	{
+    "id": "kaenbyou_dress",
+    "type": "ARMOR",
+    "category": "armor",
+	"name": { "str": "black dress", "str_pl": "black dresses" },
+	"description": "A long-sleeved, jet black dress with green frills.  It's design features Former Hell flora.",
+    "repairs_like": "dress",
+	"weight": "1000 g",
+    "volume": "4000 ml",
+    "price": 8000,
+    "price_postapoc": 800,
+    "material": [ "cotton" ],
+    "material_thickness": 1,
+	"symbol": "[",
+    "looks_like": "dress",
+	"color": "green",
+    "armor_portion_data": [
+        { "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 4, 8 ] },
+        { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 4, 8 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "coverage": 50, "encumbrance": [ 4, 8 ] }
+	],
+    "warmth": 20,
+	"flags": [ "VARSIZE", "FANCY", "STURDY" ]
+	},
+	{
+    "id": "kaenbyou_leg_lace",
+    "type": "ARMOR",
+    "category": "armor",
+	"name": { "str": "leg lace", "str_pl": "leg laces" },
+	"description": "A small ",
+    "repairs_like": "panties",
+	"//": "Smallest related thing I could find, will need to check later when I figure out how materials work",
+	"weight": "50 g",
+    "volume": "50 ml",
+    "price": 4000,
+    "price_postapoc": 800,
+    "material": [ "cotton" ],
+    "material_thickness": 0.5,
+	"symbol": "[",
+    "looks_like": "leg_warmers",
+    "//2": "synonymous: leggings, so",
+	"color": "black",
+	"armor_portion_data": [
+		{ "covers": [ "leg_l" ], "coverage": 1, "encumbrance": [ 1, 2 ] }
+	],
+    "warmth": 1,
+	"flags": [ "VARSIZE", "FANCY", "STURDY", "SKINTIGHT" ],
+	"//3": "This item maybe needs something else to it"
+	},
+	{
+    "id": "kaenbyou_shoes",
+    "type": "ARMOR",
+    "category": "armor",
+	"name": "black shoes",
+    "copy-from": "dress_shoes",
+	"description": "A pair of black shoes.  These have decorative black ribbons.",
+    "repairs_like": "dress_shoes",
+	"weight": "750 g",
+    "volume": "1250 ml",
+    "price": 16000,
+	"price_postapoc": 4000,
+	"material_thickness": 2,
+    "symbol": "[",
+    "looks_like": "dress_shoes",
+	"color": "black",
+	"armor_portion_data": [
+        { "covers": [ "foot_l", "foot_r" ], "coverage": 75 }
+	],
+    "warmth": 10,
+    "flags": [ "VARSIZE", "FANCY" ]
+	},
+	{
+    "id": "kaenbyou_vest",
+    "type": "ARMOR",
+    "category": "armor",
+	"name": { "str": "black vest", "str_pl": "black vests" },
+	"description": "A small black, sleeves protective vest worn over your clothing.",
+    "repairs_like": "vest_leather",
+	"weight": "600 g",
+	"volume": "1500 ml",
+    "price": 16000,
+	"price_postapoc": 4000,
+	"material": [ "leather" ],
+    "symbol": "[",
+	"looks_like": "vest_leather",
+	"color": "black",
+	"weight_capacity_bonus": "1 kg",
+    "armor_portion_data": [
+        { "covers": [ "torso" ], "coverage": 40 }
+	],
+    "warmth": 15,
+    "material_thickness": 2,
+    "flags": [ "VARSIZE", "FANCY" ]
+	},
+	{
     "id": "lunar_dress_shirt",
     "type": "ARMOR",
     "category": "armor",
@@ -85,7 +216,7 @@
     "volume": "700 ml",
     "price": 15000,
     "price_postapoc": 1500,
-    "material": [ "touhou_lunarian_cloth" ],
+    "material": [ "lunarian_cloth" ],
     "material_thickness": 2,
 	"symbol": "[",
 	"looks_like": "longshirt",
@@ -93,7 +224,7 @@
 	"armor_portion_data": [
         { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 5 ] },
         { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 4, 4 ] }
-		],
+	],
 	"pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "250 ml", "max_contains_weight": "1 kg", "moves": 80 } ],
     "warmth": 10,
     "flags": [ "VARSIZE", "FANCY", "WATERPROOF", "STURDY" ]
@@ -109,7 +240,7 @@
     "volume": "3000 ml",
     "price": 20000,
     "price_postapoc": 500,
-    "material": [ "touhou_lunarian_cloth" ],
+    "material": [ "lunarian_cloth" ],
     "material_thickness": 3,
 	"symbol": "[",
     "looks_like": "blazer",
@@ -117,7 +248,7 @@
     "armor_portion_data": [
         { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 8, 12 ] },
         { "covers": [ "arm_l", "arm_r" ], "coverage": 95, "encumbrance": [ 8, 12 ] }
-		],
+	],
 	"pocket_data": [
         { "pocket_type": "CONTAINER", "max_contains_volume": "250 ml", "max_contains_weight": "1 kg", "moves": 80 },
         { "pocket_type": "CONTAINER", "max_contains_volume": "250 ml", "max_contains_weight": "1 kg", "moves": 80 }
@@ -137,13 +268,13 @@
     "volume": "25 ml",
     "price": 1000,
 	"price_postapoc": 100,
-    "material": [ "touhou_lunarian_cloth" ],
+    "material": [ "lunarian_cloth" ],
 	"material_thickness": 1,
 	"symbol": "[",
     "color": "green",
 	"armor_portion_data": [
         { "covers": [ "torso" ], "coverage": 10, "encumbrance": [ 1, 1 ] }
-		],
+	],
     "flags": [ "VARSIZE", "FANCY" ]
 	},
 	{
@@ -156,14 +287,14 @@
     "volume": "200 ml",
     "price": 5000,
 	"price_postapoc": 2500,
-    "material": [ "touhou_lunarian_cloth" ],
+    "material": [ "lunarian_cloth" ],
 	"material_thickness": 0.5,
     "symbol": "[",
     "looks_like": "leg_warmers",
 	"color": "dark_gray",
     "armor_portion_data": [
         { "covers": [ "foot_l", "foot_r", "leg_r", "leg_l" ], "coverage": 70, "encumbrance": [ 4, 5 ] }
-		],
+	],
     "warmth": 10,
     "flags": [ "FANCY", "SKINTIGHT" ]
 	},
@@ -177,14 +308,14 @@
     "volume": "225 ml",
     "price": 12000,
 	"price_postapoc": 600,
-    "material": [ "touhou_lunarian_cloth" ],
+    "material": [ "lunarian_cloth" ],
 	"material_thickness": 1.5,
     "symbol": "[",
     "looks_like": "kilt",
 	"color": "dark_gray",
     "armor_portion_data": [
         { "covers": [ "leg_r", "leg_l" ], "coverage": 55 }
-		],
+	],
     "warmth": 5,
     "flags": [ "VARSIZE", "FANCY" ]
 	},
@@ -205,7 +336,7 @@
 	"color": "dark_gray",
     "armor_portion_data": [
         { "covers": [ "mouth" ], "coverage": 85 }
-		],
+	],
     "flags": [ "OUTER", "VARSIZE", "FANCY", "STURDY" ]
 	},
 	{
@@ -251,7 +382,7 @@
 	"color": "dark_gray",
     "armor_portion_data": [
         { "covers": [ "foot_l", "foot_r" ], "coverage": 60 }
-		],
+	],
     "warmth": 10,
     "flags": [ "OUTER", "VARSIZE", "FANCY" ]
 	},
@@ -283,7 +414,7 @@
 	"copy-from": "gown",
 	"description": "A pinkish, bell shaped dress, with a scarlet lace. Very elegant.",
     "repairs_like": "gown",
-	"weight": "7500 g",
+	"weight": "750 g",
     "volume": "3000 ml",
     "price": 40000,
     "price_postapoc": 1000,
@@ -296,7 +427,7 @@
         { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 8 ] },
         { "covers": [ "arm_l", "arm_r" ], "coverage": 10, "encumbrance": [ 4, 8 ] },
 		{ "covers": [ "leg_l", "leg_r" ], "coverage": 75, "encumbrance": [ 4, 8 ] }
-		],
+	],
     "warmth": 10,
 	"flags": [ "VARSIZE", "SUPER_FANCY", "STURDY" ]
 	},
@@ -334,7 +465,7 @@
 	"color": "light_red",
     "armor_portion_data": [
         { "covers": [ "foot_l", "foot_r" ], "coverage": 75 }
-		],
+	],
     "warmth": 10,
     "flags": [ "VARSIZE", "SUPER_FANCY" ]
 	},
@@ -355,7 +486,7 @@
 	"color": "light_red",
     "armor_portion_data": [
         { "covers": [ "foot_l", "foot_r" ], "coverage": 100 }
-		],
+	],
     "warmth": 10,
     "flags": [ "SKINTIGHT", "VARSIZE", "SUPER_FANCY" ]
 	},
@@ -459,7 +590,7 @@
 	"armor_portion_data": [
         { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 8, 12 ] },
         { "covers": [ "leg_l", "leg_r" ], "coverage": 50, "encumbrance": [ 2, 4 ] }
-		],
+	],
 	"flags": [ "VARSIZE", "SUPER_FANCY" ]
 	},
 	{
@@ -522,7 +653,7 @@
 	"armor_portion_data": [ 
 		{ "covers": [ "arm_r" ], "coverage": 50, "encumbrance": [ 1, 2 ] },
 		{ "covers": [ "hand_r" ], "coverage": 100, "encumbrance": [ 1, 2 ] }
-		],
+	],
 	"valid_mods": [ "rod_strap" ],
 	"//3": "Should check how to add a strap so the player doesn't have to drop the rod every time Utsuho crafts something",
 	"flags": [ "ONLY_ONE", "OUTER", "RAINPROOF", "RESTRICT_HANDS", "STURDY", "WATERPROOF", "UNBREAKABLE_MELEE", "TRADER_AVOID" ]
@@ -548,27 +679,6 @@
 	"description": "A green skirt.  A white pattern representing nuclear decay is embroided on it.",
 	"//2": "I remember reading that the pattern corresponds to either Uranium orbitals or the pattern left by subatomic particles on a cloud chamber, but can't remember where", 
 	"flags": [ "FANCY" ]
-	},
-	{
-    "id": "socks_long",
-    "type": "ARMOR",
-    "name": { "str": "pair of long socks", "str_pl": "pairs of long socks" },
-    "description": "Long socks, reaching just below the knee.",
-    "weight": "50 g",
-    "volume": "400 ml",
-    "price": 2000,
-    "price_postapoc": 500,
-    "material": [ "cotton" ],
-    "symbol": "[",
-    "looks_like": "socks_wool",
-    "color": "black",
-	"armor_portion_data": [ 
-		{ "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 1, 2 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "coverage": 30, "encumbrance": [ 1, 2 ] }
-	],
-    "warmth": 8,
-    "material_thickness": 0.2,
-    "flags": [ "VARSIZE", "SKINTIGHT" ]
 	},
 	{
     "id": "youmu_skirt",

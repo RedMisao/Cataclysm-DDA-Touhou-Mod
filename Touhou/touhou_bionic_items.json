@@ -3,42 +3,47 @@
     "id": "bio_remi_gungnir",
     "type": "GUN",
     "name": "Summoned Gungnir",
-    "description": "this a pseudo item",
-    "weight": "2000 g",
-	"volume": "2000 ml",
+    "description": "The divine that never misses the mark is your plaything.",
+    "weight": "3500 g",
+	"volume": "3500 ml",
     "price": 0,
-    "bashing": 5,
-    "cutting": 30,
+    "to_hit": 2,
+	"bashing": 10,
+    "cutting": 35,
 	"material": [ "blood" ],
 	"symbol": "(",
     "color": "light_red",
     "skill": "throw",
-    "range": 30,
+	"range": 50,
     "ranged_damage": { 
-		"damage_type": "heat", 
-		"amount": 35, 
+		"damage_type": "stab", 
+		"amount": 100, 
 		"armor_penetration": 8 
 	},
-    "dispersion": -8,
+    "dispersion": -400,
     "durability": 10,
 	"explosion": {
-		"power": 8, 
-		"distance_factor": 0.8, 
-		"max_noise": 18, 
+		"power": 12, 
+		"distance_factor": 0.75, 
+		"max_noise": 24, 
 		"fire": false, 
 		"shrapnel": {
-			"casing_mass": 200, 
-			"fragment_mass": 0.05, 
-			"recovery": 20, 
+			"casing_mass": 750, 
+			"fragment_mass": 750, 
+			"recovery": 750, 
 			"drop": "blood" 
 		}
 	},
 	"loudness": 12,
-    "reload": 0,
-	"modes": [ [ "DEFAULT", "auto", 5 ] ],
-    "ammo_effects": [ "BEANBAG", "CUSTOM_EXPLOSION", "NEVER_MISFIRES", "LASER" ],
-    "flags": [ "NEVER_JAMS", "TRADER_AVOID", "ZERO_WEIGHT" ],
-  	"//": "Note: these items come from /data/json/items/fake.json and perhaps /data/json/items/gun/bio.json "
+    "ups_charges": 30,
+    "reload": 250,
+	"modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
+    "ammo_effects": [ "BEANBAG", "CUSTOM_EXPLOSION", "LASER", "NEVER_MISFIRES" ],
+    "flags": [ "NEVER_JAMS", "NO_UNLOAD", "NO_UNWIELD", "REACH_ATTACK", "SPEAR", "TRADER_AVOID", "ZERO_WEIGHT" ],
+  	"//": "Note: these items come /data/json/items/gun/bio.json ",
+	"//2": "The spear should do enough ranged damage to instakill medium tier enemies, and enough melee damage to allow summoning it into battle to smash things",
+	"//3": "However, it should 'break' or disappear after few attacks so the player has to spend energy when in combat. Currently it lasts for around 4 attacks so I'm leaving it at that until I figure out how to change that",
+	"//4": "The explosion effect should leave extra blood splattered around the enemy. This is mostly for visual effects, not for 'recycling' the ammo"
 	},
 	{
     "id": "bio_udonge_gun",
@@ -53,7 +58,7 @@
     "skill": "pistol",
     "range": 30,
     "ranged_damage": { 
-		"damage_type": "heat", 
+		"damage_type": "bullet", 
 		"amount": 25, 
 		"armor_penetration": 4 
 		},
@@ -63,7 +68,7 @@
     "reload": 0,
 	"modes": [ [ "DEFAULT", "auto", 5 ] ],
     "ammo_effects": [ "LASER", "INCENDIARY" ],
-    "flags": [ "NEVER_JAMS", "TRADER_AVOID", "ZERO_WEIGHT" ],
+    "flags": [ "NEVER_JAMS", "NO_UNWIELD", "TRADER_AVOID", "ZERO_WEIGHT" ],
   	"//": "Note: these items come from /data/json/items/fake.json and perhaps /data/json/items/gun/bio.json "
 	},
 	{
@@ -79,7 +84,7 @@
     "skill": "pistol",
     "range": 30,
     "ranged_damage": { 
-		"damage_type": "heat", 
+		"damage_type": "bullet", 
 		"amount": 22, 
 		"armor_penetration": 4 
 		},
@@ -87,7 +92,7 @@
     "durability": 10,
     "reload": 0,
     "ammo_effects": [ "LASER", "INCENDIARY" ],
-    "flags": [ "NEVER_JAMS", "TRADER_AVOID", "ZERO_WEIGHT" ]
+    "flags": [ "NEVER_JAMS", "NO_UNWIELD", "TRADER_AVOID", "ZERO_WEIGHT" ]
 	},
 	{
     "id": "bio_mokou_gun",
@@ -101,11 +106,11 @@
     "color": "magenta",
     "skill": "pistol",
     "range": 20,
-    "ranged_damage": 
-		{ "damage_type": "heat", 
+    "ranged_damage": { 
+		"damage_type": "heat", 
 		"amount": 44, 
 		"armor_penetration": 2 
-		},
+	},
     "dispersion": 16,
     "durability": 10,
     "reload": 0,
@@ -113,16 +118,41 @@
     "flags": [ "NEVER_JAMS", "TRADER_AVOID", "ZERO_WEIGHT", "FIRESTARTER" ]
 	},
 	{
+    "id": "bio_redmagic",
+    "type": "BIONIC_ITEM",
+    "category": "bionics",
+	"name": { "str_sp": "Red magic user (test)" },
+    "copy-from": "bionic_general",
+	"weight": "0 g",
+    "volume": "0 ml",
+	"material": [ "steel" ],
+	"symbol": "#",
+	"color": "red",
+	"looks_like": "bio_int_enhancer",
+    "description": "User of Red magic (test)",
+    "price": 1000000,
+	"use_action": [ "install_bionic" ],
+	"is_upgrade": false,
+	"faults": [ "fault_bionic_salvaged" ],
+	"flags": [ "CBM", "ZERO_WEIGHT" ]
+	},
+	{
     "id": "bio_youjutsu",
     "type": "BIONIC_ITEM",
     "category": "bionics",
 	"name": { "str_sp": "Spiritual energy user (test)" },
-    "weight": "0 g",
+    "copy-from": "bionic_general",
+	"weight": "0 g",
     "volume": "0 ml",
+	"material": [ "steel" ],
 	"symbol": "☯",
+	"color": "light_blue",
 	"looks_like": "bio_int_enhancer",
     "description": "User of spiritual energy (test).",
     "price": 1000000,
-	"flags": [ "ZERO_WEIGHT" ]
+	"use_action": [ "install_bionic" ],
+	"is_upgrade": false,
+	"faults": [ "fault_bionic_salvaged" ],
+	"flags": [ "CBM", "ZERO_WEIGHT" ]
 	}
 ]

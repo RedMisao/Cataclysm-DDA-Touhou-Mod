@@ -119,7 +119,7 @@
 	"//2": "can't find the fire resistence field name to add it, used heat instead",
 	"//3": "Can't find how to use percentage dmg reduction, this value should be 66% of all received fire damage + base say, 4, so it blocks minor fire attacks instead of being completely immune",
 	"//4": "Also, add like 2-4 soul dmg reduction when I implement that",
-	"//5": "Also, add some kind of social bonus for enemies with both the UNDEAD and SPIRIT/SOUL trait, that affects things that have soul only and not every zombie out there"
+	"//5": "Also, add some kind of social bonus for enemies with both the UNDEAD and SPIRIT/SOUL trait, this would allow for Vengeful spirits be neutral/friendly to her and not also affect every single Zed out there"
 	},
 	{
     "type": "mutation",
@@ -292,25 +292,27 @@
     },
 	{
     "type": "mutation",
-    "id": "PROF_REMI",
-    "name": "Eternal Young Scarlet Moon",
+    "id": "PROF_KAENBYOU",
+    "name": "Corpse carrier cheering hellcat",
     "points": 0,
-    "description": "You're the Mistress of the Scarlet Devil Mansion.",
+    "description": "WIP",
     "starting_trait": false,
 	"valid": false,
     "purifiable": false,
     "profession": true,
-	"cut_dmg_bonus": 6,
-	"//": "This bonus to cut dmg should ONLY be applied while unarmed",
-	"healing_awake": 4,
-	"healing_resting": 4,
-	"//2": "Both Remi and Flan have the countertrait 'Light Eater' for the BLOODTHIRST trait, that makes the long enough -> very long.",
-	"movecost_flatground_modifier": 0.83,
-	"movecost_obstacle_modifier": 0.83,
-	"//3": "If my math is correct, this should be equivalent to ~1.5 movement speed total, up from the 1.25 movement speed from base vampires",
-	"passive_mods": { "str_mod": 1, "dex_mod": 1, "int_mod": 1, "per_mod": 1 },
-	"ugliness": -2,
-	"//4": "add toggle alternative form: cloud of scarlet bats for Remi, possibly with CMB or something"
+    "//": "WIP"
+	},
+	{
+    "type": "mutation",
+    "id": "PROF_MOKOU",
+    "name": "Immortal Guide of the Bamboo Forest",
+    "points": 0,
+    "description": "Your countless years of fighting your rival has granted you lots of fighting skills, primarily with kicking attacks.",
+    "starting_trait": false,
+	"valid": false,
+    "purifiable": false,
+    "profession": true,
+	"initial_ma_styles": [ "style_taekwondo", "style_capoeira", "style_karate" ]
     },
 	{
     "type": "mutation",
@@ -332,15 +334,25 @@
 	},
 	{
     "type": "mutation",
-    "id": "PROF_MOKOU",
-    "name": "Immortal Guide of the Bamboo Forest",
+    "id": "PROF_REMI",
+    "name": "Eternal Young Scarlet Moon",
     "points": 0,
-    "description": "Your countless years of fighting your rival has granted you lots of fighting skills, primarily with kicking attacks.",
+    "description": "You're the Mistress of the Scarlet Devil Mansion.",
     "starting_trait": false,
 	"valid": false,
     "purifiable": false,
     "profession": true,
-	"initial_ma_styles": [ "style_taekwondo", "style_capoeira", "style_karate" ]
+	"cut_dmg_bonus": 6,
+	"//": "This bonus to cut dmg should ONLY be applied while unarmed",
+	"healing_awake": 4,
+	"healing_resting": 4,
+	"//2": "Both Remi and Flan have the countertrait 'Light Eater' for the BLOODTHIRST trait, that makes the long enough -> very long.",
+	"movecost_flatground_modifier": 0.83,
+	"movecost_obstacle_modifier": 0.83,
+	"//3": "If my math is correct, this should be equivalent to ~1.5 movement speed total, up from the 1.25 movement speed from base vampires",
+	"passive_mods": { "str_mod": 1, "dex_mod": 1, "int_mod": 1, "per_mod": 1 },
+	"ugliness": -2,
+	"//4": "add toggle alternative form: cloud of scarlet bats for Remi, possibly with CMB or something"
     },
 	{
     "type": "mutation",
