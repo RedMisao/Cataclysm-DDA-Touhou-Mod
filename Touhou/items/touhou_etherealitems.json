@@ -1,0 +1,35 @@
+[
+	{
+    "id": "summon_gugnir2",
+	"type": "GENERIC",
+    "category": "weapons",
+	"name": { "str": "Spear the Gungnir" },
+    "description": "The divine that never misses the mark is your plaything.",
+    "weight": "250 g",
+    "to_hit": 2,
+    "color": "red",
+    "symbol": "/",
+    "material": [ "blood" ],
+    "techniques": [ "WBLOCK_2", "BRUTAL", "SWEEP" ],
+    "volume": "1250 ml",
+    "bashing": 10,
+    "cutting": 35,
+    "price": 0,
+	"flags": [ "MAGIC_FOCUS", "NO_REPAIR", "NO_SALVAGE", "NONCONDUCTIVE", "ONLY_ONE", "UNBREAKABLE_MELEE", "TRADER_AVOID" ],
+	"//": "The ultimate goal is to make this weapon throwable so it deals piercing + aoe damage around the target and is destroyed, allowing to summon another one"
+	},
+	{
+    "id": "utsuho_sunB",
+    "type": "ARMOR",
+    "category": "tools",
+    "name": "Black sun",
+    "description": "A small black sun hovering over your head.  Looks like an eclipse.",
+    "weight": "0 kg",
+    "volume": "0 L",
+    "price": 0,
+    "symbol": "🔅",
+    "color": "black",
+    "covers": [ "head" ],
+    "flags": [ "AURA", "LIGHT_24", "SEMITANGIBLE" ]
+	}
+]

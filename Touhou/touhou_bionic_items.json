@@ -46,7 +46,7 @@
 	"//4": "The explosion effect should leave extra blood splattered around the enemy. This is mostly for visual effects, not for 'recycling' the ammo"
 	},
 	{
-    "id": "bio_udonge_gun",
+    "id": "bio_udonge_shot",
     "type": "GUN",
     "name": "Lunatic gun (shot)",
     "description": "this a pseudo item",
@@ -72,9 +72,9 @@
   	"//": "Note: these items come from /data/json/items/fake.json and perhaps /data/json/items/gun/bio.json "
 	},
 	{
-    "id": "bio_reisen_II_gun",
+    "id": "bio_reisen_shot",
     "type": "GUN",
-    "name": "finger gun (semi)",
+    "name": "Lunatic gun (semi)",
     "description": "this a pseudo item",
     "volume": 12,
     "price": 0,
@@ -95,7 +95,7 @@
     "flags": [ "NEVER_JAMS", "NO_UNWIELD", "TRADER_AVOID", "ZERO_WEIGHT" ]
 	},
 	{
-    "id": "bio_mokou_gun",
+    "id": "bio_mokou_shot",
     "type": "GUN",
     "name": "fire manipulation",
     "description": "this a pseudo item",

@@ -13,35 +13,34 @@
 	"//": "Note: these items come from /data/json/bionics.json NOT /data/json/items/bionics.json"
 	},
 	{
-    "id": "bio_udonge_shot",
+    "id": "bio_udonge_gun",
     "type": "bionic",
     "name": "Lunatic gun",
     "description": "Your ability, weaponized.",
     "occupied_bodyparts": [ [ "HAND_R", 1 ] ],
     "act_cost": 20,
-    "fake_item": "bio_udonge_gun",
+    "fake_item": "bio_udonge_shot",
 	"included": true,
 	"flags": [ "BIONIC_GUN", "BIONIC_SHOCKPROOF" ]
 	},
 	{
-    "id": "bio_reisen_ability",
+    "id": "bio_reisen_gun",
     "type": "bionic",
-    "name": { "str": "[Unknown ability]" },
-    "description": "This is your [Unknown ability]. It allows you to blink. Or vanish? For you, it's just natural.",
+    "name": { "str": "Lunatic shot" },
+    "description": "",
     "occupied_bodyparts": [ [ "HAND_R", 1 ] ],
     "act_cost": 20,
-    "fake_item": "bio_reisen_II_gun",
+    "fake_item": "bio_reisen_shot",
 	"included": true,
-	"flags": [ "BIONIC_GUN", "BIONIC_SHOCKPROOF" ],
-	"//": "Seems like bio_teleport is hardcoded. Once I figure how to edit that I need to change this"
+	"flags": [ "BIONIC_GUN", "BIONIC_SHOCKPROOF" ]
 	},
 	{
     "type": "bionic",
-    "id": "bio_mokou",
+    "id": "bio_mokou_gun",
     "name": "Flamethrower CBM",
     "occupied_bodyparts": [ [ "HAND_R", 1 ], [ "HAND_L", 1 ] ],
     "act_cost": 20,
-    "fake_item": "bio_mokou_gun",
+    "fake_item": "bio_mokou_shot",
     "description": "You have the ability to shoot fire from your hands.",
 	"included": true,
     "flags": [ "BIONIC_GUN", "BIONIC_SHOCKPROOF" ]

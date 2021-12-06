@@ -6,44 +6,17 @@
         "description": "Your immortal rival that you've been killing constantly (and vice-versa) has mysteriously vanished during the Cataclysm, along with everyone else that you knew. You face the post-Cataclysm world alone with lots and lots of fire.",
         "points": 6,
 		"spells": [ 
-			{ 
-				"id": "create_lighter", 
-				"level": 3 
-			},
-			{ 
-				"id": "burning_hands", 
-				"level": 5 
-			},
-			{ 
-				"id": "fireball", 
-				"level": 5 
-			},
-			{ 
-				"id": "point_flare", 
-				"level": 3
-			}
+			{ "level": 3, "id": "create_lighter" },
+			{ "level": 5, "id": "burning_hands" },
+			{ "level": 5, "id": "fireball" },
+			{ "level": 3, "id": "point_flare" }
 			],
         "skills": [
-			{
-                "level": 1,
-                "name": "melee"
-            },
-			{
-                "level": 3,
-                "name": "cooking"
-            },
-			{
-                "level": 2,
-                "name": "tailor"
-            },
-			{
-                "level": 3,
-                "name": "unarmed"
-            },
-			{
-                "level": 2,
-                "name": "dodge"
-            }
+			{ "level": 3, "name": "melee" },
+			{ "level": 3, "name": "cooking" },
+			{ "level": 2, "name": "tailor" },
+			{ "level": 3, "name": "unarmed" },
+			{ "level": 2, "name": "dodge" }
         ],
 		"traits": [
             "HOURAI_SPECIES", 
@@ -240,7 +213,7 @@
     "description": "The weekly lesson you were being given by your Master was promptly interrupted after receiving some kind of message (from the Moon?). Shortly after, she returned with a serious face and lots of letters directed to the faction leaders. You finished the errand when you noticed you got lost. For some reason, the Network is silent too.",
     "points": 0,
 	"CBMs": [
-        "bio_udonge_shot", 
+        "bio_udonge_gun", 
 		"bio_ups", 
 		"bio_targeting", 
         "bio_power_storage_mkII" 
@@ -294,14 +267,15 @@
     "description": "You were accompanying the Watatsuki sisters on their visit to Earth when the Cataclysm struck! In the chaos and panic that followed the collapse of the Barrier (or that's what you heard from them), you got separated and left alone. To make things worse, you can't contact your peers by use of the Gyokuto network. You've got some skills from your Lunar Defense Corps training, but you'll need more than that to survive...",
     "points": 0,
 	"CBMs": [
-		"bio_reisen_ability",
-		"bio_teleport",
+		"bio_reisen_gun",
 		"bio_ups",
         "bio_power_storage_mkII"
 	],
-    "//": "Reisen should use her special ability at will, for reference it should enable her to tp 2.33 times without any demerits at =<3 tiles, and 1.33 times at =<6 tiles, then recharge over time. This MUST be independent of her Lunarian rifle",
 	"//2": "Her Lunarian rifle should do bullet dmg instead of laser, but consume no ammo",
 	"//3": "Remove the finger gun CMB ",
+	"spells": [ 
+			{ "level": 1, "id": "dash_reisen" }
+	],
 	"skills": [
         { "level": 2, "name": "dodge" },
 		{ "level": 2, "name": "gun" },
@@ -353,9 +327,13 @@
 		"bio_redmagic"
 	],
     "//": "High tier 2hu such as Remi should have above average energy regen and slightly increased energy pool as to spam her abilities",
+	"spells": [ 
+			{ "level": 1, "id": "dash_remi" },
+			{ "level": 1, "id": "summon_gungnir" }
+	],
 	"skills": [
         { "level": 3, "name": "dodge" },
-		{ "level": 4, "name": "melee" },
+		{ "level": 3, "name": "melee" },
 		{ "level": 4, "name": "stabbing" },
 		{ "level": 4, "name": "throw" }
 	],
@@ -545,11 +523,13 @@
     "name": "Subterranean sun",
     "description": "WIP",
     "points": 0,
-	"CBMs":[
-        "bio_power_storage_mkII"
+    "spells": [ 
+			{ "level": 1, "id": "dash_utsuho" },
+			{ "level": 1, "id": "utsuho_blacksun" },
+			{ "level": 1, "id": "utsuho_blade" },
+			{ "level": 1, "id": "utsuho_flare" }
 	],
-	"//": "Okuu should have an absurd pool number as she's a walking fusion reactor.",
-    "skills": [
+	"skills": [
         { "level": 2, "name": "dodge" }
     ],
 	"traits": [
@@ -588,6 +568,9 @@
         "bio_torsionratchet",
         "bio_uncanny_dodge",
         "bio_power_storage_mkII"
+	],
+	"spells": [ 
+			{ "level": 1, "id": "dash_youmu" }
 	],
     "skills": [
         { "level": 3, "name": "cooking" },

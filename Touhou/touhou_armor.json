@@ -393,7 +393,7 @@
 	"name": { "str": "Remilia's bow", "str_pl": "Remilia's bows" },
 	"copy-from": "obi_gi",
 	"//": "Closest thing to a cotton belt, I should add the specs for this specific bow when I figure out how material definitions work",
-	"description": "A big scarlet bow with a white strip, tied on the back.  It's decorative.",
+	"description": "A big scarlet bow with a white strip, worn on the waist and tied on the back.  It's decorative.",
     "weight": "400 g",
     "volume": "600 ml",
     "price": 18000,
