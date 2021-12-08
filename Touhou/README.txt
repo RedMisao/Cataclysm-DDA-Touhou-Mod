@@ -1,5 +1,5 @@
-Things that needs fixing (v 0.9.0.3)
-1. lunarian_cloth and lunarian_leather definitions
-3. bionic_redmagic (test for blood-as-resource storage) not showing
-2. bionic_youjutsu (test for new energy resource storage ) not showing
-3. Reisen and Remi's shoes not spawning
+Things that needs fixing (v 0.9.0.5)
+1. Seems like dashing from a rooftop to another doesn't move the character through the air, instead they drop to the ground taking damage and then climb back up to their intended position
+2. The new HEART part
+3. Throw Gungnir spell works almost as intended, but Remi is able to cast it twice before Gugngir is consumed
+4. Also, the Gungnir explosion effect gives an error about item components
