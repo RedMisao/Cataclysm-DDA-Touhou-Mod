@@ -1,0 +1,35 @@
+[
+	{
+    "id": "summon_gungnir2",
+	"type": "GENERIC",
+    "category": "weapons",
+	"name": { "str": "Spear the Gungnir" },
+    "description": "The divine that never misses the mark is your plaything.",
+    "weight": "2000 g",
+    "volume": "2000 ml",
+	"longest_side": "3000 cm", 
+	"to_hit": 2,
+    "color": "red",
+    "symbol": "/",
+    "material": [ "blood" ],
+    "techniques": [ "BRUTAL", "IMPALE", "PRECISE", "SWEEP", "WBLOCK_1" ],
+    "bashing": 10,
+    "cutting": 35,
+    "price": 0,
+	"flags": [ "MAGIC_FOCUS", "NO_REPAIR", "NO_SALVAGE", "NONCONDUCTIVE", "ONLY_ONE", "REACH_ATTACK", "SPEAR", "UNBREAKABLE_MELEE", "TRADER_AVOID" ]
+	},
+	{
+    "id": "utsuho_sunB",
+    "type": "ARMOR",
+    "category": "tools",
+    "name": "Black sun",
+    "description": "A small black sun hovering over your head.  Looks like an eclipse.",
+    "weight": "0 kg",
+    "volume": "0 L",
+    "price": 0,
+    "symbol": "🔅",
+    "color": "black",
+    "covers": [ "head" ],
+    "flags": [ "AURA", "LIGHT_24", "SEMITANGIBLE", "ZERO_WEIGHT" ]
+	}
+]

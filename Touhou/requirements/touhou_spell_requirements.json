@@ -1,0 +1,7 @@
+[
+	{
+    "id": "spell_components_gungnir",
+    "type": "requirement",
+    "components": [ [ [ "summon_gungnir2", 1 ] ] ]
+	}
+]

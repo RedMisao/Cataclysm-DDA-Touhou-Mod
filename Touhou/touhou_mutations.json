@@ -225,6 +225,20 @@
 	},
 	{
     "type": "mutation",
+    "id": "SPIRIT_USER",
+    "name": "Spiritual energy user",
+    "points": 0,
+    "description": "Magic, mana, qi, energy, all of it can also be described as spiritual energy.  You naturally generate it over time.",
+    "starting_trait": false,
+    "valid": false,
+	"purifiable": false,
+	"profession": true,
+	"mana_regen_multiplier": 12,
+	"cancels": [  ],
+    "//": "This equals a full mana pool every 40 minutes or so"
+	},
+	{
+    "type": "mutation",
     "id": "PROF_AYA",
     "name": "Wind god girl",
     "points": 0,

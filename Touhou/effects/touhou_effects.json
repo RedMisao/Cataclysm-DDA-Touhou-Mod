@@ -1,0 +1,38 @@
+[
+	{
+	"id": "aa_aa",
+	"type": "effect_type",
+	"//": "Check /data/mods/Magiclysm/effects and related for a list of further applications"
+	},
+	{
+	"id": "sakuya_quickrest2",
+	"type": "effect_type",
+    "name": [ "Quick rest (effect)" ],
+    "desc": [ "Take a quick rest, reducing fatigue, pain and sleep." ],
+    "apply_message": "You take a quick rest",
+    "remove_message": "Your quick rest has ended",
+    "rating": "good",
+    "base_mods": { "fatigue_amount": [ -1 ], "pain_amount": [ -1 ], "sleep_amount": [ -1 ] }
+	},
+	{
+    "id": "sakuya_timestop2",
+	"type": "effect_type",
+    "name": [ "Time stop" ],
+    "desc": [ "You freeze time." ],
+    "apply_message": "Time is frozen.  Is it as if the entire world has stopped.",
+    "remove_message": "Thus, time is flowing again.",
+    "rating": "good",
+    "base_mods": { "speed_mod": [ 24 ] }
+	},
+	{
+    "id": "udonge_stealth",
+	"type": "effect_type",
+    "name": [ "Wavelength manipulation (stealth)" ],
+    "desc": [ "Become imperceptible to those around you." ],
+    "apply_message": "Your wavelength becomes minimal, turning you invisible and perfectly silent.",
+    "remove_message": "You become perceptible again.",
+	"rating": "good",
+	"flags": [ "EFFECT_INVISIBLE" ],
+	"//": "Recheck this for Udonge's stealth plus see the sound component. Also, this effect should only work at short-medium range. Also, there should be a different component for invisibility detection."
+	}
+]

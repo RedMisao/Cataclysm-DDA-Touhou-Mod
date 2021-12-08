@@ -17,7 +17,6 @@
 		{ "id": "CUT", "level": 3 }, 
 		{ "id": "LEATHER_AWL", "level": 1 }
 	],
-    "components": [ [ [ "leather", 2 ], [ "thread", 4 ] ] ],
-	"//": "Note: this comes from data/json/requirements/tailoring.json "
+    "components": [ [ [ "leather", 2 ], [ "thread", 4 ] ] ]
 	}
 ]
