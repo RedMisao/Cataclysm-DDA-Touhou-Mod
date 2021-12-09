@@ -328,9 +328,6 @@
     "description": "That scheming youkai refusing to elaborate was part of her plan for you to move.  Both sides knew that, but that's a custom when dealing important matters to you, so you didn't mind.  What pisses you off is that innocent parties are involved with this much of a threat.  This better be interesting.",
     "points": 0,
 	"CBMs": [
-		"bio_gungnir",
-		"bio_ups",
-        "bio_power_storage_mkII",
 		"bio_redmagic"
 	],
     "//": "High tier 2hu such as Remi should have above average energy regen and slightly increased energy pool as to spam her abilities",
@@ -360,7 +357,8 @@
 			"remi_bowbelt",
             "remi_dress",
 			"remi_hat",
-			"remi_shoes"
+			"remi_shoes",
+			"remi_socks"
 			]
         },
         "male": [
@@ -380,13 +378,15 @@
         "description": "Despite being suspicious of the errand your Mistress' gave you outside the Barrier, you went to carry it out. The Cataclysm struck in the middle of that, however, interrumpting you. How annoying.",
         "points": 0,
 		"CBMs":[
+				"bio_time_freeze",
+				"bio_torsionratchet",
 				"bio_uncanny_dodge",
 				"bio_power_storage_mkII"
         ],
         "spells": [ 
 			{ "level": 1, "id": "dash_basic" },
 			{ "level": 1, "id": "sakuya_quickrest" },
-			{ "level": 1, "id": "sakuya_timestop" }
+			{ "level": 1, "id": "sakuya_accelerate" }
 		],
 		"skills": [
             { "level": 4, "name": "cutting" },
