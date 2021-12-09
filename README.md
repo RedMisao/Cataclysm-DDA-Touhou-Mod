@@ -10,4 +10,4 @@ This branch is for untested additions that produce non-critical errors when runn
 **Changelog over the master branch**
 * Spells: basic dashes, Remi's and Okuu's dashes, summoning a weapon (Gungnir) and consuming it with another spell, some fusion-themed spells for Utsuho (NOT TESTED), Mokou's aoe kick + knockback (NOT TESTED)
 * Items: Sakuya's "special knife" (it's just a modified combat knife), silver knives
-* Misc: In process of changing as much bionics into spells as I can
+* Misc: In process of changing as many bionics into spells as I can
