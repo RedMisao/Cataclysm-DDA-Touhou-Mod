@@ -3,7 +3,7 @@
     "id": "handle_corpsecart",
 	"type": "vehicle_part",
 	"name": { "str": "corpse cart handle" },
-	"item": "corpsecart_handle",
+	"item": "handle_corpsecart",
     "location": "structure",
     "symbol": "^",
     "categories": [ "utility" ],
