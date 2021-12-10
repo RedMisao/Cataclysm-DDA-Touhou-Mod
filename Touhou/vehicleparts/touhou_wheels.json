@@ -1,0 +1,31 @@
+[
+	{
+    "id": "wheel_corpsecart",
+    "type": "vehicle_part",
+    "name": { "str": "corpse cart wheel" },
+	"item": "wheel_corpsecart",
+	"location": "under",
+	"symbol": "|",
+	"categories": [ "movement" ],
+	"color": "brown",
+	"broken_symbol": "x",
+	"broken_color": "red",
+	"durability": 200,
+	"folded_volume": "1000 ml",
+	"description": "A spoken wooden wheel, made from a strange Former Hell wood.",
+	"breaks_into": [ { "item": "splinter", "count": [ 7, 9 ] }, { "item": "nail", "charges": [ 5, 10 ] } ],
+	"requirements": {
+		"install": { "skills": [ [ "mechanics", 2 ] ], "time": "5 m", "using": [ [ "vehicle_wrench_1", 1 ] ] },
+		"removal": { "skills": [ [ "mechanics", 2 ] ], "time": "5 m", "using": [ [ "vehicle_wrench_1", 1 ] ] },
+		"repair": { "skills": [ [ "mechanics", 2 ] ], "time": "50 s", "using": [ [ "adhesive", 1 ] ] }
+    },
+	"damage_reduction": { "all": 10 },
+	"rolling_resistance": 0.45,
+    "wheel_type": "threads",
+    "contact_area": 40,
+	"//": "Calculated area for the wheel's dimensions are 754 cm2 ",
+	"looks_like": "wheel_wood",
+	"flags": [ "FOLDABLE", "NEEDS_JACKING", "STABLE", "STEERABLE", "WHEEL" ],
+	"//3": "No idea what FOLDABLE and NEEDS_JACKING do"
+	}
+]

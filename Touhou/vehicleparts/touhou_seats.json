@@ -1,0 +1,27 @@
+[
+	{
+    "id": "seat_corpsecart",
+	"type": "vehicle_part",
+	"name": { "str": "corpse cart seat" },
+	"item": "seat_corpsecart",
+    "location": "center",
+	"symbol": "]",
+	"categories": [ "operations", "passengers" ],
+    "color": "brown",
+	"broken_color": "red",
+	"durability": 200,
+	"description": "Test seat for kaenbyou_wheelbarrow ",
+	"breaks_into": [ { "item": "splinter", "count": [ 7, 9 ] }, { "item": "nail", "charges": [ 5, 10 ] }, { "item": "leather", "count": [ 2, 4 ] } ],
+	"requirements": {
+		"install": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_nail_install", 2 ] ] },
+		"removal": { "skills": [ [ "mechanics", 2 ] ], "time": "15 m", "using": [ [ "vehicle_nail_removal", 2 ] ] },
+		"repair": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "adhesive", 2 ] ] }
+    },
+	"damage_reduction": { "all": 10 },
+	"looks_like": "reclining_seat",
+	"comfort": 2,
+	"floor_bedding_warmth": 200,
+	"size": 100,
+	"flags": [ "BELTABLE", "BOARDABLE", "MOUNTABLE", "SEAT" ]
+	}
+]

@@ -1,0 +1,23 @@
+[
+	{
+    "id": "frame_corpsecart",
+	"type": "vehicle_part",
+	"name": { "str": "corpse cart frame" },
+	"item": "frame_corpsecart",
+    "location": "structure",
+	"symbol": "X",
+	"categories": [ "hull" ],
+	"color": "brown",
+	"broken_color": "red",
+	"durability": 200,
+	"description": "Test wooden frame for kaenbyou_wheelbarrow ",
+	"breaks_into": [ { "item": "splinter", "count": [ 7, 9 ] }, { "item": "nail", "charges": [ 5, 10 ] } ],
+	"requirements": {
+		"install": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_nail_install", 1 ] ] },
+		"removal": { "skills": [ [ "mechanics", 2 ] ], "time": "15 m", "using": [ [ "vehicle_nail_removal", 1 ] ] },
+		"repair": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "adhesive", 2 ] ] }
+    },
+	"damage_reduction": { "all": 10 },
+	"flags": [ "INITIAL_PART", "MOUNTABLE" ]
+	}
+]

@@ -18,6 +18,7 @@
 			{ "level": 3, "name": "unarmed" },
 			{ "level": 2, "name": "dodge" }
         ],
+		"//2": "proficiencies: [ prof_food_prep, prof_wound_care ], go here, but these strings are not recognized",
 		"traits": [
             "HOURAI_SPECIES", 
 			"KELVINIST",
@@ -41,8 +42,9 @@
                 "panties"
             ]
         },
-        "flags" : ["SCEN_ONLY"]
-    },
+        "flags" : ["SCEN_ONLY"],
+		"//": "Lorewise she sould have lots of numbers, skills, proficiencies, etc. Balancewise that's not very good. Also, I took the yakitori joke seriously."
+	},
 	{
         "type": "profession",
         "ident": "iku_nagae",
@@ -125,7 +127,7 @@
 		{ "level": 2, "name": "melee" },
 		{ "level": 3, "name": "speech" }
     ],
-	"//": "vehicle :  kaenbyou_wheelbarrow goes here",
+	"vehicle": "kaenbyou_wheelbarrow",
 	"traits": [
         "KASHA_SPECIES",
 		"PROF_KAENBYOU",
@@ -134,7 +136,8 @@
     "items": {
         "both": {
             "items": [
-            "kaenbyou_dress",
+            "kasha_book",
+			"kaenbyou_dress",
 			"kaenbyou_leg_lace",
 			"kaenbyou_shoes",
 			"kaenbyou_vest",
@@ -223,7 +226,8 @@
 		"bio_targeting", 
         "bio_power_storage_mkII" 
     ],
-    "skills": [
+	"//5": "proficiencies: [ prof_pharmaceutical ], goes here, but that is not recognized ",
+	"skills": [
         { "level": 2, "name": "dodge" },
 		{ "level": 3, "name": "firstaid" },
         { "level": 2, "name": "gun" },
@@ -395,11 +399,12 @@
 			{ "level": 6, "name": "cooking" },
             { "level": 4, "name": "dodge" }
 		],
-        "traits": [
+		"//4": "proficiencies: [ prof_food_prep, prof_knife_skills ], go here but these strings aren't recognized ",
+		"traits": [
             "PSYCHOPATH",
 			"SPIRIT_USER"
 		],
-		"//": "Change for something like 'callous' instead, you don't get bonuses or demerits for killing or cooking humans",
+		"//": "Change PSYCHOPATH for something like CALLOUS instead: no bonuses like PSYCHOPATH but no demerits for killing and butchering humans and children specifically",
 		"//2": "I want to add some deep and mysterious species to her that does nothing other than lore flavor but I'm missing the perfect (and elegant) name",
 		"items": {
             "both": {
@@ -471,6 +476,8 @@
                 "name": "dodge"
             }
         ],
+		"//2": "proficiencies: [ prof_alchemy, prof_lockpicking, prof_pharmaceutical, prof_physiology ], go here, but these strings aren't recognized",
+		"//": "Maybe remove pharmaceutical because alchemy already exists",
 		"traits": [
             "ANIMIST",
 			"LIAR",
