@@ -1,0 +1,44 @@
+[
+	{
+		"speaker": "mon_gyokuto_base",
+		"type": "speech",
+        "sound": "\"Don't come any closer!\"",
+        "volume": 20
+    },
+	{
+		"speaker": "mon_gyokuto_base",
+		"type": "speech",
+        "sound": "\"Stay back! I'm warning you!\"",
+        "volume": 20
+    },
+	{
+		"speaker": "mon_gyokuto_base",
+		"type": "speech",
+        "sound": "\"Even on Earth, this is happening...\"",
+        "volume": 8
+    },
+	{
+	"speaker": "mon_vengeful_spirit_kaenbyou",
+	"type": "speech",
+	"sound": "\"...uuuu...\"",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_vengeful_spirit_kaenbyou",
+	"type": "speech",
+	"sound": "\"aAaaaa...\"",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_vengeful_spirit_kaenbyou",
+	"type": "speech",
+	"sound": "\"kh...  ggh...\"",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_vengeful_spirit_kaenbyou",
+	"type": "speech",
+	"sound": "\"nn... N... no...\"",
+	"volume": 12
+    }
+]

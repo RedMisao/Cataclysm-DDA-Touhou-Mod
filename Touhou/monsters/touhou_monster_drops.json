@@ -1,0 +1,18 @@
+[
+  {
+    "type" : "item_group",
+    "id" : "moonrabbit_drops",
+    "items":[
+        ["lunar_dress_shirt", 1],
+	    ["lunar_suit", 1],
+	    ["lunar_rifle", 3],
+	    ["lunar_tie", 1],
+	    ["lunar_stockings", 1],
+	    ["lunar_skirt", 1],
+	    ["lunar_helmet", 1],
+	    ["lunar_dress_shoes", 1],
+	    ["bra", 1],
+        ["panties", 1]
+    ]
+  }
+ ]

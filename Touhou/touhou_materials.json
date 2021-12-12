@@ -2,17 +2,61 @@
 	{
     "id": "mokou_paper",
 	"type": "material",
-	"//" : "Identical to paper except for fire resistance",
     "name": "Fire protecting talisman",
-    "copy-from": "paper",
-	"fire_resist": 20,
+	"//": "Identical to paper except for fire resistance",
+	"copy-from": "paper",
+	"fire_resist": 2000,
+	"bash_resist": 10,
+    "cut_resist": 10,
+	"//2": "bash and cut resist only so they don't get destroyed in combat. Remove after a recipe is made so Mokou can recraft her hair ribbons",
 	"burn_data": [
         { "immune": true },
         { "immune": true },
         { "immune": true }
 		],
-	"//2": "Note: these come from data/json/materials.json "
+	"//3": "Note: these come from data/json/materials.json "
 	},
+	{
+    "id": "fireproof_cotton",
+	"type": "material",
+    "name": "fireproof cloth",
+	"copy-from": "cotton",
+    "fire_resist": 2000,
+	"burn_data": [
+        { "immune": true },
+        { "immune": true },
+        { "immune": true }
+		]
+	},
+	{
+    "id": "fireresist_cotton",
+	"type": "material",
+    "name": "fire-resist cloth",
+	"copy-from": "cotton",
+    "fire_resist": 100,
+    "//": "recheck this after balancing Mokou's spells",
+	"bash_resist": 2,
+    "cut_resist": 2,
+    "//2": "bash and cut resist only due the flavor description for mokou_shirt ",
+	"burn_data": [
+        { "immune": true },
+        { "immune": true },
+        { "immune": true }
+		]
+    },
+	{
+    "id": "fireresist_leather",
+	"type": "material",
+    "name": "fire-resist leather",
+	"copy-from": "cotton",
+    "fire_resist": 100,
+    "//": "recheck this after balancing Mokou's spells",
+	"burn_data": [
+        { "immune": true },
+        { "immune": true },
+        { "immune": true }
+		]
+    },
 	{
     "id": "lunarian_cloth",
 	"type": "material",
@@ -24,13 +68,13 @@
     "latent_heat": 250,
     "soft": true,
     "reinforces": true,
-    "bash_resist": 2,
-    "cut_resist": 2,
-    "bullet_resist": 3,
+    "bash_resist": 4,
+    "cut_resist": 4,
+	"bullet_resist": 8,
     "acid_resist": 3,
-    "fire_resist": 1,
+    "fire_resist": 2,
     "elec_resist": 3,
-    "chip_resist": 8,
+    "chip_resist": 10,
     "repaired_with": "rag",
     "salvaged_into": "rag",
 	"dmg_adj": [ "ripped", "torn", "shredded", "tattered" ],
@@ -54,12 +98,12 @@
     "latent_heat": 273,
     "soft": true,
     "reinforces": true,
-    "bash_resist": 3,
-    "cut_resist": 3,
-    "bullet_resist": 3,
+    "bash_resist": 6,
+    "cut_resist": 6,
+    "bullet_resist": 12,
     "acid_resist": 4,
     "fire_resist": 2,
-    "elec_resist": 2,
+    "elec_resist": 4,
     "chip_resist": 12,
     "repaired_with": "leather",
     "salvaged_into": "leather",
@@ -71,6 +115,6 @@
         { "fuel": 1, "smoke": 3, "burn": 2, "volume_per_turn": "500 ml" },
         { "fuel": 1, "smoke": 3, "burn": 2 }
 		],
-	"burn_products": [ [ "ash", 0.015 ] ]
+	"burn_products": [ [ "ash", 0.017 ] ]
 	}
 ]

@@ -92,27 +92,6 @@
     "coverage": 70
 	},
 	{
-    "id": "mokou_talisman",
-    "type": "ARMOR",
-	"category": "armor",
-    "name": "fireproof talismans",
-    "description": "A bunch of paper talismans that provide excellent protection from fire and smoke.",
-    "weight": 0,
-    "volume": 0,
-    "price": 240500,
-    "to_hit": -8,
-    "symbol": "[",
-    "color": "light_gray",
-    "covers": [ "head", "mouth", "eyes", "torso", "arm_l", "arm_r", "hand_l", "hand_r", "leg_l", "leg_r" ],
-    "coverage": 100,
-    "encumbrance": 0,
-    "warmth": 0,
-    "material": [ "mokou_paper" ],
-	"material_thickness": 5,
-	"environmental_protection": 10,
-    "flags": [ "OUTER", "VARSIZE", "STURDY", "ZERO_WEIGHT", "ALLOWS_NATURAL_ATTACKS" ]
-	},
-	{
     "id": "kaenbyou_dress",
     "type": "ARMOR",
     "category": "armor",
@@ -200,7 +179,7 @@
 	"color": "black",
 	"weight_capacity_bonus": "1 kg",
     "armor_portion_data": [
-        { "covers": [ "torso" ], "coverage": 40 }
+        { "covers": [ "torso" ], "coverage": 40, "encumbrance": [ 8, 12 ] }
 	],
     "warmth": 15,
     "material_thickness": 2,
@@ -217,13 +196,13 @@
     "price": 15000,
     "price_postapoc": 1500,
     "material": [ "lunarian_cloth" ],
-    "material_thickness": 2,
+    "material_thickness": 1,
 	"symbol": "[",
 	"looks_like": "longshirt",
     "color": "white",
 	"armor_portion_data": [
-        { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 5 ] },
-        { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 4, 4 ] }
+        { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] },
+        { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 4, 6 ] }
 	],
 	"pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "250 ml", "max_contains_weight": "1 kg", "moves": 80 } ],
     "warmth": 10,
@@ -273,7 +252,7 @@
 	"symbol": "[",
     "color": "green",
 	"armor_portion_data": [
-        { "covers": [ "torso" ], "coverage": 10, "encumbrance": [ 1, 1 ] }
+        { "covers": [ "torso" ], "coverage": 10, "encumbrance": [ 0, 1 ] }
 	],
     "flags": [ "VARSIZE", "FANCY" ]
 	},
@@ -303,18 +282,18 @@
     "type": "ARMOR",
     "category": "armor",
 	"name": "lunar skirt (LDC combat uniform)",
-    "description": "A light colored skirt.  This is worn by members of the Lunar Defense Corps.",
+    "description": "A light colored, pleated skirt.  This is worn by members of the Lunar Defense Corps.",
     "weight": "60 g",
     "volume": "225 ml",
     "price": 12000,
 	"price_postapoc": 600,
     "material": [ "lunarian_cloth" ],
-	"material_thickness": 1.5,
+	"material_thickness": 2,
     "symbol": "[",
     "looks_like": "kilt",
 	"color": "dark_gray",
     "armor_portion_data": [
-        { "covers": [ "leg_r", "leg_l" ], "coverage": 55 }
+        { "covers": [ "leg_r", "leg_l" ], "coverage": 55, "encumbrance": [ 2, 4 ] }
 	],
     "warmth": 5,
     "flags": [ "VARSIZE", "FANCY" ]
@@ -335,7 +314,7 @@
     "looks_like": "scarf",
 	"color": "dark_gray",
     "armor_portion_data": [
-        { "covers": [ "mouth" ], "coverage": 85 }
+        { "covers": [ "mouth" ], "coverage": 85, "encumbrance": [ 0, 2 ] }
 	],
     "flags": [ "OUTER", "VARSIZE", "FANCY", "STURDY" ]
 	},
@@ -376,15 +355,119 @@
 	"to_hit": 1,
     "bashing": 1,
     "material": [ "lunarian_leather" ],
-	"material_thickness": 2,
+	"material_thickness": 2.5,
     "symbol": "[",
     "looks_like": "sneakers",
 	"color": "dark_gray",
     "armor_portion_data": [
-        { "covers": [ "foot_l", "foot_r" ], "coverage": 60 }
+        { "covers": [ "foot_l", "foot_r" ], "coverage": 60, "encumbrance": [ 6, 8 ] }
 	],
     "warmth": 10,
     "flags": [ "OUTER", "VARSIZE", "FANCY" ]
+	},
+	{
+    "id": "mokou_boots",
+    "type": "ARMOR",
+    "category": "armor",
+    "name": { "str": "pair of leather boots", "str_pl": "pairs of leather boots" },
+	"copy-from": "boots_larmor",
+	"description": "Leather boots, somewhat resistant to fire made.",
+    "price": 25000,
+    "price_postapoc": 3750,
+    "material": [ "fireresist_leather" ],
+    "material_thickness": 3,
+    "armor_portion_data": [
+        { "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 16, 20 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "coverage": 10, "encumbrance": [ 8, 12 ] }
+	],
+	"warmth": 25,
+    "flags": [ "STURDY", "VARSIZE", "WATERPROOF" ]
+	},
+	{
+    "id": "mokou_hakama",
+    "type": "ARMOR",
+    "name": { "str_sp": "red hakama" },
+	"copy-from": "pants_cargo",
+	"description": "A somewhat dark red pair of baggy pants with straps.  The pants themselves date back from the Nara period in Japan.",
+    "//": "That's the specific name for Mokou's pants. According to the wiki, it's 'sashinuki hakama'.",
+	"weight": "1500 g",
+    "volume": "2000 ml",
+    "price": 50000,
+    "price_postapoc": 5000,
+    "material": [ "fireproof_cotton" ],
+	"material_thickness": 3,
+	"symbol": "[",
+    "looks_like": "pants",
+    "color": "red",
+    "pocket_data": [
+		{ "pocket_type": "CONTAINER", "max_contains_volume": "500 ml", "max_contains_weight": "2 kg", "moves": 100 },
+		{ "pocket_type": "CONTAINER", "max_contains_volume": "500 ml", "max_contains_weight": "2 kg", "moves": 100 }
+    ],
+	"armor_portion_data": [
+        { "covers": [ "leg_l", "leg_r" ], "coverage": 90, "encumbrance": [ 8, 16 ] }
+	],
+	"warmth": 20,
+    "flags": [ "FANCY", "POCKETS", "STURDY", "VARSIZE" ]
+	},
+	{
+    "id": "mokou_ribbon",
+    "type": "TOOL_ARMOR",
+    "category": "armor",
+	"name": "fire-protecting ribbon",
+	"description": "A large white ribbon made of paper, with red lines and a red outline, used to be tied to the hair.  It serves both as a hair ornament and as magical protective against fire.",
+	"weight": "100 g",
+	"volume": "400 ml",
+	"price": 10000,
+	"price_postapoc": 1000,
+	"material": [ "mokou_paper" ],
+	"material_thickness": 1,
+	"symbol": "[",
+    "color": "white",
+    "armor_portion_data": [
+		{ "covers": [ "head" ], "coverage": 0, "encumbrance": [ 0, 0 ] }
+    ],
+	"flags": [ "FANCY", "STURDY" ]
+    },
+	{
+    "id": "mokou_shirt",
+	"type": "ARMOR",
+	"category": "armor",
+	"name": { "str": "heat discolored shirt" },
+	"copy-from": "dress_shirt",
+	"description": "A white-ish shirt, repeatedly mended and burned, now lacking the sleeves.  It looks cooler this way though.  The original color is now lost to the ages.",
+    "price": 30000,
+    "price_postapoc": 1500,
+    "material": [ "fireresist_cotton" ],
+	"material_thickness": 1,
+	"color": "white",
+    "armor_portion_data": [
+		{ "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 4, 6 ] },
+		{ "covers": [ "arm_l", "arm_r" ], "coverage": 35, "encumbrance": [ 2, 4 ] }
+    ],
+    "warmth": 10,
+    "flags": [ "FANCY", "STURDY", "VARSIZE" ]
+	},
+	{
+    "id": "mokou_talisman",
+    "type": "ARMOR",
+	"category": "armor",
+    "name": "fireproof talismans",
+    "description": "A bunch of paper talismans that provide excellent protection from fire and smoke.",
+    "weight": 0,
+    "volume": 0,
+    "price": 240500,
+    "to_hit": -8,
+    "symbol": "[",
+    "color": "light_gray",
+    "material": [ "mokou_paper" ],
+	"material_thickness": 5,
+	"armor_portion_data": [ 
+		{ "covers": [ "arm_l", "arm_r", "eyes", "hand_l", "hand_r", "head", "leg_l", "leg_r" , "mouth", "torso" ], "coverage": 100, "encumbrance": [ 0, 0 ] }
+	],
+	"environmental_protection": 10,
+	"warmth": 0,
+	"flags": [ "ALLOWS_NATURAL_ATTACKS", "OUTER", "STURDY", "VARSIZE", "ZERO_WEIGHT" ],
+	"//": "I'm disabling this because I can't a way for the item to cover specific parts + protect those parts from fire + ignore physical attacks so it doesn't get destroyed by melee damage. Instead I'm going the easy way of making a fire immune mat for Mokou's pants (and ribbon) and fire resistant mats for her shirt and booots"
 	},
 	{
     "id": "remi_bowbelt",
@@ -485,7 +568,7 @@
     "looks_like": "socks",
 	"color": "light_red",
     "armor_portion_data": [
-        { "covers": [ "foot_l", "foot_r" ], "coverage": 100 }
+        { "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 0, 2 ] }
 	],
     "warmth": 10,
     "flags": [ "SKINTIGHT", "VARSIZE", "SUPER_FANCY" ]
@@ -603,7 +686,8 @@
     "price": 20000,
     "price_postapoc": 500,
     "material": [ "cotton" ],
-    "symbol": "[",
+    "material_thickness": 1,
+	"symbol": "[",
     "looks_like": "blanket",
     "color": "white",
 	"armor_portion_data": [ 
@@ -611,9 +695,8 @@
 		{ "covers": [ "arm_l", "arm_r" ], "coverage": 80, "encumbrance": [ 1, 2 ] },
 		{ "covers": [ "leg_l", "leg_r" ], "coverage": 30, "encumbrance": [ 1, 2 ] }
 	],
-    "//": "Her cape is HUGE and technically covers all her torso + arms + half of her legs, but it shouldn't work as protective armor, recheck the values specifically the coverage",
+    "//": "Her cape is HUGE and technically covers the back of her torso + arms + half of her legs, but it shouldn't work as protective armor, recheck the values specifically the coverage",
 	"warmth": 10,
-    "material_thickness": 1,
     "flags": [ "SUPER_FANCY", "OVERSIZE", "OUTER" ]
 	},
 	{
@@ -622,15 +705,18 @@
     "category": "armor",
 	"name": "green ribbon",
 	"description": "A big green ribbon used on the head.  The design looks somewhat tattered.",
-    "symbol": "[",
-    "color": "green",
-    "price": 1000,
-	"price_postapoc": 10,
-    "material": [ "cotton" ],
-	"coverage": 15,
     "weight": "300 g",
 	"volume": "700 ml",
-    "flags": [ "FANCY", "STURDY", "OUTER" ]
+    "price": 1000,
+	"price_postapoc": 10,
+	"material": [ "cotton" ],
+	"material_thickness": 1,
+	"symbol": "[",
+    "color": "green",
+    "armor_portion_data": [ 
+		{ "covers": [ "head" ], "coverage": 20, "encumbrance": [ 4, 8 ] }
+	],
+	"flags": [ "FANCY", "STURDY", "OUTER" ]
     },
 	{
     "id": "utsuho_rod",
@@ -647,12 +733,12 @@
 	"bashing": 16,
     "cutting": 0,
     "material": "steel",
-	"//2": "Maybe change it to wood, or make it hybrid",
+	"//2": "Maybe change it to moriya_wood or something",
 	"symbol": "☢",
     "color": "light_green",
 	"armor_portion_data": [ 
-		{ "covers": [ "arm_r" ], "coverage": 50, "encumbrance": [ 1, 2 ] },
-		{ "covers": [ "hand_r" ], "coverage": 100, "encumbrance": [ 1, 2 ] }
+		{ "covers": [ "arm_r" ], "coverage": 50, "encumbrance": [ 0, 2 ] },
+		{ "covers": [ "hand_r" ], "coverage": 100, "encumbrance": [ 0, 2 ] }
 	],
 	"valid_mods": [ "rod_strap" ],
 	"//3": "Should check how to add a strap so the player doesn't have to drop the rod every time Utsuho crafts something",
@@ -663,7 +749,7 @@
 	"type": "ARMOR",
 	"category": "armor",
 	"name": { "str": "Utsuho's custom shirt", "str_pl": "Utsuho's custom shirts" },
-    "//": "Name subject to change",
+    "//": "WIP",
 	"copy-from": "dress_shirt",
 	"description": "A white, short sleeved puffy shirt with black frills.  This one's modified to make room for the red eye of Yatagarasu",
 	"repairs_like": "tshirt",
@@ -674,7 +760,7 @@
 	"type": "ARMOR",
     "category": "armor",
 	"name": { "str": "hell raven skirt", "str_pl": "hell raven skirts" },
-    "//": "Name subject to change",
+    "//": "WIP",
 	"copy-from": "skirt",
 	"description": "A green skirt.  A white pattern representing nuclear decay is embroided on it.",
 	"//2": "I remember reading that the pattern corresponds to either Uranium orbitals or the pattern left by subatomic particles on a cloud chamber, but can't remember where", 
@@ -695,15 +781,18 @@
     "category": "armor",
 	"name": "hairband and ribbon",
 	"description": "A black hairband with a black off-center ribbon on it.",
-    "symbol": "[",
-    "color": "pink",
-    "price": 1000,
-	"price_postapoc": 10,
-    "material": ["plastic"],
-	"coverage": 15,
-    "weight": "200 g",
+	"weight": "200 g",
 	"volume": "400 ml",
-    "flags": [ "FANCY", "STURDY", "OUTER" ]
+	"price": 1000,
+	"price_postapoc": 10,
+    "material": [ "cotton" ],
+	"material_thickness": 1,
+	"symbol": "[",
+    "color": "pink",
+    "armor_portion_data": [ 
+		{ "covers": [ "head" ], "coverage": 15, "encumbrance": [ 0, 0 ] }
+	],
+	"flags": [ "FANCY", "STURDY", "OUTER" ]
     },
 	{
     "id": "youmu_vest",
@@ -717,15 +806,15 @@
     "price": 18000,
     "to_hit": -5,
     "material": [ "cotton" ],
-    "symbol": "[",
+	"material_thickness": 2,
+	"symbol": "[",
 	"looks_like": "vest_leather",
     "color": "pink",
 	"weight_capacity_bonus": "1 kg",
-    "covers": [ "torso" ],
-    "coverage": 85,
-    "encumbrance": 7,
-    "warmth": 15,
-    "material_thickness": 2,
+    "armor_portion_data": [ 
+		{ "covers": [ "torso" ], "coverage": 85, "encumbrance": [ 4, 8 ] }
+	],
+	"warmth": 15,
     "flags": [ "VARSIZE", "FANCY" ]
 	}
 ]
