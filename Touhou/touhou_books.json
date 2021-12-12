@@ -9,14 +9,35 @@
     "price": 0,
     "price_postapoc": 0,
     "material": [ "paper" ],
-    "symbol": "☽︎",
+    "symbol": "☽",
     "color": "green",
     "skill": "tailor",
     "max_level": 1,
     "intelligence": 8,
-    "time": "10 m",
+    "time": "1 m",
     "fun": 0,
 	"flags": [ "TRADER_AVOID" ],
 	"//": "Temporary (?) fix to the newly added recipes. Check /data/json/items/book for reference"
+	},
+	{
+    "id": "kasha_book",
+    "type": "BOOK",
+    "name": { "str": "Kasha's knowledge", "str_pl": "copies of Kasha's knowledge" },
+	"description": "A small book holding all the knowledge a Kasha should have.",
+	"weight": "100 g",
+    "volume": "400 ml",
+    "price": 0,
+    "price_postapoc": 0,
+    "material": [ "paper" ],
+    "symbol": "🔥",
+    "color": "green",
+    "skill": "tailor",
+    "max_level": 1,
+    "intelligence": 8,
+    "time": "1 m",
+    "fun": 0,
+	"flags": [ "TRADER_AVOID" ],
+	"//": "Temporary (?) fix for Kaenbyou knowing how to make and repair parts for her corpse wheelbarrow. Check /data/json/items/book for reference"
 	}
+
 ]

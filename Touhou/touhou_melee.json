@@ -1,5 +1,28 @@
 [
 	{
+    "id": "sakuya_knife",
+    "type": "TOOL",
+    "category": "weapons",
+    "name": { "str": "Sakuya's knife", "str_pl": "Sakuya's knives" },
+    "description": "A seemingly plain knife compared to her silver ones.  This one has a single edge, has no hilt, and it's relatively blunt.  It's much sharper and made from a different material though.",
+    "weight": "400 g",
+    "volume": "500 ml",
+    "longest_side": "30 cm",
+    "price": 100000,
+    "price_postapoc": 12500,
+    "to_hit": 0,
+    "bashing": 8,
+    "cutting": 25,
+    "material": [ "wool", "steel", "silver" ],
+    "symbol": ";",
+    "color": "dark_gray",
+    "min_skills": [ [ "weapon", 2 ], [ "melee", 1 ] ],
+    "techniques": [ "RAPID", "WBLOCK_2" ],
+    "qualities": [ [ "CUT", 2 ], [ "CUT_FINE", 1 ], [ "BUTCHER", 20 ] ],
+    "thrown_damage": [ { "damage_type": "bash", "amount": 8 }, { "damage_type": "stab", "amount": 8 } ],
+    "flags": [ "DURABLE_MELEE", "SHEATH_KNIFE", "STAB" ]
+	},
+	{
     "id": "tenshi_jian",
     "type": "TOOL",
     "category" : "weapons",
@@ -50,7 +73,7 @@
     "material": "gold",
 	"symbol": "/",
     "color": "light_gray",
-    "techniques": [ "WBLOCK_1"],
+    "techniques": [ "WBLOCK_2"],
 	"flags" : [ "DURABLE_MELEE", "SHEATH_SWORD", "TRADER_AVOID", "STURDY" ]
 	}
 ]

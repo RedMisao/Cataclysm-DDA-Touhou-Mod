@@ -14,7 +14,8 @@
     "symbol": "=",
     "color": "dark_gray",
     "count": 100,
-    "ammo_type": "components"
+    "ammo_type": "components",
+	"//": "These come from data/json/items/resources"
 	},
 	{
     "id": "lunarian_leather",
