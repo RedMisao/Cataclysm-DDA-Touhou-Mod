@@ -1,6 +1,6 @@
 [
 	{
-    "id": "summon_gungnir2",
+    "id": "remilia_gungnir2",
 	"type": "GENERIC",
     "category": "weapons",
 	"name": { "str": "Spear the Gungnir" },
@@ -10,8 +10,8 @@
 	"longest_side": "3000 cm", 
 	"to_hit": 2,
     "color": "red",
-    "symbol": "/",
     "material": [ "blood" ],
+	"symbol": "/",
     "techniques": [ "BRUTAL", "IMPALE", "PRECISE", "SWEEP", "WBLOCK_1" ],
     "bashing": 10,
     "cutting": 35,
@@ -19,7 +19,27 @@
 	"flags": [ "MAGIC_FOCUS", "NO_REPAIR", "NO_SALVAGE", "NONCONDUCTIVE", "ONLY_ONE", "REACH_ATTACK", "SPEAR", "UNBREAKABLE_MELEE", "TRADER_AVOID" ]
 	},
 	{
-    "id": "utsuho_sunB",
+    "id": "tenko_keystone2",
+	"type": "GENERIC",
+    "category": "weapons",
+	"name": { "str": "Keystone" },
+    "description": "WIP",
+    "weight": "921000 g",
+    "volume": "335 L",
+	"//": "Calculated from a 50 cm high, 80 cm cylinder and a cone with the same measurements, made from granite",
+	"longest_side": "100 cm", 
+	"to_hit": -4,
+    "color": "gray",
+    "material": [ "stone" ],
+	"symbol": "▼",
+	"looks_like": "f_boulder_medium",
+    "bashing": 150,
+    "cutting": 0,
+    "price": 0,
+	"flags": [ "NO_REPAIR", "NO_SALVAGE", "NONCONDUCTIVE", "TRADER_AVOID" ]
+	},
+	{
+    "id": "utsuho_sun2",
     "type": "ARMOR",
     "category": "tools",
     "name": "Black sun",

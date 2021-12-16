@@ -18,8 +18,10 @@
 		"repair": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "adhesive", 2 ] ] }
     },
 	"damage_reduction": { "all": 10 },
-	"fuel_type": "diesel",
-	"//": "The end goal is for this engine to use zombie and human corpses as fuel",
+	"fuel_type": "touhou_corpses",
+	"fuel_options": [ 
+		"touhou_corpses"
+	],
 	"backfire_threshold": 0.25,
     "backfire_freq": 20,
     "noise_factor": 15,
@@ -28,6 +30,6 @@
     "power": 95000,
     "//2": "Can't find the exact amount of watts produced by burning an average adult human body, so this value equals 81500 Kcal burned in 1 hour",
 	"energy_consumption": 190000,
-	"flags": [ "ENGINE", "E_COMBUSTION", "E_HEATER" ]
+	"flags": [ "ENGINE", "E_COMBUSTION", "E_HEATER", "TARDIS" ]
 	}
 ]

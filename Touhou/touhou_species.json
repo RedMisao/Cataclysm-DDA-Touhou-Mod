@@ -1,18 +1,24 @@
 [
     {
-    "type": "SPECIES",
-    "id": "VAMPIRE_TOUHOU",
-    "description": "a vampire",
-    "anger_triggers": [ "HURT", "FRIEND_ATTACKED" ],
-	"fear_triggers": [ "FIRE" ],
-    "//": "add WATER, RAIN, in fear, SUNLIGHT in avoid or something, not sure if FIRE stays in fear or I should move it to anger"
-    },
-    {
-    "type": "SPECIES",
     "id": "GYOKUTO_TOUHOU",
-    "description": "a Moon rabbit",
+	"type": "SPECIES",
+    "description": "a Gyokuto",
     "anger_triggers": [ "FRIEND_ATTACKED" ],
 	"fear_triggers": [ "HURT" ],
     "bleeds": "fd_blood"
+    },
+	{
+    "id": "PHANTOM_TOUHOU",
+	"type": "SPECIES",
+    "description": "a phantom",
+    "anger_triggers": [ "HURT", "STALK" ]
+    },
+	{
+	"id": "VAMPIRE_TOUHOU",
+	"type": "SPECIES",
+    "description": "a vampire",
+    "anger_triggers": [ "HURT", "FRIEND_ATTACKED" ],
+	"fear_triggers": [ "FIRE" ],
+    "//": "add WATER, RAIN, SUNLIGHT in fear, not sure if FIRE stays in fear or I should move it to anger"
     }
 ]

@@ -1,0 +1,98 @@
+[
+	{
+    "id": "touhou_corpse_ammo01",
+	"type": "ammunition_type",
+    "name": "corpse",
+    "default": "corpse_generic_male"
+	},
+	{
+    "id": "touhou_corpse_ammo02",
+	"type": "ammunition_type",
+    "name": "corpse",
+    "default": "corpse_generic_female"
+	},
+	{
+    "id": "touhou_corpse_ammo03",
+	"type": "ammunition_type",
+    "name": "corpse",
+    "default": "corpse_generic_boy"
+	},
+	{
+    "id": "touhou_corpse_ammo04",
+	"type": "ammunition_type",
+    "name": "corpse",
+    "default": "corpse_generic_girl"
+	},
+	{
+    "id": "touhou_corpse_ammo05",
+	"type": "ammunition_type",
+    "name": "corpse",
+    "default": "corpse_generic_human"
+	},
+	{
+    "id": "touhou_corpse_ammo06",
+	"type": "ammunition_type",
+    "name": "corpse",
+    "default": "corpse_bloody"
+	},
+	{
+    "id": "touhou_corpse_ammo07",
+	"type": "ammunition_type",
+    "name": "corpse",
+    "default": "corpse_painful"
+	},
+	{
+    "id": "touhou_corpse_ammo08",
+	"type": "ammunition_type",
+    "name": "corpse",
+    "default": "corpse_scorched"
+	},
+	{
+    "id": "touhou_corpse_ammo09",
+	"type": "ammunition_type",
+    "name": "corpse",
+    "default": "corpse_stabbed"
+	},
+	{
+    "id": "touhou_corpse_ammo10",
+	"type": "ammunition_type",
+    "name": "corpse",
+    "default": "corpse_gunned"
+	},
+	{
+    "id": "touhou_corpse_ammo11",
+	"type": "ammunition_type",
+    "name": "corpse",
+    "default": "corpse_halved_upper"
+	},
+	{
+    "id": "touhou_corpse_ammo12",
+	"type": "ammunition_type",
+    "name": "corpse",
+    "default": "corpse_half_beheaded"
+	},
+	{
+    "id": "touhou_corpse_ammo13",
+	"type": "ammunition_type",
+    "name": "corpse",
+    "default": "corpse_child_calm"
+	},
+	{
+    "id": "touhou_corpse_ammo14",
+	"type": "ammunition_type",
+    "name": "corpse",
+    "default": "corpse_child_gunned"
+	},
+	{
+    "id": "touhou_corpse_ammo15",
+	"type": "ammunition_type",
+    "name": "corpse",
+    "default": "corpse_oldwoman_jewelry"
+	},
+	{
+    "id": "touhou_corpse_ammo16",
+	"type": "ammunition_type",
+    "name": "corpse",
+    "default": "rmi2_corpse"
+	}
+]

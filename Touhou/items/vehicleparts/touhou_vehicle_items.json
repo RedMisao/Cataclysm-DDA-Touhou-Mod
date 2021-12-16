@@ -62,7 +62,7 @@
 	"price": 4000,
 	"price_postapoc": 100,
 	"material": [ "wood" ],
-	"symbol": "]",
+	"symbol": "|",
 	"color": "brown",
     "to_hit": -2,
 	"bashing": 16
@@ -77,7 +77,8 @@
     "volume": "6 L",
     "price": 26500,
     "price_postapoc": 1750,
-    "displacement": 450
+    "displacement": 450,
+	"flags": [ "TARDIS" ]
 	},
 	{
 	"id": "seat_corpsecart",

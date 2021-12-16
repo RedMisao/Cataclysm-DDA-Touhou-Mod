@@ -1,10 +1,10 @@
 [
 	{
-    "type": "scenario",
     "ident": "touhou_everything",
-    "name": "Touhou",
-    "points" : 0,
-    "description": "Less limits on where to start. All Touhou professions.",
+	"type": "scenario",
+    "name": "Touhou mod",
+	"description": "Possible starting locations for Touhou mod professions.",
+	"points" : 0,
     "allowed_locs": [
 		"sloc_shelter_a",
 		"sloc_shelter_b", 
@@ -28,7 +28,6 @@
 	  "sloc_forest", 
 	  "sloc_lab_escape_cells", 
 	  "sloc_lab_random",
-	  "sloc_lab_finale", 
 	  "sloc_ice_lab_stairs", 
 	  "sloc_ice_lab_finale", 
 	  "sloc_mall_loading_area", 
@@ -41,7 +40,6 @@
 	  "sloc_prison",  
 	  "sloc_campsite", 
 	  "sloc_prison_alcatraz",
-	  "sloc_mi-go_camp",
 	  "sloc_hermit_shack",
 	  "sloc_campground", 
 	  "sloc_farm_survivalist", 
@@ -78,7 +76,7 @@
 		"tenshi_hinanawi", 
 		"utsuho_reiuji", 
 		"youmu_konpaku" 
-		],
-	"start_name" : "Almost Anywhere"
+	],
+	"start_name" : "Almost anywhere"
 	}
 ]

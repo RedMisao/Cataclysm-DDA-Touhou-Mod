@@ -1,10 +1,5 @@
 [
 	{
-	"id": "aa_aa",
-	"type": "effect_type",
-	"//": "Check /data/mods/Magiclysm/effects and related for a list of further applications"
-	},
-	{
     "id": "sakuya_accelerate2",
 	"type": "effect_type",
     "name": [ "Accelerate(effect)" ],
@@ -12,7 +7,8 @@
     "apply_message": "You start moving to superhuman speeds.",
     "remove_message": "You begin moving normally again.",
 	"rating": "good",
-    "base_mods": { "speed_mod": [ 35 ] }
+    "base_mods": { "speed_mod": [ 300 ] },
+	"//": "Check /data/mods/Magiclysm/effects and related for a list of further applications"
 	},
 	{
 	"id": "sakuya_quickrest2",
@@ -32,7 +28,7 @@
     "apply_message": "Time is frozen.  Is it as if the entire world has stopped.",
     "remove_message": "Thus, time is flowing again.",
     "rating": "good",
-    "base_mods": { "speed_mod": [ 2400 ] }
+    "base_mods": { "speed_mod": [ 100 ] }
 	},
 	{
     "id": "udonge_stealth",

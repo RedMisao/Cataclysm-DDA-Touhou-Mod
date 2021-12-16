@@ -1,0 +1,10 @@
+[
+	{
+    "type": "MONSTER_FACTION",
+    "name": "touhou_summon",
+    "friendly": [ "your_followers" ],
+    "neutral": [ "bot", "fish", "small_animal" ],
+	"hate": [ "acid_ant", "ant", "bee", "fungus", "mi-go", "mutant", "stag_beetle", "triffid", "wasp", "zombie" ],
+	"//": "Default faction for touhou summons (vengeful spirits)"
+	}
+]

@@ -102,7 +102,7 @@
     "id": "KASHA_SPECIES",
     "name": "Kasha",
     "points": 0,
-    "description": "You're a feline youkai originating from (Former) Hell.",
+    "description": "You're a feline-looking youkai originating from (Former) Hell.",
     "starting_trait": false,
     "valid": false,
 	"purifiable": false,
