@@ -2,63 +2,51 @@
 	{
     "id": "utsuho_blade",
     "type": "SPELL",
-    "name": "Create fusion blade",
-    "description": "Create a high energy plasma plume from the rod.  It also works as a light source, sort of overkill.",
-    "valid_targets": [ "none" ],
-    "effect": "attack",
-	"shape": "blast",
-    "damage_type": "heat",
-	"min_damage": 1,
-    "max_damage": 1,
-	"damage_increment": 1,
-    "min_range": 1,
-    "max_range": 1,
-	"base_energy_cost": 200,
+    "name": "Fusion blade (timer)",
+    "description": "Timer effect for utsuho_blade",
     "spell_class": "NONE",
-    "difficulty": -10,
-    "max_level": 10,
-    "base_casting_time": 100,
-    "energy_source": "MANA",
-	"flags": [ "NO_HANDS", "NO_LEGS" ]
+	"effect": "attack",
+	"effect_str": "utsuho_blade2",
+	"valid_targets": [ "hostile" ],
+	"shape": "blast",
+	"min_duration": 6000,
+    "max_duration": 6000,
+	"max_level": 1,
+	"difficulty": -10,
+	"base_casting_time": 200,
+	"base_energy_cost": 100,
+	"energy_source": "MANA",
+    "flags": [ "IGNITE_FLAMMABLE", "NO_LEGS", "NO_PROJECTILE" ]
 	},
 	{
-    "type": "enchantment",
-    "id": "utsuho_blade",
+    "id": "utsuho_blade2",
+	"type": "enchantment",
     "condition": "ACTIVE",
-	"//": "values  : [ { 'value': 'light', 'add': 240 } ], should go here but LUMINATION and LIGHT are not recognized as values",
-    "hit_you_effect": [ { "id": "utsuho_plume" } ]
+	"//": " 'values': [ { 'value': 'light', 'add': 240 } ], should go here but LUMINATION and LIGHT are not recognized as values",
+    "hit_you_effect": [ { "id": "utsuho_blade3", "hit_self": false } ],
+	"has": "WORN"
 	},
 	{
-    "id": "utsuho_plume",
-    "type": "GENERIC",
-    "category": "weapons",
-    "name": "Fusion blade",
-    "description": "A blade-like fusion jet nascent from the third leg.",
-	"symbol": "/",
-    "color": "yellow",
-    "weight": "100 g",
-    "volume": "1500 ml",
-    "material": [ "sunlight" ],
-    "techniques": [ "WIDE", "SWEEP" ],
-    "flags": [
-		"FLAMING",
-		"FIRE",
-		"FIRESTARTER",
-		"MAGIC_FOCUS",
-		"NO_REPAIR",
-		"NO_SALVAGE",
-		"STURDY",
-		"TRADER_AVOID",
-		"UNARMED_WEAPON",
-		"UNBREAKABLE_MELEE"
-	],
-    "to_hit": 3,
-    "relic_data": {
-		"passive_effects": [ { 
-			"has": "WIELD", "condition": "ALWAYS", "values": [ { 
-				"value": "ITEM_DAMAGE_HEAT", "add": 60 
-			} ] 
-		} ]
-    }
+    "id": "utsuho_blade3",
+    "type": "SPELL",
+    "name": "Fusion blade (damage)",
+    "description": "On hit component for utsuho_blade",
+    "spell_class": "NONE",
+	"effect": "attack",
+    "valid_targets": [ "hostile" ],
+	"shape": "blast",
+	"damage_type": "heat",
+	"min_damage": 45,
+    "max_damage": 45,
+	"min_pierce": 44,
+	"max_pierce": 44,
+	"min_range": 1,
+    "max_range": 1,
+	"max_level": 1,
+	"difficulty": -10,
+	"base_casting_time": 200,
+	"base_energy_cost": 200,
+	"energy_source": "MANA",
+    "flags": [ "IGNITE_FLAMMABLE", "NO_LEGS", "NO_PROJECTILE" ]
 	}
 ]

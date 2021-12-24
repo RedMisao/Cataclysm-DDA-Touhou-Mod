@@ -7,7 +7,7 @@
     "location": "anywhere",
 	"symbol": "$",
     "categories": [ "operations" ],
-	"color": "dark_gray",
+	"color": "black",
 	"broken_color": "red",
 	"durability": 200,
 	"folded_volume": "1500 ml",

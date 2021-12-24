@@ -1,21 +1,23 @@
 [
 	{
-    "type": "GENERIC",
     "id": "silver_knife",
+	"type": "GENERIC",
     "category": "weapons",
-    "price": 52000,
-    "price_postapoc": 5000,
     "name": { "str": "silver knife", "str_pl": "silver knives" },
-    "symbol": ";",
-    "color": "light_gray",
-    "description": "A small double edged knife made specifically for throwing.  Has a colorful reinforced hilt made from painted wood.  The blade is made from silver but despite that, it's very sharp.",
-    "material": [ "silver" ],
-    "volume": "150 ml",
-    "weight": "350 g",
-    "to_hit": 0,
+    "description": "A small double edged knife made specifically for throwing.  Has a colorful reinforced hilt made from painted wood.  The blade is made from silver.  Despite that, it's still very sharp.",
+    "weight": "400 g",
+	"volume": "200 ml",
+    "longest_side": "20 cm",
+	"price": 52000,
+    "price_postapoc": 5200,
+	"to_hit": 0,
     "bashing": 1,
     "cutting": 8,
-    "flags": [ "STAB", "SHEATH_KNIFE" ],
-    "thrown_damage": [ { "damage_type": "stab", "amount": 16 } ]
+    "material": [ "silver" ],
+    "symbol": ";",
+    "looks_like": "throwing_knife",
+	"color": "light_gray",
+    "thrown_damage": [ { "damage_type": "stab", "amount": 16 } ],
+	"flags": [ "SHEATH_KNIFE", "STAB", "STURDY" ]
 	}
 ]
