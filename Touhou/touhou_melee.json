@@ -43,6 +43,34 @@
 	"//": "Not sure if it can be used to cool down the player"
 	},
 	{
+    "id": "tengu_sword",
+    "type": "TOOL",
+    "category": "weapons",
+    "name": { "str": "Tengu sword", "str_pl": "Tengu sword" },
+    "description": "A big, heavy and relatively thick metal sword, somewhat looking like a fang.  Very fitting for its intended users.",
+    "weight": "3000 g",
+    "volume": "2000 ml",
+    "longest_side": "140 cm",
+    "//": "Double length from tengu_shield , taken as reference",
+	"price": 150000,
+    "price_postapoc": 7500,
+	"to_hit": {
+		"grip": "weapon",
+		"length": "long",
+		"surface": "line",
+		"balance": "neutral"
+	},
+    "//2": "Should be well balanced if you have Tengu strength",
+	"bashing": 12,
+    "cutting": 28,
+    "material": [ "steel" ],
+    "//3": "Should be tengu_steel",
+	"symbol": "/",
+	"color": "light_gray",
+	"techniques": [ "BRUTAL", "SWEEP", "WBLOCK_2" ],
+    "flags": [ "DURABLE_MELEE" ]
+	},
+	{
     "id": "tenshi_jian",
     "type": "TOOL",
     "category" : "weapons",

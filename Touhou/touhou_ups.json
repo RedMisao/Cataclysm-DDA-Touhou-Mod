@@ -21,7 +21,7 @@
 		"amount": 55, 
 		"armor_penetration": 6 
 	},
-    "//": "Damage based on 7.62×54mmR because the SSiB rifle is either based on a Mossin or the Japanese type 89 that used 'type 38 chamber in 7.62×38mmR tracer' according to some post on Reddit, but then a Type 38 Arisaka used either 6.5 mm or 7.62 mm. I don't know much about guns but I'm going with the Soviets on this one.",
+    "//": "Damage based on 7.62×54mmR, the SSiB training rifle is either based on a Mossin or the Japanese type 89 that used 'type 38 chamber in 7.62×38mmR tracer' according to some post on Reddit, but then a Type 38 Arisaka used either 6.5 mm or 7.62 mm. I don't know much about guns but I'm going with the Soviets on this one.",
 	"range": 40,
 	"ammo_effects": [ "INCENDIARY", "LASER" ],
 	"dispersion": 9,

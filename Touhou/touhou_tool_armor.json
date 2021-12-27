@@ -59,5 +59,71 @@
         { "covers": [ "mouth" ], "coverage": 45, "encumbrance": [ 2, 4 ] }
 	],
 	"flags" : [ "ALLOWS_NATURAL_ATTACKS", "OUTER", "OVERSIZE", "POCKETS", "REACH_ATTACK", "REACH3", "WHIP" ]
+    },
+{
+	"id": "lunar_riot_shield",
+	"type": "TOOL_ARMOR",
+	"category" : "armor",
+	"name": { "str": "LDF riot shield", "str_pl": "LDF riot shields" },
+	"description": "A rectancular, slightly curved shield used by the riot division of the LDF.  It's lighter than it looks.",
+	"weight": "4000 g",
+	"volume": "3500 ml",
+    "longest_side": "180 cm",
+	"price": 24000,
+	"price_postapoc": 4800,
+	"to_hit": {
+		"grip": "weapon",
+		"length": "short",
+		"surface": "any",
+		"balance": "good"
+	},
+	"bashing": 16,
+	"material": [ "steel" ],
+	"//": "Add lunarian_steel or something",
+	"material_thickness" : 8,
+	"symbol": "[",
+	"color": "white",
+	"techniques": [ "BRUTAL", "WBLOCK_3" ],
+	"armor": [
+        { "covers": [ "arm_l", "hand_l" ], "coverage": 100, "encumbrance": [ 12, 20 ] },
+		{ "covers": [ "arm_r", "hand_r", "leg_l", "torso" ], "coverage": 85, "encumbrance": [ 2, 2 ] },
+		{ "covers": [ "foot_l", "foot_r", "head", "leg_r" ], "coverage": 65, "encumbrance": [ 0, 0 ] }
+	],
+	"//3": "I have no idea if this is enough to emulate a shield's coverage",
+	"flags" : [ "DURABLE_MELEE", "OUTER", "OVERSIZE" ],
+	"//2": "Don't know if this should be TOOL_ARMOR, ARMOR or WEAPON. Ideally one should shield bash with it while using it, independently of any actual weapons on the 'main hand', because good shields are used to shield bash faces"
+    },
+	{
+	"id": "tengu_shield",
+	"type": "TOOL_ARMOR",
+	"category" : "armor",
+	"name": { "str": "Tengu shield", "str_pl": "Tengu shields" },
+	"description": "A rhomboid iron shield, painted white with a red maple leaf design in the middle, with the rim reinforced with some kind of steel.  It's used by members of the Tengu patrol.",
+	"weight": "3500 g",
+	"volume": "3500 ml",
+    "longest_side": "70 cm",
+	"price": 24000,
+	"price_postapoc": 4800,
+	"to_hit": {
+		"grip": "weapon",
+		"length": "short",
+		"surface": "any",
+		"balance": "good"
+	},
+	"bashing": 16,
+	"material": [ "iron", "steel" ],
+	"//": "Add tengu_steel or something",
+	"material_thickness" : 6,
+	"symbol": "[",
+	"color": "white",
+	"techniques": [ "BRUTAL", "WBLOCK_3" ],
+	"armor": [
+        { "covers": [ "arm_l", "hand_l" ], "coverage": 100, "encumbrance": [ 8, 12 ] },
+		{ "covers": [ "arm_r", "hand_r", "leg_l", "torso" ], "coverage": 50, "encumbrance": [ 0, 0 ] },
+		{ "covers": [ "foot_l", "foot_r", "head", "leg_r" ], "coverage": 25, "encumbrance": [ 0, 0 ] }
+	],
+	"//3": "I have no idea if this is enough to emulate a shield's coverage",
+	"flags" : [ "DURABLE_MELEE", "OUTER", "OVERSIZE" ],
+	"//2": "Don't know if this should be TOOL_ARMOR, ARMOR or WEAPON. Ideally one should shield bash with it while using it, independently of any actual weapons on the 'main hand', because good shields are used to shield bash faces"
     }
 ]

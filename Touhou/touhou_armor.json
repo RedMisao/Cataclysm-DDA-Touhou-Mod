@@ -603,9 +603,9 @@
 	"symbol": "[",
     "color": "light_blue",
 	"armor": [ 
-		{ "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ], "coverage": 10, "encumbrance": [ 2, 4 ] }
+		{ "covers": [ "torso" ], "specifically_covers": [ "torso_lower" ], "coverage": 10, "encumbrance": [ 2, 4 ] }
 	],
-	"flags": [ "FANCY", "OUTER", "VARSIZE" ]
+	"flags": [ "BELTED", "FANCY", "OUTER", "VARSIZE" ]
 	},
 	{
     "id": "remi_dress",
@@ -762,9 +762,9 @@
 	"symbol": "[",
     "color": "light_blue",
 	"armor": [
-        { "covers": [ "torso" ], "coverage": 10, "specifically_covers": [ "torso_hanging_back" ], "encumbrance": [ 2, 4 ] }
+        { "covers": [ "torso" ], "coverage": 10, "specifically_covers": [ "torso_lower" ], "encumbrance": [ 2, 4 ] }
 	],
-	"flags": [ "FANCY", "OUTER", "VARSIZE" ]
+	"flags": [ "BELTED", "FANCY", "OUTER", "VARSIZE" ]
 	},
 	{
     "id": "tenshi_bowhat",
@@ -818,11 +818,11 @@
 	"warmth": 10,
 	"armor": [
 		{ "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ], "coverage": 50, "encumbrance": [ 1, 2 ] },
-		{ "covers": [ "arm_l", "arm_r" ], "coverage": 40, "encumbrance": [ 1, 2 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r", "leg_upper_l", "leg_upper_r", "leg_knee_l", "leg_knee_r" ], "coverage": 40, "encumbrance": [ 1, 2 ] }
+		{ "covers": [ "arm_l", "arm_r" ], "coverage": 35, "encumbrance": [ 1, 2 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r", "leg_upper_l", "leg_upper_r", "leg_knee_l", "leg_knee_r" ], "coverage": 35, "encumbrance": [ 1, 2 ] }
 	],
     "//": "Her cape is HUGE and technically covers the back of her torso + arms + half of her legs, but it shouldn't work as protective armor, recheck the values specifically the coverage",
-    "flags": [ "OUTER", "OVERSIZE", "SUPER_FANCY" ]
+    "flags": [ "BELTED", "ONLY_ONE", "OUTER", "OVERSIZE", "SUPER_FANCY" ]
 	},
 	{
     "id": "utsuho_ribbon",
@@ -861,6 +861,7 @@
 	"//2": "Maybe change it to moriya_wood or something",
 	"symbol": "☢",
     "color": "light_green",
+	"techniques": [ "WBLOCK_1" ],
 	"use_action": {
 		"type": "cast_spell",
 		"no_fail": true,
@@ -868,8 +869,8 @@
 		"level": 1
     },
 	"armor": [ 
-		{ "covers": [ "arm_r" ], "coverage": 50, "encumbrance": [ 0, 2 ] },
-		{ "covers": [ "hand_r" ], "coverage": 100, "encumbrance": [ 0, 2 ] }
+		{ "covers": [ "arm_r" ], "coverage": 50, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "hand_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] }
 	],
 	"valid_mods": [ "rod_strap" ],
 	"//3": "Should check how to add a strap so the player doesn't have to drop the rod every time Utsuho crafts something",

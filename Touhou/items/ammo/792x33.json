@@ -1,0 +1,73 @@
+[
+	{
+    "id": "792x33_kurz",
+    "type": "AMMO",
+    "name": { "str_sp": "7.92x33mm Kurz" },
+    "description": "7.92x33mm 'Kurz' ammunition with 34.3 gr copper head, iron core bullets and steel jacket.  Called 'intermediate rifle cartridge', it was designed to be a middle point between the 7.92x54mm Mauser and the 9mm Parabellum ammo.  Also known as 'Pistolen-Munition M43' ",
+    "weight": "17 g",
+    "volume": "54 ml",
+    "price": 120,
+    "price_postapoc": 900,
+    "material": [ "copper", "iron", "powder", "steel" ],
+    "symbol": "=",
+    "color": "dark_gray",
+    "ammo_type": "792x33",
+    "casing": "792x33_casing",
+    "count": 20,
+    "stack_size": 30,
+	"damage": { "damage_type": "bullet", "amount": 43, "armor_penetration": 4 },
+	"dispersion": 30,
+	"range": 35,
+    "recoil": 1900,
+    "effects": [ "COOKOFF", "NEVER_MISFIRES" ],
+    "flags": [ "IRREPLACEABLE_CONSUMABLE" ]
+	},
+	{
+    "id": "792x33_kurz_2",
+    "type": "AMMO",
+    "name": { "str_sp": "7.92x33mm Kurz (Prvi)" },
+	"copy-from": "792x33_kurz",
+    "description": "7.92x33mm 'Kurz' ammunition with 124 gr copper head, lead core FMJ bullets, brass jacket.  Called 'intermediate rifle cartridge', it was designed to be a middle point between the 7.92x54mm Mauser and the 9mm Parabellum ammo.  This one was produced in relatively recent times, by Prvi Partizan, Serbia.",
+    "weight": "18 g",
+    "price": 120,
+    "price_postapoc": 900,
+    "material": [ "brass", "copper", "lead", "powder" ],
+	"damage": { "damage_type": "bullet", "amount": 43, "armor_penetration": 2 },
+	"dispersion": 25,
+    "recoil": 1700
+	},
+	{
+    "id": "792x33_kurz_3",
+    "type": "AMMO",
+    "name": { "str_sp": "7.92x33mm Kurz (reloaded)" },
+	"copy-from": "792x33_kurz",
+    "description": "Reloaded 7.92x33mm 'Kurz' case, with a 52 gr steel core FMJ bullet replacing the ancient iron core version.  This increases the penetration and slightly reduces the weight, at the cost of slightly reduced damage.",
+    "weight": "17 g",
+    "material": [ "copper", "powder", "steel" ],
+	"damage": { "damage_type": "bullet", "amount": 40, "armor_penetration": 7 },
+	"proportional": { 
+		"price": 0.7, 
+		"dispersion": 1.1 
+	},
+	"recoil": 1850,
+	"//": "This should not exist in reality. It's just a 792x33_kurz but has the copper-iron bullet replaced for copper-steel custom"
+	},
+	{
+    "id": "bp_792x33_kurz_3",
+    "type": "AMMO",
+    "name": { "str_sp": "7.92x33mm Kurz (reloaded), black powder" },
+    "copy-from": "792x33_kurz_3",
+	"proportional": {
+		"price": 0.5,
+		"damage": { "damage_type": "bullet", "amount": 0.66, "armor_penetration": 0.66 },
+		"recoil": 0.66,
+		"dispersion": 1.2
+    },
+    "extend": { "effects": [ "RECYCLED", "BLACKPOWDER", "MUZZLE_SMOKE" ] },
+    "delete": { 
+		"effects": [ "NEVER_MISFIRES" ], 
+		"flags": [ "IRREPLACEABLE_CONSUMABLE" ] 
+	},
+	"//": "Again, this is just a 792x33_kurz but has the copper-iron bullet replaced for copper-steel custom, and was reloaded with black powder"
+	}
+]
