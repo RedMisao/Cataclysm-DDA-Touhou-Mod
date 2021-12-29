@@ -1,0 +1,23 @@
+[
+	{
+    "id": "bipod_idw",
+    "type": "GUNMOD",
+    "name": { "str": "IDW bipod" },
+    "description": "A bipod created for the IDW, which can be used for SMGs, and even pistols too, in case you would ever need that.",
+    "weight": "400 g",
+    "volume": "500 ml",
+    "price": 68000,
+    "price_postapoc": 500,
+    "to_hit": -1,
+    "bashing": 10,
+    "material": [ "steel" ],
+    "symbol": ":",
+    "color": "dark_gray",
+    "handling_modifier": 12,
+	"install_time": "1 m",
+	"location": "underbarrel",
+    "min_skills": [ [ "weapon", 2 ] ],
+	"mod_targets": [ "pistol", "smg" ],
+    "flags": [ "BIPOD", "SLOW_WIELD" ]
+	}
+]

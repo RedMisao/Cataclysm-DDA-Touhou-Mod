@@ -1,8 +1,8 @@
 [
 	{
-    "id": "touhou_corpses",
+    "id": "hflesh_p",
 	"type": "material",
-    "name": "corpse (fuel) (test)",
+    "name": "corpse flesh (prepared)",
     "copy-from": "hflesh",
 	"fuel_data": {
 		"energy": 10.7,

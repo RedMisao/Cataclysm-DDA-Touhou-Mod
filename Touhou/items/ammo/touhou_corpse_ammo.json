@@ -1,0 +1,35 @@
+[
+	{
+    "id": "touhou_corpse01",
+    "type": "AMMO",
+    "name": { "str_sp": "corpse (prepared)" },
+    "description": "A corpse, prepared for use in corpse reactors.",
+    "weight": "70 kg",
+    "volume": "65 L",
+    "price": 0,
+    "price_postapoc": 0,
+    "material": [ "hflesh_p" ],
+    "symbol": "💀",
+    "color": "dark_gray",
+    "ammo_type": "touhou_corpse_ammo",
+    "count": 1,
+    "phase": "solid",
+	"stack_size": 1,
+    "effects": [ "NEVER_MISFIRES", "SMOKE" ],
+    "flags": [ "IRREPLACEABLE_CONSUMABLE" ]
+	},
+	{
+    "id": "touhou_corpse02",
+    "type": "AMMO",
+	"name": { "str_sp": "small corpse (prepared)" },
+	"copy-from":  "touhou_corpse01",
+	"weight": "35 kg",
+    "volume": "30 L"
+	}
+
+
+
+
+
+
+]

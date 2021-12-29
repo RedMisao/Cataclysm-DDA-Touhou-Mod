@@ -34,6 +34,46 @@
 	"flags": [ "MAG_COMPACT" ]
 	},
 	{
+    "id": "idwmag20",
+    "type": "MAGAZINE",
+    "name": { "str": "IDW 20-round magazine" },
+	"copy-from": "tec9mag_10rd",
+	"description": "A compact 20-round magazine for the IDW, made of machined steel.",
+    "weight": "256 g",
+    "volume": "165 ml",
+    "price": 3300,
+    "price_postapoc": 100,
+    "material": [ "steel" ],
+    "symbol": "#",
+    "looks_like": "akmag10",
+	"color": "light_gray",
+    "ammo_type": [ "9mm" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "9mm": 20 } } ],
+	"flags": [ "MAG_COMPACT" ]
+	},
+	{
+    "id": "idwmag28",
+    "type": "MAGAZINE",
+    "name": { "str": "IDW 28-round magazine" },
+	"copy-from": "idwmag20",
+	"description": "A 28-round magazine for the IDW, made of machined steel.",
+    "weight": "380 g",
+    "volume": "230 ml",
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "9mm": 28 } } ],
+	"flags": [ "MAG_COMPACT" ]
+	},
+	{
+    "id": "idwmag32",
+    "type": "MAGAZINE",
+    "name": { "str": "IDW 32-round magazine" },
+	"copy-from": "idwmag20",
+	"description": "A 32-round magazine for the IDW, made of machined steel.",
+    "weight": "450 g",
+    "volume": "260 ml",
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "9mm": 32 } } ],
+	"flags": [ "MAG_COMPACT" ]
+	},
+	{
     "id": "m76mag10",
     "type": "MAGAZINE",
     "name": { "str": "M76 Zastava 10-round magazine" },

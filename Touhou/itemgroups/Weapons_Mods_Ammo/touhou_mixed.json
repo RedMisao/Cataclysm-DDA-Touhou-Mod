@@ -1,0 +1,95 @@
+[
+	{
+    "id": "touhou_ammo_9x39",
+	"type": "item_group",
+    "//": "To spawn 9x39",
+    "subtype": "collection",
+    "entries": [
+		{ "item": "9x39_sp5", "prob": 100 },
+		{ "item": "9x39_sp5", "prob": 50 }
+    ]
+	},
+	{
+    "id": "touhou_ammo_9x39_reloaded",
+	"type": "item_group",
+    "//": "To spawn reloaded 9x39",
+    "subtype": "collection",
+    "entries": [
+		{ "item": "9x39_sp5", "prob": 100 },
+		{ "item": "9x39_sp5", "prob": 100 }
+    ]
+	},
+	{
+    "id": "touhou_ammo_kurz",
+	"type": "item_group",
+    "//": "To spawn 7.92x33",
+    "subtype": "collection",
+    "entries": [
+		{ "item": "792x33_kurz", "prob": 25 },
+		{ "item": "792x33_kurz2", "prob": 100 }
+    ]
+	},
+	{
+    "id": "touhou_ammo_kurz_boxed",
+	"type": "item_group",
+    "//": "WWII era boxes containing ammo",
+    "subtype": "collection",
+	"entries": [
+		{ "distribution": [ {
+            "collection": [
+				{ "item": "792x33_kurz", "count": [ 15, 15 ] },
+				{ "item": "box_kurz", "prob": 100 }
+            ],
+            "prob": 100
+        } ]
+		}
+    ]
+	},
+	{
+    "id": "touhou_idw_gunmods",
+	"type": "item_group",
+    "//": "To spawn the IDW tactic parts simultaneously",
+    "subtype": "collection",
+	"entries": [
+		{ "item": "barrel_elongated_small2", "prob": 100 },
+		{ "item": "susat_scope", "prob": 100 },
+		{ "item": "stock_idw", "prob": 100 },
+		{ "item": "bipod_idw", "prob": 100 }
+    ]
+	},
+	{
+    "id": "touhou_idw_tactic",
+	"type": "item_group",
+    "//": "To spawn the IDW and its tactic parts simultaneously",
+    "subtype": "collection",
+	"entries": [
+		{ "item": "barrel_elongated_small2", "prob": 100 },
+		{ "item": "susat_scope", "prob": 100 },
+		{ "item": "stock_idw", "prob": 100 },
+		{ "item": "bipod_idw", "prob": 100 },
+		{ "item": "idw", "prob": 100 }
+    ]
+	},
+	{
+    "id": "touhou_sights",
+	"type": "item_group",
+    "//": "To spawn the mod's sights (rifles)",
+    "subtype": "collection",
+	"entries": [
+		{ "item": "pso1_scope", "prob": 100 },
+		{ "item": "onm76_scope", "prob": 100 },
+		{ "item": "susat_scope", "prob": 100 }
+    ]
+	},
+	{
+    "id": "touhou_rspirited",
+	"type": "item_group",
+    "//": "All items considered for reverse-spiriting away",
+    "subtype": "distribution",
+    "entries": [
+		{ "group": "touhou_ammo_kurz_boxed", "prob": 100 },
+		{ "item": "idw", "prob": 100 },
+		{ "group": "touhou_idw_gunmods", "prob": 100 }
+    ]
+	}
+]

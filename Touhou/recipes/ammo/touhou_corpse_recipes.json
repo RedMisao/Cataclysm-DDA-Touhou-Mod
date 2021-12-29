@@ -1,0 +1,53 @@
+[
+	{
+    "result": "touhou_corpse01",
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "category": "CC_AMMO",
+    "subcategory": "CSC_AMMO_RIFLE",
+    "skill_used": "fabrication",
+    "difficulty": 1,
+    "skills_required": [ "mechanics", 1 ],
+    "time": "1 s",
+    "charges": 1,
+    "reversible": false,
+    "autolearn": false,
+	"book_learn": { "kasha_book" : { "skill_level" : 1 } },
+    "components": [
+		[ [ "corpse_generic_human", 1 ] ],
+		[ [ "corpse_generic_male", 1 ] ],
+		[ [ "corpse_generic_female", 1 ] ],
+		[ [ "corpse_oldwoman_jewelry", 1 ] ],
+		[ [ "corpse_bloody", 1 ] ],
+		[ [ "corpse_painful", 1 ] ],
+		[ [ "corpse_scorched", 1 ] ],
+		[ [ "corpse_stabbed", 1 ] ],
+		[ [ "corpse_gunned", 1 ] ],
+		[ [ "corpse_half_beheaded", 1 ] ],
+		[ [ "corpse_generic_gunned", 1 ] ]
+    ]
+	},
+	{
+    "result": "touhou_corpse02",
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "category": "CC_AMMO",
+    "subcategory": "CSC_AMMO_RIFLE",
+    "skill_used": "fabrication",
+    "difficulty": 1,
+    "skills_required": [ "mechanics", 1 ],
+    "time": "1 s",
+    "charges": 1,
+    "reversible": false,
+    "autolearn": false,
+	"book_learn": { "kasha_book" : { "skill_level" : 1 } },
+    "components": [
+		[ [ "corpse_generic_boy", 1 ] ],
+		[ [ "corpse_generic_girl", 1 ] ],
+		[ [ "corpse_child_calm", 1 ] ],
+		[ [ "corpse_child_gunned", 1 ] ],
+		[ [ "corpse_halved_upper", 1 ] ],
+		[ [ "rmi2_corpse", 1 ] ]
+    ]
+	}
+]

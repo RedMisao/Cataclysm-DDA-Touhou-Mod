@@ -1,0 +1,111 @@
+[
+	{
+    "id": "gunmod_common",
+	"type": "item_group",
+    "//": "Common gunmods typically owned by citizens and found in many locations.",
+    "subtype": "distribution",
+	"entries": [
+		{ "item": "brass_catcher", "prob": 100 },
+		{ "item": "improve_sights", "prob":  60 },
+		{ "item": "muzzle_brake", "prob":  20 },
+		{ "item": "pistol_grip", "prob": 30 },
+		{ "item": "rifle_scope", "prob": 30 },
+		{ "item": "shoulder_strap", "prob": 50 },
+		{ "item": "single_sling", "prob": 50 },
+		{ "item": "butt_hook", "prob": 30 },
+		{ "item": "butt_hook", "prob": 30 },
+		{ "item": "match_trigger", "prob": 20 },
+		{ "item": "offset_sights", "prob": 40 },
+		{ "item": "cheek_pad", "prob": 25 },
+		{ "item": "rail_laser_sight", "prob": 40 },
+		{ "item": "red_dot_sight", "prob": 70 },
+		{ "item": "barrel_elongated_small", "prob": 20 },
+		{ "item": "red_dot_sight", "prob": 70 },
+		{ "item": "barrel_elongated_small2", "prob": 15 },
+		{ "item": "grip_melee", "prob": 10 }
+    ]
+	},
+	{
+    "id": "gunmod_rare",
+	"type": "item_group",
+    "//": "Less common gunmods including those only used by police/paramilitary forces.",
+    "subtype": "distribution",
+	"entries": [
+		{ "item": "adjustable_stock", "prob": 80 },
+		{ "item": "barrel_ported", "prob": 20 },
+		{ "item": "bipod", "prob": 20 },
+		{ "item": "folding_stock", "prob": 60 },
+		{ "item": "grip", "prob": 80 },
+		{ "item": "waterproof_gunmod", "prob": 40 },
+		{ "item": "gun_crossbow", "prob": 20 },
+		{ "item": "stabilizer", "prob": 10 },
+		{ "item": "laser_sight", "prob": 40 },
+		{ "item": "light_grip", "prob": 50 },
+		{ "item": "pistol_bayonet", "prob": 10 },
+		{ "item": "pistol_scope", "prob": 10 },
+		{ "item": "pistol_stock", "prob": 10 },
+		{ "item": "tail_hook_stock", "prob": 30 },
+		{ "item": "bthk_stock", "prob": 20 },
+		{ "item": "arredondo_chute", "prob": 20 },
+		{ "item": "recoil_stock", "prob": 60 },
+		{ "item": "shot_suppressor", "prob": 10 },
+		{ "item": "u_shotgun", "prob": 60 },
+		{ "item": "suppressor", "prob": 60 },
+		{ "item": "suppressor_compact", "prob": 40 },
+		{ "item": "retool_ar15_300blk", "prob": 40 },
+		{ "group": "touhou_idw_gunmods", "prob": 20 }
+	]
+	},
+	{
+    "id": "gunmod_milspec",
+	"type": "item_group",
+    "//": "Military specification gunmods found only at military sites.",
+    "items": [
+		[ "acog_scope", 100 ],
+		[ "holo_sight", 100 ],
+		[ "m203", 30 ],
+		[ "m320_mod", 10 ],
+		[ "masterkey", 30 ],
+		[ "rm121aux", 10 ],
+		[ "sword_bayonet", 10 ],
+		[ "pso1_scope", 5 ],
+		[ "onm76_scope", 5 ],
+		[ "susat_scope", 85 ]
+	]
+	},
+	{
+    "id": "sights_all",
+	"type": "item_group",
+    "//": "All aftermarket sights.",
+    "subtype": "distribution",
+	"entries": [
+		{ "item": "improve_sights", "prob": 84 },
+		{ "item": "offset_sights", "prob": 6 },
+		{ "item": "red_dot_sight", "prob": 42 },
+		{ "item": "holo_sight", "prob": 18 },
+		{ "item": "laser_sight", "prob": 15 },
+		{ "item": "rail_laser_sight", "prob": 6 },
+		{ "item": "acog_scope", "prob": 21 },
+		{ "item": "rifle_scope", "prob": 25 },
+		{ "item": "pistol_scope", "prob": 4 },
+		{"group": "touhou_sights", "prob": 15 }
+	]
+	},
+	{
+    "id": "sights_rifle",
+	"type": "item_group",
+    "//": "Aftermarket sights that are for rifles.",
+    "subtype": "distribution",
+	"entries": [
+		{ "item": "improve_sights", "prob": 84 },
+		{ "item": "red_dot_sight", "prob": 42 },
+		{ "item": "holo_sight", "prob": 18 },
+		{ "item": "laser_sight", "prob": 15 },
+		{ "item": "rail_laser_sight", "prob": 6 },
+		{ "item": "offset_sights", "prob": 6 },
+		{ "item": "acog_scope", "prob": 21 },
+		{ "item": "rifle_scope", "prob": 25 },
+		{ "group": "touhou_sights", "prob": 15 }
+	]
+	}
+]

@@ -1,9 +1,9 @@
 [
 	{
-    "id": "faction_lunar",
+    "id": "faction_ldf",
 	"type": "faction",
     "name": "Lunarian forces",
-    "description": "",
+    "description": "WIP",
 	"likes_u": 15,
     "respects_u": 15,
     "known_by_u": false,
