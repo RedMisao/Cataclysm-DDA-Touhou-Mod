@@ -436,7 +436,7 @@
     "type": "ARMOR",
     "category": "armor",
 	"name": "lunar helmet",
-	"description": "A helmet with space for a Moon Rabbit's ears to stick out of.  This is worn by members of the Lunar Defense Corps.",
+	"description": "A white helmet with space for a Moon Rabbit's ears to stick out of.  It has a black bow decorating the back side.  This is worn by members of the Lunar Defense Corps.",
     "repairs_like": "xlkevlar",
 	"weight": "1383 g",
     "volume": "1750 ml",

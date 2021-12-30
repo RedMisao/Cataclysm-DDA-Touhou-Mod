@@ -1,0 +1,37 @@
+[
+	{
+    "id": "mon_chicken",
+    "type": "MONSTER",
+    "name": { "str": "chicken" },
+    "description": "A domesticated descendant of junglefowl, it may still be the most numerous bird in the world.  Before the Cataclysm, it was raised by humans as a source of meat, eggs, and early morning wakeup calls.",
+    "volume": "4 L",
+    "weight": "3500 g",
+	"default_faction": "small_animal",
+    "bodytype": "bird",
+    "categories": [ "WILDLIFE" ],
+    "species": [ "BIRD" ],
+    "hp": 8,
+    "speed": 80,
+    "material": [ "flesh" ],
+    "symbol": "v",
+    "color": "white",
+    "aggression": -99,
+    "morale": 90,
+    "melee_skill": 1,
+    "melee_dice": 1,
+    "melee_dice_sides": 1,
+    "melee_cut": 1,
+    "dodge": 4,
+    "harvest": "chicken_harvest",
+    "fear_triggers": [ "SOUND", "PLAYER_CLOSE", "FIRE", "HURT" ],
+    "reproduction": { "baby_egg": "egg_chicken", "baby_count": 1, "baby_timer": 2 },
+    "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
+    "biosignature": { "biosig_item": "feces_bird", "biosig_timer": 3 },
+    "petfood": {
+      "food": [ "BIRDFOOD" ],
+      "feed": "The %s seems to like you!  It runs around your legs and seems friendly.",
+      "pet": "The %s runs around your leg."
+    },
+    "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "PATH_AVOID_DANGER_1", "WARM", "CANPLAY", "SWARMS" ]
+	}
+]

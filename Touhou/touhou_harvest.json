@@ -1,0 +1,21 @@
+[
+	{
+    "id": "chicken_harvest",
+    "type": "harvest",
+    "entries": [
+      { "drop": "chicken_meat", "type": "flesh", "mass_ratio": 0.4 },
+      { "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
+      { "drop": "feather", "type": "skin", "mass_ratio": 0.01 },
+      { "drop": "down_feather", "type": "skin", "mass_ratio": 0.005 }
+    ]
+	},
+	{
+    "id": "lamprey_harvest",
+    "type": "harvest",
+    "entries": [
+		{ "drop": "lamprey_meat", "type": "flesh", "mass_ratio": 0.5 },
+		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
+		{ "drop": "meat_scrap", "type": "flesh", "mass_ratio": 0.1 }
+    ]
+	}
+]

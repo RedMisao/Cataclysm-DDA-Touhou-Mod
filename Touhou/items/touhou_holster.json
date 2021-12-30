@@ -1,0 +1,152 @@
+[
+	{
+    "id": "lunatic_holster",
+    "type": "ARMOR",
+    "name": "lunatic holster",
+    "description": "A customized holster worn on the leg for holding any small gun. Activate to holster/draw a gun.",
+    "weight": "300 g",
+    "volume": "1500 ml",
+    "price": 9000,
+	"price_postapoc": 1800,
+    "material": "lunarian_leather",
+    "material_thickness": 2,
+	"symbol": "[",
+	"looks_like": "sheath",
+    "color": "light_gray",
+    "pocket_data": [ {
+        "pocket_type": "CONTAINER",
+        "max_contains_weight": "1500 g",
+		"max_contains_volume": "1200 ml",
+        "min_item_volume": "400 ml",
+        "max_item_length": "25 cm",
+		"holster": true,
+        "moves": 35
+	} ],
+    "use_action": { "type": "holster" },
+	"armor": [
+        { "covers": [ "leg_r" ], "specifically_covers": [ "leg_upper_r" ], "coverage": 5, "encumbrance": [ 4, 6 ] }
+	],
+    "//": " LEG_EITHER seems deprecated ",
+	"flags": [ "BELTED", "OVERSIZE" ]
+	},
+	{
+    "id": "knife_holster_leg_r",
+    "type": "ARMOR",
+    "name": "knife holster (right leg)",
+    "description": "A black leather holster designed to hold several knives.  It's more safe than it looks.",
+    "weight": "300 g",
+    "volume": "1000 ml",
+    "price": 1000,
+	"price_postapoc": 200,
+    "material": "leather",
+    "material_thickness": 2,
+	"symbol": "[",
+	"looks_like": "sheath",
+    "color": "black",
+    "pocket_data": [ {
+        "pocket_type": "CONTAINER",
+        "max_contains_weight": "600 g",
+		"max_contains_volume": "400 ml",
+        "max_item_length": "25 cm",
+		"holster": true,
+        "moves": 25
+	},
+	{
+        "pocket_type": "CONTAINER",
+        "max_contains_weight": "600 g",
+		"max_contains_volume": "400 ml",
+        "max_item_length": "25 cm",
+		"holster": true,
+        "moves": 25
+	},	
+	{
+        "pocket_type": "CONTAINER",
+        "max_contains_weight": "600 g",
+		"max_contains_volume": "400 ml",
+        "max_item_length": "25 cm",
+		"holster": true,
+        "moves": 25
+	},
+	{
+        "pocket_type": "CONTAINER",
+        "max_contains_weight": "600 g",
+		"max_contains_volume": "400 ml",
+        "max_item_length": "25 cm",
+		"holster": true,
+        "moves": 25
+	},
+	{
+        "pocket_type": "CONTAINER",
+        "max_contains_weight": "600 g",
+		"max_contains_volume": "400 ml",
+        "max_item_length": "25 cm",
+		"holster": true,
+        "moves": 25
+	} ],
+    "use_action": { "type": "holster" },
+	"armor": [
+        { "covers": [ "leg_r" ], "specifically_covers": [ "leg_upper_r" ], "coverage": 5, "encumbrance": [ 2, 12 ] }
+	],
+	"flags": [ "BELTED", "OVERSIZE" ]
+	},
+	{
+    "id": "knife_holster_leg_l",
+    "type": "ARMOR",
+    "name": "knife holster (left leg)",
+    "description": "A black leather holster designed to hold several knives.  It's more safe than it looks.",
+    "weight": "300 g",
+    "volume": "1000 ml",
+    "price": 1000,
+	"price_postapoc": 200,
+    "material": "leather",
+    "material_thickness": 2,
+	"symbol": "[",
+	"looks_like": "sheath",
+    "color": "black",
+    "pocket_data": [ {
+        "pocket_type": "CONTAINER",
+        "max_contains_weight": "600 g",
+		"max_contains_volume": "400 ml",
+        "max_item_length": "25 cm",
+		"holster": true,
+        "moves": 25
+	},
+	{
+        "pocket_type": "CONTAINER",
+        "max_contains_weight": "600 g",
+		"max_contains_volume": "400 ml",
+        "max_item_length": "25 cm",
+		"holster": true,
+        "moves": 25
+	},	
+	{
+        "pocket_type": "CONTAINER",
+        "max_contains_weight": "600 g",
+		"max_contains_volume": "400 ml",
+        "max_item_length": "25 cm",
+		"holster": true,
+        "moves": 25
+	},
+	{
+        "pocket_type": "CONTAINER",
+        "max_contains_weight": "600 g",
+		"max_contains_volume": "400 ml",
+        "max_item_length": "25 cm",
+		"holster": true,
+        "moves": 25
+	},
+	{
+        "pocket_type": "CONTAINER",
+        "max_contains_weight": "600 g",
+		"max_contains_volume": "400 ml",
+        "max_item_length": "25 cm",
+		"holster": true,
+        "moves": 25
+	} ],
+    "use_action": { "type": "holster" },
+	"armor": [
+        { "covers": [ "leg_l" ], "specifically_covers": [ "leg_upper_l" ], "coverage": 5, "encumbrance": [ 2, 12 ] }
+	],
+	"flags": [ "BELTED", "OVERSIZE" ]
+	}
+]
