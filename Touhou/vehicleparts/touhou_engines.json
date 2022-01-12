@@ -18,13 +18,8 @@
 		"repair": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "adhesive", 2 ] ] }
     },
 	"damage_reduction": { "all": 10 },
-<<<<<<< Updated upstream
-	"fuel_type": "diesel",
-	"//": "The end goal is for this engine to use zombie and human corpses as fuel",
-=======
 	"fuel_type": "touhou_corpse_medium",
 	"fuel_options": [ "touhou_corpse_medium", "touhou_corpse_small" ],
->>>>>>> Stashed changes
 	"backfire_threshold": 0.25,
     "backfire_freq": 20,
     "noise_factor": 15,

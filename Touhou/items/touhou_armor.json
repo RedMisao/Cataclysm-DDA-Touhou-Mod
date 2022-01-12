@@ -14,11 +14,50 @@
     "symbol": "[",
     "looks_like": "leg_warmers",
 	"color": "white",
-    "armor_portion_data": [
-        { "covers": [ "leg_r", "leg_l" ], "coverage": 35, "encumbrance": [ 2, 4 ] }
-		],
     "warmth": 5,
+	"armor": [
+        { "covers": [ "leg_r", "leg_l" ], "coverage": 35, "encumbrance": [ 2, 4 ] }
+	],
     "flags": [ "FANCY" ]
+	},
+	{
+    "id": "ribbon_black",
+    "type": "TOOL_ARMOR",
+	"name": "black ribbon",
+	"description": "A small black ribbon, used to tie your hair.",
+    "repairs_like": "tie_bow",
+	"weight": "150 g",
+	"volume": "200 ml",
+	"price": 1000,
+	"price_postapoc": 10,
+	"symbol": "[",
+    "color": "black",
+    "material": [ "cotton" ],
+	"armor": [
+        { "covers": [ "head" ], "coverage": 0, "encumbrance": [ 0, 0 ] }
+	],
+    "flags": [ "FANCY" ]
+    },
+	{
+    "id": "ribbon_neck",
+    "type": "ARMOR",
+    "category": "armor",
+	"name": { "str": "neck ribbon", "str_pl": "neck ribbons" },
+	"copy-from": "tie_necktie",
+	"description": "A black ribbon tied in a bow, used as substitute for a tie.",
+	"repairs_like": "tie_necktie",
+	"weight": "400 g",
+    "volume": "600 ml",
+	"price": 1000,
+	"price_postapoc": 10,
+    "material": [ "cotton" ],
+    "material_thickness": 1,
+	"symbol": "[",
+    "color": "black",
+    "armor": [
+        { "covers": [ "torso" ], "coverage": 5, "encumbrance": [ 0, 0 ] }
+	],
+	"flags": [ "FANCY", "VARSIZE" ]
 	},
 	{
     "id": "socks_long",
@@ -30,33 +69,105 @@
     "price": 2000,
     "price_postapoc": 500,
     "material": [ "cotton" ],
-    "symbol": "[",
+    "material_thickness": 0.2,
+	"symbol": "[",
     "looks_like": "socks_wool",
     "color": "black",
-	"armor_portion_data": [ 
+    "warmth": 8,
+	"armor": [ 
 		{ "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 1, 2 ] },
 		{ "covers": [ "leg_l", "leg_r" ], "coverage": 30, "encumbrance": [ 1, 2 ] }
 	],
-    "warmth": 8,
-    "material_thickness": 0.2,
-    "flags": [ "VARSIZE", "SKINTIGHT" ]
+    "flags": [ "SKINTIGHT", "VARSIZE" ]
 	},
 	{
-    "id": "ribbon_black",
-    "type": "TOOL_ARMOR",
-	"name": "black ribbon",
-	"description": "A small black ribbon, used to tie your hair.",
-    "repairs_like": "tie_bow",
+    "id": "tengu_geta",
+    "type": "ARMOR",
+    "category": "armor",
+	"name": "Tengu geta",
+    "copy-from": "geta",
+	"description": "A pair of red Tengu geta.  These are the real deal however, and they look like shoes with a long underside teeth.",
+    "repairs_like": "geta",
+	"weight": "660 g",
+    "volume": "1000 ml",
+    "price": 13000,
+	"price_postapoc": 650,
+	"material": [ "leather", "wood" ],
+	"material_thickness": 2,
 	"symbol": "[",
-    "color": "black",
-	"price": 1000,
-	"price_postapoc": 10,
-    "material": [ "cotton" ],
-	"coverage": 1,
-    "weight": "150 g",
-	"volume": "200 ml",
-    "flags": [ "FANCY" ]
+    "looks_like": "dress_shoes",
+	"color": "red",
+    "warmth": 10,
+	"armor": [
+        { "covers": [ "foot_l", "foot_r" ], "coverage": 65, "encumbrance": 10 }
+	],
+    "flags": [ "FANCY", "VARSIZE", "WATERPROOF" ]
+	},
+	{
+    "id": "tengu_hat",
+    "type": "TOOL_ARMOR",
+    "category": "armor",
+	"name": "tokin",
+	"description": "A small, red polyhedric box-like hat.  It's useful for drinking too.",
+	"weight": "200 g",
+	"volume": "350 ml",
+	"price": 10000,
+	"price_postapoc": 100,
+    "material": [ "wood" ],
+	"material_thickness": 2,
+	"symbol": "[",
+    "color": "red",
+    "warmth": 1,
+	"armor": [ 
+		{ "covers": [ "head" ], "coverage": 5, "encumbrance": [ 0, 0 ] }
+	],
+	"flags": [ "FANCY", "OUTER", "STURDY" ]
     },
+	{
+    "id": "aya_shirt",
+    "type": "ARMOR",
+    "category": "armor",
+	"name": "Aya's shirt",
+	"description": "A white button-up shirt with short, puffy sleeves.  There's black laces at the sleeves and another crossing it in the middle.  The collars and the left side of the button line have a a special mapple-leaf design.",
+	"weight": "250 g",
+    "volume": "750 ml",
+    "price": 15000,
+    "price_postapoc": 1500,
+    "material": [ "cotton" ],
+    "material_thickness": 1,
+	"symbol": "[",
+	"looks_like": "dress_shirt",
+    "color": "white",
+    "warmth": 10,
+	"pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "300 ml", "max_contains_weight": "500 g", "moves": 80 } ],
+	"armor": [
+        { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] },
+        { "covers": [ "arm_l", "arm_r" ], "coverage": 10, "encumbrance": [ 2, 4 ] }
+	],
+    "flags": [ "FANCY", "STURDY", "VARSIZE" ]
+	},
+	{
+    "id": "aya_skirt",
+    "type": "ARMOR",
+    "name": { "str": "Aya's skirt" },
+	"description": "A cotton skirt with frills at the end that goes just above the knees.  There's a special mapple-leaf design at the front right side.",
+    "repairs_like": "jeans",
+	"weight": "250 g",
+    "volume": "300 ml",
+    "price": 6500,
+    "price_postapoc": 50,
+    "material": [ "cotton" ],
+    "material_thickness": 1,
+	"symbol": "[",
+    "looks_like": "kilt",
+    "color": "black",
+    "warmth": 12,
+	"pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "250 ml", "max_contains_weight": "500 g", "moves": 80 } ],
+	"armor": [
+		{ "covers": [ "leg_l", "leg_r" ], "coverage": 45, "encumbrance": [ 2, 4 ] }
+    ],
+	"flags": [ "VARSIZE" ]
+	},
 	{
     "id": "iku_dress_shirt",
 	"type": "ARMOR",
@@ -65,7 +176,7 @@
 	"copy-from": "dress_shirt",
 	"description": "A white and red shirt with frills and long sleeves.  Looks fancy!",
 	"repairs_like": "tshirt",
-    "flags": [ "VARSIZE", "FANCY" ]
+    "flags": [ "FANCY", "VARSIZE" ]
 	},
 	{
     "id": "iku_fedora",
@@ -77,19 +188,18 @@
 	},
 	"copy-from": "fedora",
     "description": "A fedora decorated with a red bow and two long ribbons extending out.",
-	"flags": [ "VARSIZE", "FANCY", "OUTER" ]
+	"flags": [ "FANCY", "OUTER", "VARSIZE" ]
 	},
 	{
     "id": "iku_skirt",
     "type": "ARMOR",
     "category": "armor",
-	"name": {
-	"str": "long skirt",
-	"str_pl": "long skirts"
-	},
+	"name": { "str": "long skirt", "str_pl": "long skirts" },
     "copy-from": "skirt",
 	"description": "A long, dark blue almost black skirt.",
-    "coverage": 70
+	"armor": [
+		{ "covers": [ "leg_l", "leg_r" ], "coverage": 70, "encumbrance": [ 6, 10 ] }
+    ]
 	},
 	{
     "id": "kaenbyou_dress",
@@ -107,19 +217,14 @@
 	"symbol": "[",
     "looks_like": "dress",
 	"color": "green",
-<<<<<<< Updated upstream:Touhou/touhou_armor.json
-    "armor_portion_data": [
-=======
     "warmth": 20,
 	"pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "450 ml", "max_contains_weight": "900 g", "moves": 120 } ],
 	"armor": [
->>>>>>> Stashed changes:Touhou/items/touhou_armor.json
         { "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 4, 8 ] },
         { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 4, 8 ] },
 		{ "covers": [ "leg_l", "leg_r" ], "coverage": 50, "encumbrance": [ 4, 8 ] }
 	],
-    "warmth": 20,
-	"flags": [ "VARSIZE", "FANCY", "STURDY" ]
+	"flags": [ "FANCY", "STURDY", "VARSIZE" ]
 	},
 	{
     "id": "kaenbyou_leg_lace",
@@ -139,11 +244,11 @@
     "looks_like": "leg_warmers",
     "//2": "synonymous: leggings, so",
 	"color": "black",
-	"armor_portion_data": [
+    "warmth": 1,
+	"armor": [
 		{ "covers": [ "leg_l" ], "coverage": 1, "encumbrance": [ 1, 2 ] }
 	],
-    "warmth": 1,
-	"flags": [ "VARSIZE", "FANCY", "STURDY", "SKINTIGHT" ],
+	"flags": [ "FANCY", "SKINTIGHT", "STURDY", "VARSIZE" ],
 	"//3": "This item maybe needs something else to it"
 	},
 	{
@@ -162,11 +267,11 @@
     "symbol": "[",
     "looks_like": "dress_shoes",
 	"color": "black",
-	"armor_portion_data": [
-        { "covers": [ "foot_l", "foot_r" ], "coverage": 75 }
-	],
     "warmth": 10,
-    "flags": [ "VARSIZE", "FANCY" ]
+	"armor": [
+        { "covers": [ "foot_l", "foot_r" ], "coverage": 50 }
+	],
+    "flags": [ "FANCY", "VARSIZE" ]
 	},
 	{
     "id": "kaenbyou_vest",
@@ -180,16 +285,16 @@
     "price": 16000,
 	"price_postapoc": 4000,
 	"material": [ "leather" ],
-    "symbol": "[",
+    "material_thickness": 2,
+	"symbol": "[",
 	"looks_like": "vest_leather",
 	"color": "black",
 	"weight_capacity_bonus": "1 kg",
-    "armor_portion_data": [
+    "warmth": 15,
+	"armor": [
         { "covers": [ "torso" ], "coverage": 40, "encumbrance": [ 8, 12 ] }
 	],
-    "warmth": 15,
-    "material_thickness": 2,
-    "flags": [ "VARSIZE", "FANCY" ]
+    "flags": [ "FANCY", "VARSIZE" ]
 	},
 	{
     "id": "lunar_dress_shirt",
@@ -206,19 +311,13 @@
 	"symbol": "[",
 	"looks_like": "longshirt",
     "color": "white",
-<<<<<<< Updated upstream:Touhou/touhou_armor.json
-	"armor_portion_data": [
-=======
     "warmth": 10,
 	"pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "400 ml", "max_contains_weight": "800 g", "moves": 80 } ],
 	"armor": [
->>>>>>> Stashed changes:Touhou/items/touhou_armor.json
         { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] },
         { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 4, 6 ] }
 	],
-	"pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "250 ml", "max_contains_weight": "1 kg", "moves": 80 } ],
-    "warmth": 10,
-    "flags": [ "VARSIZE", "FANCY", "WATERPROOF", "STURDY" ]
+    "flags": [ "FANCY", "STURDY", "VARSIZE" ]
 	},
 	{
     "id": "lunar_suit",
@@ -236,18 +335,18 @@
 	"symbol": "[",
     "looks_like": "blazer",
 	"color": "light_gray",
-    "armor_portion_data": [
-        { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 8, 12 ] },
-        { "covers": [ "arm_l", "arm_r" ], "coverage": 95, "encumbrance": [ 8, 12 ] }
-	],
+    "environmental_protection": 2,
+	"warmth": 20,
+    "weight_capacity_bonus": "1 kg",
 	"pocket_data": [
         { "pocket_type": "CONTAINER", "max_contains_volume": "500 ml", "max_contains_weight": "1 kg", "moves": 80 },
         { "pocket_type": "CONTAINER", "max_contains_volume": "500 ml", "max_contains_weight": "1 kg", "moves": 80 }
     ],
-    "weight_capacity_bonus": "1 kg",
-    "warmth": 20,
-    "environmental_protection": 2,
-	"flags": [ "VARSIZE", "FANCY", "POCKETS", "STURDY" ]
+	"armor": [
+        { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 8, 12 ] },
+        { "covers": [ "arm_l", "arm_r" ], "coverage": 95, "encumbrance": [ 8, 12 ] }
+	],
+	"flags": [ "FANCY", "POCKETS", "STURDY", "VARSIZE", "WATERPROOF" ]
 	},
 	{
     "id": "lunar_tie",
@@ -263,18 +362,18 @@
 	"material_thickness": 1,
 	"symbol": "[",
     "color": "green",
-	"armor_portion_data": [
-        { "covers": [ "torso" ], "coverage": 10, "encumbrance": [ 0, 1 ] }
+	"armor": [
+        { "covers": [ "torso" ], "specifically_covers": [ "torso_upper" ], "coverage": 8, "encumbrance": [ 0, 1 ] }
 	],
-    "flags": [ "VARSIZE", "FANCY" ]
+    "flags": [ "FANCY", "VARSIZE" ]
 	},
 	{
-    "id": "lunar_stockings",
+    "id": "lunar_kneesocks",
     "type": "ARMOR",
     "category": "armor",
-	"name": "stockings (LDC combat uniform)",
-    "description": "Long, black socks that reach above the knees.  These are worn by members of the Lunar Defense Corps.",
-    "weight": "65 g",
+	"name": "kneesocks (LDC combat uniform)",
+    "description": "Long, black socks that reach above the knees.  There's a crescent printed on the left side of the left sock.  These are worn by members of the Lunar Defense Corps.",
+    "weight": "100 g",
     "volume": "200 ml",
     "price": 5000,
 	"price_postapoc": 2500,
@@ -283,15 +382,13 @@
     "symbol": "[",
     "looks_like": "leg_warmers",
 	"color": "dark_gray",
-    "armor_portion_data": [
-        { "covers": [ "foot_l", "foot_r", "leg_r", "leg_l" ], "coverage": 70, "encumbrance": [ 4, 5 ] }
-	],
-<<<<<<< Updated upstream:Touhou/touhou_armor.json
     "warmth": 10,
-    "flags": [ "FANCY", "SKINTIGHT" ]
-=======
+	"armor": [
+        { "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_lower_l", "leg_lower_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_knee_l", "leg_knee_r" ], "coverage": 20, "encumbrance": [ 2, 4 ] }
+	],
     "flags": [ "FANCY", "SKINTIGHT", "STURDY" ]
->>>>>>> Stashed changes:Touhou/items/touhou_armor.json
 	},
 	{
     "id": "lunar_skirt",
@@ -308,11 +405,12 @@
     "symbol": "[",
     "looks_like": "kilt",
 	"color": "dark_gray",
-    "armor_portion_data": [
-        { "covers": [ "leg_r", "leg_l" ], "coverage": 55, "encumbrance": [ 2, 4 ] }
-	],
     "warmth": 5,
-    "flags": [ "VARSIZE", "FANCY" ]
+	"armor": [
+        { "covers": [ "leg_r", "leg_l" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
+        { "covers": [ "leg_r", "leg_l" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 60, "encumbrance": [ 2, 4 ] }
+	],
+    "flags": [ "FANCY", "VARSIZE" ]
 	},
     {
     "id": "lunar_veil_deactivated",
@@ -329,17 +427,17 @@
     "symbol": "[",
     "looks_like": "scarf",
 	"color": "dark_gray",
-    "armor_portion_data": [
+    "armor": [
         { "covers": [ "mouth" ], "coverage": 85, "encumbrance": [ 0, 2 ] }
 	],
-    "flags": [ "OUTER", "VARSIZE", "FANCY", "STURDY" ]
+    "flags": [ "FANCY", "OUTER", "STURDY", "VARSIZE" ]
 	},
 	{
     "id": "lunar_helmet",
     "type": "ARMOR",
     "category": "armor",
 	"name": "lunar helmet",
-	"description": "A helmet with space for a Moon Rabbit's ears to stick out of.  This is worn by members of the Lunar Defense Corps.",
+	"description": "A white helmet with space for a Moon Rabbit's ears to stick out of.  It has a black bow decorating the back side.  This is worn by members of the Lunar Defense Corps.",
     "repairs_like": "xlkevlar",
 	"weight": "1383 g",
     "volume": "1750 ml",
@@ -352,18 +450,11 @@
 	"symbol": "[",
 	"looks_like": "hat_hard",
     "color": "white",
-    "covers": [ "head" ],
-    "coverage": 80,
-    "encumbrance": 20,
     "warmth": 15,
-<<<<<<< Updated upstream:Touhou/touhou_armor.json
-    "flags": [ "OUTER", "VARSIZE", "WATERPROOF", "STURDY" ]
-=======
     "armor": [
         { "covers": [ "head" ], "coverage": 80, "encumbrance": [ 18, 24 ] }
 	],
 	"flags": [ "OUTER", "VARSIZE", "WATERPROOF" ]
->>>>>>> Stashed changes:Touhou/items/touhou_armor.json
 	},
 	{
     "id": "lunar_dress_shoes",
@@ -382,11 +473,11 @@
     "symbol": "[",
     "looks_like": "sneakers",
 	"color": "dark_gray",
-    "armor_portion_data": [
+    "warmth": 10,
+	"armor": [
         { "covers": [ "foot_l", "foot_r" ], "coverage": 60, "encumbrance": [ 6, 8 ] }
 	],
-    "warmth": 10,
-    "flags": [ "OUTER", "VARSIZE", "FANCY" ]
+    "flags": [ "FANCY", "OUTER", "VARSIZE" ]
 	},
 	{
     "id": "mokou_boots",
@@ -399,11 +490,11 @@
     "price_postapoc": 3750,
     "material": [ "fireresist_leather" ],
     "material_thickness": 3,
-    "armor_portion_data": [
-        { "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 16, 20 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "coverage": 10, "encumbrance": [ 8, 12 ] }
-	],
 	"warmth": 25,
+	"armor": [
+        { "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 16, 20 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_lower_l" , "leg_lower_r" ], "coverage": 10, "encumbrance": [ 8, 12 ] }
+	],
     "flags": [ "STURDY", "VARSIZE", "WATERPROOF" ]
 	},
 	{
@@ -422,14 +513,14 @@
 	"symbol": "[",
     "looks_like": "pants",
     "color": "red",
-    "pocket_data": [
+	"warmth": 20,
+	"pocket_data": [
 		{ "pocket_type": "CONTAINER", "max_contains_volume": "500 ml", "max_contains_weight": "2 kg", "moves": 100 },
 		{ "pocket_type": "CONTAINER", "max_contains_volume": "500 ml", "max_contains_weight": "2 kg", "moves": 100 }
     ],
-	"armor_portion_data": [
+	"armor": [
         { "covers": [ "leg_l", "leg_r" ], "coverage": 90, "encumbrance": [ 8, 16 ] }
 	],
-	"warmth": 20,
     "flags": [ "FANCY", "POCKETS", "STURDY", "VARSIZE" ]
 	},
 	{
@@ -446,7 +537,7 @@
 	"material_thickness": 1,
 	"symbol": "[",
     "color": "white",
-    "armor_portion_data": [
+    "armor": [
 		{ "covers": [ "head" ], "coverage": 0, "encumbrance": [ 0, 0 ] }
     ],
 	"flags": [ "FANCY", "STURDY" ]
@@ -456,18 +547,22 @@
 	"type": "ARMOR",
 	"category": "armor",
 	"name": { "str": "heat discolored shirt" },
-	"copy-from": "dress_shirt",
 	"description": "A white-ish shirt, repeatedly mended and burned, now lacking the sleeves.  It looks cooler this way though.  The original color is now lost to the ages.",
-    "price": 30000,
+    "repairs_like": "tshirt",
+	"weight": "250 g",
+    "volume": "750 ml",
+	"price": 30000,
     "price_postapoc": 1500,
     "material": [ "fireresist_cotton" ],
 	"material_thickness": 1,
+	"symbol": "[",
+    "looks_like": "tshirt",
 	"color": "white",
-    "armor_portion_data": [
+    "warmth": 10,
+	"armor": [
 		{ "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 4, 6 ] },
 		{ "covers": [ "arm_l", "arm_r" ], "coverage": 35, "encumbrance": [ 2, 4 ] }
     ],
-    "warmth": 10,
     "flags": [ "FANCY", "STURDY", "VARSIZE" ]
 	},
 	{
@@ -480,15 +575,15 @@
     "volume": 0,
     "price": 240500,
     "to_hit": -8,
-    "symbol": "[",
-    "color": "light_gray",
     "material": [ "mokou_paper" ],
 	"material_thickness": 5,
-	"armor_portion_data": [ 
+    "symbol": "[",
+    "color": "light_gray",
+	"warmth": 0,
+	"armor": [ 
 		{ "covers": [ "arm_l", "arm_r", "eyes", "hand_l", "hand_r", "head", "leg_l", "leg_r" , "mouth", "torso" ], "coverage": 100, "encumbrance": [ 0, 0 ] }
 	],
 	"environmental_protection": 10,
-	"warmth": 0,
 	"flags": [ "ALLOWS_NATURAL_ATTACKS", "OUTER", "STURDY", "VARSIZE", "ZERO_WEIGHT" ],
 	"//": "I'm disabling this because I can't a way for the item to cover specific parts + protect those parts from fire + ignore physical attacks so it doesn't get destroyed by melee damage. Instead I'm going the easy way of making a fire immune mat for Mokou's pants (and ribbon) and fire resistant mats for her shirt and booots"
 	},
@@ -505,12 +600,13 @@
     "price": 18000,
     "price_postapoc": 600,
     "material": [ "cotton" ],
-    "symbol": "[",
-    "color": "light_blue",
-    "covers": [ "torso" ],
-    "coverage": 10,
     "material_thickness": 1,
-	"flags": [ "FANCY", "VARSIZE", "OUTER" ]
+	"symbol": "[",
+    "color": "light_blue",
+	"armor": [ 
+		{ "covers": [ "torso" ], "specifically_covers": [ "torso_lower" ], "coverage": 10, "encumbrance": [ 2, 4 ] }
+	],
+	"flags": [ "BELTED", "FANCY", "OUTER", "VARSIZE" ]
 	},
 	{
     "id": "remi_dress",
@@ -529,13 +625,13 @@
 	"symbol": "[",
     "looks_like": "gown",
 	"color": "light_red",
-    "armor_portion_data": [
-        { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 8 ] },
-        { "covers": [ "arm_l", "arm_r" ], "coverage": 10, "encumbrance": [ 4, 8 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "coverage": 75, "encumbrance": [ 4, 8 ] }
-	],
     "warmth": 10,
-	"flags": [ "VARSIZE", "SUPER_FANCY", "STURDY" ]
+	"armor": [
+        { "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 4, 8 ] },
+        { "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_elbow_l", "arm_elbow_r", "arm_upper_l", "arm_upper_r"], "coverage": 10, "encumbrance": [ 4, 8 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r", "leg_upper_l", "leg_upper_r", "leg_knee_l", "leg_knee_r" ], "coverage": 75, "encumbrance": [ 4, 8 ] }
+	],
+	"flags": [ "STURDY", "SUPER_FANCY", "VARSIZE" ]
 	},
 	{
     "id": "remi_hat",
@@ -543,15 +639,18 @@
     "category": "armor",
 	"name": "Remilia's mobcap",
 	"description": "A pinkish mobcap with scarlet lace, featuring an off-centered scarlet ribbon with a white stripe.",
-    "symbol": "[",
-    "color": "light_red",
+    "weight": "200 g",
+	"volume": "400 ml",
     "price": 1000,
 	"price_postapoc": 10,
     "material": ["plastic"],
-	"coverage": 10,
-    "weight": "200 g",
-	"volume": "400 ml",
-    "flags": [ "FANCY", "STURDY", "OUTER" ]
+	"symbol": "[",
+    "color": "light_red",
+	"warmth": 5,
+	"armor": [
+        { "covers": [ "head" ], "coverage": 10, "encumbrance": [ 2, 6 ] }
+	],
+	"flags": [ "FANCY", "OUTER", "STURDY" ]
     },
 	{
     "id": "remi_shoes",
@@ -569,11 +668,11 @@
     "symbol": "[",
     "looks_like": "dress_shoes",
 	"color": "light_red",
-    "armor_portion_data": [
-        { "covers": [ "foot_l", "foot_r" ], "coverage": 75 }
-	],
     "warmth": 10,
-    "flags": [ "VARSIZE", "SUPER_FANCY" ]
+	"armor": [
+        { "covers": [ "foot_l", "foot_r" ], "coverage": 65 }
+	],
+    "flags": [ "SUPER_FANCY", "VARSIZE" ]
 	},
 	{
     "id": "remi_socks",
@@ -581,7 +680,7 @@
     "category": "armor",
 	"name": "Remilia's 'shoes' ",
     "copy-from": "socks",
-	"description": "Very elegant white feet protectors.  Remilia prefers to wear them over normal footwear (these are actually socks but she pretends they're not).",
+	"description": "Very elegant white footwear.  Remilia prefers to wear them over normal shoes (these are actually socks but she pretends they're not).",
     "repairs_like": "socks",
 	"weight": "30 g",
     "volume": "200 ml",
@@ -590,11 +689,11 @@
     "symbol": "[",
     "looks_like": "socks",
 	"color": "light_red",
-    "armor_portion_data": [
+    "warmth": 10,
+	"armor": [
         { "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 0, 2 ] }
 	],
-    "warmth": 10,
-    "flags": [ "SKINTIGHT", "VARSIZE", "SUPER_FANCY" ]
+    "flags": [ "SKINTIGHT", "SUPER_FANCY", "VARSIZE" ]
 	},
 	{
     "id": "sakuya_pads",
@@ -607,14 +706,15 @@
     "price": 1000,
     "to_hit": -5,
     "material": [ "cotton" ],
-    "symbol": "o",
+    "material_thickness": 2,
+	"symbol": "o",
     "color": "white",
     "covers": [ "torso" ],
-    "coverage": 15,
-    "encumbrance": 0,
-    "warmth": 0,
-    "material_thickness": 2,
-    "flags": [ "VARSIZE" ]
+    "warmth": 1,
+	"armor": [
+        { "covers": [ "torso" ], "specifically_covers": [ "torso_upper" ], "coverage": 15, "encumbrance": [ 0, 2 ] }
+	],
+	"flags": [ "VARSIZE" ]
 	},
 	{
     "id": "seiga_dress",
@@ -624,7 +724,7 @@
 	"copy-from": "dress",
 	"description": "A teal dress with a white and blue vest, floral design, and Chinese patterns.  There is a flower secured by a belt on the waist.",
 	"repairs_like": "jeans",
-    "flags": [ "VARSIZE", "FANCY" ]
+    "flags": [ "FANCY", "VARSIZE" ]
 	},
 	{
     "id": "seiga_hairstick",
@@ -632,18 +732,20 @@
 	"category": "armor",
 	"name": "hair stick",
 	"description": "A large hair stick for keeping your hair shaped like a pretzel.",
+	"weight": "100 g",
+	"volume": "50 ml",
+	"price": 1000,
+    "price_postapoc": 10,
+    "material": [ "plastic" ],
 	"symbol": "[",
     "color": "pink",
-    "price": 1000,
-    "price_postapoc": 10,
-    "material": ["plastic"],
-	"coverage": 15,
-    "weight": "100 g",
-	"volume": "50 ml",
-    "flags": ["FANCY"],
 	"use_action": [ "PICK_LOCK" ],
-	"qualities": [ [ "LOCKPICK", 3 ] ]
-    },
+	"qualities": [ [ "LOCKPICK", 3 ] ],
+	"armor": [
+        { "covers": [ "head" ], "coverage": 5, "encumbrance": [ 2, 4 ] }
+	],
+	"flags": ["FANCY"]
+	},
 	{
     "id": "tenshi_bowbelt",
     "type": "ARMOR",
@@ -657,12 +759,13 @@
     "price": 18000,
     "price_postapoc": 600,
     "material": [ "cotton" ],
-    "symbol": "[",
-    "color": "light_blue",
-    "covers": [ "torso" ],
-    "coverage": 10,
     "material_thickness": 1,
-	"flags": [ "FANCY", "VARSIZE", "OUTER" ]
+	"symbol": "[",
+    "color": "light_blue",
+	"armor": [
+        { "covers": [ "torso" ], "coverage": 10, "specifically_covers": [ "torso_lower" ], "encumbrance": [ 2, 4 ] }
+	],
+	"flags": [ "BELTED", "FANCY", "OUTER", "VARSIZE" ]
 	},
 	{
     "id": "tenshi_bowhat",
@@ -681,7 +784,7 @@
 	"copy-from": "skirt",
     "description": "A super elegant blue skirt.", 
 	"material_thickness": 2,
-	"flags": [ "VARSIZE", "SUPER_FANCY" ]
+	"flags": [ "SUPER_FANCY", "VARSIZE" ]
 	},
 	{
     "id": "tenshi_shirt",
@@ -693,11 +796,11 @@
 	"repairs_like": "dress",
 	"//": "There's no cotton apron, I should add the specs for this specific apron when I figure out how material definitions work",
 	"material_thickness": 3,
-	"armor_portion_data": [
+	"armor": [
         { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 8, 12 ] },
-        { "covers": [ "leg_l", "leg_r" ], "coverage": 50, "encumbrance": [ 2, 4 ] }
+        { "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r", "leg_upper_l", "leg_upper_r" ],"coverage": 30, "encumbrance": [ 2, 4 ] }
 	],
-	"flags": [ "VARSIZE", "SUPER_FANCY" ]
+	"flags": [ "SUPER_FANCY", "VARSIZE" ]
 	},
 	{
     "id": "utsuho_cape",
@@ -713,14 +816,14 @@
 	"symbol": "[",
     "looks_like": "blanket",
     "color": "white",
-	"armor_portion_data": [ 
-		{ "covers": [ "torso" ], "coverage": 80, "encumbrance": [ 1, 2 ] },
-		{ "covers": [ "arm_l", "arm_r" ], "coverage": 80, "encumbrance": [ 1, 2 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "coverage": 30, "encumbrance": [ 1, 2 ] }
+	"warmth": 10,
+	"armor": [
+		{ "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ], "coverage": 50, "encumbrance": [ 1, 2 ] },
+		{ "covers": [ "arm_l", "arm_r" ], "coverage": 35, "encumbrance": [ 1, 2 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r", "leg_upper_l", "leg_upper_r", "leg_knee_l", "leg_knee_r" ], "coverage": 35, "encumbrance": [ 1, 2 ] }
 	],
     "//": "Her cape is HUGE and technically covers the back of her torso + arms + half of her legs, but it shouldn't work as protective armor, recheck the values specifically the coverage",
-	"warmth": 10,
-    "flags": [ "SUPER_FANCY", "OVERSIZE", "OUTER" ]
+    "flags": [ "BELTED", "ONLY_ONE", "OUTER", "OVERSIZE", "SUPER_FANCY" ]
 	},
 	{
     "id": "utsuho_ribbon",
@@ -736,10 +839,10 @@
 	"material_thickness": 1,
 	"symbol": "[",
     "color": "green",
-    "armor_portion_data": [ 
+    "armor": [ 
 		{ "covers": [ "head" ], "coverage": 20, "encumbrance": [ 4, 8 ] }
 	],
-	"flags": [ "FANCY", "STURDY", "OUTER" ]
+	"flags": [ "FANCY", "OUTER", "STURDY" ]
     },
 	{
     "id": "utsuho_rod",
@@ -747,7 +850,7 @@
     "category": "armor",
 	"name": { "str": "third leg", "str_pl": "third legs" },
 	"description": "A prism shaped control rod worn on one arm, acting as the legendary 'third leg' from the Yatagarasu.  Allows the user to easily control nuclear abilities.",
-    "weight": "3000 g",
+	"weight": "3000 g",
     "volume": "13300 ml",
 	"//": "These numbers come from a 60 cm hexagonal prism with 8 cm radius, it's kind of thick though",
 	"price": 16000,
@@ -759,13 +862,20 @@
 	"//2": "Maybe change it to moriya_wood or something",
 	"symbol": "☢",
     "color": "light_green",
-	"armor_portion_data": [ 
-		{ "covers": [ "arm_r" ], "coverage": 50, "encumbrance": [ 0, 2 ] },
-		{ "covers": [ "hand_r" ], "coverage": 100, "encumbrance": [ 0, 2 ] }
+	"techniques": [ "WBLOCK_1" ],
+	"use_action": {
+		"type": "cast_spell",
+		"no_fail": true,
+		"spell_id": "utsuho_blade",
+		"level": 1
+    },
+	"armor": [ 
+		{ "covers": [ "arm_r" ], "coverage": 50, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "hand_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] }
 	],
 	"valid_mods": [ "rod_strap" ],
 	"//3": "Should check how to add a strap so the player doesn't have to drop the rod every time Utsuho crafts something",
-	"flags": [ "ONLY_ONE", "OUTER", "RAINPROOF", "RESTRICT_HANDS", "STURDY", "WATERPROOF", "UNBREAKABLE_MELEE", "TRADER_AVOID" ]
+	"flags": [ "ONLY_ONE", "OUTER", "RAINPROOF", "RESTRICT_HANDS", "STURDY", "TRADER_AVOID", "UNBREAKABLE_MELEE", "WATERPROOF" ]
 	},
 	{
     "id": "utsuho_shirt",
@@ -776,7 +886,7 @@
 	"copy-from": "dress_shirt",
 	"description": "A white, short sleeved puffy shirt with black frills.  This one's modified to make room for the red eye of Yatagarasu",
 	"repairs_like": "tshirt",
-    "flags": [ "VARSIZE", "FANCY" ]
+    "flags": [ "FANCY", "VARSIZE" ]
 	},
 	{
     "id": "utsuho_skirt",
@@ -812,11 +922,77 @@
 	"material_thickness": 1,
 	"symbol": "[",
     "color": "pink",
-    "armor_portion_data": [ 
+    "armor": [ 
 		{ "covers": [ "head" ], "coverage": 15, "encumbrance": [ 0, 0 ] }
 	],
-	"flags": [ "FANCY", "STURDY", "OUTER" ]
+	"flags": [ "FANCY", "OUTER", "STURDY"  ]
     },
+	{
+    "id": "youmu_scabbard_rouka",
+    "type": "ARMOR",
+    "name": { "str": "Roukanken's scabbard" },
+    "copy-from": "bscabbard",
+	"description": "A wooden scabbard, designed to hold Roukanken.  It's painted black and it's otherwise plain, except for two paper seals and a Netherworld flower tied at it's ending. It's prepared to be drawn from while it's strapped on the back.  Activate to sheath/draw.",
+    "weight": "1000 g",
+    "volume": "2200 ml",
+    "price": 18000,
+    "price_postapoc": 900,
+    "bashing": 4,
+    "material": [ "leather", "wood" ],
+    "material_thickness": 2,
+	"symbol": "[",
+    "looks_like": "baldric",
+    "color": "black",
+    "pocket_data": [ {
+        "max_contains_volume": "2050 ml",
+        "max_contains_weight": "1400 g",
+        "max_item_length": "115 cm",
+        "holster": true,
+        "moves": 30,
+        "rigid": true,
+		"flag_restriction": [ "SHEATH_SWORD" ]
+	} ],
+    "use_action": { 
+			"type": "holster", 
+			"holster_prompt": "Sheath sword", 
+			"holster_msg": "You sheath your %s" 
+	},
+    "armor": [ { "encumbrance": [ 4, 6 ], "coverage": 10, "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ] } ],
+    "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY" ]
+	},
+	{
+    "id": "youmu_scabbard_haku",
+    "type": "ARMOR",
+    "name": { "str": "Hakurouken's scabbard" },
+    "copy-from": "bscabbard",
+	"description": "A wooden scabbard, designed to hold Hakurouken.  It's painted black and it's otherwise plain. It's prepared to be drawn from while it's strapped on the back.  Activate to sheath/draw.",
+    "weight": "900 g",
+    "volume": "1750 ml",
+    "price": 18000,
+    "price_postapoc": 900,
+    "bashing": 3,
+    "material": [ "leather", "wood" ],
+    "material_thickness": 2,
+	"symbol": "[",
+    "looks_like": "baldric",
+    "color": "black",
+    "pocket_data": [ {
+        "max_contains_volume": "1550 ml",
+        "max_contains_weight": "850 g",
+        "max_item_length": "65 cm",
+        "holster": true,
+        "moves": 30,
+        "rigid": true,
+		"flag_restriction": [ "SHEATH_SWORD" ]
+	} ],
+    "use_action": { 
+			"type": "holster", 
+			"holster_prompt": "Sheath sword", 
+			"holster_msg": "You sheath your %s" 
+	},
+    "armor": [ { "encumbrance": [ 4, 4 ], "coverage": 10, "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ] } ],
+    "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY" ]
+	},
 	{
     "id": "youmu_vest",
     "type": "ARMOR",
@@ -834,10 +1010,10 @@
 	"looks_like": "vest_leather",
     "color": "pink",
 	"weight_capacity_bonus": "1 kg",
-    "armor_portion_data": [ 
+	"warmth": 15,
+	"armor": [ 
 		{ "covers": [ "torso" ], "coverage": 85, "encumbrance": [ 4, 8 ] }
 	],
-	"warmth": 15,
-    "flags": [ "VARSIZE", "FANCY" ]
+    "flags": [ "FANCY", "VARSIZE" ]
 	}
 ]

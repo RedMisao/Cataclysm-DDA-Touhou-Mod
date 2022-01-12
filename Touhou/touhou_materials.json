@@ -1,7 +1,5 @@
 [
 	{
-<<<<<<< Updated upstream
-=======
     "id": "hcorpse",
 	"type": "material",
     "name": "corpse (prepared)",
@@ -21,7 +19,6 @@
 	"//3": "According to https://pubmed.ncbi.nlm.nih.gov/12051324/ 'human tissue' has an 'effective heat of combustion' of 17 kJ/g, which equals 17 MJ/L assuming the previous density. This paper was followed by at least two others, the problem is I can't access the paper beyond the abstract"
 	},
 	{
->>>>>>> Stashed changes
     "id": "mokou_paper",
 	"type": "material",
     "name": "Fire protecting talisman",

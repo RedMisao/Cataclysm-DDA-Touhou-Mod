@@ -1,6 +1,6 @@
 [
 	{
-    "id": "summon_gungnir2",
+    "id": "remilia_gungnir2",
 	"type": "GENERIC",
     "category": "weapons",
 	"name": { "str": "Spear the Gungnir" },
@@ -10,8 +10,8 @@
 	"longest_side": "3000 cm", 
 	"to_hit": 2,
     "color": "red",
-    "symbol": "/",
     "material": [ "blood" ],
+	"symbol": "/",
     "techniques": [ "BRUTAL", "IMPALE", "PRECISE", "SWEEP", "WBLOCK_1" ],
     "bashing": 10,
     "cutting": 35,
@@ -19,8 +19,6 @@
 	"flags": [ "MAGIC_FOCUS", "NO_REPAIR", "NO_SALVAGE", "NONCONDUCTIVE", "ONLY_ONE", "REACH_ATTACK", "SPEAR", "UNBREAKABLE_MELEE", "TRADER_AVOID" ]
 	},
 	{
-<<<<<<< Updated upstream
-=======
     "id": "tenko_keystone2",
 	"type": "GENERIC",
     "category": "weapons",
@@ -41,7 +39,6 @@
 	"flags": [ "NO_REPAIR", "NO_SALVAGE", "NONCONDUCTIVE", "TRADER_AVOID" ]
 	},
 	{
->>>>>>> Stashed changes
     "id": "utsuho_sun2",
     "type": "ARMOR",
     "category": "tools",

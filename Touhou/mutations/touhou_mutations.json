@@ -103,14 +103,7 @@
     "id": "KASHA_SPECIES",
     "name": "Kasha",
     "points": 0,
-<<<<<<< Updated upstream:Touhou/touhou_mutations.json
-    "description": "You're a feline youkai originating from (Former) Hell.",
-    "starting_trait": false,
-    "valid": false,
-	"purifiable": false,
-=======
     "description": "You're a feline-looking youkai originating from (Former) Hell.",
->>>>>>> Stashed changes:Touhou/mutations/touhou_mutations.json
 	"profession": true,
 	"purifiable": false,
 	"starting_trait": false,

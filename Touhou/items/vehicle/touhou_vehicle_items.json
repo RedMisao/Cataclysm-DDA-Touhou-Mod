@@ -78,13 +78,9 @@
     "volume": "6 L",
     "price": 26500,
     "price_postapoc": 1750,
-<<<<<<< Updated upstream:Touhou/items/vehicleparts/touhou_vehicle_items.json
-    "displacement": 450
-=======
     "material": [ "steel" ],
 	"displacement": 450,
 	"flags": [ "TARDIS" ]
->>>>>>> Stashed changes:Touhou/items/vehicle/touhou_vehicle_items.json
 	},
 	{
 	"id": "seat_corpsecart",
@@ -142,7 +138,7 @@
     "material": [ "steel" ],
 	"symbol": "]",
 	"looks_like": "cargo_rack",
-	"color": "gray",
+	"color": "light_gray",
     "pocket_data": [ {
         "pocket_type": "CONTAINER",
         "rigid": true,

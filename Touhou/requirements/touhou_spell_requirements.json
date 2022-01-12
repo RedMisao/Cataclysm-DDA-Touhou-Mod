@@ -4,9 +4,14 @@
     "type": "requirement",
     "components": [ [ [ "utsuho_sun2", 1 ] ] ]
 	},
+		{
+    "id": "spell_components_keystone",
+    "type": "requirement",
+    "components": [ [ [ "tenko_keystone2", 1 ] ] ]
+	},
 	{
     "id": "spell_components_gungnir",
     "type": "requirement",
-    "components": [ [ [ "summon_gungnir2", 1 ] ] ]
+    "components": [ [ [ "remilia_gungnir2", 1 ] ] ]
 	}
 ]

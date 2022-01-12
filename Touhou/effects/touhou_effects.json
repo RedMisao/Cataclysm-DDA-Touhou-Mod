@@ -7,7 +7,7 @@
     "apply_message": "You start moving to superhuman speeds.",
     "remove_message": "You begin moving normally again.",
 	"rating": "good",
-    "base_mods": { "speed_mod": [ 35 ] },
+    "base_mods": { "speed_mod": [ 300 ] },
 	"//": "Check /data/mods/Magiclysm/effects and related for a list of further applications"
 	},
 	{
@@ -28,17 +28,7 @@
     "apply_message": "Time is frozen.  Is it as if the entire world has stopped.",
     "remove_message": "Thus, time is flowing again.",
     "rating": "good",
-    "base_mods": { "speed_mod": [ 1200 ] }
-	},
-	{
-    "id": "sakuya_timestop4",
-	"type": "effect_type",
-    "name": [ "Time stop (effect) (2)" ],
-    "desc": [ "Test effect for sakuya_timestop (2)" ],
-    "apply_message": "",
-    "remove_message": "",
-    "rating": "bad",
-    "base_mods": { "speed_mod": [ -2000000 ] }
+    "base_mods": { "speed_mod": [ 100 ] }
 	},
 	{
     "id": "udonge_stealth",

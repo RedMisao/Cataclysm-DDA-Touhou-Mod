@@ -4,16 +4,16 @@
     "type": "MONSTER",
     "name": "Vengeful Spirit",
     "description": "A nearby vengeful spirit, summoned by Kaenbyou to help her.",
-    "default_faction": "touhou_summon",
-    "species": [ "PHANTOM_TOUHOU" ],
-    "diff": 8,
     "volume": "14000 ml",
     "weight": "100 g",
+    "symbol": "💀",
+    "color": "white",
+	"default_faction": "touhou_summon",
+    "species": [ "PHANTOM_TOUHOU" ],
+    "diff": 8,
     "hp": 10,
     "speed": 75,
     "bodytype": "blob",
-    "symbol": "💀",
-    "color": "white",
     "aggression": 66,
 	"harvest": "exempt",
     "morale": 99,
@@ -38,7 +38,10 @@
     "vision_night": 25,
 	"luminance": 1,
 	"anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
-    "//3": "death_function: { message: The %s disappears, corpse_type: NO_CORPSE }, goes here but it isn't recognized as a string",
+	"death_function": { 
+		"corpse_type": "NO_CORPSE",
+		"message": "The %s disappears"
+	},
     "flags": [ "CLIMBS", "COLDPROOF", "FIREPROOF", "GRABS", "GROUP_MORALE", "HEARS", "PATH_AVOID_DANGER_2", "SEES", "STUN_IMMUNE", "WARM" ]
 	},
 	{
@@ -72,16 +75,19 @@
     "death_drops": {
 		"subtype": "collection",
 		"groups": [
-        [ "subway", 40 ],
-        [ "sewer", 20 ],
-        [ "trash", 5 ],
-        [ "bedroom", 1 ],
-        [ "dresser", 5 ],
-        [ "ammo", 18 ]
+			[ "subway", 40 ],
+			[ "sewer", 20 ],
+			[ "trash", 5 ],
+			[ "bedroom", 1 ],
+			[ "dresser", 5 ],
+			[ "ammo", 18 ]
 		]
     },
 	"anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
-    "death_function": [ "NORMAL" ],
+    "death_function": { 
+		"corpse_type": "NORMAL",
+		"message": "The %s dies!"
+	},
     "flags": [ "BASHES", "BONES", "CAN_OPEN_DOORS", "CLIMBS", "GROUP_BASH", "GROUP_MORALE", "HEARS", "HUMAN", "PATH_AVOID_DANGER_2", "RANGED_ATTACKER", "SEES", "WARM" ]
 	},
 	{
