@@ -107,7 +107,13 @@
 	"symbol": "[",
     "looks_like": "dress",
 	"color": "green",
+<<<<<<< Updated upstream:Touhou/touhou_armor.json
     "armor_portion_data": [
+=======
+    "warmth": 20,
+	"pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "450 ml", "max_contains_weight": "900 g", "moves": 120 } ],
+	"armor": [
+>>>>>>> Stashed changes:Touhou/items/touhou_armor.json
         { "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 4, 8 ] },
         { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 4, 8 ] },
 		{ "covers": [ "leg_l", "leg_r" ], "coverage": 50, "encumbrance": [ 4, 8 ] }
@@ -200,7 +206,13 @@
 	"symbol": "[",
 	"looks_like": "longshirt",
     "color": "white",
+<<<<<<< Updated upstream:Touhou/touhou_armor.json
 	"armor_portion_data": [
+=======
+    "warmth": 10,
+	"pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "400 ml", "max_contains_weight": "800 g", "moves": 80 } ],
+	"armor": [
+>>>>>>> Stashed changes:Touhou/items/touhou_armor.json
         { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] },
         { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 4, 6 ] }
 	],
@@ -229,8 +241,8 @@
         { "covers": [ "arm_l", "arm_r" ], "coverage": 95, "encumbrance": [ 8, 12 ] }
 	],
 	"pocket_data": [
-        { "pocket_type": "CONTAINER", "max_contains_volume": "250 ml", "max_contains_weight": "1 kg", "moves": 80 },
-        { "pocket_type": "CONTAINER", "max_contains_volume": "250 ml", "max_contains_weight": "1 kg", "moves": 80 }
+        { "pocket_type": "CONTAINER", "max_contains_volume": "500 ml", "max_contains_weight": "1 kg", "moves": 80 },
+        { "pocket_type": "CONTAINER", "max_contains_volume": "500 ml", "max_contains_weight": "1 kg", "moves": 80 }
     ],
     "weight_capacity_bonus": "1 kg",
     "warmth": 20,
@@ -274,8 +286,12 @@
     "armor_portion_data": [
         { "covers": [ "foot_l", "foot_r", "leg_r", "leg_l" ], "coverage": 70, "encumbrance": [ 4, 5 ] }
 	],
+<<<<<<< Updated upstream:Touhou/touhou_armor.json
     "warmth": 10,
     "flags": [ "FANCY", "SKINTIGHT" ]
+=======
+    "flags": [ "FANCY", "SKINTIGHT", "STURDY" ]
+>>>>>>> Stashed changes:Touhou/items/touhou_armor.json
 	},
 	{
     "id": "lunar_skirt",
@@ -340,7 +356,14 @@
     "coverage": 80,
     "encumbrance": 20,
     "warmth": 15,
+<<<<<<< Updated upstream:Touhou/touhou_armor.json
     "flags": [ "OUTER", "VARSIZE", "WATERPROOF", "STURDY" ]
+=======
+    "armor": [
+        { "covers": [ "head" ], "coverage": 80, "encumbrance": [ 18, 24 ] }
+	],
+	"flags": [ "OUTER", "VARSIZE", "WATERPROOF" ]
+>>>>>>> Stashed changes:Touhou/items/touhou_armor.json
 	},
 	{
     "id": "lunar_dress_shoes",

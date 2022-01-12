@@ -1,5 +1,27 @@
 [
 	{
+<<<<<<< Updated upstream
+=======
+    "id": "hcorpse",
+	"type": "material",
+    "name": "corpse (prepared)",
+    "copy-from": "hflesh",
+	"fuel_data": {
+		"energy": 9.61,
+		"explosion_data": { 
+			"chance_hot": 2000, 
+			"chance_cold": 4000, 
+			"factor": 0.05, 
+			"fiery": false, 
+			"size_factor": 0.2 
+		}
+	},
+	"//": "Taking 70 Kg, 18% fat content, 16% protein, 1% carbs for an average human body, then energy densities of 37.6 kJ/g for fat and 16.7 kJ/g for protein and carbs, there are 12600 g fat + 11200 g protein + 700 g carbs = 473760 kJ + 187040 kJ + 11690 kJ respectively = 672490 kJ = 672.49 MJ, then assuming a density of 1 kg/m^3 for the human body = 672.49 MJ / 70 L = ~9.61 MJ/L",
+	"//2": "This is ignoring the water content because I'm not dealing with temperatures needed for phase changes + heat of vaporization + steam production",
+	"//3": "According to https://pubmed.ncbi.nlm.nih.gov/12051324/ 'human tissue' has an 'effective heat of combustion' of 17 kJ/g, which equals 17 MJ/L assuming the previous density. This paper was followed by at least two others, the problem is I can't access the paper beyond the abstract"
+	},
+	{
+>>>>>>> Stashed changes
     "id": "mokou_paper",
 	"type": "material",
     "name": "Fire protecting talisman",

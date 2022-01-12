@@ -3,6 +3,7 @@
     "id": "reactor_corpsecart",
 	"type": "vehicle_part",
 	"name": { "str": "corpse reactor" },
+	"description": "Test engine for kaenbyou_wheelbarrow ",
 	"item": "reactor_corpsecart",
     "location": "engine_block",
 	"symbol": "*",
@@ -10,16 +11,20 @@
 	"color": "light_red",
 	"broken_color": "red",
 	"durability": 200,
-	"description": "Test engine for kaenbyou_wheelbarrow ",
-	"breaks_into": [ { "item": "splinter", "count": [ 7, 9 ] }, { "item": "nail", "charges": [ 5, 10 ] } ],
+	"breaks_into": [ { "item": "splinter", "count": [ 7, 13 ] }, { "item": "nail", "charges": [ 3, 17 ] } ],
 	"requirements": {
 		"install": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_nail_install", 1 ] ] },
 		"removal": { "skills": [ [ "mechanics", 2 ] ], "time": "15 m", "using": [ [ "vehicle_nail_removal", 1 ] ] },
 		"repair": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "adhesive", 2 ] ] }
     },
 	"damage_reduction": { "all": 10 },
+<<<<<<< Updated upstream
 	"fuel_type": "diesel",
 	"//": "The end goal is for this engine to use zombie and human corpses as fuel",
+=======
+	"fuel_type": "touhou_corpse_medium",
+	"fuel_options": [ "touhou_corpse_medium", "touhou_corpse_small" ],
+>>>>>>> Stashed changes
 	"backfire_threshold": 0.25,
     "backfire_freq": 20,
     "noise_factor": 15,

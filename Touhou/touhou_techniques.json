@@ -1,0 +1,15 @@
+[
+	{
+    "id": "SHIELDBASH",
+	"type": "technique",
+    "name": "Shield bash",
+    "description": "Slam an enemy with your shield, ",
+	"crit_ok" : true,
+	"crit_tec": false,
+	"melee_allowed": true,
+    "messages": [ "You bash %s with your shield", "<npcname> bashes %s with their shield" ],
+	"skill_requirements": [ { "name": "melee", "level": 2 } ],
+	"stun_dur": 1,
+	"unarmed_weapons_allowed" : true
+	}
+]

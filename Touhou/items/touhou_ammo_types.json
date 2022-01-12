@@ -1,0 +1,44 @@
+[
+	{
+    "id": "ammo_lunar_medium",
+	"type": "ammunition_type",
+    "name": "lunar ammo (medium)",
+    "default": "ammo_lunar_medium_1"
+	},
+	{
+    "id": "ammo_lunar_small",
+	"type": "ammunition_type",
+    "name": "lunar ammo (small)",
+    "default": "ammo_lunar_small_2"
+	},
+	{
+    "id": "9x39",
+	"type": "ammunition_type",
+    "name": "9x39mm",
+    "default": "9x39_sp5"
+	},
+	{
+    "id": "77x58",
+	"type": "ammunition_type",
+    "name": "7.7x58mm",
+    "default": "77x58a"
+	},
+	{
+    "id": "792x33",
+	"type": "ammunition_type",
+    "name": "7.92x33mm",
+    "default": "792x33_kurz"
+	},
+	{
+    "id": "792x57",
+	"type": "ammunition_type",
+    "name": "7.92x57mm",
+    "default": "792x57_m75"
+	},
+	{
+    "id": "touhou_corpse_ammo",
+	"type": "ammunition_type",
+    "name": "corpse",
+    "default": "touhou_corpse_medium"
+	}
+]

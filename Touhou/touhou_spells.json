@@ -1,5 +1,44 @@
 [
 	{
+    "id": "create_ammo_lunar_medium",
+    "type": "SPELL",
+    "name": "Craft medium-sized ammo material",
+    "description": "Test item for crafting medium-sized ammo for Lunar weapons",
+    "valid_targets": [ "self" ],
+    "effect": "spawn_item",
+    "effect_str": "ammo_lunar_medium_mat",
+    "shape": "blast",
+    "base_energy_cost": 500,
+    "min_duration": 1,
+    "max_duration": 1,
+    "difficulty": -20,
+    "base_casting_time": 500,
+	"max_level": 1,
+    "energy_source": "MANA",
+    "flags": [ "CONCENTRATE", "NO_LEGS", "SILENT", "PERMANENT" ],
+	"//": "This will definitely cause issues with spamming the spell for infinite ammo",
+	"//2": "With the current mana -> item -> ammo system, there should be a limit of 1 + 1 mag maximum, and long casting times or another kind of nuissance, not hard limitant, to craft ammo during active combat",
+	"//3": "Ideally however, there should be a bio_ups system but for mana instead of bio power, with no item intermediate. This is how magical items work after all"
+	},
+	{
+    "id": "create_ammo_lunar_small",
+    "type": "SPELL",
+    "name": "Craft small-sized ammo material",
+    "description": "Test item for crafting medium-sized ammo for Lunar weapons",
+    "valid_targets": [ "self" ],
+    "effect": "spawn_item",
+    "effect_str": "ammo_lunar_small_mat",
+    "shape": "blast",
+    "base_energy_cost": 500,
+    "min_duration": 1,
+    "max_duration": 1,
+    "difficulty": -20,
+    "base_casting_time": 500,
+	"max_level": 1,
+    "energy_source": "MANA",
+    "flags": [ "CONCENTRATE", "NO_LEGS", "SILENT", "PERMANENT" ]
+	},
+	{
     "id": "dash_basic",
     "type": "SPELL",
     "name": "Dash",
@@ -97,9 +136,7 @@
 	"spell_class": "NONE",
 	"valid_targets": [ "ground", "hostile" ],
     "effect": "dash",
-    "extra_effects": [ { 
-		"id": "dash_utsuho2"
-	} ],
+    "extra_effects": [ { "id": "dash_utsuho2" } ],
 	"shape": "line",
     "damage_type": "bash",
 	"min_damage": 30,
@@ -181,7 +218,7 @@
     "energy_source": "STAMINA",
 	"flags": [ "NO_HANDS", "NO_LEGS" ],
 	"//": "This should do half soul half cut dmg. Also, cherry blossom petals should linger around after I figure how to use field effects...",
-	"//2": "A second dash could be: Youmu activates it and puts down an aoe field. When the first enemy crosses it, she slashes past it 1-2 tiles while dealing heavy cut/soul damage. It should last 4-6 seconds at most, be automatic and if it fails (due no enemy) it refunds half the cost. Also 1-2 turns after the damage cherry blossom petals should explode from the target."
+	"//2": "A second dash could be: Youmu activates it and puts down an aoe field. When the first enemy crosses it, she slashes past it 1-2 tiles while dealing heavy cut/soul damage. It should last 4-6 seconds at most, be automatic and if it fails (due no enemy, cc or whatever) it refunds half the cost. Also 1-2 turns after the damage cherry blossom petals should explode from the target."
 	},
 	{
     "id": "kaenbyou_soulfire",
@@ -209,8 +246,8 @@
 	"base_energy_cost": 200,
 	"energy_source": "MANA",
 	"flags": [ "VERBAL", "NO_LEGS", "IGNITE_FLAMMABLE" ],
-	"//": "This spell is not related to Magiclysm's Soulfire. I just find the term really cool",
-	"//2": "This spell should have a secondary effect of dealing a yet unimplemented 'soul' type damage. Also, it would apply the 'frostfire' effect: check for fire or soul resistances and do the bigger damage. Temporarily, I'm using a huge amount of heat pierce"
+	"//": "This spell is not related to Magiclysm's Soulfire. I just find the word really cool",
+	"//2": "This spell should solely deal an unimplemented 'soul' type damage"
 	},
 	{
     "id": "kaenbyou_vssummon",

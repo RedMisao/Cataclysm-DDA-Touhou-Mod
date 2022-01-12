@@ -12,7 +12,7 @@
 	"broken_color": "red",
 	"durability": 200,
 	"folded_volume": "1000 ml",
-	"description": "A spoken wooden wheel, made from a strange Former Hell wood.",
+	"description": "WIP",
 	"breaks_into": [ { "item": "splinter", "count": [ 7, 9 ] }, { "item": "nail", "charges": [ 5, 10 ] } ],
 	"requirements": {
 		"install": { "skills": [ [ "mechanics", 2 ] ], "time": "5 m", "using": [ [ "vehicle_wrench_1", 1 ] ] },

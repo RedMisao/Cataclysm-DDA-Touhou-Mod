@@ -6,6 +6,7 @@
     "price": 52000,
     "price_postapoc": 5000,
     "name": { "str": "silver knife", "str_pl": "silver knives" },
+<<<<<<< Updated upstream:Touhou/touhou_throwing.json
     "symbol": ";",
     "color": "light_gray",
     "description": "A small double edged knife made specifically for throwing.  Has a colorful reinforced hilt made from painted wood.  The blade is made from silver but despite that, it's very sharp.",
@@ -13,6 +14,20 @@
     "volume": "150 ml",
     "weight": "350 g",
     "to_hit": 0,
+=======
+    "description": "A small double edged knife made specifically for throwing.  Has a colorful reinforced hilt made from painted wood.  The blade is made from silver.  Despite that, it's still very sharp.",
+    "weight": "400 g",
+	"volume": "200 ml",
+    "longest_side": "20 cm",
+	"price": 52000,
+    "price_postapoc": 5200,
+	"to_hit": {
+		"balance": "good", 
+		"grip": "weapon", 
+		"length": "hand", 
+		"surface": "point"
+	},
+>>>>>>> Stashed changes:Touhou/items/touhou_throwing.json
     "bashing": 1,
     "cutting": 8,
     "flags": [ "STAB", "SHEATH_KNIFE" ],

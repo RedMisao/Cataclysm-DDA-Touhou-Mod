@@ -9,6 +9,7 @@
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "magenta",
+<<<<<<< Updated upstream:Touhou/touhou_bionic_items.json
     "skill": "pistol",
     "range": 30,
     "ranged_damage": { 
@@ -19,6 +20,19 @@
     "dispersion": 10,
     "durability": 10,
 	"loudness": 7,
+=======
+    "ammo_effects": [ "LASER", "SHOT" ],
+	"dispersion": 90,
+    "durability": 10,
+	"loudness": 8,
+	"modes": [ [ "DEFAULT", "burst", 4 ] ],
+	"range": 30,
+    "ranged_damage": { 
+		"damage_type": "bullet", 
+		"amount": 25, 
+		"armor_penetration": 8 
+	},
+>>>>>>> Stashed changes:Touhou/items/touhou_bionic_items.json
     "reload": 0,
 	"modes": [ [ "DEFAULT", "auto", 5 ] ],
     "ammo_effects": [ "LASER", "INCENDIARY" ],
@@ -41,9 +55,13 @@
 		"damage_type": "bullet", 
 		"amount": 22, 
 		"armor_penetration": 4 
+<<<<<<< Updated upstream:Touhou/touhou_bionic_items.json
 		},
     "dispersion": 10,
     "durability": 10,
+=======
+	},
+>>>>>>> Stashed changes:Touhou/items/touhou_bionic_items.json
     "reload": 0,
     "ammo_effects": [ "LASER", "INCENDIARY" ],
     "flags": [ "NEVER_JAMS", "NO_UNWIELD", "TRADER_AVOID", "ZERO_WEIGHT" ]

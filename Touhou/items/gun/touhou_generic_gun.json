@@ -1,0 +1,324 @@
+[
+	{
+    "id": "idw",
+    "type": "GUN",
+    "name": { "str_sp": "IDW" },
+    "copy-from": "tec9",
+	"description": "A prototype that never saw light of day, the 90s IDW is (would've been) the smallest SMG in the world.  It's made from machined steel, being heavier than it looks.  Using 9mm Parabellum bullets, it was supposed to be highly customizable, allowing attachments for the stock, sights, barrels, and even a bipod.  It also featured an electronic control mechanism to regulate the rate of fire to automatically limit the recoil.",
+    "weight": "2150 g",
+    "volume": "650 ml",
+    "longest_side": "276 mm",
+	"price": 125000,
+    "price_postapoc": 2750,
+	"to_hit": {
+		"balance": "good", 
+		"grip": "weapon", 
+		"length": "hand", 
+		"surface": "any"
+	},
+    "bashing": 10,
+    "material": [ "plastic", "steel" ],
+    "symbol": "(",
+    "looks_like": "tec9",
+	"color": "dark_gray",
+    "ammo": [ "9mm" ],
+    "dispersion": 360,
+    "durability": 7,
+    "min_cycle_recoil": 50,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 20 ] ],
+    "skill": "smg",
+	"reload_noise_volume": 8,
+	"valid_mod_locations": [
+		[ "accessories", 1 ],
+		[ "barrel", 1 ],
+		[ "brass catcher", 1 ],
+		[ "grip", 1 ],
+		[ "mechanism", 4 ],
+		[ "muzzle", 1 ],
+		[ "rail", 1 ],
+		[ "sights", 1 ],
+		[ "sling", 1 ],
+		[ "stock", 1 ],
+		[ "underbarrel", 1 ]
+    ],
+    "faults": [ "fault_gun_blackpowder", "fault_gun_dirt", "fault_gun_chamber_spent" ],
+    "pocket_data": [ {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [ 
+			"idwmag20", 
+			"idwmag28", 
+			"idwmag32"
+		] 
+	} ],
+	"//": "This is a hybrid between the finished PDW prototype and the manufactured IDW",
+	"//2": "Data obtained from http //firearmsworld.net/britain/phidw/idw.htm . Some values are approximates, such as the volume."
+	},
+	{
+    "id": "m76",
+    "type": "GUN",
+    "name": { "str_sp": "M76 Zastava" },
+    "copy-from": "svd",
+	"description": "WIP",
+    "weight": "4600 g",
+    "volume": "3000 ml",
+    "longest_side": "1135 mm",
+    "price": 19000,
+    "price_postapoc": 3000,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "solid", 
+		"length": "long", 
+		"surface": "point"
+	},
+    "bashing": 11,
+    "material": [ "plastic", "steel", "wood" ],
+    "looks_like": "ak47",
+	"color": "brown",
+    "ammo": [ "792x57" ],
+    "built_in_mods": [ "onm76_scope" ],
+	"dispersion": 100,
+    "//": "Accuracy is typically around 1.5 MOA, which is good for a Kalashnikov design and entirely acceptable for the designated marksman role. ",
+	"//2": "The dispersion at 900 m (984 yd) is described as 50 × 50 cm (19.7 × 19.7 in), which is ≈ 1.9 MOA.",
+	"durability": 9,
+	"loudness": 12,
+	"min_cycle_recoil": 1600,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
+	"range": 800,
+	"reload": 500,
+	"reload_noise_volume": 8,
+	"valid_mod_locations": [
+		[ "muzzle", 1 ],
+		[ "rail mount", 1 ],
+		[ "sights", 1 ],
+		[ "sling", 1 ],
+		[ "stock mount", 1 ],
+		[ "underbarrel mount", 1 ]
+    ],
+    "pocket_data": [ {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [
+			"m76mag10"
+        ]
+	} ]
+	},
+	{
+    "id": "sig550",
+    "type": "GUN",
+    "name": { "str": "SIG 550" },
+    "copy-from": "rifle_auto",
+	"description": "A selective fire automatic rifle designed for the Swiss military.  This is an old iteration of the 550 series, heavier and bulkier.",
+    "weight": "4100 g",
+    "volume": "3200 ml",
+    "longest_side": "998 mm",
+    "price": 320000,
+    "price_postapoc": 6000,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "solid", 
+		"length": "long", 
+		"surface": "point"
+	},
+    "bashing": 11,
+    "material": [ "plastic", "steel" ],
+    "looks_like": "ar15",
+	"ammo": [ "223" ],
+    "built_in_mods": [ "folding_stock" ],
+	"dispersion": 150,
+    "//2": "I don't understand where these dispersion values come from. For reference, M16 has 10 shot group dispersion of 32 cm @ 300 m (calculated ~3.67 moa), AK-47 has 10 shot dispersion of 44 cm @ 300 m (calculated ~5.04 moa)), AK-74 has a R50 of 24 cm @ 300 m ( 24*2*0.937 ≈ 45 cm = 5.16 moa, close to the AK-47 value). But, both M16 and AK-74 have 150 dispersion in C:DDA. To make things worse (for me), SIG 550 has a R50 of 14 cm @ 300 m ( 14*2*0.937 ≈ 26.2 cm = 3 moa), which is LOWER than M16 but SIG 553 dispersion is 180 in C:DDA. M4A1 has a 24 in (61 cm) grouping at 300 yards (270 m) ( ~67.8 cm @ 300 m = 7.77 moa ), but has 180 dispersion too in C:DDA. 1 moa = 3.4 inches = 8.72 cm @ 300 m ",
+	"//3": "I'm assuming *total* 3.5 moa = 210, 3 moa = 180, 2.5 moa = 150, 2 moa = 120, 1.5 moa = 90, 1 moa = 60",
+	"durability": 9,
+	"loudness": 9,
+	"min_cycle_recoil": 1350,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "3 rd.", 3 ], [ "AUTO", "auto", 20 ] ],
+	"reload": 420,
+	"reload_noise_volume": 10,
+	"valid_mod_locations": [
+		[ "muzzle", 1 ],
+		[ "rail mount", 1 ],
+		[ "sights", 1 ],
+		[ "sling", 1 ],
+		[ "stock mount", 1 ],
+		[ "underbarrel mount", 1 ]
+    ],
+	"pocket_data": [ {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [
+			"sig550mag5",
+			"sig550mag10",
+			"sig550mag20",
+			"sig550mag30",
+			"stanag5",
+			"stanag10",
+			"stanag20",
+			"stanag30",
+			"stanag40",
+			"stanag50",
+			"stanag60",
+			"survivor223mag"
+        ]
+	} ]
+	},
+	{
+    "id": "sig550_sniper",
+    "type": "GUN",
+    "name": { "str": "SIG 550-1" },
+    "copy-from": "sig550",
+	"description": "A selective fire automatic rifle designed for the Swiss military.  This version has an integrated cheek pad, ergonomic pistol grip, and comes with a SUSAT scope.",
+	"built_in_mods": [ "cheek_pad", "folding_stock", "pistol_grip", "susat_scope2" ],
+	"dispersion": 145,
+	"valid_mod_locations": [
+		[ "grip", 1 ],
+		[ "muzzle", 1 ],
+		[ "rail mount", 1 ],
+		[ "sights", 1 ],
+		[ "sling", 1 ],
+		[ "stock mount", 1 ],
+		[ "underbarrel mount", 1 ]
+	]
+	},
+	{
+    "id": "stg44",
+    "type": "GUN",
+    "name": { "str": "StG 44" },
+    "copy-from": "ak47",
+    "//": "Ironic",
+	"description": "WIP",
+    "weight": "4600 g",
+    "volume": "2200 ml",
+    "longest_side": "94 cm",
+    "price": 290000,
+    "price_postapoc": 4000,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "solid", 
+		"length": "long", 
+		"surface": "point"
+	},
+    "bashing": 11,
+    "material": [ "steel", "wood" ],
+    "color": "brown",
+	"looks_like": "ak47",
+	"ammo": [ "792x33" ],
+    "dispersion": 160,
+    "//2": "though the report accepted that its accuracy was 'excellent for a weapon of its type' ",
+	"//3": "Assuming this means more than less 3 moa due being an early 'assault rifle', and modern 'assault rifles' having ~3 moa",
+	"durability": 9,
+    "min_cycle_recoil": 2100,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 25 ] ],
+    "ranged_damage": { "damage_type": "bullet", "amount": 2 },
+	"valid_mod_locations": [
+		[ "barrel", 1 ],
+		[ "brass catcher", 1 ],
+		[ "grip", 1 ],
+		[ "sights", 1 ],
+		[ "sling", 1 ],
+		[ "stock", 1 ]
+    ],
+    "pocket_data": [ {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [
+			"stg44mag25",
+			"stg44mag30"
+        ]
+	} ]
+	},
+	{
+    "id": "svd",
+    "type": "GUN",
+    "name": { "str_sp": "Dragunov Sniper rifle (SVD-63)" },
+    "copy-from": "rifle_auto",
+	"description": "WIP",
+    "weight": "4300 g",
+    "volume": "3200 ml",
+    "longest_side": "1225 mm",
+    "price": 19000,
+    "price_postapoc": 3000,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "solid", 
+		"length": "long", 
+		"surface": "point"
+	},
+    "bashing": 11,
+    "material": [ "plastic", "steel", "wood" ],
+    "looks_like": "mosin91_30",
+	"color": "brown",
+    "ammo": [ "762R" ],
+    "built_in_mods": [ "pso1_scope" ],
+	"dispersion": 120,
+    "//": "When using standard grade 57-N-323S cartridges, the accuracy of the SVD is reduced to 2.21 MOA extreme vertical spread. The extreme vertical spreads for the SVD are established by shooting 5-shot groups at 300 m range.",
+	"durability": 9,
+	"loudness": 12,
+	"min_cycle_recoil": 1600,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
+	"range": 800,
+	"reload": 450,
+	"reload_noise_volume": 8,
+	"valid_mod_locations": [
+		[ "barrel", 1 ],
+		[ "muzzle", 1 ],
+		[ "rail mount", 1 ],
+		[ "sights", 1 ],
+		[ "sling", 1 ],
+		[ "stock mount", 1 ],
+		[ "underbarrel mount", 1 ]
+    ],
+    "pocket_data": [ {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [
+			"svdmag10",
+			"svdmag20"
+        ]
+	} ]
+	},
+	{
+    "id": "vss",
+    "type": "GUN",
+    "name": { "str_sp": "VSS Vintorez" },
+    "copy-from": "rifle_auto",
+	"description": "WIP",
+    "weight": "2600 g",
+    "volume": "2000 ml",
+    "longest_side": "894 mm",
+    "price": 19000,
+    "price_postapoc": 3000,
+	"to_hit": {
+		"balance": "good", 
+		"grip": "none", 
+		"length": "long", 
+		"surface": "point"
+	},
+    "bashing": 9,
+    "material": [ "plastic", "steel", "wood" ],
+    "looks_like": "ar15",
+	"color": "brown",
+    "ammo": [ "9x39" ],
+    "built_in_mods": [ "pso1_scope2" ],
+    "dispersion": 60,
+    "//": "We did not have the facilities at this time to measure group size, although we understand that the accuracy is excellent out to 150 meters and our observation indicated 1-2 MOA.",
+	"//2": "Assuming *total* 1.5 moa with 9x39mm SP-5",
+	"durability": 8,
+	"loudness": 2,
+	"min_cycle_recoil": 1350,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 10 ] ],
+    "ranged_damage": { "damage_type": "bullet", "amount": 2 },
+	"//3": "9x39 damage is too, so I'm increasing it a bit here and with the ammo",
+	"//4": "Ideally, the VSS should instead have increased crit chance and higher crit dmg modifier, to emulate the late-game scaling with proficiency",
+	"range": 420,
+	"reload": 330,
+	"reload_noise_volume": 4,
+	"valid_mod_locations": [
+		[ "rail mount", 1 ],
+		[ "sights", 1 ],
+		[ "sling", 1 ],
+		[ "stock mount", 1 ]
+    ],
+    "pocket_data": [ {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [
+			"9x39mag10",
+			"9x39mag20"
+        ]
+	} ]
+	}
+]

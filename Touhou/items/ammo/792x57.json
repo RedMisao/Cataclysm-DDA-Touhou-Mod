@@ -1,0 +1,60 @@
+[
+	{
+    "id": "792x57_m75",
+    "type": "AMMO",
+    "name": { "str_sp": "7.92x57mm Mauser M75" },
+    "description": "7.92x57mm Mauser M75 ammunition with 198 gr copper head, lead core bullets.  Adopted by the German Empire in 1905, it has a lot of different variations and names, being a very popular cartridge for sport and hunting practices. This one was produced by Prvi Partizan, Serbia, in order to support the (then) newly deployed M76 Zastava.",
+    "weight": "28 g",
+    "volume": "9 ml",
+    "//": "9.2 ml as cylinder",
+	"price": 120,
+    "price_postapoc": 900,
+    "material": [ "brass", "copper", "lead", "powder" ],
+    "symbol": "=",
+    "color": "dark_gray",
+    "ammo_type": "792x57",
+    "casing": "792x57_casing",
+    "count": 20,
+    "stack_size": 10,
+	"damage": { "damage_type": "bullet", "amount": 64, "armor_penetration": 5 },
+	"dispersion": 15,
+	"range": 75,
+    "recoil": 2600,
+    "effects": [ "COOKOFF", "NEVER_MISFIRES" ],
+    "flags": [ "IRREPLACEABLE_CONSUMABLE" ]
+	},
+	{
+    "id": "792x57_m75_2",
+    "type": "AMMO",
+    "name": { "str_sp": "7.92x57mm Mauser M75 (reloaded)" },
+	"copy-from": "792x57_m75",
+    "description": "Reloaded 7.92x57mm Mauser M75 ammunition with 168 gr copper head, steel core bullets.  This increases the penetration and slightly reduces the weight, at the cost of slightly reduced damage.",
+    "weight": "26 g",
+    "material": [ "copper", "powder", "steel" ],
+	"damage": { "damage_type": "bullet", "amount": 60, "armor_penetration": 11 },
+	"proportional": { 
+		"price": 0.7, 
+		"dispersion": 1.1 
+	},
+    "recoil": 2550,
+	"//": "This should not exist in reality. There's a 'K bullet' which is a WWI 7.92x57mm Mauser with a steel core but I didn't found specs for it. This one's just a 792x57_m75 but has the copper-lead bullet replaced for copper-steel custom"
+	},
+	{
+    "id": "bp_792x57_m75_2",
+    "type": "AMMO",
+    "name": { "str_sp": "7.92x57mm Mauser M75, black powder" },
+    "copy-from": "792x57_m75_2",
+	"proportional": {
+		"price": 0.33,
+		"damage": { "damage_type": "bullet", "amount": 0.66, "armor_penetration": 0.66 },
+		"recoil": 0.66,
+		"dispersion": 1.2
+    },
+    "extend": { "effects": [ "RECYCLED", "BLACKPOWDER", "MUZZLE_SMOKE" ] },
+    "delete": { 
+		"effects": [ "NEVER_MISFIRES" ], 
+		"flags": [ "IRREPLACEABLE_CONSUMABLE" ] 
+	},
+	"//": "Same thing, this is just a 792x57_m75 but has the copper-iron bullet replaced for copper-steel custom, and was reloaded with black powder"
+	}
+]

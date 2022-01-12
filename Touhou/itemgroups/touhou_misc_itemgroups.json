@@ -1,0 +1,14 @@
+[
+	{
+    "id": "touhou_rspirited",
+	"type": "item_group",
+    "//": "All items considered for reverse-spiriting away on generic mystery spots",
+    "subtype": "distribution",
+    "entries": [
+		{ "group": "touhou_ammo_kurz_boxed", "prob": 100 },
+		{ "item": "idw", "prob": 100 },
+		{ "group": "touhou_idw_gunmods", "prob": 100 },
+		{ "item": "stg44", "prob": 100 }
+    ]
+	}
+]
