@@ -1,21 +1,63 @@
 [
 	{
-		"speaker": "mon_gyokuto_base",
-		"type": "speech",
-        "sound": "\"Don't come any closer!\"",
-        "volume": 20
+	"speaker": "mon_gyokuto_base",
+	"type": "speech",
+	"sound": "\"Don't come any closer!\"",
+	"volume": 20
     },
 	{
-		"speaker": "mon_gyokuto_base",
-		"type": "speech",
-        "sound": "\"Stay back! I'm warning you!\"",
-        "volume": 20
+	"speaker": "mon_gyokuto_base",
+	"type": "speech",
+	"sound": "\"Stay back! I'm warning you!\"",
+	"volume": 20
     },
 	{
-		"speaker": "mon_gyokuto_base",
-		"type": "speech",
-        "sound": "\"Even on Earth, this is happening...\"",
-        "volume": 8
+	"speaker": "mon_gyokuto_base",
+	"type": "speech",
+	"sound": "\"Even on Earth, this is happening...\"",
+	"volume": 8
+    },
+	{
+	"speaker": "mon_thylacine",
+	"type": "speech",
+	"sound": "*growl*",
+	"volume": 20
+    },
+	{
+	"speaker": "mon_thylacine",
+	"type": "speech",
+	"sound": "\"yip-yap yip-yap\"",
+	"volume": 20
+    },
+	{
+	"speaker": "mon_thylacine",
+	"type": "speech",
+	"sound": "\"cay-yip\"",
+	"volume": 20
+    },
+	{
+	"speaker": "mon_thylacine",
+	"type": "speech",
+	"sound": "\"hop-hop-hop\"",
+	"volume": 20
+    },
+	{
+	"speaker": "mon_thylacine",
+	"type": "speech",
+	"sound": "*long cry*",
+	"volume": 35
+    },
+	{
+	"speaker": "mon_thylacine",
+	"type": "speech",
+	"sound": "*snuffling noise*",
+	"volume": 6
+    },
+	{
+	"speaker": "mon_thylacine_pup",
+	"type": "speech",
+	"sound": "*snuffling noise*",
+	"volume": 6
     },
 	{
 	"speaker": "mon_vengeful_spirit_kaenbyou",

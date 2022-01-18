@@ -245,6 +245,7 @@
     "ident": "reisen_II",
 	"type": "profession",
     "name": "Moon Rabbit Recruit",
+<<<<<<< Updated upstream
     "description": "You were accompanying the Watatsuki sisters on their visit to Earth when the Cataclysm struck! In the chaos and panic that followed the collapse of the Barrier (or that's what you heard from them), you got separated and left alone. To make things worse, you can't contact your peers by use of the Gyokuto network. You've got some skills from your Lunar Defense Corps training, but you'll need more than that to survive...",
     "points": 0,
 	"CBMs": [
@@ -254,6 +255,10 @@
 	],
 	"//2": "Her Lunarian rifle should do bullet dmg instead of laser, but consume no ammo",
 	"//3": "Remove the finger gun CMB ",
+=======
+    "description": "You were accompanying the Watatsuki sisters on their visit to Earth when the Cataclysm struck! In the chaos and panic that followed the collapse of the Barrier (or that's what you heard from them), you got separated and left alone.  To make things worse, you can't contact your peers by use of the Gyokuto network.  You've got some skills from your Lunar Defense Corps training, but you'll need more than that to survive…",
+    "points": 4,
+>>>>>>> Stashed changes
 	"spells": [ 
 			{ "level": 1, "id": "dash_reisen" }
 	],
@@ -270,7 +275,12 @@
 		"GYOKUTO_EARS",
 		"SPIRIT_USER"
     ],
+<<<<<<< Updated upstream
     "items": {
+=======
+    "//": "Add LUNARDIET trait when fully tested",
+	"items": {
+>>>>>>> Stashed changes
         "both": {
             "items": [
 				"lunar_dress_shirt",

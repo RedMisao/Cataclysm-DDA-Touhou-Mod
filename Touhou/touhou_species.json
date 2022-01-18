@@ -19,6 +19,18 @@
     "description": "a vampire",
     "anger_triggers": [ "HURT", "FRIEND_ATTACKED" ],
 	"fear_triggers": [ "FIRE" ],
-    "//": "add WATER, RAIN, SUNLIGHT in fear, not sure if FIRE stays in fear or I should move it to anger"
+    "//": "add WATER, RAIN, SUNLIGHT in fear. Remove FIRE from fear_triggers, add SUNLIGHT in anger, but as a pouring gas on the fire sort of way once"
+    },
+	{
+	"id": "YOUKAI_HOSTILE_TOUHOU",
+	"type": "SPECIES",
+    "description": "a youkai",
+    "anger_triggers": [ "HURT", "PLAYER_NEAR_BABY" ]
+    },
+	{
+	"id": "YOUKAI_NEUTRAL_TOUHOU",
+	"type": "SPECIES",
+    "description": "a youkai",
+    "anger_triggers": [ "HURT", "PLAYER_CLOSE", "PLAYER_NEAR_BABY", "PLAYER_WEAK" ]
     }
 ]
