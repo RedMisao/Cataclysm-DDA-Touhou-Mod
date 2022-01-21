@@ -9,7 +9,7 @@
     "material": [ "steel", "plastic" ],
     "symbol": "(",
     "color": "magenta",
-    "ammo_effects": [ "LASER" ],
+    "ammo_effects": [ "LASER", "SHOT" ],
 	"dispersion": 90,
     "durability": 10,
 	"loudness": 8,
@@ -19,7 +19,7 @@
 		"damage_type": "bullet", 
 		"amount": 25, 
 		"armor_penetration": 8 
-		},
+	},
     "reload": 0,
 	"skill": "pistol",
     "flags": [ "NEVER_JAMS", "NO_UNWIELD", "TRADER_AVOID", "ZERO_WEIGHT" ],
@@ -44,8 +44,7 @@
 		"damage_type": "bullet", 
 		"amount": 24, 
 		"armor_penetration": 4 
-		},
-
+	},
     "reload": 0,
 	"skill": "pistol",
     "flags": [ "NEVER_JAMS", "NO_UNWIELD", "TRADER_AVOID", "ZERO_WEIGHT" ]

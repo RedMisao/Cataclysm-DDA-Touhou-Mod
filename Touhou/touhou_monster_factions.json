@@ -1,11 +1,16 @@
 [
 	{
-    "name": "touhou_summon",
+    "name": "touhou_arthropod_aquatic_large",
 	"type": "MONSTER_FACTION",
-    "friendly": [ "your_followers" ],
-    "neutral": [ "bot", "fish", "small_animal" ],
-	"hate": [ "animal", "fungus", "mi-go", "mutant", "triffid", "zombie" ],
-	"//": "Default faction for touhou summons (vengeful spirits), these should attack everything on sight except for the caster (and allies or neutral parties)"
+    "base_faction": "insect",
+	"by_mood": [ "animal" ],
+    "hate": [ "exodii", "fish", "human", "insect", "your_followers", "zombie" ]
+	},
+	{
+    "name": "touhou_moa",
+	"type": "MONSTER_FACTION",
+    "base_faction": "animal",
+	"by_mood": [ "human", "insect", "small_animal", "your_followers" ]
 	},
 	{
     "name": "touhou_gorgonopsid_inostrancevia",
@@ -23,18 +28,18 @@
 	"hate": [ "bear", "big_cat", "dog", "exodii", "fox", "fungus", "herbivore", "human", "your_followers", "mi-go", "mutant", "small_animal", "triffid", "zombie" ]
 	},
 	{
+    "name": "touhou_summon",
+	"type": "MONSTER_FACTION",
+    "friendly": [ "your_followers" ],
+    "neutral": [ "bot", "fish", "small_animal" ],
+	"hate": [ "animal", "fungus", "mi-go", "mutant", "triffid", "zombie" ],
+	"//": "Default faction for touhou summons (vengeful spirits), these should attack everything on sight except for the caster (and allies or neutral parties)"
+	},
+	{
     "name": "touhou_thylacine",
 	"type": "MONSTER_FACTION",
     "base_faction": "animal",
     "hate": [ "small_animal", "herbivore" ]
-	},
-	{
-    "name": "touhou_youkai_neutral",
-	"type": "MONSTER_FACTION",
-	"friendly": [ "touhou_youkai_hostile" ],
-	"neutral": [ "animal" ],
-    "by_mood": [ "your_followers" ],
-	"//": "Default faction for neutral youkai, these should be neutral to humans and company until attacked. Think of passively causing fear or at least a sense of caution in humans"
 	},
 	{
     "name": "touhou_youkai_hostile",
@@ -44,5 +49,13 @@
     "by_mood": [ "mutant" ],
 	"hate": [ "animal", "exodii", "human", "your_followers", "zombie" ],
 	"//": "Default faction for naturally hostile youkai, these should prey on humans and company, on a psychological level"
+	},
+	{
+    "name": "touhou_youkai_neutral",
+	"type": "MONSTER_FACTION",
+	"friendly": [ "touhou_youkai_hostile" ],
+	"neutral": [ "animal" ],
+    "by_mood": [ "your_followers" ],
+	"//": "Default faction for neutral youkai, these should be neutral to humans and company until attacked. Think of passively causing fear or at least a sense of caution in humans"
 	}
 ]

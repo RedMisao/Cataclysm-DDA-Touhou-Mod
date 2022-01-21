@@ -3,6 +3,7 @@
     "id": "tank_corpsecart",
 	"type": "vehicle_part",
 	"name": { "str": "corpse reactor tank" },
+	"description": "Test corpse reactor tank for kaenbyou_wheelbarrow ",
 	"item": "tank_corpsecart",
     "location": "fuel_source",
 	"symbol": "X",
@@ -11,7 +12,6 @@
 	"broken_color": "red",
 	"durability": 200,
 	"folded_volume": "2500 ml",
-	"description": "Test corpse reactor tank for kaenbyou_wheelbarrow ",
 	"breaks_into": [ { "item": "splinter", "count": [ 7, 9 ] }, { "item": "nail", "charges": [ 5, 10 ] } ],
 	"requirements": {
 		"install": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_nail_install", 1 ] ] },

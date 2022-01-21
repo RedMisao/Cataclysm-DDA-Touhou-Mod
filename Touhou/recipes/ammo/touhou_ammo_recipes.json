@@ -99,6 +99,54 @@
 	"//2": "Replace the 2 tiny steels for heat-hardened steel or some alloy"
 	},
 	{
+    "result": "77x58a2",
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "category": "CC_AMMO",
+    "subcategory": "CSC_AMMO_RIFLE",
+    "skill_used": "fabrication",
+    "difficulty": 4,
+    "skills_required": [ "gun", 3 ],
+    "time": "2 m",
+    "batch_time_factors": [ 60, 5 ],
+    "book_learn": [ [ "recipe_bullets", 3 ], [ "mag_rifle", 3 ] ],
+    "charges": 1,
+    "reversible": true,
+    "using": [ [ "bullet_forming", 4 ], [ "ammo_bullet", 2 ] ],
+    "proficiencies": [ { "proficiency": "prof_handloading" } ],
+    "components": [
+		[ [ "77x58_casing", 1 ] ],
+		[ [ "smrifle_primer", 1 ] ],
+		[ [ "gunpowder", 15 ], [ "gunpowder_magnum_pistol", 15 ], [ "gunpowder_rifle", 15 ] ],
+		[ [ "copper", 1 ] ],
+		[ [ "steel_tiny", 1, "LIST" ] ]
+    ]
+	},
+	{
+    "result": "bp_77x58a2",
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "category": "CC_AMMO",
+    "subcategory": "CSC_AMMO_RIFLE",
+    "skill_used": "fabrication",
+    "difficulty": 4,
+    "skills_required": [ "gun", 3 ],
+    "time": "2 m",
+    "batch_time_factors": [ 60, 5 ],
+    "book_learn": [ [ "recipe_bullets", 3 ], [ "mag_rifle", 3 ] ],
+    "charges": 1,
+    "reversible": true,
+    "using": [ [ "bullet_forming", 4 ], [ "ammo_bullet", 2 ] ],
+    "proficiencies": [ { "proficiency": "prof_handloading" } ],
+    "components": [
+		[ [ "77x58_casing", 1 ] ],
+		[ [ "smrifle_primer", 1 ] ],
+		[ [ "chem_black_powder", 15 ] ],
+		[ [ "copper", 1 ] ],
+		[ [ "steel_tiny", 1, "LIST" ] ]
+    ]
+	},
+	{
     "result": "792x33_kurz3",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",

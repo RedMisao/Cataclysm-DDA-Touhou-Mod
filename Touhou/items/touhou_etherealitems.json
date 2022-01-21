@@ -1,5 +1,73 @@
 [
 	{
+    "id": "mokou_fireball2",
+    "type": "TOOL",
+    "category": "weapons",
+    "name": "Fire ball",
+    "description": "An almost transparent ball of mostly orange fire.  Cold to the touch, looks like there's layers of fire sliding on top of each other, with the brightest layer moving erratically at the center.",
+    "weight": "200 g",
+    "volume": "300 ml",
+    "price": 0,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "weapon", 
+		"length": "hand", 
+		"surface": "every"
+	},
+    "bashing": 2,
+    "material": [ "magic_fire" ],
+	"symbol": "○",
+    "color": "red",
+    "//": "No orange color, RIP",
+	"use_action": [
+		{
+		"type": "transform",
+		"target": "mokou_fireball3",
+		"active": true,
+		"msg": "You cause the ball to go out of control.",
+		"menu_text": "Trigger sphere",
+		"need_wielding": true,
+		"target_charges": 4
+		},
+		{ 
+		"type": "firestarter"
+		}
+    ],
+	"flags": [ "LIGHT_8", "TRADER_AVOID" ]
+	},
+	{
+    "id": "mokou_fireball3",
+    "type": "TOOL",
+    "category": "weapons",
+    "name": { "str": "Fire ball (unstable)", "str_pl": "Fire balls (unstable)" },
+    "description": "An almost transparent ball of orange and red fire.  It's quickly getting very hot to the touch, looks like the core layer is merging with each layer on top of it.",
+    "weight": "200 g",
+    "volume": "300 ml",
+    "price": 0,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "weapon", 
+		"length": "hand", 
+		"surface": "every"
+	},
+    "bashing": 2,
+    "material": [ "magic_fire" ],
+    "symbol": "◌",
+    "color": "red",
+    "//": "No orange color, RIP",
+	"turns_per_charge": 1,
+    "explode_in_fire": false,
+    "explosion": { "power": 350 },
+    "use_action": {
+		"type": "explosion",
+		"explosion": { "power": 350 },
+		"no_deactivate_msg": "The ball is already unstable, it's a matter of time until it explodes."
+    },
+    "flags": [ "LIGHT_16", "TRADER_AVOID" ],
+	"//2": "Slightly more explosive power than current pipebomb, no reason",
+	"//3": "Keep the item like this until I figure how to make spell explosions affect on a fixed area (not blocked by sight). If it works good enough keep it"
+	},
+	{
     "id": "remilia_gungnir2",
 	"type": "GENERIC",
     "category": "weapons",
@@ -7,15 +75,20 @@
     "description": "The divine that never misses the mark is your plaything.",
     "weight": "2000 g",
     "volume": "2000 ml",
+    "price": 0,
 	"longest_side": "3000 cm", 
-	"to_hit": 2,
+	"to_hit": {
+		"balance": "good", 
+		"grip": "weapon", 
+		"length": "long", 
+		"surface": "line"
+	},
     "color": "red",
-    "material": [ "blood" ],
+    "material": [ "magic_blood" ],
 	"symbol": "/",
     "techniques": [ "BRUTAL", "IMPALE", "PRECISE", "SWEEP", "WBLOCK_1" ],
     "bashing": 10,
     "cutting": 35,
-    "price": 0,
 	"flags": [ "MAGIC_FOCUS", "NO_REPAIR", "NO_SALVAGE", "NONCONDUCTIVE", "ONLY_ONE", "REACH_ATTACK", "SPEAR", "UNBREAKABLE_MELEE", "TRADER_AVOID" ]
 	},
 	{
@@ -26,16 +99,22 @@
     "description": "WIP",
     "weight": "921000 g",
     "volume": "335 L",
-	"//": "Calculated from a 50 cm high, 80 cm cylinder and a cone with the same measurements, made from granite",
 	"longest_side": "100 cm", 
-	"to_hit": -4,
-    "color": "gray",
+	"//": "Calculated from a 50 cm high, 80 cm cylinder and a cone with the same measurements, made from granite",
+	"price": 0,
+	"to_hit": {
+		"balance": "clumsy", 
+		"grip": "bad", 
+		"length": "hand", 
+		"surface": "any"
+	},
+    "color": "light_gray",
     "material": [ "stone" ],
 	"symbol": "▼",
 	"looks_like": "f_boulder_medium",
     "bashing": 150,
     "cutting": 0,
-    "price": 0,
+
 	"flags": [ "NO_REPAIR", "NO_SALVAGE", "NONCONDUCTIVE", "TRADER_AVOID" ]
 	},
 	{

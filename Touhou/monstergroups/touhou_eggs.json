@@ -1,0 +1,12 @@
+[
+	{
+    "name": "GROUP_EGG_DODO",
+    "type": "monstergroup",
+    "monsters": [ { "monster": "mon_dodo_chick" } ]
+	},
+	{
+    "name": "GROUP_EGG_MOA",
+    "type": "monstergroup",
+    "monsters": [ { "monster": "mon_moa_chick" } ]
+	}
+]

@@ -10,7 +10,12 @@
     "longest_side": "276 mm",
 	"price": 125000,
     "price_postapoc": 2750,
-    "to_hit": -1,
+	"to_hit": {
+		"balance": "good", 
+		"grip": "weapon", 
+		"length": "hand", 
+		"surface": "any"
+	},
     "bashing": 10,
     "material": [ "plastic", "steel" ],
     "symbol": "(",
@@ -46,8 +51,7 @@
 		] 
 	} ],
 	"//": "This is a hybrid between the finished PDW prototype and the manufactured IDW",
-	"//2": "Data obtained from http //firearmsworld.net/britain/phidw/idw.htm . Some values are approximates, such as the volume.",
-	"//3": "Really tempted to add non-existing attachments such as one to increase bashing damage"
+	"//2": "Data obtained from http //firearmsworld.net/britain/phidw/idw.htm . Some values are approximates, such as the volume."
 	},
 	{
     "id": "m76",
@@ -60,7 +64,12 @@
     "longest_side": "1135 mm",
     "price": 19000,
     "price_postapoc": 3000,
-    "to_hit": -2,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "solid", 
+		"length": "long", 
+		"surface": "point"
+	},
     "bashing": 11,
     "material": [ "plastic", "steel", "wood" ],
     "looks_like": "ak47",
@@ -103,7 +112,12 @@
     "longest_side": "998 mm",
     "price": 320000,
     "price_postapoc": 6000,
-	"to_hit": -1,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "solid", 
+		"length": "long", 
+		"surface": "point"
+	},
     "bashing": 11,
     "material": [ "plastic", "steel" ],
     "looks_like": "ar15",
@@ -174,7 +188,12 @@
     "longest_side": "94 cm",
     "price": 290000,
     "price_postapoc": 4000,
-    "to_hit": -1,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "solid", 
+		"length": "long", 
+		"surface": "point"
+	},
     "bashing": 11,
     "material": [ "steel", "wood" ],
     "color": "brown",
@@ -214,7 +233,12 @@
     "longest_side": "1225 mm",
     "price": 19000,
     "price_postapoc": 3000,
-    "to_hit": -2,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "solid", 
+		"length": "long", 
+		"surface": "point"
+	},
     "bashing": 11,
     "material": [ "plastic", "steel", "wood" ],
     "looks_like": "mosin91_30",
@@ -258,14 +282,18 @@
     "longest_side": "894 mm",
     "price": 19000,
     "price_postapoc": 3000,
-    "to_hit": -2,
+	"to_hit": {
+		"balance": "good", 
+		"grip": "none", 
+		"length": "long", 
+		"surface": "point"
+	},
     "bashing": 9,
     "material": [ "plastic", "steel", "wood" ],
     "looks_like": "ar15",
 	"color": "brown",
     "ammo": [ "9x39" ],
     "built_in_mods": [ "pso1_scope2" ],
-	"range": 420,
     "dispersion": 60,
     "//": "We did not have the facilities at this time to measure group size, although we understand that the accuracy is excellent out to 150 meters and our observation indicated 1-2 MOA.",
 	"//2": "Assuming *total* 1.5 moa with 9x39mm SP-5",
@@ -276,6 +304,7 @@
     "ranged_damage": { "damage_type": "bullet", "amount": 2 },
 	"//3": "9x39 damage is too, so I'm increasing it a bit here and with the ammo",
 	"//4": "Ideally, the VSS should instead have increased crit chance and higher crit dmg modifier, to emulate the late-game scaling with proficiency",
+	"range": 420,
 	"reload": 330,
 	"reload_noise_volume": 4,
 	"valid_mod_locations": [

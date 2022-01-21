@@ -4,13 +4,18 @@
     "type": "TOOL",
     "category": "weapons",
     "name": { "str": "Sakuya's knife", "str_pl": "Sakuya's knives" },
-    "description": "A seemingly plain knife compared to her silver ones.  This one has a single edge, has no hilt, and it's relatively blunt.  It's much sharper and made from a different material though.",
+    "description": "A seemingly plain knife compared to her silver ones.  This one has a single edge, no hilt, and a drop point.  It's much sharper and made from a different material though.",
     "weight": "450 g",
     "volume": "350 ml",
     "longest_side": "30 cm",
     "price": 100000,
     "price_postapoc": 12500,
-    "to_hit": 0,
+	"to_hit": {
+		"balance": "good", 
+		"grip": "weapon", 
+		"length": "hand", 
+		"surface": "line"
+	},
     "bashing": 8,
     "cutting": 25,
     "material": [ "wool", "steel", "silver" ],
@@ -33,7 +38,12 @@
     "longest_side": "40 cm",
     "price": 150000,
     "price_postapoc": 7500,
-    "to_hit": 0,
+	"to_hit": {
+		"balance": "good", 
+		"grip": "weapon", 
+		"length": "hand", 
+		"surface": "any"
+	},
     "bashing": 2,
     "cutting": 0,
     "material": [ "wood" ],
@@ -60,7 +70,7 @@
 		"surface": "line",
 		"balance": "neutral"
 	},
-    "//2": "Should be well balanced if you have Tengu strength",
+    "//2": "Should be well balanced if you have Tengu strength or something",
 	"bashing": 12,
     "cutting": 28,
     "material": [ "steel" ],
@@ -85,17 +95,23 @@
 	},
     "weight": "300 g",
     "volume": "80 ml",
+    "longest_side": "15 cm",
 	"//2": "These numbers come from a 15 cm, 2.5 cm diameter hilt",
 	"price": 160000,
     "price_postapoc": 8000,
-    "to_hit": 2,
+	"to_hit": {
+		"balance": "good", 
+		"grip": "weapon", 
+		"length": "hand", 
+		"surface": "any"
+	},
 	"bashing": 5,
 	"cutting": 0,
     "material": "gold",
 	"symbol": "/",
     "color": "light_gray",
     "techniques": [ "WBLOCK_1" ],
-	"flags" : [ "TRADER_AVOID", "UNARMED_WEAPON", "ZERO_WEIGHT" ]
+	"flags" : [ "DURABLE_MELEE", "TRADER_AVOID", "UNARMED_WEAPON" ]
 	},
 	{
     "id": "tenshi_jian_extended",
@@ -112,10 +128,16 @@
 	},
     "weight": "300 g",
 	"volume": "1300 ml",
+    "longest_side": "50 cm",
 	"//2": "I assume the blade of the sword looks like a flame so it has a dynamic volume, but that one should be the average for a static 50 cm long, 5 cm wide blade + the hilt",
 	"price": 160000,
     "price_postapoc": 8000,
-    "to_hit": 2,
+	"to_hit": {
+		"balance": "good", 
+		"grip": "weapon", 
+		"length": "short", 
+		"surface": "any"
+	},
 	"bashing": 8,
     "cutting": 30,
     "material": "gold",
@@ -137,7 +159,12 @@
     "//": "This should be 'too long to be wielded by normal humans' ",
 	"price": 120000,
     "price_postapoc": 24000,
-    "to_hit": { "grip": "weapon", "length": "long", "surface": "line", "balance": "good" },
+    "to_hit": { 
+		"balance": "good", 
+		"grip": "weapon", 
+		"length": "long", 
+		"surface": "line"
+	},
 	"bashing": 2,
     "cutting": 42,
 	"material": [ "steel" ],
@@ -162,7 +189,12 @@
     "longest_side": "60 cm",
 	"price": 120000,
     "price_postapoc": 24000,
-    "to_hit": { "grip": "weapon", "length": "short", "surface": "line", "balance": "good" },
+    "to_hit": { 
+		"balance": "good", 
+		"grip": "weapon", 
+		"length": "short", 
+		"surface": "line"
+	},
 	"bashing": 2,
     "cutting": 42,
 	"material": [ "steel" ],

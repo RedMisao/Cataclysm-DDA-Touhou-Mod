@@ -218,6 +218,7 @@
     "looks_like": "dress",
 	"color": "green",
     "warmth": 20,
+	"pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "450 ml", "max_contains_weight": "900 g", "moves": 120 } ],
 	"armor": [
         { "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 4, 8 ] },
         { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 4, 8 ] },
@@ -311,7 +312,7 @@
 	"looks_like": "longshirt",
     "color": "white",
     "warmth": 10,
-	"pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "250 ml", "max_contains_weight": "1 kg", "moves": 80 } ],
+	"pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "400 ml", "max_contains_weight": "800 g", "moves": 80 } ],
 	"armor": [
         { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] },
         { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 4, 6 ] }
@@ -338,8 +339,8 @@
 	"warmth": 20,
     "weight_capacity_bonus": "1 kg",
 	"pocket_data": [
-        { "pocket_type": "CONTAINER", "max_contains_volume": "250 ml", "max_contains_weight": "1 kg", "moves": 80 },
-        { "pocket_type": "CONTAINER", "max_contains_volume": "250 ml", "max_contains_weight": "1 kg", "moves": 80 }
+        { "pocket_type": "CONTAINER", "max_contains_volume": "500 ml", "max_contains_weight": "1 kg", "moves": 80 },
+        { "pocket_type": "CONTAINER", "max_contains_volume": "500 ml", "max_contains_weight": "1 kg", "moves": 80 }
     ],
 	"armor": [
         { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 8, 12 ] },
@@ -387,7 +388,7 @@
 		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_lower_l", "leg_lower_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
 		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_knee_l", "leg_knee_r" ], "coverage": 20, "encumbrance": [ 2, 4 ] }
 	],
-    "flags": [ "FANCY", "SKINTIGHT" ]
+    "flags": [ "FANCY", "SKINTIGHT", "STURDY" ]
 	},
 	{
     "id": "lunar_skirt",
@@ -453,7 +454,7 @@
     "armor": [
         { "covers": [ "head" ], "coverage": 80, "encumbrance": [ 18, 24 ] }
 	],
-	"flags": [ "OUTER", "STURDY", "VARSIZE", "WATERPROOF" ]
+	"flags": [ "OUTER", "VARSIZE", "WATERPROOF" ]
 	},
 	{
     "id": "lunar_dress_shoes",
@@ -862,12 +863,14 @@
 	"symbol": "☢",
     "color": "light_green",
 	"techniques": [ "WBLOCK_1" ],
-	"use_action": {
+	"use_action": [ 
+		{
 		"type": "cast_spell",
 		"no_fail": true,
 		"spell_id": "utsuho_blade",
 		"level": 1
-    },
+		}
+	],
 	"armor": [ 
 		{ "covers": [ "arm_r" ], "coverage": 50, "encumbrance": [ 2, 4 ] },
 		{ "covers": [ "hand_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] }

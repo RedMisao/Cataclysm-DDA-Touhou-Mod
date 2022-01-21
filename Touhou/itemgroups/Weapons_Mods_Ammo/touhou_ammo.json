@@ -1,169 +1,48 @@
 [
 	{
-    "id": "ammo_rifle_rare",
+    "id": "touhou_ammo_9x39",
 	"type": "item_group",
-    "//": "Less common rifle ammo including that only used by police/paramilitary forces.",
-    "subtype": "distribution",
-    "entries": [
-		{ "item": "300_winmag", "prob": 40 },
-		{ "item": "3006fmj", "prob": 50 },
-		{ "item": "223", "prob": 74 },
-		{ "item": "556", "prob": 25 },
-		{ "item": "556_m855a1", "prob": 1 },
-		{ "item": "556_mk262", "prob": 1 },
-		{ "item": "556_mk318", "prob": 1 },
-		{ "item": "762_51", "prob": 50 },
-		{ "item": "4570_sp", "prob": 40 },
-		{ "item": "4570_pen", "prob": 20 },
-		{ "item": "4570_low", "prob": 40 },
-		{ "item": "762_m87", "prob": 25 },
-		{ "item": "8mm_civilian", "prob": 15 },
-		{ "item": "300blk", "prob": 15 },
-		{ "item": "300blk_ss", "prob": 10 },
-		{ "group": "touhou_ammo_9x39", "prob": 20 },
-		{ "group": "touhou_ammo_kurz", "prob": 20 }
-    ],
-	"//2": "These (above and below) are arbitrary values to check their spawning, will probably get removed except for the obscure and collection sets"
-	},
-    {
-    "id": "ammo_rifle_rare_collection",
-	"type": "item_group",
-    "//": "Less common rifle ammo including that only used by police/paramilitary forces.",
+    "//": "To spawn 9x39",
     "subtype": "collection",
     "entries": [
-		{ "item": "300_winmag", "prob": 40 },
-		{ "item": "3006fmj", "prob": 50 },
-		{ "item": "556", "prob": 75 },
-		{ "item": "762_51", "prob": 75 },
-		{ "item": "4570_sp", "prob": 40 },
-		{ "item": "4570_pen", "prob": 20 },
-		{ "item": "4570_low", "prob": 40 },
-		{ "item": "762_m87", "prob": 25 },
-		{ "item": "8mm_civilian", "prob": 15 },
-		{ "item": "300blk", "prob": 20 },
-		{ "item": "762_54R", "prob": 35 },
-		{ "item": "762_m43", "prob": 20 },
-		{ "item": "300blk_ss", "prob": 15 },
-		{ "group": "touhou_ammo_kurz", "prob": 40 },
-		{ "item": "792x57_m75", "prob": 25 }
-	]
-	},
-	{
-    "id": "ammo_rifle_milspec",
-	"type": "item_group",
-    "//": "Military specification rifle ammo found at military sites.",
-    "subtype": "distribution",
-    "entries": [
-		{ "item": "12mm", "prob": 40 },
-		{ "item": "3006_incendiary", "prob": 5 },
-		{ "item": "3006", "prob": 20 },
-		{ "item": "50_incendiary", "prob": 10 },
-		{ "item": "50bmg", "prob": 30 },
-		{ "item": "50match", "prob": 30 },
-		{ "item": "50ss", "prob": 10 },
-		{ "item": "50_mk211", "prob": 1 },
-		{ "item": "556_incendiary", "prob": 15 },
-		{ "item": "556_mk262", "prob": 3 },
-		{ "item": "556_mk318", "prob": 1 },
-		{ "item": "556", "prob": 79 },
-		{ "item": "556_m855a1", "prob": 2 },
-		{ "item": "762_51_incendiary", "prob": 10 },
-		{ "item": "762_51", "prob": 40 },
-		{ "item": "8mm_caseless", "prob": 30 },
-		{ "item": "8mm_fmj", "prob": 30 },
-		{ "item": "8mm_hvp", "prob": 10 },
-		{ "item": "8mm_inc", "prob": 20 },
-		{ "item": "8mm_jhp", "prob": 10 },
-		{ "item": "300blk", "prob": 15 },
-		{ "item": "300blk_ss", "prob": 10 },
-		{ "group": "touhou_ammo_9x39", "prob": 25 }
+		{ "item": "9x39_sp5", "prob": 100 },
+		{ "item": "9x39_sp5", "prob": 50 }
     ]
 	},
 	{
-    "id": "ammo_rifle_obscure",
+    "id": "touhou_ammo_9x39_reloaded",
 	"type": "item_group",
-    "//": "Imported or otherwise very obscure rifle ammo.",
-    "subtype": "distribution",
-    "entries": [ 
-		{ "item": "545", "prob": 150 }, 
-		{ "item": "545_ap", "prob": 100 }, 
-		{ "item": "700nx", "prob": 70 },
-		{ "item": "9x39_sp5", "prob": 25 },
-		{ "item": "9x39_sp6", "prob": 25 },
-		{ "group": "touhou_ammo_kurz", "prob": 35 },
-		{ "item": "792x57_m75", "prob": 35 }		
-	]
-	},
-	{
-    "id": "ammo_rifle_obscure_collection",
-	"type": "item_group",
-    "//": "Imported or otherwise very obscure rifle ammo.",
+    "//": "To spawn reloaded 9x39",
     "subtype": "collection",
-    "entries": [ 
-		{ "item": "545", "prob": 75 }, 
-		{ "item": "545_ap", "prob": 50 }, 
-		{ "item": "700nx", "prob": 35 },
-		{ "item": "9x39_sp5", "prob": 13 },
-		{ "item": "9x39_sp6", "prob": 12 },
-		{ "group": "touhou_ammo_kurz", "prob": 18 },
-		{ "item": "792x57_m75", "prob": 17 }
-	]
-	},
-	{
-    "id": "ammo_rifle_reloaded",
-	"type": "item_group",
-    "//": "Reloaded rifle ammo balanced according to rarity.",
-    "subtype": "distribution",
     "entries": [
-		{ "item": "reloaded_223", "prob": 60 },
-		{ "item": "reloaded_22_fmj", "prob": 20 },
-		{ "item": "reloaded_22_lr", "prob": 70 },
-		{ "item": "reloaded_270win_jsp", "prob": 15 },
-		{ "item": "reloaded_300_winmag", "prob": 15 },
-		{ "item": "reloaded_3006", "prob": 70 },
-		{ "item": "reloaded_3006fmj", "prob": 10 },
-		{ "item": "reloaded_3006_incendiary", "prob": 5 },
-		{ "item": "reloaded_308", "prob": 40 },
-		{ "item": "reloaded_556", "prob": 10 },
-		{ "item": "reloaded_556_incendiary", "prob": 5 },
-		{ "item": "reloaded_4570_sp", "prob": 15 },
-		{ "item": "reloaded_4570_pen", "prob": 5 },
-		{ "item": "reloaded_4570_low", "prob": 15 },
-		{ "item": "reloaded_4570_bp", "prob": 10 },
-		{ "item": "reloaded_762_51", "prob": 10 },
-		{ "item": "reloaded_762_51_incendiary", "prob": 5 },
-		{ "item": "reloaded_762_54R", "prob": 40 },
-		{ "item": "reloaded_762_m43", "prob": 20 },
-		{ "item": "reloaded_300blk", "prob": 10 },
-		{ "group": "touhou_ammo_9x39_reloaded", "prob": 25 },
-		{ "item": "792x33_kurz3", "prob": 25 },
-		{ "item": "792x57_m75_2", "prob": 25 }
+		{ "item": "9x39_sp5", "prob": 100 },
+		{ "item": "9x39_sp5", "prob": 100 }
     ]
 	},
 	{
-    "id": "ammo_obscure_collection",
+    "id": "touhou_ammo_kurz",
 	"type": "item_group",
-    "//": "Imported or otherwise very obscure ammo.",
+    "//": "To spawn 7.92x33",
     "subtype": "collection",
     "entries": [
-		{ "group": "ammo_pistol_obscure_collection", "prob": 75 },
-		{ "group": "ammo_rifle_obscure_collection", "prob": 35 },
-		{ "group": "ammo_launcher_grenade_adapter", "prob": 1 }
+		{ "item": "792x33_kurz", "prob": 25 },
+		{ "item": "792x33_kurz2", "prob": 100 }
     ]
 	},
 	{
-    "id": "ammo_swat",
+    "id": "touhou_ammo_kurz_boxed",
 	"type": "item_group",
-    "//": "Ammo issued to paramilitary forces in addition to standard police issue.",
-    "subtype": "distribution",
-    "entries": [
-		{ "group": "ammo_cop", "prob": 100 },
-		{ "item": "300_winmag", "prob": 5, "charges": [ 1, 10 ] },
-		{ "item": "40x46mm_m433", "prob": 5, "charges": [ 1, 6 ] },
-		{ "item": "40x46mm_m651", "prob": 20, "charges": [ 1, 6 ] },
-		{ "item": "556", "prob": 10, "charges": [ 1, 30 ] },
-		{ "item": "shot_slug", "prob": 20, "charges": [ 1, 20 ] },
-		{ "group": "touhou_ammo_9x39", "prob": 10, "charges": [ 1, 20 ] }
+    "//": "WWII era boxes containing ammo",
+    "subtype": "collection",
+	"entries": [
+		{ "distribution": [ {
+            "collection": [
+				{ "item": "792x33_kurz", "count": [ 15, 15 ] },
+				{ "item": "box_kurz", "prob": 100 }
+            ],
+            "prob": 100
+        } ]
+		}
     ]
 	}
 ]

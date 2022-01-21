@@ -9,10 +9,15 @@
 	"volume": "1000 ml",
 	"price": 3000,
 	"price_postapoc": 200,
-	"to_hit" : 2,
-	"cutting": 15,
+	"to_hit": {
+		"balance": "good", 
+		"grip": "weapon", 
+		"length": "hand", 
+		"surface": "every"
+	},
 	"bashing": 15,
-	"material": [ "cotton"  ],
+	"cutting": 15,
+	"material": [ "cotton" ],
 	"material_thickness" : 4,
 	"symbol": "[",
 	"color": "dark_gray",
@@ -27,7 +32,7 @@
 	"armor": [
         { "covers": [ "mouth" ], "coverage": 85, "encumbrance": [ 4, 6 ] }
 	],
-	"flags" : [ "OUTER", "OVERSIZE", "POCKETS", "REACH_ATTACK", "REACH3", "WHIP" ]
+	"flags" : [ "DURABLE_MELEE", "OUTER", "OVERSIZE", "POCKETS", "REACH_ATTACK", "REACH3", "WHIP" ]
     },
     {
 	"id": "iku_long_scarf_loose",
@@ -39,9 +44,14 @@
 	"volume": "1000 ml",
 	"price": 3000,
 	"price_postapoc": 200,
-	"to_hit" : 2,
-	"cutting": 15,
+	"to_hit": {
+		"balance": "good", 
+		"grip": "weapon", 
+		"length": "long", 
+		"surface": "every"
+	},
 	"bashing": 15,
+	"cutting": 15,
 	"material": [ "cotton" ],
 	"material_thickness" : 4,
 	"symbol": "[",
@@ -58,9 +68,9 @@
 	"armor": [
         { "covers": [ "mouth" ], "coverage": 45, "encumbrance": [ 2, 4 ] }
 	],
-	"flags" : [ "ALLOWS_NATURAL_ATTACKS", "OUTER", "OVERSIZE", "POCKETS", "REACH_ATTACK", "REACH3", "WHIP" ]
+	"flags" : [ "ALLOWS_NATURAL_ATTACKS", "DURABLE_MELEE", "OUTER", "OVERSIZE", "POCKETS", "REACH_ATTACK", "REACH3", "WHIP" ]
     },
-{
+	{
 	"id": "lunar_riot_shield",
 	"type": "TOOL_ARMOR",
 	"category" : "armor",
@@ -72,10 +82,10 @@
 	"price": 24000,
 	"price_postapoc": 4800,
 	"to_hit": {
+		"balance": "good", 
 		"grip": "weapon",
-		"length": "short",
-		"surface": "any",
-		"balance": "good"
+		"length": "long",
+		"surface": "any"
 	},
 	"bashing": 16,
 	"material": [ "steel" ],
@@ -83,7 +93,7 @@
 	"material_thickness" : 8,
 	"symbol": "[",
 	"color": "white",
-	"techniques": [ "BRUTAL", "WBLOCK_3" ],
+	"techniques": [ "BRUTAL", "SHIELDBASH", "WBLOCK_3" ],
 	"armor": [
         { "covers": [ "arm_l", "hand_l" ], "coverage": 100, "encumbrance": [ 12, 20 ] },
 		{ "covers": [ "arm_r", "hand_r", "leg_l", "torso" ], "coverage": 85, "encumbrance": [ 2, 2 ] },
@@ -104,7 +114,12 @@
     "//": "25x15x20 cm cone /3 ",
 	"price": 22000,
     "price_postapoc": 1000,
-    "to_hit": -2,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "none", 
+		"length": "hand", 
+		"surface": "any"
+	},
     "bashing": 4,
     "material": [ "wood" ],
     "symbol": "[",
@@ -154,10 +169,10 @@
 	"price": 24000,
 	"price_postapoc": 4800,
 	"to_hit": {
-		"grip": "weapon",
-		"length": "short",
-		"surface": "any",
-		"balance": "good"
+		"balance": "good", 
+		"grip": "weapon", 
+		"length": "short", 
+		"surface": "any"
 	},
 	"bashing": 16,
 	"material": [ "iron", "steel" ],
@@ -165,7 +180,7 @@
 	"material_thickness" : 6,
 	"symbol": "[",
 	"color": "white",
-	"techniques": [ "BRUTAL", "WBLOCK_3" ],
+	"techniques": [ "BRUTAL", "SHIELDBASH", "WBLOCK_3" ],
 	"armor": [
         { "covers": [ "arm_l", "hand_l" ], "coverage": 100, "encumbrance": [ 8, 12 ] },
 		{ "covers": [ "arm_r", "hand_r", "leg_l", "torso" ], "coverage": 50, "encumbrance": [ 0, 0 ] },

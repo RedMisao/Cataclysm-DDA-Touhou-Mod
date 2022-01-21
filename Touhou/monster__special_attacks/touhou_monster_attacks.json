@@ -42,6 +42,28 @@
 	"//": "Bite for Inostrancevia. This actually should either cripple or kill, given the size of those things, but that's not kind so it just does slightly more damage than the dire wolf's bite"
 	},
 	{
+    "id": "bite_neck_3d5",
+	"type": "monster_attack",
+    "attack_type": "melee",
+    "cooldown": 1,
+	"move_cost": 115,
+	"damage_max_instance": [ { "damage_type": "stab", "amount": 20, "armor_penetration": 8 } ],
+	"body_parts": [ [ "head", 10 ] ],
+	"min_mul": 0.55,
+	"max_mul": 0.95,
+	"hitsize_min": 1,
+    "effects": [ { "id": "bleed", "duration": 600, "affect_hit_bp": true } ],
+    "hit_dmg_u": "The %1$s crunches your %2$s with its huge maw!",
+    "hit_dmg_npc": "The %1$s crunches <npcname>'s %2$s with its huge maw!",
+    "miss_msg_u": "The %s attempts to bite your %2$s!  You dodge!",
+    "miss_msg_npc": "The %s tries to chomp <npcname>'s %2$s, but they dodge!",
+	"no_dmg_msg_u": "The %1$s chomps at your %2$s, but your armor endures!",
+    "no_dmg_msg_npc": "The %1$s bites at <npcname>, but the armor holds!",
+	"dodgeable": true,
+    "blockable": false,
+	"//": "Neck bite from a huge thing, like the Beast of Gévaudan. Should kill?"
+	},
+	{
     "id": "heart_strike",
 	"type": "monster_attack",
     "attack_type": "melee",

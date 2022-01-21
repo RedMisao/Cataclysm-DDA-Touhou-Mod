@@ -1,13 +1,53 @@
 [
 	{
-    "id": "chicken_harvest",
+    "id": "arthropod_big_harvest",
+    "type": "harvest",
+    "message": "You gut and fillet the giant bug.",
+    "entries": [
+		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
+		{ "drop": "arthropod_meat", "type": "flesh", "mass_ratio": 0.35 },
+		{ "drop": "arthropod_fat", "type": "offal", "mass_ratio": 0.02 },
+		{ "drop": "arthropod_organs", "type": "offal", "mass_ratio": 0.020 },
+		{ "drop": "meat_scrap", "type": "flesh", "mass_ratio": 0.1 }
+	],
+	"//": "harvest arachnid as reference",
+	"//2": "Assuming that giant bugs are just bugs but oversized, and that giant bug flesh from 400 mya is edible"
+	},
+	{
+    "id": "bird_large_nonmutant_harvest",
     "type": "harvest",
     "entries": [
-      { "drop": "chicken_meat", "type": "flesh", "mass_ratio": 0.4 },
+		{ "drop": "meat", "type": "flesh", "mass_ratio": 0.4 },
+		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
+		{ "drop": "liver", "type": "offal", "mass_ratio": 0.01 },
+		{ "drop": "feather", "type": "skin", "mass_ratio": 0.01 },
+		{ "drop": "down_feather", "type": "skin", "mass_ratio": 0.005 },
+		{ "drop": "bone", "type": "bone", "mass_ratio": 0.1 }
+	],
+	"//": "Same as bird_small but adds bones"
+	},
+	{
+    "id": "bird_small",
+    "type": "harvest",
+    "entries": [
+      { "drop": "bird_meat", "type": "flesh", "mass_ratio": 0.35 },
+      { "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
+      { "drop": "liver", "type": "offal", "mass_ratio": 0.01 },
+      { "drop": "feather", "type": "skin", "mass_ratio": 0.01 },
+      { "drop": "down_feather", "type": "skin", "mass_ratio": 0.005 }
+    ],
+	"//": "This combines dda meat + meat_scrap from birds into bird_meat"
+	},
+	{
+    "id": "bird_tiny",
+    "type": "harvest",
+    "entries": [
+      { "drop": "bird_meat", "type": "flesh", "mass_ratio": 0.4 },
       { "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
       { "drop": "feather", "type": "skin", "mass_ratio": 0.01 },
       { "drop": "down_feather", "type": "skin", "mass_ratio": 0.005 }
-    ]
+    ],
+	"//": "This replaces dda birds dropping meat_scrap into bird_meat"
 	},
 	{
     "id": "lamprey_harvest",

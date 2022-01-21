@@ -78,9 +78,9 @@
     "name": { "str_sp": "9x39mm SP-5, black powder" },
     "copy-from": "9x39_sp5",
 	"proportional": {
-		"price": 0.3,
-		"damage": { "damage_type": "bullet", "amount": 0.56, "armor_penetration": 0.5 },
-		"recoil": 0.56,
+		"price": 0.33,
+		"damage": { "damage_type": "bullet", "amount": 0.66, "armor_penetration": 0.5 },
+		"recoil": 0.66,
 		"dispersion": 1.2
     },
     "extend": { "effects": [ "RECYCLED", "BLACKPOWDER", "MUZZLE_SMOKE" ] },
@@ -95,9 +95,9 @@
     "name": { "str_sp": "9x39mm SP-6, black powder" },
     "copy-from": "9x39_sp6",
 	"proportional": {
-		"price": 0.3,
-		"damage": { "damage_type": "bullet", "amount": 0.56, "armor_penetration": 0.5 },
-		"recoil": 0.56,
+		"price": 0.33,
+		"damage": { "damage_type": "bullet", "amount": 0.66, "armor_penetration": 0.5 },
+		"recoil": 0.66,
 		"dispersion": 1.2
     },
     "extend": { "effects": [ "RECYCLED", "BLACKPOWDER", "MUZZLE_SMOKE" ] },

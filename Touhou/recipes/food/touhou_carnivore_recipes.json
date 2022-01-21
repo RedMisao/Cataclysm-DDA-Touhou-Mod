@@ -1,22 +1,22 @@
 [
 	{
-    "result": "chicken_cooked",
+    "result": "arthropod_cooked",
 	"type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "category": "CC_FOOD",
     "subcategory": "CSC_FOOD_MEAT",
     "skill_used": "cooking",
-    "difficulty": 1,
+    "difficulty": 2,
 	"time": "15 m",
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
     "qualities": [ { "id": "COOK", "level": 1 } ],
     "tools": [ [ [ "surface_heat", 7, "LIST" ] ] ],
     "proficiencies": [ { "proficiency": "prof_food_prep" } ],
-    "components": [ [ [ "chicken_meat", 1 ] ] ]
+    "components": [ [ [ "arthropod_meat", 1 ] ] ]
 	},
 	{
-    "result": "chicken_dry",
+    "result": "arthropod_dry",
 	"type": "recipe",
     "activity_level": "NO_EXERCISE",
     "category": "CC_FOOD",
@@ -28,10 +28,10 @@
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
     "tools": [ [ [ "dehydrator", 15 ], [ "char_smoker", 15 ] ] ],
-    "components": [ [ [ "chicken_meat", 1 ] ] ]
+    "components": [ [ [ "arthropod_meat", 1 ] ] ]
 	},
 	{
-    "result": "chicken_dry",
+    "result": "arthropod_dry",
 	"type": "recipe",
     "activity_level": "NO_EXERCISE",
     "category": "CC_FOOD",
@@ -43,10 +43,10 @@
     "autolearn": true,
     "batch_time_factors": [ 67, 5 ],
     "tools": [ [ [ "dehydrator", 15 ], [ "char_smoker", 15 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
-    "components": [ [ [ "chicken_meat", 1 ] ] ]
+    "components": [ [ [ "arthropod_meat", 1 ] ] ]
 	},
 	{
-    "result": "chicken_smoked",
+    "result": "arthropod_smoked",
 	"type": "recipe",
     "activity_level": "NO_EXERCISE",
     "category": "CC_FOOD",
@@ -64,7 +64,90 @@
 		{ "proficiency": "prof_preservation" }, 
 		{ "proficiency": "prof_food_curing" } 
 	],
-    "components": [ [ [ "chicken_meat", 1 ] ] ]
+    "components": [ [ [ "arthropod_meat", 1 ] ] ]
+	},
+	{
+    "result": "arthropod_tallow",
+	"type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "category": "CC_FOOD",
+    "subcategory": "CSC_FOOD_MEAT",
+    "skill_used": "cooking",
+    "difficulty": 2,
+    "time": "10 m",
+    "charges": 12,
+    "autolearn": true,
+    "qualities": [ { "id": "CUT", "level": 2 }, { "id": "COOK", "level": 2 } ],
+    "tools": [ [ [ "surface_heat", 7, "LIST" ] ] ],
+    "proficiencies": [ { "proficiency": "prof_food_prep" }, { "proficiency": "prof_knife_skills" } ],
+    "components": [ [ [ "arthropod_fat", 3 ] ], [ [ "water", 1 ], [ "water_clean", 1 ] ] ]
+	},
+	{
+    "result": "bird_cooked",
+	"type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "category": "CC_FOOD",
+    "subcategory": "CSC_FOOD_MEAT",
+    "skill_used": "cooking",
+    "difficulty": 1,
+	"time": "15 m",
+    "autolearn": true,
+    "batch_time_factors": [ 67, 5 ],
+    "qualities": [ { "id": "COOK", "level": 1 } ],
+    "tools": [ [ [ "surface_heat", 7, "LIST" ] ] ],
+    "proficiencies": [ { "proficiency": "prof_food_prep" } ],
+    "components": [ [ [ "bird_meat", 1 ] ] ]
+	},
+	{
+    "result": "bird_dry",
+	"type": "recipe",
+    "activity_level": "NO_EXERCISE",
+    "category": "CC_FOOD",
+    "subcategory": "CSC_FOOD_DRY",
+    "delete_flags": [ "BAD_TASTE" ],
+    "skill_used": "cooking",
+    "difficulty": 2,
+    "time": "20 m",
+    "autolearn": true,
+    "batch_time_factors": [ 67, 5 ],
+    "tools": [ [ [ "dehydrator", 15 ], [ "char_smoker", 15 ] ] ],
+    "components": [ [ [ "bird_meat", 1 ] ] ]
+	},
+	{
+    "result": "bird_dry",
+	"type": "recipe",
+    "activity_level": "NO_EXERCISE",
+    "category": "CC_FOOD",
+    "id_suffix": "frozen_ingredients",
+    "subcategory": "CSC_FOOD_DRY",
+    "skill_used": "cooking",
+    "difficulty": 2,
+    "time": "22 m",
+    "autolearn": true,
+    "batch_time_factors": [ 67, 5 ],
+    "tools": [ [ [ "dehydrator", 15 ], [ "char_smoker", 15 ] ], [ [ "surface_heat", 5, "LIST" ] ] ],
+    "components": [ [ [ "bird_meat", 1 ] ] ]
+	},
+	{
+    "result": "bird_smoked",
+	"type": "recipe",
+    "activity_level": "NO_EXERCISE",
+    "category": "CC_FOOD",
+    "subcategory": "CSC_FOOD_MEAT",
+    "skill_used": "cooking",
+    "difficulty": 3,
+    "time": "1 h",
+    "charges": 1,
+    "autolearn": true,
+    "batch_time_factors": [ 83, 3 ],
+    "qualities": [ { "id": "COOK", "level": 1 } ],
+    "tools": [ [ [ "char_smoker", 15 ] ] ],
+    "proficiencies": [ 
+		{ "proficiency": "prof_food_prep" }, 
+		{ "proficiency": "prof_preservation" }, 
+		{ "proficiency": "prof_food_curing" } 
+	],
+    "components": [ [ [ "bird_meat", 1 ] ] ]
 	},
 	{
     "result": "lamprey_cooked",
@@ -182,7 +265,7 @@
 		{ "proficiency": "prof_knife_skills",  "time_multiplier": 1.20 } 
 	],
     "components": [ 
-		[ [ "chicken_meat", 3 ] ],
+		[ [ "bird_meat", 3 ] ],
 		[ [ "salt_group", 2, "LIST" ] ],
 		[ [ "skewer_wood", 1 ] ]
 	]

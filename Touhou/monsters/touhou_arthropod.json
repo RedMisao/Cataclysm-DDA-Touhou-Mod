@@ -1,0 +1,32 @@
+[
+	{
+    "id": "mon_eurypterid",
+    "type": "MONSTER",
+    "name": { "str": "eurypterid", "str_pl": "eurypterids" },
+    "description": "WIP",
+    "volume": "170 L",
+    "weight": "170000 g",
+	"default_faction": "touhou_arthropod_aquatic_large",
+    "bodytype": "crab",
+    "categories": [ "WILDLIFE" ],
+    "species": [ "FISH" ],
+    "harvest": "arthropod_big_harvest",
+	"hp": 2,
+    "speed": 150,
+	"material": [ "flesh" ],
+	"color": "brown",
+	"symbol": "ᛉ",
+    "aggression": 45,
+    "morale": 35,
+    "melee_dice": 1,
+    "melee_dice_sides": 1,
+    "melee_cut": 2,
+	"dodge": 3,
+	"luminance": 0,
+    "reproduction": { "baby_egg": "egg_fish", "baby_count": 2, "baby_timer": 17 },
+    "baby_flags": [ "SPRING", "SUMMER" ],
+    "fear_triggers": [ "SOUND" ],
+    "flags": [ "AQUATIC", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
+    "//": "Based on Jaekelopterus sp."
+	}
+]

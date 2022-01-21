@@ -13,9 +13,10 @@
 	"symbol": "[",
 	"looks_like": "sheath",
     "color": "light_gray",
-    "pocket_data": [ {
+    "sided": true,
+	"pocket_data": [ {
         "pocket_type": "CONTAINER",
-        "max_contains_weight": "1500 g",
+        "max_contains_weight": "1250 g",
 		"max_contains_volume": "1200 ml",
         "min_item_volume": "400 ml",
         "max_item_length": "25 cm",
@@ -24,9 +25,75 @@
 	} ],
     "use_action": { "type": "holster" },
 	"armor": [
-        { "covers": [ "leg_r" ], "specifically_covers": [ "leg_upper_r" ], "coverage": 5, "encumbrance": [ 4, 6 ] }
+        { "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_r", "leg_hip_l"  ], "coverage": 5, "encumbrance": [ 2, 4 ] }
 	],
-    "//": " LEG_EITHER seems deprecated ",
+	"flags": [ "BELTED", "OVERSIZE", "PALS_MEDIUM" ]
+	},
+	{
+    "id": "knife_holster_leg",
+    "type": "ARMOR",
+    "name": "knife holster",
+    "description": "A black leather holster designed to hold several knives or other similar weapons.  It's safer than it looks.",
+    "weight": "300 g",
+    "volume": "1000 ml",
+    "price": 1000,
+	"price_postapoc": 200,
+    "material": "leather",
+    "material_thickness": 2,
+	"symbol": "[",
+	"looks_like": "sheath",
+    "color": "black",
+    "sided": true,
+	"pocket_data": [ {
+        "pocket_type": "CONTAINER",
+        "max_contains_weight": "610 g",
+		"max_contains_volume": "500 ml",
+        "max_item_length": "30 cm",
+		"holster": true,
+        "moves": 25,
+		"item_restriction": [ "knife_combat", "knife_hunting", "throwing_knife", "knife_trench", "switchblade", "tanto", "tanto_fake", "tanto_inferior", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_vegetable_cleaver", "knife_meat_cleaver", "lawn_dart", "hand_axe", "makeshift_axe", "stone_chisel", "glass_shiv" ],
+		"//": "Basically whatever that has the size or shape of a knife, has an edge, is small enough to fit, and would cause a grievous wound if hit with"
+		},
+		{
+		"pocket_type": "CONTAINER",
+        "max_contains_weight": "610 g",
+		"max_contains_volume": "500 ml",
+        "max_item_length": "30 cm",
+		"holster": true,
+        "moves": 25,
+		"item_restriction": [ "knife_combat", "knife_hunting", "throwing_knife", "knife_trench", "switchblade", "tanto", "tanto_fake", "tanto_inferior", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_vegetable_cleaver", "knife_meat_cleaver", "lawn_dart", "hand_axe", "makeshift_axe", "stone_chisel", "glass_shiv" ]
+		},
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_weight": "610 g",
+		"max_contains_volume": "500 ml",
+        "max_item_length": "30 cm",
+		"holster": true,
+        "moves": 25,
+		"item_restriction": [ "knife_combat", "knife_hunting", "throwing_knife", "knife_trench", "switchblade", "tanto", "tanto_fake", "tanto_inferior", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_vegetable_cleaver", "knife_meat_cleaver", "lawn_dart", "hand_axe", "makeshift_axe", "stone_chisel", "glass_shiv" ]
+		},
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_weight": "610 g",
+		"max_contains_volume": "500 ml",
+        "max_item_length": "30 cm",
+		"holster": true,
+        "moves": 25,
+		"item_restriction": [ "knife_combat", "knife_hunting", "throwing_knife", "knife_trench", "switchblade", "tanto", "tanto_fake", "tanto_inferior", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_vegetable_cleaver", "knife_meat_cleaver", "lawn_dart", "hand_axe", "makeshift_axe", "stone_chisel", "glass_shiv" ]
+		},
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_weight": "610 g",
+		"max_contains_volume": "500 ml",
+        "max_item_length": "30 cm",
+		"holster": true,
+        "moves": 25,
+		"item_restriction": [ "knife_combat", "knife_hunting", "throwing_knife", "knife_trench", "switchblade", "tanto", "tanto_fake", "tanto_inferior", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_vegetable_cleaver", "knife_meat_cleaver", "lawn_dart", "hand_axe", "makeshift_axe", "stone_chisel", "glass_shiv" ]
+	} ],
+    "use_action": { "type": "holster" },
+	"armor": [
+        { "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 5, "encumbrance": [ 2, 4 ] }
+	],
 	"flags": [ "BELTED", "OVERSIZE" ]
 	},
 	{
@@ -50,32 +117,32 @@
         "max_item_length": "25 cm",
 		"holster": true,
         "moves": 25
-	},
-	{
+		},
+		{
         "pocket_type": "CONTAINER",
         "max_contains_weight": "600 g",
 		"max_contains_volume": "400 ml",
         "max_item_length": "25 cm",
 		"holster": true,
         "moves": 25
-	},	
-	{
+		},	
+		{
         "pocket_type": "CONTAINER",
         "max_contains_weight": "600 g",
 		"max_contains_volume": "400 ml",
         "max_item_length": "25 cm",
 		"holster": true,
         "moves": 25
-	},
-	{
+		},
+		{
         "pocket_type": "CONTAINER",
         "max_contains_weight": "600 g",
 		"max_contains_volume": "400 ml",
         "max_item_length": "25 cm",
 		"holster": true,
         "moves": 25
-	},
-	{
+		},
+		{
         "pocket_type": "CONTAINER",
         "max_contains_weight": "600 g",
 		"max_contains_volume": "400 ml",
@@ -85,7 +152,7 @@
 	} ],
     "use_action": { "type": "holster" },
 	"armor": [
-        { "covers": [ "leg_r" ], "specifically_covers": [ "leg_upper_r" ], "coverage": 5, "encumbrance": [ 2, 12 ] }
+        { "covers": [ "leg_r" ], "specifically_covers": [ "leg_upper_r" ], "coverage": 5, "encumbrance": [ 2, 4 ] }
 	],
 	"flags": [ "BELTED", "OVERSIZE" ]
 	},
@@ -110,32 +177,32 @@
         "max_item_length": "25 cm",
 		"holster": true,
         "moves": 25
-	},
-	{
+		},
+		{
         "pocket_type": "CONTAINER",
         "max_contains_weight": "600 g",
 		"max_contains_volume": "400 ml",
         "max_item_length": "25 cm",
 		"holster": true,
         "moves": 25
-	},	
-	{
+		},	
+		{
         "pocket_type": "CONTAINER",
         "max_contains_weight": "600 g",
 		"max_contains_volume": "400 ml",
         "max_item_length": "25 cm",
 		"holster": true,
         "moves": 25
-	},
-	{
+		},
+		{
         "pocket_type": "CONTAINER",
         "max_contains_weight": "600 g",
 		"max_contains_volume": "400 ml",
         "max_item_length": "25 cm",
 		"holster": true,
         "moves": 25
-	},
-	{
+		},
+		{
         "pocket_type": "CONTAINER",
         "max_contains_weight": "600 g",
 		"max_contains_volume": "400 ml",
@@ -145,7 +212,7 @@
 	} ],
     "use_action": { "type": "holster" },
 	"armor": [
-        { "covers": [ "leg_l" ], "specifically_covers": [ "leg_upper_l" ], "coverage": 5, "encumbrance": [ 2, 12 ] }
+        { "covers": [ "leg_l" ], "specifically_covers": [ "leg_upper_l" ], "coverage": 5, "encumbrance": [ 2, 4 ] }
 	],
 	"flags": [ "BELTED", "OVERSIZE" ]
 	}
