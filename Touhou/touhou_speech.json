@@ -18,6 +18,30 @@
 	"volume": 8
     },
 	{
+	"speaker": "mon_ichthyosaurus",
+	"type": "speech",
+	"sound": "*repeated clicking*",
+	"volume": 24
+    },
+	{
+	"speaker": "mon_ichthyosaurus",
+	"type": "speech",
+	"sound": "*short clicking*",
+	"volume": 32
+    },
+	{
+	"speaker": "mon_ichthyosaurus",
+	"type": "speech",
+	"sound": "*a deep, screech-like sound as it were coming underwater*",
+	"volume": 20
+    },
+	{
+	"speaker": "mon_ichthyosaurus",
+	"type": "speech",
+	"sound": "*a \"reptilian\" kind of whistle*",
+	"volume": 32
+    },
+	{
 	"speaker": "mon_thylacine",
 	"type": "speech",
 	"sound": "*growl*",

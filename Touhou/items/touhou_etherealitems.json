@@ -92,6 +92,26 @@
 	"flags": [ "MAGIC_FOCUS", "NO_REPAIR", "NO_SALVAGE", "NONCONDUCTIVE", "ONLY_ONE", "REACH_ATTACK", "SPEAR", "UNBREAKABLE_MELEE", "TRADER_AVOID" ]
 	},
 	{
+    "id": "seiga_talisman",
+    "type": "TOOL",
+    "category": "weapons",
+    "name": "Yoshika's ofuda",
+    "description": "A sophisticated ofuda carrying Yoshika's personality, think about it like her customizable terminal.  Attaching it on a zombie corpse enables what remains of her personality to take over, until the borrowed body receives enough damage or something destroys the talisman.  Don't worry though, as the \"real\" Yoshika is kept somewhere safe enough.",
+    "weight": "50 g",
+    "volume": "100 ml",
+    "price": 0,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "none", 
+		"length": "hand", 
+		"surface": "every"
+	},
+    "material": [ "paper" ],
+	"symbol": "◘",
+    "color": "yellow",
+	"flags": [ "TRADER_AVOID" ]
+	},
+	{
     "id": "tenko_keystone2",
 	"type": "GENERIC",
     "category": "weapons",

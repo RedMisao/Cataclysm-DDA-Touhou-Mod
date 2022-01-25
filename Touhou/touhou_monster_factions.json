@@ -3,14 +3,73 @@
     "name": "touhou_arthropod_aquatic_large",
 	"type": "MONSTER_FACTION",
     "base_faction": "insect",
+    "neutral": [ "touhou_arthropod_aquatic_large" ],
 	"by_mood": [ "animal" ],
-    "hate": [ "exodii", "fish", "human", "insect", "your_followers", "zombie" ]
+    "hate": [ "exodii", "fish", "human", "insect", "touhou_arthropod_aquatic_small", "your_followers", "zombie" ],
+	"//": "2 - 3 m long arthropods that feed from smaller whatever, including attacking humans and zombies because that's horrifying"
 	},
 	{
-    "name": "touhou_moa",
+    "name": "touhou_arthropod_aquatic_medium",
+	"type": "MONSTER_FACTION",
+    "base_faction": "insect",
+    "neutral": [ "touhou_arthropod_aquatic_medium" ],
+	"by_mood": [ "animal", "exodii", "human", "your_followers", "zombie" ],
+	"hate": [ "fish", "insect" ],
+	"//": "1 - 2 m long arthropods, these should attack smaller fish, insects, and distinct touhou_arthropod_aquatic_medium"
+	},
+	{
+    "name": "touhou_arthropod_aquatic_small",
+	"type": "MONSTER_FACTION",
+    "base_faction": "insect",
+    "neutral": [ "touhou_arthropod_aquatic_small" ],
+	"by_mood": [ "animal", "exodii", "human", "your_followers", "zombie" ],
+	"hate": [ "fish", "insect" ],
+	"//": "<1 m long arthropods, these should attack smaller fish, insects, and distinct touhou_arthropod_aquatic_small"
+	},
+	{
+    "name": "touhou_daedon",
 	"type": "MONSTER_FACTION",
     "base_faction": "animal",
-	"by_mood": [ "human", "insect", "small_animal", "your_followers" ]
+    "neutral": [ "touhou_daedon" ],
+	"by_mood": [ "exodii", "human", "your_followers" ],
+	"hate": [ "animal", "fungus", "insect", "mi-go", "small_animal", "triffid", "zombie" ],
+	"//": "Hell pigs should attempt to eat anything that crosses their path"
+	},
+	{
+    "name": "touhou_dunkleosteus",
+	"type": "MONSTER_FACTION",
+    "base_faction": "fish",
+    "neutral": [ "touhou_dunkleosteus" ],
+	"by_mood": [ "touhou_youkai_hostile", "touhou_youkai_neutral" ],
+	"hate": [ "animal", "fish", "exodii", "human", "insect", "touhou_arthropod_aquatic_large", "touhou_arthropod_aquatic_medium", "touhou_arthropod_aquatic_small", "touhou_fishancient_large", "touhou_fishancient_medium", "touhou_fishancient_small", "touhou_reptile_marine_large", "your_followers", "zombie" ],
+	"//": "Apex predator, equivalent to touhou_fishancient_huge but I can't think of anything else that would get close in size"
+	},
+	{
+    "name": "touhou_fishancient_large",
+	"type": "MONSTER_FACTION",
+    "base_faction": "fish",
+    "neutral": [ "touhou_afish_large" ],
+	"by_mood": [ "exodii", "human", "touhou_dunkleosteus", "your_followers" ],
+	"hate": [ "fish", "insect", "touhou_arthropod_aquatic_small", "touhou_fishancient_medium", "touhou_fishancient_small", "zombie" ],
+	"//": "Large ancient fish, 2 - 3 m long at most, should feed on smaller fish"
+	},
+	{
+    "name": "touhou_fishancient_medium",
+	"type": "MONSTER_FACTION",
+    "base_faction": "fish",
+    "neutral": [ "touhou_afish_large" ],
+	"by_mood": [ "exodii", "human", "touhou_dunkleosteus", "your_followers" ],
+	"hate": [ "fish", "insect", "touhou_arthropod_aquatic_small", "touhou_fishancient_small", "zombie" ],
+	"//": "Large ancient fish, 1 - 2 m long at most, should feed on smaller fish"
+	},
+	{
+    "name": "touhou_fishancient_small",
+	"type": "MONSTER_FACTION",
+    "base_faction": "fish",
+    "neutral": [ "touhou_afish_large" ],
+	"by_mood": [ "exodii", "human", "touhou_dunkleosteus", "your_followers" ],
+	"hate": [ "fish", "insect", "touhou_arthropod_aquatic_small", "zombie" ],
+	"//": "Ancient fish, <1 m long at most, should feed on smaller fish"
 	},
 	{
     "name": "touhou_gorgonopsid_inostrancevia",
@@ -18,14 +77,37 @@
     "base_faction": "animal",
     "by_mood": [ "fox", "small_animal", "touhou_gorgonopsid_pristerognathus" ],
 	"hate": [ "bear", "big_cat", "dog", "exodii", "fungus", "herbivore", "human", "your_followers", "mi-go", "mutant", "triffid", "zombie" ],
-	"//2": "These should hunt whatever is bigger than a dog, including dogs because those bark"
+	"//": "Apex predator. These should hunt whatever is bigger than a dog, including dogs because those bark"
 	},
 	{
     "name": "touhou_gorgonopsid_pristerognathus",
 	"type": "MONSTER_FACTION",
     "base_faction": "animal",
     "by_mood": [ "touhou_gorgonopsid_inostrancevia" ],
-	"hate": [ "bear", "big_cat", "dog", "exodii", "fox", "fungus", "herbivore", "human", "your_followers", "mi-go", "mutant", "small_animal", "triffid", "zombie" ]
+	"hate": [ "bear", "big_cat", "dog", "exodii", "fox", "fungus", "herbivore", "human", "your_followers", "mi-go", "mutant", "small_animal", "triffid", "zombie" ],
+	"//": "Large wolf-sized, these can hunt whatever a pack of wolves can"
+	},
+	{
+    "name": "touhou_pakicetus",
+	"type": "MONSTER_FACTION",
+    "base_faction": "animal",
+	"by_mood": [ "exodii", "human", "small_animal", "your_followers", "zombie" ],
+    "hate": [ "fish" ]
+	},
+	{
+    "name": "touhou_reptile_marine_large",
+	"type": "MONSTER_FACTION",
+    "base_faction": "animal",
+	"by_mood": [ "animal", "exodii", "human", "your_followers" ],
+    "hate": [ "fish", "insect", "small_animal", "zombie" ],
+	"//": "2 - 3 m long aquatic reptiles that feed from fish-sized things, zombies included because why not"
+	},
+	{
+    "name": "touhou_thylacine",
+	"type": "MONSTER_FACTION",
+    "base_faction": "animal",
+    "hate": [ "small_animal", "herbivore" ],
+	"//": "Considered apex predators, however these lived in islands or exotic environments that aren't really extrapollable"
 	},
 	{
     "name": "touhou_summon",
@@ -36,16 +118,10 @@
 	"//": "Default faction for touhou summons (vengeful spirits), these should attack everything on sight except for the caster (and allies or neutral parties)"
 	},
 	{
-    "name": "touhou_thylacine",
-	"type": "MONSTER_FACTION",
-    "base_faction": "animal",
-    "hate": [ "small_animal", "herbivore" ]
-	},
-	{
     "name": "touhou_youkai_hostile",
 	"type": "MONSTER_FACTION",
     "friendly": [ "touhou_youkai_neutral" ],
-	"neutral": [ "animal" ],
+	"neutral": [ "animal", "touhou_youkai_hostile" ],
     "by_mood": [ "mutant" ],
 	"hate": [ "animal", "exodii", "human", "your_followers", "zombie" ],
 	"//": "Default faction for naturally hostile youkai, these should prey on humans and company, on a psychological level"
@@ -54,7 +130,7 @@
     "name": "touhou_youkai_neutral",
 	"type": "MONSTER_FACTION",
 	"friendly": [ "touhou_youkai_hostile" ],
-	"neutral": [ "animal" ],
+	"neutral": [ "animal", "touhou_youkai_neutral" ],
     "by_mood": [ "your_followers" ],
 	"//": "Default faction for neutral youkai, these should be neutral to humans and company until attacked. Think of passively causing fear or at least a sense of caution in humans"
 	}

@@ -4,14 +4,19 @@
     "type": "requirement",
     "components": [ [ [ "utsuho_sun2", 1 ] ] ]
 	},
-		{
+	{
+    "id": "spell_components_gungnir",
+    "type": "requirement",
+    "components": [ [ [ "remilia_gungnir2", 1 ] ] ]
+	},
+	{
     "id": "spell_components_keystone",
     "type": "requirement",
     "components": [ [ [ "tenko_keystone2", 1 ] ] ]
 	},
 	{
-    "id": "spell_components_gungnir",
+    "id": "spell_components_humanegg",
     "type": "requirement",
-    "components": [ [ [ "remilia_gungnir2", 1 ] ] ]
+    "components": [ [ [ "human_egg", 20 ] ] ]
 	}
 ]

@@ -61,7 +61,7 @@
     "no_dmg_msg_npc": "The %1$s bites at <npcname>, but the armor holds!",
 	"dodgeable": true,
     "blockable": false,
-	"//": "Neck bite from a huge thing, like the Beast of Gévaudan. Should kill?"
+	"//": "Neck bite from a huge thing, like the Beast of Gévaudan. Realistically should kill humans, but that's not really fair I guess"
 	},
 	{
     "id": "heart_strike",
@@ -150,5 +150,19 @@
 	"dodgeable": true,
     "blockable": true,
 	"//": "Prioritizes lower limbs > hands > arms > torso, because the thing using this is more or less dog-sized. Should prioritize neck if you're down but how to do that"
+	},
+	{
+    "id": "vs_stab",
+	"type": "monster_attack",
+    "attack_type": "melee",
+    "cooldown": 1,
+	"move_cost": 100,
+	"damage_max_instance": [ { "damage_type": "stab", "amount": 20, "armor_penetration": 3 } ],
+	"min_mul": 0.05,
+	"max_mul": 0.15,
+	"hitsize_min": 0,
+	"dodgeable": true,
+    "blockable": true,
+	"//": "Weak stab attack for Vengeful spirits"
 	}
 ]

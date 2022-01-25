@@ -37,21 +37,21 @@
 	{
     "id": "mon_gorgonopsid_inostrancevia",
     "type": "MONSTER",
-    "name": { "str": "gorgonopsid (Inostrancevia)", "str_pl": "gorgonopsids (Inostrancevia)" },
+    "name": { "str": "inostrancevia", "str_pl": "inostrancevia" },
     "copy-from": "mon_gorgonopsid_generic",
 	"description": "A dog-looking… beast, this animal looks like a mix between a big cat, a bear, a dinosaur and other animals you can't even think of.  The gait is unlike anything you have seen before, both awkward yet agile. The tail is thick and short, the limbs somewhat resemble those of a human, but shorter in relation to the body, with the hind limbs being shorter than the front limbs, each of them ends on feet with short claws, capable of rudimentary grappling.  The most shocking part of the animal is the very robust, huge trapezoidal head, with equally huge fangs showing well past the lips.  Looking at it forces a primal bubble of fear from the depths of your mind come to the surface, ready to cavitate.",
-    "armor_bash": 8,
-    "armor_cut": 8,
+    "armor_bash": 6,
+    "armor_cut": 6,
     "armor_bullet": 4,
-    "armor_stab": 3,
+    "armor_stab": 4,
     "armor_elec": 6,
 	"special_attacks": [ [ "bite_3d6", 4 ] ],
-    "flags": [ "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "SEES", "WARM" ]
+    "flags": [ "BASHES", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "PUSH_MON", "SEES", "WARM" ]
 	},
 	{
     "id": "mon_gorgonopsid_pristerognathus",
     "type": "MONSTER",
-    "name": { "str": "gorgonopsid (Pristerognathus)", "str_pl": "gorgonopsids (Pristerognathus)" },
+    "name": { "str": "pristerognathus", "str_pl": "pristerognathus" },
     "copy-from": "mon_gorgonopsid_generic",
 	"description": "A dog-looking… beast, this animal looks like a mix between man's best friend, a dinosaur and other animals you can't even think of.  The gait is unlike anything you have seen before, both awkward yet agile, with the animal running on a similar way you'd imagine a crocodile can. The tail is thick and short, the weirdly human-looking limbs sprawl at the sides, each of them ends on feet with short claws.  The most shocking part of the animal is the very robust, huge, flat trapezoidal head, with equally huge fangs showing well past the lips.  You think, you know deep inside you a bite will really hurt.",
     "volume": "30000 ml",

@@ -14,6 +14,12 @@
     "anger_triggers": [ "HURT", "STALK" ]
     },
 	{
+    "id": "JIANGSHI_TOUHOU",
+	"type": "SPECIES",
+    "description": "a jiang shi",
+    "anger_triggers": [ "HURT" ]
+    },
+	{
 	"id": "VAMPIRE_TOUHOU",
 	"type": "SPECIES",
     "description": "a vampire",
