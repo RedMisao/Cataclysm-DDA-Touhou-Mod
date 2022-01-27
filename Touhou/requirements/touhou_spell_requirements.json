@@ -10,13 +10,13 @@
     "components": [ [ [ "remilia_gungnir2", 1 ] ] ]
 	},
 	{
+    "id": "spell_components_humanegg20",
+    "type": "requirement",
+    "components": [ [ [ "human_egg", 20 ] ] ]
+	},
+	{
     "id": "spell_components_keystone",
     "type": "requirement",
     "components": [ [ [ "tenko_keystone2", 1 ] ] ]
-	},
-	{
-    "id": "spell_components_humanegg",
-    "type": "requirement",
-    "components": [ [ [ "human_egg", 20 ] ] ]
 	}
 ]

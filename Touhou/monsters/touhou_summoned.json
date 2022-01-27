@@ -40,7 +40,7 @@
 	{
 	"id": "mon_risen_child_seiga",
     "type": "MONSTER",
-    "name": { "str": "", "str_pl": "vengeful spirits" },
+    "name": { "str": "risen child", "str_pl": "risen children" },
 	"description": "A specter in the shape of a human child, born from an amalgamation between dark hermit arts and some human essence.  Seems to have a mix between sadness, as if it was under a constant torment and anger, as if it was told to hurt others to relieve from it.",
     "volume": "35000 ml",
     "weight": "15000 g",
@@ -54,11 +54,11 @@
     "color": "white",
     "aggression": 66,
     "morale": 99,
-    "melee_skill": 4,
+    "melee_skill": 3,
     "melee_dice": 4,
     "melee_dice_sides": 3,
     "melee_cut": 2,
-	"dodge": 4,
+	"dodge": 3,
     "armor_bash": 2,
 	"armor_cut": 2,
 	"armor_stab": 2,
@@ -76,6 +76,48 @@
 		"message": "The %s dissipates." 
 	},
     "flags": [ "GRABS", "GROUP_MORALE", "HEARS", "PATH_AVOID_DANGER_1", "SEES" ],
-	"//": "WIP. These should "
+	"//": "WIP. These should escalate towards the late game? Or summon something else, yet what's more wicked than children in undeath"
+	},
+	{
+	"id": "mon_yoshika",
+    "type": "MONSTER",
+    "name": { "str": "Yoshika", "str_pl": "Yoshika" },
+	"description": "WIP",
+    "volume": "50000 ml",
+    "weight": "50000 g",
+	"default_faction": "touhou_summon",
+    "bodytype": "human",
+    "species": [ "JIANGSHI_TOUHOU" ],
+    "harvest": "exempt",
+    "hp": 85,
+    "speed": 115,
+	"symbol": "Ž",
+    "color": "white",
+    "aggression": 50,
+    "morale": 99,
+    "melee_skill": 5,
+    "melee_dice": 4,
+    "melee_dice_sides": 4,
+    "melee_cut": 8,
+	"dodge": 5,
+    "armor_bash": 4,
+	"armor_cut": 2,
+	"armor_stab": 6,
+	"armor_bullet": 8,
+	"bleed_rate": 33,
+	"grab_strength": 16,
+	"vision_day": 16,
+    "vision_night": 16,
+	"path_settings": { "max_dist": 16 },
+	"special_attacks": [ 
+		[ "GRAB", 16 ], 
+		{ "type": "spell", "spell_data": { "id": "yoshika_nails" }, "cooldown": 6 }
+	],
+	"anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
+	"death_function": { 
+		"corpse_type": "NORMAL", 
+		"message": "%s has received enough damage, she falls down and becomes unconscious." 
+	},
+    "flags": [ "GRABS", "HEARS", "PATH_AVOID_DANGER_1", "SEES" ]
 	}
 ]

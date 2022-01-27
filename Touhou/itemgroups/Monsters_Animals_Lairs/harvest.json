@@ -1,6 +1,6 @@
 [
 	{
-    "id": "touhou_zombie_eggs",
+    "id": "touhou_human_eggs",
     "type": "item_group",
     "subtype": "distribution",
     "entries": [ { "group": "human_egg_group", "prob": 50 } ]

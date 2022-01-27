@@ -27,6 +27,15 @@
 	"//": "<1 m long arthropods, these should attack smaller fish, insects, and distinct touhou_arthropod_aquatic_small"
 	},
 	{
+    "name": "touhou_crocodylomorpha_large",
+	"type": "MONSTER_FACTION",
+    "base_faction": "animal",
+    "neutral": [ "touhou_crocodylomorpha_large" ],
+	"by_mood": [ "exodii", "human", "your_followers" ],
+    "hate": [ "animal", "herbivore", "insect", "mi-go", "triffid", "zombie" ],
+	"//": "2 - 3 m long croco ancestors. Assumed to be either the apex predator or member of the top predators. These should attack whatever is weak or below their size"
+	},
+	{
     "name": "touhou_daedon",
 	"type": "MONSTER_FACTION",
     "base_faction": "animal",

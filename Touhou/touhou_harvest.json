@@ -42,11 +42,11 @@
     "id": "bird_small",
     "type": "harvest",
     "entries": [
-      { "drop": "bird_meat", "type": "flesh", "mass_ratio": 0.35 },
-      { "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
-      { "drop": "liver", "type": "offal", "mass_ratio": 0.01 },
-      { "drop": "feather", "type": "skin", "mass_ratio": 0.01 },
-      { "drop": "down_feather", "type": "skin", "mass_ratio": 0.005 }
+		{ "drop": "bird_meat", "type": "flesh", "mass_ratio": 0.35 },
+		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
+		{ "drop": "liver", "type": "offal", "mass_ratio": 0.01 },
+		{ "drop": "feather", "type": "skin", "mass_ratio": 0.01 },
+		{ "drop": "down_feather", "type": "skin", "mass_ratio": 0.005 }
     ],
 	"//": "This combines dda meat + meat_scrap from birds into bird_meat"
 	},
@@ -54,10 +54,10 @@
     "id": "bird_tiny",
     "type": "harvest",
     "entries": [
-      { "drop": "bird_meat", "type": "flesh", "mass_ratio": 0.4 },
-      { "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
-      { "drop": "feather", "type": "skin", "mass_ratio": 0.01 },
-      { "drop": "down_feather", "type": "skin", "mass_ratio": 0.005 }
+		{ "drop": "bird_meat", "type": "flesh", "mass_ratio": 0.4 },
+		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
+		{ "drop": "feather", "type": "skin", "mass_ratio": 0.01 },
+		{ "drop": "down_feather", "type": "skin", "mass_ratio": 0.005 }
     ],
 	"//": "This replaces dda birds dropping meat_scrap into bird_meat"
 	},
@@ -75,7 +75,7 @@
 		{ "drop": "bone_human", "type": "bone", "mass_ratio": 0.12 },
 		{ "drop": "sinew", "type": "bone", "mass_ratio": 0.001 },
 		{ "drop": "raw_hleather", "type": "skin", "mass_ratio": 0.01 },
-		{ "drop": "touhou_zombie_eggs", "type": "flesh", "base_num": [ 0, 1 ], "max": 1 }
+		{ "drop": "touhou_human_eggs", "type": "wicked", "base_num": [ 0, 1 ] }
     ],
 	"//2": "Only adds 50% to drop a bunch of human_egg "
 	},
@@ -114,9 +114,9 @@
 		{ "drop": "meat_tainted", "type": "flesh", "mass_ratio": 0.25 },
 		{ "drop": "blood_tainted", "type": "blood", "mass_ratio": 0.1 },
 		{ "drop": "fat_tainted", "type": "flesh", "mass_ratio": 0.08 },
-		{ "drop": "bone_tainted", "type": "bone", "mass_ratio": 0.1 },	
-		{ "drop": "touhou_zombie_eggs", "type": "flesh", "base_num": [ 0, 1 ], "max": 1 }
-    ],
+		{ "drop": "bone_tainted", "type": "bone", "mass_ratio": 0.1 },
+		{ "drop": "touhou_human_eggs", "type": "wicked", "base_num": [ 0, 1 ] }
+	],
 	"//2": "Only adds 50% to drop a bunch of human_egg "
 	}
 ]

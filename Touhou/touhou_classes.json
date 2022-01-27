@@ -20,8 +20,7 @@
 		{ "level": 3, "name": "unarmed" }
     ],
 	"traits": [
-        "HOURAI_SPECIES", 
-		"KELVINIST",
+        "HOURAI_SPECIES",
 		"PROF_MOKOU",
 		"SPIRIT_USER"
     ],
@@ -205,7 +204,7 @@
 	"traits": [
         "GYOKUTO_SPECIES",
 		"GYOKUTO_EARS",
-		"SPIRIT_USER"
+		"SPIRIT_UNTRAINED"
     ],
     "items": {
         "both": {
@@ -255,7 +254,7 @@
 	"traits": [
 		"GYOKUTO_SPECIES",
 		"GYOKUTO_EARS",
-		"SPIRIT_USER"
+		"SPIRIT_UNTRAINED"
     ],
     "//": "Add LUNARDIET trait when fully tested",
 	"items": {
@@ -399,25 +398,21 @@
     "description": "You're a wicked, amoral hermit with the ability to pass through walls and enslave the undead.  You never really cared about anyone else, only seeing fit to manipulate them for your own ends. Surviving the cataclysm should be… Interesting.",
     "points": 4,
 	"proficiencies": [ "prof_lockpicking", "prof_pharmaceutical", "prof_physiology" ],
-	"//": "Maybe remove pharmaceutical because alchemy already exists",
 	"spells": [ 
 		{ "level": 1, "id": "seiga_darksplash" },
 		{ "level": 1, "id": "seiga_foetus_shot" },
-		{ "level": 1, "id": "seiga_raisechild" }, 
-		{ "level": 3, "id": "quantum_tunnel_lesser" }
+		{ "level": 1, "id": "seiga_raisechild" }
 	],
     "skills": [
         { "level": 2, "name": "dodge" },
-		{ "level": 3, "name": "firstaid" },
-		{ "level": 3, "name": "spellcraft" },
+		{ "level": 4, "name": "firstaid" },
         { "level": 2, "name": "survival" }
     ],
 	"traits": [
-        "ANIMIST",
 		"LIAR",
 		"PSYCHOPATH", 
 		"SPIRITUAL",
-		"SPIRIT_USER"
+		"SPIRIT_HERMIT"
     ],
     "items": {
         "both": [
@@ -584,7 +579,7 @@
 	"traits": [
         "HALF_PHANTOM_SPECIES",
 		"PROF_YOUMU",
-		"SPIRIT_USER"
+		"SPIRIT_UNTRAINED"
     ],
     "//": "Add parry and dual wield somewhere",
 	"items": {

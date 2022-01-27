@@ -1,0 +1,26 @@
+[
+	{
+    "id": "yoshika_nails",
+    "type": "SPELL",
+    "name": "Nail slash",
+	"description": "Yoshika's nail slash attack",
+    "spell_class": "NONE",
+    "valid_targets": [ "ground", "hostile" ],
+	"effect": "attack",
+    "shape": "cone",
+	"damage_type": "cut",
+    "min_damage": 34,
+    "max_damage": 135,
+    "damage_increment": 10.1,
+    "min_range": 3,
+    "max_range": 3,
+    "min_aoe": 65,
+    "max_aoe": 65,
+    "difficulty": -10,
+    "max_level": 10,
+    "base_casting_time": 85,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "SOMATIC", "NO_LEGS" ]
+	}
+]
