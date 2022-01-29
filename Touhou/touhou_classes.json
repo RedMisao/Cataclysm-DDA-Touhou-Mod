@@ -258,7 +258,7 @@
 		"GYOKUTO_EARS",
 		"SPIRIT_USER"
     ],
-    "//:" "Add LUNARDIET trait when fully tested",
+    "//": "Add LUNARDIET trait when fully tested",
 	"items": {
         "both": {
             "items": [

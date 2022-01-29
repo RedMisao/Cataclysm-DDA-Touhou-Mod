@@ -5,6 +5,6 @@
     "authors": [ "Original by Taberone, editions by RedMisao" ],
     "description": "Touhou-inspired professions. Coregame balance not guaranteed.",
     "category": "touhou",
-    "dependencies": [ "dda" ]
+    "dependencies": [ "dda", "Magiclysm" ]
 }
 
