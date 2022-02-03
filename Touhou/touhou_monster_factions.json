@@ -97,6 +97,13 @@
 	"//": "Large wolf-sized, these can hunt whatever a pack of wolves can"
 	},
 	{
+    "name": "touhou_mib",
+	"type": "MONSTER_FACTION",
+    "neutral": [ "animal" ],
+    "by_mood": [ "nether", "fungus", "zombie", "touhou_youkai_neutral", "touhou_youkai_hostile" ],
+    "hate": [ "exodii", "human", "mutant", "triffid", "your_followers" ]
+	},
+	{
     "name": "touhou_pakicetus",
 	"type": "MONSTER_FACTION",
     "base_faction": "animal",

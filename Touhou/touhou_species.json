@@ -38,5 +38,13 @@
 	"type": "SPECIES",
     "description": "a youkai",
     "anger_triggers": [ "HURT", "PLAYER_CLOSE", "PLAYER_NEAR_BABY", "PLAYER_WEAK" ]
+    },
+	{
+	"id": "YOUKAI_PSEUDO",
+	"type": "SPECIES",
+    "description": "Unknown",
+    "anger_triggers": [ "HURT" ],
+	"fear_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED" ],
+	"//": "For human-looking things belonging to urban legends. Deliberately kept vague btw"
     }
 ]

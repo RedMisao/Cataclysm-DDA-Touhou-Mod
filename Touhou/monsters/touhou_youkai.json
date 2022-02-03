@@ -34,7 +34,7 @@
 	"armor_stab": 6,
 	"armor_acid": 2,
 	"armor_fire": 6,
-    "special_attacks": [ [ "EAT_FOOD", 100 ], [ "slash_3d3", 2 ] ],
+    "special_attacks": [ [ "ABSORB_MEAT", 100 ], [ "slash_3d3", 2 ] ],
 	"flags": [ "HEARS", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM" ],
 	"//": "These are what show up when you google 'chupacabra mange'. Former dogs/dog-sized canids, now at the boundary of being diseased animals and newborn youkai",
 	"//2": "Physical armor values should be removed IF the not yet implemented YOUKAI flag gives passive resistances."
@@ -83,7 +83,7 @@
 	"vision_night": 16,
     "anger_triggers": [ "HURT" ],
     "placate_triggers": [ "MEAT" ],
-    "special_attacks": [ [ "slash_2d3", 2 ], [ "EAT_FOOD", 100 ] ],
+    "special_attacks": [ [ "ABSORB_MEAT", 100 ], [ "slash_2d3", 2 ] ],
     "flags": [ "CLIMBS", "HEARS", "HIT_AND_RUN", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM" ],
 	"//": "Implement ALCOHOL as placate_triggers...",
 	"//2": "These are the actual chupacabra cryptids, if a very small version"
@@ -125,7 +125,7 @@
     "armor_bullet": 0,
     "armor_fire": 8,
     "bleed_rate": 166,
-    "special_attacks": [ [ "EAT_FOOD", 85 ], [ "LUNGE", 16 ], [ "bite_neck_3d5", 28 ] ],
+    "special_attacks": [ [ "ABSORB_MEAT", 85 ], [ "LUNGE", 16 ], [ "bite_neck_3d5", 28 ] ],
 	"flags": [ "BASHES", "CLIMBS", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_2", "SEES", "WARM" ],
 	"//3": "Should be weaker-than-normal to stab and bullet damage. Should be weaker-than-normal against soul damage. Also anything with silver should do x2-x4 damage (randomized)"
 	},
@@ -158,7 +158,7 @@
     "anger_triggers": [ "FRIEND_DIED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE", "STALK" ],
     "reproduction": { "baby_monster": "mon_nightcrawler_young", "baby_count": 2, "baby_timer": 13 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
-    "special_attacks": [ [ "EAT_FOOD", 100 ] ],
+    "special_attacks": [ [ "ABSORB_MEAT", 100 ] ],
 	"flags": [ "CLIMBS", "HEARS", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "SWARMS" ],
 	"//": "Fresno Nightcrawler"
 	},
