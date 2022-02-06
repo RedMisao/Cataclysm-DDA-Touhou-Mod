@@ -119,11 +119,28 @@
 	"//": "2 - 3 m long aquatic reptiles that feed from fish-sized things, zombies included because why not"
 	},
 	{
+    "name": "touhou_sasquatch",
+	"type": "MONSTER_FACTION",
+	"friendly": [ "touhou_youkai_neutral", "touhou_yeti" ],
+	"neutral": [ "animal" ],
+    "by_mood": [ "exodii", "fungus", "human",  "mi-go", "mutant", "small_animal", "triffid", "your_followers", "zombie" ],
+	"hate": [ "herbivore", "insect" ],
+	"//": "self explanatory, however it should fear everything at by_mood except for small_animal "
+	},
+	{
+    "name": "touhou_yeti",
+	"type": "MONSTER_FACTION",
+	"friendly": [ "touhou_sasquatch", "touhou_youkai_neutral" ],
+    "by_mood": [ "exodii", "fungus", "human",  "mi-go", "mutant", "small_animal", "triffid", "your_followers", "zombie" ],
+	"hate": [ "animal", "insect" ],
+	"//": "more aggressive sasquatchs, should be territorial"
+	},
+	{
     "name": "touhou_thylacine",
 	"type": "MONSTER_FACTION",
     "base_faction": "animal",
     "hate": [ "small_animal", "herbivore" ],
-	"//": "Considered apex predators, however these lived in islands or exotic environments that aren't really extrapollable"
+	"//": "Considered apex predators, however these lived in niche environments such as islands or exotic environments"
 	},
 	{
     "name": "touhou_summon",

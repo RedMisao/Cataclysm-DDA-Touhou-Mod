@@ -1,5 +1,11 @@
 [
 	{
+    "id": "ammo_lunar_big",
+	"type": "ammunition_type",
+    "name": "lunar ammo (big)",
+    "default": "ammo_lunar_big_1"
+	},
+	{
     "id": "ammo_lunar_medium",
 	"type": "ammunition_type",
     "name": "lunar ammo (medium)",

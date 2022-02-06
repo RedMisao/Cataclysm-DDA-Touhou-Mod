@@ -1,0 +1,7 @@
+[
+	{
+    "id": "BLOOD",
+    "type": "ammo_effect",
+    "aoe": { "field_type": "fd_blood2", "intensity_min": 2, "intensity_max": 2, "chance": 66 }
+	}
+]

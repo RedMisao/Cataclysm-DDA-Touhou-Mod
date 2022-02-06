@@ -1,9 +1,9 @@
 [
 	{
-	"id": "mon_mib1",
+	"id": "mon_mib",
     "type": "MONSTER",
     "name": { "str": "Man in black", "str_pl": "Men in black" },
-    "description": "WIP",
+    "description": "A taller than average person, wearing a black suit, with some individuals wearing hats, others black glasses.  Some seem to lack body hair such as eyelashes, what little skin can be seen is very pale skin tone, almost white.  Their very weird body movements creep you out, some seem to be overly stoic, others look as if they memorized how humans should move.  They seem to be on the look for something.",
     "volume": "95000 ml",
     "weight": "95000 g",
 	"default_faction": "touhou_mib",
@@ -15,7 +15,7 @@
     "speed": 95,
     "material": [ "flesh" ],
     "symbol": "@",
-    "color": "black_dark_gray",
+    "color": "black",
     "aggression": 10,
     "morale": 25,
     "melee_skill": 6,
@@ -33,23 +33,23 @@
 	"armor_stab": 2,
 	"armor_acid": 0,
 	"armor_fire": 0,
+	"luminance": 1,
     "special_attacks": [ 
 		{
         "type": "gun",
         "ammo_type": "9mmfmj",
-		"starting_ammo": { "9mmfmj": 20 }
 		"max_ammo": 21,
 		"cooldown": 3,
-        "fake_dex": 10
+        "fake_dex": 10,
 		"fake_skills": [ [ "gun", 3 ], [ "pistol", 4 ] ],
 		"gun_type": "glock_17",
 		"move_cost": 120,
 		"targeting_cost": 100,
-        "ranges": [ [ 2, 12, "BURST" ], [ 13, 18, "SEMI_AUTO" ] ],
-		"burst_limit": 3
+        "ranges": [ [ 2, 12, "BURST" ], [ 13, 18, "SEMI_AUTO" ] ]
 		},
 		[ "PARROT_AT_DANGER", 16 ]
 	],
+    "death_drops": "mib_drops",
 	"flags": [ "BASHES", "CAN_OPEN_DOORS", "DROPS_AMMO", "HEARS", "PATH_AVOID_DANGER_2", "SEES", "WARM" ],
 	"//": "Base, human MIB",
 	"//2": "Add 'weird' harvest"
@@ -58,22 +58,21 @@
 	"id": "mon_mib2",
     "type": "MONSTER",
     "name": { "str": "Man in black", "str_pl": "Men in black" },
-    "description": "WIP",
+	"copy-from": "mon_mib",
+    "description": "A taller than average person, wearing a black suit, with some individuals wearing hats, others black glasses.  Some seem to lack body hair such as eyelashes, what little skin can be seen is very pale skin tone, almost white.  Their very weird body movements creep you out, some seem to be overly stoic, others look as if they memorized how humans should move.  They seem to be on the look for something.",
     "vision_night": 50,
     "special_attacks": [ 
 		{
         "type": "gun",
         "ammo_type": "9mmfmj",
-		"starting_ammo": { "9mmfmj": 20 }
 		"max_ammo": 21,
 		"cooldown": 3,
-        "fake_dex": 10
+        "fake_dex": 10,
 		"fake_skills": [ [ "gun", 3 ], [ "pistol", 4 ] ],
 		"gun_type": "glock_17",
 		"move_cost": 120,
 		"targeting_cost": 100,
-        "ranges": [ [ 2, 12, "BURST" ], [ 13, 18, "SEMI_AUTO" ] ],
-		"burst_limit": 3
+        "ranges": [ [ 2, 12, "BURST" ], [ 13, 18, "SEMI_AUTO" ] ]
 		},
 		[ "PARROT_AT_DANGER", 18 ]
 	],
@@ -89,22 +88,21 @@
 	"id": "mon_mib3",
     "type": "MONSTER",
     "name": { "str": "Man in black", "str_pl": "Men in black" },
-    "description": "WIP",
+	"copy-from": "mon_mib",
+    "description": "A taller than average person, wearing a black suit, with some individuals wearing hats, others black glasses.  Some seem to lack body hair such as eyelashes, what little skin can be seen is very pale skin tone, almost white.  Their very weird body movements creep you out, some seem to be overly stoic, others look as if they memorized how humans should move.  They seem to be on the look for something.",
     "vision_night": 35,
     "special_attacks": [ 
 		{
         "type": "gun",
         "ammo_type": "9mmfmj",
-		"starting_ammo": { "9mmfmj": 20 }
 		"max_ammo": 21,
 		"cooldown": 3,
-        "fake_dex": 10
+        "fake_dex": 10,
 		"fake_skills": [ [ "gun", 3 ], [ "pistol", 4 ] ],
 		"gun_type": "glock_17",
 		"move_cost": 120,
 		"targeting_cost": 100,
-        "ranges": [ [ 2, 12, "BURST" ], [ 13, 18, "SEMI_AUTO" ] ],
-		"burst_limit": 3
+        "ranges": [ [ 2, 12, "BURST" ], [ 13, 18, "SEMI_AUTO" ] ]
 		},
 		[ "PARROT_AT_DANGER", 20 ]
 	],
@@ -120,23 +118,22 @@
 	"id": "mon_mib4",
     "type": "MONSTER",
     "name": { "str": "Man in black", "str_pl": "Men in black" },
-    "description": "WIP",
+	"copy-from": "mon_mib",
+    "description": "A taller than average person, wearing a black suit, with some individuals wearing hats, others black glasses.  Some seem to lack body hair such as eyelashes, what little skin can be seen is very pale skin tone, almost white.  Their very weird body movements creep you out, some seem to be overly stoic, others look as if they memorized how humans should move.  They seem to be on the look for something.",
     "vision_night": 25,
     "path_settings": { "max_dist": 25 },
     "special_attacks": [ 
 		{
         "type": "gun",
         "ammo_type": "9mmfmj",
-		"starting_ammo": { "9mmfmj": 20 }
 		"max_ammo": 21,
 		"cooldown": 3,
-        "fake_dex": 10
+        "fake_dex": 10,
 		"fake_skills": [ [ "gun", 3 ], [ "pistol", 4 ] ],
 		"gun_type": "glock_17",
 		"move_cost": 120,
 		"targeting_cost": 100,
-        "ranges": [ [ 2, 12, "BURST" ], [ 13, 18, "SEMI_AUTO" ] ],
-		"burst_limit": 3
+        "ranges": [ [ 2, 12, "BURST" ], [ 13, 18, "SEMI_AUTO" ] ]
 		},
 		[ "PARROT_AT_DANGER", 22 ]
 	],
@@ -151,8 +148,8 @@
 	{
 	"id": "mon_mib_shadow",
     "type": "MONSTER",
-    "name": { "str": "Shadow entity", "str_pl": "Shadow entities" },
-    "description": "WIP",
+    "name": { "str": "Shadow figure", "str_pl": "Shadow figures" },
+    "description": "A black patch of… darkness? It has a vaguely human shape, much taller than one and fuzzy on the edges.  There are no perceible details, it is as if the shadow swallowed light.",
     "volume": "120000 ml",
     "weight": "12000 g",
 	"default_faction": "touhou_mib",
@@ -163,7 +160,7 @@
     "hp": 45,
     "speed": 200,
     "symbol": "𓀠",
-    "color": "dark_gray_black",
+    "color": "black",
     "aggression": 35,
     "morale": 35,
     "melee_skill": 5,
@@ -187,7 +184,7 @@
 	"id": "mon_mib_alien",
     "type": "MONSTER",
     "name": { "str": "Alien entity", "str_pl": "Alien entities" },
-    "description": "WIP",
+    "description": "A small, mishappen humanoid, covered by some sort of organic or plastic shell that's slowly falling off as it moves.  The head is big and has a pair of two very big eyes, a small mouth, with the nose being difficult to differentiate, if it is even there.  The skin is translucent, you can see something beneath it.  The limbs are thin and look frail, the torso has surgery scars and weird prosthethics.  The more you look at it, the more it seem to warp, towards the un-earthly side.",
     "volume": "65000 ml",
     "weight": "60000 g",
 	"default_faction": "touhou_mib",
@@ -198,7 +195,7 @@
     "hp": 55,
     "speed": 125,
     "symbol": "𓀠",
-    "color": "dark_gray",
+    "color": "light_gray",
     "aggression": 25,
     "morale": 25,
     "melee_skill": 3,
@@ -216,6 +213,15 @@
 	"armor_stab": 0,
 	"armor_acid": 0,
 	"armor_fire": 0,
+    "special_attacks": [ 
+		[ "FEAR_PARALYZE", 24 ], 
+		[ "STARE", 20 ],
+		{ 
+		"spell_data": { "id": "paralyze_200" }, 
+		"type": "spell", 
+		"cooldown": 20 
+		}
+	],
 	"flags": [ "CAN_OPEN_DOORS", "HEARS", "PATH_AVOID_DANGER_2", "SEES" ],
 	"//": "Alien component to the MIB urban legend"
 	},
@@ -223,7 +229,7 @@
 	"id": "mon_mib_terminator",
     "type": "MONSTER",
     "name": { "str": "Terminator entity", "str_pl": "Terminator entities" },
-    "description": "WIP",
+    "description": "The \"human\" you thought was down, is now on feet again, with a blank expression on its face (or what's left of it).  The eyes glow red and it seems to ignore the wounds made by whatever you just threw at him.",
     "volume": "85000 ml",
     "weight": "85000 g",
 	"default_faction": "touhou_mib",
@@ -234,7 +240,7 @@
     "hp": 80,
     "speed": 135,
     "symbol": "𓀠",
-    "color": "black_light_gray",
+    "color": "dark_gray",
     "aggression": 25,
     "morale": 25,
     "melee_skill": 4,
@@ -251,7 +257,7 @@
 	"armor_stab": 8,
 	"armor_acid": 0,
 	"armor_fire": 6,
-	"flags": [ "BASH", "CAN_OPEN_DOORS", "HEARS", "PATH_AVOID_DANGER_1", "SEES" ],
+	"flags": [ "BASHES", "CAN_OPEN_DOORS", "HEARS", "PRIORITIZE_TARGETS", "SEES" ],
 	"//": "Unstoppable 'human' component to the MIB urban legend. This should have trash bionics (100% unusable) and other biomechanical stuff inside"
-	},
+	}
 ]

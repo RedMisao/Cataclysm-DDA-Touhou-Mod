@@ -16,7 +16,7 @@
 	"material": [ "flesh" ],
 	"symbol": "?",
 	"looks_like": "mon_bear",
-    "color": "brown",
+    "color": "light_gray",
     "aggression": -10,
     "morale": 50,
     "melee_skill": 6,

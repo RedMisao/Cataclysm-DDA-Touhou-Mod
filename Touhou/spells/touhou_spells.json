@@ -140,7 +140,7 @@
     "base_energy_cost": 2000,
     "energy_source": "STAMINA",
 	"flags": [ "NO_HANDS", "NO_LEGS", "SILENT" ],
-	"//": "Sadly the HEART can't be prioritized"
+	"//": "Sadly the HEART can't be prioritized. OR CAN IT"
 	},
 	{
     "id": "dash_remi2",
@@ -167,8 +167,7 @@
 	"base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "STAMINA",
-	"flags": [ "NO_HANDS", "NO_LEGS" ],
-	"//": "Sadly the HEART can't be prioritized"
+	"flags": [ "NO_HANDS", "NO_LEGS" ]
 	},
 	{
     "id": "dash_utsuho",
@@ -600,6 +599,10 @@
 	"min_aoe": 1,
     "max_aoe": 6,
     "aoe_increment": 0.5,
+    "field_id": "fd_blood2",
+    "min_field_intensity": 2,
+    "max_field_intensity": 3,
+    "field_chance": 66,
     "difficulty": -10,
     "max_level": 10,
     "base_casting_time": 0,

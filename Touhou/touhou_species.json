@@ -20,6 +20,14 @@
     "anger_triggers": [ "HURT" ]
     },
 	{
+	"id": "SASQUATCH_TOUHOU",
+	"type": "SPECIES",
+    "description": "a sasquatch",
+    "anger_triggers": [ "PLAYER_NEAR_BABY" ],
+	"fear_triggers": [ "FIRE", "FRIEND_ATTACKED", "HURT", "PLAYER_CLOSE" ],
+    "bleeds": "fd_blood"
+    },
+	{
 	"id": "VAMPIRE_TOUHOU",
 	"type": "SPECIES",
     "description": "a vampire",
