@@ -2,19 +2,18 @@
 	{
     "id": "touhou_idw_gunmods",
 	"type": "item_group",
-    "//": "To spawn the IDW tactic parts simultaneously",
     "subtype": "collection",
 	"entries": [
 		{ "item": "barrel_elongated_small2", "prob": 100 },
 		{ "item": "susat_scope", "prob": 100 },
 		{ "item": "stock_idw", "prob": 100 },
 		{ "item": "bipod_idw", "prob": 100 }
-    ]
+    ],
+    "//": "To spawn the IDW tactic parts simultaneously"
 	},
 	{
     "id": "touhou_idw_tactic",
 	"type": "item_group",
-    "//": "To spawn the IDW and its tactic parts simultaneously",
     "subtype": "collection",
 	"entries": [
 		{ "item": "barrel_elongated_small2", "prob": 100 },
@@ -22,17 +21,18 @@
 		{ "item": "stock_idw", "prob": 100 },
 		{ "item": "bipod_idw", "prob": 100 },
 		{ "item": "idw", "prob": 100 }
-    ]
+    ],
+    "//": "To spawn the IDW and its tactic parts simultaneously"
 	},
 	{
     "id": "touhou_sights",
 	"type": "item_group",
-    "//": "To spawn the mod's sights (rifles)",
     "subtype": "collection",
 	"entries": [
 		{ "item": "pso1_scope", "prob": 100 },
 		{ "item": "onm76_scope", "prob": 100 },
 		{ "item": "susat_scope", "prob": 100 }
-    ]
+    ],
+    "//": "To spawn the mod's sights (rifles)"
 	}
 ]

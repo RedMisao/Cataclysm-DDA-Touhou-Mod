@@ -1,0 +1,220 @@
+[
+	{
+    "id": "style_mokou",
+	"type": "martial_art",
+    "name": { "str": "Hourai fighting" },
+    "description": "Mokou's fighting style, learned over centuries of fighting, killing and being killed by her rival.  It's brutal, dirty, and effective, disregarding basic self-preservation in order to maximize the amount of damage done: the more you fight the more damage you do, but the more open to damage you become.",
+    "initiate": [ "You prepare yourself to fight once more.", "%s prepares to fight once more." ],
+    "learn_difficulty": 1,
+    "primary_skill": "melee",
+    "arm_block": 1,
+    "leg_block": 3,
+    "force_unarmed": true,
+    "static_buffs": [
+		{
+        "id": "buff_mokou_static",
+        "name": "Fighting experience",
+        "description": "You know where to attack, how to attack, to make it hurt.",
+        "unarmed_allowed": true,
+        "flat_bonuses": [
+			{ "stat": "arpen", "type": "bash", "scale": 12 },
+			{ "stat": "arpen", "type": "cut", "scale": 12 },
+			{ "stat": "arpen", "type": "stab", "scale": 12 },
+			{ "stat": "hit", "scale": 1 }
+        ]
+		}
+    ],
+	"onhit_buffs": [
+		{
+        "id": "buff_mokou_onhit",
+        "name": "Hourai's high",
+        "description": "You could fight for days without end…",
+        "unarmed_allowed": true,
+        "buff_duration": 2,
+        "max_stacks": 4,
+        "flat_bonuses": [
+			{ "stat": "speed", "scale": 33 },
+			{ "stat": "hit", "scale": 0.5 },
+			{ "stat": "dodge", "scale": -0.25 }
+        ],
+		"//": "Would be more fun if this was exponential: 20, 30, 40, 50 ?"
+		},
+		{
+        "id": "buff_mokou_onhit2",
+        "name": "Hourai's cadence",
+        "description": "…The only thing holding you back is pain. Sharing is caring, though.",
+        "unarmed_allowed": true,
+        "buff_duration": 4,
+        "max_stacks": 1,
+		"flat_bonuses": [ 
+			{ "stat": "armor", "type": "bash", "scale": -1 },
+			{ "stat": "armor", "type": "cut", "scale": -1 },
+			{ "stat": "armor", "type": "stab", "scale": -1 }
+		],
+		"mult_bonuses": [
+			{ "stat": "damage", "type": "bash", "scale": 1.2 },
+			{ "stat": "damage", "type": "cut", "scale": 1.15 },
+			{ "stat": "damage", "type": "stab", "scale": 1.15 },
+			{ "stat": "damage", "type": "heat", "scale": 1.15 }
+        ]
+		}
+	],
+	"onblock_buffs": [
+		{
+        "id": "buff_mokou_onblock",
+        "name": "Defended",
+        "description": "Blocking attacks puts you on a closer position to the enemy, for better and for worse.",
+        "unarmed_allowed": true,
+        "buff_duration": 2,
+        "max_stacks": 1,
+        "flat_bonuses": [
+			{ "stat": "armor", "type": "bash", "scale": -1 },
+			{ "stat": "armor", "type": "cut", "scale": -1 },
+			{ "stat": "armor", "type": "stab", "scale": -1 },
+			{ "stat": "hit", "scale": 1 }
+		]
+		}
+    ],
+	"ondodge_buffs": [
+		{
+        "id": "buff_mokou_ondodge",
+        "name": "Dodged",
+        "description": "Dodging doesn't matter, you have nothing to lose.",
+        "unarmed_allowed": true,
+        "buff_duration": 4,
+        "max_stacks": 2,
+		"mult_bonuses": [
+			{ "stat": "armor", "type": "bash", "scale": -0.5 },
+			{ "stat": "armor", "type": "cut", "scale": -0.5 },
+			{ "stat": "armor", "type": "stab", "scale": -0.5 }
+		]
+		}
+    ],
+    "onkill_buffs": [
+		{
+        "id": "buff_mokou_onkill",
+        "name": "That which is unattainable",
+        "description": "Life is something curious: you can easily take it from others, except for the actual targets of your grudge.",
+        "unarmed_allowed": true,
+        "buff_duration": 6,
+        "max_stacks": 4,
+        "flat_bonuses": [ 
+			{ "stat": "armor", "type": "bash", "scale": -0.5 },
+			{ "stat": "armor", "type": "cut", "scale": -0.5 },
+			{ "stat": "armor", "type": "stab", "scale": -0.5 },
+			{ "stat": "arpen", "type": "bash", "scale": 4 },
+			{ "stat": "arpen", "type": "cut", "scale": 4 },
+			{ "stat": "arpen", "type": "stab", "scale": 4 },
+			{ "stat": "arpen", "type": "heat", "scale": 25 },
+			{ "stat": "hit", "scale": 0.75 }
+		],
+		"mult_bonuses": [
+			{ "stat": "damage", "type": "bash", "scale": 1.15 },
+			{ "stat": "damage", "type": "cut", "scale": 1.05 },
+			{ "stat": "damage", "type": "stab", "scale": 1.05 },
+			{ "stat": "damage", "type": "heat", "scale": 1.175 }
+		]
+		}
+    ],
+    "onpause_buffs": [
+		{
+        "id": "buff_mokou_onpause",
+        "name": "One second against eternity",
+        "description": "Stopping for a second calms your intense inner fire from consuming everything.  Clearing your mind, you let it consume itself.",
+        "buff_duration": 1,
+        "max_stacks": 4,
+        "bonus_blocks": 1
+		}
+    ],
+	"techniques": [
+		"tec_brawl_disarm_melee",
+		"tec_taekwondo_strong",
+		"tec_mokou_kick",
+		"tec_mokou_kick2",
+		"tec_mokou_punch_down",
+		"tec_mokou_sommersault_kick",
+		"tec_mokou_pushback", 
+		"tec_mokou_liver_punch"
+	]
+	},
+	{
+    "id": "style_youmu",
+	"type": "martial_art",
+    "name": { "str": "Half-phantom (half) training" },
+    "description": "Youmu's fighting style, learned over decades of sword training, plus some gardening component that helped too.  She's just a bit *too* focused so she tends to go overboard.",
+    "initiate": [ "You take a firm grasp of your weapon.", "%s firmly grasps their weapon." ],
+    "learn_difficulty": 1,
+    "primary_skill": "cutting",
+    "strictly_melee": true,
+    "onmove_buffs": [
+		{
+        "id": "buff_youmu_onmove",
+        "name": "Half-phantom walk",
+        "description": "Stride like a spirit (and hit like one).",
+        "buff_duration": 1,
+        "bonus_dodges": 4,
+        "flat_bonuses": [ 
+			{ "stat": "dodge", "scale": 4 }
+		],
+        "mult_bonuses": [
+			{ "stat": "hit", "scale": 0.5 }
+		]
+		}
+	],
+    "onattack_buffs": [
+		{
+        "id": "buff_youmu_onattack",
+        "name": "Ethereal focus (damage)",
+        "description": "Direct your attacks towards maximizing the effectiveness of your slicing attacks (at the cost of blunt and piercing ones).",
+        "buff_duration": 2,
+        "max_stacks": 2,
+		"flat_bonuses": [ 
+			{ "stat": "hit", "scale": 1 }
+		],
+		"mult_bonuses": [
+			{ "stat": "arpen", "type": "bash", "scale": 0.75 },
+			{ "stat": "arpen", "type": "stab", "scale": 0.75 },
+			{ "stat": "arpen", "type": "cut", "scale": 1.5 }
+        ]
+		},
+		{
+        "id": "buff_youmu_onattack2",
+        "name": "Ethereal focus (defense)",
+        "description": "Enter a defensive stance, parrying incoming attacks… but becoming too tense and thus vulnerable to those that land.",
+        "buff_duration": 3,
+        "max_stacks": 3,
+        "bonus_blocks": 1,
+		"flat_bonuses": [ 
+			{ "stat": "armor", "type": "bash", "scale": -1 },
+			{ "stat": "armor", "type": "cut", "scale": -1 },
+			{ "stat": "armor", "type": "stab", "scale": -1 }
+		]
+		}
+    ],
+    "onpause_buffs": [
+		{
+        "id": "buff_youmu_onpause",
+        "name": "Half-phantom rest",
+        "description": "Pause, clear your mind, and prepare yourself for what follows, increasing accuracy.  Have you heard about the concept of emptiness? Way harder than it sounds, ever tried thinking nothing?",
+        "buff_duration": 1,
+        "flat_bonuses": [ 
+			{ "stat": "hit", "scale": 4 },
+			{ "stat": "speed", "scale": 166 }
+		],
+        "mult_bonuses": [
+			{ "stat": "dodge", "scale": 0.5 }
+        ]
+		}
+    ],
+    "techniques": [ 
+		"tec_youmu_hilt_nudge", 
+		"tec_youmu_swift_strike", 
+		"tec_youmu_sweep", 
+		"tec_youmu_downward_slash", 
+		"tec_youmu_stinger",
+		"tec_youmu_knee_slasher",
+		"tec_youmu_rising_fang"
+	],
+    "weapon_category": [ "JAPANESE_SWORDS" ]
+	}
+]

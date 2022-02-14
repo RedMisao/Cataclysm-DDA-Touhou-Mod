@@ -43,7 +43,10 @@
     "id": "mon_chupacabra_young",
     "type": "MONSTER",
     "copy-from": "mon_chupacabra",
-    "name": { "str": "chupacabra young" },
+    "name": { "str": "chupacabra pup" },
+    "description": "A small chupacabra.  Bizarrely cute, you can imagine some people would've adopted these in the past, given different circumstances.",
+    "volume": "1000 ml",
+    "weight": "1000 g",
 	"hp": 35,
     "melee_skill": 3,
     "dodge": 4,
@@ -99,7 +102,7 @@
     "bodytype": "dog",
     "categories": [ "NULL" ],
     "species": [ "YOUKAI_HOSTILE_TOUHOU" ],
-    "harvest": "mammal_large_fur",
+    "harvest": "mammal_noleather_harvest",
 	"hp": 122,
     "speed": 220,
     "material": [ "flesh" ],
@@ -118,14 +121,21 @@
     "vision_night": 35,
     "path_settings": { "max_dist": 25 },
     "anger_triggers": [ "PLAYER_CLOSE", "PLAYER_WEAK", "STALK" ],
-	"armor_bash": 3,
+	"armor_bash": 2,
     "armor_cut": 2,
     "armor_stab": 2,
     "armor_bullet": 8,
     "bleed_rate": 125,
-    "special_attacks": [ [ "ABSORB_MEAT", 65 ] ],
-	"flags": [ "BASHES", "HEARS", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM" ],
-	"//": "Change harvest, add bite"
+    "special_attacks": [ 
+		[ "ABSORB_MEAT", 65 ], 
+		[ "bite_3d5", 8 ], 
+		{ 
+		"spell_data": { "id": "bodyslam" }, 
+		"type": "spell", 
+		"cooldown": 20 
+		}
+	],
+	"flags": [ "BASHES", "HEARS", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM" ]
 	},
 	{
     "id": "mon_gevaudan",
@@ -167,6 +177,53 @@
     "special_attacks": [ [ "ABSORB_MEAT", 85 ], [ "LUNGE", 16 ], [ "bite_neck_3d5", 28 ] ],
 	"flags": [ "BASHES", "CLIMBS", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_2", "SEES", "WARM" ],
 	"//3": "Should be weaker-than-normal to stab and bullet damage. Should be weaker-than-normal against soul damage. Also anything with silver should do x2-x4 damage (randomized)"
+	},
+	{
+	"id": "mon_jinmenken",
+    "type": "MONSTER",
+    "name": { "str": "jinmenken", "str_pl": "jinmenken" },
+    "description": "A human-faced dog. It looks pathetic, smelling the ground in search for food like a normal dog would do.  Doesn't seem aggressive, in fact it looks like it's afraid of you instead.",
+    "volume": "30000 ml",
+    "weight": "30000 g",
+	"default_faction": "touhou_youkai_neutral",
+    "bodytype": "dog",
+    "categories": [ "NULL" ],
+    "species": [ "YOUKAI_NEUTRAL_TOUHOU" ],
+    "harvest": "jinmenken_harvest",
+    "hp": 45,
+    "speed": 135,
+    "material": [ "flesh" ],
+    "symbol": "ḍ",
+    "color": "light_gray",
+    "aggression": -20,
+    "morale": 5,
+    "melee_skill": 2,
+    "melee_dice": 2,
+    "melee_dice_sides": 2,
+    "dodge": 1,
+    "path_settings": { "max_dist": 10 },
+	"vision_night": 15,
+    "reproduction": { "baby_monster": "mon_jinmenken_young", "baby_count": 2, "baby_timer": 30 },
+    "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
+    "fear_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
+    "placate_triggers": [ "MEAT" ],
+    "special_attacks": [ [ "ABSORB_MEAT", 100 ], [ "PARROT", 31 ], [ "PARROT_AT_DANGER", 17 ] ],
+	"flags": [ "HEARS", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM" ]
+	},
+	{
+    "id": "mon_jinmenken_young",
+    "type": "MONSTER",
+    "copy-from": "mon_jinmenken",
+    "name": { "str": "jinmenken pup" },
+    "description": "A puppy.  Would be cute, if it weren't from the human face supplanting the snout, simultaneously looking old and young.  Horrifying.",
+    "volume": "750 ml",
+    "weight": "1 kg",
+    "morale": 0,
+	"hp": 12,
+    "melee_skill": 1,
+    "dodge": 0,
+	"upgrades": { "age_grow": 15, "into": "mon_jinmenken" },
+    "extend": { "flags": [ "NO_BREED" ] }
 	},
 	{
     "id": "mon_kunekune",
@@ -213,7 +270,7 @@
 		}
 	],
 	"death_function": { 
-		"message": "The %s dissipates.", 
+		"message": "The %s dissipates into air.", 
 		"corpse_type": "NO_CORPSE" 
 	},
 	"flags": [ "HEARS", "IMMOBILE", "KEENNOSE", "SEES" ]
@@ -267,9 +324,9 @@
     "id": "mon_olgoi",
     "type": "MONSTER",
     "name": { "str": "deathworm" },
-    "description": "WIP",
-    "volume": "875000 ml",
-    "weight": "200 kg",
+    "description": "A huge worm-thing.  Due its crimson coloration, the animal looks like a giant intestine slithering around.  It lacks eyes so the \"head\" is merely composed of a circular mouth, full of black pointy teeth.  It's not sacred and it doesn't produce a sacred drug, unless electric discharges counts as hallucinogen.",
+    "volume": "150 L",
+    "weight": "180 kg",
 	"default_faction": "worm",
     "bodytype": "snake",
     "categories": [ "NULL" ],
@@ -282,6 +339,7 @@
     "color": "pink",
     "aggression": 25,
     "morale": 30,
+    "regenerates": 1,
     "melee_skill": 4,
     "melee_dice": 3,
     "melee_dice_sides": 7,
@@ -315,7 +373,7 @@
 		"corpse_type": "NORMAL"
     },
     "flags": [ "ACIDPROOF", "ATTACK_LOWER", "DIGS", "ELECTRIC", "HEARS", "NOHEAD", "SLUDGEPROOF", "VENOM" ],
-	"//": "Mongolian death worm"
+	"//": "Mongolian death worm, bigger than 'official' reports"
 	},
 	{
     "id": "mon_sasquatch",

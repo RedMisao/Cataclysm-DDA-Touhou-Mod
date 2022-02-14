@@ -134,7 +134,6 @@
 	"looks_like": "f_boulder_medium",
     "bashing": 150,
     "cutting": 0,
-
 	"flags": [ "NO_REPAIR", "NO_SALVAGE", "NONCONDUCTIVE", "TRADER_AVOID" ]
 	},
 	{

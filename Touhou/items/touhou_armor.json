@@ -21,6 +21,146 @@
     "flags": [ "FANCY" ]
 	},
 	{
+    "id": "dress_shoes_black",
+    "type": "ARMOR",
+    "name": { "str": "pair of black dress shoes", "str_pl": "pairs of black dress shoes" },
+    "description": "Classy patent leather shoes.",
+    "repairs_like": "dress_shoes",
+	"weight": "1000 g",
+    "volume": "1600 ml",
+    "price": 13000,
+    "price_postapoc": 300,
+    "material": [ "leather" ],
+    "symbol": "[",
+    "looks_like": "dress_shoes",
+    "color": "black",
+    "warmth": 10,
+    "material_thickness": 2,
+    "armor": [ { "covers": [ "foot_l", "foot_r" ], "coverage": 75, "encumbrance": [ 6, 12 ] } ],
+    "flags": [ "SUPER_FANCY", "VARSIZE" ]
+	},
+	{
+    "id": "jacket_black",
+    "type": "ARMOR",
+    "name": { "str": "black jacket" },
+	"copy-from": "jacket_jean",
+    "description": "An otherwise undermarkable, elegant black jacket.",
+    "repairs_like": "jacket_jean",
+	"weight": "900 g",
+    "volume": "3250 ml",
+    "price": 4500,
+    "price_postapoc": 300,
+    "material": [ "cotton" ],
+    "material_thickness": 0.5,
+	"symbol": "[",
+    "looks_like": "jacket_jean",
+    "color": "black",
+    "warmth": 20,
+	"armor": [
+		{ "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 8, 8 ] },
+		{ "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 6, 10 ] }
+    ],
+    "pocket_data": [
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "800 ml",
+        "max_contains_weight": "1 kg",
+        "max_item_length": "13 cm",
+        "moves": 80
+		},
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "800 ml",
+        "max_contains_weight": "1 kg",
+        "max_item_length": "13 cm",
+        "moves": 80
+		}
+    ],
+    "flags": [ "OUTER", "POCKETS", "SUPER_FANCY", "VARSIZE" ]
+	},
+	{
+    "id": "mib_watch",
+    "type": "ARMOR",
+    "name": { "str": "collection watch", "str_pl": "collection watches" },
+    "description": "A fine, triangular shaped stainless steel watch.",
+    "weight": "120 g",
+    "volume": "240 ml",
+    "price": 12000,
+    "price_postapoc": 60,
+    "material": [ "leather", "steel" ],
+    "symbol": "[",
+    "color": "light_gray",
+    "sided": true,
+    "armor": [ { "covers": [ "hand_l", "hand_r" ], "coverage": 8 } ],
+	"flags": [ "ALARMCLOCK", "ALLOWS_NATURAL_ATTACKS", "BELTED", "FANCY", "OVERSIZE", "WATCH", "WATER_FRIENDLY" ]
+	},
+	{
+    "id": "tie_black",
+    "type": "ARMOR",
+    "name": { "str": "black necktie" },
+	"copy-from": "tie_necktie",
+    "description": "An undermarkable, long, dapper black necktie.",
+    "weight": "200 g",
+    "volume": "220 ml",
+    "price": 1200,
+    "price_postapoc": 12,
+    "material": [ "cotton" ],
+    "symbol": "[",
+    "looks_like": "tie_necktie",
+    "color": "black",
+    "flags": [ "SUPER_FANCY" ]
+	},
+	{
+    "id": "pants_black",
+    "type": "ARMOR",
+    "name": { "str_sp": "black pants" },
+	"copy-from": "pants",
+    "description": "A pair of unremarkable, stylish black dress pants.",
+    "repairs_like": "pants",
+	"weight": "700 g",
+    "volume": "3000 ml",
+    "price": 5200,
+    "price_postapoc": 110,
+    "material": [ "cotton" ],
+    "material_thickness": 0.5,
+	"symbol": "[",
+    "looks_like": "pants",
+    "color": "black",
+    "warmth": 15,
+	"pocket_data": [
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1250 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "19 cm",
+        "moves": 80
+		},
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1250 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "19 cm",
+        "moves": 80
+		},
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1080 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "165 mm",
+        "moves": 100
+		},
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1080 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "165 mm",
+        "moves": 100
+		}
+    ],
+    "armor": [ { "covers": [ "leg_l", "leg_r" ], "coverage": 95, "encumbrance": [ 6, 10 ] } ],
+    "flags": [ "POCKETS", "SUPER_FANCY", "VARSIZE" ]
+	},
+	{
     "id": "ribbon_black",
     "type": "TOOL_ARMOR",
 	"name": "black ribbon",

@@ -10,7 +10,7 @@
 	"starting_trait": false,
     "valid": false,
     "armor": [ { "parts": "ALL", "bash": 12, "cut": 12, "stab": 12, "bullet": 16, "acid": 8, "heat": 8, "electric": 8, "cold": 8 } ],
-	"//": "Can't find the fire and laser resistence field names, used heat instead",
+	"//": "12 natural physical defense (increased for bullets because of their higher damage) and 8 elemental defense",
 	"bleed_resist": 100,
 	"//2": "I have no idea how this works, this should cover minor to some medium blood damage, such as zombie scratchs and maybe someone without sword proficiencies hitting Tenko with a sword",
 	"fatigue_modifier": 0.5,
@@ -21,7 +21,8 @@
         { "part": "ARM_R", "neutral": 3 }, 
         { "part": "TORSO", "neutral": 3 } 
 	],
-	"cancels": [ "THINSKIN", "THICKSKIN", "TOUGH", "TOUGH2", "FLIMSY", "FLIMSY2", "FLIMSY3" ]
+	"cancels": [ "THINSKIN", "THICKSKIN", "TOUGH", "TOUGH2", "FLIMSY", "FLIMSY2", "FLIMSY3" ],
+	"//3": "Ideally she should have minor reduction to pain, half of PAINRESIST if not 66%. More ideally, she should gain pain resist buffs while fighting on melee"
     },
 	{
     "type": "mutation",
@@ -70,7 +71,6 @@
 	"movecost_obstacle_modifier": 0.8,
 	"passive_mods": { "int_mod": -2 },
 	"armor": [ { "parts": "ALL", "heat": 12 } ],
-	"//": "can't find the fire resistence field name to add it, used heat instead",
 	"//2": "Can't find how to use percentage dmg reduction, this value should be 66% of all received fire damage + base say, 4, so it blocks minor fire attacks instead of being completely immune",
 	"wet_protection": [
         { "part": "LEG_L", "neutral": -1 }, 
@@ -92,11 +92,13 @@
 	"purifiable": false,
 	"starting_trait": false,
 	"valid": false,
+    "armor": [ { "parts": "ALL", "heat": 999 } ],
 	"healing_awake": 1,
 	"healing_resting": 1,
 	"mending_modifier": 0.5,
+	"flags": [ "BIO_IMMUNE", "HEAT_IMMUNE", "NO_DISEASE", "NO_RADIATION", "PARAIMMUNE" ],
 	"//": "Is there a way to implement actual immortality? Not just fast health regen but something that blocks hp going below 1, and slowly (days) regenerates lost limbs and such. If so, remove the healing above",
-	"flags": [ "BIO_IMMUNE", "NO_DISEASE", "NO_RADIATION", "PARAIMMUNE" ]
+	"//2": "She should have 25-33% pain reduction"
     },
 	{
     "type": "mutation",
@@ -117,10 +119,9 @@
 	],
     "//": "Above should be negative wet protection (200% final demerit), not sure how those values work. Also, replace if I find a way to add some kind of water weakness other than moral bonus",
 	"armor": [ { "parts": "ALL", "heat": 12 } ],
-	"//2": "can't find the fire resistence field name to add it, used heat instead",
-	"//3": "Can't find how to use percentage dmg reduction, this value should be 66% of all received fire damage + base say, 4, so it blocks minor fire attacks instead of being completely immune",
-	"//4": "Also, add like 2-4 soul dmg reduction when I implement that",
-	"//5": "Also, add some kind of social bonus for enemies with both the UNDEAD and SPIRIT/SOUL trait, this would allow for Vengeful spirits be neutral/friendly to her and not also affect every single Zed out there"
+	"//3": "This should block minor fire attacks",
+	"//4": "Add like 2-4 soul dmg reduction when I implement that",
+	"//5": "Add some kind of social bonus for enemies with both the UNDEAD and SPIRIT/SOUL trait, this would allow for Vengeful spirits be neutral/friendly to her and not also affect every single Zed out there"
 	},
 	{
     "type": "mutation",
@@ -169,9 +170,8 @@
 	"purifiable": false,
 	"starting_trait": false,
     "valid": false,
-	"armor": [ { "parts": "ALL", "acid": 12, "biological": 12 } ],
-	"//1": "Can't find how to use percentage dmg reduction, thse values should be 66% of all received acid (and biological) damage  + base say, 4, so it blocks minor fire attacks instead of being completely immune",
-	"//2": "Supposedly the ACID_BARF attack from the acid zombie is hardcoded in C++ so I can't check the values of acid attacks in general to use a base value for that reduction. If anything, I want to set 0-2 received dmg from the base acid zombie attack",
+	"armor": [ { "parts": "ALL", "acid": 8, "biological": 999 } ],
+	"//1": "This should block minor acid damage, enough said for biological damage",
 	"//3": "Also, add some kind of social bonus for enemies with the YOUKAI trait or plus ARACHNID. In fact I should probably check all social interactions of Youkai in general at some point",
 	"flags": [ "FEATHER_FALL", "BIO_IMMUNE", "NO_DISEASE", "PARAIMMUNE" ]
 	},
@@ -250,7 +250,7 @@
     "valid": false,
 	"mana_regen_multiplier": 6,
 	"cancels": [  ],
-    "//": "This equals a full mana pool every 1 h 20 minutes or so"
+    "//": "This equals a full mana pool every 1 h 20 minutes or so. Should have some extra benefit to compensate, but what?"
 	},
 	{
     "type": "mutation",
@@ -349,12 +349,12 @@
     "id": "PROF_MOKOU",
     "name": "Immortal Guide of the Bamboo Forest",
     "points": 0,
-    "description": "Your countless years of fighting your rival has granted you lots of fighting skills, primarily with kicking attacks.",
+    "description": "Your countless years of fighting your rival has granted you lots of fighting skills, primarily with kicking attacks and strong direct blows.",
     "profession": true,
 	"purifiable": false,
 	"starting_trait": false,
 	"valid": false,
-	"initial_ma_styles": [ "style_taekwondo", "style_capoeira", "style_karate" ]
+	"initial_ma_styles": [ "style_mokou" ]
     },
 	{
     "type": "mutation",
@@ -369,8 +369,7 @@
 	"movecost_flatground_modifier": 0.93,
 	"movecost_obstacle_modifier": 0.93,
 	"//": "If my math is correct, this should be equivalent to 1.33 movement speed total, up from the 1.25 movement speed from base hell ravens",
-	"flags": [ "HEATPROOF", "NO_RADIATION", "GLARE_RESIST", "PARAIMMUNE", "RADIOGENIC" ],
-	"//2": "Okuu HAS to be radiation immune + fire immune + have the RADIOGENIC trait",
+	"flags": [ "HEAT_IMMUNE", "NO_RADIATION", "GLARE_RESIST", "PARAIMMUNE", "RADIOGENIC" ],
 	"//3": "Check the BIOLUM trait tree to see if I can use the toggleable light, or just make a spell or something",
 	"//4": "Add wings (big) and see if there's flying as mechanic. The problem is, how do I make those wings not interfer with her clothing?"
 	},

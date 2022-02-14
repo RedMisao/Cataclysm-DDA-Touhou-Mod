@@ -36,7 +36,7 @@
 						{ "group": "pants_male", "prob": 60, "damage": [ 1, 4 ] },
 						{
 						"distribution": [
-								{ "item": "leather_belt", "prob": 85, "damage": [ 1, 4 ] }
+							{ "item": "leather_belt", "prob": 85, "damage": [ 1, 4 ] }
 						],
 						"prob": 30
 						}

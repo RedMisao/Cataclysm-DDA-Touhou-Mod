@@ -10,6 +10,7 @@
 		{ "level": 1, "id": "dash_mokou" },	
 		{ "level": 1, "id": "mokou_blazekick" },
 		{ "level": 1, "id": "mokou_fireball" },
+		{ "level": 1, "id": "mokou_flamingtalons" },
 		{ "level": 1, "id": "mokou_fujiyamakazan" }
 	],
     "skills": [
@@ -97,7 +98,7 @@
     "ident": "kaenbyou_rin",
 	"type": "profession",
     "name": "Hell's traffic accident",
-    "description": "WIP",
+    "description": "It was yet another uneventful day down there helping Okuu with the reactor: corpses burning, spirits floating, fusion fuel being distilled, eating lunch with your master… You craved a nap at the Shrine, so you snuck to reach your goal… and somehow got lost.  You smell death *everywhere*, which would be amazing if it wasn't that these dead are moving, they're angry, and they're not listening to what you have to say.",
     "points": 0,
 	"spells": [ 
 		{ "level": 1, "id": "dash_basic" },
@@ -188,8 +189,8 @@
     "points": 4,
 	"proficiencies": [ "prof_pharmaceutical" ], 
 	"spells": [ 
-			{ "level": 1, "id": "create_ammo_lunar_small" },
-			{ "level": 1, "id": "dash_basic" }
+		{ "level": 1, "id": "create_ammo_lunar_small" },
+		{ "level": 1, "id": "dash_basic" }
 	],
 	"skills": [
         { "level": 2, "name": "dodge" },
@@ -241,8 +242,8 @@
     "description": "You were accompanying the Watatsuki sisters on their visit to Earth when the Cataclysm struck! In the chaos and panic that followed the collapse of the Barrier (or that's what you heard from them), you got separated and left alone.  To make things worse, you can't contact your peers by use of the Gyokuto network.  You've got some skills from your Lunar Defense Corps training, but you'll need more than that to survive…",
     "points": 4,
 	"spells": [ 
-			{ "level": 1, "id": "create_ammo_lunar_medium" },
-			{ "level": 1, "id": "dash_reisen" }
+		{ "level": 1, "id": "create_ammo_lunar_medium" },
+		{ "level": 1, "id": "dash_reisen" }
 	],
 	"skills": [
         { "level": 2, "name": "dodge" },
@@ -296,9 +297,9 @@
 		"bio_redmagic"
 	],
 	"spells": [ 
-			{ "level": 1, "id": "dash_remi" },
-			{ "level": 1, "id": "remilia_gungnir" },
-			{ "level": 1, "id": "remilia_gungnir_throw" }
+		{ "level": 1, "id": "dash_remi" },
+		{ "level": 1, "id": "remilia_gungnir" },
+		{ "level": 1, "id": "remilia_gungnir_throw" }
 	],
 	"skills": [
         { "level": 3, "name": "dodge" },
@@ -438,10 +439,10 @@
     "ident": "shameimaru_aya",
 	"type": "profession",
     "name": "Crow Tengu Journalist",
-    "description": "WIP",
+    "description": "There wasn't a lot going on so you went to visit some of your friends.  First stop was the Shrine Maiden, but she was more dismissive than usual.  Second stop was Momiji, but she wasn't available.  Third stop was the Village librarian, but she was sleeping.  Going through the Bamboo Forest of the Lost you, well… it was bound to happen some time.  You're pretty sure these people wearing filthy Outside world clothing shouldn't be here, which means this one's good!",
     "points": 4,
     "spells": [ 
-			{ "level": 1, "id": "dash_basic" }
+		{ "level": 1, "id": "dash_basic" }
 	],
 	"skills": [
 		{ "level": 2, "name": "cutting" },
@@ -480,8 +481,8 @@
     "description": "Feeling bored doing basically noting in Heaven, you came down to visit the Shrine and your friends.  Something happened in the meantime though.  At first you were amused, then became slightly worried, then very, very curious.  The outside world looks… different now.",
     "points": 4,
     "spells": [ 
-			{ "level": 1, "id": "dash_basic" },
-			{ "level": 1, "id": "tenko_keystone" }
+		{ "level": 1, "id": "dash_basic" },
+		{ "level": 1, "id": "tenko_keystone" }
 	],
 	"skills": [
         { "level": 4, "name": "cutting" },
@@ -520,13 +521,13 @@
     "ident": "utsuho_reiuji",
 	"type": "profession",
     "name": "Subterranean sun",
-    "description": "WIP",
+    "description": "Resuming your duties after lunch, you master asked you to go look for Orin, and she was indeed missing again. You to the surface, noticing the friendly cave spider wasn't at her usual spot, maybe both went together!  You know she likes to go nap at the Shrine, so you went… to the wrong one, and noticing this was no mountain, nothing close, you looked back, you saw no \"back\".  You're aware you can get lost sometimes, but this is too much even for yourself.  Now you have to find Orin, find the Tsuchigumo, and return.",
     "points": 4,
     "spells": [ 
-			{ "level": 1, "id": "dash_utsuho" },
-			{ "level": 1, "id": "utsuho_blacksun" },
-			{ "level": 1, "id": "utsuho_hellcannon" },
-			{ "level": 1, "id": "utsuho_nuke" }
+		{ "level": 1, "id": "dash_utsuho" },
+		{ "level": 1, "id": "utsuho_blacksun" },
+		{ "level": 1, "id": "utsuho_hellcannon" },
+		{ "level": 1, "id": "utsuho_nuke" }
 	],
 	"skills": [
         { "level": 2, "name": "dodge" }

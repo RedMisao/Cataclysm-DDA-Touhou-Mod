@@ -3,13 +3,248 @@
     "id": "SHIELDBASH",
 	"type": "technique",
     "name": "Shield bash",
-    "description": "Slam an enemy with your shield, ",
+    "description": "Slam an enemy with your shield, dealing increased damage and stunning it for a short time.",
+	"skill_requirements": [ { "name": "melee", "level": 3 } ],
 	"crit_ok" : true,
 	"crit_tec": false,
 	"melee_allowed": true,
     "messages": [ "You bash %s with your shield", "<npcname> bashes %s with their shield" ],
-	"skill_requirements": [ { "name": "melee", "level": 2 } ],
 	"stun_dur": 1,
-	"unarmed_weapons_allowed" : true
+	"unarmed_weapons_allowed" : true,
+    "mult_bonuses": [
+		{ "stat": "damage", "type": "bash", "scale": 2 },
+		{ "stat": "damage", "type": "cut", "scale": 2 },
+		{ "stat": "damage", "type": "stab", "scale": 2 }
+    ]
+	},
+	{
+    "id": "tec_mokou_kick",
+	"type": "technique",
+    "name": "Simple kick",
+    "messages": [ "You kick %s", "<npcname> kicks %s" ],
+	"skill_requirements": [ { "name": "melee", "level": 2 } ],
+	"crit_ok" : true,
+	"unarmed_allowed": true,
+	"unarmed_weapons_allowed" : false,
+    "weighting": 2,
+	"grab_break": true,
+	"mult_bonuses": [
+		{ "stat": "damage", "type": "bash", "scale": 1.66 },
+		{ "stat": "damage", "type": "cut", "scale": 1.33 },
+		{ "stat": "damage", "type": "stab", "scale": 1.66 }
+    ]
+	},
+	{
+    "id": "tec_mokou_kick2",
+	"type": "technique",
+    "name": "Knee-kick",
+    "messages": [ "You quickly knee and then immediately kick %s back", "<npcname> knees and immediately kicks %s back" ],
+	"skill_requirements": [ { "name": "melee", "level": 5 } ],
+	"knockback_dist": 1,
+	"unarmed_allowed": true,
+	"unarmed_weapons_allowed" : false,
+	"grab_break": true,
+	"mult_bonuses": [
+		{ "stat": "movecost", "scale": 1.25 },
+		{ "stat": "damage", "type": "bash", "scale": 2 },
+		{ "stat": "damage", "type": "cut", "scale": 2 },
+		{ "stat": "damage", "type": "stab", "scale": 2 }
+    ],
+	"//": "Needs fire damage component -> recheck damage values"
+	},
+	{
+    "id": "tec_mokou_punch_down",
+	"type": "technique",
+    "name": "Downward punch",
+    "messages": [ "You punch at %s downwards", "<npcname> punches at %s downwards" ],
+    "skill_requirements": [ { "name": "unarmed", "level": 3 } ],
+	"crit_ok" : true,
+	"unarmed_allowed": true,
+	"unarmed_weapons_allowed" : true,
+	"mult_bonuses": [ 
+		{ "stat": "damage", "type": "bash", "scale": 1.25 } 
+	],
+	"//": "Needs fire damage component + ignite the target -> recheck damage values"
+	},
+	{
+    "id": "tec_mokou_sommersault_kick",
+	"type": "technique",
+    "name": "Sommersault kick",
+    "messages": [ "You jump and kick %s", "<npcname> jumps and kicks %s" ],
+    "skill_requirements": [ { "name": "unarmed", "level": 5 } ],
+	"unarmed_allowed": true,
+	"unarmed_weapons_allowed" : false,
+    "weighting": -2,
+    "down_dur": 2,
+    "stun_dur": 1,
+    "mult_bonuses": [
+		{ "stat": "movecost", "scale": 1.5 },
+		{ "stat": "damage", "type": "bash", "scale": 2 },
+		{ "stat": "damage", "type": "cut", "scale": 1.5 },
+		{ "stat": "damage", "type": "stab", "scale": 5 }
+    ],
+	"//": "Needs fire damage component + ignite the target -> recheck damage values"
+	},
+	{
+    "id": "tec_mokou_pushback",
+	"type": "technique",
+    "name": "Push back",
+    "messages": [ "You forcefully push %s", "<npcname> pushes %s back with great force" ],
+	"skill_requirements": [ { "name": "melee", "level": 2 } ],
+	"knockback_dist": 3,
+    "stun_dur": 1,
+	"unarmed_allowed": true,
+	"unarmed_weapons_allowed" : true,
+	"weighting": -1,
+	"grab_break": true,
+	"mult_bonuses": [
+		{ "stat": "movecost", "scale": 0.85 }
+    ],
+	"//": "Needs a bit of fire damage component -> add values"
+	},
+	{
+    "id": "tec_mokou_liver_punch",
+	"type": "technique",
+    "name": "Liver punch",
+    "messages": [ "You target %s liver with a punch", "<npcname> punches %s in the liver" ],
+    "skill_requirements": [ { "name": "melee", "level": 2 } ],
+	"unarmed_allowed": true,
+	"unarmed_weapons_allowed" : true,
+	"knockback_follow": true,
+	"knockback_dist": 1, 
+	"stun_dur": 2,
+	"mult_bonuses": [
+		{ "stat": "movecost", "scale": 0.85 },
+		{ "stat": "damage", "type": "bash", "scale": 2 },
+		{ "stat": "damage", "type": "cut", "scale": 2 },
+		{ "stat": "damage", "type": "stab", "scale": 2 }
+    ],
+	"//": "Needs fire damage component -> recheck damage values"
+	},
+	{
+    "id": "tec_mokou_tackle",
+	"type": "technique",
+    "name": "Tackle",
+    "messages": [ "You tackle at %s", "<npcname> tackles at %s, " ],
+    "skill_requirements": [ { "name": "melee", "level": 2 } ],
+    "melee_allowed": true,
+	"knockback_follow": true,
+	"knockback_dist": 2,
+    "down_dur": 2,
+	"stun_dur": 1,
+	"mult_bonuses": [
+		{ "stat": "movecost", "scale": 1.66 },
+		{ "stat": "damage", "type": "bash", "scale": 2 },
+		{ "stat": "damage", "type": "cut", "scale": 2 },
+		{ "stat": "damage", "type": "stab", "scale": 2 }
+    ],
+	"//": "Lunge but called tackle",
+	"//2": "Needs fire damage component -> recheck damage values"
+	},
+	{
+    "id": "tec_youmu_hilt_nudge",
+	"type": "technique",
+    "name": "Hilt nudge",
+    "messages": [ "You strike %s with the hilt of your weapon", "<npcname> strikes %s with the hilt of their weapon" ],
+    "skill_requirements": [ { "name": "melee", "level": 3 } ],
+    "melee_allowed": false,
+	"unarmed_allowed" : false,
+	"weighting": -1,
+    "flat_bonuses": [ 
+		{ "stat": "damage", "type": "bash", "scaling-stat": "str", "scale": 1.33 }
+	],
+	"mult_bonuses": [
+		{ "stat": "movecost", "scale": 0.5 },
+		{ "stat": "damage", "type": "cut", "scale": 0 },
+		{ "stat": "damage", "type": "stab", "scale": 0 }
+    ]
+	},
+	{
+    "id": "tec_youmu_swift_strike",
+	"type": "technique",
+    "name": "Swift strike",
+    "messages": [ "You strike %s swiftly, slashing upwards", "<npcname> strikes %s swiftly, slashing upwards" ],
+    "skill_requirements": [ { "name": "melee", "level": 3 } ],
+    "melee_allowed": false,
+	"unarmed_allowed" : false,
+    "flat_bonuses": [ 
+		{ "stat": "arpen", "type": "cut", "scaling-stat": "str", "scale": 0.8 }
+	],
+	"mult_bonuses": [
+		{ "stat": "movecost", "scale": 0.8 },
+		{ "stat": "damage", "type": "cut", "scale": 1.2 }
+    ],
+	"//": "Should target torso and head only"
+	},
+	{
+    "id": "tec_youmu_sweep",
+	"type": "technique",
+    "name": "Sweep",
+    "messages": [ "You sweep at %s, slowing them down", "<npcname> sweeps at %s, slowing them down" ],
+    "skill_requirements": [ { "name": "melee", "level": 3 } ],
+    "melee_allowed": false,
+	"unarmed_allowed" : false,
+	"down_dur": 2,
+	"aoe": "wide",
+	"//": "Should target legs and feet only"
+	},
+	{
+    "id": "tec_youmu_downward_slash",
+	"type": "technique",
+    "name": "Downward slash",
+    "messages": [ "You rise your weapon high, and forcefully hit %s", "<npcname> rises their weapon and then forcefully hits %s" ],
+    "skill_requirements": [ { "name": "melee", "level": 4 } ],
+    "melee_allowed": false,
+	"unarmed_allowed" : false,
+    "flat_bonuses": [ 
+		{ "stat": "arpen", "type": "cut", "scaling-stat": "str", "scale": 2 }
+	],
+	"mult_bonuses": [
+		{ "stat": "movecost", "scale": 1.33 },
+		{ "stat": "damage", "type": "cut", "scale": 1.66 }
+    ]
+	},
+	{
+    "id": "tec_youmu_stinger",
+	"type": "technique",
+    "name": "Stinger",
+    "messages": [ "You stab %s with great force", "<npcname> stabs %s with great force" ],
+    "skill_requirements": [ { "name": "melee", "level": 5 } ],
+    "melee_allowed": false,
+	"unarmed_allowed" : false,
+	"attack_override": true,
+	"aoe": "impale",
+	"flat_bonuses": [ 
+		{ "stat": "arpen", "type": "stab", "scaling-stat": "str", "scale": 2 },
+		{ "stat": "damage", "type": "stab", "scaling-stat": "str", "scale": 4 }
+	],
+	"//": "Should only do 2 times str dmg if dealing extra +1 soul damage"
+	},
+	{
+    "id": "tec_youmu_knee_slasher",
+	"type": "technique",
+    "name": "Knee slasher",
+    "messages": [ "You execute a quick and narrow slash at %s's lower body", "<npcname> executes a quick and narrow slash at %s's lower body" ],
+    "skill_requirements": [ { "name": "melee", "level": 6 } ],
+    "melee_allowed": false,
+	"unarmed_allowed" : false,
+	"mult_bonuses": [ 
+		{ "stat": "movecost", "scale": 0.66 },
+		{ "stat": "damage", "type": "cut", "scale": 0.75 }
+	]
+	},
+	{
+    "id": "tec_youmu_rising_fang",
+	"type": "technique",
+    "name": "Rising fang",
+    "messages": [ "You slice %s sideways while jumping", "<npcname> slices %s sideways while jumping" ],
+    "skill_requirements": [ { "name": "melee", "level": 6 } ],
+    "melee_allowed": false,
+	"unarmed_allowed" : false,
+	"mult_bonuses": [ 
+		{ "stat": "movecost", "scale": 1.5 },
+		{ "stat": "damage", "type": "cut", "scale": 2.5 }
+	],
+	"//": "Swatter but called Rising Fang"
 	}
 ]

@@ -43,7 +43,7 @@
     "type": "MONSTER",
     "name": { "str": "amphicyon cub" },
     "copy-from": "mon_amphicyon",
-	"description": "WIP.",
+	"description": "A small wolf-bear pup.  A cute pet for the first six months, you're gonna need a bigger yard.",
     "volume": "25 L",
     "weight": "30 kg",
 	"hp": 30,

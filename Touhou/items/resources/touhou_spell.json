@@ -14,6 +14,7 @@
     "symbol": "ɵ",
     "color": "dark_gray",
     "ammo_type": "components",
-	"count": 400
+	"count": 1,
+	"stack_size": 200
 	}
 ]

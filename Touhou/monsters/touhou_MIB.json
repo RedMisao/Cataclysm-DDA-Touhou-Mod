@@ -34,7 +34,8 @@
 	"armor_acid": 0,
 	"armor_fire": 0,
 	"luminance": 1,
-    "special_attacks": [ 
+	"starting_ammo": { "9mm": 20 },
+	"special_attacks": [ 
 		{
         "type": "gun",
         "ammo_type": "9mmfmj",
@@ -50,9 +51,14 @@
 		[ "PARROT_AT_DANGER", 16 ]
 	],
     "death_drops": "mib_drops",
+    "death_function":
+		{
+		"effect": { "id": "death_mib", "hit_self": true }
+		},
 	"flags": [ "BASHES", "CAN_OPEN_DOORS", "DROPS_AMMO", "HEARS", "PATH_AVOID_DANGER_2", "SEES", "WARM" ],
-	"//": "Base, human MIB",
-	"//2": "Add 'weird' harvest"
+	"//": "Base (human) MIB",
+	"//2": "Add 'weird' harvest",
+	"//3": "Each death spawning something should print a message, telling the player (defaults are kept below), but I'm not sure how to do that."
 	},
 	{
 	"id": "mon_mib2",
@@ -109,7 +115,7 @@
     "death_function": {
 		"effect": { "id": "death_mib_alienspawn", "hit_self": true },
 		"message": "The %s stops in its tracks, the flesh starts to melt and something comes out from the body!",
-		"corpse_type": "NORMAL"
+		"corpse_type": "NO_CORPSE"
     },
 	"flags": [ "BASHES", "CAN_OPEN_DOORS", "DROPS_AMMO", "HEARS", "PATH_AVOID_DANGER_1", "SEES" ],
 	"//": "Alien type MIB, add pile-of-flesh corpse"
