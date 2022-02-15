@@ -346,6 +346,18 @@
 	},
 	{
     "type": "mutation",
+    "id": "PROF_MEILING",
+    "name": "Rainbow Gatekeeper",
+    "points": 0,
+    "description": "WIP",
+    "profession": true,
+	"purifiable": false,
+	"starting_trait": false,
+	"valid": false,
+	"initial_ma_styles": [ "style_meiling" ]
+    },
+	{
+    "type": "mutation",
     "id": "PROF_MOKOU",
     "name": "Immortal Guide of the Bamboo Forest",
     "points": 0,
@@ -412,7 +424,7 @@
 	"type": "mutation",
     "name": { "str": "Lunar diet" },
     "points": 0,
-    "description": "Eating food (in the Moon) wasn't a problem until this point.  It's possible for you to eat impure food, but you will obtain less nutrition from it.",
+    "description": "Eating food wasn't a problem until this point.  It's possible for you to eat food coming from Earth and other impure places, but you will obtain less nutrition from it.",
     "profession": true,
     "purifiable": false,
 	"starting_trait": false,

@@ -21,6 +21,83 @@
     "flags": [ "FANCY" ]
 	},
 	{
+    "id": "cheongsam",
+    "type": "ARMOR",
+    "name": { "str": "cheongsam", "str_pl": "cheongsam" },
+	"copy-from": "dress",
+    "description": "A very elegant Chinese style dress, showing the characteristic sideways seam going from the collar to the end of the right side, plus an intrincate embroided design across the surface.  Tight and slightly uncomfortable for the upper body, the tiny sleeves are no issue, and the sideways seam enables natural leg movement by use of a clever breaking point for the entire fabric.  This will make you feel like a celebrity on a blockbuster hit or a special secret operative when dispatching zeds.",
+    "repairs_like": "dress",
+	"weight": "1000 g",
+    "volume": "3500 ml",
+    "price": 24000,
+    "price_postapoc": 65,
+    "material": [ "cotton" ],
+    "symbol": "[",
+    "looks_like": "robe",
+    "color": "red",
+    "warmth": 10,
+    "material_thickness": 0.2,
+    "armor": [ 
+		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ], "coverage": 8, "encumbrance": [ 0, 2 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "coverage": 80, "encumbrance": [ 0, 2 ] },
+		{ "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 8, 16 ] }
+	],
+    "flags": [ "FANCY", "VARSIZE" ],
+	"//": "Generic below the knee version, no silk material so it's made of cotton instead"
+	},
+	{
+    "id": "cheongsam_medium",
+    "type": "ARMOR",
+    "name": { "str": "cheongsam (medium)", "str_pl": "cheongsam (medium)" },
+	"copy-from": "cheongsam",
+    "description": "A very elegant Chinese style dress, showing the characteristic sideways seam going from the collar to the end of the right side, plus an intrincate embroided design across the surface.  This one's shorter than usual, barely covering below the knees.",
+    "repairs_like": "cheongsam",
+	"weight": "900 g",
+    "volume": "3000 ml",
+    "price": 22000,
+    "price_postapoc": 60,
+    "material": [ "cotton" ],
+    "symbol": "[",
+    "looks_like": "dress",
+    "color": "red",
+    "warmth": 9,
+    "material_thickness": 0.2,
+    "armor": [ 
+		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ], "coverage": 8, "encumbrance": [ 0, 2 ] },
+		{ "covers": [ "leg_l" ], "specifically_covers": [ "leg_hip_l", "leg_upper_l" ], "coverage": 65, "encumbrance": [ 0, 2 ] },
+		{ "covers": [ "leg_r" ], "specifically_covers": [ "leg_hip_r", "leg_upper_r" ], "coverage": 65, "encumbrance": [ 0, 2 ] },
+		{ "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 8, 16 ] }
+	],
+    "flags": [ "FANCY", "VARSIZE" ],
+	"//": "Ends around 4-6 cm below the knee"
+	},
+	{
+    "id": "cheongsam_short",
+    "type": "ARMOR",
+    "name": { "str": "cheongsam (short)", "str_pl": "cheongsam (short)" },
+	"copy-from": "cheongsam",
+    "description": "A very elegant Chinese style dress, showing the characteristic sideways seam going from the collar to the end of the right side, plus an intrincate embroided design across the surface.  This one's bold, as it's short enough it barely covers your thighs, similar to an oversized shirt if it were twenty times more elegant.",
+    "repairs_like": "cheongsam",
+	"weight": "750 g",
+    "volume": "2700 ml",
+    "price": 22000,
+    "price_postapoc": 60,
+    "material": [ "cotton" ],
+    "symbol": "[",
+    "looks_like": "dress",
+    "color": "red",
+    "warmth": 9,
+    "material_thickness": 0.2,
+    "armor": [ 
+		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ], "coverage": 8, "encumbrance": [ 0, 2 ] },
+		{ "covers": [ "leg_l" ], "specifically_covers": [ "leg_hip_l", "leg_upper_l" ], "coverage": 25, "encumbrance": [ 0, 2 ] },
+		{ "covers": [ "leg_r" ], "specifically_covers": [ "leg_hip_r", "leg_upper_r" ], "coverage": 25, "encumbrance": [ 0, 2 ] },
+		{ "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 8, 16 ] }
+	],
+    "flags": [ "FANCY", "VARSIZE" ],
+	"//": "Covers one third of the thigh at best"
+	},
+	{
     "id": "dress_shoes_black",
     "type": "ARMOR",
     "name": { "str": "pair of black dress shoes", "str_pl": "pairs of black dress shoes" },
@@ -93,6 +170,70 @@
     "sided": true,
     "armor": [ { "covers": [ "hand_l", "hand_r" ], "coverage": 8 } ],
 	"flags": [ "ALARMCLOCK", "ALLOWS_NATURAL_ATTACKS", "BELTED", "FANCY", "OVERSIZE", "WATCH", "WATER_FRIENDLY" ]
+	},
+	{
+    "id": "tang_shirt",
+    "type": "ARMOR",
+    "category": "armor",
+	"name": "tang shirt",
+	"copy-from": "longshirt",
+	"description": "A long sleeved shirt made in characteristic Chinese style.  It has a short, somewhat flexible collar, knots replacing buttons, with the fabric feeling different to the touch compared to the average longshirt.",
+    "repairs_like": "longshirt",
+	"weight": "300 g",
+    "volume": "1000 ml",
+    "price": 2000,
+    "price_postapoc": 65,
+    "material": [ "cotton" ],
+    "material_thickness": 0.35,
+	"symbol": "[",
+	"looks_like": "longshirt",
+    "color": "light_gray",
+    "warmth": 6,
+	"armor": [
+		{ "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 2, 5 ] }
+	],
+    "flags": [ "VARSIZE" ]
+	},
+	{
+    "id": "tang_suit",
+    "type": "ARMOR",
+    "category": "armor",
+	"name": "Tang suit",
+	"copy-from": "jacket_jean",
+	"description": "A long sleeved jacket made in characteristic Chinese style.  Despite looking like a shirt, it's worn over it, so it qualifies as a jacket.  Has the characteristic collar and the knots replacing buttons, featuring inner pockets.  Special cut allows to hold the overall shape, so it doesn't look loose or baggy.  Putting this on makes you want to try those sick moves.",
+    "repairs_like": "jacket_jean",
+    "weight": "800 g",
+    "volume": "4000 ml",
+    "price": 6000,
+    "price_postapoc": 300,
+    "material": [ "cotton" ],
+    "material_thickness": 0.35,
+	"symbol": "[",
+	"looks_like": "jacket_jean",
+    "color": "white",
+    "warmth": 24,
+	"pocket_data": [ 
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "800 ml",
+        "max_contains_weight": "1 kg",
+        "max_item_length": "13 cm",
+        "moves": 150
+		},
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "800 ml",
+        "max_contains_weight": "1 kg",
+        "max_item_length": "13 cm",
+        "moves": 150
+		}
+	],
+	"armor": [
+		{ "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 6, 10 ] },
+		{ "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 6, 12 ] }
+	],
+    "flags": [ "OUTER", "POCKETS", "VARSIZE" ]
 	},
 	{
     "id": "tie_black",
@@ -279,12 +420,14 @@
 	"looks_like": "dress_shirt",
     "color": "white",
     "warmth": 10,
-	"pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "300 ml", "max_contains_weight": "500 g", "moves": 80 } ],
-	"armor": [
-        { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] },
-        { "covers": [ "arm_l", "arm_r" ], "coverage": 10, "encumbrance": [ 2, 4 ] }
+	"pocket_data": [ 
+		{ "pocket_type": "CONTAINER", "max_contains_volume": "300 ml", "max_contains_weight": "500 g", "moves": 150 } 
 	],
-    "flags": [ "FANCY", "STURDY", "VARSIZE" ]
+	"armor": [
+		{ "covers": [ "arm_l", "arm_r" ], "coverage": 12, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] }
+	],
+    "flags": [ "FANCY", "VARSIZE" ]
 	},
 	{
     "id": "aya_skirt",
@@ -618,6 +761,58 @@
         { "covers": [ "foot_l", "foot_r" ], "coverage": 60, "encumbrance": [ 6, 8 ] }
 	],
     "flags": [ "FANCY", "OUTER", "VARSIZE" ]
+	},
+	{
+    "id": "meiling_cheongsam_upper",
+    "type": "ARMOR",
+    "name": { "str": "Meiling's cheongsam (upper piece)", "str_pl": "Meiling's cheongsam (upper piece)" },
+	"copy-from": "cheongsam",
+    "description": "A very elegant Chinese style dress.  More comfy than usual to wear, it's split into two pieces to increase the comfort for the user even more.  Different from the usual style, sleeves are not present, so it's just basically a jacket by itself.  It still displays Chinese motiffs though, such as knots instead of buttons, and the embroidery.",
+    "repairs_like": "dress",
+	"weight": "500 g",
+    "volume": "1500 ml",
+    "price_postapoc": 2500,
+    "material": [ "cotton" ],
+    "symbol": "[",
+    "looks_like": "jacket_light",
+    "color": "green",
+    "warmth": 6,
+    "material_thickness": 1,
+	"pocket_data": [ 
+		{ 
+		"pocket_type": "CONTAINER", 
+		"max_contains_volume": "300 ml", 
+		"max_contains_weight": "500 g", 
+		"moves": 150 
+		} 
+	],
+	"armor": [ 
+		{ "covers": [ "torso" ], "coverage": 80, "encumbrance": [ 4, 10 ] }
+	],
+    "flags": [ "FANCY", "POCKETS", "VARSIZE" ]
+	},
+	{
+    "id": "meiling_shirt",
+    "type": "ARMOR",
+    "category": "armor",
+	"name": "Meiling's shirt",
+	"copy-from": "tang_shirt",
+	"description": "A white button-up shirt with short, puffy sleeves.  There's black laces at the sleeves and another crossing it in the middle.  The collars and the left side of the button line have a a special mapple-leaf design.",
+	"weight": "250 g",
+    "volume": "750 ml",
+    "price": 15000,
+    "price_postapoc": 1500,
+    "material": [ "cotton" ],
+    "material_thickness": 1,
+	"symbol": "[",
+	"looks_like": "dress_shirt",
+    "color": "white",
+    "warmth": 8,
+	"armor": [
+		{ "covers": [ "arm_l", "arm_r" ], "coverage": 12, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] }
+	],
+    "flags": [ "FANCY", "VARSIZE" ]
 	},
 	{
     "id": "mokou_boots",
