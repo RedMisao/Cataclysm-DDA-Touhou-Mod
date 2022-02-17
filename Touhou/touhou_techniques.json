@@ -18,6 +18,58 @@
     ]
 	},
 	{
+    "id": "tec_meiling_counter",
+	"type": "technique",
+    "name": "Grasp the Sparrow's Tail (Meiling)",
+    "messages": [ "You divert %s's attack and lead them to the ground", "<npcname> diverts %s's attack and lead them to the ground" ],
+	"skill_requirements": [ { "name": "melee", "level": 3 } ],
+	"required_buffs_all": [ "buff_meiling_onblock" ],
+	"unarmed_allowed": true,
+    "crit_ok": true,
+    "down_dur": 1,
+    "mult_bonuses": [
+		{ "stat": "movecost", "scale": 0.75 },
+		{ "stat": "damage", "type": "bash", "scale": 1.2 },
+		{ "stat": "damage", "type": "cut", "scale": 1.2 },
+		{ "stat": "damage", "type": "stab", "scale": 1.2 }
+    ],
+	"//": "Original tec_taichi_counter "
+	},
+	{
+    "id": "tec_meiling_palm",
+	"type": "technique",
+    "name": "Palm Strike (Meiling)",
+    "messages": [ "You palm strike %s", "<npcname> palm strikes %s" ],
+	"skill_requirements": [ { "name": "melee", "level": 2 } ],
+	"required_buffs_all": [ "buff_meiling_onpause" ],
+	"unarmed_allowed": true,
+    "knockback_dist": 1,
+    "mult_bonuses": [
+		{ "stat": "damage", "type": "bash", "scale": 2 },
+		{ "stat": "damage", "type": "cut", "scale": 2 },
+		{ "stat": "damage", "type": "stab", "scale": 2 }
+    ],
+	"//": "Original tec_taichi_palm , buffed"
+	},
+	{
+    "id": "tec_meiling_precise",
+	"type": "technique",
+    "name": "Double Palm Strike",
+    "messages": [ "You double-handed palm strike %s", "<npcname> double-handed palm strikes %s" ],
+	"skill_requirements": [ { "name": "melee", "level": 4 } ],
+	"required_buffs_all": [ "buff_meiling_onpause" ],
+	"unarmed_allowed": true,
+    "crit_tec": true,
+    "knockback_dist": 2,
+    "stun_dur": 1,
+    "mult_bonuses": [
+		{ "stat": "damage", "type": "bash", "scale": 3 },
+		{ "stat": "damage", "type": "cut", "scale": 3 },
+		{ "stat": "damage", "type": "stab", "scale": 3 }
+    ],
+	"//": "Original tec_taichi_precise , buffed"
+	},
+	{
     "id": "tec_mokou_kick",
 	"type": "technique",
     "name": "Simple kick",

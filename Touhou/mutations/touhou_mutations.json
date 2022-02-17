@@ -354,7 +354,11 @@
 	"purifiable": false,
 	"starting_trait": false,
 	"valid": false,
-	"initial_ma_styles": [ "style_meiling" ]
+    "fatigue_modifier": 0.333,
+    "fatigue_regen_modifier": 0.333
+	"initial_ma_styles": [ "style_meiling" ],
+	"cancels": [ "SLEEPY", "SLEEPY2" ],
+	"//": "In-built alternate SLEEPY"
     },
 	{
     "type": "mutation",

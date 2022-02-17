@@ -46,7 +46,7 @@
             "panties"
         ]
     },
-    "flags" : ["SCEN_ONLY"],
+    "flags" : [ "SCEN_ONLY" ],
 	"//": "Lorewise she sould have lots of numbers, skills, proficiencies, etc. Balancewise that's not very good. Also, I took the yakitori joke seriously",
 	"//2": "All her spells, at least the actively destructive ones, should cost HP to cast alongside mana. This isn't implemented yet"
 	},
@@ -67,14 +67,23 @@
 		{ "level": 4, "name": "unarmed" }
     ],
 	"traits": [
-        "YOUKAI_SPECIES",
-		"PROF_MOKOU",
+        "DEFT",
+		"EASYSLEEPER",
+		"HEAVYSLEEPER",
+		"PROF_MEILING",
+		"YOUKAI_SPECIES",
 		"SPIRIT_USER"
     ],
     "items": {
         "both": [
+				"dress_shoes",
 				"meiling_cheongsam_upper",
-				"meiling_shirt"
+				"meiling_cheongsam_lower",
+				"meiling_hat",
+				"meiling_pants",
+				"meiling_shirt",
+				"tai_chi_pants",
+				"socks"
         ],
         "male": [
             "boxer_shorts"
@@ -84,9 +93,8 @@
             "panties"
         ]
     },
-    "flags" : ["SCEN_ONLY"],
-	"//": "Lorewise she sould have lots of numbers, skills, proficiencies, etc. Balancewise that's not very good. Also, I took the yakitori joke seriously",
-	"//2": "All her spells, at least the actively destructive ones, should cost HP to cast alongside mana. This isn't implemented yet"
+    "flags" : [ "SCEN_ONLY" ],
+	"//": "Meiling uses the pants in Soku but not in PMiSS"
 	},
 	{
     "ident": "iku_nagae",
@@ -130,7 +138,7 @@
             "panties"
         ]
     },
-    "flags": ["SCEN_ONLY"]
+    "flags": [ "SCEN_ONLY" ]
     },
 	{
     "ident": "kaenbyou_rin",
@@ -180,7 +188,7 @@
             "panties"
         ]
 	},
-	"flags" : ["SCEN_ONLY"],
+	"flags" : [ "SCEN_ONLY" ],
 	"//2": "Investigate about the Necromancy: Communication stuff for her profession !!!"
 	},
 	{
@@ -217,7 +225,7 @@
             "panties"
         ]
     },
-    "flags" : ["SCEN_ONLY"]
+    "flags" : [ "SCEN_ONLY" ]
     },
 	{
     "ident": "reisen_udongein_inaba",
@@ -271,7 +279,8 @@
 	"//2": "her finger bullets should do mind dmg alongside bullet. I need to find a way to implement the Frostfire effect from WOTLK that checks the lower resistance and uses that to deal dmg",
 	"//3": "if possible, implement a shot spread effect with 2-3 bullets on a cone and 8-7 illusionary bullets that deal no damage, and change the sprite because I don't like the current * ",
 	"//4": "Finally, see if I can implement her LoLK bomb, or not if that would be outright broken alongside her stealth passive that should have priority"
-	}
+	},
+    "flags" : [ "SCEN_ONLY" ]
     },
 	{
     "ident": "reisen_II",
@@ -323,7 +332,8 @@
             "bra",
             "panties"
 		]
-	}
+	},
+    "flags" : [ "SCEN_ONLY" ]
 	},
 	{
     "ident": "remilia_scarlet",
@@ -346,6 +356,7 @@
 		{ "level": 4, "name": "throw" }
 	],
 	"traits": [
+		"TABLEMANNERS",
 		"VAMPIRE_SPECIES",
 		"PROF_REMI",
 		"SPIRIT_USER"
@@ -367,7 +378,7 @@
             "panties"
 		]
 	},
-    "flags" : ["SCEN_ONLY"]
+    "flags" : [ "SCEN_ONLY" ]
     },
 	{
     "ident": "sakuya_izayoi",
@@ -428,7 +439,7 @@
             "panties"
 		]
 	},
-    "flags" : ["SCEN_ONLY"]
+    "flags" : [ "SCEN_ONLY" ]
     },
 	{
     "ident": "seiga_kaku",
@@ -471,7 +482,7 @@
             "panties"
         ]
     },
-    "flags" : ["SCEN_ONLY"]
+    "flags" : [ "SCEN_ONLY" ]
     },
 	{
     "ident": "shameimaru_aya",
@@ -497,7 +508,7 @@
 			"aya_shirt",
 			"aya_skirt",
 			"ribbon_neck",
-			"socks",
+			"socks_ankle",
 			"tengu_fan",
 			"tengu_geta",
 			"tengu_hat"
@@ -510,7 +521,7 @@
             "panties"
         ]
     },
-    "flags" : ["SCEN_ONLY"]
+    "flags" : [ "SCEN_ONLY" ]
     },
 	{
     "ident": "tenshi_hinanawi",
@@ -553,7 +564,7 @@
             "panties"
         ]
     },
-    "flags" : ["SCEN_ONLY"]
+    "flags" : [ "SCEN_ONLY" ]
     },
 	{
     "ident": "utsuho_reiuji",
@@ -593,7 +604,7 @@
             "panties"
         ]
 	},
-	"flags" : ["SCEN_ONLY"]
+	"flags" : [ "SCEN_ONLY" ]
 	},
 	{
     "ident": "youmu_konpaku",
@@ -617,6 +628,7 @@
     ],
 	"traits": [
         "HALF_PHANTOM_SPECIES",
+		"TRUTHTELLER",
 		"PROF_YOUMU",
 		"SPIRIT_UNTRAINED"
     ],
@@ -646,6 +658,6 @@
             "panties"
         ]
     },
-    "flags" : ["SCEN_ONLY"]
+    "flags" : [ "SCEN_ONLY" ]
 	}
 ]
