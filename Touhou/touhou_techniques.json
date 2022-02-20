@@ -18,17 +18,253 @@
     ]
 	},
 	{
-    "id": "tec_meiling_counter",
+    "id": "tec_celestial_brawling_break_melee",
 	"type": "technique",
-    "name": "Grasp the Sparrow's Tail (Meiling)",
-    "messages": [ "You divert %s's attack and lead them to the ground", "<npcname> diverts %s's attack and lead them to the ground" ],
-	"skill_requirements": [ { "name": "melee", "level": 3 } ],
-	"required_buffs_all": [ "buff_meiling_onblock" ],
+    "name": "Grab Break",
+    "messages": [ "The %s tries to grab you, but you break through!", "The %s tries to grab <npcname>, but <npcname> breaks through!" ],
+    "skill_requirements": [ { "name": "melee", "level": 2 } ],
+    "melee_allowed": true,
+    "defensive": true,
+    "grab_break": true,
+    "knockback_dist": 1,
+    "mult_bonuses": [
+		{ "stat": "damage", "type": "bash", "scale": 1.1 },
+		{ "stat": "damage", "type": "cut", "scale": 1.1 },
+		{ "stat": "damage", "type": "stab", "scale": 1.1 }
+    ]
+	},
+	{
+    "id": "tec_celestial_brawling_break_melee2",
+	"type": "technique",
+    "name": "Grab Break (Crit)",
+    "messages": [ "The %s tries to grab you, but you break them away!", "The %s tries to grab <npcname>, but <npcname> breaks them away!" ],
+    "skill_requirements": [ { "name": "melee", "level": 3 } ],
+    "melee_allowed": true,
+	"crit_tec": true,
+    "defensive": true,
+    "grab_break": true,
+    "knockback_dist": 2,
+	"knockback_spread": 2,
+    "mult_bonuses": [
+		{ "stat": "damage", "type": "bash", "scale": 2 },
+		{ "stat": "damage", "type": "cut", "scale": 2 },
+		{ "stat": "damage", "type": "stab", "scale": 2 }
+    ]
+	},
+	{
+    "id": "tec_celestial_brawling_break_unarmed",
+	"type": "technique",
+    "name": "Grab Break",
+    "messages": [ "The %s tries to grab you, but you break through!", "The %s tries to grab <npcname>, but <npcname> breaks through!" ],
+    "skill_requirements": [ { "name": "unarmed", "level": 3 } ],
+    "unarmed_allowed": true,
+    "defensive": true,
+    "grab_break": true,
+    "knockback_dist": 1,
+    "mult_bonuses": [
+		{ "stat": "damage", "type": "bash", "scale": 1.1 },
+		{ "stat": "damage", "type": "cut", "scale": 1.1 },
+		{ "stat": "damage", "type": "stab", "scale": 1.1 }
+    ]
+	},
+	{
+    "id": "tec_celestial_brawling_break_unarmed2",
+	"type": "technique",
+    "name": "Grab Break (Crit)",
+    "messages": [ "The %s tries to grab you, but you break them away!", "The %s tries to grab <npcname>, but <npcname> breaks them away!" ],
+    "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
+    "unarmed_allowed": true,
+	"crit_tec": true,
+    "defensive": true,
+    "grab_break": true,
+    "knockback_dist": 2,
+	"knockback_spread": 2,
+    "mult_bonuses": [
+		{ "stat": "damage", "type": "bash", "scale": 2 },
+		{ "stat": "damage", "type": "cut", "scale": 2 },
+		{ "stat": "damage", "type": "stab", "scale": 2 }
+    ]
+	},
+	{
+    "id": "tec_celestial_brawling_disarm_melee",
+	"type": "technique",
+    "name": "Disarm",
+    "messages": [ "You knock %s's weapon away", "<npcname> knock %s's weapon away" ],
+    "skill_requirements": [ { "name": "melee", "level": 4 } ],
+    "melee_allowed": true,
+    "disarms": true
+	},
+	{
+    "id": "tec_celestial_brawling_disarm_unarmed",
+	"type": "technique",
+    "name": "Disarm",
+    "messages": [ "You knock %s's weapon away", "<npcname> knock %s's weapon away" ],
+    "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
+    "unarmed_allowed": true,
+    "disarms": true
+	},
+	{
+    "id": "tec_celestial_brawling_earthen_crescent",
+	"type": "technique",
+    "name": "Earthen crescent",
+    "messages": [ "You swing a low wide arc at %s, sending them back!", "<npcname> swings a low wide arc at %s, sending them back!" ],
+    "skill_requirements": [ { "name": "melee", "level": 3 } ],
+    "melee_allowed": true,
+	"unarmed_allowed" : false,
+    "aoe": "wide",
+	"knockback_dist": 2,
+	"mult_bonuses": [
+		{ "stat": "movecost", "scale": 1.1 },
+		{ "stat": "damage", "type": "bash", "scale": 1.33 },
+		{ "stat": "damage", "type": "cut", "scale": 1.33 },
+		{ "stat": "damage", "type": "stab", "scale": 1 }
+    ]
+	},
+	{
+    "id": "tec_iku_earthen_crescent",
+	"type": "technique",
+    "name": "Earthen crescent",
+    "messages": [ "You swing a low wide arc at %s, sending them back!", "<npcname> swings a low wide arc at %s, sending them back!" ],
+    "skill_requirements": [ { "name": "melee", "level": 4 } ],
+    "melee_allowed": true,
+	"unarmed_allowed" : false,
+    "aoe": "wide",
+	"knockback_dist": 2,
+	"mult_bonuses": [
+		{ "stat": "movecost", "scale": 1.1 },
+		{ "stat": "damage", "type": "bash", "scale": 1.33 },
+		{ "stat": "damage", "type": "cut", "scale": 1.33 },
+		{ "stat": "damage", "type": "stab", "scale": 1 }
+    ]
+	},
+	{
+    "id": "tec_iku_poke",
+	"type": "technique",
+    "name": "Snap poke",
+    "messages": [ "You snap your weapon towards %s!", "<npcname> snaps their weapon towards %s!" ],
+    "skill_requirements": [ { "name": "melee", "level": 4 } ],
+    "melee_allowed": false,
+	"unarmed_allowed" : false,
+	"crit_tec": false,
+	"mult_bonuses": [ 
+		{ "stat": "damage", "type": "bash", "scale": 1.2 },
+		{ "stat": "damage", "type": "cut", "scale": 1.2 },
+		{ "stat": "damage", "type": "stab", "scale": 1.5 }
+	]
+	},
+	{
+    "id": "tec_iku_poke2",
+	"type": "technique",
+    "name": "Snap poke (Crit)",
+    "messages": [ "You snap your weapon through %s!", "<npcname> snaps their weapon through %s!" ],
+    "skill_requirements": [ { "name": "melee", "level": 6 } ],
+    "melee_allowed": false,
+	"unarmed_allowed" : false,
+	"crit_tec": true,
+    "aoe": "impale",
+    "stun_dur": 1,
+	"mult_bonuses": [ 
+		{ "stat": "damage", "type": "bash", "scale": 2 },
+		{ "stat": "damage", "type": "cut", "scale": 2 },
+		{ "stat": "damage", "type": "stab", "scale": 2.5 }
+	]
+	},
+	{
+    "id": "tec_iku_rising",
+	"type": "technique",
+    "name": "Rising whip",
+    "messages": [ "You whip your weapon upwards %s, knocking them back!", "<npcname> whips upwards at %s, knocking them back!" ],
+    "skill_requirements": [ { "name": "melee", "level": 4 } ],
+    "melee_allowed": false,
+	"unarmed_allowed" : false,
+	"crit_tec": false,
+	"knockback_dist": 1,
+	"mult_bonuses": [
+		{ "stat": "damage", "type": "bash", "scale": 1.2 },
+		{ "stat": "damage", "type": "cut", "scale": 1.2 },
+		{ "stat": "damage", "type": "stab", "scale": 1 }
+    ]
+	},
+	{
+    "id": "tec_iku_rising2",
+	"type": "technique",
+    "name": "Rising whip (Crit)",
+    "messages": [ "You whip your weapon upwards %s, knocking them back!", "<npcname> whips upwards at %s, knocking them back!" ],
+    "skill_requirements": [ { "name": "melee", "level": 5 } ],
+    "melee_allowed": false,
+	"unarmed_allowed" : false,
+	"crit_tec": true,
+	"knockback_dist": 2,
+	"mult_bonuses": [
+		{ "stat": "damage", "type": "bash", "scale": 2 },
+		{ "stat": "damage", "type": "cut", "scale": 2 },
+		{ "stat": "damage", "type": "stab", "scale": 1.5 }
+    ]
+	},
+	{
+    "id": "tec_iku_rising_drill",
+	"type": "technique",
+    "name": "Rising drill",
+    "messages": [ "You drill upwards through %s!", "<npcname> drills upwards through %s!" ],
+    "skill_requirements": [ { "name": "melee", "level": 6 } ],
+    "melee_allowed": false,
+	"unarmed_allowed" : false,
+	"attack_override": true,
+	"crit_tec": true,
+    "stun_dur": 2,
+	"mult_bonuses": [ 
+		{ "stat": "movecost", "scale": 1.1 }
+	],
+	"flat_bonuses": [ 
+		{ "stat": "arpen", "type": "stab", "scaling-stat": "dex", "scale": 2 },
+		{ "stat": "arpen", "type": "stab", "scaling-stat": "str", "scale": 2 },
+		{ "stat": "damage", "type": "stab", "scaling-stat": "dex", "scale": 2 },
+		{ "stat": "damage", "type": "stab", "scaling-stat": "str", "scale": 2 }
+	],
+	"//": "Don't know if transforming bash and cutting damage into stab is possible so this should do (?)"
+	},
+	{
+    "id": "tec_iku_slap",
+	"type": "technique",
+    "name": "Rapid whip",
+    "messages": [ "You quickly swing your weapon at %s", "<npcname> swings quickly at %s" ],
+    "skill_requirements": [ { "name": "melee", "level": 2 } ],
+    "melee_allowed": false,
+	"unarmed_allowed" : false,
+	"mult_bonuses": [
+		{ "stat": "movecost", "scale": 0.75 },
+		{ "stat": "damage", "type": "bash", "scale": 1 },
+		{ "stat": "damage", "type": "cut", "scale": 1 },
+		{ "stat": "damage", "type": "stab", "scale": 1 }
+    ]
+	},
+	{
+    "id": "tec_iku_slap_reverse",
+	"type": "technique",
+    "name": "Rapid whip (reverse)",
+    "messages": [ "You quickly counter swing your weapon at %s", "<npcname> quickly counter swings at %s" ],
+    "skill_requirements": [ { "name": "melee", "level": 2 } ],
+    "melee_allowed": false,
+	"unarmed_allowed" : false,
+	"mult_bonuses": [
+		{ "stat": "movecost", "scale": 0.66 },
+		{ "stat": "damage", "type": "bash", "scale": 0.85 },
+		{ "stat": "damage", "type": "cut", "scale": 0.85 },
+		{ "stat": "damage", "type": "stab", "scale": 0.85 }
+    ]
+	},
+	{
+    "id": "tec_meiling_down",
+	"type": "technique",
+    "name": "Sweeping kick",
+    "messages": [ "You sweep at %s", "<npcname> sweeps at %s" ],
+	"skill_requirements": [ { "name": "melee", "level": 2 } ],
+	"crit_ok": true,
 	"unarmed_allowed": true,
-    "crit_ok": true,
+	"unarmed_weapons_allowed" : false,
     "down_dur": 1,
     "mult_bonuses": [
-		{ "stat": "movecost", "scale": 0.75 },
+		{ "stat": "movecost", "scale": 0.8 },
 		{ "stat": "damage", "type": "bash", "scale": 1.2 },
 		{ "stat": "damage", "type": "cut", "scale": 1.2 },
 		{ "stat": "damage", "type": "stab", "scale": 1.2 }
@@ -36,14 +272,46 @@
 	"//": "Original tec_taichi_counter "
 	},
 	{
+    "id": "tec_meiling_elbow",
+	"type": "technique",
+    "name": "Elbow strike",
+    "messages": [ "You hit %s with your qi reinforced elbow!", "<npcname> hits %s with their qi reinforced elbow!" ],
+	"skill_requirements": [ { "name": "melee", "level": 3 } ],
+	"unarmed_allowed": true,
+	"unarmed_weapons_allowed" : false,
+    "mult_bonuses": [
+		{ "stat": "movecost", "scale": 0.66 },
+		{ "stat": "damage", "type": "stab", "scaling-stat": "bash", "scale": 1.2 }
+    ]
+	},
+	{
+    "id": "tec_meiling_kick",
+	"type": "technique",
+    "name": "Rapid kick",
+    "messages": [ "You swiftly kick %s", "<npcname> swiftly kicks %s" ],
+	"skill_requirements": [ { "name": "melee", "level": 2 } ],
+	"crit_ok" : true,
+	"unarmed_allowed": true,
+	"unarmed_weapons_allowed" : false,
+    "weighting": 1,
+	"mult_bonuses": [
+		{ "stat": "movecost", "scale": 0.85 },
+		{ "stat": "damage", "type": "bash", "scale": 1.2 },
+		{ "stat": "damage", "type": "cut", "scale": 1.2 },
+		{ "stat": "damage", "type": "stab", "scale": 1.2 }
+    ]
+	},
+	{
     "id": "tec_meiling_palm",
 	"type": "technique",
-    "name": "Palm Strike (Meiling)",
-    "messages": [ "You palm strike %s", "<npcname> palm strikes %s" ],
+    "name": "Palm strike: Repulse the intruder",
+    "messages": [ "You forcefully push %s back", "<npcname> forcefully pushes %s back" ],
 	"skill_requirements": [ { "name": "melee", "level": 2 } ],
-	"required_buffs_all": [ "buff_meiling_onpause" ],
+	"required_buffs_all": [ "buff_meiling_onblock2" ],
+	"grab_break": true,
 	"unarmed_allowed": true,
-    "knockback_dist": 1,
+	"unarmed_weapons_allowed" : false,
+	"knockback_dist": 1,
     "mult_bonuses": [
 		{ "stat": "damage", "type": "bash", "scale": 2 },
 		{ "stat": "damage", "type": "cut", "scale": 2 },
@@ -52,14 +320,15 @@
 	"//": "Original tec_taichi_palm , buffed"
 	},
 	{
-    "id": "tec_meiling_precise",
+    "id": "tec_meiling_shoulder_strike",
 	"type": "technique",
-    "name": "Double Palm Strike",
-    "messages": [ "You double-handed palm strike %s", "<npcname> double-handed palm strikes %s" ],
+    "name": "Shoulder strike: Stay out",
+    "messages": [ "You powerfully hit %s back with a shoulder strike!", "<npcname> powerfully hit %s back with a shoulder strike!" ],
 	"skill_requirements": [ { "name": "melee", "level": 4 } ],
-	"required_buffs_all": [ "buff_meiling_onpause" ],
+	"required_buffs_all": [ "buff_meiling_onblock2" ],
+	"crit_tec": true,
 	"unarmed_allowed": true,
-    "crit_tec": true,
+	"unarmed_weapons_allowed" : false,
     "knockback_dist": 2,
     "stun_dur": 1,
     "mult_bonuses": [
@@ -68,6 +337,24 @@
 		{ "stat": "damage", "type": "stab", "scale": 3 }
     ],
 	"//": "Original tec_taichi_precise , buffed"
+	},
+	{
+    "id": "tec_meiling_stomp",
+	"type": "technique",
+    "name": "Qi stomp",
+    "messages": [ "You stomp the ground, knocking nearby enemies!", "<npcname> stomps the ground, knocking nearby enemies!" ],
+	"skill_requirements": [ { "name": "melee", "level": 4 } ],
+	"unarmed_allowed": true,
+	"unarmed_weapons_allowed" : false,
+    "weighting": -1,
+	"down_dur": 2,
+    "stun_dur": 1,
+    "aoe": "spin",
+    "mult_bonuses": [
+		{ "stat": "damage", "type": "bash", "scale": 1.5 },
+		{ "stat": "damage", "type": "cut", "scale": 1.5 },
+		{ "stat": "damage", "type": "stab", "scale": 1.5 }
+    ]
 	},
 	{
     "id": "tec_mokou_kick",
@@ -130,7 +417,7 @@
     "down_dur": 2,
     "stun_dur": 1,
     "mult_bonuses": [
-		{ "stat": "movecost", "scale": 1.5 },
+		{ "stat": "movecost", "scale": 1.33 },
 		{ "stat": "damage", "type": "bash", "scale": 2 },
 		{ "stat": "damage", "type": "cut", "scale": 1.5 },
 		{ "stat": "damage", "type": "stab", "scale": 5 }
@@ -185,13 +472,97 @@
     "down_dur": 2,
 	"stun_dur": 1,
 	"mult_bonuses": [
-		{ "stat": "movecost", "scale": 1.66 },
+		{ "stat": "movecost", "scale": 1.5 },
 		{ "stat": "damage", "type": "bash", "scale": 2 },
 		{ "stat": "damage", "type": "cut", "scale": 2 },
 		{ "stat": "damage", "type": "stab", "scale": 2 }
     ],
 	"//": "Lunge but called tackle",
 	"//2": "Needs fire damage component -> recheck damage values"
+	},
+	{
+    "id": "tec_tenko_backflip",
+	"type": "technique",
+    "name": "Backflip",
+    "messages": [ "You do a cute backflip, kicking %s!", "<npcname> does a cute backflip, kicking %s!" ],
+	"skill_requirements": [ { "name": "melee", "level": 4 } ],
+	"unarmed_allowed": true,
+	"unarmed_weapons_allowed" : false,
+    "weighting": 1,
+	"mult_bonuses": [
+		{ "stat": "damage", "type": "bash", "scale": 1.33 },
+		{ "stat": "damage", "type": "cut", "scale": 1.33 },
+		{ "stat": "damage", "type": "stab", "scale": 1.33 }
+    ]
+	},
+	{
+    "id": "tec_tenko_heaven_crescent",
+	"type": "technique",
+    "name": "Heaven crescent",
+    "messages": [ "You swing your weapon down at %s", "<npcname> swings their weapon down at %s" ],
+    "skill_requirements": [ { "name": "melee", "level": 3 } ],
+    "melee_allowed": true,
+	"unarmed_allowed" : false,
+    "aoe": "impale",
+	"knockback_dist": 2,
+	"stun_dur": 1,
+	"mult_bonuses": [
+		{ "stat": "movecost", "scale": 1.1 },
+		{ "stat": "damage", "type": "bash", "scale": 1.66 },
+		{ "stat": "damage", "type": "cut", "scale": 1.66 },
+		{ "stat": "damage", "type": "stab", "scale": 1.33 }
+    ]
+	},
+	{
+    "id": "tec_tenko_kick",
+	"type": "technique",
+    "name": "Low kick",
+    "messages": [ "You throw a low kick at %s", "<npcname> throws a low kick at %s" ],
+	"skill_requirements": [ { "name": "melee", "level": 1 } ],
+	"crit_tec": false,
+	"unarmed_allowed": true,
+	"unarmed_weapons_allowed" : false,
+    "weighting": 2,
+	"mult_bonuses": [
+		{ "stat": "movecost", "scale": 0.95 },
+		{ "stat": "damage", "type": "bash", "scale": 1.1 },
+		{ "stat": "damage", "type": "cut", "scale": 1.1 },
+		{ "stat": "damage", "type": "stab", "scale": 1.1 }
+    ]
+	},
+	{
+    "id": "tec_tenko_kick2",
+	"type": "technique",
+    "name": "Low kick (Crit)",
+    "messages": [ "You throw a low kick at %s", "<npcname> throws a low kick at %s" ],
+	"skill_requirements": [ { "name": "melee", "level": 4 } ],
+	"crit_tec": true,
+	"unarmed_allowed": true,
+	"unarmed_weapons_allowed" : false,
+    "weighting": 2,
+	"mult_bonuses": [
+		{ "stat": "movecost", "scale": 0.95 },
+		{ "stat": "damage", "type": "bash", "scale": 2 },
+		{ "stat": "damage", "type": "cut", "scale": 2 },
+		{ "stat": "damage", "type": "stab", "scale": 2 }
+    ]
+	},
+	{
+    "id": "tec_tenko_stomp",
+	"type": "technique",
+    "name": "Earth stomp",
+    "messages": [ "You stomp the ground, knocking nearby enemies!", "<npcname> stomps the ground, knocking nearby enemies!" ],
+	"skill_requirements": [ { "name": "melee", "level": 2 } ],
+	"unarmed_allowed": true,
+	"unarmed_weapons_allowed" : false,
+    "weighting": 0,
+	"down_dur": 2,
+    "aoe": "spin",
+    "mult_bonuses": [
+		{ "stat": "damage", "type": "bash", "scale": 1.1 },
+		{ "stat": "damage", "type": "cut", "scale": 1.1 },
+		{ "stat": "damage", "type": "stab", "scale": 1.1 }
+    ]
 	},
 	{
     "id": "tec_youmu_hilt_nudge",

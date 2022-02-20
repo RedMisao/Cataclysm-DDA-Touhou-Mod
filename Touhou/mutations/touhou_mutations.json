@@ -1,7 +1,7 @@
 [
 	{
-    "type": "mutation",
     "id": "CELESTIAL_SPECIES",
+	"type": "mutation",
     "name": "Celestial",
     "points": 0,
     "description": "Your body's toughness and resilience to damage are out of this world.",
@@ -25,8 +25,8 @@
 	"//3": "Ideally she should have minor reduction to pain, half of PAINRESIST if not 66%. More ideally, she should gain pain resist buffs while fighting on melee"
     },
 	{
-    "type": "mutation",
     "id": "GYOKUTO_SPECIES",
+	"type": "mutation",
     "name": "Gyokuto",
     "points": 0,
     "description": "You're a Moon rabbit. Your kind was [REDACTED] by the Lunarians to serve them like tools. Not that you mind (that much), as you're naturally carefree. How convenient.",
@@ -43,8 +43,8 @@
 	"cancels": [ "PRETTY", "BEAUTIFUL", "BEAUTIFUL2", "BEAUTIFUL3", "UGLY", "DEFORMED", "DEFORMED2", "DEFORMED3", "BADHEARING" ]
     },
 	{
-    "type": "mutation",
     "id": "HALF_PHANTOM_SPECIES",
+	"type": "mutation",
     "name": "Half-human half-phantom",
     "points": 0,
 	"visibility": 8,
@@ -58,8 +58,8 @@
 	"//": "Recheck this after adding the ghosts and youkai enemies"
 	},
 	{
-    "type": "mutation",
     "id": "HELLRAVEN_SPECIES",
+	"type": "mutation",
     "name": "Hell raven",
     "points": 0,
     "description": "You're a raven youkai originating from (Former) Hell.",
@@ -83,8 +83,8 @@
 	"flags": [ "FEATHER_FALL" ]
 	},
 	{
-    "type": "mutation",
     "id": "HOURAI_SPECIES",
+	"type": "mutation",
     "name": "Hourai person",
     "points": 0,
     "description": "Your drank from the accursed Hourai Elixir ages ago.  You ceased to age, you never become ill, and you will never die.  At least that's how it was before the Cataclysm.",
@@ -101,8 +101,8 @@
 	"//2": "She should have 25-33% pain reduction"
     },
 	{
-    "type": "mutation",
     "id": "KASHA_SPECIES",
+	"type": "mutation",
     "name": "Kasha",
     "points": 0,
     "description": "You're a feline-looking youkai originating from (Former) Hell.",
@@ -124,8 +124,8 @@
 	"//5": "Add some kind of social bonus for enemies with both the UNDEAD and SPIRIT/SOUL trait, this would allow for Vengeful spirits be neutral/friendly to her and not also affect every single Zed out there"
 	},
 	{
-    "type": "mutation",
     "id": "NON_HUMAN_SPECIES",
+	"type": "mutation",
     "name": "Non-human",
     "points": 0,
 	"visibility": 2,
@@ -138,8 +138,8 @@
 	"cancels": [ "PSYCHOPATH", "PACIFIST" ]
     },
 	{
-    "type": "mutation",
     "id": "TENGUCROW_SPECIES",
+	"type": "mutation",
     "name": "Crow Tengu",
     "points": 0,
     "description": "A member of the ancient and strictly hierarchical Tengu, you're agile and nimble, and your job is to gather information.",
@@ -161,8 +161,8 @@
 	"//3": "Check PMiSS for reference material"
 	},
 	{
-    "type": "mutation",
     "id": "TSUCHIGUMO_SPECIES",
+	"type": "mutation",
     "name": "Tsuchigumo",
     "points": 0,
     "description": "You're a spider youkai originating from caves and dark places in the Earth.",
@@ -176,8 +176,8 @@
 	"flags": [ "FEATHER_FALL", "BIO_IMMUNE", "NO_DISEASE", "PARAIMMUNE" ]
 	},
 	{
-    "type": "mutation",
     "id": "VAMPIRE_SPECIES",
+	"type": "mutation",
     "name": "Vampire",
     "points": 0,
 	"visibility": 3,
@@ -199,14 +199,12 @@
 	"vitamins_absorb_multi": [ [ "veggy", [ [ "vitA", 0.33 ], [ "vitB", 0.33 ], [ "vitC", 0.33 ], [ "calcium", 0.33 ], [ "iron", 0.33 ] ] ] ],
 	"ugliness": -3,
 	"cancels": [ "PSYCHOPATH", "PACIFIST", "CANNIBAL", "PRETTY", "UGLY", "DEFORMED", "DEFORMED2", "DEFORMED3", "LIAR", "VEGETARIAN", "HERBIVORE", "ANIMALEMPATH", "ANIMALEMPATH2" ],
-    "//5": "ANIMALDISCORD should be a base trait for vampires, but I don't undersand how the actual mutation works",
 	"flags": [ "CANNIBAL" ],
-	"//6": "I will change this flag for something else. I need to set the penalty (and bonus) of eating human flesh to 0, but add a bonus for eating human blood or RBC instead",
-	"//7": "Add something that enables hibernation AND also enables to ignore sleep needs BUT not tiredness."
+	"//6": "I will change this flag for something else. I need to set the penalty (and bonus) of eating human flesh to 0, but add a bonus for eating human blood or RBC instead"
 	},
 	{
-    "type": "mutation",
     "id": "YOUKAI_SPECIES",
+	"type": "mutation",
     "name": "Youkai",
     "points": 0,
 	"visibility": 3,
@@ -225,8 +223,8 @@
 	"//5": "I can't find a way to completely block stuff like ASTHMA"
 	},
 	{
-    "type": "mutation",
     "id": "SPIRIT_USER",
+	"type": "mutation",
     "name": "Spiritual energy user",
     "points": 0,
     "description": "Magic, mana, qi, energy, all of it can also be described as spiritual energy.  You naturally generate it over time.",
@@ -239,8 +237,8 @@
     "//": "This equals a full mana pool every 40 minutes or so"
 	},
 	{
-    "type": "mutation",
     "id": "SPIRIT_HERMIT",
+	"type": "mutation",
     "name": "Natural energy user",
     "points": 0,
     "description": "You naturally absorb and accumulate natural energy over time.  In contrast to normal energy users, your regeneration rate is slowed, but your experience and fine control makes up for it.",
@@ -253,8 +251,8 @@
     "//": "This equals a full mana pool every 1 h 20 minutes or so. Should have some extra benefit to compensate, but what?"
 	},
 	{
-    "type": "mutation",
     "id": "SPIRIT_UNTRAINED",
+	"type": "mutation",
     "name": "Spiritual energy user (untrained)",
     "points": 0,
     "description": "While you can use spiritual energy, the lack of training makes you regenerate it much slower over time, but still, much faster than the average human.",
@@ -267,8 +265,8 @@
     "//": "This equals a full mana pool every 2 h or so"
 	},
 	{
-    "type": "mutation",
     "id": "PROF_AYA",
+	"type": "mutation",
     "name": "Wind god girl",
     "points": 0,
     "description": "You're a member of the Tengu, specifically of the Crow caste.",
@@ -278,15 +276,15 @@
 	"valid": false,
 	"movecost_flatground_modifier": 0.66,
 	"movecost_obstacle_modifier": 0.66,
-	"//": "If my math is correct, this should be equivalent to 300% movement speed *final*, up from the 200% movement speed from base crow tengu",
+	"//": "If my math is correct, this should be equivalent to 300% movement speed *final*, up from the 200% movement speed from TENGUCROW_SPECIES ",
 	"//2": "See the comment from TENGUCROW_SPECIES",
 	"ugliness": -2,
 	"//3": "If possible, add some passive that multiplies every proyectile she throws to 1.5 - 2.0 movement speed",
 	"//4": "Add wings (small) and see if there's flying as mechanic. The problem is, how do I make those wings not interfer with her clothing?"
 	},
 	{
-    "type": "mutation",
     "id": "PROF_FLAN",
+	"type": "mutation",
     "name": "The Devil's Destructive Little Sister",
     "points": 0,
     "description": "You're the little sister of the Scarlet Devil.",
@@ -306,8 +304,8 @@
 	"//4": "add toggle alternative form: Four of a Kind for Flan, that applies AI to three copies but you can swap control with any of them, possibly with CMB or something"
     },
 	{
-    "type": "mutation",
     "id": "GYOKUTO_EARS",
+	"type": "mutation",
     "name": "Gyokuto ears",
     "points": 0,
 	"visibility": 3,
@@ -320,8 +318,8 @@
 	"cancels": [ "FELINE_EARS", "URSINE_EARS", "ELFA_EARS", "CANINE_EARS", "LUPINE_EARS" ]
     },
 	{
-    "type": "mutation",
     "id": "GYOKUTO_TAIL",
+	"type": "mutation",
     "name": "Gyokuto tail",
     "points": 0,
     "visibility": 2,
@@ -334,8 +332,21 @@
 	"cancels": [ "TAIL_LONG", "TAIL_THICK", "TAIL_FIN", "TAIL_RAT", "TAIL_RAPTOR", "TAIL_CATTLE", "TAIL_FLUFFY", "TAIL_STING", "TAIL_CLUB" ]
     },
 	{
-    "type": "mutation",
+    "id": "PROF_IKU",
+	"type": "mutation",
+    "name": "Scarlet messenger",
+    "points": 0,
+    "description": "You're the Heavenly messenger designed to Gensokyo, and the Hinanawi clan as of late.",
+    "profession": true,
+	"purifiable": false,
+	"starting_trait": false,
+	"valid": false,
+	"initial_ma_styles": [ "style_celestial_brawling_iku" ],
+	"flags": [ "ELECTRIC_IMMUNE" ]
+    },
+	{
     "id": "PROF_KAENBYOU",
+	"type": "mutation",
     "name": "Corpse carrier cheering hellcat",
     "points": 0,
     "description": "You're one of the pets of the mistress of Chireiden, a Former Hell mansion.  Your job is to carry corpses to the Hell of Blazing fires (read: the Remains of Blazing Hell), to regulate its heat with your trusty corpse wheelbarrow.",
@@ -345,8 +356,8 @@
 	"valid": false
 	},
 	{
-    "type": "mutation",
     "id": "PROF_MEILING",
+	"type": "mutation",
     "name": "Rainbow Gatekeeper",
     "points": 0,
     "description": "WIP",
@@ -355,14 +366,14 @@
 	"starting_trait": false,
 	"valid": false,
     "fatigue_modifier": 0.333,
-    "fatigue_regen_modifier": 0.333
+    "fatigue_regen_modifier": 0.333,
 	"initial_ma_styles": [ "style_meiling" ],
 	"cancels": [ "SLEEPY", "SLEEPY2" ],
 	"//": "In-built alternate SLEEPY"
     },
 	{
-    "type": "mutation",
     "id": "PROF_MOKOU",
+	"type": "mutation",
     "name": "Immortal Guide of the Bamboo Forest",
     "points": 0,
     "description": "Your countless years of fighting your rival has granted you lots of fighting skills, primarily with kicking attacks and strong direct blows.",
@@ -373,8 +384,8 @@
 	"initial_ma_styles": [ "style_mokou" ]
     },
 	{
-    "type": "mutation",
     "id": "PROF_OKUU",
+	"type": "mutation",
     "name": "Vessel of Yatagarasu",
     "points": 0,
     "description": "You're the living Yatagarasu… after being the pet of the mistress of Chireiden, a Former Hell mansion.  Your job was helping Orin in regulate the Hell of Blazing Fires, but you were \"promoted\" into being a key component from the Underground Nuclear Reactor (fission), and later helping the Kappa into developing a more automatic Fusion version.  A wild life for sure.",
@@ -390,8 +401,8 @@
 	"//4": "Add wings (big) and see if there's flying as mechanic. The problem is, how do I make those wings not interfer with her clothing?"
 	},
 	{
-    "type": "mutation",
     "id": "PROF_REMI",
+	"type": "mutation",
     "name": "Eternal Young Scarlet Moon",
     "points": 0,
     "description": "You're the Mistress of the Scarlet Devil Mansion.",
@@ -412,8 +423,20 @@
 	"//4": "add toggle alternative form: cloud of scarlet bats for Remi, possibly with CMB or something"
     },
 	{
-    "type": "mutation",
+    "id": "PROF_TENKO",
+	"type": "mutation",
+    "name": "Girl between the Spheres of Perception",
+    "points": 0,
+    "description": "You're the Eldest daughter of the Hinanawi clan.  Very carefree, very problematic, and very spoiled, you do what you want when you want.",
+    "profession": true,
+	"purifiable": false,
+	"starting_trait": false,
+	"valid": false,
+	"initial_ma_styles": [ "style_celestial_brawling_tenko" ]
+    },
+	{
     "id": "PROF_YOUMU",
+	"type": "mutation",
     "name": "Half-Human Half-Phantom dual-wielding gardener",
     "points": 0,
     "description": "You're the gardener and guardian of Hakugyokurou, a Netherworld mansion.",

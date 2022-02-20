@@ -54,7 +54,7 @@
     "ident": "hong_meiling",
 	"type": "profession",
     "name": "Gatekeeper of the Devil",
-    "description": "WIP",
+    "description": "Another uneventful day: holding the gates, doing repeats, not napping… The Mistress called you, very unusual for her to be awake at daytime.  She asked to lock down everything and go track the head maid for \"security reasons\".  You complied, almost caught up, really just at the boundary of your vision, when she… vanished?  Seems that you lost yourself too, you can't recall the last time humans walked without qi.",
     "points": 4,
 	"proficiencies": [ "prof_food_prep" ],
 	"spells": [ 
@@ -80,7 +80,6 @@
 				"meiling_cheongsam_upper",
 				"meiling_cheongsam_lower",
 				"meiling_hat",
-				"meiling_pants",
 				"meiling_shirt",
 				"tai_chi_pants",
 				"socks"
@@ -100,7 +99,7 @@
     "ident": "iku_nagae",
 	"type": "profession",
     "name": "Oarfish Messenger",
-    "description": "The last day was very busy.  First, you were given a message to deliver to the head of the Hinanawi.  After reaching the clan however, you were told by them and your superiors to find Tenshi as soon as possible.  You followed her down in Earth, when the event struck.  Now you don't only have to complete your mission, but you seem to be stuck here.",
+    "description": "The last day was very busy.  First, you were given a message to deliver to the head of the Hinanawi.  After reaching the clan however, you were told by them and your superiors to find Tenshi as soon as possible.  You followed her down in Earth, when the event struck.  Now you don't only have to complete your mission, but you also seem to be stuck here.",
     "points": 0,
 	"CBMs":[
 		"bio_chain_lightning",
@@ -119,6 +118,7 @@
         { "level": 4, "name": "unarmed" }
     ],
     "traits": [
+		"PROF_IKU",
 		"SPIRIT_USER"
 	],
 	"items": {
@@ -543,6 +543,7 @@
 		"HATES_BOOKS",
 		"PAINRESIST",
 		"SLOWLEARNER",
+		"PROF_TENKO",
 		"SPIRIT_USER"
     ],
     "items": {

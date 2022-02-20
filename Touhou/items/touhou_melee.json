@@ -25,7 +25,8 @@
     "techniques": [ "RAPID", "WBLOCK_2" ],
     "qualities": [ [ "CUT", 2 ], [ "CUT_FINE", 1 ], [ "BUTCHER", 20 ] ],
     "thrown_damage": [ { "damage_type": "bash", "amount": 8 }, { "damage_type": "stab", "amount": 8 } ],
-    "flags": [ "DURABLE_MELEE", "SHEATH_KNIFE", "STAB" ]
+    "weapon_category": [ "KNIVES" ],
+	"flags": [ "DURABLE_MELEE", "SHEATH_KNIFE", "STAB" ]
 	},
 	{
     "id": "tengu_fan",
@@ -78,6 +79,7 @@
 	"symbol": "/",
 	"color": "light_gray",
 	"techniques": [ "BRUTAL", "SWEEP", "WBLOCK_2" ],
+    "weapon_category": [ "JAPANESE_SWORDS", "GREAT_SWORDS" ],
     "flags": [ "DURABLE_MELEE" ]
 	},
 	{
@@ -128,7 +130,7 @@
 	},
     "weight": "300 g",
 	"volume": "1300 ml",
-    "longest_side": "50 cm",
+    "longest_side": "65 cm",
 	"//2": "I assume the blade of the sword looks like a flame so it has a dynamic volume, but that one should be the average for a static 50 cm long, 5 cm wide blade + the hilt",
 	"price": 160000,
     "price_postapoc": 8000,
@@ -143,7 +145,8 @@
     "material": "gold",
 	"symbol": "/",
     "color": "light_gray",
-    "techniques": [ "WBLOCK_2"],
+    "techniques": [ "WBLOCK_2" ],
+    "weapon_category": [ "JAPANESE_SWORDS", "SHORT_SWORDS" ],
 	"flags" : [ "DURABLE_MELEE", "SHEATH_SWORD", "STURDY", "TRADER_AVOID" ]
 	},
 	{
@@ -174,7 +177,7 @@
     "color": "light_gray",
     "techniques": [ "VORPAL", "WBLOCK_2", "WIDE" ],
     "qualities": [ [ "CUT", 1 ] ],
-    "//3": "Removed JAPANESE_SWORDS and MEDIUM_SWORDS from field weapon_category , add YOUKAI_WEAPONS later",
+    "weapon_category": [ "JAPANESE_SWORDS", "LONG_SWORDS" ],
     "flags": [ "DURABLE_MELEE", "SHEATH_SWORD" ]
 	},
 	{
@@ -203,7 +206,7 @@
     "color": "light_gray",
     "techniques": [ "VORPAL", "WBLOCK_2" ],
     "qualities": [ [ "CUT", 1 ], [ "BUTCHER", 4 ] ],
-    "//3": "Removed JAPANESE_SWORDS and SHORT_SWORDS from field weapon_category , add YOUKAI_WEAPONS later",
+    "weapon_category": [ "JAPANESE_SWORDS", "SHORT_SWORDS" ],
     "flags": [ "DURABLE_MELEE", "SHEATH_SWORD" ]
 	}
 ]

@@ -23,6 +23,7 @@
     "looks_like": "throwing_knife",
 	"color": "light_gray",
     "thrown_damage": [ { "damage_type": "stab", "amount": 16 } ],
+    "weapon_category": [ "KNIVES" ],
 	"flags": [ "SHEATH_KNIFE", "STAB", "STURDY" ]
 	}
 ]

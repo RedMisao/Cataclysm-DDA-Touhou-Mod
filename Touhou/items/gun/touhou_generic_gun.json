@@ -50,6 +50,7 @@
 			"idwmag32"
 		] 
 	} ],
+    "weapon_category": [ "AUTOMATIC_PISTOLS" ],
 	"//": "This is a hybrid between the finished PDW prototype and the manufactured IDW",
 	"//2": "Data obtained from http //firearmsworld.net/britain/phidw/idw.htm . Some values are approximates, such as the volume."
 	},
@@ -156,7 +157,8 @@
 			"stanag60",
 			"survivor223mag"
         ]
-	} ]
+	} ],
+    "weapon_category": [ "AUTOMATIC_RIFLES" ]
 	},
 	{
     "id": "sig550_sniper",
@@ -319,6 +321,7 @@
 			"9x39mag10",
 			"9x39mag20"
         ]
-	} ]
+	} ],
+    "weapon_category": [ "AUTOMATIC_RIFLES" ]
 	}
 ]

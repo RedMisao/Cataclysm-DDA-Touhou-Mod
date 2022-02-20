@@ -15,8 +15,8 @@
 		"length": "hand", 
 		"surface": "every"
 	},
-	"bashing": 15,
-	"cutting": 15,
+	"bashing": 14,
+	"cutting": 14,
 	"material": [ "cotton" ],
 	"material_thickness" : 4,
 	"symbol": "[",
@@ -30,8 +30,9 @@
 		"menu_text": "Loosen"
 	},
 	"armor": [
-        { "covers": [ "mouth" ], "coverage": 85, "encumbrance": [ 4, 6 ] }
+        { "covers": [ "mouth" ], "coverage": 85, "encumbrance": [ 4, 8 ] }
 	],
+    "weapon_category": [ "WHIPS" ],
 	"flags" : [ "DURABLE_MELEE", "OUTER", "OVERSIZE", "POCKETS", "REACH_ATTACK", "REACH3", "WHIP" ]
     },
     {
@@ -50,8 +51,8 @@
 		"length": "long", 
 		"surface": "every"
 	},
-	"bashing": 15,
-	"cutting": 15,
+	"bashing": 14,
+	"cutting": 14,
 	"material": [ "cotton" ],
 	"material_thickness" : 4,
 	"symbol": "[",
@@ -66,8 +67,9 @@
 	},
 	"revert_to": "iku_long_scarf",
 	"armor": [
-        { "covers": [ "mouth" ], "coverage": 45, "encumbrance": [ 2, 4 ] }
+        { "covers": [ "mouth" ], "coverage": 35, "encumbrance": [ 0, 2 ] }
 	],
+    "weapon_category": [ "WHIPS" ],
 	"flags" : [ "ALLOWS_NATURAL_ATTACKS", "DURABLE_MELEE", "OUTER", "OVERSIZE", "POCKETS", "REACH_ATTACK", "REACH3", "WHIP" ]
     },
 	{
@@ -100,6 +102,7 @@
 		{ "covers": [ "foot_l", "foot_r", "head", "leg_r" ], "coverage": 65, "encumbrance": [ 0, 0 ] }
 	],
 	"//3": "I have no idea if this is enough to emulate a shield's coverage",
+    "weapon_category": [ "SHIELDS" ],
 	"flags" : [ "DURABLE_MELEE", "OUTER", "OVERSIZE" ],
 	"//2": "Don't know if this should be TOOL_ARMOR, ARMOR or WEAPON. Ideally one should shield bash with it while using it, independently of any actual weapons on the 'main hand', because good shields are used to shield bash faces"
     },
@@ -187,6 +190,7 @@
 		{ "covers": [ "foot_l", "foot_r", "head", "leg_r" ], "coverage": 25, "encumbrance": [ 0, 0 ] }
 	],
 	"//3": "I have no idea if this is enough to emulate a shield's coverage",
+    "weapon_category": [ "SHIELDS" ],
 	"flags" : [ "DURABLE_MELEE", "OUTER", "OVERSIZE" ],
 	"//2": "Don't know if this should be TOOL_ARMOR, ARMOR or WEAPON. Ideally one should shield bash with it while using it, independently of any actual weapons on the 'main hand', because good shields are used to shield bash faces"
     }

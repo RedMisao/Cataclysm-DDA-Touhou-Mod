@@ -40,6 +40,7 @@
 		[ "rail", 1 ],
 		[ "underbarrel", 1 ]
     ],
+    "weapon_category": [ "AUTOMATIC_PISTOLS" ],
     "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NO_UNLOAD", "NON-FOULING", "TRADER_AVOID" ]
 	},
 	{
