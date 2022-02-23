@@ -1,12 +1,99 @@
 [
 	{
-    "id": "chicken_harvest",
+    "id": "arthropod_big_harvest",
+    "type": "harvest",
+    "message": "You gut and fillet the giant bug.",
+    "entries": [
+		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
+		{ "drop": "arthropod_meat", "type": "flesh", "mass_ratio": 0.35 },
+		{ "drop": "arthropod_fat", "type": "offal", "mass_ratio": 0.02 },
+		{ "drop": "arthropod_organs", "type": "offal", "mass_ratio": 0.020 },
+		{ "drop": "meat_scrap", "type": "flesh", "mass_ratio": 0.1 }
+	],
+	"//": "harvest arachnid as reference",
+	"//2": "Assuming that giant bugs are just bugs but oversized, and that giant bug flesh from 400 mya is edible"
+	},
+	{
+    "id": "arthropod_shrimplike_harvest",
+    "type": "harvest",
+    "message": "You gut and fillet the giant critter.",
+    "entries": [
+		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
+		{ "drop": "shrimplike_meat", "type": "flesh", "mass_ratio": 0.65 },
+		{ "drop": "fat", "type": "offal", "mass_ratio": 0.001 },
+		{ "drop": "meat_scrap", "type": "flesh", "mass_ratio": 0.15 }
+	],
+	"//": "Basically cleaning the unedible parts from a giant shrimp-like creature, read: one that may taste like a shrimp or won't make someone vomit while cooking"
+	},
+	{
+    "id": "bird_large_nonmutant_harvest",
     "type": "harvest",
     "entries": [
-      { "drop": "chicken_meat", "type": "flesh", "mass_ratio": 0.4 },
-      { "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
-      { "drop": "feather", "type": "skin", "mass_ratio": 0.01 },
-      { "drop": "down_feather", "type": "skin", "mass_ratio": 0.005 }
+		{ "drop": "meat", "type": "flesh", "mass_ratio": 0.4 },
+		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
+		{ "drop": "liver", "type": "offal", "mass_ratio": 0.01 },
+		{ "drop": "feather", "type": "skin", "mass_ratio": 0.01 },
+		{ "drop": "down_feather", "type": "skin", "mass_ratio": 0.005 },
+		{ "drop": "bone", "type": "bone", "mass_ratio": 0.1 }
+	],
+	"//": "Same as bird_small but adds bones"
+	},
+	{
+    "id": "bird_small",
+    "type": "harvest",
+    "entries": [
+		{ "drop": "bird_meat", "type": "flesh", "mass_ratio": 0.35 },
+		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
+		{ "drop": "liver", "type": "offal", "mass_ratio": 0.01 },
+		{ "drop": "feather", "type": "skin", "mass_ratio": 0.01 },
+		{ "drop": "down_feather", "type": "skin", "mass_ratio": 0.005 }
+    ],
+	"//": "This combines dda meat + meat_scrap from birds into bird_meat"
+	},
+	{
+    "id": "bird_tiny",
+    "type": "harvest",
+    "entries": [
+		{ "drop": "bird_meat", "type": "flesh", "mass_ratio": 0.4 },
+		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
+		{ "drop": "feather", "type": "skin", "mass_ratio": 0.01 },
+		{ "drop": "down_feather", "type": "skin", "mass_ratio": 0.005 }
+    ],
+	"//": "This replaces dda birds dropping meat_scrap into bird_meat"
+	},
+	{
+    "id": "human",
+    "//": "a monstrous horror, probably the most destructive entity you will ever see",
+    "type": "harvest",
+    "entries": [
+		{ "drop": "human_sample", "type": "mutagen_group" },
+		{ "drop": "skull_human", "type": "bone", "scale_num": [ 1, 1 ], "max": 1 },
+		{ "drop": "human_flesh", "type": "flesh", "mass_ratio": 0.2 },
+		{ "drop": "hstomach", "scale_num": [ 1, 1 ], "max": 1, "type": "offal" },
+		{ "drop": "human_fat", "type": "flesh", "mass_ratio": 0.1 },
+		{ "drop": "blood", "type": "blood", "mass_ratio": 0.1 },
+		{ "drop": "bone_human", "type": "bone", "mass_ratio": 0.12 },
+		{ "drop": "sinew", "type": "bone", "mass_ratio": 0.001 },
+		{ "drop": "raw_hleather", "type": "skin", "mass_ratio": 0.01 },
+		{ "drop": "touhou_human_eggs", "type": "wicked", "base_num": [ 0, 1 ] }
+    ],
+	"//2": "Only adds 50% to drop a bunch of human_egg "
+	},
+	{
+    "id": "jinmenken_harvest",
+    "type": "harvest",
+    "entries": [
+		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
+		{ "drop": "bone", "type": "bone", "mass_ratio": 0.15 },
+		{ "drop": "brain", "type": "flesh", "mass_ratio": 0.005 },
+		{ "drop": "fat", "type": "flesh", "mass_ratio": 0.08 },
+		{ "drop": "liver", "type": "offal", "mass_ratio": 0.01 },
+		{ "drop": "lung", "type": "flesh", "mass_ratio": 0.0035 },
+		{ "drop": "meat", "type": "flesh", "mass_ratio": 0.25 },
+		{ "drop": "meat_scrap", "type": "flesh", "mass_ratio": 0.05 },
+		{ "drop": "raw_fur", "type": "skin", "mass_ratio": 0.02 },
+		{ "drop": "sinew", "type": "bone", "mass_ratio": 0.00066 },
+		{ "drop": "skull_human", "type": "bone", "scale_num": [ 1, 1 ], "max": 1 }
     ]
 	},
 	{
@@ -17,5 +104,70 @@
 		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
 		{ "drop": "meat_scrap", "type": "flesh", "mass_ratio": 0.1 }
     ]
+	},
+	{
+    "id": "mammal_noleather_harvest",
+    "type": "harvest",
+    "entries": [
+		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
+		{ "drop": "bone", "type": "bone", "mass_ratio": 0.15 },
+		{ "drop": "brain", "type": "flesh", "mass_ratio": 0.005 },
+		{ "drop": "fat", "type": "flesh", "mass_ratio": 0.07 },
+		{ "drop": "kidney", "type": "offal", "mass_ratio": 0.002 },
+		{ "drop": "liver", "type": "offal", "mass_ratio": 0.01 },
+		{ "drop": "lung", "type": "flesh", "mass_ratio": 0.0035 },
+		{ "drop": "meat", "type": "flesh", "mass_ratio": 0.26 },
+		{ "drop": "meat_scrap", "type": "flesh", "mass_ratio": 0.02 },
+		{ "drop": "sinew", "type": "bone", "mass_ratio": 0.00035 },
+		{ "drop": "stomach", "scale_num": [ 1, 1 ], "max": 1, "type": "offal" },
+		{ "drop": "sweetbread", "type": "flesh", "mass_ratio": 0.002 }
+    ],
+	"//": "Based on mammal_large_leather, removing the leather, making the stomach smaller, reducing meat, increasing meat scraps"
+	},
+	{
+    "id": "reptile_marine_harvest",
+    "type": "harvest",
+    "entries": [
+		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
+		{ "drop": "bone", "type": "bone", "mass_ratio": 0.15 },
+		{ "drop": "brain", "type": "flesh", "mass_ratio": 0.005 },
+		{ "drop": "fat", "type": "flesh", "mass_ratio": 0.07 },
+		{ "drop": "fish", "type": "flesh", "mass_ratio": 0.33 },
+		{ "drop": "kidney", "type": "offal", "mass_ratio": 0.002 },
+		{ "drop": "liver", "type": "offal", "mass_ratio": 0.01 },
+		{ "drop": "lung", "type": "flesh", "mass_ratio": 0.0035 },
+		{ "drop": "meat_scrap", "type": "flesh", "mass_ratio": 0.02 },
+		{ "drop": "stomach_large", "scale_num": [ 1, 1 ], "max": 1, "type": "offal" },
+		{ "drop": "sweetbread", "type": "flesh", "mass_ratio": 0.002 }
+	],
+	"//": "Mix between and fish_large reptile_large_leather without the leather"
+	},
+	{
+    "id": "sasquatch_harvest",
+    "type": "harvest",
+    "entries": [
+		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
+		{ "drop": "bone", "type": "bone", "mass_ratio": 0.15 },
+		{ "drop": "fat", "type": "flesh", "mass_ratio": 0.07 },
+		{ "drop": "meat", "type": "flesh", "mass_ratio": 0.34 },
+		{ "drop": "raw_fur", "type": "skin", "mass_ratio": 0.05 },
+		{ "drop": "sinew", "type": "bone", "mass_ratio": 0.00035 },
+		{ "drop": "skull_human", "type": "bone", "scale_num": [ 1, 1 ], "max": 1 },
+		{ "drop": "stomach", "scale_num": [ 1, 1 ], "max": 1, "type": "offal" }
+    ],
+	"//": "Based on human_fur, removed as much human and mutant stuff as possible"
+	},
+	{
+    "id": "zombie",
+    "//": "your bog standard zombie",
+    "type": "harvest",
+    "entries": [
+		{ "drop": "meat_tainted", "type": "flesh", "mass_ratio": 0.25 },
+		{ "drop": "blood_tainted", "type": "blood", "mass_ratio": 0.1 },
+		{ "drop": "fat_tainted", "type": "flesh", "mass_ratio": 0.08 },
+		{ "drop": "bone_tainted", "type": "bone", "mass_ratio": 0.1 },
+		{ "drop": "touhou_human_eggs", "type": "wicked", "base_num": [ 0, 1 ] }
+	],
+	"//2": "Only adds 50% to drop a bunch of human_egg "
 	}
 ]

@@ -1,0 +1,58 @@
+[
+	{
+    "id": "fd_blood2",
+    "type": "field_type",
+    "legacy_enum_id": 1,
+    "intensity_levels": [ 
+		{ "name": "blood splatter", "color": "red" }, 
+		{ "name": "blood stain" }, 
+		{ "name": "puddle of blood" } 
+	],
+    "description_affix": "covered_in",
+    "underwater_age_speedup": "2 turns",
+    "decay_amount_factor": 2,
+    "is_splattering": true,
+    "half_life": "12 turns",
+    "phase": "liquid",
+    "accelerated_decay": true,
+    "display_field": true,
+	"//": "faster decaying blood for effects"
+	},
+	{
+    "id": "fd_poison",
+    "type": "field_type",
+    "looks_like": "fd_bile",
+	"legacy_enum_id": 7,
+    "intensity_levels": [
+		{ "name": "poison splatter", "sym": "5", "color": "yellow", "translucency": 1, "dangerous": true, 
+		"effects": [
+			{
+            "effect_id": "poison",
+            "intensity": 1,
+            "min_duration": "4 turns",
+            "max_duration": "8 turns",
+            "immune_inside_vehicle": true,
+            "message": "You feel sick… You're losing consciousness!",
+            "message_type": "bad"
+			}
+		]
+		},
+		{ "name": "poison streak" },
+		{ "name": "pool of poison" }
+	],
+    "immunity_data": { "traits": [ "BIO_IMMUNE" ] },
+    "underwater_age_speedup": "2 turns",
+    "decay_amount_factor": 3,
+    "gas_absorption_factor": 6,
+    "percent_spread": 50,
+    "outdoor_age_speedup": "1 turns",
+    "dirty_transparency_cache": true,
+    "has_fume": true,
+    "has_acid": false,
+    "priority": 4,
+    "half_life": "12 turns",
+    "phase": "gas",
+    "display_items": true,
+    "display_field": true
+	}
+]

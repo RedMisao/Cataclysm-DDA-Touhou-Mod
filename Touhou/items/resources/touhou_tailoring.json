@@ -13,8 +13,8 @@
     "material": [ "cotton" ],
     "symbol": "=",
     "color": "dark_gray",
-    "count": 100,
     "ammo_type": "components",
+	"count": 100,
 	"//": "These come from data/json/items/resources"
 	},
 	{
@@ -30,7 +30,7 @@
     "material": [ "wool" ],
     "symbol": "=",
     "color": "dark_gray",
-    "count": 100,
-    "ammo_type": "components"
+    "ammo_type": "components",
+	"count": 100
 	}
 ]

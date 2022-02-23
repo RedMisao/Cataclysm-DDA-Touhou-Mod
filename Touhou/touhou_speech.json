@@ -1,44 +1,392 @@
 [
 	{
-		"speaker": "mon_gyokuto_base",
-		"type": "speech",
-        "sound": "\"Don't come any closer!\"",
-        "volume": 20
+	"speaker": "mon_gyokuto_base",
+	"type": "speech",
+	"sound": "\"Don't come any closer!\"",
+	"volume": 20
     },
 	{
-		"speaker": "mon_gyokuto_base",
-		"type": "speech",
-        "sound": "\"Stay back! I'm warning you!\"",
-        "volume": 20
+	"speaker": "mon_gyokuto_base",
+	"type": "speech",
+	"sound": "\"Stay back! I'm warning you!\"",
+	"volume": 20
     },
 	{
-		"speaker": "mon_gyokuto_base",
-		"type": "speech",
-        "sound": "\"Even on Earth, this is happening...\"",
-        "volume": 8
+	"speaker": "mon_gyokuto_base",
+	"type": "speech",
+	"sound": "\"Even on Earth, this is happening…\"",
+	"volume": 8
+    },
+	{
+	"speaker": "mon_ichthyosaurus",
+	"type": "speech",
+	"sound": "*repeated clicking*",
+	"volume": 24
+    },
+	{
+	"speaker": "mon_ichthyosaurus",
+	"type": "speech",
+	"sound": "*short clicking*",
+	"volume": 32
+    },
+	{
+	"speaker": "mon_ichthyosaurus",
+	"type": "speech",
+	"sound": "*a deep, screech-like sound as it were coming underwater*",
+	"volume": 20
+    },
+	{
+	"speaker": "mon_ichthyosaurus",
+	"type": "speech",
+	"sound": "*a \"reptilian\" kind of whistle*",
+	"volume": 32
+    },
+	{
+	"speaker": "mon_jinmenken",
+	"type": "speech",
+	"sound": "Leave me alone…",
+	"volume": 6
+    },
+	{
+	"speaker": "mon_jinmenken",
+	"type": "speech",
+	"sound": "Please…",
+	"volume": 7
+    },
+	{
+	"speaker": "mon_jinmenken",
+	"type": "speech",
+	"sound": "*audible sigh*",
+	"volume": 8
+    },
+	{
+	"speaker": "mon_jinmenken",
+	"type": "speech",
+	"sound": "Go away…",
+	"volume": 5
+    },
+	{
+	"speaker": "mon_jinmenken",
+	"type": "speech",
+	"sound": "No…",
+	"volume": 6
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Stop!",
+	"volume": 24
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Desist!",
+	"volume": 20
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Found it.",
+	"volume": 24
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Number 37's wrench at 47, noise.",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Number 11 on 7 hammer's, jammer.",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Number 5 past 13, set.",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Cease!",
+	"volume": 24
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Freeze!",
+	"volume": 20
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Catching.",
+	"volume": 24
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Number 19's key in 43, string.",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Number 97 to 61, lines.",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Number 89 under 2, push.",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Ovv er.",
+	"volume": 24
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "S Top!",
+	"volume": 20
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "*unintelligible*",
+	"volume": 24
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Num mber 29's key it 3.",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Number 67 *indiscernible speech* 17",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Number 59 unm 71 tl-tl.",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Stop!",
+	"volume": 24
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Freeze!",
+	"volume": 20
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Engaging.",
+	"volume": 24
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Number 73 near 29, cut",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Number 53 by 23, pull.",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib1",
+	"type": "speech",
+	"sound": "Number 79 blocking 31, undo.",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib2",
+	"type": "speech",
+	"sound": "Cease!",
+	"volume": 24
+    },
+	{
+	"speaker": "mon_mib2",
+	"type": "speech",
+	"sound": "Freeze!",
+	"volume": 20
+    },
+	{
+	"speaker": "mon_mib2",
+	"type": "speech",
+	"sound": "Catching.",
+	"volume": 24
+    },
+	{
+	"speaker": "mon_mib2",
+	"type": "speech",
+	"sound": "Number 19's key in 43, string.",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib2",
+	"type": "speech",
+	"sound": "Number 97 to 61, lines.",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib2",
+	"type": "speech",
+	"sound": "Number 89 under 2, push.",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib3",
+	"type": "speech",
+	"sound": "Ovv er.",
+	"volume": 24
+    },
+	{
+	"speaker": "mon_mib3",
+	"type": "speech",
+	"sound": "S Top!",
+	"volume": 20
+    },
+	{
+	"speaker": "mon_mib3",
+	"type": "speech",
+	"sound": "*unintelligible*",
+	"volume": 24
+    },
+	{
+	"speaker": "mon_mib3",
+	"type": "speech",
+	"sound": "Num mber 29's key it 3.",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib3",
+	"type": "speech",
+	"sound": "Number 67 *indiscernible speech* 17",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib3",
+	"type": "speech",
+	"sound": "Number 59 unm 71 tl-tl.",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib4",
+	"type": "speech",
+	"sound": "Stop!",
+	"volume": 24
+    },
+	{
+	"speaker": "mon_mib4",
+	"type": "speech",
+	"sound": "Freeze!",
+	"volume": 20
+    },
+	{
+	"speaker": "mon_mib4",
+	"type": "speech",
+	"sound": "Engaging.",
+	"volume": 24
+    },
+	{
+	"speaker": "mon_mib4",
+	"type": "speech",
+	"sound": "Number 73 near 29, cut",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib4",
+	"type": "speech",
+	"sound": "Number 53 by 23, pull.",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_mib4",
+	"type": "speech",
+	"sound": "Number 79 blocking 31, undo.",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_thylacine",
+	"type": "speech",
+	"sound": "*growl*",
+	"volume": 20
+    },
+	{
+	"speaker": "mon_thylacine",
+	"type": "speech",
+	"sound": "\"yip-yap yip-yap\"",
+	"volume": 20
+    },
+	{
+	"speaker": "mon_thylacine",
+	"type": "speech",
+	"sound": "\"cay-yip\"",
+	"volume": 20
+    },
+	{
+	"speaker": "mon_thylacine",
+	"type": "speech",
+	"sound": "\"hop-hop-hop\"",
+	"volume": 20
+    },
+	{
+	"speaker": "mon_thylacine",
+	"type": "speech",
+	"sound": "*long cry*",
+	"volume": 35
+    },
+	{
+	"speaker": "mon_thylacine",
+	"type": "speech",
+	"sound": "*snuffling noise*",
+	"volume": 6
+    },
+	{
+	"speaker": "mon_thylacine_pup",
+	"type": "speech",
+	"sound": "*snuffling noise*",
+	"volume": 6
     },
 	{
 	"speaker": "mon_vengeful_spirit_kaenbyou",
 	"type": "speech",
-	"sound": "\"...uuuu...\"",
+	"sound": "\"…uuuu…\"",
 	"volume": 12
     },
 	{
 	"speaker": "mon_vengeful_spirit_kaenbyou",
 	"type": "speech",
-	"sound": "\"aAaaaa...\"",
+	"sound": "\"aAaaaa…\"",
 	"volume": 12
     },
 	{
 	"speaker": "mon_vengeful_spirit_kaenbyou",
 	"type": "speech",
-	"sound": "\"kh...  ggh...\"",
+	"sound": "\"kh… ggh…\"",
 	"volume": 12
     },
 	{
 	"speaker": "mon_vengeful_spirit_kaenbyou",
 	"type": "speech",
-	"sound": "\"nn... N... no...\"",
+	"sound": "\"nn… N… no…\"",
 	"volume": 12
     }
 ]

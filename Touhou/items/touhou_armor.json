@@ -16,9 +16,320 @@
 	"color": "white",
     "warmth": 5,
 	"armor": [
-        { "covers": [ "leg_r", "leg_l" ], "coverage": 35, "encumbrance": [ 2, 4 ] }
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 35, "encumbrance": [ 2, 4 ] }
+	]
+	},
+	{
+    "id": "cheongsam",
+    "type": "ARMOR",
+    "name": { "str": "cheongsam", "str_pl": "cheongsam" },
+	"copy-from": "dress",
+    "description": "A very elegant Chinese style dress, showing the characteristic sideways seam going from the collar to the end of the right side, plus an intrincate embroided design across the surface.  Tight and slightly uncomfortable for the upper body, the tiny sleeves are no issue, and the sideways seam enables natural leg movement by use of a clever breaking point for the entire fabric.  This will make you feel like a celebrity on a blockbuster hit or a special secret operative when dispatching zeds.",
+    "repairs_like": "dress",
+	"weight": "1000 g",
+    "volume": "3500 ml",
+    "price": 24000,
+    "price_postapoc": 65,
+    "material": [ "cotton" ],
+    "material_thickness": 0.2,
+	"symbol": "[",
+    "looks_like": "robe",
+    "color": "red",
+    "warmth": 10,
+    "armor": [ 
+		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ], "coverage": 8, "encumbrance": [ 0, 2 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 95, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_knee_l", "leg_knee_r" ], "coverage": 95, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_lower_l", "leg_lower_r" ], "coverage": 20, "encumbrance": [ 0, 2 ] },
+		{ "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 8, 16 ] }
 	],
-    "flags": [ "FANCY" ]
+    "flags": [ "FANCY", "VARSIZE" ],
+	"//": "Generic below the knee version, no silk material so it's made of cotton instead"
+	},
+	{
+    "id": "cheongsam_medium",
+    "type": "ARMOR",
+    "name": { "str": "cheongsam (medium)", "str_pl": "cheongsam (medium)" },
+	"copy-from": "cheongsam",
+    "description": "A very elegant Chinese style dress, showing the characteristic sideways seam going from the collar to the end of the right side, plus an intrincate embroided design across the surface.  This one's shorter than usual, barely covering below the knees.",
+    "repairs_like": "cheongsam",
+	"weight": "900 g",
+    "volume": "3000 ml",
+    "price": 22000,
+    "price_postapoc": 60,
+    "material": [ "cotton" ],
+    "material_thickness": 0.2,
+	"symbol": "[",
+    "looks_like": "dress",
+    "color": "red",
+    "warmth": 9,
+    "armor": [ 
+		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ], "coverage": 8, "encumbrance": [ 0, 2 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 95, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_knee_l", "leg_knee_r" ], "coverage": 45, "encumbrance": [ 0, 2 ] },
+		{ "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 8, 16 ] }
+	],
+    "flags": [ "FANCY", "VARSIZE" ],
+	"//": "Ends around 4-6 cm below the knee"
+	},
+	{
+    "id": "cheongsam_short",
+    "type": "ARMOR",
+    "name": { "str": "cheongsam (short)", "str_pl": "cheongsam (short)" },
+	"copy-from": "cheongsam",
+    "description": "A very elegant Chinese style dress, showing the characteristic sideways seam going from the collar to the end of the right side, plus an intrincate embroided design across the surface.  This one's bold, as it's short enough it barely covers your thighs, similar to an oversized shirt if it were twenty times more elegant.",
+    "repairs_like": "cheongsam",
+	"weight": "750 g",
+    "volume": "2700 ml",
+    "price": 22000,
+    "price_postapoc": 60,
+    "material": [ "cotton" ],
+    "material_thickness": 0.2,
+	"symbol": "[",
+    "looks_like": "dress",
+    "color": "red",
+    "warmth": 9,
+    "armor": [ 
+		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ], "coverage": 8, "encumbrance": [ 0, 2 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 30, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 8, 16 ] }
+	],
+    "flags": [ "FANCY", "VARSIZE" ],
+	"//": "Covers one third of the thigh at best"
+	},
+	{
+    "id": "dress_shoes_black",
+    "type": "ARMOR",
+    "name": { "str": "pair of black dress shoes", "str_pl": "pairs of black dress shoes" },
+    "description": "Classy patent leather shoes.",
+    "repairs_like": "dress_shoes",
+	"weight": "1000 g",
+    "volume": "1600 ml",
+    "price": 13000,
+    "price_postapoc": 300,
+    "material": [ "leather" ],
+    "material_thickness": 2,
+	"symbol": "[",
+    "looks_like": "dress_shoes",
+    "color": "black",
+    "warmth": 10,
+    "armor": [ 
+		{ "covers": [ "foot_l", "foot_r" ], "coverage": 75, "encumbrance": [ 6, 12 ] }
+	],
+    "flags": [ "SUPER_FANCY", "VARSIZE" ]
+	},
+	{
+    "id": "jacket_black",
+    "type": "ARMOR",
+    "name": { "str": "black jacket" },
+	"copy-from": "jacket_jean",
+    "description": "An otherwise undermarkable, elegant black jacket.",
+    "repairs_like": "jacket_jean",
+	"weight": "900 g",
+    "volume": "3250 ml",
+    "price": 4500,
+    "price_postapoc": 300,
+    "material": [ "cotton" ],
+    "material_thickness": 0.5,
+	"symbol": "[",
+    "looks_like": "jacket_jean",
+    "color": "black",
+    "warmth": 20,
+	"armor": [
+		{ "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 8, 8 ] },
+		{ "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 6, 10 ] }
+    ],
+    "pocket_data": [
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "800 ml",
+        "max_contains_weight": "1 kg",
+        "max_item_length": "13 cm",
+        "moves": 80
+		},
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "800 ml",
+        "max_contains_weight": "1 kg",
+        "max_item_length": "13 cm",
+        "moves": 80
+		}
+    ],
+    "flags": [ "OUTER", "POCKETS", "SUPER_FANCY", "VARSIZE" ]
+	},
+	{
+    "id": "tai_chi_pants",
+    "type": "ARMOR",
+    "name": { "str": "tai chi pants" },
+    "description": "White baggy pants for practicing Tai Chi.  Very comfy.",
+    "weight": "350 g",
+    "volume": "2000 ml",
+    "price": 3000,
+    "price_postapoc": 50,
+    "material": [ "cotton" ],
+    "material_thickness": 0.15,
+	"symbol": "[",
+    "looks_like": "pants",
+    "color": "white",
+    "warmth": 4,
+    "armor": [ 
+		{ "covers": [ "leg_l", "leg_r" ], "coverage": 85, "encumbrance": [ 1, 3 ] } 
+	],
+    "flags": [ "VARSIZE" ]
+	},
+	{
+    "id": "mib_watch",
+    "type": "ARMOR",
+    "name": { "str": "collection watch", "str_pl": "collection watches" },
+    "description": "A fine, triangular shaped stainless steel watch.",
+    "weight": "120 g",
+    "volume": "240 ml",
+    "price": 12000,
+    "price_postapoc": 60,
+    "material": [ "leather", "steel" ],
+    "symbol": "[",
+    "color": "light_gray",
+    "sided": true,
+    "armor": [ 
+		{ "covers": [ "hand_l", "hand_r" ], "coverage": 8 }
+	],
+	"flags": [ "ALARMCLOCK", "ALLOWS_NATURAL_ATTACKS", "BELTED", "FANCY", "OVERSIZE", "WATCH", "WATER_FRIENDLY" ]
+	},
+	{
+    "id": "tang_shirt",
+    "type": "ARMOR",
+    "category": "armor",
+	"name": "tang shirt",
+	"copy-from": "longshirt",
+	"description": "A long sleeved shirt made in characteristic Chinese style.  It has a short, somewhat flexible collar, knots replacing buttons, with the fabric feeling different to the touch compared to the average longshirt.",
+    "repairs_like": "longshirt",
+	"weight": "300 g",
+    "volume": "1000 ml",
+    "price": 2000,
+    "price_postapoc": 65,
+    "material": [ "cotton" ],
+    "material_thickness": 0.35,
+	"symbol": "[",
+	"looks_like": "longshirt",
+    "color": "light_gray",
+    "warmth": 6,
+	"armor": [
+		{ "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 2, 5 ] }
+	],
+    "flags": [ "VARSIZE" ]
+	},
+	{
+    "id": "tang_suit",
+    "type": "ARMOR",
+    "category": "armor",
+	"name": "Tang suit",
+	"copy-from": "jacket_jean",
+	"description": "A long sleeved jacket made in characteristic Chinese style.  Despite looking like a shirt, it's worn over it, so it qualifies as a jacket.  Has the characteristic collar and the knots replacing buttons, featuring inner pockets.  Special cut allows to hold the overall shape, so it doesn't look loose or baggy.  Putting this on makes you want to try those sick moves.",
+    "repairs_like": "jacket_jean",
+    "weight": "800 g",
+    "volume": "4000 ml",
+    "price": 6000,
+    "price_postapoc": 300,
+    "material": [ "cotton" ],
+    "material_thickness": 0.35,
+	"symbol": "[",
+	"looks_like": "jacket_jean",
+    "color": "white",
+    "warmth": 24,
+	"pocket_data": [ 
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "800 ml",
+        "max_contains_weight": "1 kg",
+        "max_item_length": "13 cm",
+        "moves": 150
+		},
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "800 ml",
+        "max_contains_weight": "1 kg",
+        "max_item_length": "13 cm",
+        "moves": 150
+		}
+	],
+	"armor": [
+		{ "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 6, 10 ] },
+		{ "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 6, 12 ] }
+	],
+    "flags": [ "OUTER", "POCKETS", "VARSIZE" ]
+	},
+	{
+    "id": "tie_black",
+    "type": "ARMOR",
+    "name": { "str": "black necktie" },
+	"copy-from": "tie_necktie",
+    "description": "An undermarkable, long, dapper black necktie.",
+    "weight": "200 g",
+    "volume": "220 ml",
+    "price": 1200,
+    "price_postapoc": 12,
+    "material": [ "cotton" ],
+    "symbol": "[",
+    "looks_like": "tie_necktie",
+    "color": "black",
+    "flags": [ "SUPER_FANCY" ]
+	},
+	{
+    "id": "pants_black",
+    "type": "ARMOR",
+    "name": { "str_sp": "black pants" },
+	"copy-from": "pants",
+    "description": "A pair of unremarkable, stylish black dress pants.",
+    "repairs_like": "pants",
+	"weight": "700 g",
+    "volume": "3000 ml",
+    "price": 5200,
+    "price_postapoc": 110,
+    "material": [ "cotton" ],
+    "material_thickness": 0.5,
+	"symbol": "[",
+    "looks_like": "pants",
+    "color": "black",
+    "warmth": 15,
+	"pocket_data": [
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1250 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "19 cm",
+        "moves": 80
+		},
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1250 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "19 cm",
+        "moves": 80
+		},
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1080 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "165 mm",
+        "moves": 100
+		},
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1080 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "165 mm",
+        "moves": 100
+		}
+    ],
+    "armor": [ 
+		{ "covers": [ "leg_l", "leg_r" ], "coverage": 95, "encumbrance": [ 6, 10 ] }
+	],
+    "flags": [ "POCKETS", "SUPER_FANCY", "VARSIZE" ]
 	},
 	{
     "id": "ribbon_black",
@@ -76,7 +387,7 @@
     "warmth": 8,
 	"armor": [ 
 		{ "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 1, 2 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "coverage": 30, "encumbrance": [ 1, 2 ] }
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_lower_l", "leg_lower_r" ], "coverage": 25, "encumbrance": [ 2, 4 ] }
 	],
     "flags": [ "SKINTIGHT", "VARSIZE" ]
 	},
@@ -139,12 +450,15 @@
 	"looks_like": "dress_shirt",
     "color": "white",
     "warmth": 10,
-	"pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "300 ml", "max_contains_weight": "500 g", "moves": 80 } ],
-	"armor": [
-        { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] },
-        { "covers": [ "arm_l", "arm_r" ], "coverage": 10, "encumbrance": [ 2, 4 ] }
+	"pocket_data": [ 
+		{ "pocket_type": "CONTAINER", "max_contains_volume": "300 ml", "max_contains_weight": "500 g", "moves": 150 } 
 	],
-    "flags": [ "FANCY", "STURDY", "VARSIZE" ]
+	"armor": [
+		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_upper_l", "arm_upper_r" ], "coverage": 5, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] }
+	],
+    "flags": [ "FANCY", "VARSIZE" ]
 	},
 	{
     "id": "aya_skirt",
@@ -164,7 +478,8 @@
     "warmth": 12,
 	"pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "250 ml", "max_contains_weight": "500 g", "moves": 80 } ],
 	"armor": [
-		{ "covers": [ "leg_l", "leg_r" ], "coverage": 45, "encumbrance": [ 2, 4 ] }
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 85, "encumbrance": [ 2, 4 ] }
     ],
 	"flags": [ "VARSIZE" ]
 	},
@@ -182,10 +497,7 @@
     "id": "iku_fedora",
     "type": "ARMOR",
     "category": "armor",
-	"name": {
-	"str": "oarfish fedora",
-	"str_pl": "oarfish fedoras"
-	},
+	"name": { "str": "oarfish fedora", "str_pl": "oarfish fedoras" },
 	"copy-from": "fedora",
     "description": "A fedora decorated with a red bow and two long ribbons extending out.",
 	"flags": [ "FANCY", "OUTER", "VARSIZE" ]
@@ -196,9 +508,13 @@
     "category": "armor",
 	"name": { "str": "long skirt", "str_pl": "long skirts" },
     "copy-from": "skirt",
-	"description": "A long, dark blue almost black skirt.",
-	"armor": [
-		{ "covers": [ "leg_l", "leg_r" ], "coverage": 70, "encumbrance": [ 6, 10 ] }
+	"description": "A long, dark blue almost black skirt with frills at the end.",
+    "warmth": 10,
+    "material_thickness": 1,
+    "armor": [
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 95, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_knee_l", "leg_knee_r" ], "coverage": 45, "encumbrance": [ 2, 4 ] }
     ]
 	},
 	{
@@ -220,9 +536,11 @@
     "warmth": 20,
 	"pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "450 ml", "max_contains_weight": "900 g", "moves": 120 } ],
 	"armor": [
-        { "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 4, 8 ] },
         { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 4, 8 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "coverage": 50, "encumbrance": [ 4, 8 ] }
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 4, 8 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 100, "encumbrance": [ 4, 8 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_knee_l", "leg_knee_r" ], "coverage": 50, "encumbrance": [ 2, 4 ] },
+        { "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 4, 8 ] }
 	],
 	"flags": [ "FANCY", "STURDY", "VARSIZE" ]
 	},
@@ -246,7 +564,7 @@
 	"color": "black",
     "warmth": 1,
 	"armor": [
-		{ "covers": [ "leg_l" ], "coverage": 1, "encumbrance": [ 1, 2 ] }
+		{ "covers": [ "leg_l" ], "specifically_covers": [ "leg_lower_l" ], "coverage": 5, "encumbrance": [ 1, 1 ] }
 	],
 	"flags": [ "FANCY", "SKINTIGHT", "STURDY", "VARSIZE" ],
 	"//3": "This item maybe needs something else to it"
@@ -312,10 +630,17 @@
 	"looks_like": "longshirt",
     "color": "white",
     "warmth": 10,
-	"pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "400 ml", "max_contains_weight": "800 g", "moves": 80 } ],
+	"pocket_data": [ 
+		{ 
+		"pocket_type": "CONTAINER", 
+		"max_contains_volume": "400 ml", 
+		"max_contains_weight": "800 g", 
+		"moves": 80 
+		} 
+	],
 	"armor": [
-        { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] },
-        { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 4, 6 ] }
+        { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 4, 6 ] },
+        { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] }
 	],
     "flags": [ "FANCY", "STURDY", "VARSIZE" ]
 	},
@@ -339,12 +664,22 @@
 	"warmth": 20,
     "weight_capacity_bonus": "1 kg",
 	"pocket_data": [
-        { "pocket_type": "CONTAINER", "max_contains_volume": "500 ml", "max_contains_weight": "1 kg", "moves": 80 },
-        { "pocket_type": "CONTAINER", "max_contains_volume": "500 ml", "max_contains_weight": "1 kg", "moves": 80 }
+        { 
+		"pocket_type": "CONTAINER", 
+		"max_contains_volume": "500 ml", 
+		"max_contains_weight": "1 kg", 
+		"moves": 80 
+		},
+        { 
+		"pocket_type": "CONTAINER", 
+		"max_contains_volume": "500 ml", 
+		"max_contains_weight": "1 kg", 
+		"moves": 80 
+		}
     ],
 	"armor": [
-        { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 8, 12 ] },
-        { "covers": [ "arm_l", "arm_r" ], "coverage": 95, "encumbrance": [ 8, 12 ] }
+        { "covers": [ "arm_l", "arm_r" ], "coverage": 95, "encumbrance": [ 8, 12 ] },
+        { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 8, 12 ] }
 	],
 	"flags": [ "FANCY", "POCKETS", "STURDY", "VARSIZE", "WATERPROOF" ]
 	},
@@ -480,6 +815,105 @@
     "flags": [ "FANCY", "OUTER", "VARSIZE" ]
 	},
 	{
+    "id": "meiling_cheongsam_upper",
+    "type": "ARMOR",
+    "name": { "str": "Meiling's cheongsam (upper piece)", "str_pl": "Meiling's cheongsam (upper piece)" },
+	"copy-from": "cheongsam",
+    "description": "A very elegant Chinese style dress.  More comfy than usual to wear, it's split into two pieces to increase the comfort for the user even more.  Different from the usual style, sleeves are not present, so it's just basically a jacket by itself.  It still displays Chinese motiffs though, such as knots instead of buttons, and the embroidery.",
+    "repairs_like": "cheongsam",
+	"weight": "400 g",
+    "volume": "1200 ml",
+    "price_postapoc": 2500,
+    "material": [ "cotton" ],
+    "material_thickness": 1,
+	"symbol": "[",
+    "looks_like": "jacket_light",
+    "color": "green",
+    "warmth": 6,
+	"pocket_data": [ 
+		{ 
+		"pocket_type": "CONTAINER", 
+		"max_contains_volume": "300 ml", 
+		"max_contains_weight": "500 g", 
+		"moves": 150 
+		} 
+	],
+	"armor": [ 
+		{ "covers": [ "torso" ], "coverage": 80, "encumbrance": [ 4, 10 ] }
+	],
+    "flags": [ "FANCY", "POCKETS", "VARSIZE" ]
+	},
+	{
+    "id": "meiling_cheongsam_lower",
+    "type": "ARMOR",
+    "name": { "str": "Meiling's cheongsam (lower piece)", "str_pl": "Meiling's cheongsam (lower piece)" },
+	"copy-from": "cheongsam",
+    "description": "A very elegant Chinese style dress.  More comfy than usual to wear, it's split into two pieces to increase the comfort for the user even more.  This is the lower part, shaped like a long skirt with a peekaboo slit.",
+    "repairs_like": "cheongsam",
+	"weight": "600 g",
+    "volume": "2000 ml",
+    "price_postapoc": 2500,
+    "material": [ "cotton" ],
+    "material_thickness": 1,
+	"symbol": "[",
+    "looks_like": "kilt",
+    "color": "green",
+    "warmth": 8,
+	"armor": [ 
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 90, "encumbrance": [ 0, 4 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_knee_l", "leg_knee_r" ], "coverage": 85, "encumbrance": [ 0, 2 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_lower_l", "leg_lower_r" ], "coverage": 35, "encumbrance": [ 0, 2 ] }
+	],
+    "flags": [ "FANCY", "VARSIZE" ]
+	},
+	{
+    "id": "meiling_hat",
+    "type": "ARMOR",
+    "name": { "str": "Meiling's beret" },
+	"copy-from": "beret",
+    "description": "A green beret, featuring a golden steel star insignia with the Chinese symbol \"dragon\" engraved on it.",
+    "repairs_like": "balclava",
+	"weight": "120 g",
+    "volume": "250 ml",
+    "price": 1500,
+    "price_postapoc": 50,
+    "material": [ "cotton", "steel" ],
+    "material_thickness": 1,
+	"symbol": "[",
+    "looks_like": "beret",
+    "color": "green",
+    "warmth": 10,
+    "armor": [ 
+		{ "covers": [ "head" ], "coverage": 40 } 
+	],
+    "flags": [ "VARSIZE", "WATER_FRIENDLY" ]
+	},
+	{
+    "id": "meiling_shirt",
+    "type": "ARMOR",
+    "category": "armor",
+	"name": "Meiling's shirt",
+	"copy-from": "tang_shirt",
+	"description": "A white button-up shirt with short, puffy sleeves.  There's black laces at the sleeves and another crossing it in the middle.  The collars and the left side of the button line have a a special mapple-leaf design.",
+	"weight": "250 g",
+    "volume": "750 ml",
+    "price": 15000,
+    "price_postapoc": 1500,
+    "material": [ "cotton" ],
+    "material_thickness": 1,
+	"symbol": "[",
+	"looks_like": "dress_shirt",
+    "color": "white",
+    "warmth": 8,
+	"armor": [
+		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_upper_l", "arm_upper_r" ], "coverage": 15, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] }
+	],
+    "flags": [ "FANCY", "VARSIZE" ]
+	},
+	{
     "id": "mokou_boots",
     "type": "ARMOR",
     "category": "armor",
@@ -515,8 +949,18 @@
     "color": "red",
 	"warmth": 20,
 	"pocket_data": [
-		{ "pocket_type": "CONTAINER", "max_contains_volume": "500 ml", "max_contains_weight": "2 kg", "moves": 100 },
-		{ "pocket_type": "CONTAINER", "max_contains_volume": "500 ml", "max_contains_weight": "2 kg", "moves": 100 }
+		{ 
+		"pocket_type": "CONTAINER", 
+		"max_contains_volume": "500 ml", 
+		"max_contains_weight": "2 kg", 
+		"moves": 100 
+		},
+		{ 
+		"pocket_type": "CONTAINER", 
+		"max_contains_volume": "500 ml", 
+		"max_contains_weight": "2 kg", 
+		"moves": 100 
+		}
     ],
 	"armor": [
         { "covers": [ "leg_l", "leg_r" ], "coverage": 90, "encumbrance": [ 8, 16 ] }
@@ -560,8 +1004,8 @@
 	"color": "white",
     "warmth": 10,
 	"armor": [
-		{ "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 4, 6 ] },
-		{ "covers": [ "arm_l", "arm_r" ], "coverage": 35, "encumbrance": [ 2, 4 ] }
+		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ], "coverage": 90, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 4, 6 ] }
     ],
     "flags": [ "FANCY", "STURDY", "VARSIZE" ]
 	},
@@ -628,8 +1072,11 @@
     "warmth": 10,
 	"armor": [
         { "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 4, 8 ] },
-        { "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_elbow_l", "arm_elbow_r", "arm_upper_l", "arm_upper_r"], "coverage": 10, "encumbrance": [ 4, 8 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r", "leg_upper_l", "leg_upper_r", "leg_knee_l", "leg_knee_r" ], "coverage": 75, "encumbrance": [ 4, 8 ] }
+        { "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_elbow_l", "arm_elbow_r" ], "coverage": 100, "encumbrance": [ 2, 6 ] },
+        { "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_upper_l", "arm_upper_r" ], "coverage": 10, "encumbrance": [ 2, 6 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 6 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 85, "encumbrance": [ 2, 6 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_knee_l", "leg_knee_r" ], "coverage": 20, "encumbrance": [ 4, 8 ] }
 	],
 	"flags": [ "STURDY", "SUPER_FANCY", "VARSIZE" ]
 	},
@@ -798,7 +1245,9 @@
 	"material_thickness": 3,
 	"armor": [
         { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 8, 12 ] },
-        { "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r", "leg_upper_l", "leg_upper_r" ],"coverage": 30, "encumbrance": [ 2, 4 ] }
+        { "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ],"coverage": 100, "encumbrance": [ 4, 8 ] },
+        { "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ],"coverage": 95, "encumbrance": [ 4, 8 ] },
+        { "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_knee_l", "leg_knee_r" ],"coverage": 15, "encumbrance": [ 2, 4 ] }
 	],
 	"flags": [ "SUPER_FANCY", "VARSIZE" ]
 	},
@@ -818,11 +1267,8 @@
     "color": "white",
 	"warmth": 10,
 	"armor": [
-		{ "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ], "coverage": 50, "encumbrance": [ 1, 2 ] },
-		{ "covers": [ "arm_l", "arm_r" ], "coverage": 35, "encumbrance": [ 1, 2 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r", "leg_upper_l", "leg_upper_r", "leg_knee_l", "leg_knee_r" ], "coverage": 35, "encumbrance": [ 1, 2 ] }
+		{ "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ], "coverage": 100, "encumbrance": [ 2, 4 ] }
 	],
-    "//": "Her cape is HUGE and technically covers the back of her torso + arms + half of her legs, but it shouldn't work as protective armor, recheck the values specifically the coverage",
     "flags": [ "BELTED", "ONLY_ONE", "OUTER", "OVERSIZE", "SUPER_FANCY" ]
 	},
 	{
@@ -863,14 +1309,17 @@
 	"symbol": "☢",
     "color": "light_green",
 	"techniques": [ "WBLOCK_1" ],
-	"use_action": {
+	"use_action": [ 
+		{
 		"type": "cast_spell",
 		"no_fail": true,
 		"spell_id": "utsuho_blade",
 		"level": 1
-    },
+		}
+	],
 	"armor": [ 
-		{ "covers": [ "arm_r" ], "coverage": 50, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "arm_r" ], "specifically_covers": [ "arm_lower_l" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "arm_r" ], "specifically_covers": [ "arm_elbow_l" ], "coverage": 20, "encumbrance": [ 2, 4 ] },
 		{ "covers": [ "hand_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] }
 	],
 	"valid_mods": [ "rod_strap" ],
@@ -957,7 +1406,9 @@
 			"holster_prompt": "Sheath sword", 
 			"holster_msg": "You sheath your %s" 
 	},
-    "armor": [ { "encumbrance": [ 4, 6 ], "coverage": 10, "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ] } ],
+    "armor": [ 
+		{ "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ], "coverage": 10, "encumbrance": [ 4, 5 ] }
+	],
     "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY" ]
 	},
 	{
@@ -990,7 +1441,9 @@
 			"holster_prompt": "Sheath sword", 
 			"holster_msg": "You sheath your %s" 
 	},
-    "armor": [ { "encumbrance": [ 4, 4 ], "coverage": 10, "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ] } ],
+    "armor": [ 
+		{ "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ], "coverage": 10, "encumbrance": [ 4, 5 ] }
+	],
     "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY" ]
 	},
 	{

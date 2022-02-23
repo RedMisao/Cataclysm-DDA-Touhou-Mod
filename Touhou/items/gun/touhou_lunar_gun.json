@@ -1,5 +1,49 @@
 [
 	{
+    "id": "lunatic_pistol2",
+    "type": "GUN",
+    "name": "lunatic pistol",
+    "description": "A standard issue LDC pistol with bunny ears on top of the muzzle and burst-fire capability. This is the second or third iteration of a design based on an old human weapon.  For that reason, it's mostly incompatible with human tools and modifications.  It's powered by the spiritual energy of the user.",
+    "weight": "750 g",
+    "volume": "1 L",
+	"price_postapoc": 5500,
+	"to_hit": {
+		"balance": "good", 
+		"grip": "weapon", 
+		"length": "hand", 
+		"surface": "any"
+	},
+    "bashing": 12,
+    "material": [ "steel", "plastic" ],
+    "symbol": "(",
+	"looks_like": "glock_17",
+	"color": "white",
+    "ammo": [ "ammo_lunar_small" ],
+	"ammo_effects": [ "LASER" ],
+	"dispersion": 120,
+    "durability": 8,
+	"loudness": 8,
+	"min_cycle_recoil": 500,
+	"modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 3 ] ],
+	"pocket_data": [ { 
+		"pocket_type": "MAGAZINE_WELL", 
+        "item_restriction": [ 
+			"lunar_small_mag12" 
+		] 
+	} ],
+	"range": 35,
+    "reload": 220,
+	"reload_noise_volume": 5,
+	"skill": "pistol",
+	"valid_mod_locations": [
+		[ "accessories", 2 ],
+		[ "rail", 1 ],
+		[ "underbarrel", 1 ]
+    ],
+    "weapon_category": [ "AUTOMATIC_PISTOLS" ],
+    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NO_UNLOAD", "NON-FOULING", "TRADER_AVOID" ]
+	},
+	{
     "id": "lunar_rifle2",
     "type": "GUN",
     "name": "lunar rifle",
@@ -8,7 +52,6 @@
 	"weight": "3790 g",
     "volume": "3 L",
     "longest_side": "1258 mm",
-    "price": 38000,
     "price_postapoc": 6000,
 	"to_hit": {
 		"balance": "neutral", 
@@ -49,47 +92,43 @@
     "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "RELOAD_ONE", "STAB", "STURDY", "NON-FOULING", "TRADER_AVOID" ]
 	},
 	{
-    "id": "lunatic_pistol2",
+    "id": "lunar_thermos",
     "type": "GUN",
-    "name": "lunatic pistol",
-    "description": "A standard issue LDC pistol with bunny ears on top of the muzzle and burst-fire capability. This is the second or third iteration of a design based on an old human weapon.  For that reason, it's mostly incompatible with human tools and modifications.  It's powered by the spiritual energy of the user.",
-    "weight": "750 g",
-    "volume": "1 L",
-    "price": 720000,
-	"price_postapoc": 5500,
+    "name": "mizuho Mk. II",
+    "description": "A blue gray-ish cylinder, with a round bottom and something akin to a handle on top.  It's small enough to handle with one hand.",
+	"weight": "1800 g",
+    "volume": "1200 L",
+    "longest_side": "25 cm",
+    "price_postapoc": 8000,
 	"to_hit": {
-		"balance": "good", 
-		"grip": "weapon", 
-		"length": "hand", 
+		"balance": "uneven", 
+		"grip": "solid", 
+		"length": "short", 
 		"surface": "any"
 	},
-    "bashing": 12,
-    "material": [ "steel", "plastic" ],
+    "bashing": 11,
+    "material": [ "steel" ],
     "symbol": "(",
-	"looks_like": "glock_17",
-	"color": "white",
-    "ammo": [ "ammo_lunar_small" ],
+	"looks_like": "thermos",
+	"color": "light_blue",
+    "ammo": [ "ammo_lunar_big" ],
 	"ammo_effects": [ "LASER" ],
+    "clip_size": 3,
 	"dispersion": 120,
-    "durability": 8,
-	"loudness": 8,
-	"min_cycle_recoil": 500,
-	"modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 3 ] ],
+    "durability": 7,
+	"loudness": 10,
+	"modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
 	"pocket_data": [ { 
-		"pocket_type": "MAGAZINE_WELL", 
-        "item_restriction": [ 
-			"lunar_small_mag12" 
-		] 
+		"pocket_type": "MAGAZINE", 
+		"ammo_restriction": { "ammo_lunar_big": 3 }
 	} ],
-	"range": 35,
-    "reload": 220,
-	"reload_noise_volume": 5,
-	"skill": "pistol",
-	"valid_mod_locations": [
-		[ "accessories", 2 ],
-		[ "rail", 1 ],
-		[ "underbarrel", 1 ]
+    "range": 50,
+	"reload": 200,
+	"reload_noise_volume": 6,
+	"skill": "rifle",
+    "valid_mod_locations": [
+		[ "sling", 1 ]
     ],
-    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NO_UNLOAD", "NON-FOULING", "TRADER_AVOID" ]
+    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "STURDY", "NON-FOULING", "TRADER_AVOID" ]
 	}
 ]

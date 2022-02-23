@@ -1,5 +1,148 @@
 [
 	{
+    "id": "kanabo",
+	"type": "GENERIC",
+    "name": { "str": "kanabo", "str_pl": "kanabo" },
+    "description": "A legendary weapon.  Attributed to oni, it's reported it was used by strong soldiers to break the legs of enemy horses and perhaps to smash through armor too.  Similar to a bat made, the \"head\" is covered by a hexagonal cap featuring metal studs, the handle is unremarkable except for a thick iron ring attached to the opposite end.  Somewhat unwieldy due its size, you will need plenty of strength to use this.",
+    "weight": "6000 g",
+    "volume": "2100 ml",
+    "longest_side": "120 cm",
+	"//": "Calculated as 4 * 110 cm wooden cylinder with a 5.5 * 60 cm octogonal iron cap, reduced weight. 10 cm metal ring not considered",
+    "price": 16000,
+    "price_postapoc": 350,
+    "to_hit": { 
+		"grip": "weapon", 
+		"length": "long", 
+		"surface": "every", 
+		"balance": "uneven" 
+	},
+    "bashing": 46,
+    "cutting": 4,
+	"material": [ "iron", "wood" ],
+    "symbol": "/",
+    "looks_like": "bat",
+    "color": "black",
+    "techniques": [ "BRUTAL", "SWEEP", "WBLOCK_1", "WIDE" ],
+    "weapon_category": [ "GREAT_HAMMERS", "MACES" ],
+	"flags": [ "DURABLE_MELEE", "MESSY" ]
+	},
+	{
+    "id": "kanabo_spiked",
+	"type": "GENERIC",
+    "name": { "str": "kanabo (spiked)", "str_pl": "kanabo (spiked)" },
+	"copy-from": "kanabo",
+    "description": "A legendary weapon.  Attributed to oni, it's reported it was used by strong soldiers to break the legs of enemy horses and perhaps to smash through armor too.  Looks like a bat made out of iron, the \"head\" is a hexagonal prism with metal spikes, the wooden handle is unremarkable, ending with a thick iron ring.  You will need lots of strength to wield this.",
+    "bashing": 44,
+	"cutting": 8,
+	"flags": [ "DURABLE_MELEE", "MESSY" ]
+	},
+	{
+    "id": "kanabo_short",
+	"type": "GENERIC",
+    "name": { "str": "kanabo (short)", "str_pl": "kanabo (short)" },
+	"copy-from": "kanabo",
+    "description": "A legendary weapon.  Attributed to oni, it's reported it was used by strong soldiers to break the legs of enemy horses and perhaps to smash through armor too.  Looks like a bat made out of iron, the \"head\" is a hexagonal prism with metal studs, the wooden handle is unremarkable, ending with a thick iron ring.  You will need lots of strength to wield this.",
+    "weight": "4000 g",
+    "volume": "1300 ml",
+    "longest_side": "70 cm",
+	"//": "Calculated as 4 * 70 cm wooden cylinder with a 5.5 * 60 cm octogonal iron cap. 10 cm metal ring not considered",
+    "price": 14000,
+    "price_postapoc": 300,
+    "to_hit": { 
+		"grip": "weapon", 
+		"length": "short", 
+		"surface": "every", 
+		"balance": "neutral" 
+	},
+    "bashing": 34,
+    "cutting": 4,
+    "techniques": [ "BRUTAL", "SWEEP", "WBLOCK_1", "WIDE" ],
+    "weapon_category": [ "GREAT_HAMMERS", "MACES" ],
+	"flags": [ "DURABLE_MELEE", "MESSY" ]
+	},
+	{
+    "id": "kanabo_short_spiked",
+	"type": "GENERIC",
+    "name": { "str": "kanabo (short, spiked)", "str_pl": "kanabo (short, spiked)" },
+	"copy-from": "kanabo",
+    "description": "A legendary weapon.  Attributed to oni, it's reported it was used by strong soldiers to break the legs of enemy horses and perhaps to smash through armor too.  Looks like a bat made out of iron, the \"head\" is a hexagonal prism with metal spikes, the wooden handle is unremarkable, ending with a thick iron ring.  You will need lots of strength to wield this.",
+    "to_hit": { 
+		"grip": "weapon", 
+		"length": "short", 
+		"surface": "every", 
+		"balance": "neutral" 
+	},
+    "bashing": 32,
+    "cutting": 8,
+	"flags": [ "DURABLE_MELEE", "MESSY" ]
+	},
+	{
+    "id": "kanabo_2h",
+	"type": "GENERIC",
+    "name": { "str": "kanabo (two-handed)", "str_pl": "kanabo (two-handed)" },
+	"copy-from": "kanabo",
+    "description": "A very large weapon based on the kanabo.  Consists of two studded metal caps attached to a long stout wooden rod.  Heavy enough to require two hands to wield, to say being hurt by this would be an understatment.",
+    "weight": "11000 g",
+    "volume": "4000 ml",
+    "longest_side": "200 cm",
+	"//": "Calculated as a 4* 200 cm wooden cylinder with two 6 * 60 cm octogonal iron caps, reduced weight",
+    "price": 20000,
+    "price_postapoc": 500,
+    "to_hit": { 
+		"grip": "weapon", 
+		"length": "long", 
+		"surface": "any", 
+		"balance": "neutral" 
+	},
+    "bashing": 54,
+    "cutting": 4,
+	"material": [ "iron", "wood" ],
+    "symbol": "/",
+    "looks_like": "i_staff",
+    "color": "black",
+    "techniques": [ "BRUTAL", "SPIN", "SWEEP", "WBLOCK_2", "WIDE" ],
+    "weapon_category": [ "GREAT_HAMMERS", "QUARTERSTAVES" ],
+	"flags": [ "ALWAYS_TWOHAND", "DURABLE_MELEE", "MESSY", "REACH_ATTACK" ]
+	},
+	{
+    "id": "kanabo_2h_spiked",
+	"type": "GENERIC",
+    "name": { "str": "kanabo (two-handed, spiked)", "str_pl": "kanabo (two-handed, spiked)" },
+	"copy-from": "kanabo_2h",
+    "description": "A very large weapon based on the kanabo.  Consists of two spiked metal caps attached to a long stout wooden rod.  Heavy enough to require two hands to wield, to say being hurt by this would be an understatment.",
+    "bashing": 52,
+    "cutting": 8,
+	"flags": [ "ALWAYS_TWOHAND", "DURABLE_MELEE", "MESSY", "REACH_ATTACK" ]
+	},
+	{
+    "id": "kanabo_oni",
+	"type": "GENERIC",
+    "name": { "str": "kanabo", "str_pl": "kanabo" },
+	"copy-from": "kanabo",
+    "description": "A legendary weapon.  Attributed to oni, it's reported it was used by strong soldiers to break the legs of enemy horses and perhaps to smash through armor too.  This one is crude, it looks like a metal bat with metal studs, with a thick iron ring at one end.  Extremely heavy, seems whoever uses this should have superhuman strength.",
+    "weight": "18000 g",
+    "volume": "2300 ml",
+    "longest_side": "120 cm",
+	"//": "Calculated as a 4.5 * 50 cm handle with a 5.5 * 60 cm octogon, iron density. 10 cm metal ring at the end not considered",
+    "price": 16000,
+    "price_postapoc": 350,
+    "to_hit": { 
+		"grip": "weapon", 
+		"length": "long", 
+		"surface": "every", 
+		"balance": "clumsy" 
+	},
+    "bashing": 50,
+    "cutting": 6,
+	"material": [ "iron" ],
+    "symbol": "/",
+    "looks_like": "bat",
+    "color": "black",
+    "techniques": [ "BRUTAL", "SWEEP", "WBLOCK_1", "WIDE" ],
+    "weapon_category": [ "GREAT_HAMMERS", "MACES" ],
+	"flags": [ "DURABLE_MELEE", "MESSY" ]
+	},
+	{
     "id": "sakuya_knife",
     "type": "TOOL",
     "category": "weapons",
@@ -25,7 +168,8 @@
     "techniques": [ "RAPID", "WBLOCK_2" ],
     "qualities": [ [ "CUT", 2 ], [ "CUT_FINE", 1 ], [ "BUTCHER", 20 ] ],
     "thrown_damage": [ { "damage_type": "bash", "amount": 8 }, { "damage_type": "stab", "amount": 8 } ],
-    "flags": [ "DURABLE_MELEE", "SHEATH_KNIFE", "STAB" ]
+    "weapon_category": [ "KNIVES" ],
+	"flags": [ "DURABLE_MELEE", "SHEATH_KNIFE", "STAB" ]
 	},
 	{
     "id": "tengu_fan",
@@ -78,6 +222,7 @@
 	"symbol": "/",
 	"color": "light_gray",
 	"techniques": [ "BRUTAL", "SWEEP", "WBLOCK_2" ],
+    "weapon_category": [ "JAPANESE_SWORDS", "GREAT_SWORDS" ],
     "flags": [ "DURABLE_MELEE" ]
 	},
 	{
@@ -128,7 +273,7 @@
 	},
     "weight": "300 g",
 	"volume": "1300 ml",
-    "longest_side": "50 cm",
+    "longest_side": "65 cm",
 	"//2": "I assume the blade of the sword looks like a flame so it has a dynamic volume, but that one should be the average for a static 50 cm long, 5 cm wide blade + the hilt",
 	"price": 160000,
     "price_postapoc": 8000,
@@ -143,7 +288,8 @@
     "material": "gold",
 	"symbol": "/",
     "color": "light_gray",
-    "techniques": [ "WBLOCK_2"],
+    "techniques": [ "WBLOCK_2" ],
+    "weapon_category": [ "JAPANESE_SWORDS", "SHORT_SWORDS" ],
 	"flags" : [ "DURABLE_MELEE", "SHEATH_SWORD", "STURDY", "TRADER_AVOID" ]
 	},
 	{
@@ -174,7 +320,7 @@
     "color": "light_gray",
     "techniques": [ "VORPAL", "WBLOCK_2", "WIDE" ],
     "qualities": [ [ "CUT", 1 ] ],
-    "//3": "Removed JAPANESE_SWORDS and MEDIUM_SWORDS from field weapon_category , add YOUKAI_WEAPONS later",
+    "weapon_category": [ "JAPANESE_SWORDS", "LONG_SWORDS" ],
     "flags": [ "DURABLE_MELEE", "SHEATH_SWORD" ]
 	},
 	{
@@ -203,7 +349,7 @@
     "color": "light_gray",
     "techniques": [ "VORPAL", "WBLOCK_2" ],
     "qualities": [ [ "CUT", 1 ], [ "BUTCHER", 4 ] ],
-    "//3": "Removed JAPANESE_SWORDS and SHORT_SWORDS from field weapon_category , add YOUKAI_WEAPONS later",
+    "weapon_category": [ "JAPANESE_SWORDS", "SHORT_SWORDS" ],
     "flags": [ "DURABLE_MELEE", "SHEATH_SWORD" ]
 	}
 ]

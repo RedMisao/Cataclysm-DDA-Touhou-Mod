@@ -4,7 +4,7 @@
     "type": "requirement",
     "components": [ [ 
 		[ "can_chicken", 1 ],
-		[ "chicken_meat", 1 ]
+		[ "bird_meat", 1 ]
 	] ]
 	},
 	{
@@ -12,9 +12,35 @@
     "type": "requirement",
     "components": [ [ 
 
-		[ "chicken_cooked", 1 ],
-        [ "chicken_dry", 1 ],
-		[ "chicken_smoked", 1 ]
+		[ "bird_cooked", 1 ],
+        [ "bird_dry", 1 ],
+		[ "bird_smoked", 1 ]
+	] ]
+	},
+	{
+    "id": "edible_fat",
+    "type": "requirement",
+    "//": "Any type of edible raw fat.",
+    "components": [ [ 
+		[ "fat", 1 ], 
+		[ "mutant_fat", 1 ], 
+		[ "human_fat", 1 ], 
+		[ "mutant_human_fat", 1 ], 
+		[ "demihuman_fat", 1 ],
+		[ "arthropod_fat", 1 ]
+	] ]
+	},
+	{
+    "id": "edible_tallow",
+    "type": "requirement",
+    "//": "Any type of edible tallow.",
+    "components": [ [
+        [ "tallow", 1 ],
+        [ "mutant_tallow", 1 ],
+        [ "human_tallow", 1 ],
+        [ "mutant_human_tallow", 1 ],
+        [ "demihuman_tallow", 1 ],
+        [ "arthropod_tallow", 1 ]
 	] ]
 	},
 	{

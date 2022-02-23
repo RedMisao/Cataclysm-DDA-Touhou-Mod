@@ -37,7 +37,7 @@
 	"entries": [
 		{ "distribution": [ {
             "collection": [
-				{ "item": "792x33_kurz", "count": [ 15, 15 ] },
+				{ "item": "792x33_kurz", "count": [ 1, 1 ] },
 				{ "item": "box_kurz", "prob": 100 }
             ],
             "prob": 100

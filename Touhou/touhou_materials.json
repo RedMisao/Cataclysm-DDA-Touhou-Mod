@@ -135,5 +135,55 @@
         { "fuel": 1, "smoke": 3, "burn": 2 }
 		],
 	"burn_products": [ [ "ash", 0.017 ] ]
+	},
+	{
+    "id": "magic_blood",
+	"type": "material",
+    "name": "blood (magic)",
+    "density": 1,
+    "specific_heat_liquid": 4.186,
+    "specific_heat_solid": 2.108,
+    "latent_heat": 333,
+    "edible": false,
+    "bash_resist": 0,
+    "cut_resist": 0,
+    "bullet_resist": 0,
+    "acid_resist": 0,
+    "fire_resist": 1,
+    "elec_resist": 0,
+    "chip_resist": 0,
+    "dmg_adj": [ "sullied", "stained", "murky", "polluted" ],
+    "bash_dmg_verb": "impacted",
+    "cut_dmg_verb": "scrapped",
+    "burn_data": [
+		{ "fuel": 0, "smoke": 0, "burn": 1 },
+		{ "fuel": 0, "smoke": 0, "burn": 2 },
+		{ "fuel": 0, "smoke": 0, "burn": 3 }
+    ]
+	},
+	{
+    "id": "magic_fire",
+	"type": "material",
+    "name": "fire (magic)",
+    "density": 1,
+    "specific_heat_liquid": 1,
+    "specific_heat_solid": 1,
+    "latent_heat": 1,
+    "edible": false,
+    "bash_resist": 0,
+    "cut_resist": 0,
+    "bullet_resist": 0,
+    "acid_resist": 0,
+    "fire_resist": 1,
+    "elec_resist": 0,
+    "chip_resist": 0,
+    "dmg_adj": [ "sullied", "stained", "murky", "polluted" ],
+    "bash_dmg_verb": "impacted",
+    "cut_dmg_verb": "scrapped",
+    "burn_data": [
+		{ "fuel": 224, "smoke": 0, "burn": 1 },
+		{ "fuel": 446, "smoke": 0, "burn": 2 },
+		{ "fuel": 667, "smoke": 0, "burn": 3 }
+    ]
 	}
 ]

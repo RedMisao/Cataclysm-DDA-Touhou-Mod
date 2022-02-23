@@ -7,12 +7,11 @@
     "points": 4,
 	"proficiencies": [ "prof_food_prep", "prof_wound_care" ],
 	"spells": [ 
-		{ "level": 3, "id": "dash_mokou" },	
-		{ "level": 3, "id": "mokou_blazekick" },
-		{ "level": 3, "id": "create_lighter" },
-		{ "level": 5, "id": "burning_hands" },
-		{ "level": 5, "id": "fireball" },
-		{ "level": 3, "id": "point_flare" }
+		{ "level": 1, "id": "dash_mokou" },	
+		{ "level": 1, "id": "mokou_blazekick" },
+		{ "level": 1, "id": "mokou_fireball" },
+		{ "level": 1, "id": "mokou_fujiyamakazan" },
+		{ "level": 1, "id": "mokou_phoenixtalons" }
 	],
     "skills": [
 		{ "level": 3, "name": "cooking" },
@@ -22,8 +21,7 @@
 		{ "level": 3, "name": "unarmed" }
     ],
 	"traits": [
-        "HOURAI_SPECIES", 
-		"KELVINIST",
+        "HOURAI_SPECIES",
 		"PROF_MOKOU",
 		"SPIRIT_USER"
     ],
@@ -48,14 +46,63 @@
             "panties"
         ]
     },
-    "flags" : ["SCEN_ONLY"],
-	"//": "Lorewise she sould have lots of numbers, skills, proficiencies, etc. Balancewise that's not very good. Also, I took the yakitori joke seriously."
+    "flags" : [ "SCEN_ONLY" ],
+	"//": "Lorewise she sould have lots of numbers, skills, proficiencies, etc. Balancewise that's not very good. Also, I took the yakitori joke seriously",
+	"//2": "All her spells, at least the actively destructive ones, should cost HP to cast alongside mana. This isn't implemented yet"
+	},
+	{
+    "ident": "hong_meiling",
+	"type": "profession",
+    "name": "Gatekeeper of the Devil",
+    "description": "Another uneventful day: holding the gates, doing repeats, not napping… The Mistress called you, very unusual for her to be awake at daytime.  She asked to lock down everything and go track the head maid for \"security reasons\".  You complied, almost caught up, really just at the boundary of your vision, when she… vanished?  Seems that you lost yourself too, you can't recall the last time humans walked without qi.",
+    "points": 4,
+	"proficiencies": [ "prof_food_prep" ],
+	"spells": [ 
+		{ "level": 1, "id": "dash_basic" },
+		{ "level": 1, "id": "meiling_qiblast" },
+		{ "level": 1, "id": "meiling_qipunch" }
+	],
+	"//": "meiling_risingkick is not added because it should move her + the target and dashes can't do that. If implemented as a technique, I don't know a way for the player to choose when to use it",
+    "skills": [
+		{ "level": 2, "name": "cooking" },
+		{ "level": 3, "name": "dodge" },
+		{ "level": 4, "name": "melee" },
+		{ "level": 4, "name": "unarmed" }
+    ],
+	"traits": [
+        "DEFT",
+		"EASYSLEEPER",
+		"HEAVYSLEEPER",
+		"PROF_MEILING",
+		"YOUKAI_SPECIES",
+		"SPIRIT_USER"
+    ],
+    "items": {
+        "both": [
+				"dress_shoes",
+				"meiling_cheongsam_upper",
+				"meiling_cheongsam_lower",
+				"meiling_hat",
+				"meiling_shirt",
+				"tai_chi_pants",
+				"socks"
+        ],
+        "male": [
+            "boxer_shorts"
+        ],
+        "female": [
+            "bra",
+            "panties"
+        ]
+    },
+    "flags" : [ "SCEN_ONLY" ],
+	"//2": "Meiling uses the pants in Soku but not in PMiSS"
 	},
 	{
     "ident": "iku_nagae",
 	"type": "profession",
     "name": "Oarfish Messenger",
-    "description": "The last day was very busy.  First, you were given a message to deliver to the head of the Hinanawi.  After reaching the clan however, you were told by them and your superiors to find Tenshi as soon as possible.  You followed her down in Earth, when the event struck.  Now you don't only have to complete your mission, but you seem to be stuck here.",
+    "description": "The last day was very busy.  First, you were given a message to deliver to the head of the Hinanawi.  After reaching the clan however, you were told by them and your superiors to find Tenshi as soon as possible.  You followed her down in Earth, when the event struck.  Now you don't only have to complete your mission, but you also seem to be stuck here.",
     "points": 0,
 	"CBMs":[
 		"bio_chain_lightning",
@@ -74,6 +121,7 @@
         { "level": 4, "name": "unarmed" }
     ],
     "traits": [
+		"PROF_IKU",
 		"SPIRIT_USER"
 	],
 	"items": {
@@ -93,13 +141,13 @@
             "panties"
         ]
     },
-    "flags": ["SCEN_ONLY"]
+    "flags": [ "SCEN_ONLY" ]
     },
 	{
     "ident": "kaenbyou_rin",
 	"type": "profession",
     "name": "Hell's traffic accident",
-    "description": "WIP",
+    "description": "It was yet another uneventful day down there helping Okuu with the reactor: corpses burning, spirits floating, fusion fuel being distilled, eating lunch with your master… You craved a nap at the Shrine, so you snuck to reach your goal… and somehow got lost.  You smell death *everywhere*, which would be amazing if it wasn't that these dead are moving, they're angry, and they're not listening to what you have to say.",
     "points": 0,
 	"spells": [ 
 		{ "level": 1, "id": "dash_basic" },
@@ -143,7 +191,7 @@
             "panties"
         ]
 	},
-	"flags" : ["SCEN_ONLY"],
+	"flags" : [ "SCEN_ONLY" ],
 	"//2": "Investigate about the Necromancy: Communication stuff for her profession !!!"
 	},
 	{
@@ -180,7 +228,7 @@
             "panties"
         ]
     },
-    "flags" : ["SCEN_ONLY"]
+    "flags" : [ "SCEN_ONLY" ]
     },
 	{
     "ident": "reisen_udongein_inaba",
@@ -190,8 +238,8 @@
     "points": 4,
 	"proficiencies": [ "prof_pharmaceutical" ], 
 	"spells": [ 
-			{ "level": 1, "id": "create_ammo_lunar_small" },
-			{ "level": 1, "id": "dash_basic" }
+		{ "level": 1, "id": "create_ammo_lunar_small" },
+		{ "level": 1, "id": "dash_basic" }
 	],
 	"skills": [
         { "level": 2, "name": "dodge" },
@@ -206,7 +254,7 @@
 	"traits": [
         "GYOKUTO_SPECIES",
 		"GYOKUTO_EARS",
-		"SPIRIT_USER"
+		"SPIRIT_UNTRAINED"
     ],
     "items": {
         "both": {
@@ -234,17 +282,18 @@
 	"//2": "her finger bullets should do mind dmg alongside bullet. I need to find a way to implement the Frostfire effect from WOTLK that checks the lower resistance and uses that to deal dmg",
 	"//3": "if possible, implement a shot spread effect with 2-3 bullets on a cone and 8-7 illusionary bullets that deal no damage, and change the sprite because I don't like the current * ",
 	"//4": "Finally, see if I can implement her LoLK bomb, or not if that would be outright broken alongside her stealth passive that should have priority"
-	}
+	},
+    "flags" : [ "SCEN_ONLY" ]
     },
 	{
     "ident": "reisen_II",
 	"type": "profession",
     "name": "Moon Rabbit Recruit",
-    "description": "You were accompanying the Watatsuki sisters on their visit to Earth when the Cataclysm struck! In the chaos and panic that followed the collapse of the Barrier (or that's what you heard from them), you got separated and left alone.  To make things worse, you can't contact your peers by use of the Gyokuto network.  You've got some skills from your Lunar Defense Corps training, but you'll need more than that to survive...",
+    "description": "You were accompanying the Watatsuki sisters on their visit to Earth when the Cataclysm struck! In the chaos and panic that followed the collapse of the Barrier (or that's what you heard from them), you got separated and left alone.  To make things worse, you can't contact your peers by use of the Gyokuto network.  You've got some skills from your Lunar Defense Corps training, but you'll need more than that to survive…",
     "points": 4,
 	"spells": [ 
-			{ "level": 1, "id": "create_ammo_lunar_medium" },
-			{ "level": 1, "id": "dash_reisen" }
+		{ "level": 1, "id": "create_ammo_lunar_medium" },
+		{ "level": 1, "id": "dash_reisen" }
 	],
 	"skills": [
         { "level": 2, "name": "dodge" },
@@ -256,9 +305,9 @@
 	"traits": [
 		"GYOKUTO_SPECIES",
 		"GYOKUTO_EARS",
-		"SPIRIT_USER"
+		"SPIRIT_UNTRAINED"
     ],
-    "//:" "Add LUNARDIET trait when fully tested",
+    "//": "Add LUNARDIET trait when fully tested",
 	"items": {
         "both": {
             "items": [
@@ -286,7 +335,8 @@
             "bra",
             "panties"
 		]
-	}
+	},
+    "flags" : [ "SCEN_ONLY" ]
 	},
 	{
     "ident": "remilia_scarlet",
@@ -298,9 +348,9 @@
 		"bio_redmagic"
 	],
 	"spells": [ 
-			{ "level": 1, "id": "dash_remi" },
-			{ "level": 1, "id": "remilia_gungnir" },
-			{ "level": 1, "id": "remilia_gungnir_throw" }
+		{ "level": 1, "id": "dash_remi" },
+		{ "level": 1, "id": "remilia_gungnir" },
+		{ "level": 1, "id": "remilia_gungnir_throw" }
 	],
 	"skills": [
         { "level": 3, "name": "dodge" },
@@ -309,6 +359,7 @@
 		{ "level": 4, "name": "throw" }
 	],
 	"traits": [
+		"TABLEMANNERS",
 		"VAMPIRE_SPECIES",
 		"PROF_REMI",
 		"SPIRIT_USER"
@@ -330,7 +381,7 @@
             "panties"
 		]
 	},
-    "flags" : ["SCEN_ONLY"]
+    "flags" : [ "SCEN_ONLY" ]
     },
 	{
     "ident": "sakuya_izayoi",
@@ -391,7 +442,7 @@
             "panties"
 		]
 	},
-    "flags" : ["SCEN_ONLY"]
+    "flags" : [ "SCEN_ONLY" ]
     },
 	{
     "ident": "seiga_kaku",
@@ -399,25 +450,22 @@
     "name": "Wicked Hermit",
     "description": "You're a wicked, amoral hermit with the ability to pass through walls and enslave the undead.  You never really cared about anyone else, only seeing fit to manipulate them for your own ends. Surviving the cataclysm should be… Interesting.",
     "points": 4,
-	"proficiencies": [ "prof_alchemy", "prof_lockpicking", "prof_pharmaceutical", "prof_physiology" ],
-	"//": "Maybe remove pharmaceutical because alchemy already exists",
+	"proficiencies": [ "prof_lockpicking", "prof_pharmaceutical", "prof_physiology" ],
 	"spells": [ 
-		{ "level": 5, "id": "summon_zombie" }, 
-		{ "level": 1, "id": "necrotic_gaze" },
-		{ "level": 3, "id": "quantum_tunnel_lesser" }
+		{ "level": 1, "id": "seiga_darksplash" },
+		{ "level": 1, "id": "seiga_foetus_shot" },
+		{ "level": 1, "id": "seiga_raisechild" }
 	],
     "skills": [
         { "level": 2, "name": "dodge" },
-		{ "level": 3, "name": "firstaid" },
-		{ "level": 3, "name": "spellcraft" },
+		{ "level": 4, "name": "firstaid" },
         { "level": 2, "name": "survival" }
     ],
 	"traits": [
-        "ANIMIST",
 		"LIAR",
 		"PSYCHOPATH", 
 		"SPIRITUAL",
-		"SPIRIT_USER"
+		"SPIRIT_HERMIT"
     ],
     "items": {
         "both": [
@@ -437,16 +485,16 @@
             "panties"
         ]
     },
-    "flags" : ["SCEN_ONLY"]
+    "flags" : [ "SCEN_ONLY" ]
     },
 	{
     "ident": "shameimaru_aya",
 	"type": "profession",
     "name": "Crow Tengu Journalist",
-    "description": "WIP",
+    "description": "There wasn't a lot going on so you went to visit some of your friends.  First stop was the Shrine Maiden, but she was more dismissive than usual.  Second stop was Momiji, but she wasn't available.  Third stop was the Village librarian, but she was sleeping.  Going through the Bamboo Forest of the Lost you, well… it was bound to happen some time.  You're pretty sure these people wearing filthy Outside world clothing shouldn't be here, which means this one's good!",
     "points": 4,
     "spells": [ 
-			{ "level": 1, "id": "dash_basic" }
+		{ "level": 1, "id": "dash_basic" }
 	],
 	"skills": [
 		{ "level": 2, "name": "cutting" },
@@ -463,7 +511,7 @@
 			"aya_shirt",
 			"aya_skirt",
 			"ribbon_neck",
-			"socks",
+			"socks_ankle",
 			"tengu_fan",
 			"tengu_geta",
 			"tengu_hat"
@@ -476,7 +524,7 @@
             "panties"
         ]
     },
-    "flags" : ["SCEN_ONLY"]
+    "flags" : [ "SCEN_ONLY" ]
     },
 	{
     "ident": "tenshi_hinanawi",
@@ -485,8 +533,8 @@
     "description": "Feeling bored doing basically noting in Heaven, you came down to visit the Shrine and your friends.  Something happened in the meantime though.  At first you were amused, then became slightly worried, then very, very curious.  The outside world looks… different now.",
     "points": 4,
     "spells": [ 
-			{ "level": 1, "id": "dash_basic" },
-			{ "level": 1, "id": "tenko_keystone" }
+		{ "level": 1, "id": "dash_basic" },
+		{ "level": 1, "id": "tenko_keystone" }
 	],
 	"skills": [
         { "level": 4, "name": "cutting" },
@@ -498,6 +546,7 @@
 		"HATES_BOOKS",
 		"PAINRESIST",
 		"SLOWLEARNER",
+		"PROF_TENKO",
 		"SPIRIT_USER"
     ],
     "items": {
@@ -519,19 +568,19 @@
             "panties"
         ]
     },
-    "flags" : ["SCEN_ONLY"]
+    "flags" : [ "SCEN_ONLY" ]
     },
 	{
     "ident": "utsuho_reiuji",
 	"type": "profession",
     "name": "Subterranean sun",
-    "description": "WIP",
+    "description": "Resuming your duties after lunch, you master asked you to go look for Orin, and she was indeed missing again. You to the surface, noticing the friendly cave spider wasn't at her usual spot, maybe both went together!  You know she likes to go nap at the Shrine, so you went… to the wrong one, and noticing this was no mountain, nothing close, you looked back, you saw no \"back\".  You're aware you can get lost sometimes, but this is too much even for yourself.  Now you have to find Orin, find the Tsuchigumo, and return.",
     "points": 4,
     "spells": [ 
-			{ "level": 1, "id": "dash_utsuho" },
-			{ "level": 1, "id": "utsuho_blacksun" },
-			{ "level": 1, "id": "utsuho_hellcannon" },
-			{ "level": 1, "id": "utsuho_nuke" }
+		{ "level": 1, "id": "dash_utsuho" },
+		{ "level": 1, "id": "utsuho_blacksun" },
+		{ "level": 1, "id": "utsuho_hellcannon" },
+		{ "level": 1, "id": "utsuho_nuke" }
 	],
 	"skills": [
         { "level": 2, "name": "dodge" }
@@ -559,7 +608,7 @@
             "panties"
         ]
 	},
-	"flags" : ["SCEN_ONLY"]
+	"flags" : [ "SCEN_ONLY" ]
 	},
 	{
     "ident": "youmu_konpaku",
@@ -583,8 +632,9 @@
     ],
 	"traits": [
         "HALF_PHANTOM_SPECIES",
+		"TRUTHTELLER",
 		"PROF_YOUMU",
-		"SPIRIT_USER"
+		"SPIRIT_UNTRAINED"
     ],
     "//": "Add parry and dual wield somewhere",
 	"items": {
@@ -612,6 +662,6 @@
             "panties"
         ]
     },
-    "flags" : ["SCEN_ONLY"]
+    "flags" : [ "SCEN_ONLY" ]
 	}
 ]

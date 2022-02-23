@@ -1,0 +1,53 @@
+[
+	{
+    "name": "GROUP_EGG_ANOMALOCARIS",
+    "type": "monstergroup",
+    "monsters": [ { "monster": "mon_anomalocaris_baby" } ]
+	},
+	{
+    "name": "GROUP_EGG_ARTHROPODAQUATIC_SMALL",
+    "type": "monstergroup",
+    "monsters": [ 
+		{ "monster": "mon_opabinia_baby" },
+		{ "monster": "mon_hurdia" }
+	]
+	},
+	{
+    "name": "GROUP_EGG_CARNUFEX",
+    "type": "monstergroup",
+    "monsters": [ { "monster": "mon_carnufex_baby" } ]
+	},
+	{
+    "name": "GROUP_EGG_DODO",
+    "type": "monstergroup",
+    "monsters": [ { "monster": "mon_dodo_chick" } ]
+	},
+	{
+    "name": "GROUP_EGG_EURYPTERID",
+    "type": "monstergroup",
+    "monsters": [ 
+		{ "monster": "mon_eusarcana_baby" },
+		{ "monster": "mon_jaekelopterus_baby" },
+		{ "monster": "mon_megalograptus_baby" }
+	]
+	},
+	{
+    "name": "GROUP_EGG_FISHANCIENT_MEDIUM",
+    "type": "monstergroup",
+    "monsters": [ { "monster": "mon_megamastax_baby" } ]
+	},
+	{
+    "name": "GROUP_EGG_FISHANCIENT_SMALL",
+    "type": "monstergroup",
+    "monsters": [ 
+		{ "monster": "mon_coccosteus_baby" },
+		{ "monster": "mon_dipterus_baby" },
+		{ "monster": "mon_holoptychius_baby" }
+	]
+	},
+	{
+    "name": "GROUP_EGG_MOA",
+    "type": "monstergroup",
+    "monsters": [ { "monster": "mon_moa_chick" } ]
+	}
+]
