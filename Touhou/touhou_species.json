@@ -8,6 +8,13 @@
     "bleeds": "fd_blood"
     },
 	{
+	"id": "ONI_TOUHOU",
+	"type": "SPECIES",
+    "description": "an oni",
+    "anger_triggers": [ "HURT", "PLAYER_CLOSE" ],
+    "bleeds": "fd_blood"
+    },
+	{
     "id": "PHANTOM_TOUHOU",
 	"type": "SPECIES",
     "description": "a phantom",

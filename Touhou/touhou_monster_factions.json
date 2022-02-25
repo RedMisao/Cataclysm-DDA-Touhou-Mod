@@ -60,7 +60,7 @@
     "neutral": [ "touhou_afish_large" ],
 	"by_mood": [ "exodii", "human", "touhou_dunkleosteus", "your_followers" ],
 	"hate": [ "fish", "insect", "touhou_arthropod_aquatic_small", "touhou_fishancient_medium", "touhou_fishancient_small", "zombie" ],
-	"//": "Large ancient fish, 2 - 3 m long at most, should feed on smaller fish"
+	"//": "2 - 3 m long ancient fish, should feed on smaller fish"
 	},
 	{
     "name": "touhou_fishancient_medium",
@@ -69,7 +69,7 @@
     "neutral": [ "touhou_afish_large" ],
 	"by_mood": [ "exodii", "human", "touhou_dunkleosteus", "your_followers" ],
 	"hate": [ "fish", "insect", "touhou_arthropod_aquatic_small", "touhou_fishancient_small", "zombie" ],
-	"//": "Large ancient fish, 1 - 2 m long at most, should feed on smaller fish"
+	"//": "1 - 2 m long ancient fish, should feed on smaller fish"
 	},
 	{
     "name": "touhou_fishancient_small",
@@ -78,7 +78,7 @@
     "neutral": [ "touhou_afish_large" ],
 	"by_mood": [ "exodii", "human", "touhou_dunkleosteus", "your_followers" ],
 	"hate": [ "fish", "insect", "touhou_arthropod_aquatic_small", "zombie" ],
-	"//": "Ancient fish, <1 m long at most, should feed on smaller fish"
+	"//": "<1 m long ancient fish, should feed on smaller fish"
 	},
 	{
     "name": "touhou_gorgonopsid_inostrancevia",
@@ -156,7 +156,7 @@
     "friendly": [ "touhou_youkai_neutral" ],
 	"neutral": [ "animal", "touhou_youkai_hostile" ],
     "by_mood": [ "mutant" ],
-	"hate": [ "animal", "exodii", "human", "your_followers", "zombie" ],
+	"hate": [ "exodii", "human", "your_followers", "zombie" ],
 	"//": "Default faction for naturally hostile youkai, these should prey on humans and company, on a psychological level"
 	},
 	{
@@ -166,5 +166,13 @@
 	"neutral": [ "animal", "touhou_youkai_neutral" ],
     "by_mood": [ "your_followers" ],
 	"//": "Default faction for neutral youkai, these should be neutral to humans and company until attacked. Think of passively causing fear or at least a sense of caution in humans"
+	},
+	{
+    "name": "touhou_oni",
+	"type": "MONSTER_FACTION",
+    "base_faction": "touhou_youkai_hostile",
+    "by_mood": [ "touhou_youkai_hostile", "touhou_youkai_neutral" ],
+	"hate": [ "animal", "exodii", "human", "mutant", "your_followers", "zombie" ],
+	"//": "Default faction for generic oni"
 	}
 ]

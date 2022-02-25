@@ -10,8 +10,8 @@
 		{ "level": 1, "id": "dash_mokou" },	
 		{ "level": 1, "id": "mokou_blazekick" },
 		{ "level": 1, "id": "mokou_fireball" },
-		{ "level": 1, "id": "mokou_flamingtalons" },
-		{ "level": 1, "id": "mokou_fujiyamakazan" }
+		{ "level": 1, "id": "mokou_fujiyamakazan" },
+		{ "level": 1, "id": "mokou_phoenixtalons" }
 	],
     "skills": [
 		{ "level": 3, "name": "cooking" },
@@ -58,8 +58,11 @@
     "points": 4,
 	"proficiencies": [ "prof_food_prep" ],
 	"spells": [ 
-		{ "level": 1, "id": "dash_basic" }
+		{ "level": 1, "id": "dash_basic" },
+		{ "level": 1, "id": "meiling_qiblast" },
+		{ "level": 1, "id": "meiling_qipunch" }
 	],
+	"//": "meiling_risingkick is not added because it should move her + the target and dashes can't do that. If implemented as a technique, I don't know a way for the player to choose when to use it",
     "skills": [
 		{ "level": 2, "name": "cooking" },
 		{ "level": 3, "name": "dodge" },
@@ -93,7 +96,7 @@
         ]
     },
     "flags" : [ "SCEN_ONLY" ],
-	"//": "Meiling uses the pants in Soku but not in PMiSS"
+	"//2": "Meiling uses the pants in Soku but not in PMiSS"
 	},
 	{
     "ident": "iku_nagae",
@@ -491,7 +494,8 @@
     "description": "There wasn't a lot going on so you went to visit some of your friends.  First stop was the Shrine Maiden, but she was more dismissive than usual.  Second stop was Momiji, but she wasn't available.  Third stop was the Village librarian, but she was sleeping.  Going through the Bamboo Forest of the Lost you, well… it was bound to happen some time.  You're pretty sure these people wearing filthy Outside world clothing shouldn't be here, which means this one's good!",
     "points": 4,
     "spells": [ 
-		{ "level": 1, "id": "dash_basic" }
+		{ "level": 1, "id": "dash_basic" },
+		{ "level": 1, "id": "aya_stormgust" }
 	],
 	"skills": [
 		{ "level": 2, "name": "cutting" },
@@ -611,7 +615,7 @@
     "ident": "youmu_konpaku",
 	"type": "profession",
     "name": "Phantom Gardener",
-    "description": "You were preparing tea for your Mistress when the shikigami of the Gap Youkai came to deliver an urgent private message.  Your Mistress then gave you some cryptic errand at the Shrine, and to 'take care'.  You didn't understand the last part, until you didn't recognize your surroundings minutes before reaching the Shrine.",
+    "description": "You were preparing tea for your Mistress when the shikigami of the Gap Youkai came to deliver an urgent private message.  Your Mistress then gave you some cryptic errand at the Shrine, and to \"take care\".  You didn't understand the last part, until you didn't recognize your surroundings minutes before reaching the Shrine.",
     "points": 0,
 	"CBMs":[
         "bio_torsionratchet",

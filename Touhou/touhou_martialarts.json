@@ -7,16 +7,18 @@
     "initiate": [ "You relax yourself and prepare to enter combat.", "%s relaxes, and prepares to fight." ],
     "arm_block": 1,
     "nonstandard_block": 4,
-    "allow_melee": true,
+    "allow_all_weapons": true,
     "static_buffs": [
 		{
         "id": "buff_celestial_brawling_iku_static",
         "name": "Celestial stance (Oarfish)",
-        "description": "Your poise allows you to easily evade incoming attacks.  Like a fish swimming through, your evasion is increased while your blocking attempts are decreased.",
+        "description": "Your poise allows you to easily evade incoming attacks.  Like a fish swimming through, your evasion is increased while your blocking chance is decreased.",
         "unarmed_allowed": true,
         "melee_allowed": true,
-        "bonus_blocks": -1,
-        "bonus_dodges": 2
+        "bonus_dodges": 2,
+		"flat_bonuses": [
+			{ "stat": "block_effectiveness", "scale": -1 }
+		]
 		}
 	],
     "ondodge_buffs": [
@@ -137,7 +139,7 @@
     "initiate": [ "You enter a combat stance and hope for an interesting fight.", "%s gets ready to fight." ],
     "arm_block": 2,
     "nonstandard_block": 2,
-    "allow_melee": true,
+    "allow_all_weapons": true,
     "static_buffs": [
 		{
         "id": "buff_celestial_brawling_tenko_static",
@@ -251,11 +253,11 @@
         "unarmed_allowed": true,
 		"unarmed_weapons_allowed": true,
         "bonus_blocks": 2,
-        "bonus_dodges": -1,
         "flat_bonuses": [ 
 			{ "stat": "block", "scaling-stat": "dex", "scale": 0.5 },
 			{ "stat": "block", "scaling-stat": "int", "scale": 0.5 },
-			{ "stat": "block", "scaling-stat": "str", "scale": 0.75 } 
+			{ "stat": "block", "scaling-stat": "str", "scale": 0.75 },
+			{ "stat": "dodge", "scale": -1.5 }
 		]
 		}
     ],
@@ -300,6 +302,7 @@
         "max_stacks": 1,
         "bonus_blocks": 1,
         "flat_bonuses": [ 
+			{ "stat": "block_effectiveness", "scale": 1.5 },
 			{ "stat": "block", "scaling-stat": "dex", "scale": 0.75 },
 			{ "stat": "block", "scaling-stat": "int", "scale": 0.75 },
 			{ "stat": "block", "scaling-stat": "str", "scale": 0.25 } 
@@ -312,7 +315,8 @@
 		"tec_meiling_elbow",
 		"tec_meiling_kick",
 		"tec_meiling_palm", 
-		"tec_meiling_shoulder_strike",
+		"tec_meiling_pshoulder_strike",
+		"tec_meiling_qi_burst",
 		"tec_meiling_stomp"
 	]
 	},
@@ -337,6 +341,7 @@
 			{ "stat": "arpen", "type": "bash", "scale": 6 },
 			{ "stat": "arpen", "type": "cut", "scale": 6 },
 			{ "stat": "arpen", "type": "stab", "scale": 6 },
+			{ "stat": "arpen", "type": "heat", "scale": 8 },
 			{ "stat": "hit", "scale": 1 }
         ]
 		}
@@ -350,15 +355,14 @@
         "buff_duration": 4,
         "max_stacks": 4,
         "flat_bonuses": [
-			{ "stat": "speed", "scale": 33 },
+			{ "stat": "speed", "scale": 12.5 },
 			{ "stat": "hit", "scale": 0.5 },
 			{ "stat": "dodge", "scale": -0.25 }
-        ],
-		"//": "Would be more FUN if this was exponential: 20, 30, 40, 50 ?"
+        ]
 		},
 		{
         "id": "buff_mokou_onhit2",
-        "name": "Hourai's cadence (debuff)",
+        "name": "Hourai's high (debuff)",
         "description": "…The only thing holding you back is pain.",
         "unarmed_allowed": true,
         "buff_duration": 4,
@@ -403,10 +407,10 @@
         "name": "Defended",
         "description": "Blocking attacks puts you on a closer position to the enemy, for better and for worse.",
         "unarmed_allowed": true,
-        "buff_duration": 2,
+        "buff_duration": 1,
         "max_stacks": 1,
         "flat_bonuses": [
-			{ "stat": "speed", "scale": 50 },
+			{ "stat": "movecost", "scale": -15 },
 			{ "stat": "hit", "scale": 1 }
 		]
 		}
@@ -492,6 +496,25 @@
     "primary_skill": "cutting",
     "strictly_melee": true,
     "weapon_category": [ "JAPANESE_SWORDS" ],
+    "static_buffs": [
+		{
+        "id": "buff_youmu_static",
+        "name": "Training results",
+        "description": "Always being ready gives you a slight improvement to all your physical related skills.",
+        "unarmed_allowed": false,
+		"mult_bonuses": [
+			{ "stat": "hit", "scale": 1.1 },
+			{ "stat": "crit_chance", "scale": 1.1 },
+			{ "stat": "damage", "type": "cut", "scale": 1.1 },
+			{ "stat": "speed", "scale": 1.1 },
+			{ "stat": "armor", "type": "bash", "scale": 1.1 },
+			{ "stat": "armor", "type": "cut", "scale": 1.1 },
+			{ "stat": "armor", "type": "stab", "scale": 1.1 },
+			{ "stat": "block_effectiveness", "scale": 1.1 },
+			{ "stat": "dodge", "scale": 1.1 }
+        ]
+		}
+    ],
 	"onmove_buffs": [
 		{
         "id": "buff_youmu_onmove",
@@ -499,12 +522,11 @@
         "description": "Stride like a spirit (and hit like one).",
         "unarmed_allowed": false,
 		"buff_duration": 1,
+        "max_stacks": 1,
         "bonus_dodges": 3,
-        "flat_bonuses": [ 
-			{ "stat": "dodge", "scale": 4 }
-		],
-        "mult_bonuses": [
-			{ "stat": "hit", "scale": 0.5 }
+		"mult_bonuses": [
+			{ "stat": "hit", "scale": 0.5 },
+			{ "stat": "dodge", "scale": 2 }
 		]
 		}
 	],
@@ -517,25 +539,29 @@
 		"buff_duration": 2,
         "max_stacks": 3,
 		"flat_bonuses": [ 
-			{ "stat": "hit", "scale": 0.5 },
-			{ "stat": "crit_chance", "scale": 5 },
-			{ "stat": "damage", "type": "bash", "scale": 0.75 },
-			{ "stat": "damage", "type": "stab", "scale": 0.75 },
-			{ "stat": "arpen", "type": "cut", "scale": 1.334 }
+			{ "stat": "hit", "scale": 0.667 },
+			{ "stat": "crit_chance", "scale": 5 }
+		],
+        "mult_bonuses": [
+			{ "stat": "damage", "type": "bash", "scale": 0.78 },
+			{ "stat": "damage", "type": "stab", "scale": 0.78 },
+			{ "stat": "damage", "type": "cut", "scale": 1.1334 }
 		]
-		},
+		}
+	],
+    "onhit_buffs": [
 		{
-        "id": "buff_youmu_onattack2",
+        "id": "buff_youmu_ohhit",
         "name": "Ethereal focus (defense)",
-        "description": "Your natural battle stance makes it easier for you to parry incoming attacks… but you become too tense in the process, and thus vulnerable to those that do land.",
+        "description": "While your battle stance makes it easier for you to naturally parry incoming attacks, you also downplay your defense, becoming vulnerable to those that do land.",
         "unarmed_allowed": false,
 		"buff_duration": 2,
         "max_stacks": 3,
         "bonus_blocks": 1,
-		"flat_bonuses": [ 
-			{ "stat": "armor", "type": "bash", "scale": -1 },
-			{ "stat": "armor", "type": "cut", "scale": -1 },
-			{ "stat": "armor", "type": "stab", "scale": -1 }
+		"mult_bonuses": [
+			{ "stat": "armor", "type": "bash", "scale": 0.89 },
+			{ "stat": "armor", "type": "cut", "scale": 0.89 },
+			{ "stat": "armor", "type": "stab", "scale": 0.89 }
 		]
 		}
     ],
@@ -543,29 +569,28 @@
 		{
         "id": "buff_youmu_onpause",
         "name": "Half-phantom rest",
-        "description": "Pause, clear your mind, and prepare yourself for what follows, increasing accuracy, attack speed and movement rate.  Ever heard about the concept of emptiness? Way harder than it sounds, ever tried thinking nothing?",
+        "description": "Pause, clear your mind, and prepare yourself for what follows, increasing accuracy, attack speed and movement rate.  Ever heard about the concept of emptiness, though? Way harder than it sounds, like trying to think about no thing.",
         "unarmed_allowed": false,
 		"buff_duration": 1,
         "max_stacks": 1,
         "flat_bonuses": [ 
-			{ "stat": "hit", "scale": 4 },
-			{ "stat": "speed", "scale": 66 },
 			{ "stat": "crit_chance", "scale": 10 }
 		],
         "mult_bonuses": [
+			{ "stat": "hit", "scale": 2 },
+			{ "stat": "speed", "scale": 1.33 },
 			{ "stat": "dodge", "scale": 0.5 },
 			{ "stat": "movecost", "scale": 0.33 }
         ]
 		}
     ],
     "techniques": [ 
-		"tec_youmu_hilt_nudge", 
-		"tec_youmu_swift_strike", 
-		"tec_youmu_sweep", 
-		"tec_youmu_downward_slash", 
+		"tec_youmu_downward_slash",
+		"tec_youmu_high_slash",
+		"tec_youmu_hilt_nudge",
+		"tec_youmu_rising_fang",
 		"tec_youmu_stinger",
-		"tec_youmu_knee_slasher",
-		"tec_youmu_rising_fang"
+		"tec_youmu_sweep"
 	]
 	}
 ]

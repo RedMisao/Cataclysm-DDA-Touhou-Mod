@@ -162,6 +162,97 @@
     "flags": [ "OUTER", "POCKETS", "SUPER_FANCY", "VARSIZE" ]
 	},
 	{
+    "id": "mib_watch",
+    "type": "ARMOR",
+    "name": { "str": "collection watch", "str_pl": "collection watches" },
+    "description": "A fine, triangular shaped stainless steel watch.",
+    "weight": "120 g",
+    "volume": "240 ml",
+    "price": 12000,
+    "price_postapoc": 60,
+    "material": [ "leather", "steel" ],
+    "symbol": "[",
+    "color": "light_gray",
+    "sided": true,
+    "armor": [ 
+		{ "covers": [ "hand_l", "hand_r" ], "coverage": 8 }
+	],
+	"flags": [ "ALARMCLOCK", "ALLOWS_NATURAL_ATTACKS", "BELTED", "FANCY", "OVERSIZE", "WATCH", "WATER_FRIENDLY" ]
+	},
+	{
+    "id": "pants_black",
+    "type": "ARMOR",
+    "name": { "str_sp": "black pants" },
+	"copy-from": "pants",
+    "description": "A pair of unremarkable, stylish black dress pants.",
+    "repairs_like": "pants",
+	"weight": "700 g",
+    "volume": "3000 ml",
+    "price": 5200,
+    "price_postapoc": 110,
+    "material": [ "cotton" ],
+    "material_thickness": 0.5,
+	"symbol": "[",
+    "looks_like": "pants",
+    "color": "black",
+    "warmth": 15,
+	"pocket_data": [
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1250 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "19 cm",
+        "moves": 80
+		},
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1250 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "19 cm",
+        "moves": 80
+		},
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1080 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "165 mm",
+        "moves": 100
+		},
+		{
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1080 ml",
+        "max_contains_weight": "4 kg",
+        "max_item_length": "165 mm",
+        "moves": 100
+		}
+    ],
+    "armor": [ 
+		{ "covers": [ "leg_l", "leg_r" ], "coverage": 95, "encumbrance": [ 6, 10 ] }
+	],
+    "flags": [ "POCKETS", "SUPER_FANCY", "VARSIZE" ]
+	},
+	{
+    "id": "socks_black",
+    "type": "ARMOR",
+    "name": { "str": "black dress socks", "str_pl": "pairs black dress socks" },
+    "description": "Black dress socks, silk smooth, very elegant.",
+    "weight": "60 g",
+    "volume": "300 ml",
+    "price": 300,
+    "price_postapoc": 50,
+    "material": [ "cotton" ],
+    "material_thickness": 0.1,
+	"symbol": "[",
+    "looks_like": "socks",
+    "color": "black",
+    "warmth": 6,
+    "armor": [ 
+		{ "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_lower_l", "leg_lower_r" ], "coverage": 65, "encumbrance": [ 2, 4 ] }
+	],
+    "flags": [ "VARSIZE", "SKINTIGHT" ]
+	},
+	{
     "id": "tai_chi_pants",
     "type": "ARMOR",
     "name": { "str": "tai chi pants" },
@@ -180,24 +271,6 @@
 		{ "covers": [ "leg_l", "leg_r" ], "coverage": 85, "encumbrance": [ 1, 3 ] } 
 	],
     "flags": [ "VARSIZE" ]
-	},
-	{
-    "id": "mib_watch",
-    "type": "ARMOR",
-    "name": { "str": "collection watch", "str_pl": "collection watches" },
-    "description": "A fine, triangular shaped stainless steel watch.",
-    "weight": "120 g",
-    "volume": "240 ml",
-    "price": 12000,
-    "price_postapoc": 60,
-    "material": [ "leather", "steel" ],
-    "symbol": "[",
-    "color": "light_gray",
-    "sided": true,
-    "armor": [ 
-		{ "covers": [ "hand_l", "hand_r" ], "coverage": 8 }
-	],
-	"flags": [ "ALARMCLOCK", "ALLOWS_NATURAL_ATTACKS", "BELTED", "FANCY", "OVERSIZE", "WATCH", "WATER_FRIENDLY" ]
 	},
 	{
     "id": "tang_shirt",
@@ -278,58 +351,6 @@
     "looks_like": "tie_necktie",
     "color": "black",
     "flags": [ "SUPER_FANCY" ]
-	},
-	{
-    "id": "pants_black",
-    "type": "ARMOR",
-    "name": { "str_sp": "black pants" },
-	"copy-from": "pants",
-    "description": "A pair of unremarkable, stylish black dress pants.",
-    "repairs_like": "pants",
-	"weight": "700 g",
-    "volume": "3000 ml",
-    "price": 5200,
-    "price_postapoc": 110,
-    "material": [ "cotton" ],
-    "material_thickness": 0.5,
-	"symbol": "[",
-    "looks_like": "pants",
-    "color": "black",
-    "warmth": 15,
-	"pocket_data": [
-		{
-        "pocket_type": "CONTAINER",
-        "max_contains_volume": "1250 ml",
-        "max_contains_weight": "4 kg",
-        "max_item_length": "19 cm",
-        "moves": 80
-		},
-		{
-        "pocket_type": "CONTAINER",
-        "max_contains_volume": "1250 ml",
-        "max_contains_weight": "4 kg",
-        "max_item_length": "19 cm",
-        "moves": 80
-		},
-		{
-        "pocket_type": "CONTAINER",
-        "max_contains_volume": "1080 ml",
-        "max_contains_weight": "4 kg",
-        "max_item_length": "165 mm",
-        "moves": 100
-		},
-		{
-        "pocket_type": "CONTAINER",
-        "max_contains_volume": "1080 ml",
-        "max_contains_weight": "4 kg",
-        "max_item_length": "165 mm",
-        "moves": 100
-		}
-    ],
-    "armor": [ 
-		{ "covers": [ "leg_l", "leg_r" ], "coverage": 95, "encumbrance": [ 6, 10 ] }
-	],
-    "flags": [ "POCKETS", "SUPER_FANCY", "VARSIZE" ]
 	},
 	{
     "id": "ribbon_black",

@@ -31,7 +31,7 @@
 	"anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
 	"death_function": { 
 		"corpse_type": "NO_CORPSE", 
-		"effect": { "id": "kaenbyou_vsrelease3", "hit_self": true }, 
+		"effect": { "id": "kaenbyou_vsrelease2", "hit_self": true }, 
 		"message": "The %s explodes!" 
 	},
     "flags": [ "CLIMBS", "COLDPROOF", "FIREPROOF", "GRABS", "GROUP_MORALE", "HEARS", "PATH_AVOID_DANGER_2", "SEES", "STUN_IMMUNE", "WARM" ],
