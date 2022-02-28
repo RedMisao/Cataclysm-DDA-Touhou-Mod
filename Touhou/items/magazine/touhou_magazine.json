@@ -13,7 +13,13 @@
     "looks_like": "akmag10",
 	"color": "light_gray",
     "ammo_type": [ "9x39" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "9x39": 10 } } ],
+    "pocket_data": [ 
+		{ 
+		"pocket_type": "MAGAZINE", 
+		"rigid": true, 
+		"ammo_restriction": { "9x39": 10 } 
+		} 
+	],
 	"flags": [ "MAG_COMPACT" ]
 	},
 	{
@@ -30,7 +36,13 @@
     "looks_like": "akmag20",
 	"color": "light_gray",
     "ammo_type": [ "9x39" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "9x39": 20 } } ],
+    "pocket_data": [ 
+		{ 
+		"pocket_type": "MAGAZINE", 
+		"rigid": true, 
+		"ammo_restriction": { "9x39": 20 } 
+		} 
+	],
 	"flags": [ "MAG_COMPACT" ]
 	},
 	{
@@ -48,7 +60,13 @@
     "looks_like": "akmag10",
 	"color": "light_gray",
     "ammo_type": [ "9mm" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "9mm": 20 } } ],
+    "pocket_data": [ 
+		{ 
+		"pocket_type": "MAGAZINE", 
+		"rigid": true, 
+		"ammo_restriction": { "9mm": 20 } 
+		} 
+	],
 	"flags": [ "MAG_COMPACT" ]
 	},
 	{
@@ -59,7 +77,13 @@
 	"description": "A 28-round magazine for the IDW, made of machined steel.",
     "weight": "380 g",
     "volume": "230 ml",
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "9mm": 28 } } ],
+    "pocket_data": [ 
+		{ 
+		"pocket_type": "MAGAZINE", 
+		"rigid": true, 
+		"ammo_restriction": { "9mm": 28 } 
+		} 
+	],
 	"flags": [ "MAG_COMPACT" ]
 	},
 	{
@@ -70,7 +94,13 @@
 	"description": "A 32-round magazine for the IDW, made of machined steel.",
     "weight": "450 g",
     "volume": "260 ml",
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "9mm": 32 } } ],
+    "pocket_data": [ 
+		{ 
+		"pocket_type": "MAGAZINE", 
+		"rigid": true, 
+		"ammo_restriction": { "9mm": 32 } 
+		} 
+	],
 	"flags": [ "MAG_COMPACT" ]
 	},
 	{
@@ -88,8 +118,38 @@
     "looks_like": "akmag10",
 	"color": "light_gray",
     "ammo_type": [ "792x57" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "792x57": 10 } } ],
+    "pocket_data": [ 
+		{ 
+		"pocket_type": "MAGAZINE", 
+		"rigid": true, 
+		"ammo_restriction": { "792x57": 10 } 
+		} 
+	],
     "flags": [ "MAG_COMPACT" ]
+	},
+	{
+    "id": "pgmmag7",
+    "type": "MAGAZINE",
+    "name": { "str": "PGM 7-round magazine" },
+    "description": "A 7-round magazine for the PGM Hécate II anti-materiel rifle.",
+    "weight": "650 g",
+    "volume": "485 ml",
+    "price": 10000,
+    "price_postapoc": 250,
+    "material": [ "steel" ],
+    "symbol": "#",
+    "looks_like": "m107a1mag",
+    "color": "black",
+    "ammo_type": [ "50" ],
+    "reload_time": 130,
+    "pocket_data": [ 
+		{ 
+		"pocket_type": "MAGAZINE", 
+		"rigid": true, 
+		"ammo_restriction": { "50": 7 } 
+		} 
+	],
+    "flags": [ "MAG_BULKY" ]
 	},
 	{
     "id": "sig550mag5",
@@ -153,7 +213,13 @@
     "looks_like": "akmag20",
 	"color": "light_gray",
     "ammo_type": [ "792x33" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "792x33": 25 } } ],
+    "pocket_data": [ 
+		{ 
+		"pocket_type": "MAGAZINE", 
+		"rigid": true, 
+		"ammo_restriction": { "792x33": 25 } 
+		} 
+	],
     "flags": [ "MAG_COMPACT" ]
 	},
 	{
@@ -170,7 +236,13 @@
     "looks_like": "akmag30",
 	"color": "light_gray",
     "ammo_type": [ "792x33" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "792x33": 30 } } ],
+    "pocket_data": [ 
+		{ 
+		"pocket_type": "MAGAZINE", 
+		"rigid": true, 
+		"ammo_restriction": { "792x33": 30 } 
+		} 
+	],
     "flags": [ "MAG_COMPACT" ],
 	"//": "This mag should have problems such as wear out after some use, unlike the stg44mag25 "
 	},
@@ -189,7 +261,13 @@
     "looks_like": "akmag10",
 	"color": "light_gray",
     "ammo_type": [ "762R" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "762R": 10 } } ],
+    "pocket_data": [ 
+		{ 
+		"pocket_type": "MAGAZINE", 
+		"rigid": true, 
+		"ammo_restriction": { "762R": 10 } 
+		} 
+	],
     "flags": [ "MAG_COMPACT" ]
 	},
 	{
@@ -207,7 +285,13 @@
     "looks_like": "akmag10",
 	"color": "light_gray",
     "ammo_type": [ "762R" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "762R": 20 } } ],
+    "pocket_data": [ 
+		{ 
+		"pocket_type": "MAGAZINE", 
+		"rigid": true, 
+		"ammo_restriction": { "762R": 20 } 
+		} 
+	],
     "flags": [ "MAG_COMPACT" ]
 	}
 ]

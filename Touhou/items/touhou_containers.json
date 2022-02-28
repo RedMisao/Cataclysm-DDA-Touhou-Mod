@@ -14,13 +14,46 @@
     "material": [ "cardboard" ],
     "symbol": ")",
     "color": "brown",
-    "pocket_data": [ {
+    "pocket_data": [
+		{
         "pocket_type": "CONTAINER",
         "rigid": true,
-        "max_contains_volume": "95 ml",
+        "max_contains_volume": "89 ml",
         "max_contains_weight": "260 g",
-        "max_item_length": "6 cm"
-	} ],
-	"flags": [ "TARDIS" ]
+        "max_item_length": "59 mm"
+		} 
+	]
+	},
+	{
+    "id": "lunar_canteen",
+    "type": "GENERIC",
+    "category": "container",
+    "name": { "str": "lunar canteen" },
+    "description": "A practical application of Lunarian technology, this trapezoidal box enables synchronizing a fixed volume of liquid in order to carry it around.  The liquid holds the overall shape the user gives to it, meaning the it can be carried inside a backpack, or carrying it externally by clipping the device to the belt.  It also automatically protects the purity of what's being currently held, by impeding it from mixing with anything else.",
+    "weight": "200 g",
+    "volume": "30 ml",
+    "price_postapoc": 50,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "bad", 
+		"length": "hand", 
+		"surface": "any"
+	},
+    "bashing": 1,
+    "material": [ "steel" ],
+    "symbol": ")",
+    "looks_like": "usb_drive",
+	"//": "Placeholder",
+    "color": "light_gray",
+    "pocket_data": [
+		{
+        "pocket_type": "CONTAINER",
+		"rigid": false, 
+		"watertight": true,
+        "max_contains_volume": "1500 ml",
+        "max_contains_weight": "2000 kg"
+		}
+    ],
+    "flags": [ "BELTED", "TARDIS" ]
 	}
 ]

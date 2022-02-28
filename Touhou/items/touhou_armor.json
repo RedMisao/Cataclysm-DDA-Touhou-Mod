@@ -123,6 +123,19 @@
     "flags": [ "SUPER_FANCY", "VARSIZE" ]
 	},
 	{
+    "id": "gyokuto_ear_clip",
+    "type": "ARMOR",
+    "name": { "str": "golden ear clip", "str_pl": "golden ear clips" },
+    "description": "A golden ear clip, made from a metallic material.  Looks like a big earring, but it's actually more close to an antenna, working as a enhancer for transmitting to the rest of the Network, now disabled due unforseen circumstances.",
+    "weight": "20 g",
+    "volume": "20 ml",
+    "price_postapoc": 10,
+    "material": [ "steel" ],
+    "symbol": "[",
+    "color": "yellow",
+    "flags": [ "NO_WEAR_EFFECT" ]
+	},
+	{
     "id": "jacket_black",
     "type": "ARMOR",
     "name": { "str": "black jacket" },
@@ -368,7 +381,7 @@
 	"armor": [
         { "covers": [ "head" ], "coverage": 0, "encumbrance": [ 0, 0 ] }
 	],
-    "flags": [ "FANCY" ]
+    "flags": [ "FANCY", "NO_WEAR_EFFECT" ]
     },
 	{
     "id": "ribbon_neck",
@@ -389,7 +402,7 @@
     "armor": [
         { "covers": [ "torso" ], "coverage": 5, "encumbrance": [ 0, 0 ] }
 	],
-	"flags": [ "FANCY", "VARSIZE" ]
+	"flags": [ "FANCY", "NO_WEAR_EFFECT", "VARSIZE" ]
 	},
 	{
     "id": "socks_long",
@@ -587,7 +600,7 @@
 	"armor": [
 		{ "covers": [ "leg_l" ], "specifically_covers": [ "leg_lower_l" ], "coverage": 5, "encumbrance": [ 1, 1 ] }
 	],
-	"flags": [ "FANCY", "SKINTIGHT", "STURDY", "VARSIZE" ],
+	"flags": [ "FANCY", "NO_WEAR_EFFECT", "SKINTIGHT", "VARSIZE" ],
 	"//3": "This item maybe needs something else to it"
 	},
 	{
@@ -993,7 +1006,7 @@
     "type": "TOOL_ARMOR",
     "category": "armor",
 	"name": "fire-protecting ribbon",
-	"description": "A large white ribbon made of paper, with red lines and a red outline, used to be tied to the hair.  It serves both as a hair ornament and as magical protective against fire.",
+	"description": "A large white ribbon made of paper, with red lines and a red outline, used to tie the hair.  It serves both as a hair ornament and as magical protective against fire.",
 	"weight": "100 g",
 	"volume": "400 ml",
 	"price": 10000,
@@ -1005,7 +1018,7 @@
     "armor": [
 		{ "covers": [ "head" ], "coverage": 0, "encumbrance": [ 0, 0 ] }
     ],
-	"flags": [ "FANCY", "STURDY" ]
+	"flags": [ "FANCY", "NO_WEAR_EFFECT", "STURDY" ]
     },
 	{
     "id": "mokou_shirt",
@@ -1309,7 +1322,7 @@
     "armor": [ 
 		{ "covers": [ "head" ], "coverage": 20, "encumbrance": [ 4, 8 ] }
 	],
-	"flags": [ "FANCY", "OUTER", "STURDY" ]
+	"flags": [ "FANCY", "NO_WEAR_EFFECT", "OUTER", "STURDY" ]
     },
 	{
     "id": "utsuho_rod",
@@ -1395,7 +1408,7 @@
     "armor": [ 
 		{ "covers": [ "head" ], "coverage": 15, "encumbrance": [ 0, 0 ] }
 	],
-	"flags": [ "FANCY", "OUTER", "STURDY"  ]
+	"flags": [ "FANCY", "NO_WEAR_EFFECT", "OUTER" ]
     },
 	{
     "id": "youmu_scabbard_rouka",

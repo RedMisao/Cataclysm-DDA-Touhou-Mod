@@ -42,14 +42,16 @@
 		[ "underbarrel", 1 ]
     ],
     "faults": [ "fault_gun_blackpowder", "fault_gun_dirt", "fault_gun_chamber_spent" ],
-    "pocket_data": [ {
+    "pocket_data": [ 
+		{
         "pocket_type": "MAGAZINE_WELL",
         "item_restriction": [ 
 			"idwmag20", 
 			"idwmag28", 
 			"idwmag32"
 		] 
-	} ],
+		} 
+	],
     "weapon_category": [ "AUTOMATIC_PISTOLS" ],
 	"//": "This is a hybrid between the finished PDW prototype and the manufactured IDW",
 	"//2": "Data obtained from http //firearmsworld.net/britain/phidw/idw.htm . Some values are approximates, such as the volume."
@@ -59,7 +61,7 @@
     "type": "GUN",
     "name": { "str_sp": "M76 Zastava" },
     "copy-from": "svd",
-	"description": "WIP",
+	"description": "A gas operated, semi-auto Serbian DMR, based on the Soviet SVD-63.  Created to fulfill the (then novel) role as its spiritual predecesor, it was first deployed during the Yugoslav Wars.  Unlike the SVD however, the M76 is actually based on the AK design, overhauled to fit the bigger 7.92x57mm Mauser.",
     "weight": "4600 g",
     "volume": "3000 ml",
     "longest_side": "1135 mm",
@@ -73,16 +75,16 @@
 	},
     "bashing": 11,
     "material": [ "plastic", "steel", "wood" ],
-    "looks_like": "ak47",
+    "looks_like": "svd",
 	"color": "brown",
     "ammo": [ "792x57" ],
     "built_in_mods": [ "onm76_scope" ],
-	"dispersion": 100,
+	"dispersion": 105,
     "//": "Accuracy is typically around 1.5 MOA, which is good for a Kalashnikov design and entirely acceptable for the designated marksman role. ",
 	"//2": "The dispersion at 900 m (984 yd) is described as 50 × 50 cm (19.7 × 19.7 in), which is ≈ 1.9 MOA.",
 	"durability": 9,
 	"loudness": 12,
-	"min_cycle_recoil": 1600,
+	"min_cycle_recoil": 1350,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
 	"range": 800,
 	"reload": 500,
@@ -95,12 +97,67 @@
 		[ "stock mount", 1 ],
 		[ "underbarrel mount", 1 ]
     ],
-    "pocket_data": [ {
+    "pocket_data": [ 
+		{
         "pocket_type": "MAGAZINE_WELL",
         "item_restriction": [
 			"m76mag10"
         ]
-	} ]
+		} 
+	]
+	},
+	{
+    "id": "pgm_hecate",
+    "type": "GUN",
+    "name": { "str_sp": "PGM Hécate II" },
+    "copy-from": "rifle_manual",
+	"description": "A gas operated, bolt action sniper and anti-materiel rifle.  Tested in 1994 for use in the Yugoslav wars, the revised version was modified to fit .50 ammo, thus the II designation.  It features an integrated muzzle brake, which greatly reduces the recoil of the powerful ammo, a special alloy for the barrel which dramatically increases its durability to thousands of shots, and a wooden finishing for the stock and handling.",
+    "weight": "13800 g",
+    "volume": "7200 ml",
+    "longest_side": "1380 mm",
+    "price": 1483300,
+    "price_postapoc": 12000,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "solid", 
+		"length": "long", 
+		"surface": "point"
+	},
+    "bashing": 12,
+    "material": [ "steel", "wood" ],
+    "looks_like": "m107a1",
+	"color": "brown",
+    "ammo": [ "50" ],
+    "barrel_volume": "1250 ml",
+    "built_in_mods": [ "muzzle_pgm", "scrome_scope" ],
+    "dispersion": 55,
+    "//2": "Supposedly it had sub-moa groups at 1700 meters with very good ammo",
+    "durability": 10,
+	"loudness": 12,
+    "min_cycle_recoil": 3500,
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
+    "range": 800,
+    "ranged_damage": { "damage_type": "bullet", "amount": -5 },
+	"reload": 450,
+	"reload_noise_volume": 8,
+	"valid_mod_locations": [
+		[ "barrel", 1 ],
+		[ "muzzle", 1 ],
+		[ "rail mount", 1 ],
+		[ "sights", 1 ],
+		[ "sling", 1 ],
+		[ "stock mount", 1 ],
+		[ "underbarrel", 1 ]
+    ],
+    "pocket_data": [ 
+		{
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [
+			"pgmmag7"
+        ]
+		} 
+	],
+    "flags": [ "NEVER_JAMS" ]
 	},
 	{
     "id": "sig550",
@@ -130,7 +187,7 @@
 	"durability": 9,
 	"loudness": 9,
 	"min_cycle_recoil": 1350,
-    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "3 rd.", 3 ], [ "AUTO", "auto", 20 ] ],
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "3 rd.", 3 ], [ "AUTO", "auto", 5 ] ],
 	"reload": 420,
 	"reload_noise_volume": 10,
 	"valid_mod_locations": [
@@ -141,7 +198,8 @@
 		[ "stock mount", 1 ],
 		[ "underbarrel mount", 1 ]
     ],
-	"pocket_data": [ {
+	"pocket_data": [ 
+		{
         "pocket_type": "MAGAZINE_WELL",
         "item_restriction": [
 			"sig550mag5",
@@ -157,7 +215,8 @@
 			"stanag60",
 			"survivor223mag"
         ]
-	} ],
+		} 
+	],
     "weapon_category": [ "AUTOMATIC_RIFLES" ]
 	},
 	{
@@ -184,7 +243,7 @@
     "name": { "str": "StG 44" },
     "copy-from": "ak47",
     "//": "Ironic",
-	"description": "WIP",
+	"description": "The Sturmgewehr 44 or Maschinenpistole 43 (depending on who you ask) was among the first \"assault rifles\" ever created, and the first successful one.  Gas operated and featuring selective fire, it used the intermediate 7.92x33mm Kurz cartridge, having the goal to give soldiers enough firepower for mid-range engagements.  A timeless classic, you'd be the envy of the breathing post-Cataclysm weapon collectors.",
     "weight": "4600 g",
     "volume": "2200 ml",
     "longest_side": "94 cm",
@@ -204,9 +263,9 @@
     "dispersion": 160,
     "//2": "though the report accepted that its accuracy was 'excellent for a weapon of its type' ",
 	"//3": "Assuming this means more than less 3 moa due being an early 'assault rifle', and modern 'assault rifles' having ~3 moa",
-	"durability": 9,
+	"durability": 8,
     "min_cycle_recoil": 2100,
-    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 25 ] ],
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 5 ] ],
     "ranged_damage": { "damage_type": "bullet", "amount": 2 },
 	"valid_mod_locations": [
 		[ "barrel", 1 ],
@@ -216,20 +275,22 @@
 		[ "sling", 1 ],
 		[ "stock", 1 ]
     ],
-    "pocket_data": [ {
+    "pocket_data": [ 
+		{
         "pocket_type": "MAGAZINE_WELL",
         "item_restriction": [
 			"stg44mag25",
 			"stg44mag30"
         ]
-	} ]
+		} 
+	]
 	},
 	{
     "id": "svd",
     "type": "GUN",
-    "name": { "str_sp": "Dragunov Sniper rifle (SVD-63)" },
-    "copy-from": "rifle_auto",
-	"description": "WIP",
+    "name": { "str_sp": "SVD-63" },
+    "copy-from": "rifle_semi",
+	"description": "A semi-auto, gas operated, Soviet era DMR, using the old, trusty 7.62x54mmR, and easily recognizable by the shape of the stock.  Widely known around the world with more than half a century of service, it has enough field testing to prove its reliability and effectiveness.",
     "weight": "4300 g",
     "volume": "3200 ml",
     "longest_side": "1225 mm",
@@ -247,11 +308,11 @@
 	"color": "brown",
     "ammo": [ "762R" ],
     "built_in_mods": [ "pso1_scope" ],
-	"dispersion": 120,
+	"dispersion": 125,
     "//": "When using standard grade 57-N-323S cartridges, the accuracy of the SVD is reduced to 2.21 MOA extreme vertical spread. The extreme vertical spreads for the SVD are established by shooting 5-shot groups at 300 m range.",
 	"durability": 9,
 	"loudness": 12,
-	"min_cycle_recoil": 1600,
+	"min_cycle_recoil": 1200,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
 	"range": 800,
 	"reload": 450,
@@ -265,20 +326,22 @@
 		[ "stock mount", 1 ],
 		[ "underbarrel mount", 1 ]
     ],
-    "pocket_data": [ {
+    "pocket_data": [ 
+		{
         "pocket_type": "MAGAZINE_WELL",
         "item_restriction": [
 			"svdmag10",
 			"svdmag20"
         ]
-	} ]
+		} 
+	]
 	},
 	{
     "id": "vss",
     "type": "GUN",
     "name": { "str_sp": "VSS Vintorez" },
     "copy-from": "rifle_auto",
-	"description": "WIP",
+	"description": "The VSS is a compact, subsonic Soviet DMR featuring integrated supressor and PSO-1 scope.  Designed alongside other \"spetsialnaya\" group Soviet era weapons such as the AS Val or OTs-14 \"Groza\", in order to replace general use weapons (such as the AK-74) for weaponry more focused on specific roles.  Thanks to the amazing performance, the Vintorez lacks a specific niche though: it can be used in stealth operations, as marksman rifle, as a pseudo-SMG and ironically enough, general use \"assault\" rifle.  The only downsides are the relative low effective range and the pronunciated bullet drop, both due the properties of the 9x39mm.",
     "weight": "2600 g",
     "volume": "2000 ml",
     "longest_side": "894 mm",
@@ -302,9 +365,9 @@
 	"durability": 8,
 	"loudness": 2,
 	"min_cycle_recoil": 1350,
-    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 10 ] ],
+    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 4 ] ],
     "ranged_damage": { "damage_type": "bullet", "amount": 2 },
-	"//3": "9x39 damage is too, so I'm increasing it a bit here and with the ammo",
+	"//3": "9x39 damage is too low, so I'm increasing it a bit here and with the ammo",
 	"//4": "Ideally, the VSS should instead have increased crit chance and higher crit dmg modifier, to emulate the late-game scaling with proficiency",
 	"range": 420,
 	"reload": 330,
@@ -315,13 +378,15 @@
 		[ "sling", 1 ],
 		[ "stock mount", 1 ]
     ],
-    "pocket_data": [ {
+    "pocket_data": [ 
+		{
         "pocket_type": "MAGAZINE_WELL",
         "item_restriction": [
 			"9x39mag10",
 			"9x39mag20"
         ]
-	} ],
+		} 
+	],
     "weapon_category": [ "AUTOMATIC_RIFLES" ]
 	}
 ]

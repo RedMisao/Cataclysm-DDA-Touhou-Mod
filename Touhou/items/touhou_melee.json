@@ -299,12 +299,6 @@
     "name": { "str": "sword of hisou (dismissed)", "str_pl": "swords of hisou (dismissed)" },
 	"description": "A golden, shape-shifting jian that is spiritually summoned into battle, allowing it to be stored without taking up a significant amount of space or weighing the user down. Activate to summon it.",
     "//": "Touhou Wiki states that it's a golden Chinese jian, the sword is shape shifting, and that the sword is probably spiritually summoned into battle.",
-	"use_action": {
-		"type": "transform",
-		"menu_text": "Summon Sword",
-		"msg": "You summon your sword.",
-		"target": "tenshi_jian_extended"
-	},
     "weight": "300 g",
     "volume": "80 ml",
     "longest_side": "15 cm",
@@ -323,6 +317,12 @@
 	"symbol": "/",
     "color": "light_gray",
     "techniques": [ "WBLOCK_1" ],
+	"use_action": {
+		"type": "transform",
+		"menu_text": "Summon Sword",
+		"msg": "You summon your sword.",
+		"target": "tenshi_jian_extended"
+	},
 	"flags" : [ "DURABLE_MELEE", "TRADER_AVOID", "UNARMED_WEAPON" ]
 	},
 	{
@@ -332,12 +332,6 @@
 	"name": { "str": "sword of hisou (summoned)", "str_pl": "swords of hisou (summoned)" },
 	"description": "A golden, shape-shifting jian that is spiritually summoned into battle, allowing it to be stored without taking up a significant amount of space or weighing the user down. Activate to dismiss it.",
     "//": "Touhou Wiki states that it's a golden Chinese jian, the sword is shape shifting, and that the sword is probably spiritually summoned into battle.",
-	"use_action": {
-		"menu_text": "Dismiss Sword",
-		"type": "transform",
-		"target": "tenshi_jian",
-		"msg": "You dismiss your sword."
-	},
     "weight": "300 g",
 	"volume": "1300 ml",
     "longest_side": "65 cm",
@@ -357,6 +351,12 @@
     "color": "light_gray",
     "techniques": [ "WBLOCK_2" ],
     "weapon_category": [ "JAPANESE_SWORDS", "SHORT_SWORDS" ],
+	"use_action": {
+		"menu_text": "Dismiss Sword",
+		"type": "transform",
+		"target": "tenshi_jian",
+		"msg": "You dismiss your sword."
+	},
 	"flags" : [ "DURABLE_MELEE", "SHEATH_SWORD", "STURDY", "TRADER_AVOID" ]
 	},
 	{

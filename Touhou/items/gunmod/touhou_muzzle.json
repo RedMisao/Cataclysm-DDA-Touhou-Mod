@@ -1,0 +1,23 @@
+[
+	{
+    "id": "muzzle_pgm",
+    "type": "GUNMOD",
+    "name": { "str": "PGM Hécate muzzle brake" },
+	"copy-from": "muzzle_brake",
+    "description": "An integrated muzzle brake for the PGM Hécate II anti-materiel rifle, greatly reducing the recoil to levels similar to shooting a .308 weapon, increasing the loudness and slightly reducing accuracy.",
+    "weight": "400 g",
+    "volume": "400 ml",
+    "longest_side": "6 cm",
+    "integral_longest_side": "6 cm",
+    "material": [ "steel" ],
+    "symbol": ":",
+    "color": "dark_gray",
+    "dispersion_modifier": 10,
+    "handling_modifier": 2,
+    "location": "muzzle",
+    "loudness_modifier": 5,
+    "min_skills": [ [ "weapon", 3 ] ],
+    "mod_targets": [ "rifle" ],
+	"//": " 'recoil_modifier: -19500' is not recognized as a field"
+	}
+]

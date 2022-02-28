@@ -267,8 +267,8 @@
 				"lunar_tie"
 			],
 			"entries": [ 
-				{ "item": "lunatic_pistol2", "ammo-item": "ammo_lunar_small_2", "charges": 17, "container-item": "lunatic_holster" },
-				{ "item": "lunar_small_mag12", "ammo-item": "ammo_lunar_small_2", "charges": 12 }
+				{ "item": "lunatic_pistol2", "ammo-item": "ammo_lunar_small_2", "charges": 13, "container-item": "lunatic_holster" },
+				{ "item": "lunar_small_mag13", "ammo-item": "ammo_lunar_small_2", "charges": 13 }
 			]
 		},
 	   "male": [
@@ -321,12 +321,9 @@
 				"lunar_tie",
 				"lunar_veil_deactivated"
 			],
-			"entries": [ { 
-				"item": "lunar_rifle2", 
-				"ammo-item": "ammo_lunar_medium_1",
-				"charges": 10,
-				"contents-item": "shoulder_strap"
-			} ]
+			"entries": [ 
+				{ "item": "lunar_rifle2", "ammo-item": "ammo_lunar_medium_1", "charges": 11, "contents-item": "shoulder_strap" } 
+			]
         },
         "male": [
             "boxer_shorts"
