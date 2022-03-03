@@ -15,6 +15,11 @@
     "components": [ [ [ "human_egg", 20 ] ] ]
 	},
 	{
+    "id": "spell_components_ikuscarf",
+    "type": "requirement",
+    "tools": [ [ [ "iku_long_scarf", -1 ] ], [ [ "iku_long_scarf_loose", -1 ] ] ]
+	},
+	{
     "id": "spell_components_keystone",
     "type": "requirement",
     "components": [ [ [ "tenko_keystone2", 1 ] ] ]
