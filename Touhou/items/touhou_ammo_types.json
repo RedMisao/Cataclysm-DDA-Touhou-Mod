@@ -18,6 +18,24 @@
     "default": "ammo_lunar_small_2"
 	},
 	{
+    "id": "ammo_lunar_4d_1",
+	"type": "ammunition_type",
+    "name": "lunar ammo (4-dimensional type 1)",
+    "default": "ammo_lunar_4d_thorn"
+	},
+	{
+    "id": "ammo_lunar_4d_2",
+	"type": "ammunition_type",
+    "name": "lunar ammo (4-dimensional type 2)",
+    "default": "ammo_lunar_4d_claw"
+	},
+	{
+    "id": "ammo_lunar_5d_1",
+	"type": "ammunition_type",
+    "name": "lunar ammo (5-dimensional type 1)",
+    "default": "ammo_lunar_5d_ofuda"
+	},
+	{
     "id": "9x39",
 	"type": "ammunition_type",
     "name": "9x39mm",
