@@ -20,6 +20,11 @@
     "tools": [ [ [ "iku_long_scarf", -1 ] ], [ [ "iku_long_scarf_loose", -1 ] ] ]
 	},
 	{
+    "id": "spell_components_jian",
+    "type": "requirement",
+    "tools": [ [ [ "tenshi_jian_extended", -1 ] ] ]
+	},
+	{
     "id": "spell_components_keystone",
     "type": "requirement",
     "components": [ [ [ "tenko_keystone2", 1 ] ] ]

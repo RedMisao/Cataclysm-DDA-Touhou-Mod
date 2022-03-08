@@ -535,7 +535,10 @@
     "points": 4,
     "spells": [ 
 		{ "level": 1, "id": "dash_basic" },
-		{ "level": 1, "id": "tenko_keystone" }
+		{ "level": 1, "id": "tenko_earthquake" },
+		{ "level": 1, "id": "tenko_keystone" },
+		{ "level": 1, "id": "tenko_scarletperception" },
+		{ "level": 1, "id": "tenko_unletting_soil" }
 	],
 	"skills": [
         { "level": 4, "name": "cutting" },

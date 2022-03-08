@@ -8,7 +8,6 @@
     "volume": "2100 ml",
     "longest_side": "120 cm",
 	"//": "Calculated as 4 * 110 cm wooden cylinder with a 5.5 * 60 cm octogonal iron cap, reduced weight. 10 cm metal ring not considered",
-    "price": 16000,
     "price_postapoc": 350,
     "to_hit": { 
 		"grip": "weapon", 
@@ -46,7 +45,6 @@
     "volume": "1300 ml",
     "longest_side": "70 cm",
 	"//": "Calculated as 4 * 70 cm wooden cylinder with a 5.5 * 60 cm octogonal iron cap. 10 cm metal ring not considered",
-    "price": 14000,
     "price_postapoc": 300,
     "to_hit": { 
 		"grip": "weapon", 
@@ -86,7 +84,6 @@
     "volume": "4000 ml",
     "longest_side": "200 cm",
 	"//": "Calculated as a 4 * 200 cm wooden cylinder with two 6 * 60 cm octogonal iron caps, reduced weight",
-    "price": 20000,
     "price_postapoc": 500,
     "to_hit": { 
 		"grip": "weapon", 
@@ -124,7 +121,6 @@
     "volume": "2300 ml",
     "longest_side": "120 cm",
 	"//": "Calculated as a 4.5 * 50 cm handle with a 5.5 * 60 cm octogon, iron density. 10 cm metal ring at the end not considered",
-    "price": 16000,
     "price_postapoc": 350,
     "to_hit": { 
 		"grip": "weapon", 
@@ -151,7 +147,6 @@
     "weight": "18000 g",
     "volume": "2300 ml",
     "longest_side": "120 cm",
-    "price": 16000,
     "price_postapoc": 350,
     "to_hit": { 
 		"grip": "weapon", 
@@ -179,7 +174,6 @@
     "volume": "13000 ml",
     "longest_side": "200 cm",
 	"//": "Calculated as a 5 * 200 cm iron cylinder with two 10 * 60 cm octogonal iron caps, halved weight",
-    "price": 10000,
     "price_postapoc": 250,
     "to_hit": { 
 		"grip": "weapon", 
@@ -218,7 +212,6 @@
     "weight": "450 g",
     "volume": "350 ml",
     "longest_side": "30 cm",
-    "price": 100000,
     "price_postapoc": 12500,
 	"to_hit": {
 		"balance": "good", 
@@ -247,7 +240,6 @@
     "weight": "300 g",
     "volume": "600 ml",
     "longest_side": "40 cm",
-    "price": 150000,
     "price_postapoc": 7500,
 	"to_hit": {
 		"balance": "good", 
@@ -273,7 +265,6 @@
     "volume": "2000 ml",
     "longest_side": "140 cm",
     "//": "Double length from tengu_shield , taken as reference",
-	"price": 150000,
     "price_postapoc": 7500,
 	"to_hit": {
 		"grip": "weapon",
@@ -303,7 +294,6 @@
     "volume": "80 ml",
     "longest_side": "15 cm",
 	"//2": "These numbers come from a 15 cm, 2.5 cm diameter hilt",
-	"price": 160000,
     "price_postapoc": 8000,
 	"to_hit": {
 		"balance": "good", 
@@ -336,7 +326,6 @@
 	"volume": "1300 ml",
     "longest_side": "65 cm",
 	"//2": "I assume the blade of the sword looks like a flame so it has a dynamic volume, but that one should be the average for a static 50 cm long, 5 cm wide blade + the hilt",
-	"price": 160000,
     "price_postapoc": 8000,
 	"to_hit": {
 		"balance": "good", 
@@ -370,7 +359,6 @@
     "volume": "2000 ml",
     "longest_side": "110 cm",
     "//": "This should be 'too long to be wielded by normal humans' ",
-	"price": 120000,
     "price_postapoc": 24000,
     "to_hit": { 
 		"balance": "good", 
@@ -400,7 +388,6 @@
     "weight": "800 g",
     "volume": "1500 ml",
     "longest_side": "60 cm",
-	"price": 120000,
     "price_postapoc": 24000,
     "to_hit": { 
 		"balance": "good", 
