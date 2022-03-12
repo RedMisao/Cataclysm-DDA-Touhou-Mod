@@ -7,7 +7,14 @@ This branch is for untested additions that produce non-critical errors when runn
 
 ----
 
-**Changelog over the master branch (0.9.2.4)**
-* Generic oni enemies added, with their drop, species and harvest (not spawning yet)
-* Added dual kanabo for oni
+**Changelog over the master branch (0.9.2.4):**
+* Generic oni enemies added, with their files (harvest, species, drops, etc)
+* New weapons featuring three kinds of kanabo (mostly for oni so far), PGM Hécate, some Lunarian weaponry for experimental purposes
+* Generic poltergeist-ish enemies (simple tsukumogami) added
+* A bunch of extinct fauna added
+
+(None of the above are spawning yet, but they will soon™)
+* Added spells for Iku: Elekiter Dragon Palace (aoe) (WIP), Thundercloud Stickleback (aoe knockback), Veil's like water (damaging cone)
+* Removed Iku's bionics
+* Added spells for Tenshi: Earthquake signs (aoe + down), Sky of Scarlet perception (laser), Unletting soil (cone + test push)
 * MIB drops corrected
