@@ -266,7 +266,7 @@
 		{ 
 		"spell_data": { "id": "paralyze_100" }, 
 		"type": "spell", 
-		"cooldown": 30 
+		"cooldown": 34 
 		}
 	],
 	"death_function": { 
@@ -301,7 +301,7 @@
     "vision_day": 20,
     "vision_night": 35,
     "path_settings": { "max_dist": 20 },
-    "anger_triggers": [ "FRIEND_DIED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE", "STALK" ],
+    "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE", "STALK" ],
     "reproduction": { "baby_monster": "mon_nightcrawler_young", "baby_count": 2, "baby_timer": 13 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "special_attacks": [ [ "ABSORB_MEAT", 100 ] ],

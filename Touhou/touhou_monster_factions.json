@@ -12,7 +12,6 @@
     "name": "touhou_arthropod_aquatic_medium",
 	"type": "MONSTER_FACTION",
     "base_faction": "insect",
-    "neutral": [ "touhou_arthropod_aquatic_medium" ],
 	"by_mood": [ "animal", "exodii", "human", "your_followers", "zombie" ],
 	"hate": [ "fish", "insect" ],
 	"//": "1 - 2 m long arthropods, these should attack smaller fish, insects, and distinct touhou_arthropod_aquatic_medium"
@@ -21,19 +20,35 @@
     "name": "touhou_arthropod_aquatic_small",
 	"type": "MONSTER_FACTION",
     "base_faction": "insect",
-    "neutral": [ "touhou_arthropod_aquatic_small" ],
 	"by_mood": [ "animal", "exodii", "human", "your_followers", "zombie" ],
 	"hate": [ "fish", "insect" ],
 	"//": "<1 m long arthropods, these should attack smaller fish, insects, and distinct touhou_arthropod_aquatic_small"
 	},
 	{
-    "name": "touhou_crocodylomorpha_large",
+    "name": "touhou_arthropod_herbivore",
+	"type": "MONSTER_FACTION",
+    "base_faction": "insect",
+    "neutral": [ "fish", "small_animal", "touhou_arthropod_herbivore" ],
+	"by_mood": [ "animal" ],
+	"//": "like herbivore but for giant extinct arthropods"
+	},
+	{
+    "name": "touhou_crocodilelike_large",
 	"type": "MONSTER_FACTION",
     "base_faction": "animal",
-    "neutral": [ "touhou_crocodylomorpha_large" ],
+    "neutral": [ "touhou_crocodylelike_large" ],
 	"by_mood": [ "exodii", "human", "your_followers" ],
     "hate": [ "animal", "herbivore", "insect", "mi-go", "triffid", "zombie" ],
-	"//": "2 - 3 m long croco ancestors. Assumed to be either the apex predator or member of the top predators. These should attack whatever is weak or below their size"
+	"//": "2 - 3 m long croco-looking things (included Smilosuchus). Assumed to be either the apex predator or member of the top predators. These should attack whatever is weak or below their size"
+	},
+	{
+    "name": "touhou_crocodilelike_small",
+	"type": "MONSTER_FACTION",
+    "base_faction": "animal",
+    "neutral": [ "touhou_crocodylelike_small" ],
+	"by_mood": [ "exodii", "human", "your_followers" ],
+    "hate": [ "insect", "small_animal" ],
+	"//": "<1 m long croco-looking things. Would hunt small things"
 	},
 	{
     "name": "touhou_daedon",
@@ -123,7 +138,7 @@
 	"type": "MONSTER_FACTION",
 	"friendly": [ "touhou_youkai_neutral", "touhou_yeti" ],
 	"neutral": [ "animal" ],
-    "by_mood": [ "exodii", "fungus", "human",  "mi-go", "mutant", "small_animal", "triffid", "your_followers", "zombie" ],
+    "by_mood": [ "exodii", "fungus", "human", "mi-go", "mutant", "small_animal", "triffid", "your_followers", "zombie" ],
 	"hate": [ "herbivore", "insect" ],
 	"//": "self explanatory, however it should fear everything at by_mood except for small_animal "
 	},
@@ -131,7 +146,7 @@
     "name": "touhou_yeti",
 	"type": "MONSTER_FACTION",
 	"friendly": [ "touhou_sasquatch", "touhou_youkai_neutral" ],
-    "by_mood": [ "exodii", "fungus", "human",  "mi-go", "mutant", "small_animal", "triffid", "your_followers", "zombie" ],
+    "by_mood": [ "exodii", "fungus", "human", "mi-go", "mutant", "small_animal", "triffid", "your_followers", "zombie" ],
 	"hate": [ "animal", "insect" ],
 	"//": "more aggressive sasquatchs, should be territorial"
 	},
