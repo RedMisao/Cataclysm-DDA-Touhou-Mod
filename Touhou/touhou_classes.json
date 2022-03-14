@@ -345,12 +345,16 @@
     "description": "That scheming youkai refusing to elaborate was part of her plan for you to move.  Both sides knew that, but that's a custom when dealing important matters to you, so you didn't mind.  What pisses you off is that innocent parties are involved with this much of a threat.  This better be interesting.",
     "points": 4,
 	"CBMs": [
-		"bio_redmagic"
+		"bio_vampiric_constitution"
 	],
 	"spells": [ 
 		{ "level": 1, "id": "dash_remi" },
+		{ "level": 1, "id": "remilia_bloodboil" },
+		{ "level": 1, "id": "remilia_consumeblood" },
 		{ "level": 1, "id": "remilia_gungnir" },
-		{ "level": 1, "id": "remilia_gungnir_throw" }
+		{ "level": 1, "id": "remilia_gungnir_throw" },
+		{ "level": 1, "id": "remilia_miserablefate" },
+		{ "level": 1, "id": "remilia_scarletshot" }
 	],
 	"skills": [
         { "level": 3, "name": "dodge" },

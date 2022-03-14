@@ -81,6 +81,11 @@
     "monsters": [ { "monster": "mon_hesperosuchus_baby" } ]
 	},
 	{
+    "name": "GROUP_EGG_ICADYPTES",
+    "type": "monstergroup",
+    "monsters": [ { "monster": "mon_icadyptes_chick" } ]
+	},
+	{
     "name": "GROUP_EGG_MOA",
     "type": "monstergroup",
     "monsters": [ { "monster": "mon_moa_chick" } ]

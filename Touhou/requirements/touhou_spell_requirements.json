@@ -5,6 +5,13 @@
     "components": [ [ [ "utsuho_sun2", 1 ] ] ]
 	},
 	{
+    "id": "spell_components_blood",
+    "type": "requirement",
+    "components": [ [ [ "blood", 1 ] ] ],
+	"//": "Should be 250, not 1 ml",
+	"//2": "hblood is not recognized as a valid item template, but it should be there"
+	},
+	{
     "id": "spell_components_gungnir",
     "type": "requirement",
     "components": [ [ [ "remilia_gungnir2", 1 ] ] ]

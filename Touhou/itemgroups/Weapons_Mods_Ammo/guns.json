@@ -24,9 +24,9 @@
     ]
 	},
 	{
-    "type": "item_group",
-    "subtype": "distribution",
     "id": "guns_rifle_rare_display",
+	"type": "item_group",
+    "subtype": "distribution",
     "//": "Less common rifles found exclusively in gun stores.",
     "items": [
 		{ "item": "colt_lightning", "prob": 10, "charges-min": 0, "charges-max": 0 },
@@ -52,9 +52,9 @@
     ],
 	"//2": "These (above and below) are arbitrary values to check their spawning, will probably get removed except for the SIGs"
 	},
-  {
-    "type": "item_group",
+	{
     "id": "guns_rifle_milspec",
+	"type": "item_group",
     "//": "Military specification rifles only ever found at military sites.",
     "items": [
 		{ "item": "m27_assault_rifle", "variant": "h&k416a5", "prob": 50, "charges-min": 0, "charges-max": 30 },
@@ -78,15 +78,17 @@
 		{ "item": "m110a1", "prob": 50, "charges-min": 0, "charges-max": 20 },
 		{ "item": "M24", "prob": 15, "charges-min": 0, "charges-max": 0 },
 		{ "item": "acr_300blk", "prob": 15, "charges-min": 0, "charges-max": 30 },
+		{ "item": "pgm_hecate", "prob": 20, "charges-min": 0, "charges-max": 7 },
 		{ "item": "sig550", "prob": 15, "charges-min": 0, "charges-max": 20 },
 		{ "item": "sig550_sniper", "prob": 15, "charges-min": 0, "charges-max": 20 },
 		{ "item": "svd", "prob": 5, "charges-min": 0, "charges-max": 10 },
 		{ "item": "vss", "prob": 5, "charges-min": 0, "charges-max": 20 }
-    ]
+    ],
+	"//2": "Soviet weapons must be removed and reimplemented somewhere else"
 	},
 	{
-    "type": "item_group",
     "id": "guns_rifle_obscure_display",
+	"type": "item_group",
     "//": "Imported or otherwise very obscure rifles, unloaded for storage in gunstore and unavailable for sale",
     "subtype": "distribution",
     "items": [
@@ -111,13 +113,28 @@
 		{ "item": "acr_300blk", "prob": 15, "charges-min": 0, "charges-max": 0 },
 		{ "item": "hk417_13", "prob": 40, "charges-min": 0, "charges-max": 0 },
 		{ "item": "m76", "prob": 5, "charges-min": 0, "charges-max": 0 },
+		{ "item": "stg44", "prob": 5, "charges-min": 0, "charges-max": 0 },
 		{ "item": "svd", "prob": 5, "charges-min": 0, "charges-max": 0 },
 		{ "item": "vss", "prob": 5, "charges-min": 0, "charges-max": 0 }
     ]
 	},
 	{
     "type": "item_group",
+    "id": "guns_smg_obscure",
+    "subtype": "distribution",
+    "//": "Imported or otherwise very obscure SMGs.",
+    "items": [
+		{ "item": "ppsh", "prob": 150, "charges-min": 0, "charges-max": 0 },
+		{ "item": "hk_mp5_10_semi", "prob": 1, "charges-min": 0, "charges-max": 0 },
+		{ "item": "skorpion_61", "prob": 100, "charges-min": 0, "charges-max": 0 },
+		{ "item": "skorpion_82", "prob": 100, "charges-min": 0, "charges-max": 0 },
+		{ "group": "guns_smg_collectible", "prob": 1 },
+		{ "item": "idw", "prob": 100, "charges-min": 0, "charges-max": 0 }
+    ]
+	},
+	{
     "id": "guns_survival",
+	"type": "item_group",
     "//": "Guns typically carried by survivors, either improvised or thematically appropriate.",
     "items": [
 		{ "group": "guns_improvised", "prob": 50 },
