@@ -239,7 +239,7 @@
     "name": "Lunatic Moon Rabbit",
     "description": "The weekly lesson you were being given by your Master was promptly interrupted after receiving some kind of message (from the Moon?).  Shortly after, she returned with a serious face and lots of letters directed to the faction leaders.  You finished the errand when you noticed you got lost.  For some reason, the Network is silent too.",
     "points": 4,
-	"proficiencies": [ "prof_pharmaceutical" ], 
+	"proficiencies": [ "prof_intro_biology", "prof_intro_chemistry", "prof_inorganic_chemistry", "prof_pharmaceutical" ], 
 	"spells": [ 
 		{ "level": 1, "id": "create_ammo_lunar_small" },
 		{ "level": 1, "id": "dash_basic" }
@@ -454,7 +454,7 @@
     "name": "Wicked Hermit",
     "description": "You're a wicked, amoral hermit with the ability to pass through walls and enslave the undead.  You never really cared about anyone else, only seeing fit to manipulate them for your own ends. Surviving the cataclysm should be… Interesting.",
     "points": 4,
-	"proficiencies": [ "prof_lockpicking", "prof_pharmaceutical", "prof_physiology" ],
+	"proficiencies": [ "prof_intro_biology", "prof_intro_chemistry", "prof_lockpicking", "prof_pharmaceutical", "prof_physiology" ],
 	"spells": [ 
 		{ "level": 1, "id": "seiga_darksplash" },
 		{ "level": 1, "id": "seiga_foetus_shot" },

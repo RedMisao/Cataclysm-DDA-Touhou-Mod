@@ -10,16 +10,16 @@
     "name": "GROUP_THERIODONTIA_LIGHT",
     "type": "monstergroup",
     "monsters": [ 
-		{ "monster": "mon_gorgonopsid_inostrancevia", "weight": 100, "pack_size": [ 1, 1 ], "starts": "2 days" },
-		{ "monster": "mon_gorgonopsid_pristerognathus", "weight": 500, "pack_size": [ 3, 4 ], "starts": "2 days" }
+		{ "monster": "mon_inostrancevia", "weight": 100, "pack_size": [ 1, 1 ], "starts": "2 days" },
+		{ "monster": "mon_pristerognathus", "weight": 500, "pack_size": [ 3, 4 ], "starts": "2 days" }
 	]
 	},
 	{
     "name": "GROUP_THERIODONTIA_HEAVY",
     "type": "monstergroup",
     "monsters": [ 
-		{ "monster": "mon_gorgonopsid_inostrancevia", "weight": 200, "pack_size": [ 1, 3 ], "starts": "2 days" },
-		{ "monster": "mon_gorgonopsid_pristerognathus", "weight": 100, "pack_size": [ 4, 6 ], "starts": "2 days" }
+		{ "monster": "mon_inostrancevia", "weight": 200, "pack_size": [ 1, 3 ], "starts": "2 days" },
+		{ "monster": "mon_pristerognathus", "weight": 100, "pack_size": [ 5, 8 ], "starts": "2 days" }
 	]
 	},
 	{
@@ -33,15 +33,16 @@
 		{ "monster": "mon_opabinia", "weight": 100, "pack_size": [ 3, 9 ], "starts": "2 days" },
 		{ "monster": "mon_pambdelurion", "weight": 100, "pack_size": [ 4, 8 ], "starts": "2 days" },
 		{ "monster": "mon_parastylonurus", "weight": 100, "pack_size": [ 2, 6 ], "starts": "2 days" },
-		{ "monster": "mon_plesiosaurus", "weight": 50, "pack_size": [ 1, 1 ], "starts": "2 days" },
 		{ "monster": "mon_sidneyia", "weight": 100, "pack_size": [ 3, 9 ], "starts": "2 days" },
 		{ "monster": "mon_holoptychius", "weight": 100, "pack_size": [ 2, 3 ], "starts": "2 days" },
-		{ "monster": "mon_ichthyosaurus", "weight": 50, "pack_size": [ 1, 1 ], "starts": "2 days" },
 		{ "monster": "mon_coccosteus", "weight": 100, "pack_size": [ 2, 3 ], "starts": "2 days" },
 		{ "monster": "mon_lamprey", "weight": 100, "pack_size": [ 3, 5 ], "starts": "2 days" },
-		{ "monster": "mon_megamastax", "weight": 100, "pack_size": [ 2, 3 ], "starts": "2 days" }
+		{ "monster": "mon_megamastax", "weight": 100, "pack_size": [ 2, 3 ], "starts": "2 days" },
+		{ "monster": "mon_saurichthys", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
+		{ "monster": "mon_ichthyosaurus", "weight": 50, "pack_size": [ 1, 1 ], "starts": "2 days" },
+		{ "monster": "mon_plesiosaurus", "weight": 50, "pack_size": [ 1, 1 ], "starts": "2 days" }
 	],
-	"//": "All aquatic fauna should go on this list, more for listing than for spawning purposes"
+	"//": "All things that live IN water should go here, more for listing than for spawning purposes"
 	},
 	{
     "name": "GROUP_WILDLIFE_CAVE",
@@ -49,33 +50,46 @@
     "monsters": [ 
 		{ "monster": "mon_glossotherium", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
 		{ "monster": "mon_megatherium", "weight": 120, "pack_size": [ 1, 1 ], "starts": "2 days" },
-		{ "monster": "mon_gorgonopsid_inostrancevia", "weight": 10, "pack_size": [ 1, 1 ], "starts": "2 days" }
+		{ "monster": "mon_inostrancevia", "weight": 10, "pack_size": [ 1, 1 ], "starts": "2 days" }
 	]
 	},
 	{
     "name": "GROUP_WILDLIFE_COASTAL",
     "type": "monstergroup",
     "monsters": [ 
+		{ "monster": "mon_eryops", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_pederpes", "weight": 100, "pack_size": [ 2, 5 ], "starts": "2 days" },
+		{ "monster": "mon_platyoposaurus", "weight": 50, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_prionosuchus", "weight": 35, "pack_size": [ 1, 1 ], "starts": "2 days" },
 		{ "monster": "mon_parastylonurus", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
+		{ "monster": "mon_meganeura", "weight": 100, "pack_size": [ 2, 6 ], "starts": "2 days" },
 		{ "monster": "mon_icadyptes", "weight": 100, "pack_size": [ 3, 6 ], "starts": "2 days" },
+		{ "monster": "mon_castoroides", "weight": 100, "pack_size": [ 2, 4 ], "starts": "2 days" },
 		{ "monster": "mon_pakicetus", "weight": 100, "pack_size": [ 2, 4 ], "starts": "2 days" },
 		{ "monster": "mon_anatosuchus", "weight": 100, "pack_size": [ 2, 3 ], "starts": "2 days" },
 		{ "monster": "mon_hesperosuchus", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
-		{ "monster": "mon_smilosuchus", "weight": 35, "pack_size": [ 1, 1 ], "starts": "2 days" }
+		{ "monster": "mon_smilosuchus", "weight": 35, "pack_size": [ 1, 1 ], "starts": "2 days" },
+		{ "monster": "mon_dimetrodon", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" }
 	],
-	"//": "All amphibian fauna should go on this list, more for listing than for spawning purposes"
+	"//": "All things that live AROUND water should go here, more for listing than for spawning purposes"
 	},
 	{
     "name": "GROUP_WILDLIFE_FOREST",
     "type": "monstergroup",
     "monsters": [ 
 		{ "monster": "mon_arthropleura", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_meganeura", "weight": 100, "pack_size": [ 2, 6 ], "starts": "2 days" },
 		{ "monster": "mon_amphicyon", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_castoroides", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
 		{ "monster": "mon_glossotherium", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
 		{ "monster": "mon_glyptodont", "weight": 100, "pack_size": [ 2, 3 ], "starts": "2 days" },
 		{ "monster": "mon_megatherium", "weight": 100, "pack_size": [ 1, 1 ], "starts": "2 days" },
 		{ "monster": "mon_thylacine", "weight": 100, "pack_size": [ 2, 6 ], "starts": "2 days" },
 		{ "monster": "mon_hesperosuchus", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_scutosaurus", "weight": 100, "pack_size": [ 1, 5 ], "starts": "2 days" },
+		{ "monster": "mon_weigeltisaurus", "weight": 100, "pack_size": [ 2, 6 ], "starts": "2 days" },
+		{ "monster": "mon_cotylorhynchus", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
+		{ "monster": "mon_lystrosaurus", "weight": 100, "pack_size": [ 2, 8 ], "starts": "2 days" },
 		{ "monster": "mon_chupacabra", "weight": 50, "pack_size": [ 1, 1 ], "starts": "2 days" }
 	]
 	},
@@ -83,15 +97,25 @@
     "name": "GROUP_WILDLIFE_TERRESTRIAL",
     "type": "monstergroup",
     "monsters": [ 
+		{ "monster": "mon_eryops", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_pederpes", "weight": 100, "pack_size": [ 2, 5 ], "starts": "2 days" },
+		{ "monster": "mon_platyoposaurus", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_prionosuchus", "weight": 100, "pack_size": [ 1, 1 ], "starts": "2 days" },
 		{ "monster": "mon_arthropleura", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_meganeura", "weight": 100, "pack_size": [ 2, 6 ], "starts": "2 days" },
 		{ "monster": "mon_dodo", "weight": 100, "pack_size": [ 4, 8 ], "starts": "2 days" },
 		{ "monster": "mon_icadyptes", "weight": 100, "pack_size": [ 3, 6 ], "starts": "2 days" },
 		{ "monster": "mon_moa", "weight": 100, "pack_size": [ 3, 5 ], "starts": "2 days" },
 		{ "monster": "mon_amphicyon", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_castoroides", "weight": 100, "pack_size": [ 2, 4 ], "starts": "2 days" },
 		{ "monster": "mon_glossotherium", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
 		{ "monster": "mon_glyptodont", "weight": 100, "pack_size": [ 2, 3 ], "starts": "2 days" },
 		{ "monster": "mon_megatherium", "weight": 100, "pack_size": [ 1, 1 ], "starts": "2 days" },
 		{ "monster": "mon_thylacine", "weight": 100, "pack_size": [ 2, 6 ], "starts": "2 days" },
+		{ "monster": "mon_scutosaurus", "weight": 100, "pack_size": [ 1, 5 ], "starts": "2 days" },
+		{ "monster": "mon_cotylorhynchus", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
+		{ "monster": "mon_dimetrodon", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
+		{ "monster": "mon_lystrosaurus", "weight": 100, "pack_size": [ 2, 8 ], "starts": "2 days" },
 		{ "monster": "mon_chupacabra", "weight": 50, "pack_size": [ 1, 1 ], "starts": "2 days" }
 	],
 	"//": "All terrestrial fauna should go on this list, more for listing than for spawning purposes"
@@ -100,6 +124,11 @@
     "name": "GROUP_WILDLIFE_DANGER_AQUATIC",
     "type": "monstergroup",
     "monsters": [ 
+		{ "monster": "mon_eryops", "weight": 100, "pack_size": [ 2, 5 ], "starts": "2 days" },
+		{ "monster": "mon_platyoposaurus", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_prionosuchus", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_platyoposaurus", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_prionosuchus", "weight": 100, "pack_size": [ 1, 1 ], "starts": "2 days" },
 		{ "monster": "mon_anomalocaris", "weight": 100, "pack_size": [ 3, 6 ], "starts": "2 days" },
 		{ "monster": "mon_eusarcana", "weight": 100, "pack_size": [ 2, 3 ], "starts": "2 days" },
 		{ "monster": "mon_jaekelopterus", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
@@ -115,11 +144,11 @@
     "name": "GROUP_WILDLIFE_DANGER_TERRESTRIAL",
     "type": "monstergroup",
     "monsters": [ 
-		{ "monster": "mon_gorgonopsid_inostrancevia", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
-		{ "monster": "mon_gorgonopsid_pristerognathus", "weight": 100, "pack_size": [ 4, 6 ], "starts": "2 days" },
+		{ "monster": "mon_daedon", "weight": 100, "pack_size": [ 2, 4 ], "starts": "2 days" },
 		{ "monster": "mon_carnufex", "weight": 100, "pack_size": [ 2, 4 ], "starts": "2 days" },
 		{ "monster": "mon_hesperosuchus", "weight": 100, "pack_size": [ 3, 6 ], "starts": "2 days" },
-		{ "monster": "mon_daedon", "weight": 100, "pack_size": [ 2, 4 ], "starts": "2 days" },
+		{ "monster": "mon_inostrancevia", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
+		{ "monster": "mon_pristerognathus", "weight": 100, "pack_size": [ 4, 6 ], "starts": "2 days" },
 		{ "monster": "mon_chupacabra", "weight": 50, "pack_size": [ 2, 4 ], "starts": "2 days" }
 	]
 	},

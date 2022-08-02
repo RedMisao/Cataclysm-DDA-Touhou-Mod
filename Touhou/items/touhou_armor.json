@@ -123,16 +123,37 @@
     "flags": [ "SUPER_FANCY", "VARSIZE" ]
 	},
 	{
-    "id": "gyokuto_ear_clip",
+    "id": "gyokuto_ear_accessory",
     "type": "ARMOR",
-    "name": { "str": "golden ear clip", "str_pl": "golden ear clips" },
-    "description": "A golden ear clip, made from a metallic material.  Looks like a big earring, but it's actually more close to an antenna, working as a enhancer for transmitting to the rest of the Network, now disabled due unforseen circumstances.",
-    "weight": "20 g",
-    "volume": "20 ml",
+    "name": { "str": "ear button", "str_pl": "ear button" },
+    "description": "A pair of golden buttons used as ear accessories.  These feels cold to the touch, featuring minuscule engravings, imperceptible excepy by touch.  Is this a good example of modern Gyokuto fashion?",
+    "weight": "10 g",
+    "volume": "5 ml",
     "price_postapoc": 10,
     "material": [ "steel" ],
     "symbol": "[",
     "color": "yellow",
+    "flags": [ "NO_WEAR_EFFECT" ]
+	},
+	{
+    "id": "gyokuto_ear_accessory2",
+    "type": "ARMOR",
+    "name": { "str": "ear clip", "str_pl": "ear clips" },
+	"copy-from": "gyokuto_ear_accessory",
+    "description": "A golden ear clip.  It feels cold to the touch, and features deep engravings which look different when comparing them to each other.  Maybe these are the equivalent of dogtags?",
+	"//": "OLD DESCRIPTION MOVE TO DIALOGUE OR SOMETHING Looks like a big earring, but it's actually more close to an antenna, working as a enhancer for transmitting to the rest of the Network, now disabled due unforseen circumstances."
+    "weight": "20 g",
+    "volume": "15 ml",
+    "flags": [ "NO_WEAR_EFFECT" ]
+	},
+	{
+    "id": "gyokuto_ear_accessory3",
+    "type": "ARMOR",
+    "name": { "str": "ear bells", "str_pl": "ear bells" },
+	"copy-from": "gyokuto_ear_accessory",
+    "description": "Golden ear bells.  These consist of a variable number of small spheric bells, of equally variable sizes, no bigger than a coin.  The biggest of the bunch features complex markings.  None of these emit sound, or better put, you can't hear the sounds?",
+    "weight": "10 g",
+    "volume": "20 ml",
     "flags": [ "NO_WEAR_EFFECT" ]
 	},
 	{

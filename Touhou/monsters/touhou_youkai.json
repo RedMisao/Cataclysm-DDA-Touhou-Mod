@@ -115,7 +115,7 @@
 	"melee_skill": 4,
     "melee_dice": 3,
     "melee_dice_sides": 4,
-    "melee_cut": 2,
+	"melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
 	"dodge": 4,
 	"vision_day": 25,
     "vision_night": 35,
@@ -343,7 +343,7 @@
     "melee_skill": 4,
     "melee_dice": 3,
     "melee_dice_sides": 7,
-    "melee_cut": 3,
+	"melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "dodge": 3,
 	"armor_bash": 2,
     "armor_cut": 0,
@@ -398,7 +398,7 @@
     "melee_skill": 3,
     "melee_dice": 6,
     "melee_dice_sides": 4,
-    "melee_cut": 2,
+	"melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
     "dodge": 2,
 	"armor_bash": 2,
     "armor_cut": 4,
@@ -427,7 +427,7 @@
     "melee_skill": 4,
     "melee_dice": 4,
     "melee_dice_sides": 5,
-    "melee_cut": 4,
+	"melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
     "dodge": 3,
 	"armor_bash": 4,
     "armor_stab": 4,
@@ -460,7 +460,7 @@
     "melee_skill": 2,
     "melee_dice": 1,
     "melee_dice_sides": 6,
-    "melee_cut": 0,
+	"melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
     "dodge": 1,
     "path_settings": { "max_dist": 20, "avoid_traps": true },
 	"vision_day": 50,
@@ -482,7 +482,7 @@
 		"corpse_type": "NORMAL",
 		"message": "The %s dies!"
 	},
-    "flags": [ "BASHES", "BONES", "CAN_OPEN_DOORS", "CLIMBS", "GROUP_BASH", "GROUP_MORALE", "HEARS", "HUMAN", "PATH_AVOID_DANGER_2", "RANGED_ATTACKER", "SEES", "WARM" ]
+    "flags": [ "BASHES", "CAN_OPEN_DOORS", "CLIMBS", "GROUP_BASH", "GROUP_MORALE", "HEARS", "HUMAN", "PATH_AVOID_DANGER_2", "RANGED_ATTACKER", "SEES", "WARM" ]
 	},
 	{
     "id": "mon_gyokuto_soldier",

@@ -775,7 +775,7 @@
 	"effect": "attack",
 	"effect_str": "dazed",
     "shape": "blast",
-	"damage_type": "bio",
+	"damage_type": "stab",
     "min_damage": 40,
     "max_damage": 96,
     "damage_increment": 8,
@@ -789,7 +789,7 @@
     "base_energy_cost": 200,
     "energy_source": "MANA",
     "flags": [ "SOMATIC", "NO_LEGS" ],
-	"//": "Evidently, this should only target things with blood, preferably with stab type damage"
+	"//": "Evidently, this should only target things with blood (or equivalent like oil for robots), preferably with stab type damage"
 	},
 	{
     "id": "remilia_consumeblood",

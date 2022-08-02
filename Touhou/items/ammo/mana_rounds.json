@@ -17,7 +17,7 @@
 	"damage": { "damage_type": "bullet", "amount": 80, "armor_penetration": 0 },
 	"dispersion": 15,
 	"recoil": 2000,
-	"effects": [ "DRAW_AS_LINE", "NEVER_MISFIRES", "NOGIB", "WIDE" ],
+	"effects": [ "CASELESS_ROUNDS", "DRAW_AS_LINE", "NEVER_MISFIRES", "NOGIB", "WIDE" ],
 	"flags": [ "IRREPLACEABLE_CONSUMABLE" ]
 	},
 	{
@@ -39,7 +39,7 @@
 	"dispersion": 15,
 	"recoil": 2600,
 	"effects": [ "NEVER_MISFIRES" ],
-	"flags": [ "IRREPLACEABLE_CONSUMABLE" ],
+	"flags": [ "CASELESS_ROUNDS", "IRREPLACEABLE_CONSUMABLE" ],
 	"//2": "The basis is 77x58a ammo, however delete field doesn't remove the casing"
 	},
 	{
@@ -60,7 +60,7 @@
     "dispersion": 35,
     "recoil": 100,
 	"effects": [ "NEVER_MISFIRES" ],
-	"flags": [ "IRREPLACEABLE_CONSUMABLE" ],
+	"flags": [ "CASELESS_ROUNDS", "IRREPLACEABLE_CONSUMABLE" ],
 	"//2": "The basis is 45_acp ammo, however delete field doesn't remove the casing"
 	},
 	{
@@ -70,6 +70,6 @@
 	"copy-from": "ammo_lunar_small_1",
 	"description": "Small-sized shot-type Lunar ammo, crafted from mana.",
 	"damage": { "damage_type": "bullet", "amount": 35, "armor_penetration": 9 },
-    "effects": [ "NEVER_MISFIRES", "SHOT" ]
+    "effects": [ "CASELESS_ROUNDS", "NEVER_MISFIRES", "SHOT" ]
 	}
 ]

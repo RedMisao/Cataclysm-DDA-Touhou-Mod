@@ -4,158 +4,82 @@
 	"type": "item_group",
     "subtype": "distribution",
     "//": "Empty rifles commonly found in gun stores.",
-    "items": [
-		{ "item": "ar10", "prob": 35, "charges-min": 0, "charges-max": 0 },
-		{ "item": "ar15", "prob": 45, "charges-min": 0, "charges-max": 0 },
-		{ "item": "cx4", "prob": 30, "charges-min": 0, "charges-max": 0 },
-		{ "item": "ksub2000", "prob": 10, "charges-min": 0, "charges-max": 0 },
-		{ "item": "remington700_270", "prob": 25, "charges-min": 0, "charges-max": 0 },
-		{ "item": "remington_700", "prob": 45, "charges-min": 0, "charges-max": 0 },
-		{ "item": "ruger_1022", "prob": 65, "charges-min": 0, "charges-max": 0 },
-		{ "item": "ruger_mini", "prob": 45, "charges-min": 0, "charges-max": 0 },
-		{ "item": "M24", "prob": 5, "charges-min": 0, "charges-max": 0 },
-		{ "item": "weatherby_5", "prob": 10, "charges-min": 0, "charges-max": 0 },
-		{ "item": "savage_111f", "prob": 10, "charges-min": 0, "charges-max": 0 },
-		{ "item": "sharps", "prob": 10, "charges-min": 0, "charges-max": 0 },
-		{ "item": "sks", "prob": 20, "charges-min": 0, "charges-max": 0 },
-		{ "item": "m1a", "prob": 30, "charges-min": 0, "charges-max": 0 },
-		{ "item": "aksemi", "prob": 15, "charges-min": 0, "charges-max": 0 },
-		{ "item": "sig550", "prob": 15, "charges-min": 0, "charges-max": 0 }
-    ]
+    "copy-from": "guns_rifle_common_display",
+    "extend": { 
+		"items": [ 
+			{ "item": "sig550", "prob": 20, "charges-min": 0, "charges-max": 0 }
+		]
+	},
+	"//2": "These (above and below) are arbitrary values to check their spawning, will probably get removed and reimplemented somewhere else, due anachronisms like the Soviet weapons, unlike say the SIGs"
 	},
 	{
     "id": "guns_rifle_rare_display",
 	"type": "item_group",
     "subtype": "distribution",
     "//": "Less common rifles found exclusively in gun stores.",
-    "items": [
-		{ "item": "colt_lightning", "prob": 10, "charges-min": 0, "charges-max": 0 },
-		{ "item": "henry_big_boy", "prob": 10, "charges-min": 0, "charges-max": 0 },
-		{ "item": "bh_m89", "prob": 15 },
-		{ "item": "m1903", "prob": 15, "charges-min": 0, "charges-max": 0 },
-		{ "item": "mosin44_ebr", "prob": 3, "charges-min": 0, "charges-max": 0 },
-		{ "item": "mosin91_30_ebr", "prob": 3, "charges-min": 0, "charges-max": 0 },
-		{ "item": "iwi_tavor_x95_300blk", "prob": 15 },
-		{ "item": "ar15_retool_300blk", "prob": 15, "charges-min": 0, "charges-max": 0 },
-		{ "item": "1895sbl", "prob": 10, "charges-min": 0, "charges-max": 0 },
-		{ "item": "marlin_9a", "prob": 10, "charges-min": 0, "charges-max": 0 },
-		{ "item": "mosin44", "prob": 10, "charges-min": 0, "charges-max": 0 },
-		{ "item": "mosin91_30", "prob": 10, "charges-min": 0, "charges-max": 0 },
-		{ "item": "browning_blr", "prob": 10, "charges-min": 0, "charges-max": 0 },
-		{ "item": "garand", "prob": 10, "charges-min": 0, "charges-max": 0 },
-		{ "item": "carbine_flintlock", "prob": 1, "charges-min": 0, "charges-max": 0 },
-		{ "item": "rifle_flintlock", "prob": 1, "charges-min": 0, "charges-max": 0 },
-		{ "item": "win70", "prob": 10, "charges-min": 0, "charges-max": 0 },
-		{ "item": "m76", "prob": 5, "charges-min": 0, "charges-max": 0 },
-		{ "item": "stg44", "prob": 10, "charges-min": 0, "charges-max": 0 },
-		{ "item": "vss", "prob": 5, "charges-min": 0, "charges-max": 0 }
-    ],
-	"//2": "These (above and below) are arbitrary values to check their spawning, will probably get removed except for the SIGs"
+    "copy-from": "guns_rifle_rare_display",
+    "extend": { 
+		"items": [ 
+			{ "item": "m76", "prob": 10, "charges-min": 0, "charges-max": 0 },
+			{ "item": "stg44", "prob": 15, "charges-min": 0, "charges-max": 0 },
+			{ "item": "vss", "prob": 10, "charges-min": 0, "charges-max": 0 }
+		]
+	}
 	},
 	{
     "id": "guns_rifle_milspec",
 	"type": "item_group",
     "//": "Military specification rifles only ever found at military sites.",
-    "items": [
-		{ "item": "m27_assault_rifle", "variant": "h&k416a5", "prob": 50, "charges-min": 0, "charges-max": 30 },
-		{ "item": "m107a1", "prob": 30, "charges-min": 0, "charges-max": 10 },
-		{ "item": "m134", "prob": 10, "charges-min": 0, "charges-max": 100 },
-		{ "item": "m14ebr", "prob": 10, "charges-min": 0, "charges-max": 20 },
-		{ "item": "tac50", "prob": 5, "charges-min": 0, "charges-max": 5 },
-		{ "item": "m2010", "prob": 20, "charges-min": 0, "charges-max": 5 },
-		{ "item": "m240", "prob": 15, "charges-min": 0, "charges-max": 100 },
-		{ "item": "m249", "prob": 25, "charges-min": 0, "charges-max": 10 },
-		{ "item": "m27_assault_rifle", "variant": "m27iar", "prob": 50, "charges-min": 0, "charges-max": 30 },
-		{ "item": "m60", "prob": 15, "charges-min": 0, "charges-max": 100 },
-		{ "item": "rm11b_sniper_rifle", "prob": 15, "charges-min": 0, "charges-max": 10 },
-		{ "item": "rm298", "prob": 10, "charges-min": 0, "charges-max": 100 },
-		{ "item": "rm51_assault_rifle", "prob": 25, "charges-min": 0, "charges-max": 50 },
-		{ "item": "rm614_lmg", "prob": 10, "charges-min": 0, "charges-max": 100 },
-		{ "item": "rm88_battle_rifle", "prob": 25, "charges-min": 0, "charges-max": 50 },
-		{ "item": "sig_assault_rifle", "prob": 100, "charges-min": 0, "charges-max": 30 },
-		{ "item": "m27_assault_rifle", "variant": "scar_l", "prob": 50, "charges-min": 0, "charges-max": 30 },
-		{ "item": "scar_h", "prob": 50, "charges-min": 0, "charges-max": 20 },
-		{ "item": "m110a1", "prob": 50, "charges-min": 0, "charges-max": 20 },
-		{ "item": "M24", "prob": 15, "charges-min": 0, "charges-max": 0 },
-		{ "item": "acr_300blk", "prob": 15, "charges-min": 0, "charges-max": 30 },
-		{ "item": "pgm_hecate", "prob": 20, "charges-min": 0, "charges-max": 7 },
-		{ "item": "sig550", "prob": 15, "charges-min": 0, "charges-max": 20 },
-		{ "item": "sig550_sniper", "prob": 15, "charges-min": 0, "charges-max": 20 },
-		{ "item": "svd", "prob": 5, "charges-min": 0, "charges-max": 10 },
-		{ "item": "vss", "prob": 5, "charges-min": 0, "charges-max": 20 }
-    ],
-	"//2": "Soviet weapons must be removed and reimplemented somewhere else"
+    "copy-from": "guns_rifle_milspec",
+    "extend": { 
+		"items": [ 
+			{ "item": "pgm_hecate", "prob": 20, "charges-min": 0, "charges-max": 7 },
+			{ "item": "sig550", "prob": 15, "charges-min": 0, "charges-max": 20 },
+			{ "item": "sig550_sniper", "prob": 15, "charges-min": 0, "charges-max": 20 },
+			{ "item": "svd", "prob": 10, "charges-min": 0, "charges-max": 10 },
+			{ "item": "vss", "prob": 10, "charges-min": 0, "charges-max": 20 }
+		]
+	}
 	},
 	{
     "id": "guns_rifle_obscure_display",
 	"type": "item_group",
     "//": "Imported or otherwise very obscure rifles, unloaded for storage in gunstore and unavailable for sale",
     "subtype": "distribution",
-    "items": [
-		{ "item": "ak47", "prob": 30, "charges-min": 0, "charges-max": 0 },
-		{ "item": "m249_semi", "prob": 5, "charges-min": 0, "charges-max": 0 },
-		{ "item": "bfg50", "prob": 5, "charges-min": 0, "charges-max": 0 },
-		{ "item": "trex_gun", "prob": 5, "charges-min": 0, "charges-max": 0 },
-		{ "item": "ak74", "prob": 5, "charges-min": 0, "charges-max": 0 },
-		{ "item": "famas", "prob": 5, "charges-min": 0, "charges-max": 0 },
-		{ "item": "m60_semi", "prob": 5, "charges-min": 0, "charges-max": 0 },
-		{ "item": "oa93", "prob": 3, "charges-min": 0, "charges-max": 0 },
-		{ "item": "steyr_aug", "prob": 5, "charges-min": 0, "charges-max": 0 },
-		{ "item": "fn_fal", "prob": 40, "charges-min": 0, "charges-max": 0 },
-		{ "item": "hk_g3", "prob": 40, "charges-min": 0, "charges-max": 0 },
-		{ "item": "hk_g36", "prob": 30, "charges-min": 0, "charges-max": 0 },
-		{ "item": "m1918", "prob": 30, "charges-min": 0, "charges-max": 0 },
-		{ "item": "m4_carbine", "variant": "m4a1", "prob": 45, "charges-min": 0, "charges-max": 0 },
-		{ "item": "m14ebr", "prob": 15, "charges-min": 0, "charges-max": 0 },
-		{ "item": "arx160", "prob": 10 },
-		{ "item": "m16_auto_rifle", "variant": "acr", "prob": 25, "charges-min": 0, "charges-max": 0 },
-		{ "item": "fs2000", "prob": 6, "charges-min": 0, "charges-max": 0 },
-		{ "item": "acr_300blk", "prob": 15, "charges-min": 0, "charges-max": 0 },
-		{ "item": "hk417_13", "prob": 40, "charges-min": 0, "charges-max": 0 },
-		{ "item": "m76", "prob": 5, "charges-min": 0, "charges-max": 0 },
-		{ "item": "stg44", "prob": 5, "charges-min": 0, "charges-max": 0 },
-		{ "item": "svd", "prob": 5, "charges-min": 0, "charges-max": 0 },
-		{ "item": "vss", "prob": 5, "charges-min": 0, "charges-max": 0 }
-    ]
+    "copy-from": "guns_rifle_obscure_display",
+    "extend": { 
+		"items": [ 
+			{ "item": "m76", "prob": 10, "charges-min": 0, "charges-max": 0 },
+			{ "item": "stg44", "prob": 10, "charges-min": 0, "charges-max": 0 },
+			{ "item": "svd", "prob": 10, "charges-min": 0, "charges-max": 0 },
+			{ "item": "vss", "prob": 10, "charges-min": 0, "charges-max": 0 }
+		]
+	}
 	},
 	{
-    "type": "item_group",
     "id": "guns_smg_obscure",
+	"type": "item_group",
     "subtype": "distribution",
     "//": "Imported or otherwise very obscure SMGs.",
-    "items": [
-		{ "item": "ppsh", "prob": 150, "charges-min": 0, "charges-max": 0 },
-		{ "item": "hk_mp5_10_semi", "prob": 1, "charges-min": 0, "charges-max": 0 },
-		{ "item": "skorpion_61", "prob": 100, "charges-min": 0, "charges-max": 0 },
-		{ "item": "skorpion_82", "prob": 100, "charges-min": 0, "charges-max": 0 },
-		{ "group": "guns_smg_collectible", "prob": 1 },
-		{ "item": "idw", "prob": 100, "charges-min": 0, "charges-max": 0 }
-    ]
+    "copy-from": "guns_smg_obscure",
+    "extend": { 
+		"items": [ 
+			{ "item": "idw", "prob": 100, "charges-min": 0, "charges-max": 0 }
+		]
+	}
 	},
 	{
     "id": "guns_survival",
 	"type": "item_group",
     "//": "Guns typically carried by survivors, either improvised or thematically appropriate.",
-    "items": [
-		{ "group": "guns_improvised", "prob": 50 },
-		{ "item": "ar15", "prob": 13, "charges-min": 0, "charges-max": 30 },
-		{ "item": "ar_pistol", "prob": 2, "charges-min": 0, "charges-max": 30 },
-		{ "item": "mossberg_500", "prob": 10, "charges-min": 0, "charges-max": 6 },
-		{ "item": "remington_870", "prob": 11, "charges-min": 0, "charges-max": 5 },
-		{ "item": "ruger_1022", "prob": 7, "charges-min": 0, "charges-max": 10 },
-		{ "item": "shotgun_410", "prob": 1, "charges-min": 0, "charges-max": 1 },
-		{ "item": "shotgun_s", "prob": 10 },
-		{ "item": "shotgun_d", "prob": 10, "charges-min": 0, "charges-max": 2 },
-		{ "item": "sks", "prob": 1, "charges-min": 0, "charges-max": 10 },
-		{ "item": "aksemi", "prob": 2, "charges-min": 0, "charges-max": 30 },
-		{ "item": "mosin44", "prob": 2, "charges-min": 0, "charges-max": 5 },
-		{ "item": "remington700_270", "prob": 1, "charges-min": 0, "charges-max": 4 },
-		{ "item": "remington_700", "prob": 4, "charges-min": 0, "charges-max": 4 },
-		{ "item": "garand", "prob": 1, "charges-min": 0, "charges-max": 8 },
-		{ "item": "sig550", "prob": 1, "charges-min": 10, "charges-max": 30 },
-		{ "item": "sig550_sniper", "prob": 1, "charges-min": 10, "charges-max": 30 },
-		{ "item": "svd", "prob": 1, "charges-min": 10, "charges-max": 20 },
-		{ "item": "vss", "prob": 1, "charges-min": 10, "charges-max": 25 }
-	]
+    "copy-from": "guns_survival",
+    "extend": { 
+		"items": [ 
+			{ "item": "sig550", "prob": 10, "charges-min": 10, "charges-max": 30 },
+			{ "item": "sig550_sniper", "prob": 5, "charges-min": 10, "charges-max": 30 },
+			{ "item": "svd", "prob": 5, "charges-min": 10, "charges-max": 20 },
+			{ "item": "vss", "prob": 5, "charges-min": 10, "charges-max": 25 }
+		]
+	}
 	}
 ]

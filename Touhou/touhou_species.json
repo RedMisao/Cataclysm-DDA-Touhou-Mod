@@ -3,7 +3,7 @@
     "id": "ARTHROPOD",
 	"type": "SPECIES",
     "description": "an arthropod",
-    "fear_triggers": [ "HURT", "FRIEND_ATTACKED" ],
+    "anger_triggers": [ "HURT" ],
     "bleeds": "fd_blood"
 	},
 	{
@@ -47,7 +47,7 @@
     "description": "a vampire",
     "anger_triggers": [ "HURT", "FRIEND_ATTACKED" ],
 	"fear_triggers": [ "FIRE" ],
-    "//": "add WATER, RAIN, SUNLIGHT in fear. Remove FIRE from fear_triggers, add SUNLIGHT in anger, but as a pouring gas on the fire sort of way once"
+    "//": "add WATER, RAIN, SUNLIGHT in fear. Remove FIRE from fear_triggers, add SUNLIGHT in anger, but as a 'pouring gas on the fire' sort of way"
     },
 	{
 	"id": "TSUKUMOGAMI_TOUHOU",
@@ -59,13 +59,13 @@
 	"id": "YOUKAI_HOSTILE_TOUHOU",
 	"type": "SPECIES",
     "description": "a youkai",
-    "anger_triggers": [ "HURT", "PLAYER_NEAR_BABY" ]
+    "anger_triggers": [ "HURT", "PLAYER_CLOSE", "PLAYER_NEAR_BABY", "PLAYER_WEAK" ]
     },
 	{
 	"id": "YOUKAI_NEUTRAL_TOUHOU",
 	"type": "SPECIES",
     "description": "a youkai",
-    "anger_triggers": [ "HURT", "PLAYER_CLOSE", "PLAYER_NEAR_BABY", "PLAYER_WEAK" ]
+    "anger_triggers": [ "HURT", "PLAYER_NEAR_BABY" ]
     },
 	{
 	"id": "YOUKAI_PSEUDO",
