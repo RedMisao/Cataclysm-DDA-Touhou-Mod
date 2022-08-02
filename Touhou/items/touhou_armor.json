@@ -141,7 +141,7 @@
     "name": { "str": "ear clip", "str_pl": "ear clips" },
 	"copy-from": "gyokuto_ear_accessory",
     "description": "A golden ear clip.  It feels cold to the touch, and features deep engravings which look different when comparing them to each other.  Maybe these are the equivalent of dogtags?",
-	"//": "OLD DESCRIPTION MOVE TO DIALOGUE OR SOMETHING Looks like a big earring, but it's actually more close to an antenna, working as a enhancer for transmitting to the rest of the Network, now disabled due unforseen circumstances."
+	"//": "OLD DESCRIPTION MOVE TO DIALOGUE OR SOMETHING Looks like a big earring, but it's actually more close to an antenna, working as a enhancer for transmitting to the rest of the Network, now disabled due unforseen circumstances.",
     "weight": "20 g",
     "volume": "15 ml",
     "flags": [ "NO_WEAR_EFFECT" ]
