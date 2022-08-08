@@ -31,7 +31,7 @@
     "vision_night": 20,
     "path_settings": { "max_dist": 20 },
     "special_attacks": [ 
-		[ "EAT_CROP", 100 ]
+		[ "EAT_CROP", 100 ],
 		[ "slam", 8 ]
 		],
 	"fear_triggers": [ "HURT", "FRIEND_ATTACKED", "STALK" ],

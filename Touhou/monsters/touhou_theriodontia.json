@@ -73,7 +73,6 @@
     "id": "mon_moschorhinus",
     "type": "MONSTER",
     "name": { "str": "moschorhinus", "str_pl": "moschorhinus" },
-    "copy-from": "mon_cat",
 	"description": "A dog-looking… beast, this animal looks like a mix between man's best friend and a cat-sized saber tooth cat.  The gait is almost agile, or better put, almost not awkward.  The tail is thick and short, the limbs sprawl at the sides, each of them ending with short yet sharp claws.  The very robust, trapezoidal head, features sharp fangs showing well past the lips.  It hunts their prey as if they were toying with it.",
     "volume": "8 L",
     "weight": "8 kg",
@@ -100,13 +99,13 @@
 	"fear_triggers": [ "FRIEND_ATTACKED" ],
 	"special_attacks": [ 
 		[ "bite_3d5", 8 ],
-		[ "EAT_FOOD", 65 ]
+		[ "EAT_FOOD", 65 ],
 		{ "id": "scratch", "attack_upper": false, "cooldown": 10 }
 	],
     "reproduction": { "baby_egg": "egg_moschorhinus", "baby_count": 5, "baby_timer": 60 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "flags": [ "ANIMAL", "HEARS", "HIT_AND_RUN", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "SWARMS", "WARM" ],
-	"//": "Based on Moschorhinus sp. No reproductive data, I'm assuming these laid eggs. Larger than a cat, kind of sprawls instead of having an erect posture, big headed"
+	"//": "Based on Moschorhinus sp and mon_cat. No reproductive data, I'm assuming these laid eggs. Larger than a cat, kind of sprawls instead of having an erect posture, big headed"
 	},
 	{
     "id": "mon_moschorhinus_pup",
@@ -137,7 +136,6 @@
     "id": "mon_pristerognathus",
     "type": "MONSTER",
     "name": { "str": "pristerognathus", "str_pl": "pristerognathus" },
-    "copy-from": "mon_wolf",
 	"description": "A dog-looking… beast, this animal looks like a mix between man's best friend, a dinosaur and other animals you can't even think of.  The gait is simultaneously awkward yet agile.  The tail is thick and short, the limbs sprawl at the sides, each of them ends on feet with short claws.  The robust, relatively big, flat trapezoidal head, features equally big fangs showing well past the lips.  You think, you know deep inside you a bite will really hurt.",
     "volume": "30 L",
     "weight": "35 kg",
@@ -168,7 +166,7 @@
     "reproduction": { "baby_egg": "egg_pristerognathus", "baby_count": 4, "baby_timer": 60 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "flags": [ "ANIMAL", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "SEES", "SWARMS", "WARM" ],
-	"//": "No reproductive data, I'm assuming these laid eggs. Dog-sized but kind of sprawls instead of having an erect posture, with different body part ratios too"
+	"//": "Based on Pristerognathus sp. and mon_wolf. No reproductive data, I'm assuming these laid eggs. Dog-sized but kind of sprawls instead of having an erect posture, with different body part ratios too"
 	},
 	{
     "id": "mon_pristerognathus_pup",
