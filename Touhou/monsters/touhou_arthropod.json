@@ -451,7 +451,7 @@
     "id": "mon_meganeura",
     "type": "MONSTER",
     "name": { "str": "meganeura", "str_pl": "meganeura" },
-    "description": "WIP",
+    "description": "A giant dragonfly.  With a wingspan the size of your arm, it flies, buzzing around, looking for smaller insects which includes basically everything except itself.",
     "volume": "200 ml",
     "weight": "150 g",
 	"default_faction": "dragonfly",
@@ -475,7 +475,8 @@
 	"reproduction": { "baby_egg": "egg_meganeura", "baby_count": 4, "baby_timer": 8 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "anger_triggers": [ "HURT" ],
-	"flags": [ "ANIMAL", "ARTHROPOD_BLOOD", "FLIES", "SEES", "SMELLS" ],
+    "special_attacks": [ [ "PARROT", 4 ] ],
+	"flags": [ "ANIMAL", "ARTHROPOD_BLOOD", "FLIES", "SEES" ],
     "//2": "Based on Meganeura sp.. No reproductive data"
 	},
 	{
@@ -483,7 +484,7 @@
     "type": "MONSTER",
     "name": { "str": "meganeura nymph", "str_pl": "meganeura nymphs" },
     "copy-from": "mon_meganeura",
-	"description": "WIP",
+	"description": "A small Meganeura nymph.  Looks like a mix between a cockroach and a cricket.",
     "volume": "20 ml",
     "weight": "15 g",
 	"hp": 2,
@@ -495,6 +496,7 @@
 	"melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
 	"dodge": 4,
     "upgrades": { "age_grow": 4, "into": "mon_meganeura" },
+	"flags": [ "ANIMAL", "ARTHROPOD_BLOOD", "AQUATIC", "SEES", "WATER_CAMOUFLAGE" ],
 	"delete": { "flags": [ "FLIES" ] },
 	"extend": { "flags": [ "NO_BREED" ] }
 	},

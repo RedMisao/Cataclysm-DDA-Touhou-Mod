@@ -19,7 +19,7 @@
 	"type": "GENERIC",
 	"category": "other",
     "name": { "str": "wood skewer" },
-    "description": "A thin skewer carved from wood.  Sadly, this won't make squirrel on a stick taste better either.",
+    "description": "A thin skewer carved from wood.  Sadly, this won't make squirrel on a stick taste better.",
     "weight": "3300 mg",
     "volume": "5 ml",
 	"longest_side": "25 cm",

@@ -72,6 +72,36 @@
 	"volume": 6
     },
 	{
+	"speaker": "mon_meganeura",
+	"type": "speech",
+	"sound": "*buzzing*",
+	"volume": 8
+    },
+	{
+	"speaker": "mon_meganeura",
+	"type": "speech",
+	"sound": "*buzzing noises*",
+	"volume": 9
+    },
+	{
+	"speaker": "mon_meganeura",
+	"type": "speech",
+	"sound": "*buzzing noises*",
+	"volume": 10
+    },
+	{
+	"speaker": "mon_meganeura",
+	"type": "speech",
+	"sound": "*BZZZ*",
+	"volume": 16
+    },
+	{
+	"speaker": "mon_meganeura_nymph",
+	"type": "speech",
+	"sound": "*buzzing*",
+	"volume": 6
+    },
+	{
 	"speaker": "mon_mib1",
 	"type": "speech",
 	"sound": "Stop!",

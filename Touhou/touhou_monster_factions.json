@@ -134,7 +134,7 @@
     "name": "touhou_pristerognathus",
 	"type": "MONSTER_FACTION",
     "base_faction": "animal",
-    "by_mood": [ "exodii", "human", "insect", "your_followers", "touhou_inostrancevia" ],
+    "by_mood": [ "exodii", "human", "insect", "your_followers", "touhou_inostrancevia", "touhou_moschorhinus" ],
 	"hate": [ "bear", "big_cat", "dog", "fox", "fungus", "herbivore", "mi-go", "mutant", "small_animal", "triffid", "zombie" ],
 	"//": "Wolf-sized, these can hunt whatever a pack of wolves can"
 	},
@@ -142,7 +142,7 @@
     "name": "touhou_herbivoreancient_large",
 	"type": "MONSTER_FACTION",
     "base_faction": "animal",
-    "neutral": [ "exodii", "fish", "isolated_artisans", "passive_machine", "small_animal" ],
+    "neutral": [ "fish", "isolated_artisans", "passive_machine", "small_animal" ],
     "by_mood": [ "exodii", "human", "your_followers", "insect", "zombie" ],
 	"//": "Like herbivore but for giant extinct vertebrates, separated from dda's herbivore to override attack patterns. Also added the by_mood field"
 	},
@@ -152,6 +152,14 @@
     "neutral": [ "animal" ],
     "by_mood": [ "nether", "fungus", "touhou_youkai_neutral", "touhou_youkai_hostile", "zombie" ],
     "hate": [ "exodii", "human", "mutant", "triffid", "your_followers" ]
+	},
+	{
+	"name": "touhou_moschorhinus",
+	"type": "MONSTER_FACTION",
+    "base_faction": "small_animal",
+    "by_mood": [ "exodii", "human", "insect", "nether", "fungus", "zombie", "your_followers", "touhou_inostrancevia", "touhou_pristerognathus" ],
+    "hate": [ "small_animal" ],
+	"//": "Adapted from the cat faction"
 	},
 	{
     "name": "touhou_piscivore",

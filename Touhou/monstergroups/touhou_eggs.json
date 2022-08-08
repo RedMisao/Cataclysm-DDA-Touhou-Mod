@@ -94,9 +94,19 @@
     "monsters": [ { "monster": "mon_hesperosuchus_baby" } ]
 	},
 	{
+    "name": "GROUP_EGG_HESPEROSUCHUS",
+    "type": "monstergroup",
+    "monsters": [ { "monster": "mon_hesperosuchus_baby" } ]
+	},
+	{
     "name": "GROUP_EGG_ICADYPTES",
     "type": "monstergroup",
     "monsters": [ { "monster": "mon_icadyptes_chick" } ]
+	},
+	{
+    "name": "GROUP_EGG_INOSTRANCEVIA",
+    "type": "monstergroup",
+    "monsters": [ { "monster": "mon_inostrancevia_pup" } ]
 	},
 	{
     "name": "GROUP_EGG_LYSTROSAURUS",
@@ -114,6 +124,11 @@
     "monsters": [ { "monster": "mon_moa_chick" } ]
 	},
 	{
+    "name": "GROUP_EGG_MOSCHORHINUS",
+    "type": "monstergroup",
+    "monsters": [ { "monster": "mon_moschorhinus_pup" } ]
+	},
+	{
     "name": "GROUP_EGG_PEDERPES",
     "type": "monstergroup",
     "monsters": [ { "monster": "mon_pederpes_baby" } ]
@@ -127,6 +142,11 @@
     "name": "GROUP_EGG_PRIONOSUCHUS",
     "type": "monstergroup",
     "monsters": [ { "monster": "mon_prionosuchus_baby" } ]
+	},
+	{
+    "name": "GROUP_EGG_PRISTEROGNATHUS",
+    "type": "monstergroup",
+    "monsters": [ { "monster": "mon_pristerognathus_pup" } ]
 	},
 	{
     "name": "GROUP_EGG_SCUTOSAURUS",
