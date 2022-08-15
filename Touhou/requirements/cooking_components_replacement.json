@@ -206,7 +206,8 @@
 	"extend": { 
 		"components": [ [ 
 			[ "bird_meat_cooked", 1, "LIST" ],
-			[ "lamprey_meat_cooked", 2, "LIST" ] 
+			[ "lamprey_meat_cooked", 2, "LIST" ], 
+			[ "milanesa", 1 ]
 		] ]
 	}
 	},
@@ -215,7 +216,7 @@
     "type": "requirement",
     "//": "Any type of raw meat except for fish.  About 300-400kcal of meat.",
 	"extend": { 
-		"components": [ [ [ "bird_meat_cooked", 1, "LIST" ] ] ]
+		"components": [ [ [ "bird_meat_raw", 2, "LIST" ] ] ]
 	}
 	},
 	{

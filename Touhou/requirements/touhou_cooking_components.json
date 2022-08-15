@@ -1,20 +1,34 @@
 [
 	{
+    "id": "arthropod_meat_cooked",
+    "type": "requirement",
+    "components": [ [ 
+        [ "arthropod_cooked", 1 ],
+        [ "arthropod_dry", 1 ],
+		[ "arthropod_rehydrated", 1 ],
+		[ "arthropod_smoked", 1 ]
+	] ]
+	},
+	{
     "id": "bird_meat_raw",
     "type": "requirement",
     "components": [ [ 
-		[ "bird_leg_small", 1 ],
-		[ "bird_meat", 1 ]
-	] ]
+		[ "bird_leg_small", 2 ],
+		[ "bird_meat", 2 ],
+		[ "bird_rehydrated", 2 ],
+		[ "can_chicken", 1 ]
+	] ],
+	"//": "Around 250 g of bird meat, slightly less than the equivalent for meat (296 g and 250 ml). Includes can_chicken and bird_rehydrated , which are not raw"
 	},
 	{
     "id": "bird_meat_cooked",
     "type": "requirement",
     "components": [ [ 
-		[ "bird_cooked", 1 ],
-        [ "bird_dry", 1 ],
-		[ "bird_leg_roasted", 1 ],
-		[ "bird_smoked", 1 ],
+		[ "bird_cooked", 2 ],
+        [ "bird_dry", 2 ],
+		[ "bird_leg_roasted", 2 ],
+		[ "bird_rehydrated", 2 ],
+		[ "bird_smoked", 2 ],
 		[ "can_chicken", 1 ]
 	] ]
 	},
@@ -76,8 +90,25 @@
 			[ "satsumaimo", 1 ],
 			[ "irradiated_satsumaimo", 1 ]
 		],
-		[ [ "bird_meat", 2 ], [ "bird_leg_small", 1 ] ]
+		[ [ "bird_meat_raw", 2, "LIST" ] ]
     ]
+	},
+	{
+    "id": "dango_ingredients",
+    "type": "requirement",
+    "components": [
+		[ [ "flour", 13 ] ],
+		[ 
+			[ "sugar", 15 ],
+			[ "syrup", 5 ],
+			[ "beet_syrup", 5 ],
+			[ "molasses", 4 ],
+			[ "honey_bottled", 5 ],
+			[ "honey_glassed", 5 ]
+		],
+		[ [ "water_clean", 1 ] ]
+	],
+	"//": "The real dango uses rice flour, which is different than normal wheat flour"
 	},
 	{
     "id": "eggs_reptile",
@@ -128,8 +159,27 @@
     "components": [ [ 
         [ "lamprey_cooked", 1 ],
         [ "lamprey_dry", 1 ],
+		[ "lamprey_rehydrated", 1 ],
 		[ "lamprey_smoked", 1 ]
 	] ]
+	},
+	{
+    "id": "mitarashi_ingredients",
+    "type": "requirement",
+    "components": [
+		[ [ "soysauce", 3 ] ],
+		[ [ "water_clean", 1 ] ],
+		[
+			[ "sugar", 15 ],
+			[ "syrup", 5 ],
+			[ "beet_syrup", 5 ],
+			[ "molasses", 4 ],
+			[ "honey_bottled", 5 ],
+			[ "honey_glassed", 5 ]
+		],
+		[ [ "starch", 1 ] ]
+	],
+	"//": "Should be ~23 g of starch instead"
 	},
 	{
     "id": "salt_group",
@@ -144,18 +194,33 @@
     "id": "seafood",
     "type": "requirement",
     "components": [ [
-		[ "arthropod_cooked", 1 ],
-		[ "arthropod_dry", 1 ],
-		[ "arthropod_organs_cooked", 1 ],
-		[ "arthropod_smoked", 1 ],
+		[ "arthropod_meat_cooked", 1, "LIST" ],
 		[ "mollusk_cooked", 1 ],
 		[ "salted_mollusk", 1 ],
 		[ "rehydrated_mollusk", 1 ],
 		[ "mollusk_smoked", 1 ],
-		[ "shrimplike_cooked", 1 ],
-		[ "shrimplike_dry", 1 ],
-		[ "shrimplike_smoked", 1 ]
+		[ "shrimplike_meat_cooked", 1, "LIST" ]
 	] ],
-	"//": "The cooked versions of mollusk.json should also go here, but they're currently not spawning. I'm not sure if lobbies should be added, they're served as a main dish, with paella as the side dish"
+	"//": "The cooked versions of mollusk.json should also go here, but they're currently not spawning. I'm not sure if lobbies should be added, they're served as main dish, with paella as the side dish"
+	},
+	{
+    "id": "shrimplike_meat_cooked",
+    "type": "requirement",
+    "components": [ [ 
+        [ "shrimplike_cooked", 1 ],
+        [ "shrimplike_dry", 1 ],
+		[ "shrimplike_rehydrated", 1 ],
+		[ "shrimplike_smoked", 1 ]
+	] ]
+	},
+	{
+    "id": "sweet_bun_ingredients",
+	"type": "requirement",
+    "components": [
+		[ [ "chem_baking_soda", 1 ] ],
+		[ [ "flour_any", 3, "LIST" ] ],
+		[ [ "sugar_standard", 4, "LIST" ] ],
+		[ [ "water_clean", 1 ] ]
+    ]
 	}
 ]

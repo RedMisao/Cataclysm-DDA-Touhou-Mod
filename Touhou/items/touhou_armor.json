@@ -1234,19 +1234,19 @@
 	"category": "armor",
 	"name": "hair stick",
 	"description": "A large hair stick for keeping your hair shaped like a pretzel.",
-	"weight": "100 g",
 	"volume": "50 ml",
+	"weight": "100 g",
 	"price": 1000,
     "price_postapoc": 10,
-    "material": [ "plastic" ],
+    "material": [ "bronze" ],
 	"symbol": "[",
-    "color": "pink",
+    "color": "yellow",
 	"use_action": [ "PICK_LOCK" ],
 	"qualities": [ [ "LOCKPICK", 3 ] ],
 	"armor": [
-        { "covers": [ "head" ], "coverage": 5, "encumbrance": [ 2, 4 ] }
+        { "covers": [ "head" ], "coverage": 5, "specifically_covers": [ "head_crown" ], "encumbrance": [ 0, 0 ] }
 	],
-	"flags": ["FANCY"]
+	"flags": [ "FANCY", "OUTER" ]
 	},
 	{
     "id": "tenshi_bowbelt",

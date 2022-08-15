@@ -303,9 +303,9 @@
 	},
 	"bashing": 5,
 	"cutting": 0,
-    "material": "gold",
+    "material": [ "steel" ],
 	"symbol": "/",
-    "color": "light_gray",
+    "color": "yellow",
     "techniques": [ "WBLOCK_1" ],
 	"use_action": {
 		"type": "transform",
@@ -335,9 +335,9 @@
 	},
 	"bashing": 8,
     "cutting": 30,
-    "material": "gold",
+    "material": [ "steel" ],
 	"symbol": "/",
-    "color": "light_gray",
+    "color": "yellow",
     "techniques": [ "WBLOCK_2" ],
     "weapon_category": [ "JAPANESE_SWORDS", "SHORT_SWORDS" ],
 	"use_action": {

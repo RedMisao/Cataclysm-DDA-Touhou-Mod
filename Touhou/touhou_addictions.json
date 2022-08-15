@@ -1,0 +1,11 @@
+[
+	{
+    "id": "dix_addiction",
+	"type": "addiction_type",
+    "name": "D-IX Withdrawal",
+    "type_name": "dix",
+    "description": "Strength - 1;   Perception - 1;   Dexterity - 1;\nDepression and physical pain to some degree.  Frequent cravings.  Vomiting.",
+    "craving_morale": "morale_craving_dix",
+    "effect_on_condition": "EOC_DIX_ADDICTION"
+	}
+]
