@@ -262,12 +262,14 @@
     "items": {
         "both": {
             "items": [
-				"lunar_dress_shirt",
-				"lunar_dress_shoes",
+				"udonge_clip",
+				"udonge_dress_shoes",
+				"ldc_ear_accessory",
 				"lunar_guide1",
-				"lunar_skirt",
-				"lunar_suit",
-				"lunar_tie"
+				"udonge_skirt",
+				"udonge_shirt",
+				"socks",
+				"udonge_tie"
 			],
 			"entries": [ 
 				{ "item": "lunatic_pistol2", "ammo-item": "ammo_lunar_small_2", "charges": 13, "container-item": "lunatic_holster" },
@@ -314,15 +316,16 @@
 	"items": {
         "both": {
             "items": [
-				"lunar_dress_shirt",
-				"lunar_dress_shoes",
+				"ldc_dress_shirt",
+				"ldc_dress_shoes",
 				"lunar_guide1",
-				"lunar_helmet",
-				"lunar_kneesocks",
-				"lunar_skirt",
-				"lunar_suit",
-				"lunar_tie",
-				"lunar_veil_deactivated"
+				"ldc_helmet",
+				"ldc_kneesocks",
+				"ldc_skirt",
+				"ldc_suit",
+				"ldc_tie",
+				"ldc_veil_deactivated",
+				"mini_hakkero_replica"
 			],
 			"entries": [ 
 				{ "item": "lunar_rifle2", "ammo-item": "ammo_lunar_medium_1", "charges": 11, "contents-item": "shoulder_strap" } 

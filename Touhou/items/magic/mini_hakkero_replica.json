@@ -3,21 +3,47 @@
     "id": "mini_hakkero_replica",
     "type": "TOOL",
 	"name": { "str": "mini hakkero (replica)" },
-    "description": "A small wooden magical furnace.  This one's evidently a replica though, 'improved' with modern materials.",
+    "description": "A small wooden magical furnace.  This one's evidently a replica though, \"improved\" with modern materials.",
     "use_action": [ 
+		"HOTPLATE", 
+		{ 
+		"target": "mini_hakkero_replica_on", 
+		"type": "transform", 
+		"msg": "You use the mini hakkero as a light source.", 
+        "menu_text": "Turn on",
+		"active": true 
+		},
 		{ "type": "cast_spell", "spell_id": "mini_hakkero_replica_mspark", "no_fail": true, "level": 1 },
 		{ "type": "cast_spell", "spell_id": "mini_hakkero_replica_mmissile", "no_fail": true, "level": 1 }
 	],
 	"weight": "500 g",
 	"volume": "500 ml",
     "longest_side": "12 cm",
-	"price": 2500,
-	"material": [ "plastic", "steel" ],
+	"price_postapoc": 25000,
+	"material": [ "plastic", "steel", "wood" ],
 	"symbol": "☲",
     "color": "light_blue",
-	"flags": [ "BELT_CLIP", "TRADER_AVOID" ],
-	"//": "This obviously should work as a furnace too",
-	"//2": "Also a flashlight"
+	"charges_per_use": 0,
+	"flags": [ "BELT_CLIP", "TRADER_AVOID", "USE_PLAYER_ENERGY" ]
+	},
+	{
+    "id": "mini_hakkero_replica_on",
+    "type": "TOOL",
+	"name": { "str": "mini hakkero (replica) (ON)" },
+	"copy-from": "mini_hakkero_replica",
+    "description": "A small wooden magical furnace.  It's currently working as a light source.",
+	"power_draw": 0,
+	"revert_to": "mini_hakkero_replica",
+    "use_action": [ 
+		{ 
+		"target": "mini_hakkero_replica", 
+		"type": "transform", 
+		"msg": "You turn off the mini hakkero.", 
+        "menu_text": "Turn off",
+		"ammo_scale": 0
+		}
+	],
+	"flags": [ "BELT_CLIP", "LIGHT_200", "TRADER_AVOID", "USE_PLAYER_ENERGY" ]
 	},
 	{
     "id": "mini_hakkero_replica_mspark",

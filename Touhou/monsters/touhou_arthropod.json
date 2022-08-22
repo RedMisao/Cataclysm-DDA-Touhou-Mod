@@ -85,7 +85,6 @@
 	"reproduction": { "baby_egg": "egg_anomalocaris", "baby_count": 6, "baby_timer": 8 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "anger_triggers": [ "HURT" ],
-	"placate_triggers": [ "MEAT" ],
 	"flags": [ "ANIMAL", "AQUATIC", "ARTHROPOD_BLOOD", "FISHABLE", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
     "//": "Based on Anomalocaris sp.. No weight or reproductive data"
 	},
@@ -242,7 +241,6 @@
 	"reproduction": { "baby_egg": "egg_eurypterid", "baby_count": 8, "baby_timer": 12 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "anger_triggers": [ "HURT", "PLAYER_CLOSE" ],
-    "placate_triggers": [ "MEAT" ],
     "special_attacks": [ [ "EAT_FOOD", 35 ] ],
 	"flags": [ "ANIMAL", "AQUATIC", "ARTHROPOD_BLOOD", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
     "//": "Based on Eusarcana scorpionis. This one's venomous",
@@ -303,7 +301,6 @@
 	"reproduction": { "baby_egg": "egg_arthropod_aquatic_small", "baby_count": 10, "baby_timer": 7 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "fear_triggers": [ "HURT", "SOUND" ],
-	"placate_triggers": [ "MEAT" ],
 	"flags": [ "ANIMAL", "AQUATIC", "ARTHROPOD_BLOOD", "FISHABLE", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
     "//": "Based on Hurdia sp.. No weight or reproductive data"
 	},
@@ -358,7 +355,6 @@
 	"reproduction": { "baby_egg": "egg_eurypterid", "baby_count": 8, "baby_timer": 12 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "anger_triggers": [ "HURT", "PLAYER_CLOSE", "PLAYER_WEAK" ],
-    "placate_triggers": [ "MEAT" ],
 	"flags": [ "ANIMAL", "AQUATIC", "ARTHROPOD_BLOOD", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
     "//": "Based on Jaekelopterus sp."
 	},
@@ -419,7 +415,6 @@
 	"reproduction": { "baby_egg": "egg_eurypterid", "baby_count": 8, "baby_timer": 12 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "anger_triggers": [ "HURT", "PLAYER_WEAK" ],
-    "placate_triggers": [ "MEAT" ],
 	"flags": [ "ANIMAL", "AQUATIC", "ARTHROPOD_BLOOD", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
     "//": "Based on Megalograptus sp. 'Medium-sized' eurypterid for c:dda purposes, actually quite big relative to ancient eurypterids"
 	},
@@ -530,7 +525,6 @@
 	"reproduction": { "baby_egg": "egg_arthropod_aquatic_small", "baby_count": 12, "baby_timer": 7 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "fear_triggers": [ "HURT" ],
-	"placate_triggers": [ "MEAT" ],
 	"flags": [ "ANIMAL", "AQUATIC", "ARTHROPOD_BLOOD", "FISHABLE", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
     "//2": "Based on Opabinia sp., this one's slightly oversized. No weight or reproductive data"
 	},
@@ -582,7 +576,6 @@
 	"reproduction": { "baby_egg": "egg_arthropod_aquatic_small", "baby_count": 6, "baby_timer": 8 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "anger_triggers": [ "HURT", "PLAYER_WEAK" ],
-    "placate_triggers": [ "MEAT" ],
 	"flags": [ "ANIMAL", "AQUATIC", "ARTHROPOD_BLOOD", "FISHABLE", "SEES", "SMELLS", "WATER_CAMOUFLAGE" ],
     "//": "Based on Pambdelurion sp.  No weight or reproductive data"
 	},
@@ -640,7 +633,6 @@
 	"reproduction": { "baby_egg": "egg_eurypterid_small", "baby_count": 6, "baby_timer": 10 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "anger_triggers": [ "HURT", "PLAYER_WEAK" ],
-    "placate_triggers": [ "MEAT" ],
 	"flags": [ "ANIMAL", "ARTHROPOD_BLOOD", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
     "//": "Based on Parastylonurus sp. According to Paleos' image this was 21 cm long, that's not very menacing so values are for a bigger one"
 	},

@@ -188,6 +188,14 @@
 	"//": "1.5 times the size and volume of the largest turkey egg. There's no confirmed data about dodo eggs."
 	},
 	{
+    "id": "egg_ectopistes",
+	"type": "COMESTIBLE",
+    "name": { "str": "ectopistes egg" },
+    "copy-from": "egg_chicken",
+    "weight": "17 g",
+    "rot_spawn": "GROUP_EGG_ECTOPISTES"
+	},
+	{
     "id": "egg_eryops",
 	"type": "COMESTIBLE",
     "name": { "str": "eryops egg" },

@@ -1,5 +1,53 @@
 [
 	{
+	"speaker": "mon_ectopistes",
+	"type": "speech",
+	"sound": "*rash clucking*",
+	"volume": 16
+    },
+	{
+	"speaker": "mon_ectopistes",
+	"type": "speech",
+	"sound": "*keck*",
+	"volume": 16
+    },
+	{
+	"speaker": "mon_ectopistes",
+	"type": "speech",
+	"sound": "*kee-ho*",
+	"volume": 16
+    },
+	{
+	"speaker": "mon_ectopistes",
+	"type": "speech",
+	"sound": "*tee-tee*",
+	"volume": 16
+    },
+	{
+	"speaker": "mon_ectopistes",
+	"type": "speech",
+	"sound": "*cooing*",
+	"volume": 12
+    },
+	{
+	"speaker": "mon_ectopistes",
+	"type": "speech",
+	"sound": "*bird croaking*",
+	"volume": 16
+    },
+	{
+	"speaker": "mon_ectopistes",
+	"type": "speech",
+	"sound": "*TEE*",
+	"volume": 24
+    },
+	{
+	"speaker": "mon_ectopistes",
+	"type": "speech",
+	"sound": "*KEE*",
+	"volume": 24
+    },
+	{
 	"speaker": "mon_gyokuto_base",
 	"type": "speech",
 	"sound": "\"Don't come any closer!\"",

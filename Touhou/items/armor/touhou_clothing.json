@@ -1,495 +1,5 @@
 [	
 	{
-    "id": "bloomers",
-    "type": "ARMOR",
-	"name": "bloomers",
-    "description": "A pair of comfortable, louse white trousers worn beneath the dress but over other undergarments.  As important as your hat.",
-    "repairs_like": "jeans",
-	"weight": "200 g",
-    "volume": "1000 ml",
-    "price": 2500,
-	"price_postapoc": 500,
-    "material": [ "cotton" ],
-	"material_thickness": 1,
-    "symbol": "[",
-    "looks_like": "leg_warmers",
-	"color": "white",
-    "warmth": 5,
-	"armor": [
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 35, "encumbrance": [ 2, 4 ] }
-	]
-	},
-	{
-    "id": "cheongsam",
-    "type": "ARMOR",
-    "name": { "str": "cheongsam", "str_pl": "cheongsam" },
-	"copy-from": "dress",
-    "description": "A very elegant Chinese style dress, showing the characteristic sideways seam going from the collar to the end of the right side, plus an intrincate embroided design across the surface.  Tight and slightly uncomfortable for the upper body, the tiny sleeves are no issue, and the sideways seam enables natural leg movement by use of a clever breaking point for the entire fabric.  This will make you feel like a celebrity on a blockbuster hit or a special secret operative when dispatching zeds.",
-    "repairs_like": "dress",
-	"weight": "1000 g",
-    "volume": "3500 ml",
-    "price": 24000,
-    "price_postapoc": 65,
-    "material": [ "cotton" ],
-    "material_thickness": 0.2,
-	"symbol": "[",
-    "looks_like": "robe",
-    "color": "red",
-    "warmth": 10,
-    "armor": [ 
-		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ], "coverage": 8, "encumbrance": [ 0, 2 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 95, "encumbrance": [ 2, 4 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_knee_l", "leg_knee_r" ], "coverage": 95, "encumbrance": [ 2, 4 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_lower_l", "leg_lower_r" ], "coverage": 20, "encumbrance": [ 0, 2 ] },
-		{ "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 8, 16 ] }
-	],
-    "flags": [ "FANCY", "VARSIZE" ],
-	"//": "Generic below the knee version, no silk material so it's made of cotton instead"
-	},
-	{
-    "id": "cheongsam_medium",
-    "type": "ARMOR",
-    "name": { "str": "cheongsam (medium)", "str_pl": "cheongsam (medium)" },
-	"copy-from": "cheongsam",
-    "description": "A very elegant Chinese style dress, showing the characteristic sideways seam going from the collar to the end of the right side, plus an intrincate embroided design across the surface.  This one's shorter than usual, barely covering below the knees.",
-    "repairs_like": "cheongsam",
-	"weight": "900 g",
-    "volume": "3000 ml",
-    "price": 22000,
-    "price_postapoc": 60,
-    "material": [ "cotton" ],
-    "material_thickness": 0.2,
-	"symbol": "[",
-    "looks_like": "dress",
-    "color": "red",
-    "warmth": 9,
-    "armor": [ 
-		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ], "coverage": 8, "encumbrance": [ 0, 2 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 95, "encumbrance": [ 2, 4 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_knee_l", "leg_knee_r" ], "coverage": 45, "encumbrance": [ 0, 2 ] },
-		{ "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 8, 16 ] }
-	],
-    "flags": [ "FANCY", "VARSIZE" ],
-	"//": "Ends around 4-6 cm below the knee"
-	},
-	{
-    "id": "cheongsam_short",
-    "type": "ARMOR",
-    "name": { "str": "cheongsam (short)", "str_pl": "cheongsam (short)" },
-	"copy-from": "cheongsam",
-    "description": "A very elegant Chinese style dress, showing the characteristic sideways seam going from the collar to the end of the right side, plus an intrincate embroided design across the surface.  This one's bold, as it's short enough it barely covers your thighs, similar to an oversized shirt if it were twenty times more elegant.",
-    "repairs_like": "cheongsam",
-	"weight": "750 g",
-    "volume": "2700 ml",
-    "price": 22000,
-    "price_postapoc": 60,
-    "material": [ "cotton" ],
-    "material_thickness": 0.2,
-	"symbol": "[",
-    "looks_like": "dress",
-    "color": "red",
-    "warmth": 9,
-    "armor": [ 
-		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ], "coverage": 8, "encumbrance": [ 0, 2 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 30, "encumbrance": [ 2, 4 ] },
-		{ "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 8, 16 ] }
-	],
-    "flags": [ "FANCY", "VARSIZE" ],
-	"//": "Covers one third of the thigh at best"
-	},
-	{
-    "id": "dress_shoes_black",
-    "type": "ARMOR",
-    "name": { "str": "pair of black dress shoes", "str_pl": "pairs of black dress shoes" },
-    "description": "Classy patent leather shoes.",
-    "repairs_like": "dress_shoes",
-	"weight": "1000 g",
-    "volume": "1600 ml",
-    "price": 13000,
-    "price_postapoc": 300,
-    "material": [ "leather" ],
-    "material_thickness": 2,
-	"symbol": "[",
-    "looks_like": "dress_shoes",
-    "color": "black",
-    "warmth": 10,
-    "armor": [ 
-		{ "covers": [ "foot_l", "foot_r" ], "coverage": 75, "encumbrance": [ 6, 12 ] }
-	],
-    "flags": [ "SUPER_FANCY", "VARSIZE" ]
-	},
-	{
-    "id": "gyokuto_ear_accessory",
-    "type": "ARMOR",
-    "name": { "str": "ear button", "str_pl": "ear button" },
-    "description": "A pair of golden buttons used as ear accessories.  These feels cold to the touch, featuring minuscule engravings, imperceptible excepy by touch.  Is this a good example of modern Gyokuto fashion?",
-    "weight": "10 g",
-    "volume": "5 ml",
-    "price_postapoc": 10,
-    "material": [ "steel" ],
-    "symbol": "[",
-    "color": "yellow",
-    "flags": [ "NO_WEAR_EFFECT" ]
-	},
-	{
-    "id": "gyokuto_ear_accessory2",
-    "type": "ARMOR",
-    "name": { "str": "ear clip", "str_pl": "ear clips" },
-	"copy-from": "gyokuto_ear_accessory",
-    "description": "A golden ear clip.  It feels cold to the touch, and features deep engravings which look different when comparing them to each other.  Maybe these are the equivalent of dogtags?",
-	"//": "OLD DESCRIPTION MOVE TO DIALOGUE OR SOMETHING Looks like a big earring, but it's actually more close to an antenna, working as a enhancer for transmitting to the rest of the Network, now disabled due unforseen circumstances.",
-    "weight": "20 g",
-    "volume": "15 ml",
-    "flags": [ "NO_WEAR_EFFECT" ]
-	},
-	{
-    "id": "gyokuto_ear_accessory3",
-    "type": "ARMOR",
-    "name": { "str": "ear bells", "str_pl": "ear bells" },
-	"copy-from": "gyokuto_ear_accessory",
-    "description": "Golden ear bells.  These consist of a variable number of small spheric bells, of equally variable sizes, no bigger than a coin.  The biggest of the bunch features complex markings.  None of these emit sound, or better put, you can't hear the sounds?",
-    "weight": "10 g",
-    "volume": "20 ml",
-    "flags": [ "NO_WEAR_EFFECT" ]
-	},
-	{
-    "id": "jacket_black",
-    "type": "ARMOR",
-    "name": { "str": "black jacket" },
-	"copy-from": "jacket_jean",
-    "description": "An otherwise undermarkable, elegant black jacket.",
-    "repairs_like": "jacket_jean",
-	"weight": "900 g",
-    "volume": "3250 ml",
-    "price": 4500,
-    "price_postapoc": 300,
-    "material": [ "cotton" ],
-    "material_thickness": 0.5,
-	"symbol": "[",
-    "looks_like": "jacket_jean",
-    "color": "black",
-    "warmth": 20,
-	"armor": [
-		{ "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 8, 8 ] },
-		{ "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 6, 10 ] }
-    ],
-    "pocket_data": [
-		{
-        "pocket_type": "CONTAINER",
-        "max_contains_volume": "800 ml",
-        "max_contains_weight": "1 kg",
-        "max_item_length": "13 cm",
-        "moves": 80
-		},
-		{
-        "pocket_type": "CONTAINER",
-        "max_contains_volume": "800 ml",
-        "max_contains_weight": "1 kg",
-        "max_item_length": "13 cm",
-        "moves": 80
-		}
-    ],
-    "flags": [ "OUTER", "POCKETS", "SUPER_FANCY", "VARSIZE" ]
-	},
-	{
-    "id": "mib_watch",
-    "type": "ARMOR",
-    "name": { "str": "collection watch", "str_pl": "collection watches" },
-    "description": "A fine, triangular shaped stainless steel watch.",
-    "weight": "120 g",
-    "volume": "240 ml",
-    "price": 12000,
-    "price_postapoc": 60,
-    "material": [ "leather", "steel" ],
-    "symbol": "[",
-    "color": "light_gray",
-    "sided": true,
-    "armor": [ 
-		{ "covers": [ "hand_l", "hand_r" ], "coverage": 8 }
-	],
-	"flags": [ "ALARMCLOCK", "ALLOWS_NATURAL_ATTACKS", "BELTED", "FANCY", "OVERSIZE", "WATCH", "WATER_FRIENDLY" ]
-	},
-	{
-    "id": "pants_black",
-    "type": "ARMOR",
-    "name": { "str_sp": "black pants" },
-	"copy-from": "pants",
-    "description": "A pair of unremarkable, stylish black dress pants.",
-    "repairs_like": "pants",
-	"weight": "700 g",
-    "volume": "3000 ml",
-    "price": 5200,
-    "price_postapoc": 110,
-    "material": [ "cotton" ],
-    "material_thickness": 0.5,
-	"symbol": "[",
-    "looks_like": "pants",
-    "color": "black",
-    "warmth": 15,
-	"pocket_data": [
-		{
-        "pocket_type": "CONTAINER",
-        "max_contains_volume": "1250 ml",
-        "max_contains_weight": "4 kg",
-        "max_item_length": "19 cm",
-        "moves": 80
-		},
-		{
-        "pocket_type": "CONTAINER",
-        "max_contains_volume": "1250 ml",
-        "max_contains_weight": "4 kg",
-        "max_item_length": "19 cm",
-        "moves": 80
-		},
-		{
-        "pocket_type": "CONTAINER",
-        "max_contains_volume": "1080 ml",
-        "max_contains_weight": "4 kg",
-        "max_item_length": "165 mm",
-        "moves": 100
-		},
-		{
-        "pocket_type": "CONTAINER",
-        "max_contains_volume": "1080 ml",
-        "max_contains_weight": "4 kg",
-        "max_item_length": "165 mm",
-        "moves": 100
-		}
-    ],
-    "armor": [ 
-		{ "covers": [ "leg_l", "leg_r" ], "coverage": 95, "encumbrance": [ 6, 10 ] }
-	],
-    "flags": [ "POCKETS", "SUPER_FANCY", "VARSIZE" ]
-	},
-	{
-    "id": "socks_black",
-    "type": "ARMOR",
-    "name": { "str": "black dress socks", "str_pl": "pairs black dress socks" },
-    "description": "Black dress socks, silk smooth, very elegant.",
-    "weight": "60 g",
-    "volume": "300 ml",
-    "price": 300,
-    "price_postapoc": 50,
-    "material": [ "cotton" ],
-    "material_thickness": 0.1,
-	"symbol": "[",
-    "looks_like": "socks",
-    "color": "black",
-    "warmth": 6,
-    "armor": [ 
-		{ "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_lower_l", "leg_lower_r" ], "coverage": 65, "encumbrance": [ 2, 4 ] }
-	],
-    "flags": [ "VARSIZE", "SKINTIGHT" ]
-	},
-	{
-    "id": "tai_chi_pants",
-    "type": "ARMOR",
-    "name": { "str": "tai chi pants" },
-    "description": "White baggy pants for practicing Tai Chi.  Very comfy.",
-    "weight": "350 g",
-    "volume": "2000 ml",
-    "price": 3000,
-    "price_postapoc": 50,
-    "material": [ "cotton" ],
-    "material_thickness": 0.15,
-	"symbol": "[",
-    "looks_like": "pants",
-    "color": "white",
-    "warmth": 4,
-    "armor": [ 
-		{ "covers": [ "leg_l", "leg_r" ], "coverage": 85, "encumbrance": [ 1, 3 ] } 
-	],
-    "flags": [ "VARSIZE" ]
-	},
-	{
-    "id": "tang_shirt",
-    "type": "ARMOR",
-    "category": "armor",
-	"name": "tang shirt",
-	"copy-from": "longshirt",
-	"description": "A long sleeved shirt made in characteristic Chinese style.  It has a short, somewhat flexible collar, knots replacing buttons, with the fabric feeling different to the touch compared to the average longshirt.",
-    "repairs_like": "longshirt",
-	"weight": "300 g",
-    "volume": "1000 ml",
-    "price": 2000,
-    "price_postapoc": 65,
-    "material": [ "cotton" ],
-    "material_thickness": 0.35,
-	"symbol": "[",
-	"looks_like": "longshirt",
-    "color": "light_gray",
-    "warmth": 6,
-	"armor": [
-		{ "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 2, 4 ] },
-		{ "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 2, 5 ] }
-	],
-    "flags": [ "VARSIZE" ]
-	},
-	{
-    "id": "tang_suit",
-    "type": "ARMOR",
-    "category": "armor",
-	"name": "Tang suit",
-	"copy-from": "jacket_jean",
-	"description": "A long sleeved jacket made in characteristic Chinese style.  Despite looking like a shirt, it's worn over it, so it qualifies as a jacket.  Has the characteristic collar and the knots replacing buttons, featuring inner pockets.  Special cut allows to hold the overall shape, so it doesn't look loose or baggy.  Putting this on makes you want to try those sick moves.",
-    "repairs_like": "jacket_jean",
-    "weight": "800 g",
-    "volume": "4000 ml",
-    "price": 6000,
-    "price_postapoc": 300,
-    "material": [ "cotton" ],
-    "material_thickness": 0.35,
-	"symbol": "[",
-	"looks_like": "jacket_jean",
-    "color": "white",
-    "warmth": 24,
-	"pocket_data": [ 
-		{
-        "pocket_type": "CONTAINER",
-        "max_contains_volume": "800 ml",
-        "max_contains_weight": "1 kg",
-        "max_item_length": "13 cm",
-        "moves": 150
-		},
-		{
-        "pocket_type": "CONTAINER",
-        "max_contains_volume": "800 ml",
-        "max_contains_weight": "1 kg",
-        "max_item_length": "13 cm",
-        "moves": 150
-		}
-	],
-	"armor": [
-		{ "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 6, 10 ] },
-		{ "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 6, 12 ] }
-	],
-    "flags": [ "OUTER", "POCKETS", "VARSIZE" ]
-	},
-	{
-    "id": "tie_black",
-    "type": "ARMOR",
-    "name": { "str": "black necktie" },
-	"copy-from": "tie_necktie",
-    "description": "An undermarkable, long, dapper black necktie.",
-    "weight": "200 g",
-    "volume": "220 ml",
-    "price": 1200,
-    "price_postapoc": 12,
-    "material": [ "cotton" ],
-    "symbol": "[",
-    "looks_like": "tie_necktie",
-    "color": "black",
-    "flags": [ "SUPER_FANCY" ]
-	},
-	{
-    "id": "ribbon_black",
-    "type": "TOOL_ARMOR",
-	"name": "black ribbon",
-	"description": "A small black ribbon, used to tie your hair.",
-    "repairs_like": "tie_bow",
-	"weight": "150 g",
-	"volume": "200 ml",
-	"price": 1000,
-	"price_postapoc": 10,
-	"symbol": "[",
-    "color": "black",
-    "material": [ "cotton" ],
-	"armor": [
-        { "covers": [ "head" ], "coverage": 0, "encumbrance": [ 0, 0 ] }
-	],
-    "flags": [ "FANCY", "NO_WEAR_EFFECT" ]
-    },
-	{
-    "id": "ribbon_neck",
-    "type": "ARMOR",
-    "category": "armor",
-	"name": { "str": "neck ribbon", "str_pl": "neck ribbons" },
-	"copy-from": "tie_necktie",
-	"description": "A black ribbon tied in a bow, used as substitute for a tie.",
-	"repairs_like": "tie_necktie",
-	"weight": "400 g",
-    "volume": "600 ml",
-	"price": 1000,
-	"price_postapoc": 10,
-    "material": [ "cotton" ],
-    "material_thickness": 1,
-	"symbol": "[",
-    "color": "black",
-    "armor": [
-        { "covers": [ "torso" ], "coverage": 5, "encumbrance": [ 0, 0 ] }
-	],
-	"flags": [ "FANCY", "NO_WEAR_EFFECT", "VARSIZE" ]
-	},
-	{
-    "id": "socks_long",
-    "type": "ARMOR",
-    "name": { "str": "pair of long socks", "str_pl": "pairs of long socks" },
-    "description": "Long socks, reaching just below the knee.",
-    "weight": "50 g",
-    "volume": "400 ml",
-    "price": 2000,
-    "price_postapoc": 500,
-    "material": [ "cotton" ],
-    "material_thickness": 0.2,
-	"symbol": "[",
-    "looks_like": "socks_wool",
-    "color": "black",
-    "warmth": 8,
-	"armor": [ 
-		{ "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 1, 2 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_lower_l", "leg_lower_r" ], "coverage": 25, "encumbrance": [ 2, 4 ] }
-	],
-    "flags": [ "SKINTIGHT", "VARSIZE" ]
-	},
-	{
-    "id": "tengu_geta",
-    "type": "ARMOR",
-    "category": "armor",
-	"name": "Tengu geta",
-    "copy-from": "geta",
-	"description": "A pair of red Tengu geta.  These are the real deal however, and they look like shoes with a long underside teeth.",
-    "repairs_like": "geta",
-	"weight": "660 g",
-    "volume": "1000 ml",
-    "price": 13000,
-	"price_postapoc": 650,
-	"material": [ "leather", "wood" ],
-	"material_thickness": 2,
-	"symbol": "[",
-    "looks_like": "dress_shoes",
-	"color": "red",
-    "warmth": 10,
-	"armor": [
-        { "covers": [ "foot_l", "foot_r" ], "coverage": 65, "encumbrance": 10 }
-	],
-    "flags": [ "FANCY", "VARSIZE", "WATERPROOF" ]
-	},
-	{
-    "id": "tengu_hat",
-    "type": "TOOL_ARMOR",
-    "category": "armor",
-	"name": "tokin",
-	"description": "A small, red polyhedric box-like hat.  It's useful for drinking too.",
-	"weight": "200 g",
-	"volume": "350 ml",
-	"price": 10000,
-	"price_postapoc": 100,
-    "material": [ "wood" ],
-	"material_thickness": 2,
-	"symbol": "[",
-    "color": "red",
-    "warmth": 1,
-	"armor": [ 
-		{ "covers": [ "head" ], "coverage": 5, "encumbrance": [ 0, 0 ] }
-	],
-	"flags": [ "FANCY", "OUTER", "STURDY" ]
-    },
-	{
     "id": "aya_shirt",
     "type": "ARMOR",
     "category": "armor",
@@ -668,206 +178,6 @@
         { "covers": [ "torso" ], "coverage": 40, "encumbrance": [ 8, 12 ] }
 	],
     "flags": [ "FANCY", "VARSIZE" ]
-	},
-	{
-    "id": "lunar_dress_shirt",
-    "type": "ARMOR",
-    "category": "armor",
-	"name": "dress shirt (LDC combat uniform)",
-	"description": "A white button-down shirt with long sleeves.  This is worn by members of the Lunar Defense Corps.",
-	"weight": "200 g",
-    "volume": "700 ml",
-    "price": 15000,
-    "price_postapoc": 1500,
-    "material": [ "lunarian_cloth" ],
-    "material_thickness": 1,
-	"symbol": "[",
-	"looks_like": "longshirt",
-    "color": "white",
-    "warmth": 10,
-	"pocket_data": [ 
-		{ 
-		"pocket_type": "CONTAINER", 
-		"max_contains_volume": "400 ml", 
-		"max_contains_weight": "800 g", 
-		"moves": 80 
-		} 
-	],
-	"armor": [
-        { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 4, 6 ] },
-        { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] }
-	],
-    "flags": [ "FANCY", "STURDY", "VARSIZE" ]
-	},
-	{
-    "id": "lunar_suit",
-    "type": "ARMOR",
-    "category": "armor",
-	"name": "lunar blazer (LDC combat uniform)",
-	"description": "A black, long-sleeved business suit that covers the torso and arms, in reality this is the Lunar Defense Corps combat uniform.  A Lunarian insignia is visible on the pockets.",
-    "repairs_like": "blazer",
-	"weight": "500 g",
-    "volume": "3000 ml",
-    "price": 20000,
-    "price_postapoc": 500,
-    "material": [ "lunarian_cloth" ],
-    "material_thickness": 3,
-	"symbol": "[",
-    "looks_like": "blazer",
-	"color": "light_gray",
-    "environmental_protection": 2,
-	"warmth": 20,
-    "weight_capacity_bonus": "1 kg",
-	"pocket_data": [
-        { 
-		"pocket_type": "CONTAINER", 
-		"max_contains_volume": "500 ml", 
-		"max_contains_weight": "1 kg", 
-		"moves": 80 
-		},
-        { 
-		"pocket_type": "CONTAINER", 
-		"max_contains_volume": "500 ml", 
-		"max_contains_weight": "1 kg", 
-		"moves": 80 
-		}
-    ],
-	"armor": [
-        { "covers": [ "arm_l", "arm_r" ], "coverage": 95, "encumbrance": [ 8, 12 ] },
-        { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 8, 12 ] }
-	],
-	"flags": [ "FANCY", "POCKETS", "STURDY", "VARSIZE", "WATERPROOF" ]
-	},
-	{
-    "id": "lunar_tie",
-    "type": "ARMOR",
-    "category": "armor",
-	"name": "red tie (LDC combat uniform)",
-    "description": "A red necktie.  This is worn by members of the Lunar Defense Corps.",
-    "weight": "20 g",
-    "volume": "25 ml",
-    "price": 1000,
-	"price_postapoc": 100,
-    "material": [ "lunarian_cloth" ],
-	"material_thickness": 1,
-	"symbol": "[",
-    "color": "green",
-	"armor": [
-        { "covers": [ "torso" ], "specifically_covers": [ "torso_upper" ], "coverage": 8, "encumbrance": [ 0, 1 ] }
-	],
-    "flags": [ "FANCY", "VARSIZE" ]
-	},
-	{
-    "id": "lunar_kneesocks",
-    "type": "ARMOR",
-    "category": "armor",
-	"name": "kneesocks (LDC combat uniform)",
-    "description": "Long, black socks that reach above the knees.  There's a crescent printed on the left side of the left sock.  These are worn by members of the Lunar Defense Corps.",
-    "weight": "100 g",
-    "volume": "200 ml",
-    "price": 5000,
-	"price_postapoc": 2500,
-    "material": [ "lunarian_cloth" ],
-	"material_thickness": 0.5,
-    "symbol": "[",
-    "looks_like": "leg_warmers",
-	"color": "dark_gray",
-    "warmth": 10,
-	"armor": [
-        { "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_lower_l", "leg_lower_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_knee_l", "leg_knee_r" ], "coverage": 20, "encumbrance": [ 2, 4 ] }
-	],
-    "flags": [ "FANCY", "SKINTIGHT", "STURDY" ]
-	},
-	{
-    "id": "lunar_skirt",
-    "type": "ARMOR",
-    "category": "armor",
-	"name": "lunar skirt (LDC combat uniform)",
-    "description": "A light colored, pleated skirt.  This is worn by members of the Lunar Defense Corps.",
-    "weight": "60 g",
-    "volume": "225 ml",
-    "price": 12000,
-	"price_postapoc": 600,
-    "material": [ "lunarian_cloth" ],
-	"material_thickness": 2,
-    "symbol": "[",
-    "looks_like": "kilt",
-	"color": "dark_gray",
-    "warmth": 5,
-	"armor": [
-        { "covers": [ "leg_r", "leg_l" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
-        { "covers": [ "leg_r", "leg_l" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 60, "encumbrance": [ 2, 4 ] }
-	],
-    "flags": [ "FANCY", "VARSIZE" ]
-	},
-    {
-    "id": "lunar_veil_deactivated",
-    "type": "ARMOR",
-    "category": "armor",
-	"name": "deactivated lunar veil",
-    "description": "A piece of highly advanced Lunarian technology, it allows the user to move between places.  This one is a memento though, and it's deactivated.  It looks like a sort of ethereal scarf, so.",
-    "weight": "40 g",
-    "volume": "500 ml",
-    "price": 4000,
-	"price_postapoc": 200,
-    "material": [ "lunarian_cloth" ],
-	"material_thickness": 0.01,
-    "symbol": "[",
-    "looks_like": "scarf",
-	"color": "dark_gray",
-    "armor": [
-        { "covers": [ "mouth" ], "coverage": 85, "encumbrance": [ 0, 2 ] }
-	],
-    "flags": [ "FANCY", "OUTER", "STURDY", "VARSIZE" ]
-	},
-	{
-    "id": "lunar_helmet",
-    "type": "ARMOR",
-    "category": "armor",
-	"name": "lunar helmet",
-	"description": "A white helmet with space for a Moon Rabbit's ears to stick out of.  It has a black bow decorating the back side.  This is worn by members of the Lunar Defense Corps.",
-    "repairs_like": "xlkevlar",
-	"weight": "1383 g",
-    "volume": "1750 ml",
-    "price": 15000,
-    "price_postapoc": 1500,
-	"to_hit": -1,
-    "bashing": 10,
-    "material": [ "kevlar", "plastic" ],
-    "material_thickness": 8,
-	"symbol": "[",
-	"looks_like": "hat_hard",
-    "color": "white",
-    "warmth": 15,
-    "armor": [
-        { "covers": [ "head" ], "coverage": 80, "encumbrance": [ 18, 24 ] }
-	],
-	"flags": [ "OUTER", "VARSIZE", "WATERPROOF" ]
-	},
-	{
-    "id": "lunar_dress_shoes",
-    "type": "ARMOR",
-    "category": "armor",
-	"name": "lunar shoes (LDC combat uniform)",
-    "description": "Fancy and comfortable leather shoes.  These are worn by members of the Lunar Defense Corps.",
-    "weight": "700 g",
-    "volume": "1350 ml",
-    "price": 12000,
-	"price_postapoc": 2500,
-	"to_hit": 1,
-    "bashing": 1,
-    "material": [ "lunarian_leather" ],
-	"material_thickness": 2.5,
-    "symbol": "[",
-    "looks_like": "sneakers",
-	"color": "dark_gray",
-    "warmth": 10,
-	"armor": [
-        { "covers": [ "foot_l", "foot_r" ], "coverage": 60, "encumbrance": [ 6, 8 ] }
-	],
-    "flags": [ "FANCY", "OUTER", "VARSIZE" ]
 	},
 	{
     "id": "meiling_cheongsam_upper",
@@ -1246,7 +556,7 @@
 	"armor": [
         { "covers": [ "head" ], "coverage": 5, "specifically_covers": [ "head_crown" ], "encumbrance": [ 0, 0 ] }
 	],
-	"flags": [ "FANCY", "OUTER" ]
+	"flags": [ "ALLOWS_NATURAL_ATTACKS", "FANCY", "OUTER", "OVERSIZE", "WATER_FRIENDLY" ]
 	},
 	{
     "id": "tenshi_bowbelt",
@@ -1307,12 +617,84 @@
 	"flags": [ "SUPER_FANCY", "VARSIZE" ]
 	},
 	{
+    "id": "udonge_clip",
+    "type": "ARMOR",
+    "name": { "str": "carrot clip" },
+    "copy-from": "badge_abstract",
+    "description": "A necktie clip in the shape of a carrot.",
+    "looks_like": "carrot"
+	},
+	{
+    "id": "udonge_shirt",
+    "type": "ARMOR",
+    "category": "armor",
+	"name": { "str": "Udonge's shirt", "str_pl": "Udonge's shirts" },
+	"copy-from": "ldc_dress_shirt",
+	"description": "A white button-down shirt with short sleeves.",
+    "material": [ 
+		{ "type": "cotton", "portion": 5 }, 
+		{ "type": "lunarian_cloth", "portion": 5 } 
+	],
+    "material_thickness": 0.5,
+	"looks_like": "dress_shirt",
+    "color": "white",
+	"armor": [
+		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_upper_l", "arm_upper_r" ], "coverage": 15, "encumbrance": [ 2, 4 ] },
+        { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] }
+	]
+	},
+	{
+    "id": "udonge_dress_shoes",
+    "type": "ARMOR",
+    "category": "armor",
+	"name": { "str": "Udonge's shoes", "str_pl": "Udonge's shoes" },
+	"copy-from": "ldc_dress_shoes",
+    "description": "Fancy and comfortable leather shoes.",
+    "material": [ 
+		{ "type": "leather", "portion": 5 }, 
+		{ "type": "lunarian_leather", "portion": 5 } 
+	],
+	"material_thickness": 2.0,
+	"color": "brown"
+	},
+	{
+    "id": "udonge_skirt",
+    "type": "ARMOR",
+    "category": "armor",
+	"name": { "str": "Udonge's skirt", "str_pl": "Udonge's skirts" },
+	"copy-from": "ldc_skirt",
+    "description": "A salmon colored, pleated skirt.",
+    "material": [ 
+		{ "type": "cotton", "portion": 5 }, 
+		{ "type": "lunarian_cloth", "portion": 5 } 
+	],
+	"material_thickness": 1,
+    "looks_like": "skirt",
+	"color": "pink",
+	"armor": [
+        { "covers": [ "leg_r", "leg_l" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
+        { "covers": [ "leg_r", "leg_l" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 85, "encumbrance": [ 2, 4 ] }
+	]
+	},
+	{
+    "id": "udonge_tie",
+    "type": "ARMOR",
+    "name": { "str": "red necktie" },
+	"copy-from": "ldc_tie",
+    "description": "A red necktie.",
+    "material": [ 
+		{ "type": "cotton", "portion": 5 }, 
+		{ "type": "lunarian_cloth", "portion": 5 } 
+	]
+	},
+	{
     "id": "utsuho_cape",
     "type": "ARMOR",
     "name": { "str": "starry cape", "str_pl": "starry capes" },
     "description": "A large cape worn over your back.  It's blank on the outside, but has a mesmerizing star pattern on the inside.",
-    "weight": "1500 g",
     "volume": "4000 ml",
+	"weight": "1500 g",
     "price": 20000,
     "price_postapoc": 500,
     "material": [ "cotton" ],
@@ -1324,7 +706,7 @@
 	"armor": [
 		{ "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ], "coverage": 100, "encumbrance": [ 2, 4 ] }
 	],
-    "flags": [ "BELTED", "ONLY_ONE", "OUTER", "OVERSIZE", "SUPER_FANCY" ]
+    "flags": [ "BELTED", "ONLY_ONE", "OUTER", "OVERSIZE", "SLEEP_AID", "SUPER_FANCY" ]
 	},
 	{
     "id": "utsuho_ribbon",
@@ -1332,8 +714,8 @@
     "category": "armor",
 	"name": "green ribbon",
 	"description": "A big green ribbon used on the head.  The design looks somewhat tattered.",
-    "weight": "300 g",
 	"volume": "700 ml",
+	"weight": "300 g",
     "price": 1000,
 	"price_postapoc": 10,
 	"material": [ "cotton" ],
@@ -1351,8 +733,8 @@
     "category": "armor",
 	"name": { "str": "third leg", "str_pl": "third legs" },
 	"description": "A prism shaped control rod worn on one arm, acting as the legendary 'third leg' from the Yatagarasu.  Allows the user to easily control nuclear abilities.",
-	"weight": "3000 g",
     "volume": "13300 ml",
+	"weight": "3000 g",
 	"//": "These numbers come from a 60 cm hexagonal prism with 8 cm radius, it's kind of thick though",
 	"price": 16000,
     "price_postapoc": 8000,
@@ -1385,8 +767,7 @@
     "id": "utsuho_shirt",
 	"type": "ARMOR",
 	"category": "armor",
-	"name": { "str": "Utsuho's custom shirt", "str_pl": "Utsuho's custom shirts" },
-    "//": "WIP",
+	"name": { "str": "Utsuho's shirt", "str_pl": "Utsuho's shirts" },
 	"copy-from": "dress_shirt",
 	"description": "A white, short sleeved puffy shirt with black frills.  This one's modified to make room for the red eye of Yatagarasu",
 	"repairs_like": "tshirt",
@@ -1396,8 +777,7 @@
     "id": "utsuho_skirt",
 	"type": "ARMOR",
     "category": "armor",
-	"name": { "str": "hell raven skirt", "str_pl": "hell raven skirts" },
-    "//": "WIP",
+	"name": { "str": "Utsuho's skirt", "str_pl": "Utsuho's skirts" },
 	"copy-from": "skirt",
 	"description": "A green skirt.  A white pattern representing nuclear decay is embroided on it.",
 	"//2": "I remember reading that the pattern corresponds to either Uranium orbitals or the pattern left by subatomic particles on a cloud chamber, but can't remember where", 
@@ -1418,8 +798,8 @@
     "category": "armor",
 	"name": "hairband and ribbon",
 	"description": "A black hairband with a black off-center ribbon on it.",
-	"weight": "200 g",
 	"volume": "400 ml",
+	"weight": "200 g",
 	"price": 1000,
 	"price_postapoc": 10,
     "material": [ "cotton" ],
@@ -1437,8 +817,8 @@
     "name": { "str": "Roukanken's scabbard" },
     "copy-from": "bscabbard",
 	"description": "A wooden scabbard, designed to hold Roukanken.  It's painted black and it's otherwise plain, except for two paper seals and a Netherworld flower tied at it's ending. It's prepared to be drawn from while it's strapped on the back.  Activate to sheath/draw.",
-    "weight": "1000 g",
     "volume": "2200 ml",
+	"weight": "1000 g",
     "price": 18000,
     "price_postapoc": 900,
     "bashing": 4,
@@ -1472,8 +852,8 @@
     "name": { "str": "Hakurouken's scabbard" },
     "copy-from": "bscabbard",
 	"description": "A wooden scabbard, designed to hold Hakurouken.  It's painted black and it's otherwise plain. It's prepared to be drawn from while it's strapped on the back.  Activate to sheath/draw.",
-    "weight": "900 g",
     "volume": "1750 ml",
+	"weight": "900 g",
     "price": 18000,
     "price_postapoc": 900,
     "bashing": 3,
@@ -1508,8 +888,8 @@
 	"name": { "str": "phantom vest", "str_pl": "phantom vests" },
 	"description": "A dark green and white vest with some pockets.  Ghost insignias are present underneath the pockets.",
     "repairs_like": "jeans",
-	"weight": "680 g",
 	"volume": "2500 ml",
+	"weight": "680 g",
     "price": 18000,
     "to_hit": -5,
     "material": [ "cotton" ],

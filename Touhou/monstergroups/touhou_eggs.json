@@ -51,6 +51,11 @@
     "monsters": [ { "monster": "mon_dodo_chick" } ]
 	},
 	{
+    "name": "GROUP_EGG_ECTOPISTES",
+    "type": "monstergroup",
+    "monsters": [ { "monster": "mon_ectopistes_chick" } ]
+	},
+	{
     "name": "GROUP_EGG_ERYOPS",
     "type": "monstergroup",
     "monsters": [ { "monster": "mon_eryops_baby" } ]

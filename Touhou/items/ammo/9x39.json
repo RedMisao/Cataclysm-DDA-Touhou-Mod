@@ -20,7 +20,7 @@
     "//": "7.62x39mm 57-N-231 can penetrate 6 mm steel @ 300 m. 9x39mm SP-6 can penetrate 6 mm steel at 200 m.",
 	"//2": "9x39 sp-5 damage is too (26), so I'm increasing it a bit here and with the gun",
 	"dispersion": 30,
-	"range": 30,
+	"range": 50,
     "recoil": 900,
     "effects": [ "COOKOFF", "NEVER_MISFIRES" ],
     "flags": [ "IRREPLACEABLE_CONSUMABLE" ]

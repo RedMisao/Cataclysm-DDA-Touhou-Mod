@@ -16,6 +16,7 @@
     "stack_size": 6,
 	"damage": { "damage_type": "bullet", "amount": 80, "armor_penetration": 0 },
 	"dispersion": 15,
+	"range": 35,
 	"recoil": 2000,
 	"effects": [ "CASELESS_ROUNDS", "DRAW_AS_LINE", "NEVER_MISFIRES", "NOGIB", "WIDE" ],
 	"flags": [ "IRREPLACEABLE_CONSUMABLE" ]
@@ -37,6 +38,7 @@
     "stack_size": 11,
 	"damage": { "damage_type": "bullet", "amount": 56, "armor_penetration": 14 },
 	"dispersion": 15,
+	"range": 100,
 	"recoil": 2600,
 	"effects": [ "NEVER_MISFIRES" ],
 	"flags": [ "CASELESS_ROUNDS", "IRREPLACEABLE_CONSUMABLE" ],
@@ -58,6 +60,7 @@
     "stack_size": 13,
 	"damage": { "damage_type": "bullet", "amount": 35, "armor_penetration": 9 },
     "dispersion": 35,
+	"range": 50,
     "recoil": 100,
 	"effects": [ "NEVER_MISFIRES" ],
 	"flags": [ "CASELESS_ROUNDS", "IRREPLACEABLE_CONSUMABLE" ],

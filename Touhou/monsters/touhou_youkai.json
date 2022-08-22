@@ -27,7 +27,6 @@
     "reproduction": { "baby_monster": "mon_chupacabra_young", "baby_count": 3, "baby_timer": 60 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE" ],
-    "placate_triggers": [ "MEAT" ],
 	"armor_bash": 4,
 	"armor_cut": 2,
 	"armor_bullet": 8,
@@ -85,7 +84,6 @@
     "path_settings": { "max_dist": 16 },
 	"vision_night": 16,
     "anger_triggers": [ "HURT" ],
-    "placate_triggers": [ "MEAT" ],
     "special_attacks": [ [ "ABSORB_MEAT", 100 ], [ "slash_2d3", 2 ] ],
     "flags": [ "CLIMBS", "HEARS", "HIT_AND_RUN", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM" ],
 	"//": "Implement ALCOHOL as placate_triggers...",
@@ -206,7 +204,6 @@
     "reproduction": { "baby_monster": "mon_jinmenken_young", "baby_count": 2, "baby_timer": 30 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "fear_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
-    "placate_triggers": [ "MEAT" ],
     "special_attacks": [ [ "ABSORB_MEAT", 100 ], [ "PARROT", 31 ], [ "PARROT_AT_DANGER", 17 ] ],
 	"flags": [ "HEARS", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM" ]
 	},

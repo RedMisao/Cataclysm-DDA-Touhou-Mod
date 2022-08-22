@@ -18,7 +18,7 @@
     "stack_size": 10,
 	"damage": { "damage_type": "bullet", "amount": 64, "armor_penetration": 5 },
 	"dispersion": 15,
-	"range": 75,
+	"range": 100,
     "recoil": 2600,
     "effects": [ "COOKOFF", "NEVER_MISFIRES" ],
     "flags": [ "IRREPLACEABLE_CONSUMABLE" ]

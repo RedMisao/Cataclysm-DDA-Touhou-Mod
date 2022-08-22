@@ -5,14 +5,14 @@
     "items":[
 	    [ "bra", 1 ],
         [ "panties", 1 ],
-		[ "lunar_dress_shirt", 1 ],
-	    [ "lunar_dress_shoes", 1 ],
-	    [ "lunar_helmet", 1 ],
-		[ "lunar_kneesocks", 1 ],
+		[ "ldc_dress_shirt", 1 ],
+	    [ "ldc_dress_shoes", 1 ],
+	    [ "ldc_helmet", 1 ],
+		[ "ldc_kneesocks", 1 ],
 	    [ "lunar_rifle", 3 ],
-		[ "lunar_suit", 1 ],
-	    [ "lunar_skirt", 1 ],
-		[ "lunar_tie", 1 ]
+		[ "ldc_suit", 1 ],
+	    [ "ldc_skirt", 1 ],
+		[ "ldc_tie", 1 ]
     ]
 	},
 	{

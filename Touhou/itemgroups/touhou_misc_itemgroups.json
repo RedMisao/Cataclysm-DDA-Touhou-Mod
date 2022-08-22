@@ -6,9 +6,46 @@
     "subtype": "distribution",
     "entries": [
 		{ "group": "touhou_ammo_kurz_boxed", "prob": 100 },
+		{ "group": "exotic_books", "prob": 100 },
+		{ "item": "ibm5100", "prob": 100 },
 		{ "item": "idw", "prob": 100 },
 		{ "group": "touhou_idw_gunmods", "prob": 100 },
-		{ "item": "stg44", "prob": 100 }
+		{ "group": "magazines", "prob": 100 },
+		{ "group": "newspaper", "prob": 100 },
+		{ "group": "rare_martial_arts_books", "prob": 100 },
+		{ "item": "stg44", "prob": 100 },
+		{ "item": "umbrella", "prob": 100 },
+		{ "group": "writing_utensils", "prob": 100 }
+    ]
+	},
+	{
+    "id": "touhou_ammo_kurz_boxed",
+	"type": "item_group",
+    "//": "WWII era boxes containing ammo",
+    "subtype": "collection",
+	"entries": [
+		{ 
+		"distribution": [ 
+			{
+            "collection": [
+				{ "item": "792x33_kurz", "count": [ 1, 1 ] },
+				{ "item": "box_kurz", "prob": 100 }
+            ],
+            "prob": 100
+			} 
+		]
+		}
+    ]
+	},
+	{
+    "id": "touhou_idw_gunmods",
+	"type": "item_group",
+    "subtype": "collection",
+	"entries": [
+		{ "item": "barrel_elongated_small2", "prob": 100 },
+		{ "item": "bipod_idw", "prob": 100 },
+		{ "item": "stock_idw_unfolded", "prob": 100 },
+		{ "item": "susat_scope", "prob": 100 }
     ]
 	}
 ]

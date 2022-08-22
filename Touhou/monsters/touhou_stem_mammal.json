@@ -105,7 +105,6 @@
 	"fear_triggers": [ "FRIEND_DIED" ],
     "reproduction": { "baby_egg": "egg_dimetrodon", "baby_count": 6, "baby_timer": 150 },
     "baby_flags": [ "SPRING", "SUMMER" ],
-    "placate_triggers": [ "MEAT" ],
     "flags": [ "ANIMAL", "PATH_AVOID_DANGER_1", "PUSH_MON", "SEES", "SMELLS", "WARM" ],
 	"//": "Dimetrodon limbatus taken as reference. No reproductive data, I'm assuming these laid eggs. It is unknown if these had smooth skin or not"
 	},
@@ -175,7 +174,6 @@
 	"fear_triggers": [ "HURT", "FRIEND_ATTACKED", "FRIEND_DIED", "STALK" ],
     "reproduction": { "baby_egg": "egg_lystrosaurus", "baby_count": 6, "baby_timer": 20 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
-    "placate_triggers": [ "MEAT" ],
     "flags": [ "ANIMAL", "HEARS", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "SWARMS", "WARM" ],
 	"//": "Lystrosaurus sp. taken as reference. No reproductive data. I think these laid eggs, but I'm not sure",
 	"//2": "Should do something related to digging and burrowing their nests",

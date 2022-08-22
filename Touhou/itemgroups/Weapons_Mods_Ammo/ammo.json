@@ -10,8 +10,28 @@
 			{ "group": "touhou_ammo_9x39", "prob": 20 }, 
 			{ "group": "touhou_ammo_kurz", "prob": 20 } 
 		] 
+	}
 	},
-	"//2": "These (above and below) are arbitrary values to check their spawning, will probably get removed except for the obscure and collection sets"
+	{
+    "id": "touhou_ammo_9x39",
+	"type": "item_group",
+    "//": "To spawn 9x39",
+    "subtype": "collection",
+    "entries": [
+		{ "item": "9x39_sp5", "prob": 66 },
+		{ "item": "9x39_sp6", "prob": 33 }
+    ]
+	},
+	{
+    "id": "touhou_ammo_kurz",
+	"type": "item_group",
+    "//": "To spawn 7.92x33",
+    "subtype": "collection",
+    "entries": [
+		{ "item": "792x33_kurz", "prob": 33 },
+		{ "item": "792x33_kurz2", "prob": 66 },
+		{ "item": "792x33_kurz3", "prob": 33 }
+    ]
 	},
     {
     "id": "ammo_rifle_rare_collection",
@@ -47,7 +67,8 @@
     "copy-from": "ammo_rifle_obscure",
     "extend": { 
 		"entries": [ 
-			{ "group": "touhou_ammo_9x39", "prob": 25 }, 
+			{ "group": "touhou_ammo_kurz", "prob": 35 }, 
+			{ "group": "touhou_ammo_9x39", "prob": 20 }, 
 			{ "item": "792x57_m75", "prob": 35 } 
 		] 
 	}
@@ -60,8 +81,9 @@
     "copy-from": "ammo_rifle_obscure_collection",
     "extend": { 
 		"entries": [ 
-			{ "group": "touhou_ammo_9x39", "prob": 25 }, 
-			{ "item": "792x57_m75", "prob": 17 } 
+			{ "group": "touhou_ammo_kurz", "prob": 35 }, 
+			{ "group": "touhou_ammo_9x39", "prob": 20 }, 
+			{ "item": "792x57_m75", "prob": 35 }
 		] 
 	}
 	},
@@ -80,6 +102,16 @@
 	}
 	},
 	{
+    "id": "touhou_ammo_9x39_reloaded",
+	"type": "item_group",
+    "//": "To spawn reloaded 9x39",
+    "subtype": "collection",
+    "entries": [
+		{ "item": "reloaded_9x39_sp5", "prob": 100 },
+		{ "item": "reloaded_9x39_sp6", "prob": 100 }
+    ]
+	},
+	{
     "id": "ammo_obscure_collection",
 	"type": "item_group",
     "//": "Imported or otherwise very obscure ammo.",
@@ -89,19 +121,5 @@
 		{ "group": "ammo_rifle_obscure_collection", "prob": 35 },
 		{ "group": "ammo_launcher_grenade_adapter", "prob": 1 }
     ]
-	},
-	{
-    "id": "ammo_swat",
-	"type": "item_group",
-    "//": "Ammo issued to paramilitary forces in addition to standard police issue.",
-    "subtype": "distribution",
-    "copy-from": "ammo_swat",
-    "extend": { 
-		"entries": [ 
-			{ "group": "touhou_ammo_9x39", "prob": 10, "charges": [ 1, 20 ] }, 
-			{ "item": "792x33_kurz3", "prob": 25 },
-			{ "item": "792x57_m75_2", "prob": 25 } 
-		]
-	}
 	}
 ]
