@@ -8,16 +8,41 @@ This branch is for untested additions that produce non-critical errors when runn
 ----
 
 **Changelog over the master branch (0.9.2.4):**
-* Generic oni enemies added, with their files (harvest, species, drops, etc)
-* New weapons featuring three kinds of kanabo (mostly for oni so far), PGM Hécate, some Lunarian weaponry for experimental purposes
-* Generic poltergeist-ish enemies (simple tsukumogami) added
-* A bunch of extinct fauna added (Aegirocassis, Anatosuchus, Andrewsarchus, Arthropleura, Castoroides, Chasmataspis, Cotylorhynchus, Dimetrodon, Eryops, Glossotherium, Glyptodont, Hesperosuchus, Icadyptes, Lystrosaurus, Meganeura, Megatherium, Moschorhinus, Pambdelurion, Parastylonurus, Platyoposaurus, Pederpes, Prionosuchus, Saurichthys, Scutosaurus, Sidneyia, Smilosuchus, Weigeltisaurus)
-* Random items: Gyokuto ear clips, a lunar canteen, black socks, etc
-* Food, recipes, harvests, eggs, etc
 
-(Not all of the above are spawning yet, soon™)
+Items:
+* Added a bunch of weapons (ARES FMG, CEAM Mòdele 1950, Kar98, OTs-48 and OTs-48K, PGM Hécate II, Pieper M1893, SR-3MP, Thompson Contender, TKB-022P No 2, TKB-022PM No 2, WA2000), including magazines, weapon attachments if needed, plus some variants
+* Added Two more attachments (7.92x33mm conversion for the FN FAL, and a vertical grip)
+* All weapons and related items should now spawn properly
+* Added a bunch of food (anko [sweet bean paste], bayou style fried shrimp[like meat], bird-based burgers, roasted bird leg, oyakodon, bird pie, bird pot pie, bird soup, caesar salad, dango, dorayaki, karaage, manju, milanesa, paella, sweet buns, sweet potato pie, taiyaki)
+* Added clothing items for the MIB, cheongsam dresses
 
-* Added spells for Iku: Elekiter Dragon Palace (aoe) (WIP), Thundercloud Stickleback (aoe knockback), Veil's like water (damaging cone)
-* Removed some of Iku's bionics
-* Added spells for Tenshi: Earthquake signs (aoe + down), Sky of Scarlet perception (laser), Unletting soil (cone + test push)
-* MIB drops corrected, plus the addition of black dress socks
+Spells:
+* Iku: added Elekiter Dragon Palace (aoe) (placeholder), Thundercloud Stickleback (aoe knockback), Veil's like water (damaging cone)
+* Tenshi: added Earthquake signs (aoe + down), Sky of Scarlet perception (laser), Unletting soil (cone + test push)
+* Remi: added Scarlet shot (narrow cone), Consume blood (regens HP and mana), Miserable fate (aoe stun with a bit of damage)
+* Changed how mana ammo works: now it creates a stack of caseless ammo lasting 24 h
+
+Monsters:
+* Added a bunch of extinct fauna (Aegirocassis, Anatosuchus, Andrewsarchus, Arthropleura, Castoroides, Chasmataspis, Cotylorhynchus, Dimetrodon, Dipterus, Ectopistes, Eryops, Glossotherium, Glyptodont, Hesperosuchus, Icadyptes, Lystrosaurus, Meganeura, Megatherium, Moschorhinus, Pambdelurion, Parastylonurus, Platyoposaurus, Pederpes, Prionosuchus, Saurichthys, Scutosaurus, Sidneyia, Smilosuchus, Weigeltisaurus), including reproductive fields, harvests and eggs, if any
+* All non-youkai monsters should now spawn properly
+
+Misc changes and additions (added but not fully implemented):
+* Greatly expanded the use of the extend field (helping with mod cross-compatibility), except for monstergroups
+* TERA Type 2, Lunarian scouting rifle (can be assembled and broken down into [future] interchangeable parts for different effects), Lunar riot shotgun (featuring an ammo-free blast mode), four more Lunar experimental weapons
+* Three types of Gyokuto ear accessories, lunar canteen
+* Added several appearance mutations for future NPCs, including a new mutation type for Gyokuto ears
+* Generic poltergeist-ish enemies (simple tsukumogami)
+* Generic oni enemies that wield kanabo.
+* Added a experimental drug, addiction and the EOCs
+* Iku's bionics were removed
+
+Fixed bugs:
+* Tenko's sword being super fragile
+* Seiga's hair stick encumbrance detriment
+* MIB drops
+
+Known issues:
+* Aya's and Mokou's area_push spell components are either not functional, or barely push away (read: they don't push enough)
+* Mokou's fire ball spell now explodes, but has no duration and is very loud
+
+
