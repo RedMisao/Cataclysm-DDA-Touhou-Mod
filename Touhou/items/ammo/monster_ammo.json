@@ -1,0 +1,32 @@
+[	
+	{
+    "id": "alternate_knife_silver",
+    "type": "AMMO",
+	"name": "Alternate knife (ammo)",
+    "description": "Knife component of the knife attack that knives",
+	"volume": "350 ml",
+	"weight": "450 g",
+    "longest_side": "30 cm",
+	"price_postapoc": 0,
+	"to_hit": {
+		"balance": "good", 
+		"grip": "weapon", 
+		"length": "hand", 
+		"surface": "line"
+	},
+    "bashing": 8,
+    "cutting": 25,
+    "material": [ "wood", "steel", "silver" ],
+    "symbol": ";",
+    "color": "dark_gray",
+	"ammo_type": "alternate_knife",
+	"count": 7,
+    "stack_size": 7,
+	"damage": { "damage_type": "stab", "amount": 33, "armor_penetration": 4 },
+    "dispersion": 15,
+	"range": 24,
+    "recoil": 0,
+	"effects": [ "CASELESS_ROUNDS", "NEVER_MISFIRES", "NOGIB" ],
+    "flags": [ "DURABLE_MELEE", "STAB" ]
+	}
+]

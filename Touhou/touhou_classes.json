@@ -9,7 +9,7 @@
 	"spells": [ 
 		{ "level": 1, "id": "dash_mokou" },	
 		{ "level": 1, "id": "mokou_blazekick" },
-		{ "level": 1, "id": "mokou_fireball" },
+		{ "level": 1, "id": "mokou_fingeflame" },
 		{ "level": 1, "id": "mokou_fujiyamakazan" },
 		{ "level": 1, "id": "mokou_phoenixtalons" }
 	],
@@ -58,7 +58,7 @@
     "points": 4,
 	"proficiencies": [ "prof_food_prep" ],
 	"spells": [ 
-		{ "level": 1, "id": "dash_basic" },
+		{ "level": 1, "id": "dash_meiling" },
 		{ "level": 1, "id": "meiling_qiblast" },
 		{ "level": 1, "id": "meiling_qipunch" }
 	],
@@ -119,6 +119,7 @@
     ],
 	"spells": [ 
 		{ "level": 1, "id": "dash_basic" },
+		{ "level": 1, "id": "iku_dragonstrike" },
 		{ "level": 1, "id": "iku_elekiter" },
 		{ "level": 1, "id": "iku_thundercloud" },
 		{ "level": 1, "id": "iku_waterveil" }
@@ -242,7 +243,11 @@
 	"proficiencies": [ "prof_intro_biology", "prof_intro_chemistry", "prof_inorganic_chemistry", "prof_pharmaceutical" ], 
 	"spells": [ 
 		{ "level": 1, "id": "create_ammo_lunar_small" },
-		{ "level": 1, "id": "dash_basic" }
+		{ "level": 1, "id": "dash_basic" },
+		{ "level": 1, "id": "udonge_iblast" },
+		{ "level": 1, "id": "udonge_waveinsight" },
+		{ "level": 1, "id": "udonge_waveperception" },
+		{ "level": 1, "id": "udonge_wavestealth" }
 	],
 	"skills": [
         { "level": 2, "name": "dodge" },
@@ -399,8 +404,10 @@
 	"proficiencies": [ "prof_food_prep", "prof_knife_skills" ],
 	"spells": [ 
 		{ "level": 1, "id": "dash_basic" },
-		{ "level": 1, "id": "sakuya_accelerate" },
+		{ "level": 1, "id": "sakuya_contraction" },
+		{ "level": 1, "id": "sakuya_dilation" },
 		{ "level": 1, "id": "sakuya_quickrest" },
+		{ "level": 1, "id": "sakuya_timeparadox" },
 		{ "level": 1, "id": "sakuya_timestop" }
 	],
 	"skills": [
@@ -420,25 +427,17 @@
         "both": {
             "items": [
 				"dress_shoes",
-				"knife_holster_leg",
-				"knife_holster_leg",
 				"knit_scarf",
 				"maid_dress",
 				"maid_hat",
 				"pocketwatch",
 				"sakuya_pads",
-				"silver_knife",
-				"silver_knife",
-				"silver_knife",
-				"silver_knife",
-				"silver_knife",
-				"silver_knife",
-				"silver_knife",
-				"silver_knife",
 				"stockings"
 			],
 			"entries": [
-                { "item": "sakuya_knife", "container-item": "sheath" }
+                { "item": "sakuya_knife", "container-item": "sheath" },
+				{ "item": "knife_holster_leg", "contents-group": "nested_silver_knife" },
+				{ "item": "knife_holster_leg", "contents-group": "nested_silver_knife" }
 			]
 		},
         "male": [
@@ -543,7 +542,8 @@
     "spells": [ 
 		{ "level": 1, "id": "dash_basic" },
 		{ "level": 1, "id": "tenko_earthquake" },
-		{ "level": 1, "id": "tenko_keystone" },
+		{ "level": 1, "id": "tenko_keystonecrash" },
+		{ "level": 1, "id": "tenko_keystonepillar" },
 		{ "level": 1, "id": "tenko_scarletperception" },
 		{ "level": 1, "id": "tenko_unletting_soil" }
 	],

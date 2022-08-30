@@ -58,7 +58,6 @@
 	"loudness": 13,
 	"min_cycle_recoil": 1600,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
-	"range": 200,
 	"reload": 120,
 	"reload_noise_volume": 6,
 	"valid_mod_locations": [

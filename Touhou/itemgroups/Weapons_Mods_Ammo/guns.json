@@ -91,9 +91,9 @@
 		"items": [
 			{ "group": "nested_ceamm1", "prob": 35 },
 			{ "group": "nested_pieper_m1893", "prob": 25 },
+			{ "group": "nested_spanish_m1893", "prob": 25 },
 			{ "group": "nested_stg44", "prob": 65 },
-			{ "group": "nested_tkb002_p", "prob": 35 },
-			{ "group": "nested_tkb002_pm", "prob": 35 },
+			{ "group": "nested_tkb002_nested", "prob": 35 },
 			{ "group": "nested_wa2000", "prob": 1 }
 		]
 	}
@@ -109,11 +109,11 @@
 			{ "item": "ceamm1", "prob": 15, "charges-min": 0, "charges-max": 0 },
 			{ "item": "m76", "prob": 20, "charges-min": 0, "charges-max": 0 },
 			{ "item": "pieper_m1893", "prob": 5, "charges-min": 0, "charges-max": 0 },
+			{ "item": "spanish_m1893", "prob": 15, "charges-min": 0, "charges-max": 0 },
 			{ "item": "sr3mp", "prob": 25, "charges-min": 0, "charges-max": 0 },
 			{ "item": "stg44", "prob": 35, "charges-min": 0, "charges-max": 0 },
-			{ "item": "svd", "prob": 10, "charges-min": 0, "charges-max": 0 },
-			{ "item": "tkb002_p", "prob": 10, "charges-min": 0, "charges-max": 0 },
-			{ "item": "tkb002_pm", "prob": 10, "charges-min": 0, "charges-max": 0 },
+			{ "item": "svd", "prob": 15, "charges-min": 0, "charges-max": 0 },
+			{ "group": "nested_tkb002_items", "prob": 10, "charges-min": 0, "charges-max": 0 },
 			{ "item": "vss", "prob": 25, "charges-min": 0, "charges-max": 0 },
 			{ "group": "nested_wa2000_variants", "prob": 5, "charges-min": 0, "charges-max": 0 }
 		]
@@ -132,10 +132,10 @@
 			{ "group": "nested_m76", "prob": 16 },
 			{ "group": "nested_ots48", "prob": 16 },
 			{ "group": "nested_pieper_m1893", "prob": 12 },
+			{ "group": "nested_spanish_m1893", "prob": 16 },
 			{ "group": "nested_stg44", "prob": 25 },
 			{ "group": "nested_svd", "prob": 20 },
-			{ "group": "nested_tkb002_p", "prob": 20 },
-			{ "group": "nested_tkb002_pm", "prob": 20 },
+			{ "group": "nested_tkb002_nested", "prob": 20 },
 			{ "group": "nested_vss", "prob": 20 }
 		]
 	}
@@ -153,11 +153,11 @@
 			{ "item": "m76", "prob": 10, "charges-min": 0, "charges-max": 0 },
 			{ "item": "ots48", "prob": 5, "charges-min": 0, "charges-max": 0 },
 			{ "item": "pieper_m1893", "prob": 1, "charges-min": 0, "charges-max": 0 },
+			{ "item": "spanish_m1893", "prob": 8, "charges-min": 0, "charges-max": 0 },
 			{ "item": "stg44", "prob": 25, "charges-min": 0, "charges-max": 0 },
 			{ "item": "svd", "prob": 15, "charges-min": 0, "charges-max": 0 },
 			{ "item": "vss", "prob": 20, "charges-min": 0, "charges-max": 0 },
-			{ "item": "tkb002_p", "prob": 1, "charges-min": 0, "charges-max": 0 },
-			{ "item": "tkb002_pm", "prob": 1, "charges-min": 0, "charges-max": 0 },
+			{ "group": "nested_tkb002_items", "prob": 1, "charges-min": 0, "charges-max": 0 },
 			{ "group": "nested_wa2000_variants", "prob": 1, "charges-min": 0, "charges-max": 0 }
 		]
 	}

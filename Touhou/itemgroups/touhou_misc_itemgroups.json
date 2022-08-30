@@ -5,47 +5,56 @@
     "//": "All items considered for reverse-spiriting away on generic mystery spots",
     "subtype": "distribution",
     "entries": [
-		{ "group": "touhou_ammo_kurz_boxed", "prob": 100 },
 		{ "group": "exotic_books", "prob": 100 },
+		{ "group": "forgotten_ammo", "prob": 100 },
+		{ "group": "forgotten_weapons", "prob": 100 },
 		{ "item": "ibm5100", "prob": 100 },
-		{ "item": "idw", "prob": 100 },
-		{ "group": "touhou_idw_gunmods", "prob": 100 },
 		{ "group": "magazines", "prob": 100 },
 		{ "group": "newspaper", "prob": 100 },
 		{ "group": "rare_martial_arts_books", "prob": 100 },
-		{ "item": "stg44", "prob": 100 },
 		{ "item": "umbrella", "prob": 100 },
 		{ "group": "writing_utensils", "prob": 100 }
     ]
 	},
 	{
-    "id": "touhou_ammo_kurz_boxed",
+    "id": "forgotten_ammo",
 	"type": "item_group",
-    "//": "WWII era boxes containing ammo",
-    "subtype": "collection",
+    "subtype": "distribution",
 	"entries": [
 		{ 
 		"distribution": [ 
 			{
             "collection": [
-				{ "item": "792x33_kurz", "count": [ 1, 1 ] },
-				{ "item": "box_kurz", "prob": 100 }
+				{ "item": "792x33_me", "count": [ 1, 1 ] },
+				{ "item": "box_kurz" }
             ],
-            "prob": 100
-			} 
+            "prob": 50
+			},
+			{
+            "collection": [
+				{ "item": "792x57_sme", "count": 3 },
+				{ "item": "792x57_clip", "count": 3 },
+				{ "item": "box_mauser" }
+            ],
+            "prob": 50
+			}
 		]
 		}
-    ]
+    ],
+	"//": "WWII era boxes containing ammo"
 	},
 	{
-    "id": "touhou_idw_gunmods",
-	"type": "item_group",
-    "subtype": "collection",
-	"entries": [
-		{ "item": "barrel_elongated_small2", "prob": 100 },
-		{ "item": "bipod_idw", "prob": 100 },
-		{ "item": "stock_idw_unfolded", "prob": 100 },
-		{ "item": "susat_scope", "prob": 100 }
+    "id": "forgotten_weapons",
+    "type": "item_group",
+    "subtype": "distribution",
+    "entries": [
+		{ "item": "aresfmg_folded", "prob": 100 },
+		{ "item": "ceamm1", "prob": 100 },
+		{ "item": "idw", "prob": 100 },
+		{ "item": "pieper_m1893", "prob": 100 },
+		{ "item": "stg44", "prob": 100 },
+		{ "group": "nested_tkb002_items", "prob": 100 },
+		{ "item": "wa2000", "prob": 100 }
     ]
 	}
 ]

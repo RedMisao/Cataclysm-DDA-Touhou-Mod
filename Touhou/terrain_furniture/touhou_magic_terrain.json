@@ -1,0 +1,48 @@
+[
+	{
+    "id": "t_keystone",
+	"type": "terrain",
+    "name": "keystone",
+    "description": "A heavy, conic-shaped granite rock, wrapped with a hemp rope.",
+    "symbol": "v",
+    "looks_like": "f_boulder_medium",
+    "color": "light_gray",
+    "bash": {
+		"str_min": 120,
+		"str_max": 400,
+		"sound": "clang!",
+		"sound_fail": "thud!",
+		"ter_set": "t_rock_floor",
+		"items": [ 
+			{ "item": "rock", "count": [ 1, 2 ] }, 
+			{ "item": "material_rocksalt", "count": [ 0, 1 ], "prob": 4 } 
+		]
+    },
+    "coverage": 100,
+    "move_cost": 50,
+	"flags": [ "MINEABLE", "MOUNTABLE", "NO_SCENT", "TRANSPARENT" ]
+	},
+	{
+    "id": "t_keystone_pillar",
+	"type": "terrain",
+    "name": "keystone pillar",
+    "description": "A heavy, large, tall granite rock, wrapped with a hemp rope.",
+    "symbol": "I",
+    "looks_like": "t_rock_smooth",
+    "color": "light_gray",
+    "bash": {
+		"str_min": 120,
+		"str_max": 400,
+		"sound": "clang!",
+		"sound_fail": "thud!",
+		"ter_set": "t_rock_floor",
+		"items": [ 
+			{ "item": "rock", "count": [ 1, 2 ] }, 
+			{ "item": "material_rocksalt", "count": [ 0, 1 ], "prob": 4 } 
+		]
+    },
+    "coverage": 100,
+    "move_cost": 0,
+	"flags": [ "BLOCK_WIND", "MINEABLE", "NOITEM", "NO_SCENT", "WALL" ]
+	}
+]

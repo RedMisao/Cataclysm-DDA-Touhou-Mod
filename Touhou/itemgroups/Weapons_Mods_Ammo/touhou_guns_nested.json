@@ -140,7 +140,7 @@
     "ammo": 100,
     "entries": [
 		{ "item": "pieper_m1893", "charges-min": 0, "charges-max": 9 },
-		{ "group": "on_hand_792x57" }
+		{ "group": "on_hand_765x53" }
     ]
 	},
 	{
@@ -180,6 +180,26 @@
 		{ "item": "sig550mag20" },
 		{ "item": "sig550mag20", "prob": 50 },
 		{ "group": "on_hand_223" }
+    ]
+	},
+	{
+    "id": "nested_spanish_m1893",
+    "type": "item_group",
+    "//": "this is a distribution for the gun, reasonable number of backup mags, and some ammo to repack",
+    "subtype": "collection",
+    "ammo": 100,
+    "entries": [ 
+		{ "item": "spanish_m1893", "charges-min": 0, "charges-max": 5 }, 
+		{ "group": "on_hand_765x53" } 
+	]
+	},
+	{
+    "id": "nested_retool_spanish_m1893",
+    "type": "item_group",
+    "subtype": "distribution",
+    "entries": [
+		{ "item": "retool_spanish_m1893_308", "prob": 50 },
+		{ "item": "retool_spanish_m1893_792x57", "prob": 50 }
     ]
 	},
 	{
@@ -343,6 +363,25 @@
     ]
 	},
 	{
+    "id": "nested_tkb002_items",
+    "type": "item_group",
+    "subtype": "distribution",
+    "entries": [
+		{ "item": "tkb002_p", "prob": 100 },
+		{ "item": "tkb002_pm", "prob": 100 }
+    ],
+	"//": "Both TKBs together so they spawn as variants, even though they were not"
+	},
+	{
+    "id": "nested_tkb002_nested",
+    "type": "item_group",
+    "subtype": "distribution",
+    "entries": [
+		{ "group": "nested_tkb002_p", "prob": 100 },
+		{ "group": "nested_tkb002_pm", "prob": 100 }
+    ]
+	},
+	{
     "id": "nested_tkb002_p",
     "type": "item_group",
     "//": "this is a distribution for the gun, reasonable number of backup mags, and some ammo to repack",
@@ -464,20 +503,37 @@
     ]
 	},
 	{
+    "id": "on_hand_765x53",
+    "type": "item_group",
+    "//": "a collection of ammo that would be found with a loaded gun.",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "765x53_arg", "prob": 33, "charges": [ 1, 20 ] },
+      { "item": "765x53_arg", "prob": 100, "charges": [ 21, 35 ] },
+      { "item": "765x53_arg", "prob": 66, "charges": [ 36, 50 ] },
+      { "item": "reloaded_765x53_arg", "prob": 33, "charges": [ 1, 20 ] },
+      { "item": "reloaded_765x53_arg", "prob": 100, "charges": [ 21, 35 ] },
+      { "item": "reloaded_765x53_arg", "prob": 66, "charges": [ 36, 50 ] }
+    ]
+	},
+	{
     "id": "on_hand_792x33",
     "type": "item_group",
     "//": "a collection of ammo that would be found with a loaded gun.",
     "subtype": "distribution",
     "entries": [
-		{ "item": "792x33_kurz", "prob": 88, "charges": [ 1, 25 ] },
-		{ "item": "792x33_kurz", "prob": 44, "charges": [ 30, 55 ] },
-		{ "item": "792x33_kurz", "prob": 22, "charges": [ 60, 85 ] },
-		{ "item": "792x33_kurz2", "prob": 100, "charges": [ 1, 25 ] },
-		{ "item": "792x33_kurz2", "prob": 66, "charges": [ 30, 55 ] },
-		{ "item": "792x33_kurz2", "prob": 33, "charges": [ 60, 85 ] },
-		{ "item": "792x33_kurz3", "prob": 100, "charges": [ 1, 25 ] },
-		{ "item": "792x33_kurz3", "prob": 66, "charges": [ 30, 55 ] },
-		{ "item": "792x33_kurz3", "prob": 33, "charges": [ 60, 85 ] }
+		{ "item": "792x33_me", "prob": 88, "charges": [ 1, 25 ] },
+		{ "item": "792x33_me", "prob": 44, "charges": [ 30, 55 ] },
+		{ "item": "792x33_me", "prob": 22, "charges": [ 60, 85 ] },
+		{ "item": "792x33_prvi", "prob": 100, "charges": [ 1, 25 ] },
+		{ "item": "792x33_prvi", "prob": 66, "charges": [ 30, 55 ] },
+		{ "item": "792x33_prvi", "prob": 33, "charges": [ 60, 85 ] },
+		{ "item": "reloaded_792x33_me", "prob": 100, "charges": [ 1, 25 ] },
+		{ "item": "reloaded_792x33_me", "prob": 66, "charges": [ 30, 55 ] },
+		{ "item": "reloaded_792x33_me", "prob": 33, "charges": [ 60, 85 ] },
+		{ "item": "reloaded_792x33_prvi", "prob": 100, "charges": [ 1, 25 ] },
+		{ "item": "reloaded_792x33_prvi", "prob": 66, "charges": [ 30, 55 ] },
+		{ "item": "reloaded_792x33_prvi", "prob": 33, "charges": [ 60, 85 ] }
     ]
 	},
 	{

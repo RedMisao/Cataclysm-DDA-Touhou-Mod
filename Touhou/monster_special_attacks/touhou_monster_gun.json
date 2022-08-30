@@ -1,0 +1,36 @@
+[
+	{
+    "id": "sakuya_alternate_knives",
+    "type": "GUN",
+    "color": "red",
+    "name": { "str": "Alternate knives" },
+    "description": "Alternate timeline knifing.",
+    "volume": "200 ml",
+	"weight": "300 g",
+    "material": [ "steel" ],
+    "skill": "throw",
+    "ammo": [ "alternate_knife" ],
+    "ammo_effects": [ "NO_PENETRATE_OBSTACLES", "NEVER_MISFIRES" ],
+    "ranged_damage": { "damage_type": "bash", "amount": -1 },
+    "clip_size": 1,
+    "longest_side": "75 mm",
+    "bashing": 2,
+    "to_hit": 1,
+    "symbol": "%",
+    "loudness": 2,
+    "range": 6,
+    "dispersion": 150,
+    "durability": 8,
+    "pocket_data": [
+		{
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "max_contains_volume": "200 L",
+        "max_contains_weight": "400 kg",
+        "max_item_length": "2000 m",
+        "ammo_restriction": { "alternate_knife": 7 }
+		}
+    ],
+    "flags": [ "PRIMITIVE_RANGED_WEAPON", "NEVER_JAMS", "NONCONDUCTIVE", "NO_REPAIR", "WATERPROOF_GUN", "NO_SALVAGE", "NO_UNLOAD" ]
+	}
+]

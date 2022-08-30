@@ -1,5 +1,42 @@
 [
 	{
+    "id": "ench_lampad_torch_off",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WIELD",
+    "values": [ 
+		{ "value": "INTELLIGENCE", "multiply": 0.95 },
+		{ "value": "PERCEPTION", "multiply": 0.95 },
+		{ "value": "ATTACK_SPEED", "multiply": 1.1 },
+		{ "value": "MOVE_COST", "add": -20 }
+	]
+	},
+	{
+    "id": "ench_lampad_torch_lit",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WIELD",
+    "values": [ 
+		{ "value": "INTELLIGENCE", "multiply": 0.9 },
+		{ "value": "PERCEPTION", "multiply": 0.85 },
+		{ "value": "STRENGTH", "multiply": 1.1 },
+		{ "value": "ATTACK_SPEED", "multiply": 1.2 },
+		{ "value": "BONUS_DODGE", "add": -1 },
+		{ "value": "MOVE_COST", "add": -35 }
+	],
+    "intermittent_activation": {
+		"effects": [
+			{
+			"frequency": "10 s",
+			"spell_effects": [
+				{ "id": "lampad_insanity" }
+			]
+			}
+		]
+    },
+	"//": "add spell that causes ATTACKMON on nearby enemies"
+	},
+	{
     "id": "utsuho_blade",
     "type": "SPELL",
     "name": "Fusion blade (timer)",

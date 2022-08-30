@@ -217,7 +217,7 @@
     "anger_triggers": [ "FRIEND_ATTACKED", "HURT", "PLAYER_NEAR_BABY" ],
 	"fear_triggers": [ "FRIEND_DIED" ],
     "special_attacks": [ [ "EAT_FOOD", 100 ], [ "PARROT", 12 ] ],
-	"flags": [ "ANIMAL", "AQUATIC", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
+	"flags": [ "ANIMAL", "AQUATIC", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "SWIMS", "WARM", "WATER_CAMOUFLAGE" ],
     "//": "Ichthyosaurus communis used as reference. Don't know if they had vocalizations but that's how I imagine them to be",
 	"//2": "Coprolites include fish and squid, and the big characteristic eyes indicate it could hunt in low light conditions, with great depths included"
 	},

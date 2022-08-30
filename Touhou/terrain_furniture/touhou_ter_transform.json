@@ -1,0 +1,30 @@
+[
+	{
+    "id": "keystone_crash_ter",
+	"type": "ter_furn_transform",
+    "terrain": [
+		{
+        "result": "t_keystone",
+        "message": "A keystone materializes and crashes down!",
+        "valid_flags": [ "DIGGABLE", "FLAT" ]
+		}
+    ],
+    "furniture": [ 
+		{ "result": "f_null", "valid_flags": [ "TRANSPARENT", "WALL" ] } 
+	]
+	},
+	{
+    "id": "keystone_pillar_ter",
+	"type": "ter_furn_transform",
+    "terrain": [
+		{
+        "result": "t_keystone_pillar",
+        "message": "The ground quakes, and a keystone pillar quickly rises up!",
+        "valid_flags": [ "DIGGABLE", "FLAT" ]
+		}
+    ],
+    "furniture": [ 
+		{ "result": "f_null", "valid_flags": [ "TRANSPARENT", "WALL" ] } 
+	]
+	}
+]

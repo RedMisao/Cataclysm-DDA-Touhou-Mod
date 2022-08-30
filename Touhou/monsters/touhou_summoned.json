@@ -1,5 +1,47 @@
 [
 	{
+    "id": "mon_sakuya_alternate",
+    "type": "MONSTER",
+    "name": { "str": "Maid of the Scarlet Devil" },
+    "description": "An image made from light, nearly identical to the real deal.",
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "default_faction": "touhou_summon",
+    "bodytype": "human",
+    "species": [ "UNKNOWN" ],
+    "harvest": "exempt",
+    "hp": 100,
+    "speed": 150,
+    "symbol": "@",
+    "color": "light_gray",
+    "aggression": 66,
+    "morale": 99,
+    "luminance": 1,
+    "dodge": 8,
+    "path_settings": { "max_dist": 6 },
+	"special_attacks": [ 
+		{
+        "type": "gun",
+        "description": "The feral human throws a rock!",
+        "ammo_type": "rock",
+		"max_ammo": 4,
+        "cooldown": 2,
+        "fake_dex": 11,
+		"fake_skills": [ [ "throw", 7 ] ],
+        "gun_type": "sakuya_alternate_knives",
+        "move_cost": 95,
+		"targeting_cost": 5,
+		"require_targeting_monster": true,
+        "no_ammo_sound": "",
+        "ranges": [ [ 1, 24, "DEFAULT" ] ]
+		}
+	],
+	"anger_triggers": [ "FRIEND_ATTACKED", "HURT" ],
+    "fear_triggers": [ "PLAYER_CLOSE" ],
+    "death_function": { "message": "The %s disappears.", "corpse_type": "NO_CORPSE" },
+    "flags": [ "CLIMBS", "FLIES", "HIT_AND_RUN", "NO_BREATHE", "PATH_AVOID_DANGER_2", "PET_WONT_FOLLOW", "SEES", "WARM" ]
+	},
+	{
 	"id": "mon_vengeful_spirit_kaenbyou",
     "type": "MONSTER",
     "name": { "str": "vengeful spirit", "str_pl": "vengeful spirits" },
@@ -34,7 +76,7 @@
 		"effect": { "id": "kaenbyou_vsrelease2", "hit_self": true }, 
 		"message": "The %s explodes!" 
 	},
-    "flags": [ "CLIMBS", "COLDPROOF", "FIREPROOF", "GRABS", "GROUP_MORALE", "HEARS", "PATH_AVOID_DANGER_2", "SEES", "STUN_IMMUNE", "WARM" ],
+    "flags": [ "CLIMBS", "COLDPROOF", "FLIES", "FIREPROOF", "GRABS", "GROUP_MORALE", "HEARS", "PATH_AVOID_DANGER_2", "SEES", "STUN_IMMUNE", "WARM" ],
 	"//": "Onryou on their own are basically trash mobs that keep enemies ocuppied. These should drain the moral of the target more than be an active threat, even in swarms"
 	},
 	{

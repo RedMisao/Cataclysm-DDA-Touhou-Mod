@@ -4,8 +4,9 @@
     "type": "MAGAZINE",
     "name": { "str": "7.92x57mm 5-round clip" },
 	"copy-from": "762R_clip",
-    "color": "dark_gray",
+    "material": [ "brass" ],
     "looks_like": "762R_clip",
+	"color": "dark_gray",
     "ammo_type": [ "792x57" ],
     "pocket_data": [ 
 		{ 

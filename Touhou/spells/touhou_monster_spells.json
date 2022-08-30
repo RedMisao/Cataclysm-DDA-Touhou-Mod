@@ -65,7 +65,7 @@
     "id": "death_mib",
     "type": "SPELL",
     "name": { "str": "MIB death (chain component)" },
-    "description": "Bigger chance to just die, equal chance to spawn something else on death.",
+    "description": "Chance to just die, or to spawn something else on death.",
     "effect": "summon",
 	"extra_effects": [
 		{ "id": "death_mib_none" },

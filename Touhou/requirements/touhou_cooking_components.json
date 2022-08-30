@@ -139,21 +139,6 @@
 	"//": "Eggs from Eryops, Platyoposaurus and Prionosuchus are roe, so they're not here as eggs_any consists of 'true' eggs"
 	},
 	{
-    "id": "knives",
-    "type": "requirement",
-    "tools": [ 
-		[ [ "knife_bread", -1 ] ], 
-		[ [ "knife_butcher", -1 ] ],
-		[ [ "knife_carving", -1 ] ], 
-		[ [ "knife_chef", -1 ] ], 
-		[ [ "knife_meat_cleaver", -1 ] ],
-		[ [ "knife_paring", -1 ] ], 
-		[ [ "knife_steak", -1 ] ], 
-		[ [ "knife_vegetable_cleaver", -1 ] ],
-		[ [ "sakuya_knife", -1 ] ]
-	]
-	},
-	{
     "id": "lamprey_meat_cooked",
     "type": "requirement",
     "components": [ [ 

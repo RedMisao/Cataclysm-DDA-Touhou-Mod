@@ -4,6 +4,21 @@
     "type": "TOOL",
 	"name": { "str": "mini hakkero (replica)" },
     "description": "A small wooden magical furnace.  This one's evidently a replica though, \"improved\" with modern materials.",
+	"volume": "500 ml",
+	"weight": "500 g",
+    "longest_side": "12 cm",
+	"price_postapoc": 25000,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "none", 
+		"length": "hand", 
+		"surface": "any"
+	},
+	"material": [ "plastic", "steel", "wood" ],
+	"symbol": "☲",
+    "color": "light_blue",
+	"charges_per_use": 0,
+    "qualities": [ [ "COOK", 1 ] ],
     "use_action": [ 
 		"HOTPLATE", 
 		{ 
@@ -16,14 +31,6 @@
 		{ "type": "cast_spell", "spell_id": "mini_hakkero_replica_mspark", "no_fail": true, "level": 1 },
 		{ "type": "cast_spell", "spell_id": "mini_hakkero_replica_mmissile", "no_fail": true, "level": 1 }
 	],
-	"weight": "500 g",
-	"volume": "500 ml",
-    "longest_side": "12 cm",
-	"price_postapoc": 25000,
-	"material": [ "plastic", "steel", "wood" ],
-	"symbol": "☲",
-    "color": "light_blue",
-	"charges_per_use": 0,
 	"flags": [ "BELT_CLIP", "TRADER_AVOID", "USE_PLAYER_ENERGY" ]
 	},
 	{

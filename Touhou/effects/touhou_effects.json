@@ -1,24 +1,35 @@
 [
 	{
-    "id": "sakuya_accelerate2",
+    "id": "sakuya_contraction_effect",
 	"type": "effect_type",
-    "name": [ "Accelerate(effect)" ],
-    "desc": [ "Test effect for sakuya_accelerate " ],
+    "name": [ "Temporal contraction (effect)" ],
+    "desc": [ "Your personal bubble is being dilated." ],
+    "apply_message": "The world seems to accelerate around you!",
+    "remove_message": "Time is flowing normally again.",
+	"rating": "bad",
+    "base_mods": { "speed_mod": [ -50 ] },
+    "scaling_mods": { "speed_mod": [ -5 ] }
+	},
+	{
+    "id": "sakuya_dilation2",
+	"type": "effect_type",
+    "name": [ "Temporal dilation (effect)" ],
+    "desc": [ "Your personal bubble is being dilated." ],
     "apply_message": "You start moving to superhuman speeds.",
-    "remove_message": "You begin moving normally again.",
+    "remove_message": "You move normally again.",
 	"rating": "good",
-    "base_mods": { "speed_mod": [ 300 ] },
+    "base_mods": { "dex_mod": [ 1 ], "speed_mod": [ 300 ] },
 	"//": "Check /data/mods/Magiclysm/effects and related for a list of further applications"
 	},
 	{
 	"id": "sakuya_quickrest2",
 	"type": "effect_type",
-    "name": [ "Quick rest (effect)" ],
+    "name": [ "Temporal contraction (effect)" ],
     "desc": [ "Test effect for sakuya_quickrest " ],
     "apply_message": "You make use of your ability to take a quick rest",
     "remove_message": "Your quick rest has ended",
     "rating": "good",
-    "base_mods": { "fatigue_amount": [ -1 ], "pain_amount": [ -1 ], "sleep_amount": [ -1 ] }
+    "base_mods": { "fatigue_amount": [ -5 ], "pkill_amount": [ 1 ], "stamina_amount": [ 1000 ], "stim_amount": [ 2 ] }
 	},
 	{
     "id": "sakuya_timestop2",
@@ -31,14 +42,38 @@
     "base_mods": { "speed_mod": [ 100 ] }
 	},
 	{
+    "id": "udonge_insight",
+	"type": "effect_type",
+    "name": [ "Wavelength manipulation (Insight)" ],
+    "desc": [ "You're concentrated…" ],
+    "apply_message": "Mental processes become focused.",
+    "remove_message": "You relax your thoughts.",
+	"rating": "good",
+    "base_mods": { "pkill_amount": [ -1 ], "stim_amount": [ 2 ] },
+	"scaling_mods": { "int_mod": [ 2 ] },
+    "removes_effects": [ "udonge_perception", "udonge_stealth" ]
+	},
+	{
+    "id": "udonge_perception",
+	"type": "effect_type",
+    "name": [ "Wavelength manipulation (Perception)" ],
+    "desc": [ "Awareness is greatly increased." ],
+    "apply_message": "You harness the shadows that stride between the worlds.",
+    "remove_message": "Your vision becomes normal again.",
+	"rating": "good",
+	"scaling_mods": { "per_mod": [ 2 ] },
+    "removes_effects": [ "udonge_insight", "udonge_stealth" ],
+	"flags": [ "INFRARED", "NIGHT_VISION", "SUPER_HEARING" ]
+	},
+	{
     "id": "udonge_stealth",
 	"type": "effect_type",
-    "name": [ "Wavelength manipulation (stealth)" ],
+    "name": [ "Wavelength manipulation (Stealth)" ],
     "desc": [ "Become imperceptible to those around you." ],
-    "apply_message": "Your wavelength becomes minimal, turning you invisible and perfectly silent.",
+    "apply_message": "Your wavelength becomes minimal, turning you invisible.",
     "remove_message": "You become perceptible again.",
 	"rating": "good",
-	"flags": [ "EFFECT_INVISIBLE" ],
-	"//": "Recheck this for Udonge's stealth plus see the sound component. Also, this effect should only work at short-medium range. Also, there should be a different component for invisibility detection."
+    "removes_effects": [ "udonge_insight", "udonge_perception" ],
+	"flags": [ "INVISIBLE", "NO_SCENT" ]
 	}
 ]
