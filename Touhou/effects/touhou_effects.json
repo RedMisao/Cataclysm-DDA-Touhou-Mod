@@ -42,6 +42,16 @@
     "base_mods": { "speed_mod": [ 100 ] }
 	},
 	{
+    "id": "seiga_mspeed",
+	"type": "effect_type",
+    "name": [ "Hermit walk (speed)" ],
+    "desc": [ "Movement speed is increased" ],
+    "apply_message": "Your movement speed is slightly increased.",
+    "remove_message": "You move normally again.",
+	"rating": "good",
+    "base_mods": { "speed_mod": [ 35 ] }
+	},
+	{
     "id": "udonge_insight",
 	"type": "effect_type",
     "name": [ "Wavelength manipulation (Insight)" ],

@@ -1,0 +1,39 @@
+[
+	{
+    "id": "create_ammo_lunar_medium",
+    "type": "SPELL",
+    "name": "Craft medium-sized ammo",
+    "description": "Test item for crafting medium-sized ammo for Lunar weapons",
+    "valid_targets": [ "self" ],
+    "effect": "spawn_item",
+    "effect_str": "ammo_lunar_medium_1",
+    "shape": "blast",
+    "base_energy_cost": 500,
+    "min_duration": 86400000,
+    "max_duration": 86400000,
+    "difficulty": -20,
+    "base_casting_time": 500,
+	"max_level": 1,
+    "energy_source": "MANA",
+    "flags": [ "CONCENTRATE", "NO_LEGS", "SILENT" ],
+	"//3": "Ideally there should be a bio_ups system but for mana instead of bio power, with no item intermediate. This is how magical items work after all"
+	},
+	{
+    "id": "create_ammo_lunar_small",
+    "type": "SPELL",
+    "name": "Craft small-sized ammo",
+    "description": "Test item for crafting medium-sized ammo for Lunar weapons",
+    "valid_targets": [ "self" ],
+    "effect": "spawn_item",
+    "effect_str": "ammo_lunar_small_2",
+    "shape": "blast",
+    "base_energy_cost": 500,
+    "min_duration": 86400000,
+    "max_duration": 86400000,
+    "difficulty": -20,
+    "base_casting_time": 500,
+	"max_level": 1,
+    "energy_source": "MANA",
+    "flags": [ "CONCENTRATE", "NO_LEGS", "SILENT" ]
+	}
+]

@@ -48,5 +48,14 @@
 		{ "x": -1, "y": 0, "chance": 100, "items": [ "ash" ] },
 		{ "x": -1, "y": 0, "chance": 100, "item_groups": [ "fuel_diesel" ] }
 	]
+	},
+	{
+    "id": "keystone_floating",
+    "type": "vehicle",
+    "name": "floating keystone",
+    "blueprint": [ "V" ],
+    "parts": [ { "x": 0, "y": 0, "parts": [ "frame_keystone", "controls_keystone", "reactor_keystone", "storage_battery_keystone", "wheel_keystone" ] } ],
+	"items": [ { "x": 0, "y": 0, "chance": 100, "items": [ "mana_fuel" ] } ],
+	"//": "This STILL doesn't move !!! What the HELL"
 	}
 ]

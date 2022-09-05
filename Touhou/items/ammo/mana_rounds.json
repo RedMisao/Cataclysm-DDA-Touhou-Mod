@@ -71,5 +71,22 @@
 	"description": "Small-sized shot-type Lunar ammo, crafted from mana.",
 	"damage": { "damage_type": "bullet", "amount": 35, "armor_penetration": 9 },
     "effects": [ "CASELESS_ROUNDS", "NEVER_MISFIRES", "SHOT" ]
+	},
+	{
+    "id": "mana_fuel",
+    "type": "AMMO",
+    "category": "chems",
+    "name": "mana fuel",
+    "description": "Mana fuel for magical vehicles",
+    "volume": "1 ml",
+	"weight": "1 g",
+    "bashing": 1,
+    "material": [ "magic_fuel_mat" ],
+    "symbol": "?",
+    "color": "white",
+    "ammo_type": "magic_fuel_ammo",
+    "count": 1,
+    "phase": "solid",
+    "flags": [ "PERPETUAL", "PSEUDO" ]
 	}
 ]

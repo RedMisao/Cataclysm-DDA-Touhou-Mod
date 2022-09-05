@@ -72,6 +72,18 @@
     "default": "792x57_m75"
 	},
 	{
+    "id": "magic_fuel_ammo",
+    "name": "magic fuel",
+    "type": "ammunition_type",
+    "default": "mana_fuel"
+	},
+	{
+    "id": "silver_knife_type",
+    "name": "magic fuel",
+    "type": "ammunition_type",
+    "default": "silver_knife"
+	},
+	{
     "id": "touhou_corpse_ammo",
 	"type": "ammunition_type",
     "name": "corpse",

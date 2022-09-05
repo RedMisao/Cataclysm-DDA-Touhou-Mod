@@ -1,9 +1,25 @@
 [
 	{
+    "id": "aura_immolate_light",
+    "type": "ARMOR",
+	"name": { "str": "Immolate (illumination component) (item)", "str_pl": "Immolate (illumination component) (items)" },
+    "description": "Aura effect to illuminate the burning target.",
+    "weight": "0 g",
+    "volume": "0 ml",
+    "price_postapoc": 0,
+    "symbol": "*",
+    "color": "white",
+    "material": [ "steel" ],
+	"armor": [ 
+		{ "covers": [ "torso" ], "coverage": 0, "encumbrance": [ 0, 0 ] }
+	],
+    "flags": [ "AURA", "LIGHT_36", "NO_TAKEOFF", "NONCONDUCTIVE", "OVERSIZE", "ONLY_ONE", "SEMITANGIBLE", "TRADER_AVOID", "ZERO_WEIGHT" ]
+	},
+	{
     "id": "mokou_fingerflame_item",
     "type": "ARMOR",
 	"name": { "str": "Finger flame (item)", "str_pl": "Finger flames (item)" },
-    "description": "A .",
+    "description": "A small flame, in the tip of your finger.",
     "weight": "0 g",
     "volume": "0 ml",
     "price_postapoc": 0,

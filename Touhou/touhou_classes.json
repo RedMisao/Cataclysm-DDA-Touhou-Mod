@@ -9,6 +9,8 @@
 	"spells": [ 
 		{ "level": 1, "id": "dash_mokou" },	
 		{ "level": 1, "id": "mokou_blazekick" },
+		{ "level": 1, "id": "mokou_cauterize" },
+		{ "level": 1, "id": "mokou_combustion" },
 		{ "level": 1, "id": "mokou_fingeflame" },
 		{ "level": 1, "id": "mokou_fujiyamakazan" },
 		{ "level": 1, "id": "mokou_phoenixtalons" }
@@ -46,7 +48,7 @@
             "panties"
         ]
     },
-    "flags" : [ "SCEN_ONLY" ],
+    "flags": [ "SCEN_ONLY" ],
 	"//": "Lorewise she sould have lots of numbers, skills, proficiencies, etc. Balancewise that's not very good. Also, I took the yakitori joke seriously",
 	"//2": "All her spells, at least the actively destructive ones, should cost HP to cast alongside mana. This isn't implemented yet"
 	},
@@ -59,6 +61,8 @@
 	"proficiencies": [ "prof_food_prep" ],
 	"spells": [ 
 		{ "level": 1, "id": "dash_meiling" },
+		{ "level": 1, "id": "meiling_bloodfm" },
+		{ "level": 1, "id": "meiling_chiheal" },
 		{ "level": 1, "id": "meiling_qiblast" },
 		{ "level": 1, "id": "meiling_qipunch" }
 	],
@@ -95,7 +99,7 @@
             "panties"
         ]
     },
-    "flags" : [ "SCEN_ONLY" ],
+    "flags": [ "SCEN_ONLY" ],
 	"//2": "Meiling uses the pants in Soku but not in PMiSS"
 	},
 	{
@@ -104,11 +108,6 @@
     "name": "Oarfish Messenger",
     "description": "The last day was very busy.  First, you were given a message to deliver to the head of the Hinanawi.  After reaching the clan however, you were told by them and your superiors to find Tenshi as soon as possible.  You followed her down in Earth, when the event struck.  Now you don't only have to complete your mission, but you also seem to be stuck here.",
     "points": 0,
-	"CBMs":[
-		"bio_chain_lightning",
-		"bio_railgun",
-		"bio_power_storage_mkII"
-	],
     "skills": [
 		{ "level": 3, "name": "bashing" },
 		{ "level": 3, "name": "cutting" },
@@ -121,6 +120,7 @@
 		{ "level": 1, "id": "dash_basic" },
 		{ "level": 1, "id": "iku_dragonstrike" },
 		{ "level": 1, "id": "iku_elekiter" },
+		{ "level": 1, "id": "iku_staticfield" },
 		{ "level": 1, "id": "iku_thundercloud" },
 		{ "level": 1, "id": "iku_waterveil" }
 	],
@@ -155,6 +155,7 @@
     "points": 0,
 	"spells": [ 
 		{ "level": 1, "id": "dash_basic" },
+		{ "level": 1, "id": "kaenbyou_immolate" },
 		{ "level": 1, "id": "kaenbyou_soulfire" },
 		{ "level": 1, "id": "kaenbyou_vssummon" },
 		{ "level": 1, "id": "kaenbyou_vsrelease" }
@@ -195,7 +196,7 @@
             "panties"
         ]
 	},
-	"flags" : [ "SCEN_ONLY" ],
+	"flags": [ "SCEN_ONLY" ],
 	"//2": "Investigate about the Necromancy: Communication stuff for her profession !!!"
 	},
 	{
@@ -232,7 +233,7 @@
             "panties"
         ]
     },
-    "flags" : [ "SCEN_ONLY" ]
+    "flags": [ "SCEN_ONLY" ]
     },
 	{
     "ident": "reisen_udongein_inaba",
@@ -293,7 +294,7 @@
 	"//3": "if possible, implement a shot spread effect with 2-3 bullets on a cone and 8-7 illusionary bullets that deal no damage, and change the sprite because I don't like the current * ",
 	"//4": "Finally, see if I can implement her LoLK bomb, or not if that would be outright broken alongside her stealth passive that should have priority"
 	},
-    "flags" : [ "SCEN_ONLY" ]
+    "flags": [ "SCEN_ONLY" ]
     },
 	{
     "ident": "reisen_II",
@@ -344,7 +345,7 @@
             "panties"
 		]
 	},
-    "flags" : [ "SCEN_ONLY" ]
+    "flags": [ "SCEN_ONLY" ]
 	},
 	{
     "ident": "remilia_scarlet",
@@ -393,7 +394,7 @@
             "panties"
 		]
 	},
-    "flags" : [ "SCEN_ONLY" ]
+    "flags": [ "SCEN_ONLY" ]
     },
 	{
     "ident": "sakuya_izayoi",
@@ -403,9 +404,10 @@
     "points": 0,
 	"proficiencies": [ "prof_food_prep", "prof_knife_skills" ],
 	"spells": [ 
-		{ "level": 1, "id": "dash_basic" },
+		{ "level": 1, "id": "dash_sakuya" },
 		{ "level": 1, "id": "sakuya_contraction" },
 		{ "level": 1, "id": "sakuya_dilation" },
+		{ "level": 1, "id": "sakuya_jackknife" },
 		{ "level": 1, "id": "sakuya_quickrest" },
 		{ "level": 1, "id": "sakuya_timeparadox" },
 		{ "level": 1, "id": "sakuya_timestop" }
@@ -448,7 +450,7 @@
             "panties"
 		]
 	},
-    "flags" : [ "SCEN_ONLY" ]
+    "flags": [ "SCEN_ONLY" ]
     },
 	{
     "ident": "seiga_kaku",
@@ -458,8 +460,12 @@
     "points": 4,
 	"proficiencies": [ "prof_intro_biology", "prof_intro_chemistry", "prof_lockpicking", "prof_pharmaceutical", "prof_physiology" ],
 	"spells": [ 
+		{ "level": 1, "id": "dash_basic" },
+		{ "level": 1, "id": "seiga_charmcorpse" },
+		{ "level": 1, "id": "seiga_chidrain" },
 		{ "level": 1, "id": "seiga_darksplash" },
 		{ "level": 1, "id": "seiga_foetus_shot" },
+		{ "level": 1, "id": "seiga_hermitwalk" },
 		{ "level": 1, "id": "seiga_raisechild" }
 	],
     "skills": [
@@ -491,7 +497,7 @@
             "panties"
         ]
     },
-    "flags" : [ "SCEN_ONLY" ]
+    "flags": [ "SCEN_ONLY" ]
     },
 	{
     "ident": "shameimaru_aya",
@@ -531,7 +537,7 @@
             "panties"
         ]
     },
-    "flags" : [ "SCEN_ONLY" ]
+    "flags": [ "SCEN_ONLY" ]
     },
 	{
     "ident": "tenshi_hinanawi",
@@ -544,6 +550,7 @@
 		{ "level": 1, "id": "tenko_earthquake" },
 		{ "level": 1, "id": "tenko_keystonecrash" },
 		{ "level": 1, "id": "tenko_keystonepillar" },
+		{ "level": 1, "id": "tenko_keystonedismiss" },
 		{ "level": 1, "id": "tenko_scarletperception" },
 		{ "level": 1, "id": "tenko_unletting_soil" }
 	],
@@ -579,7 +586,7 @@
             "panties"
         ]
     },
-    "flags" : [ "SCEN_ONLY" ]
+    "flags": [ "SCEN_ONLY" ]
     },
 	{
     "ident": "utsuho_reiuji",
@@ -619,7 +626,7 @@
             "panties"
         ]
 	},
-	"flags" : [ "SCEN_ONLY" ]
+	"flags": [ "SCEN_ONLY" ]
 	},
 	{
     "ident": "youmu_konpaku",
@@ -673,6 +680,6 @@
             "panties"
         ]
     },
-    "flags" : [ "SCEN_ONLY" ]
+    "flags": [ "SCEN_ONLY" ]
 	}
 ]

@@ -22,59 +22,114 @@
     "id": "mokou_paper",
 	"type": "material",
     "name": "Fire protecting talisman",
-	"//": "Identical to paper except for fire resistance",
-	"copy-from": "paper",
-	"fire_resist": 2000,
-	"bash_resist": 10,
-    "cut_resist": 10,
-	"//2": "bash and cut resist only so they don't get destroyed in combat. Remove after a recipe is made so Mokou can recraft her hair ribbons",
+    "density": 1.2,
+    "specific_heat_liquid": 1.34,
+    "specific_heat_solid": 1.34,
+    "latent_heat": 333,
+    "soft": true,
+    "bash_resist": 100,
+    "cut_resist": 100,
+    "bullet_resist": 1,
+    "acid_resist": 1,
+    "fire_resist": 2000,
+    "chip_resist": 0,
+    "repaired_with": "paper",
+    "salvaged_into": "paper",
+    "dmg_adj": [ "ripped", "torn", "shredded", "tattered" ],
+    "bash_dmg_verb": "ripped",
+    "cut_dmg_verb": "cut",
 	"burn_data": [
         { "immune": true },
         { "immune": true },
         { "immune": true }
-		],
-	"//3": "Note: these come from data/json/materials.json "
+	],
+	"//": "Based on paper, greatly increased fire_resist , increased bash and cut resist only so they don't get destroyed in combat (remove after a recipe is made so Mokou can recraft her hair ribbons)"
 	},
 	{
     "id": "fireproof_cotton",
 	"type": "material",
     "name": "fireproof cloth",
-	"copy-from": "cotton",
+	"density": 1.6,
+    "specific_heat_liquid": 1.2,
+    "specific_heat_solid": 1.2,
+    "latent_heat": 334,
+    "soft": true,
+    "reinforces": true,
+    "bash_resist": 1,
+    "cut_resist": 1,
+    "bullet_resist": 1,
+    "acid_resist": 3,
     "fire_resist": 2000,
-	"burn_data": [
-        { "immune": true },
-        { "immune": true },
-        { "immune": true }
-		]
+    "chip_resist": 6,
+    "breathability": "AVERAGE",
+    "wind_resist": 70,
+    "repaired_with": "cotton_patchwork",
+    "salvaged_into": "cotton_patchwork",
+    "dmg_adj": [ "ripped", "torn", "shredded", "tattered" ],
+    "bash_dmg_verb": "ripped",
+    "cut_dmg_verb": "cut",
+	"//": "Values are a mix between cotton and nomex (except for fire_resist), removing burn data so it doesn't burn"
 	},
 	{
     "id": "fireresist_cotton",
 	"type": "material",
     "name": "fire-resist cloth",
-	"copy-from": "cotton",
-    "fire_resist": 100,
-    "//": "recheck this after balancing Mokou's spells",
-	"bash_resist": 2,
+	"density": 1.6,
+    "specific_heat_liquid": 1.2,
+    "specific_heat_solid": 1.2,
+    "latent_heat": 334,
+    "soft": true,
+    "reinforces": true,
+    "bash_resist": 2,
     "cut_resist": 2,
-    "//2": "bash and cut resist only due the flavor description for mokou_shirt ",
+    "bullet_resist": 1,
+    "acid_resist": 3,
+    "fire_resist": 200,
+    "chip_resist": 6,
+    "breathability": "AVERAGE",
+    "wind_resist": 70,
+    "repaired_with": "cotton_patchwork",
+    "salvaged_into": "cotton_patchwork",
+    "dmg_adj": [ "ripped", "torn", "shredded", "tattered" ],
+    "bash_dmg_verb": "ripped",
+    "cut_dmg_verb": "cut",
 	"burn_data": [
         { "immune": true },
         { "immune": true },
         { "immune": true }
-		]
+	],
+	"//": "bash and cut resist only due the flavor description for mokou_shirt ",
+	"//2": "Values are a mix between cotton and nomex (except for latent_heat and fire_resist)"
     },
 	{
     "id": "fireresist_leather",
 	"type": "material",
     "name": "fire-resist leather",
-	"copy-from": "cotton",
-    "fire_resist": 100,
-    "//": "recheck this after balancing Mokou's spells",
+    "density": 1.1,
+    "specific_heat_liquid": 1.5,
+    "specific_heat_solid": 1.5,
+    "latent_heat": 334,
+    "soft": true,
+    "reinforces": true,
+    "bash_resist": 1,
+    "cut_resist": 3,
+    "bullet_resist": 2,
+    "acid_resist": 4,
+    "fire_resist": 200,
+    "chip_resist": 10,
+    "breathability": "POOR",
+    "wind_resist": 90,
+    "repaired_with": "leather",
+    "salvaged_into": "leather",
+    "dmg_adj": [ "scratched", "cut", "shredded", "tattered" ],
+    "bash_dmg_verb": "ripped",
+    "cut_dmg_verb": "sliced",
 	"burn_data": [
         { "immune": true },
         { "immune": true },
         { "immune": true }
-		]
+	],
+	"//": "Increased latent_heat and fire_resist so it lasts longer while on fire, hopefully"
     },
 	{
     "id": "lunarian_cloth",
@@ -143,7 +198,7 @@
     "density": 1,
     "specific_heat_liquid": 4.186,
     "specific_heat_solid": 2.108,
-    "latent_heat": 333,
+    "latent_heat": 334,
     "edible": false,
     "bash_resist": 0,
     "cut_resist": 0,
@@ -156,9 +211,9 @@
     "bash_dmg_verb": "impacted",
     "cut_dmg_verb": "scrapped",
     "burn_data": [
-		{ "fuel": 0, "smoke": 0, "burn": 1 },
-		{ "fuel": 0, "smoke": 0, "burn": 2 },
-		{ "fuel": 0, "smoke": 0, "burn": 3 }
+		{ "fuel": -100, "smoke": 1, "burn": 1 },
+		{ "fuel": -50, "smoke": 2, "burn": 1 },
+		{ "fuel": -10, "smoke": 2, "burn": 2 }
     ]
 	},
 	{
@@ -166,9 +221,9 @@
 	"type": "material",
     "name": "fire (magic)",
     "density": 1,
-    "specific_heat_liquid": 1,
-    "specific_heat_solid": 1,
-    "latent_heat": 1,
+    "specific_heat_liquid": 8,
+    "specific_heat_solid": 8,
+    "latent_heat": 334,
     "edible": false,
     "bash_resist": 0,
     "cut_resist": 0,
@@ -179,11 +234,13 @@
     "chip_resist": 0,
     "dmg_adj": [ "sullied", "stained", "murky", "polluted" ],
     "bash_dmg_verb": "impacted",
-    "cut_dmg_verb": "scrapped",
-    "burn_data": [
-		{ "fuel": 224, "smoke": 0, "burn": 1 },
-		{ "fuel": 446, "smoke": 0, "burn": 2 },
-		{ "fuel": 667, "smoke": 0, "burn": 3 }
-    ]
+    "cut_dmg_verb": "scrapped"
+	},
+	{
+    "id": "magic_fuel_mat",
+	"type": "material",
+    "name": "magic fuel",
+    "copy-from": "pseudo_fuel",
+    "fuel_data": { "energy": 500, "perpetual": true }
 	}
 ]

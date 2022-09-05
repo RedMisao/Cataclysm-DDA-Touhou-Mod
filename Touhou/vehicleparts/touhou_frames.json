@@ -2,15 +2,15 @@
 	{
     "id": "frame_corpsecart",
 	"type": "vehicle_part",
-	"name": { "str": "corpse cart frame" },
-	"item": "frame_corpsecart",
-    "location": "structure",
-	"symbol": "X",
 	"categories": [ "hull" ],
+	"name": { "str": "corpse cart frame" },
+	"description": "Test wooden frame for kaenbyou_wheelbarrow ",
+	"symbol": "X",
 	"color": "brown",
 	"broken_color": "red",
 	"durability": 200,
-	"description": "Test wooden frame for kaenbyou_wheelbarrow ",
+	"item": "frame_corpsecart",
+    "location": "structure",
 	"breaks_into": [ { "item": "splinter", "count": [ 7, 9 ] }, { "item": "nail", "charges": [ 5, 10 ] } ],
 	"requirements": {
 		"install": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_nail_install", 1 ] ] },
@@ -19,5 +19,27 @@
     },
 	"damage_reduction": { "all": 10 },
 	"flags": [ "INITIAL_PART", "MOUNTABLE" ]
+	},
+	{
+    "id": "frame_keystone",
+	"type": "vehicle_part",
+    "categories": [ "hull", "movement" ],
+    "name": "keystone frame",
+    "description": "A heavy, conic-shaped floating granite rock, wrapped with a hemp rope.",
+    "symbol": "V",
+    "broken_symbol": "W",
+    "color": "light_gray",
+    "broken_color": "red",
+    "item": "wheel_keystone",
+    "location": "structure",
+    "durability": 120,
+    "size": 150,
+    "requirements": {
+		"install": { "skills": [ [ "mechanics", 20 ] ], "time": "60 m", "using": [ [ "welding_standard", 10 ] ] },
+		"removal": { "skills": [ [ "mechanics", 20 ] ], "time": "60 m", "using": [ [ "vehicle_weld_removal", 10 ] ] },
+		"repair": { "skills": [ [ "mechanics", 20 ] ], "time": "60 m", "using": [ [ "welding_standard", 10 ] ] }
+    },
+    "flags": [ "CARGO", "FLOATS", "INITIAL_PART", "SEAT" ],
+    "damage_reduction": { "all": 12 }
 	}
 ]
