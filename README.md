@@ -10,11 +10,15 @@ This branch is for untested additions that produce non-critical errors when runn
 **Changelog over the master branch (0.9.2.4):**
 
 Spells:
-* Iku: Elekiter Dragon Palace (random lightning strikes), Thundercloud Stickleback (aoe knockback), Veil's like water (damaging cone), Dragon strike (melee-ranged), Thundercloud fish shot (pseudo-chain lightning)
-* Tenshi: added Earthquake signs (aoe + down), Sky of Scarlet perception (laser), Unletting soil (cone + test push), Keystone pillar and Keystone crash (WIP)
+* Iku: Elekiter Dragon Palace (random lightning strikes), Thundercloud Stickleback (aoe knockback), Veil's like water (damaging cone), Dragon strike (melee-ranged), Thundercloud fish shot (pseudo-chain lightning), Static field (aoe % dmg plus stun for robots, cyborgs, etc)
+* Kaenbyou: added Immolate (chip dmg with fire dot), Blazing wheel (aoe improved immolate)
+* Meiling: added Chi heal, Blood flow manipulation (removes bleeding)
+* Mokou: added Cauterize (deals some and heals for more over time), Spontaneous combustion (self-damaging aoe, applies healing over time)
 * Remi: added Scarlet shot (narrow cone), Consume blood (regens HP and mana), Miserable fate (aoe stun with a bit of damage)
+* Sakuya: added Temporal contraction (aoe slow), Time Paradox (summons a copy that throws knives), Jack the Knife (spawns temporary knife), a custom dash
+* Seiga: added Charm, Chi drain (dmg dot on target and healing over time on her), Hermit walk (speed boost and LEVITATE effect). Added missing dash
+* Tenshi: added Earthquake signs (aoe + down), Sky of Scarlet perception (laser), Unletting soil (cone + test push), Keystone crash, pillar and dismiss spells
 * Udonge: Wavelength manipulation (buff/aura-like, one for stealth, another for INT, another for PER), Illusionary blast (laser attack)
-* Sakuya: Temporal contraction (aoe slow), Time Paradox (summons a copy that throws knives)
 * Changed how mana ammo works: now it creates a stack of caseless ammo lasting 24 h
 
 Monsters:
@@ -30,6 +34,7 @@ Items:
 
 Misc changes and additions (added but not fully implemented):
 * Greatly expanded the use of the extend field (helping with mod cross-compatibility), except for monstergroups
+* Some spells now use field effects, mostly for flavor
 * TERA Type 2, Lunarian scouting rifle (can be assembled and broken down into [future] interchangeable parts for different effects), Lunar riot shotgun (featuring an ammo-free blast mode), four more Lunar experimental weapons
 * Lampad torch (should work as a torch except it emits hellish light)
 * Three types of Gyokuto ear accessories, lunar canteen
@@ -38,6 +43,7 @@ Misc changes and additions (added but not fully implemented):
 * Generic oni enemies that wield kanabo
 * Added a experimental drug, addiction and the EOCs
 * Iku's bionics were removed
+* A floating keystone vehicle for Tenko
 
 Fixed bugs:
 * Tenko's sword being super fragile
@@ -45,4 +51,7 @@ Fixed bugs:
 * MIB drops
 * Aya's, Meiling and Mokou's push components from their spells
 * Sakuya's knife holders not being able to hold her knives
+* Mokou's clothes now should be more fire-proof
 
+
+**Note:** seems that dash spells are all bugged: they don't do damage at the location, and randomly either not cast secondary effects, or do it at double the designated distance. See issues #53511 and #60704 from the C:DDA repo
