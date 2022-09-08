@@ -383,7 +383,12 @@
     "weight": 0,
     "volume": 0,
     "price": 240500,
-    "to_hit": -8,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "solid", 
+		"length": "hand", 
+		"surface": "any"
+	},
     "material": [ "mokou_paper" ],
 	"material_thickness": 5,
     "symbol": "[",
@@ -516,7 +521,12 @@
 	"weight": "400 g",
 	"volume": "500 ml",
     "price": 1000,
-    "to_hit": -5,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "solid", 
+		"length": "hand", 
+		"surface": "any"
+	},
     "material": [ "cotton" ],
     "material_thickness": 2,
 	"symbol": "o",
@@ -735,25 +745,23 @@
 	"description": "A prism shaped control rod worn on one arm, acting as the legendary 'third leg' from the Yatagarasu.  Allows the user to easily control nuclear abilities.",
     "volume": "13300 ml",
 	"weight": "3000 g",
-	"//": "These numbers come from a 60 cm hexagonal prism with 8 cm radius, it's kind of thick though",
+    "longest_side": "60 cm",
+	"//": "60 cm hexagonal prism with 8 cm radius, it's kind of thick though",
 	"price": 16000,
     "price_postapoc": 8000,
-	"to_hit": 3,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "weapon", 
+		"length": "short", 
+		"surface": "any"
+	},
 	"bashing": 16,
     "cutting": 0,
     "material": "steel",
 	"//2": "Maybe change it to moriya_wood or something",
 	"symbol": "☢",
-    "color": "light_green",
+    "color": "brown",
 	"techniques": [ "WBLOCK_1" ],
-	"use_action": [ 
-		{
-		"type": "cast_spell",
-		"no_fail": true,
-		"spell_id": "utsuho_blade",
-		"level": 1
-		}
-	],
 	"armor": [ 
 		{ "covers": [ "arm_r" ], "specifically_covers": [ "arm_lower_l" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
 		{ "covers": [ "arm_r" ], "specifically_covers": [ "arm_elbow_l" ], "coverage": 20, "encumbrance": [ 2, 4 ] },
@@ -891,7 +899,12 @@
 	"volume": "2500 ml",
 	"weight": "680 g",
     "price": 18000,
-    "to_hit": -5,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "solid", 
+		"length": "hand", 
+		"surface": "any"
+	},
     "material": [ "cotton" ],
 	"material_thickness": 2,
 	"symbol": "[",

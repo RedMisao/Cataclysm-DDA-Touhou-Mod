@@ -20,15 +20,10 @@
     "components": [ [ [ "heavy_battery_cell", 1 ] ] ]
 	},
 	{
-    "id": "spell_components_blacksun",
-    "type": "requirement",
-    "components": [ [ [ "utsuho_sun2", 1 ] ] ]
-	},
-	{
     "id": "spell_components_blood",
     "type": "requirement",
     "components": [ [ [ "blood", 1 ] ] ],
-	"//": "Should be 250, not 1 ml",
+	"//": "Should be 250 ml, not 1 ml",
 	"//2": "hblood is not recognized as a valid item template, but it should be there"
 	},
 	{
@@ -49,8 +44,23 @@
 	] ]
 	},
 	{
-    "id": "spell_components_jian",
+    "id": "spell_components_tenkojian",
     "type": "requirement",
     "tools": [ [ [ "tenshi_jian_extended", -1 ] ] ]
+	},
+	{
+    "id": "spell_components_seigastick",
+    "type": "requirement",
+    "tools": [ [ [ "seiga_hairstick", -1 ] ] ]
+	},
+	{
+    "id": "spell_components_utsuhorod",
+    "type": "requirement",
+    "tools": [ [ [ "utsuho_rod", -1 ] ] ]
+	},
+	{
+    "id": "spell_components_utsuhosun",
+    "type": "requirement",
+    "components": [ [ [ "utsuho_minisun", 1 ] ] ]
 	}
 ]

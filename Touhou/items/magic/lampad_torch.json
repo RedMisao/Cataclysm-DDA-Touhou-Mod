@@ -73,23 +73,5 @@
 		}
     ],
 	"flags": [ "BURNOUT", "FIRE", "FLAMING", "LIGHT_40", "TRADER_AVOID" ]
-	},
-	{
-    "id": "lampad_insanity",
-    "type": "SPELL",
-    "name": "Lampad insanity",
-    "description": "Monster infight enabler.",
-    "spell_class": "NONE",
-    "valid_targets": [ "ally", "hostile" ],
-    "effect": "mutate",
-	"effect_str": "ATTACKMON",
-    "shape": "blast",
-    "min_damage": 3333,
-    "max_damage": 3333,
-    "min_aoe": 16,
-    "max_aoe": 16,
-    "min_duration": 1100,
-    "max_duration": 1100,
-    "flags": [ "MUTATE_TRAIT", "NO_PROJECTILE", "SILENT" ]
 	}
 ]
