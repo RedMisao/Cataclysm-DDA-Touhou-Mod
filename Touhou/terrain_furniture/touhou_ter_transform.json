@@ -1,0 +1,60 @@
+[
+	{
+    "id": "groundmelt_ter",
+	"type": "ter_furn_transform",
+    "furniture": [
+		{
+        "result": "t_lava",
+        "message": "The ground heats up and turns into lava!",
+		"valid_flags": [ "DIGGABLE", "MINEABLE" ]
+		}
+    ]
+	},
+	{
+    "id": "keystone_crash_fur",
+	"type": "ter_furn_transform",
+    "furniture": [
+		{
+        "result": "f_keystone",
+        "message": "A keystone materializes and crashes down!",
+		"valid_flags": [ "EASY_DECONSTRUCT", "FLAMMABLE", "FLAMMABLE_ASH", "FLAMMABLE_HARD", "MINEABLE", "TRANSPARENT" ]
+		}
+    ]
+	},
+	{
+    "id": "keystone_dismiss_fur",
+	"type": "ter_furn_transform",
+    "furniture": [ 
+		{ 
+		"result": "f_null", 
+		"message": "A keystone is dismissed.",
+		"valid_furniture": [
+			"f_keystone",
+			"f_keystone_pillar",
+			"f_rubble"
+        ]
+		} 
+	]
+	},
+	{
+    "id": "keystone_pillar_fur",
+	"type": "ter_furn_transform",
+    "furniture": [
+		{
+        "result": "f_keystone_pillar",
+        "message": "The ground quakes, and a keystone pillar quickly rises up!",
+		"valid_flags": [ "EASY_DECONSTRUCT", "FLAMMABLE", "FLAMMABLE_ASH", "FLAMMABLE_HARD", "MINEABLE", "TRANSPARENT" ]
+		}
+    ]
+	},
+	{
+    "id": "nukeglassing_ter",
+	"type": "ter_furn_transform",
+    "furniture": [
+		{
+        "result": "t_glassed_sand",
+		"valid_flags": [ "DIGGABLE" ]
+		}
+    ]
+	}
+]

@@ -3,6 +3,7 @@
     "id": "mon_chicken",
     "type": "MONSTER",
     "name": { "str": "chicken" },
+<<<<<<< HEAD
     "description": "A domesticated descendant of junglefowl, it may still be the most numerous bird in the world.  Before the Cataclysm, it was raised by humans as a source of meat, eggs, and early morning wakeup calls.",
     "volume": "4 L",
     "weight": "3500 g",
@@ -34,6 +35,11 @@
     },
     "flags": [ "ANIMAL", "CANPLAY", "HEARS", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "SWARMS", "WARM" ],
 	"//": "This should be exactly like mon_chicken from cdda except for the harvest field, enabling chicken meat"
+=======
+	"copy-from": "mon_chicken",
+    "harvest": "bird_small",
+	"//": "Improved harvest for chickens"
+>>>>>>> testing
 	},
 	{
     "id": "mon_dodo",
@@ -57,7 +63,11 @@
     "melee_skill": 1,
 	"melee_dice": 1,
     "melee_dice_sides": 2,
+<<<<<<< HEAD
     "melee_cut": 2,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
+>>>>>>> testing
     "dodge": 2,
     "vision_day": 40,
     "vision_night": 15,
@@ -66,7 +76,11 @@
     "reproduction": { "baby_egg": "egg_dodo", "baby_count": 1, "baby_timer": 12 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "biosignature": { "biosig_item": "feces_bird", "biosig_timer": 8 },
+<<<<<<< HEAD
     "flags": [ "ANIMAL", "SEES", "HEARS", "SMELLS", "ANIMAL", "PATH_AVOID_DANGER_1", "SWARMS", "WARM" ],
+=======
+    "flags": [ "ANIMAL", "SEES", "HEARS", "SMELLS", "PATH_AVOID_DANGER_1", "SWARMS", "WARM" ],
+>>>>>>> testing
 	"//": "Most data about the dodo is unknown, I'm trying to get the values as realistic as possible using turkeys as reference"
 	},
 	{
@@ -77,6 +91,10 @@
 	"description": "A smaller dodo, unlike the parents this is mostly brown with traces of gray.  The way it moves around warms your heart, and maybe stimulates your stomach.",
     "volume": "2 L",
     "weight": "1500 g",
+<<<<<<< HEAD
+=======
+    "harvest": "bird_small",
+>>>>>>> testing
 	"hp": 6,
     "speed": 40,
     "color": "brown",
@@ -85,13 +103,121 @@
     "melee_skill": 2,
     "melee_dice": 1,
     "melee_dice_sides": 2,
+<<<<<<< HEAD
     "melee_cut": 0,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
+>>>>>>> testing
     "dodge": 1,
     "path_settings": { "max_dist": 6 },
     "upgrades": { "age_grow": 14, "into": "mon_dodo" },
     "extend": { "flags": [ "NO_BREED" ] }
 	},
 	{
+<<<<<<< HEAD
+=======
+    "id": "mon_ectopistes",
+    "type": "MONSTER",
+    "name": { "str": "passenger pigeon" },
+    "description": "A small pigeon, blue-ish gray in color except for the reddish breast.  The back features iridescent feathers, changing colors depending on the angle.  Somewhat awkward on the ground, it vocalizes quite often.",
+    "volume": "650 ml",
+    "weight": "300 g",
+    "default_faction": "small_animal",
+    "bodytype": "bird",
+    "categories": [ "WILDLIFE" ],
+    "species": [ "BIRD" ],
+    "harvest": "bird_tiny",
+    "hp": 3,
+    "speed": 150,
+    "material": [ "flesh" ],
+    "symbol": "ṿ",
+    "color": "dark_gray",
+    "aggression": -99,
+    "morale": 5,
+    "melee_dice": 1,
+    "melee_dice_sides": 1,
+    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
+    "dodge": 4,
+    "fear_triggers": [ "FIRE", "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE", "SOUND" ],
+    "reproduction": { "baby_egg": "egg_ectopistes", "baby_count": 4, "baby_timer": 32 },
+    "baby_flags": [ "SPRING" ],
+    "biosignature": { "biosig_item": "feces_bird", "biosig_timer": 6 },
+    "special_attacks": [ [ "EAT_CROP", 85 ], [ "PARROT", 6 ] ],
+    "flags": [ "ANIMAL", "FLIES", "HEARS", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "SWARMS", "WARM" ]
+	},
+	{
+    "id": "mon_ectopistes_chick",
+    "type": "MONSTER",
+    "name": { "str": "passenger pigeon chick" },
+    "copy-from": "mon_chicken_chick",
+    "description": "A passenger pigeon chick.  Looks like a chicken chick.",
+    "volume": "250 ml",
+    "weight": "50 g",
+    "color": "yellow",
+    "special_attacks": [ [ "EAT_CROP", 105 ], [ "PARROT", 8 ] ],
+    "upgrades": { "age_grow": 24, "into": "mon_ectopistes" },
+    "extend": { "flags": [ "NO_BREED" ] }
+	},
+	{
+    "id": "mon_icadyptes",
+    "type": "MONSTER",
+    "name": { "str": "icadyptes" },
+    "description": "A big penguin.  Rather unremarkable except for it's height, standing one and a half meters tall, and the flexible neck.",
+    "volume": "62 L",
+    "weight": "60 kg",
+	"default_faction": "touhou_piscivore",
+    "bodytype": "bear",
+    "categories": [ "WILDLIFE" ],
+    "species": [ "BIRD" ],
+    "harvest": "bird_larger_nonmutant_harvest",
+	"hp": 55,
+    "speed": 65,
+    "material": [ "flesh" ],
+    "symbol": "ṗ",
+    "color": "light_gray_white",
+    "aggression": -20,
+    "morale": 10,
+    "melee_skill": 2,
+	"melee_dice": 2,
+    "melee_dice_sides": 2,
+	"melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
+    "dodge": 1,
+    "vision_day": 30,
+    "vision_night": 10,
+    "path_settings": { "max_dist": 15 },
+    "anger_triggers": [ "HURT", "FRIEND_ATTACKED" ],
+    "fear_triggers": [ "FIRE", "FRIEND_DIED" ],
+    "reproduction": { "baby_egg": "egg_icadyptes", "baby_count": 1, "baby_timer": 32 },
+    "baby_flags": [ "AUTUMN", "WINTER" ],
+    "biosignature": { "biosig_item": "feces_bird", "biosig_timer": 10 },
+    "flags": [ "ANIMAL", "SEES", "HEARS", "SMELLS", "PATH_AVOID_DANGER_1", "SWARMS", "WARM" ],
+	"//2": "Based on Icadyptes salasi. No data about its reproduction habits, that part is based on Aptenodytes forsteri "
+	},
+	{
+    "id": "mon_icadyptes_chick",
+    "type": "MONSTER",
+	"name": { "str": "icadyptes chick" },
+	"copy-from": "mon_icadyptes",
+    "description": "An Icadyptes chick.  Adorable until it vocalizes.",
+    "volume": "1500 ml",
+    "weight": "2000 g",
+    "harvest": "bird_small",
+	"hp": 4,
+    "speed": 55,
+    "color": "light_gray",
+    "aggression": -20,
+    "morale": 8,
+    "melee_skill": 1,
+    "melee_dice": 1,
+    "melee_dice_sides": 1,
+	"melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
+    "dodge": 2,
+	"path_settings": { "max_dist": 8 },
+	"upgrades": { "age_grow": 28, "into": "mon_icadyptes" },
+    "extend": { "flags": [ "NO_BREED" ] }
+	},
+	{
+>>>>>>> testing
     "id": "mon_moa",
     "type": "MONSTER",
     "name": { "str": "moa" },
@@ -103,7 +229,11 @@
     "bodytype": "ostrich",
     "categories": [ "WILDLIFE" ],
     "species": [ "BIRD" ],
+<<<<<<< HEAD
     "harvest": "bird_large_nonmutant_harvest",
+=======
+    "harvest": "bird_largest_nonmutant_harvest",
+>>>>>>> testing
 	"hp": 80,
     "speed": 135,
     "material": [ "flesh" ],
@@ -114,7 +244,11 @@
     "melee_skill": 3,
 	"melee_dice": 2,
     "melee_dice_sides": 3,
+<<<<<<< HEAD
     "melee_cut": 4,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
+>>>>>>> testing
     "dodge": 3,
     "vision_day": 40,
     "vision_night": 15,
@@ -123,9 +257,15 @@
     "reproduction": { "baby_egg": "egg_moa", "baby_count": 1, "baby_timer": 24 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "biosignature": { "biosig_item": "feces_bird", "biosig_timer": 10 },
+<<<<<<< HEAD
     "flags": [ "ANIMAL", "SEES", "HEARS", "SMELLS", "ANIMAL", "PATH_AVOID_DANGER_1", "SWARMS", "WARM" ],
 	"//2": "Based on Dinornis novaezealandiae. No data about its reproduction habits",
 	"//3": "Base attack is getting pecked ADD WEAK-ISH LEG ATTACK !!!"
+=======
+    "flags": [ "ANIMAL", "SEES", "HEARS", "SMELLS", "PATH_AVOID_DANGER_1", "SWARMS", "WARM" ],
+	"//2": "Based on Dinornis novaezealandiae. No data about its reproduction habits",
+	"//3": "Base attack is pecking. ADD WEAK-ISH LEG ATTACK !!!"
+>>>>>>> testing
 	},
 	{
     "id": "mon_moa_chick",
@@ -135,6 +275,10 @@
     "description": "A \"small\" moa, it's like an oversized chick, following the flock.",
     "volume": "3500 L",
     "weight": "2500 kg",
+<<<<<<< HEAD
+=======
+    "harvest": "bird_small",
+>>>>>>> testing
 	"hp": 7,
     "speed": 65,
     "aggression": -20,
@@ -142,7 +286,11 @@
     "melee_skill": 2,
     "melee_dice": 1,
     "melee_dice_sides": 2,
+<<<<<<< HEAD
     "melee_cut": 0,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
+>>>>>>> testing
     "dodge": 2,
 	"path_settings": { "max_dist": 6 },
 	"upgrades": { "age_grow": 24, "into": "mon_moa" },

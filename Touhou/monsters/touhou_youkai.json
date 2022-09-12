@@ -27,7 +27,10 @@
     "reproduction": { "baby_monster": "mon_chupacabra_young", "baby_count": 3, "baby_timer": 60 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE" ],
+<<<<<<< HEAD
     "placate_triggers": [ "MEAT" ],
+=======
+>>>>>>> testing
 	"armor_bash": 4,
 	"armor_cut": 2,
 	"armor_bullet": 8,
@@ -85,7 +88,10 @@
     "path_settings": { "max_dist": 16 },
 	"vision_night": 16,
     "anger_triggers": [ "HURT" ],
+<<<<<<< HEAD
     "placate_triggers": [ "MEAT" ],
+=======
+>>>>>>> testing
     "special_attacks": [ [ "ABSORB_MEAT", 100 ], [ "slash_2d3", 2 ] ],
     "flags": [ "CLIMBS", "HEARS", "HIT_AND_RUN", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM" ],
 	"//": "Implement ALCOHOL as placate_triggers...",
@@ -115,7 +121,11 @@
 	"melee_skill": 4,
     "melee_dice": 3,
     "melee_dice_sides": 4,
+<<<<<<< HEAD
     "melee_cut": 2,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
+>>>>>>> testing
 	"dodge": 4,
 	"vision_day": 25,
     "vision_night": 35,
@@ -206,7 +216,10 @@
     "reproduction": { "baby_monster": "mon_jinmenken_young", "baby_count": 2, "baby_timer": 30 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "fear_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
+<<<<<<< HEAD
     "placate_triggers": [ "MEAT" ],
+=======
+>>>>>>> testing
     "special_attacks": [ [ "ABSORB_MEAT", 100 ], [ "PARROT", 31 ], [ "PARROT_AT_DANGER", 17 ] ],
 	"flags": [ "HEARS", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM" ]
 	},
@@ -266,7 +279,11 @@
 		{ 
 		"spell_data": { "id": "paralyze_100" }, 
 		"type": "spell", 
+<<<<<<< HEAD
 		"cooldown": 30 
+=======
+		"cooldown": 34 
+>>>>>>> testing
 		}
 	],
 	"death_function": { 
@@ -301,7 +318,11 @@
     "vision_day": 20,
     "vision_night": 35,
     "path_settings": { "max_dist": 20 },
+<<<<<<< HEAD
     "anger_triggers": [ "FRIEND_DIED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE", "STALK" ],
+=======
+    "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT", "PLAYER_CLOSE", "STALK" ],
+>>>>>>> testing
     "reproduction": { "baby_monster": "mon_nightcrawler_young", "baby_count": 2, "baby_timer": 13 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "special_attacks": [ [ "ABSORB_MEAT", 100 ] ],
@@ -343,7 +364,11 @@
     "melee_skill": 4,
     "melee_dice": 3,
     "melee_dice_sides": 7,
+<<<<<<< HEAD
     "melee_cut": 3,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
+>>>>>>> testing
     "dodge": 3,
 	"armor_bash": 2,
     "armor_cut": 0,
@@ -398,7 +423,11 @@
     "melee_skill": 3,
     "melee_dice": 6,
     "melee_dice_sides": 4,
+<<<<<<< HEAD
     "melee_cut": 2,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
+>>>>>>> testing
     "dodge": 2,
 	"armor_bash": 2,
     "armor_cut": 4,
@@ -427,7 +456,11 @@
     "melee_skill": 4,
     "melee_dice": 4,
     "melee_dice_sides": 5,
+<<<<<<< HEAD
     "melee_cut": 4,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
+>>>>>>> testing
     "dodge": 3,
 	"armor_bash": 4,
     "armor_stab": 4,
@@ -460,7 +493,11 @@
     "melee_skill": 2,
     "melee_dice": 1,
     "melee_dice_sides": 6,
+<<<<<<< HEAD
     "melee_cut": 0,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
+>>>>>>> testing
     "dodge": 1,
     "path_settings": { "max_dist": 20, "avoid_traps": true },
 	"vision_day": 50,
@@ -482,7 +519,11 @@
 		"corpse_type": "NORMAL",
 		"message": "The %s dies!"
 	},
+<<<<<<< HEAD
     "flags": [ "BASHES", "BONES", "CAN_OPEN_DOORS", "CLIMBS", "GROUP_BASH", "GROUP_MORALE", "HEARS", "HUMAN", "PATH_AVOID_DANGER_2", "RANGED_ATTACKER", "SEES", "WARM" ]
+=======
+    "flags": [ "BASHES", "CAN_OPEN_DOORS", "CLIMBS", "GROUP_BASH", "GROUP_MORALE", "HEARS", "HUMAN", "PATH_AVOID_DANGER_2", "RANGED_ATTACKER", "SEES", "WARM" ]
+>>>>>>> testing
 	},
 	{
     "id": "mon_gyokuto_soldier",

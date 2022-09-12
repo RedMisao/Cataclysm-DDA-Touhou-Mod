@@ -1,4 +1,5 @@
 [
+<<<<<<< HEAD
   {
     "type": "item_group",
     "id": "farming_seeds",
@@ -102,5 +103,18 @@
 		[ "survnote", 1 ],
 		[ "satsumaimo", 10 ]
     ]
+=======
+	{
+    "id": "farming_seeds",
+	"type": "item_group",
+    "copy-from": "farming_seeds",
+    "extend": { "items": [ [ "seed_satsumaimo", 60 ] ] }
+	},
+	{
+    "id": "hydro",
+	"type": "item_group",
+    "copy-from": "hydro",
+	"extend": { "items": [ [ "satsumaimo", 10 ] ] }
+>>>>>>> testing
 	}
 ]

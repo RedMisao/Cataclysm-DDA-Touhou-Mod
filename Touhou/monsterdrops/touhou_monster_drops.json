@@ -1,0 +1,65 @@
+[
+	{
+    "id" : "moonrabbit_drops",
+	"type" : "item_group",
+    "items":[
+	    [ "bra", 1 ],
+        [ "panties", 1 ],
+		[ "ldc_dress_shirt", 1 ],
+	    [ "ldc_dress_shoes", 1 ],
+	    [ "ldc_helmet", 1 ],
+		[ "ldc_kneesocks", 1 ],
+	    [ "lunar_rifle", 3 ],
+		[ "ldc_suit", 1 ],
+	    [ "ldc_skirt", 1 ],
+		[ "ldc_tie", 1 ]
+    ]
+	},
+	{
+    "id": "mib_drops",
+	"type": "item_group",
+    "subtype": "collection",
+    "entries": [
+		{ "item": "dress_shoes_black", "prob": 75, "damage": [ 0, 4 ] },
+		{ "item": "jacket_black", "prob": 75, "damage": [ 0, 4 ] },
+		{ "item": "leather_belt", "prob": 75, "damage": [ 0, 4 ] },
+		{ "item": "mib_watch", "prob": 75, "damage": [ 0, 4 ] },
+		{ "item": "pants_black", "prob": 75, "damage": [ 0, 4 ] },
+		{ "item": "tie_black", "prob": 75, "damage": [ 0, 4 ] },
+		{
+		"distribution": [
+			{
+			"collection": [
+				{ "group": "male_underwear", "prob": 75, "damage": [ 0, 4 ] },
+				{ "item": "socks_black", "prob": 75, "damage": [ 0, 4 ] }
+			]
+			},
+			{
+			"collection": [
+				{ "group": "female_underwear", "prob": 75, "damage": [ 0, 4 ] },
+				{
+				"distribution": [
+					{ "item": "stockings", "prob": 75, "damage": [ 0, 4 ] }, 
+					{ "item": "tights", "prob": 75, "damage": [ 0, 4 ] },
+					{ "item": "garter_belt", "prob": 75, "damage": [ 0, 4 ] }
+				]
+				}
+			]
+			}
+        ]
+		}
+	]
+	},
+	{
+    "id": "oni_drops",
+	"type": "item_group",
+    "subtype": "collection",
+    "entries": [
+		{
+		"collection": [
+			{ "group": "loincloth", "prob": 85, "damage": [ 0, 4 ] }
+		]
+		}
+	]
+	}
+]

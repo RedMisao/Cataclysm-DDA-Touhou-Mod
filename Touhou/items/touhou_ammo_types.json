@@ -18,12 +18,42 @@
     "default": "ammo_lunar_small_2"
 	},
 	{
+<<<<<<< HEAD
+=======
+    "id": "ammo_lunar_4d_1",
+	"type": "ammunition_type",
+    "name": "lunar ammo (4-dimensional type 1)",
+    "default": "ammo_lunar_4d_thorn"
+	},
+	{
+    "id": "ammo_lunar_4d_2",
+	"type": "ammunition_type",
+    "name": "lunar ammo (4-dimensional type 2)",
+    "default": "ammo_lunar_4d_claw"
+	},
+	{
+    "id": "ammo_lunar_5d_1",
+	"type": "ammunition_type",
+    "name": "lunar ammo (5-dimensional type 1)",
+    "default": "ammo_lunar_5d_ofuda"
+	},
+	{
+>>>>>>> testing
     "id": "9x39",
 	"type": "ammunition_type",
     "name": "9x39mm",
     "default": "9x39_sp5"
 	},
 	{
+<<<<<<< HEAD
+=======
+    "id": "765x53",
+	"type": "ammunition_type",
+    "name": "7.65x53mm",
+    "default": "765x53_arg"
+	},
+	{
+>>>>>>> testing
     "id": "77x58",
 	"type": "ammunition_type",
     "name": "7.7x58mm",
@@ -33,7 +63,11 @@
     "id": "792x33",
 	"type": "ammunition_type",
     "name": "7.92x33mm",
+<<<<<<< HEAD
     "default": "792x33_kurz"
+=======
+    "default": "792x33_me"
+>>>>>>> testing
 	},
 	{
     "id": "792x57",
@@ -42,6 +76,27 @@
     "default": "792x57_m75"
 	},
 	{
+<<<<<<< HEAD
+=======
+    "id": "alternate_knife",
+	"type": "ammunition_type",
+    "name": "silver knife",
+    "default": "alternate_knife_knife"
+	},
+	{
+    "id": "magic_fuel_ammo",
+    "name": "magic fuel",
+    "type": "ammunition_type",
+    "default": "mana_fuel"
+	},
+	{
+    "id": "myon_bullet",
+	"type": "ammunition_type",
+    "name": "danmaku",
+    "default": "myon_bullet_bullet"
+	},
+	{
+>>>>>>> testing
     "id": "touhou_corpse_ammo",
 	"type": "ammunition_type",
     "name": "corpse",

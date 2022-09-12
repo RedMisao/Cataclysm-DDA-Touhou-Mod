@@ -9,8 +9,13 @@
 	"purifiable": false,
 	"starting_trait": false,
     "valid": false,
+<<<<<<< HEAD
     "armor": [ { "parts": "ALL", "bash": 12, "cut": 12, "stab": 12, "bullet": 16, "acid": 8, "heat": 8, "electric": 8, "cold": 8 } ],
 	"//": "12 natural physical defense (increased for bullets because of their higher damage) and 8 elemental defense",
+=======
+    "armor": [ { "parts": "ALL", "bash": 12, "cut": 12, "stab": 12, "bullet": 16, "acid": 8, "cold": 8, "electric": 8, "heat": 8 } ],
+	"//": "12 natural physical defense (increased for bullets due their higher damage) and 8 elemental defense",
+>>>>>>> testing
 	"bleed_resist": 100,
 	"//2": "I have no idea how this works, this should cover minor to some medium blood damage, such as zombie scratchs and maybe someone without sword proficiencies hitting Tenko with a sword",
 	"fatigue_modifier": 0.5,
@@ -40,7 +45,8 @@
 	"movecost_obstacle_modifier": 0.9,
 	"passive_mods": { "dex_mod": 2, "per_mod": 2 },
 	"weight_capacity_modifier": 0.8,
-	"cancels": [ "PRETTY", "BEAUTIFUL", "BEAUTIFUL2", "BEAUTIFUL3", "UGLY", "DEFORMED", "DEFORMED2", "DEFORMED3", "BADHEARING" ]
+	"cancels": [ "PRETTY", "BEAUTIFUL", "BEAUTIFUL2", "BEAUTIFUL3", "UGLY", "DEFORMED", "DEFORMED2", "DEFORMED3", "BADHEARING" ],
+	"//": "This trait should also grant immunity to mental effects, like the taint and visuals effects"
     },
 	{
     "id": "HALF_PHANTOM_SPECIES",
@@ -97,8 +103,12 @@
 	"healing_resting": 1,
 	"mending_modifier": 0.5,
 	"flags": [ "BIO_IMMUNE", "HEAT_IMMUNE", "NO_DISEASE", "NO_RADIATION", "PARAIMMUNE" ],
+<<<<<<< HEAD
 	"//": "Is there a way to implement actual immortality? Not just fast health regen but something that blocks hp going below 1, and slowly (days) regenerates lost limbs and such. If so, remove the healing above",
 	"//2": "She should have 25-33% pain reduction"
+=======
+	"//": "Is there a way to implement actual immortality? Not just fast health regen but something that blocks hp going below 1, and slowly (days) regenerates lost limbs and such. If so, remove the healing above"
+>>>>>>> testing
     },
 	{
     "id": "KASHA_SPECIES",
@@ -149,16 +159,15 @@
 	"valid": false,
 	"fatigue_modifier": -0.25,
 	"fatigue_regen_modifier": 0.25,
-	"movecost_flatground_modifier": 0.5,
-	"movecost_obstacle_modifier": 0.5,
+	"movecost_flatground_modifier": 0.75,
+	"movecost_obstacle_modifier": 0.75,
 	"//": "These bonuses should apply ONLY with the character in a running state (it is, 200% running speed). This way I can set the walking speed to something like 1.2",
-	"passive_mods": { "dex_mod": 3, "int_mod": 2, "per_mod": 1 },
+	"passive_mods": { "dex_mod": 2, "int_mod": 1, "per_mod": 1 },
 	"ugliness": -2,
 	"weight_capacity_modifier": 0.8,
 	"cancels": [ "PRETTY", "UGLY", "DEFORMED", "DEFORMED2", "DEFORMED3", "CLUMSY", "SLOWRUNNER", "LIGHT_BONES", "TOLERANCE" ],
 	"flags": [ "FEATHER_FALL" ],
-	"//2": "I'm putting TOLERANCE there because I can't find a way to set alcohol immunity only to something like 95%",
-	"//3": "Check PMiSS for reference material"
+	"//2": "I'm putting TOLERANCE there because I can't find a way to set alcohol immunity only to something like 95%"
 	},
 	{
     "id": "TSUCHIGUMO_SPECIES",
@@ -181,7 +190,11 @@
     "name": "Vampire",
     "points": 0,
 	"visibility": 3,
+<<<<<<< HEAD
     "description": "A very famous Western youkai, you must feed upon humans to survive.  You're powerful, but at the same have time lots of weaknesses.",
+=======
+    "description": "A very famous Western youkai, you must feed upon humans to survive.  You're powerful, but at the same time have lots of weaknesses.",
+>>>>>>> testing
     "profession": true,
 	"purifiable": false,
 	"starting_trait": false,
@@ -274,12 +287,18 @@
 	"purifiable": false,
 	"starting_trait": false,
 	"valid": false,
+<<<<<<< HEAD
 	"movecost_flatground_modifier": 0.66,
 	"movecost_obstacle_modifier": 0.66,
 	"//": "If my math is correct, this should be equivalent to 300% movement speed *final*, up from the 200% movement speed from TENGUCROW_SPECIES ",
 	"//2": "See the comment from TENGUCROW_SPECIES",
+=======
+	"movecost_flatground_modifier": 0.8,
+	"movecost_obstacle_modifier": 0.8,
+	"//": "If my math is correct, this should be equivalent to 166% movement speed *final*, up from the 133% movement speed from TENGUCROW_SPECIES ",
+	"passive_mods": { "dex_mod": 2, "int_mod": 1 },
+>>>>>>> testing
 	"ugliness": -2,
-	"//3": "If possible, add some passive that multiplies every proyectile she throws to 1.5 - 2.0 movement speed",
 	"//4": "Add wings (small) and see if there's flying as mechanic. The problem is, how do I make those wings not interfer with her clothing?"
 	},
 	{
@@ -296,12 +315,8 @@
 	"healing_awake": 4,
 	"healing_resting": 4,
 	"//2": "Both Remi and Flan have the countertrait 'Light Eater' for the BLOODTHIRST trait, that makes the long enough -> very long.",
-	"movecost_flatground_modifier": 0.83,
-	"movecost_obstacle_modifier": 0.83,
-	"//3": "If my math is correct, this should be equivalent to ~1.5 movement speed total, up from the 1.25 movement speed from base vampires",
 	"passive_mods": { "str_mod": 3, "dex_mod": 1 },
-	"ugliness": -3,
-	"//4": "add toggle alternative form: Four of a Kind for Flan, that applies AI to three copies but you can swap control with any of them, possibly with CMB or something"
+	"ugliness": -3
     },
 	{
     "id": "GYOKUTO_EARS",
@@ -360,7 +375,11 @@
 	"type": "mutation",
     "name": "Rainbow Gatekeeper",
     "points": 0,
+<<<<<<< HEAD
     "description": "WIP",
+=======
+    "description": "You're the laid back, sleepy, yet responsible door and garden keeper of the Scarlet Devil Mansion.",
+>>>>>>> testing
     "profession": true,
 	"purifiable": false,
 	"starting_trait": false,
@@ -393,11 +412,18 @@
 	"purifiable": false,
 	"starting_trait": false,
     "valid": false,
+<<<<<<< HEAD
 	"movecost_flatground_modifier": 0.93,
 	"movecost_obstacle_modifier": 0.93,
 	"//": "If my math is correct, this should be equivalent to 1.33 movement speed total, up from the 1.25 movement speed from base hell ravens",
 	"flags": [ "HEAT_IMMUNE", "NO_RADIATION", "GLARE_RESIST", "PARAIMMUNE", "RADIOGENIC" ],
 	"//3": "Check the BIOLUM trait tree to see if I can use the toggleable light, or just make a spell or something",
+=======
+	"movecost_flatground_modifier": 0.933,
+	"movecost_obstacle_modifier": 0.933,
+	"//": "If my math is correct, this should be equivalent to 1.33 movement speed total, up from the 1.25 movement speed from base hell ravens",
+	"flags": [ "HEAT_IMMUNE", "NO_RADIATION", "GLARE_RESIST", "PARAIMMUNE", "RADIOGENIC" ],
+>>>>>>> testing
 	"//4": "Add wings (big) and see if there's flying as mechanic. The problem is, how do I make those wings not interfer with her clothing?"
 	},
 	{
@@ -410,8 +436,11 @@
 	"purifiable": false,
     "starting_trait": false,
 	"valid": false,
+<<<<<<< HEAD
 	"cut_dmg_bonus": 6,
 	"//": "This bonus to cut dmg should ONLY be applied while unarmed",
+=======
+>>>>>>> testing
 	"healing_awake": 4,
 	"healing_resting": 4,
 	"//2": "Both Remi and Flan have the countertrait 'Light Eater' for the BLOODTHIRST trait, that makes the long enough -> very long.",
@@ -427,7 +456,11 @@
 	"type": "mutation",
     "name": "Girl between the Spheres of Perception",
     "points": 0,
+<<<<<<< HEAD
     "description": "You're the Eldest daughter of the Hinanawi clan.  Very carefree, very problematic, and very spoiled, you do what you want when you want.",
+=======
+    "description": "You're the Eldest daughter of the Hinanawi clan.  Very carefree, very problematic, and very spoiled, you do what you want whenever you want.",
+>>>>>>> testing
     "profession": true,
 	"purifiable": false,
 	"starting_trait": false,
@@ -444,7 +477,11 @@
     "purifiable": false,
 	"starting_trait": false,
 	"valid": false,
+<<<<<<< HEAD
 	"initial_ma_styles": [ "style_niten" ]
+=======
+	"initial_ma_styles": [ "style_youmu" ]
+>>>>>>> testing
     },
 	{
     "id": "LUNARDIET",

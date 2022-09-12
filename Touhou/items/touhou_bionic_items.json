@@ -50,11 +50,19 @@
     "flags": [ "NEVER_JAMS", "NO_UNWIELD", "TRADER_AVOID", "ZERO_WEIGHT" ]
 	},
 	{
+<<<<<<< HEAD
     "id": "bio_redmagic",
     "type": "BIONIC_ITEM",
     "category": "bionics",
 	"name": { "str_sp": "Red magic user (test)" },
 	"description": "User of Red magic (test)",
+=======
+    "id": "bio_vampiric_constitution",
+    "type": "BIONIC_ITEM",
+    "category": "bionics",
+	"name": { "str_sp": "Vampiric constitution" },
+	"description": "You have vampiric constitution",
+>>>>>>> testing
 	"copy-from": "bionic_general",
 	"weight": "0 g",
     "volume": "0 ml",

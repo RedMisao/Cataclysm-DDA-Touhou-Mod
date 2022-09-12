@@ -19,6 +19,37 @@
 	"//": "faster decaying blood for effects"
 	},
 	{
+<<<<<<< HEAD
+=======
+    "id": "fd_incendiary2",
+    "type": "field_type",
+    "legacy_enum_id": 10,
+    "intensity_levels": [
+		{
+        "name": "small fire",
+        "sym": "4",
+        "color": "yellow",
+        "dangerous": true,
+        "light_emitted": 1,
+        "translucency": 0.1,
+        "convection_temperature_mod": 400
+		},
+		{ "name": { "ctxt": "noun", "str": "fire" }, "color": "light_red", "light_emitted": 2, "translucency": 0.1 },
+		{ "name": "raging fire", "color": "red", "light_emitted": 3, "translucency": 0.1 }
+    ],
+    "description_affix": "on",
+    "has_fire": true,
+    "priority": 4,
+    "half_life": "12 turns",
+    "phase": "plasma",
+    "display_items": false,
+    "display_field": true,
+    "looks_like": "fd_fire",
+	"immunity_data": { "traits": [ "PROF_MOKOU" ] },
+	"//": "Fire field for mokou_fujiyamakazan , closest thing to the 6 - 9 turn fire field I wanted"
+	},
+	{
+>>>>>>> testing
     "id": "fd_poison",
     "type": "field_type",
     "looks_like": "fd_bile",
@@ -54,5 +85,21 @@
     "phase": "gas",
     "display_items": true,
     "display_field": true
+<<<<<<< HEAD
+=======
+	},
+	{
+    "id": "fd_rubble2",
+    "type": "field_type",
+    "legacy_enum_id": 11,
+    "intensity_levels": [ { "name": "legacy rubble", "sym": "#", "color": "dark_gray" } ],
+    "description_affix": "covered_in",
+    "half_life": "1 turns",
+    "phase": "gas",
+    "display_items": false,
+    "display_field": true,
+    "looks_like": "f_rubble",
+    "legacy_make_rubble": false
+>>>>>>> testing
 	}
 ]

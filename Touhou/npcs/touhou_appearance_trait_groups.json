@@ -19,12 +19,22 @@
     "id": "Appearance_Gyokuto",
 	"type": "trait_group",
     "subtype": "collection",
+<<<<<<< HEAD
     "traits": [ { "group": "Hair_Gyokuto", "prob": 100 }, { "trait": "Skin_Fair", "prob": 100 }, { "group": "Eye_Gyokuto", "prob": 100 } ]
+=======
+    "traits": [ 
+		{ "group": "Hair_Gyokuto", "prob": 100 },
+		{ "trait": "Skin_Fair", "prob": 100 },
+		{ "group": "Ear_Gyokuto", "prob": 100 },
+		{ "group": "Eye_Gyokuto", "prob": 100 }
+	]
+>>>>>>> testing
 	},
 	{
     "id": "Appearance_Tengu",
 	"type": "trait_group",
     "subtype": "collection",
+<<<<<<< HEAD
     "traits": [ { "group": "Hair_Tengu", "prob": 100 }, { "trait": "Skin_Fair", "prob": 100 }, { "group": "Eye_Tengu", "prob": 100 } ]
 	},
 	{
@@ -36,6 +46,22 @@
 		{ "trait": "eye_magenta", "prob": 10 }, 
 		{ "trait": "eye_red", "prob": 50 }, 
 		{ "trait": "eye_pink", "prob": 5 }
+=======
+    "traits": [ 
+		{ "group": "Hair_Tengu", "prob": 100 }, 
+		{ "trait": "Skin_Fair", "prob": 100 }, 
+		{ "group": "Eye_Tengu", "prob": 100 } 
+	]
+	},
+	{
+    "id": "Ear_Gyokuto",
+	"type": "trait_group",
+    "subtype": "distribution",
+    "traits": [ 
+		{ "trait": "ear_firm", "prob": 85 },
+		{ "trait": "ear_floppy", "prob": 10 }, 
+		{ "trait": "ear_rumpled", "prob": 5 }
+>>>>>>> testing
 	]
 	},
 	{
@@ -43,9 +69,26 @@
 	"type": "trait_group",
     "subtype": "distribution",
     "traits": [ 
+<<<<<<< HEAD
 		{ "trait": "eye_black", "prob": 15 },
 		{ "trait": "eye_brown", "prob": 15 }, 
 		{ "trait": "eye_red", "prob": 35 }, 
+=======
+		{ "trait": "eye_dark_purple", "prob": 5 },
+		{ "trait": "eye_magenta", "prob": 5 }, 
+		{ "trait": "eye_red", "prob": 85 }, 
+		{ "trait": "eye_pink", "prob": 5 }
+	]
+	},
+	{
+    "id": "Eye_Tengu",
+	"type": "trait_group",
+    "subtype": "distribution",
+    "traits": [ 
+		{ "trait": "eye_black", "prob": 15 },
+		{ "trait": "eye_brown", "prob": 15 }, 
+		{ "trait": "eye_red", "prob": 55 }, 
+>>>>>>> testing
 		{ "trait": "eye_redbrown", "prob": 15 }
 	]
 	},
@@ -92,7 +135,12 @@
 		{ "trait": "hair_asagi_long", "prob": 35 },
 		{ "trait": "hair_asagi_medium", "prob": 35 },
 		{ "trait": "hair_asagi_short", "prob": 50 }
+<<<<<<< HEAD
     ]
+=======
+    ],
+	"//": "Think of an opaque teal"
+>>>>>>> testing
 	},
 	{
     "id": "Hair_Black",
@@ -132,7 +180,12 @@
 		{ "trait": "hair_cinnabar_long", "prob": 50 },
 		{ "trait": "hair_cinnabar_medium", "prob": 25 },
 		{ "trait": "hair_cinnabar_short", "prob": 15 }
+<<<<<<< HEAD
     ]
+=======
+    ],
+	"//": "Replaces red for Gyokuto"
+>>>>>>> testing
 	},
 	{
     "id": "Hair_Light_green",
@@ -152,7 +205,12 @@
 		{ "trait": "hair_jacaranda_long", "prob": 50 },
 		{ "trait": "hair_jacaranda_medium", "prob": 35 },
 		{ "trait": "hair_jacaranda_short", "prob": 15 }
+<<<<<<< HEAD
     ]
+=======
+    ],
+	"//": "Udongein's more-blue-than-red purple hair color"
+>>>>>>> testing
 	},
 	{
     "id": "Hair_Lapis",
@@ -162,7 +220,12 @@
 		{ "trait": "hair_lapis_long", "prob": 50 },
 		{ "trait": "hair_lapis_medium", "prob": 25 },
 		{ "trait": "hair_lapis_short", "prob": 25 }
+<<<<<<< HEAD
     ]
+=======
+    ],
+	"//": "Distinct from blue, yet could replace it?"
+>>>>>>> testing
 	},
 	{
     "id": "Hair_Light_blue",
@@ -202,7 +265,12 @@
 		{ "trait": "hair_midnight_long", "prob": 25 },
 		{ "trait": "hair_midnight_medium", "prob": 20 },
 		{ "trait": "hair_midnight_short", "prob": 15 }
+<<<<<<< HEAD
     ]
+=======
+    ],
+	"//": "Think of a blueish black"
+>>>>>>> testing
 	},
 	{
     "id": "Hair_Pink",
@@ -222,7 +290,12 @@
 		{ "trait": "hair_purple_long", "prob": 35 },
 		{ "trait": "hair_purple_medium", "prob": 35 },
 		{ "trait": "hair_purple_short", "prob": 50 }
+<<<<<<< HEAD
     ]
+=======
+    ],
+	"//": "Electric purple, less reddish than magenta but not 'violet' (violet would be a blue-dominant purple)"
+>>>>>>> testing
 	},
 	{
     "id": "Hair_White",

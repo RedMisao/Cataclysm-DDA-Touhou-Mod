@@ -4,8 +4,13 @@
     "type": "ARMOR",
     "name": "lunatic holster",
     "description": "A customized holster worn on the leg for holding any small gun. Activate to holster/draw a gun.",
+<<<<<<< HEAD
     "weight": "300 g",
     "volume": "1500 ml",
+=======
+    "volume": "1500 ml",
+	"weight": "300 g",
+>>>>>>> testing
     "price": 9000,
 	"price_postapoc": 1800,
     "material": "lunarian_leather",
@@ -33,9 +38,15 @@
     "id": "knife_holster_leg",
     "type": "ARMOR",
     "name": "knife holster",
+<<<<<<< HEAD
     "description": "A black leather holster designed to hold several knives or other similar weapons.  It's safer than it looks.",
     "weight": "300 g",
     "volume": "1000 ml",
+=======
+    "description": "A black leather holster designed to hold several knives or other similar weapons.  Safer than it looks.",
+    "volume": "1000 ml",
+	"weight": "300 g",
+>>>>>>> testing
     "price": 1000,
 	"price_postapoc": 200,
     "material": "leather",
@@ -61,7 +72,11 @@
         "max_item_length": "30 cm",
 		"holster": true,
         "moves": 25,
+<<<<<<< HEAD
 		"item_restriction": [ "knife_combat", "knife_hunting", "throwing_knife", "knife_trench", "switchblade", "tanto", "tanto_fake", "tanto_inferior", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_vegetable_cleaver", "knife_meat_cleaver", "lawn_dart", "hand_axe", "makeshift_axe", "stone_chisel", "glass_shiv" ]
+=======
+		"item_restriction": [ "knife_combat", "knife_hunting", "throwing_knife", "knife_trench", "switchblade", "tanto", "tanto_fake", "tanto_inferior", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_vegetable_cleaver", "knife_meat_cleaver", "lawn_dart", "hand_axe", "makeshift_axe", "stone_chisel", "glass_shiv", "silver_knife" ]
+>>>>>>> testing
 		},
 		{
         "pocket_type": "CONTAINER",
@@ -70,7 +85,11 @@
         "max_item_length": "30 cm",
 		"holster": true,
         "moves": 25,
+<<<<<<< HEAD
 		"item_restriction": [ "knife_combat", "knife_hunting", "throwing_knife", "knife_trench", "switchblade", "tanto", "tanto_fake", "tanto_inferior", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_vegetable_cleaver", "knife_meat_cleaver", "lawn_dart", "hand_axe", "makeshift_axe", "stone_chisel", "glass_shiv" ]
+=======
+		"item_restriction": [ "knife_combat", "knife_hunting", "throwing_knife", "knife_trench", "switchblade", "tanto", "tanto_fake", "tanto_inferior", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_vegetable_cleaver", "knife_meat_cleaver", "lawn_dart", "hand_axe", "makeshift_axe", "stone_chisel", "glass_shiv", "silver_knife" ]
+>>>>>>> testing
 		},
 		{
         "pocket_type": "CONTAINER",
@@ -79,7 +98,11 @@
         "max_item_length": "30 cm",
 		"holster": true,
         "moves": 25,
+<<<<<<< HEAD
 		"item_restriction": [ "knife_combat", "knife_hunting", "throwing_knife", "knife_trench", "switchblade", "tanto", "tanto_fake", "tanto_inferior", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_vegetable_cleaver", "knife_meat_cleaver", "lawn_dart", "hand_axe", "makeshift_axe", "stone_chisel", "glass_shiv" ]
+=======
+		"item_restriction": [ "knife_combat", "knife_hunting", "throwing_knife", "knife_trench", "switchblade", "tanto", "tanto_fake", "tanto_inferior", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_vegetable_cleaver", "knife_meat_cleaver", "lawn_dart", "hand_axe", "makeshift_axe", "stone_chisel", "glass_shiv", "silver_knife" ]
+>>>>>>> testing
 		},
 		{
         "pocket_type": "CONTAINER",
@@ -88,7 +111,11 @@
         "max_item_length": "30 cm",
 		"holster": true,
         "moves": 25,
+<<<<<<< HEAD
 		"item_restriction": [ "knife_combat", "knife_hunting", "throwing_knife", "knife_trench", "switchblade", "tanto", "tanto_fake", "tanto_inferior", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_vegetable_cleaver", "knife_meat_cleaver", "lawn_dart", "hand_axe", "makeshift_axe", "stone_chisel", "glass_shiv" ]
+=======
+		"item_restriction": [ "knife_combat", "knife_hunting", "throwing_knife", "knife_trench", "switchblade", "tanto", "tanto_fake", "tanto_inferior", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_vegetable_cleaver", "knife_meat_cleaver", "lawn_dart", "hand_axe", "makeshift_axe", "stone_chisel", "glass_shiv", "silver_knife" ]
+>>>>>>> testing
 	} ],
     "use_action": { "type": "holster" },
 	"armor": [
@@ -101,8 +128,13 @@
     "type": "ARMOR",
     "name": "knife holster (right leg)",
     "description": "A black leather holster designed to hold several knives.  It's more safe than it looks.",
+<<<<<<< HEAD
     "weight": "300 g",
     "volume": "1000 ml",
+=======
+    "volume": "1000 ml",
+	"weight": "300 g",
+>>>>>>> testing
     "price": 1000,
 	"price_postapoc": 200,
     "material": "leather",
@@ -161,8 +193,13 @@
     "type": "ARMOR",
     "name": "knife holster (left leg)",
     "description": "A black leather holster designed to hold several knives.  It's more safe than it looks.",
+<<<<<<< HEAD
     "weight": "300 g",
     "volume": "1000 ml",
+=======
+    "volume": "1000 ml",
+	"weight": "300 g",
+>>>>>>> testing
     "price": 1000,
 	"price_postapoc": 200,
     "material": "leather",

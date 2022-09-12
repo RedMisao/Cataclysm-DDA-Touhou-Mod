@@ -2,6 +2,7 @@
 	{
     "id": "wheel_corpsecart",
     "type": "vehicle_part",
+<<<<<<< HEAD
     "name": { "str": "corpse cart wheel" },
 	"item": "wheel_corpsecart",
 	"location": "under",
@@ -13,6 +14,19 @@
 	"durability": 200,
 	"folded_volume": "1000 ml",
 	"description": "WIP",
+=======
+	"categories": [ "movement" ],
+    "name": { "str": "corpse cart wheel" },
+	"description": "WIP",
+	"folded_volume": "1000 ml",
+	"item": "wheel_corpsecart",
+	"location": "under",
+	"symbol": "|",
+	"broken_symbol": "x",
+	"color": "brown",
+	"broken_color": "red",
+	"durability": 200,
+>>>>>>> testing
 	"breaks_into": [ { "item": "splinter", "count": [ 7, 9 ] }, { "item": "nail", "charges": [ 5, 10 ] } ],
 	"requirements": {
 		"install": { "skills": [ [ "mechanics", 2 ] ], "time": "5 m", "using": [ [ "vehicle_wrench_1", 1 ] ] },
@@ -27,5 +41,35 @@
 	"looks_like": "wheel_wood",
 	"flags": [ "FOLDABLE", "NEEDS_JACKING", "STABLE", "STEERABLE", "WHEEL" ],
 	"//3": "No idea what FOLDABLE and NEEDS_JACKING do"
+<<<<<<< HEAD
+=======
+	},
+	{
+    "id": "wheel_keystone",
+    "type": "vehicle_part",
+	"categories": [ "movement" ],
+    "name": { "str": "corpse cart wheel" },
+	"description": "WIP",
+	"folded_volume": "10 ml",
+	"item": "wheel_keystone",
+	"location": "under",
+	"symbol": "|",
+	"broken_symbol": "x",
+	"color": "brown",
+	"broken_color": "red",
+	"durability": 200,
+	"breaks_into": [ { "item": "splinter", "count": [ 7, 9 ] }, { "item": "nail", "charges": [ 5, 10 ] } ],
+	"requirements": {
+		"install": { "skills": [ [ "mechanics", 2 ] ], "time": "5 m", "using": [ [ "vehicle_wrench_1", 1 ] ] },
+		"removal": { "skills": [ [ "mechanics", 2 ] ], "time": "5 m", "using": [ [ "vehicle_wrench_1", 1 ] ] },
+		"repair": { "skills": [ [ "mechanics", 2 ] ], "time": "50 s", "using": [ [ "adhesive", 1 ] ] }
+    },
+	"damage_reduction": { "all": 10 },
+	"rolling_resistance": 0.45,
+    "wheel_type": "threads",
+    "contact_area": 200,
+	"looks_like": "wheel_wood",
+	"flags": [ "FOLDABLE", "STABLE", "STEERABLE", "WHEEL" ]
+>>>>>>> testing
 	}
 ]

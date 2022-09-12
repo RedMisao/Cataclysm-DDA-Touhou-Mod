@@ -1,0 +1,61 @@
+[
+	{
+    "id": "kaenbyou_wheelbarrow",
+    "type": "vehicle",
+    "name": "Corpse wheelbarrow (compact) (currently not working)",
+    "blueprint": [ "=##" ],
+	"parts": [ 
+		{ "x": 0, "y": 0, "parts": [ "frame_corpsecart", "seat_corpsecart", "wheelmount_corpsecart", "wheel_corpsecart"  ] },
+		{ "x": -1, "y": 0, "parts": [ "frame_corpsecart", "storage_corpsecart", "support_corpsecart" ] },
+		{ "x": -2, "y": 0, "parts": [ "handle_corpsecart" ] 
+		},
+		{ "x": 0, "y": 0, "parts": [ "controls_corpsecart" ] }, 
+		{ "x": -1, "y": 0, "parts": [ "tank_corpsecart", "reactor_corpsecart" ] }
+	],
+	"//": "Should be 2 wheels under the 1st frame instead of a single wheel",
+	"//2": "Should be 1 support + the fuel_source + reactor under the 2nd frame",
+	"//3": "The vehicle should be as compact as possible, as it's just a wooden wheelbarrow (3x1)",
+	"items": [ 
+		{ "x": -1, "y": 0, "chance": 100, "items": [ "ash" ] },
+		{ "x": -1, "y": 0, "chance": 100, "item_groups": [ "fuel_diesel" ] }
+	]
+	},
+	{
+    "id": "kaenbyou_wheelbarrow2",
+    "type": "vehicle",
+    "name": "Corpse wheelbarrow",
+    "blueprint": [ 
+		[ " -###> " ],
+		[ " -###> " ]
+	],
+	"parts": [ 
+		{ "x": 1, "y": 0, "parts": [ "frame_corpsecart", "front_corpsecart" ] },
+		{ "x": 1, "y": 1, "parts": [ "frame_corpsecart", "front_corpsecart" ] },
+		{ "x": 0, "y": 0, "parts": [ "frame_corpsecart", "seat_corpsecart", "wheelmount_corpsecart", "wheel_corpsecart" ] },
+		{ "x": 0, "y": 1, "parts": [ "frame_corpsecart", "seat_corpsecart", "wheelmount_corpsecart", "wheel_corpsecart" ] },
+		{ "x": -1, "y": 0, "parts": [ "frame_corpsecart", "storage_corpsecart", "support_corpsecart" ] },
+		{ "x": -1, "y": 1, "parts": [ "frame_corpsecart", "storage_corpsecart", "support_corpsecart" ] },
+		{ "x": -2, "y": 0, "parts": [ "frame_corpsecart", "wheelmount_corpsecart", "wheel_corpsecart" ] },
+		{ "x": -2, "y": 1, "parts": [ "frame_corpsecart", "wheelmount_corpsecart", "wheel_corpsecart" ] },
+		{ "x": -3, "y": 0, "parts": [ "handle_corpsecart" ] },
+		{ "x": -3, "y": 1, "parts": [ "handle_corpsecart" ] 
+		},
+		{ "x": 0, "y": 0, "parts": [ "controls_corpsecart" ] }, 
+		{ "x": -1, "y": 0, "parts": [ "tank_corpsecart" ] },
+		{ "x": -1, "y": 0, "parts": [ "reactor_corpsecart" ] }
+	],
+	"items": [ 
+		{ "x": -1, "y": 0, "chance": 100, "items": [ "ash" ] },
+		{ "x": -1, "y": 0, "chance": 100, "item_groups": [ "fuel_diesel" ] }
+	]
+	},
+	{
+    "id": "keystone_floating",
+    "type": "vehicle",
+    "name": "floating keystone",
+    "blueprint": [ "V" ],
+    "parts": [ { "x": 0, "y": 0, "parts": [ "frame_keystone", "controls_keystone", "reactor_keystone", "storage_battery_keystone", "wheel_keystone" ] } ],
+	"items": [ { "x": 0, "y": 0, "chance": 100, "items": [ "mana_fuel" ] } ],
+	"//": "This STILL doesn't move !!! What the HELL"
+	}
+]

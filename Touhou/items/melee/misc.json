@@ -2,6 +2,7 @@
 	{
     "id": "bullwhip",
     "type": "GENERIC",
+<<<<<<< HEAD
     "symbol": "/",
     "color": "brown",
     "name": { "str": "bullwhip" },
@@ -35,5 +36,19 @@
     "material": [ "leather", "steel" ],
     "flags": [ "REACH_ATTACK", "WHIP", "NONCONDUCTIVE" ],
     "weapon_category": [ "WHIPS" ]
+=======
+    "name": { "str": "bullwhip" },
+    "cutting": 6,
+    "copy-from": "bullwhip",
+	"extend": { "weapon_category": [ "WHIPS" ] }
+	},
+	{
+    "id": "bullwhip_razor",
+    "type": "GENERIC",
+    "name": { "str": "scourge" },
+    "cutting": 13,
+    "copy-from": "bullwhip_razor",
+	"extend": { "weapon_category": [ "WHIPS" ] }
+>>>>>>> testing
 	}
 ]

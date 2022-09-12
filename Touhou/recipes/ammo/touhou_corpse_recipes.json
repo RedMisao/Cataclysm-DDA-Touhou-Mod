@@ -42,7 +42,10 @@
 	"skill_used": "chemistry",
     "skills_required": [ "chemistry", 0 ],
 	"difficulty": 0,
+<<<<<<< HEAD
     "//": "By doing a huge stretch, that's the closest thing to necromancy",
+=======
+>>>>>>> testing
 	"time": "5 s",
     "charges": 1,
     "reversible": false,

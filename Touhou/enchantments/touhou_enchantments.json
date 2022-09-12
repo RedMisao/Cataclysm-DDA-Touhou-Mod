@@ -1,5 +1,6 @@
 [
 	{
+<<<<<<< HEAD
     "id": "utsuho_blade",
     "type": "SPELL",
     "name": "Fusion blade (timer)",
@@ -48,5 +49,80 @@
 	"base_energy_cost": 200,
 	"energy_source": "MANA",
     "flags": [ "IGNITE_FLAMMABLE", "NO_LEGS", "NO_PROJECTILE" ]
+=======
+    "id": "ench_lampad_torch_off",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WIELD",
+    "values": [ 
+		{ "value": "INTELLIGENCE", "multiply": 0.95 },
+		{ "value": "PERCEPTION", "multiply": 0.95 },
+		{ "value": "ATTACK_SPEED", "multiply": 1.1 },
+		{ "value": "MOVE_COST", "add": -20 }
+	]
+	},
+	{
+    "id": "ench_lampad_torch_lit",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WIELD",
+    "values": [ 
+		{ "value": "INTELLIGENCE", "multiply": 0.9 },
+		{ "value": "PERCEPTION", "multiply": 0.85 },
+		{ "value": "STRENGTH", "multiply": 1.1 },
+		{ "value": "ATTACK_SPEED", "multiply": 1.2 },
+		{ "value": "BONUS_DODGE", "add": -1 },
+		{ "value": "MOVE_COST", "add": -35 }
+	],
+    "intermittent_activation": {
+		"effects": [
+			{
+			"frequency": "10 s",
+			"spell_effects": [
+				{ "id": "lampad_insanity" }
+			]
+			}
+		]
+    }
+	},
+	{
+    "id": "lampad_insanity",
+    "type": "SPELL",
+    "name": "Lampad insanity",
+    "description": "Monster infight enabler.",
+    "spell_class": "NONE",
+    "valid_targets": [ "ally", "hostile" ],
+    "effect": "mutate",
+	"effect_str": "ATTACKMON",
+    "shape": "blast",
+    "min_damage": 3333,
+    "max_damage": 3333,
+    "min_aoe": 16,
+    "max_aoe": 16,
+    "min_duration": 1100,
+    "max_duration": 1100,
+    "flags": [ "MUTATE_TRAIT", "NO_PROJECTILE", "SILENT" ]
+	},
+	{
+    "id": "ench_reflectionslash",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "ARMOR_BULLET", "multiply": -1 }
+	]
+	},
+	{
+    "id": "ench_vampiricaura",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "ARMOR_CUT", "add": 2 },
+		{ "value": "ARMOR_BASH", "add": 2 },
+		{ "value": "ARMOR_STAB", "add": 4 },
+		{ "value": "ARMOR_BULLET", "add": 2 }
+	]
+>>>>>>> testing
 	}
 ]

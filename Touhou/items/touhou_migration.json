@@ -1,0 +1,32 @@
+[
+	{
+    "id": "792x33_kurz",
+    "type": "MIGRATION",
+    "replace": "792x33_me"
+	},
+	{
+    "id": "792x33_kurz2",
+    "type": "MIGRATION",
+    "replace": "792x33_prvi"
+	},
+	{
+    "id": "792x33_kurz3",
+    "type": "MIGRATION",
+    "replace": "reloaded_792x33_me"
+	},
+	{
+    "id": "bp_792x33_kurz3",
+    "type": "MIGRATION",
+    "replace": "bp_792x33_me"
+	},
+	{
+    "id": "792x33_casing",
+    "type": "MIGRATION",
+    "replace": "792x33_casing_steel"
+	},
+	{
+    "id": "792x57_casing",
+    "type": "MIGRATION",
+    "replace": "792x57_casing_brass"
+	}
+]

@@ -8,7 +8,11 @@
     "skill_used": "fabrication",
     "skills_required": [ "gun", 1 ],
 	"difficulty": 0,
+<<<<<<< HEAD
     "time": "5 s",
+=======
+    "time": "0 s",
+>>>>>>> testing
     "reversible": false,
 	"autolearn": false,
 	"book_learn": {	             
@@ -30,7 +34,11 @@
     "skill_used": "fabrication",
     "skills_required": [ "gun", 1 ],
 	"difficulty": 0,
+<<<<<<< HEAD
     "time": "5 s",
+=======
+    "time": "0 s",
+>>>>>>> testing
     "reversible": false,
 	"autolearn": false,
 	"book_learn": {	             
@@ -52,7 +60,11 @@
     "skill_used": "fabrication",
     "skills_required": [ "gun", 1 ],
 	"difficulty": 0,
+<<<<<<< HEAD
     "time": "5 s",
+=======
+    "time": "0 s",
+>>>>>>> testing
     "reversible": false,
 	"autolearn": false,
 	"book_learn": {	             

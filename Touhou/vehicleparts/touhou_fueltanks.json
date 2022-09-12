@@ -1,13 +1,44 @@
 [
 	{
+<<<<<<< HEAD
     "id": "tank_corpsecart",
 	"type": "vehicle_part",
+=======
+    "id": "storage_battery_keystone",
+	"type": "vehicle_part",
+	"categories": [ "energy", "movement" ],
+	"name": { "str": "keystone tank" },
+	"description": "Test tank for keystone_floating ",
+	"item": "storage_battery_keystone",
+    "location": "fuel_source",
+	"symbol": "X",
+	"color": "brown",
+	"broken_color": "red",
+	"durability": 200,
+	"folded_volume": "2500 ml",
+	"breaks_into": [ { "item": "splinter", "count": [ 7, 9 ] }, { "item": "nail", "charges": [ 5, 10 ] } ],
+	"requirements": {
+		"install": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_nail_install", 1 ] ] },
+		"removal": { "skills": [ [ "mechanics", 2 ] ], "time": "15 m", "using": [ [ "vehicle_nail_removal", 1 ] ] },
+		"repair": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "adhesive", 2 ] ] }
+    },
+	"damage_reduction": { "all": 10 },
+	"flags": [ "FOLDABLE" ]
+	},
+	{
+    "id": "tank_corpsecart",
+	"type": "vehicle_part",
+	"categories": [ "energy", "movement" ],
+>>>>>>> testing
 	"name": { "str": "corpse reactor tank" },
 	"description": "Test corpse reactor tank for kaenbyou_wheelbarrow ",
 	"item": "tank_corpsecart",
     "location": "fuel_source",
 	"symbol": "X",
+<<<<<<< HEAD
 	"categories": [ "energy", "movement" ],
+=======
+>>>>>>> testing
 	"color": "brown",
 	"broken_color": "red",
 	"durability": 200,

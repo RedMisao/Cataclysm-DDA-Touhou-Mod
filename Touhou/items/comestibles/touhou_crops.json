@@ -4,7 +4,11 @@
 	"type": "COMESTIBLE",
     "name": { "str": "heavenly peach", "str_pl": "heavenly peaches" },
 	"copy-from": "peach",
+<<<<<<< HEAD
 	"description": "Peaches.  Except they're not native to Earth.  And they don't rot.  And they make you inconveniently difficult to deal with, like making your skin unpierceable or turning you immortal.  At least they used to.",
+=======
+	"description": "Peaches.  Except they're not native to Earth.  And they don't rot.  And they make you inconveniently difficult to deal with, like turning your skin unpierceable or by granting immortality.  At least they used to.",
+>>>>>>> testing
     "price": 280,
     "price_postapoc": 200,
     "calories": 126,

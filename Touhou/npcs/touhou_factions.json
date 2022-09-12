@@ -1,8 +1,14 @@
 [
 	{
+<<<<<<< HEAD
     "id": "faction_ldf",
 	"type": "faction",
     "name": "Lunarian forces",
+=======
+    "id": "faction_ldc",
+	"type": "faction",
+    "name": "Lunar defense corps",
+>>>>>>> testing
     "description": "WIP",
 	"likes_u": 15,
     "respects_u": 25,
@@ -26,7 +32,11 @@
 		{ "power_min": 0, "id": "epilogue_faction_old_guard_0" },
 		{ "power_max": 150, "id": "epilogue_faction_old_guard_150" }
     ],
+<<<<<<< HEAD
 	"//": "LDF are composed of Gyokuto, around 100 dispatched teams of 5 members each. These are between 1/12 to 1/10 of the total military forces in the Lunar Capital. The average soldier is at least as well trained as the modern infantry soldier and has better equipment (think of a M1 vs a SIG 553), the elite soldiers are capable of fulfilling several roles at once and have even better equipment. A non-specified subset are the elite operatives, which lay low until they receive orders from the superior command."
+=======
+	"//": "LDC are composed of Gyokuto, around 100 dispatched teams of 5 members each. These are between 1/12 to 1/10 of the total military forces in the Lunar Capital. The average soldier is at least as well trained as the modern infantry soldier and has better equipment (think of a M1 vs a SIG 553), the elite soldiers are capable of fulfilling several roles at once and have even better equipment. A non-specified subset are the elite operatives, which lay low until they receive orders from the superior command."
+>>>>>>> testing
 	},
 	{
     "id": "faction_tengu_guard",

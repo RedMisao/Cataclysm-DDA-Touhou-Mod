@@ -1,0 +1,36 @@
+[
+	{
+    "id": "dix",
+    "type": "COMESTIBLE",
+    "name": { "str_sp": "d-ix" },
+	"comestible_type": "MED",
+    "description": "An experimental performance-enhancer drug, developed for use in military operations.  Its composed of 5 mg oxycodone, 3 mg methamphetamine, and 5 mg cocaine.",
+    "volume": "250 ml",
+	"weight": "1 g",
+    "price_postapoc": 33000,
+    "material": [ "powder" ],
+    "symbol": "!",
+    "color": "white",
+    "addiction_potential": 24,
+    "addiction_type": "dix_addiction",
+    "container": "bottle_plastic_small",
+    "charges": 8,
+	"fatigue_mod": 12,
+    "fun": 24,
+    "healthy": -2,
+    "quench": -1,
+    "stack_size": 12,
+    "stim": 36,
+    "use_action": {
+		"type": "consume_drug",
+		"activation_message": "You take some D-IX.",
+		"effects": [ 
+			{ "id": "stim", "duration": "24 h" }, 
+			{ "id": "meth", "duration": "24 h" }, 
+			{ "id": "pkill2", "duration": "20 h" }, 
+			{ "id": "pkill3", "duration": "4 h" }
+		]
+	},
+    "flags": [ "EDIBLE_FROZEN", "IRREPLACEABLE_CONSUMABLE", "WATER_DISSOLVE" ]
+	}	
+]

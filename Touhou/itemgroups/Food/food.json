@@ -3,6 +3,7 @@
     "id": "produce",
 	"type": "item_group",
     "subtype": "distribution",
+<<<<<<< HEAD
 	"entries": [
 		{ "item": "apple", "prob": 70 },
 		{ "item": "orange", "prob": 65 },
@@ -84,5 +85,18 @@
 		{ "item": "pine_nuts", "prob": 10 },
 		{ "item": "satsumaimo", "prob": 15 }
     ]
+=======
+    "copy-from": "produce",
+	"extend": { "entries": [ { "item": "satsumaimo", "prob": 10 } ] }
+	},
+	{
+    "id": "fresh_produce",
+	"type": "item_group",
+    "subtype": "distribution",
+    "copy-from": "fresh_produce",
+    "ammo": 75,
+    "magazine": 100,
+	"extend": { "entries": [ { "item": "satsumaimo", "prob": 15 } ] }
+>>>>>>> testing
 	}
 ]

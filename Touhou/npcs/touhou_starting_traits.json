@@ -25,15 +25,26 @@
 		{ "trait": "OPTIMISTIC", "prob": 85 },
 		{ "trait": "POISRESIST", "prob": 50 },
 		{ "trait": "QUICK", "prob": 35 },
+<<<<<<< HEAD
 		{ "trait": "SQUEAMISH", "prob": 75 },
+=======
+		{ "trait": "SQUEAMISH", "prob": 85 },
+>>>>>>> testing
 		{ "trait": "STYLISH", "prob": 50 },
 		{ "trait": "THINSKIN", "prob": 25 },
 		{ "trait": "WEAKSCENT", "prob": 65 },
 		{ "trait": "TOUGH_FEET", "prob": 75 },
+<<<<<<< HEAD
 		{ "trait": "VEGETARIAN", "prob": 65 }
     ],
 	"//2": ">65 for abnormal to lack, 50 for expected but not necessary to have, 35 for uncommon but not special to have, <25 for special to have",
 	"//3": "Add CALLOUS or the equivalent CARELESS for Gyokuto, with around 65-85 chance after implementation",
 	"//4": "VEGETARIAN to LUNARDIET"
+=======
+		{ "trait": "LUNARDIET", "prob": 100 }
+    ],
+	"//2": ">65 for abnormal to lack, 50 for expected but not necessary to have, 35 for uncommon but not special to have, <25 for special to have",
+	"//3": "Add CALLOUS or the equivalent CARELESS for Gyokuto, with around 65-85 chance after implementation"
+>>>>>>> testing
 	}
 ]

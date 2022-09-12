@@ -1,18 +1,88 @@
 [
 	{
+<<<<<<< HEAD
     "id": "mon_anomalocaris",
     "type": "MONSTER",
     "name": { "str": "anomalocaris", "str_pl": "anomalocaris" },
     "description": "A lobster-looking thing, measuring approximately 1 m long, with two barbed beards slash tentacle bar fingers in front of the head.  The head features two big composite eyes at the sides on top, as if they were antennas or button from some ancient console's controllers.  The animal has a fleshy \"skirt\" which undulates for allowing locomotion.  Perhaps the less revealing part is the tail, which is unquestionably that of a shrimp, telling the animal's taxonomy and culinary properties.  This would make an exotic pet, if it wasn't for its aquatic lifestyle, and that it went extinct 500 mya.",
+=======
+    "id": "mon_aegirocassis",
+    "type": "MONSTER",
+    "name": { "str": "aegirocassis", "str_pl": "aegirocassis" },
+    "description": "A giant plankton-eating shrimp.  The cephalotorax is covered by three \"shields\", one at the top and two at the sides, all three protecting the filters hanging from the mouth appendages.  The animal has two pairs of short flaps for locomotion, attached to the muscular (and probably very delicious tail).  This would make an exotic pet, if it wasn't for its 2 m long body.",
+    "volume": "10 L",
+    "weight": "6500 g",
+	"default_faction": "touhou_arthropod_herbivore",
+    "bodytype": "crab",
+    "categories": [ "WILDLIFE" ],
+    "species": [ "ARTHROPOD" ],
+    "harvest": "arthropod_shrimplike_harvest",
+	"hp": 65,
+    "speed": 135,
+	"material": [ "flesh" ],
+	"color": "blue",
+	"symbol": "ϒ",
+    "aggression": -15,
+    "morale": 15,
+    "melee_skill": 1,
+	"melee_dice": 2,
+	"melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
+	"dodge": 1,
+	"armor_bash": 2,
+	"armor_cut": 2,
+	"armor_stab": 2,
+	"vision_night": 15,
+	"path_settings": { "max_dist": 8 },
+	"reproduction": { "baby_egg": "egg_aegirocassis", "baby_count": 3, "baby_timer": 10 },
+    "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
+    "anger_triggers": [ "HURT" ],
+	"flags": [ "ANIMAL", "AQUATIC", "ARTHROPOD_BLOOD", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
+    "//": "Based on Aegirocassis sp.. No weight or reproductive data"
+	},
+	{
+    "id": "mon_aegirocassis_baby",
+    "type": "MONSTER",
+    "name": { "str": "baby aegirocassis", "str_pl": "baby aegirocassis" },
+    "copy-from": "mon_aegirocassis",
+	"description": "A small Aegirocassis.  Perhaps could work as tiger shrimp substitute.",
+    "volume": "220 ml",
+    "weight": "160 g",
+	"hp": 6,
+    "speed": 145,
+	"color": "light_blue",
+    "aggression": -20,
+    "melee_skill": 1,
+	"melee_dice": 2,
+    "melee_dice_sides": 2,
+	"dodge": 5,
+	"armor_bash": 0,
+	"armor_cut": 1,
+	"armor_stab": 0,
+    "upgrades": { "age_grow": 12, "into": "mon_aegirocassis" },
+	"extend": { "flags": [ "NO_BREED" ] }
+	},
+	{
+    "id": "mon_anomalocaris",
+    "type": "MONSTER",
+    "name": { "str": "anomalocaris", "str_pl": "anomalocaris" },
+    "description": "A lobster-looking thing, measuring approximately 1 m long, with two barbed mouth appendages in front of the head.  The head features two big composite eyes at the sides on top, as if they were antennas or button from some ancient console's controllers.  The animal has a fleshy \"skirt\" which undulates for allowing locomotion.  Perhaps the less revealing part is the tail, which is unquestionably that of a shrimp, telling the animal's taxonomy and culinary properties.  This would make an exotic pet, if it wasn't for its aquatic lifestyle, and that it went extinct 500 mya.",
+>>>>>>> testing
     "volume": "4 L",
     "weight": "4000 g",
 	"default_faction": "touhou_arthropod_aquatic_small",
     "bodytype": "crab",
     "categories": [ "WILDLIFE" ],
+<<<<<<< HEAD
     "species": [ "FISH" ],
     "harvest": "arthropod_shrimplike_harvest",
 	"hp": 30,
     "speed": 115,
+=======
+    "species": [ "ARTHROPOD" ],
+    "harvest": "arthropod_shrimplike_harvest",
+	"hp": 30,
+    "speed": 155,
+>>>>>>> testing
 	"material": [ "flesh" ],
 	"color": "pink",
 	"symbol": "ϒ",
@@ -21,7 +91,11 @@
     "melee_skill": 3,
 	"melee_dice": 2,
     "melee_dice_sides": 3,
+<<<<<<< HEAD
     "melee_cut": 4,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
+>>>>>>> testing
 	"dodge": 3,
 	"armor_cut": 2,
 	"vision_night": 15,
@@ -29,45 +103,174 @@
 	"reproduction": { "baby_egg": "egg_anomalocaris", "baby_count": 6, "baby_timer": 8 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "anger_triggers": [ "HURT" ],
+<<<<<<< HEAD
 	"placate_triggers": [ "MEAT" ],
 	"flags": [ "ANIMAL", "AQUATIC", "FISHABLE", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
+=======
+	"flags": [ "ANIMAL", "AQUATIC", "ARTHROPOD_BLOOD", "FISHABLE", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
+>>>>>>> testing
     "//": "Based on Anomalocaris sp.. No weight or reproductive data"
 	},
 	{
     "id": "mon_anomalocaris_baby",
     "type": "MONSTER",
+<<<<<<< HEAD
     "name": { "str": "baby eurypterid", "str_pl": "baby eurypterids" },
+=======
+    "name": { "str": "baby anomalocaris", "str_pl": "baby anomalocaris" },
+>>>>>>> testing
     "copy-from": "mon_anomalocaris",
 	"description": "A small Anomalocaris.  Unbelievable cute.",
     "volume": "200 ml",
     "weight": "160 g",
 	"hp": 6,
+<<<<<<< HEAD
     "speed": 135,
+=======
+    "speed": 165,
+>>>>>>> testing
 	"color": "brown",
     "aggression": 10,
     "melee_skill": 1,
 	"melee_dice": 2,
     "melee_dice_sides": 2,
+<<<<<<< HEAD
     "melee_cut": 2,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
+>>>>>>> testing
 	"dodge": 5,
     "armor_cut": 1,
     "upgrades": { "age_grow": 8, "into": "mon_anomalocaris" },
 	"extend": { "flags": [ "NO_BREED" ] }
 	},
 	{
+<<<<<<< HEAD
     "id": "mon_eusarcana",
     "type": "MONSTER",
     "name": { "str": "eusarcana", "str_pl": "eusarcana" },
     "description": "A huge lobster-looking arachnid with a bunch of barbed claws and a very menacing spiked tail.  The torax is somewhat fat, with a small head having a pair of compound eyes on top of it.  In contrast with other Eurypterids, the legs are small, with the characteristic fourth pair being flappy, meaty appendixes for locomotion.  The tail however, features a working stinger, like your average land scorpion, only about ten times bigger.",
+=======
+    "id": "mon_arthropleura",
+    "type": "MONSTER",
+    "name": { "str": "arthropleura", "str_pl": "arthropleura" },
+    "description": "A gigantic myriapod.  Each segment seems to have been grown into what looks like chitinous armor, covering each pair of legs.  While it looks very, very menacing, it seems to ignore everything around it except for plants.",
+    "volume": "60 L",
+    "weight": "50 kg",
+	"default_faction": "touhou_arthropod_herbivore",
+    "bodytype": "snake",
+	"//": "closer than crab ",
+    "categories": [ "WILDLIFE" ],
+    "species": [ "ARTHROPOD" ],
+    "harvest": "arthropod_big_harvest",
+	"hp": 120,
+    "speed": 100,
+	"material": [ "iflesh" ],
+	"color": "red",
+	"symbol": "ș",
+    "aggression": -5,
+    "morale": 15,
+    "melee_skill": 3,
+	"melee_dice": 2,
+    "melee_dice_sides": 3,
+	"melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
+	"dodge": 3,
+	"armor_bash": 2,
+	"armor_cut": 4,
+	"armor_stab": 2,
+	"vision_night": 20,
+	"path_settings": { "max_dist": 10 },
+	"reproduction": { "baby_egg": "egg_arthropleura", "baby_count": 6, "baby_timer": 10 },
+    "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
+    "anger_triggers": [ "HURT" ],
+	"flags": [ "ANIMAL", "ARTHROPOD_BLOOD", "SEES", "SMELLS" ],
+    "//2": "Based on Arthropleura sp.. No reproductive data, was probably herbivore"
+	},
+	{
+    "id": "mon_arthropleura_baby",
+    "type": "MONSTER",
+    "name": { "str": "baby arthropleura", "str_pl": "baby arthropleura" },
+    "copy-from": "mon_arthropleura",
+	"description": "A small Arthropleura.  One would mistake these with oversized myriapods, if those existed.",
+    "volume": "400 ml",
+    "weight": "300 g",
+	"hp": 8,
+    "speed": 115,
+	"color": "brown",
+    "melee_skill": 2,
+	"melee_dice": 2,
+    "melee_dice_sides": 2,
+	"melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
+	"dodge": 3,
+	"armor_bash": 0,
+	"armor_cut": 2,
+	"armor_stab": 0,
+    "upgrades": { "age_grow": 12, "into": "mon_arthropleura" },
+	"extend": { "flags": [ "NO_BREED" ] }
+	},
+	{
+    "id": "mon_chasmataspis",
+    "type": "MONSTER",
+    "name": { "str": "chasmataspis", "str_pl": "chasmataspis" },
+	"copy-from": "mon_opabinia",
+    "description": "A horseshoe-crab looking animal, close to Eurypterids and related chelicerates.  Has a relatively small cephalotorax relative to the long, segmented, spiky tail.  It scuttles around, looking for small prey.",
+    "volume": "110 ml",
+    "weight": "80 g",
+    "harvest": "arthropod_small_harvest",
+	"hp": 5,
+    "speed": 105,
+	"color": "brown",
+    "aggression": 0,
+    "melee_skill": 1,
+	"melee_dice": 1,
+    "melee_dice_sides": 2,
+	"melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
+	"reproduction": { "baby_egg": "egg_arthropod_aquatic_small", "baby_count": 8, "baby_timer": 10 },
+    "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
+	"flags": [ "ANIMAL", "AQUATIC", "ARTHROPOD_BLOOD", "FISHABLE", "SEES", "SMELLS", "WATER_CAMOUFLAGE" ],
+    "//": "Based on Chasmataspis sp.. No weight or reproductive data"
+	},
+	{
+    "id": "mon_chasmataspis_baby",
+    "type": "MONSTER",
+    "name": { "str": "baby chasmataspis", "str_pl": "baby chasmataspis" },
+    "copy-from": "mon_chasmataspis",
+	"description": "A small Chasmataspis, reminiscent to a shrimp, if shrimps were flat and not curved.",
+    "volume": "5 ml",
+    "weight": "5 g",
+	"hp": 1,
+    "speed": 110,
+    "aggression": 0,
+    "morale": 0,
+	"melee_dice": 1,
+    "melee_dice_sides": 1,
+	"melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
+	"dodge": 3,
+	"upgrades": { "age_grow": 12, "into": "mon_chasmataspis" },
+	"extend": { "flags": [ "NO_BREED" ] }
+	},
+	{
+    "id": "mon_eusarcana",
+    "type": "MONSTER",
+    "name": { "str": "eusarcana", "str_pl": "eusarcana" },
+    "description": "A huge lobster-looking arachnid with a bunch of barbed claws and a very menacing spiked tail.  The torax seems fat, with a small head having a pair of compound eyes on top.  In contrast with other Eurypterids, the legs are relatively shorter.  The tail features a stinger, like your average land scorpion, only about ten times bigger.",
+>>>>>>> testing
     "volume": "15000 ml",
     "weight": "17500 g",
 	"default_faction": "touhou_arthropod_aquatic_medium",
     "bodytype": "crab",
     "categories": [ "WILDLIFE" ],
+<<<<<<< HEAD
     "species": [ "FISH" ],
     "harvest": "arthropod_big_harvest",
 	"hp": 35,
     "speed": 115,
+=======
+    "species": [ "ARTHROPOD" ],
+    "harvest": "arthropod_big_harvest",
+	"hp": 35,
+    "speed": 165,
+>>>>>>> testing
 	"material": [ "flesh" ],
 	"color": "light_gray",
 	"symbol": "ᛉ",
@@ -76,7 +279,11 @@
     "melee_skill": 4,
 	"melee_dice": 3,
     "melee_dice_sides": 3,
+<<<<<<< HEAD
     "melee_cut": 4,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
+>>>>>>> testing
 	"dodge": 3,
 	"armor_bash": 2,
 	"armor_cut": 2,
@@ -87,28 +294,47 @@
 	"reproduction": { "baby_egg": "egg_eurypterid", "baby_count": 8, "baby_timer": 12 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "anger_triggers": [ "HURT", "PLAYER_CLOSE" ],
+<<<<<<< HEAD
     "placate_triggers": [ "MEAT" ],
     "special_attacks": [ [ "EAT_FOOD", 35 ] ],
 	"flags": [ "ANIMAL", "AQUATIC", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
     "//": "Based on Eusarcana scorpionis. This one's venomous"
+=======
+    "special_attacks": [ [ "EAT_FOOD", 35 ] ],
+	"flags": [ "ANIMAL", "AQUATIC", "ARTHROPOD_BLOOD", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
+    "//": "Based on Eusarcana scorpionis. This one's venomous",
+	"//2": "ADD VENOM ATTACK !!!"
+>>>>>>> testing
 	},
 	{
     "id": "mon_eusarcana_baby",
     "type": "MONSTER",
     "name": { "str": "baby eusarcana", "str_pl": "baby eusarcana" },
     "copy-from": "mon_eusarcana",
+<<<<<<< HEAD
 	"description": "A small Eusarcana.  It looks somewhat cute.",
     "volume": "1000 ml",
     "weight": "1000 g",
 	"hp": 6,
     "speed": 95,
+=======
+	"description": "A small Eusarcana.  Kinda cute.",
+    "volume": "1000 ml",
+    "weight": "1000 g",
+	"hp": 6,
+    "speed": 145,
+>>>>>>> testing
 	"color": "dark_gray",
     "aggression": 15,
     "morale": 15,
     "melee_skill": 2,
 	"melee_dice": 3,
     "melee_dice_sides": 2,
+<<<<<<< HEAD
     "melee_cut": 2,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
+>>>>>>> testing
 	"dodge": 5,
 	"armor_bash": 1,
 	"armor_cut": 1,
@@ -126,10 +352,17 @@
 	"default_faction": "touhou_arthropod_aquatic_small",
     "bodytype": "crab",
     "categories": [ "WILDLIFE" ],
+<<<<<<< HEAD
     "species": [ "FISH" ],
     "harvest": "arthropod_shrimplike_harvest",
 	"hp": 8,
     "speed": 100,
+=======
+    "species": [ "ARTHROPOD" ],
+    "harvest": "arthropod_shrimplike_harvest",
+	"hp": 8,
+    "speed": 150,
+>>>>>>> testing
 	"material": [ "flesh" ],
 	"color": "brown",
 	"symbol": "y",
@@ -138,7 +371,11 @@
     "melee_skill": 2,
 	"melee_dice": 2,
     "melee_dice_sides": 2,
+<<<<<<< HEAD
     "melee_cut": 4,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
+>>>>>>> testing
 	"dodge": 2,
 	"armor_bash": 2,
 	"armor_cut": 2,
@@ -147,8 +384,12 @@
 	"reproduction": { "baby_egg": "egg_arthropod_aquatic_small", "baby_count": 10, "baby_timer": 7 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "fear_triggers": [ "HURT", "SOUND" ],
+<<<<<<< HEAD
 	"placate_triggers": [ "MEAT" ],
 	"flags": [ "ANIMAL", "AQUATIC", "FISHABLE", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
+=======
+	"flags": [ "ANIMAL", "AQUATIC", "ARTHROPOD_BLOOD", "FISHABLE", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
+>>>>>>> testing
     "//": "Based on Hurdia sp.. No weight or reproductive data"
 	},
 	{
@@ -164,7 +405,11 @@
     "morale": 0,
 	"melee_dice": 1,
     "melee_dice_sides": 1,
+<<<<<<< HEAD
     "melee_cut": 1,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
+>>>>>>> testing
 	"dodge": 2,
 	"upgrades": { "age_grow": 12, "into": "mon_hurdia" },
 	"extend": { "flags": [ "NO_BREED" ] }
@@ -173,6 +418,7 @@
     "id": "mon_jaekelopterus",
     "type": "MONSTER",
     "name": { "str": "jaekelopterus", "str_pl": "jaekelopterus" },
+<<<<<<< HEAD
     "description": "A huge lobster-looking arachnid with two huge claws and a very menacing tail spike.  The head has the shape of a shovel's spade, with the compound eyes on top of it and a pair of big chelicera the size, and maybe even sharpness of butchering knives, in front.  There are several pairs of legs, the most striking pairs are the first in front holding claws that would make a coconut crab blush, and the fourth being flappy, meaty appendixes for locomotion at each side of the body.  You're glad at least the tail is just for show.",
     "volume": "170 L",
     "weight": "170000 g",
@@ -183,6 +429,18 @@
     "harvest": "arthropod_big_harvest",
 	"hp": 175,
     "speed": 150,
+=======
+    "description": "A huge lobster-looking arachnid with two huge claws and a very menacing tail spike.  The head has the shape of a shovel's spade, with the compound eyes on top and a pair of big chelicera in front, the size and sharpness of butchering knives.  There are several pairs of legs, with the most striking being the first pair in front holding gigantic claws, and the last being flappy, meaty appendixes for locomotion at each side of the body.  At least the tail is just for showing.",
+    "volume": "170 L",
+    "weight": "170 kg",
+	"default_faction": "touhou_arthropod_aquatic_large",
+    "bodytype": "crab",
+    "categories": [ "WILDLIFE" ],
+    "species": [ "ARTHROPOD" ],
+    "harvest": "arthropod_big_harvest",
+	"hp": 175,
+    "speed": 175,
+>>>>>>> testing
 	"material": [ "flesh" ],
 	"color": "brown",
 	"symbol": "ᛉ",
@@ -191,8 +449,13 @@
     "melee_skill": 4,
 	"melee_dice": 3,
     "melee_dice_sides": 5,
+<<<<<<< HEAD
     "melee_cut": 7,
 	"dodge": 3,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 7 } ],
+	"dodge": 2,
+>>>>>>> testing
 	"armor_bash": 2,
 	"armor_cut": 3,
 	"armor_stab": 2,
@@ -202,8 +465,12 @@
 	"reproduction": { "baby_egg": "egg_eurypterid", "baby_count": 8, "baby_timer": 12 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "anger_triggers": [ "HURT", "PLAYER_CLOSE", "PLAYER_WEAK" ],
+<<<<<<< HEAD
     "placate_triggers": [ "MEAT" ],
 	"flags": [ "ANIMAL", "AQUATIC", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
+=======
+	"flags": [ "ANIMAL", "AQUATIC", "ARTHROPOD_BLOOD", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
+>>>>>>> testing
     "//": "Based on Jaekelopterus sp."
 	},
 	{
@@ -211,19 +478,32 @@
     "type": "MONSTER",
     "name": { "str": "baby eurypterid", "str_pl": "baby eurypterids" },
     "copy-from": "mon_jaekelopterus",
+<<<<<<< HEAD
 	"description": "A small Jaekelopterus with two big claws and a very menacing tail spike.  It almost looks cute.  You wonder if keeping one as a pet in your front yard would keep those pesky undead children from disturbing you.",
     "volume": "3 L",
     "weight": "3000 g",
 	"hp": 16,
     "speed": 95,
+=======
+	"description": "A small Jaekelopterus with two big claws and a very menacing tail spike.  It almost looks cute.  You wonder if keeping one as a pet in your front yard would keep those pesky undead children from disturbing your lawn.",
+    "volume": "3 L",
+    "weight": "3000 g",
+	"hp": 16,
+    "speed": 145,
+>>>>>>> testing
 	"color": "pink",
     "aggression": 25,
     "morale": 25,
     "melee_skill": 2,
 	"melee_dice": 3,
     "melee_dice_sides": 3,
+<<<<<<< HEAD
     "melee_cut": 3,
 	"dodge": 5,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
+	"dodge": 4,
+>>>>>>> testing
 	"armor_bash": 0,
 	"armor_cut": 1,
 	"armor_stab": 1,
@@ -234,16 +514,27 @@
     "id": "mon_megalograptus",
     "type": "MONSTER",
     "name": { "str": "megalograptus", "str_pl": "megalograptus" },
+<<<<<<< HEAD
     "description": "A huge lobster-looking arachnid with two huge claws and a very menacing bladed tail.  The head has the shape of an actual lobster with extra spikes, with a pair of compound eyes on top of it and a pair of big barbed chelicera in front.  There are several pairs of legs, the most striking pairs are the first pair, turned into some sort of barbed claw appendages, and the fourth pair being flappy, meaty appendixes for locomotion at each side of the body.  The tail features knife-sized blades, and is also capable of grasping action.",
+=======
+    "description": "A huge lobster-looking arachnid with two huge claws and a very menacing bladed tail.  The head has the shape of an actual lobster with extra spikes, with a pair of compound eyes on top plus a pair of big barbed chelicera in front.  There are several pairs of legs, the most striking are the first, turned into some sort of barbed claw appendages, and the last being flappy, meaty appendixes for locomotion at each side of the body.  The tail features knife-sized blades, capable of grasping action.",
+>>>>>>> testing
     "volume": "30000 ml", 
     "weight": "25000 g",
 	"default_faction": "touhou_arthropod_aquatic_medium",
     "bodytype": "crab",
     "categories": [ "WILDLIFE" ],
+<<<<<<< HEAD
     "species": [ "FISH" ],
     "harvest": "arthropod_big_harvest",
 	"hp": 40,
     "speed": 115,
+=======
+    "species": [ "ARTHROPOD" ],
+    "harvest": "arthropod_big_harvest",
+	"hp": 40,
+    "speed": 165,
+>>>>>>> testing
 	"material": [ "flesh" ],
 	"color": "light_gray",
 	"symbol": "ᛉ",
@@ -252,7 +543,11 @@
     "melee_skill": 4,
 	"melee_dice": 3,
     "melee_dice_sides": 3,
+<<<<<<< HEAD
     "melee_cut": 6,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
+>>>>>>> testing
 	"dodge": 3,
 	"armor_bash": 2,
 	"armor_cut": 2,
@@ -263,9 +558,14 @@
 	"reproduction": { "baby_egg": "egg_eurypterid", "baby_count": 8, "baby_timer": 12 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "anger_triggers": [ "HURT", "PLAYER_WEAK" ],
+<<<<<<< HEAD
     "placate_triggers": [ "MEAT" ],
 	"flags": [ "ANIMAL", "AQUATIC", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
     "//": "Based on Megalograptus sp. Medium-sized eurypterid for c:dda purposes, actually quite big"
+=======
+	"flags": [ "ANIMAL", "AQUATIC", "ARTHROPOD_BLOOD", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
+    "//": "Based on Megalograptus sp. 'Medium-sized' eurypterid for c:dda purposes, actually quite big relative to ancient eurypterids"
+>>>>>>> testing
 	},
 	{
     "id": "mon_megalograptus_baby",
@@ -276,14 +576,22 @@
     "volume": "1500 ml",
     "weight": "2000 g",
 	"hp": 8,
+<<<<<<< HEAD
     "speed": 95,
+=======
+    "speed": 145,
+>>>>>>> testing
 	"color": "dark_gray",
     "aggression": 15,
     "morale": 25,
     "melee_skill": 2,
 	"melee_dice": 3,
     "melee_dice_sides": 2,
+<<<<<<< HEAD
     "melee_cut": 2,
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
+>>>>>>> testing
 	"dodge": 5,
 	"armor_bash": 1,
 	"armor_cut": 1,
@@ -292,10 +600,67 @@
 	"extend": { "flags": [ "NO_BREED" ] }
 	},
 	{
+<<<<<<< HEAD
+=======
+    "id": "mon_meganeura",
+    "type": "MONSTER",
+    "name": { "str": "meganeura", "str_pl": "meganeura" },
+    "description": "A giant dragonfly.  With a wingspan the size of your arm, it flies, buzzing around, looking for smaller insects which includes basically everything except itself.",
+    "volume": "200 ml",
+    "weight": "150 g",
+	"default_faction": "dragonfly",
+    "bodytype": "insect",
+    "categories": [ "WILDLIFE" ],
+    "species": [ "ARTHROPOD" ],
+    "harvest": "arthropod_small_harvest",
+	"hp": 10,
+    "speed": 150,
+	"material": [ "iflesh" ],
+	"color": "green",
+	"symbol": "y",
+    "aggression": -5,
+    "morale": 25,
+    "melee_skill": 3,
+	"melee_dice": 1,
+    "melee_dice_sides": 3,
+	"melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
+	"dodge": 3,
+	"path_settings": { "max_dist": 10 },
+	"reproduction": { "baby_egg": "egg_meganeura", "baby_count": 4, "baby_timer": 8 },
+    "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
+    "anger_triggers": [ "HURT" ],
+    "special_attacks": [ [ "PARROT", 4 ] ],
+	"flags": [ "ANIMAL", "ARTHROPOD_BLOOD", "FLIES", "SEES" ],
+    "//2": "Based on Meganeura sp.. No reproductive data"
+	},
+	{
+    "id": "mon_meganeura_nymph",
+    "type": "MONSTER",
+    "name": { "str": "meganeura nymph", "str_pl": "meganeura nymphs" },
+    "copy-from": "mon_meganeura",
+	"description": "A small Meganeura nymph.  Looks like a mix between a cockroach and a cricket.",
+    "volume": "20 ml",
+    "weight": "15 g",
+	"hp": 2,
+    "speed": 165,
+	"color": "brown",
+    "melee_skill": 1,
+	"melee_dice": 1,
+    "melee_dice_sides": 1,
+	"melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
+	"dodge": 4,
+    "upgrades": { "age_grow": 4, "into": "mon_meganeura" },
+	"flags": [ "ANIMAL", "ARTHROPOD_BLOOD", "AQUATIC", "SEES", "WATER_CAMOUFLAGE" ],
+	"delete": { "flags": [ "FLIES" ] },
+	"extend": { "flags": [ "NO_BREED" ] }
+	},
+	{
+>>>>>>> testing
     "id": "mon_opabinia",
     "type": "MONSTER",
     "name": { "str": "opabinia", "str_pl": "opabinia" },
     "description": "A small lobster-looking thing, with a weird tentacle-arm going in front of what would be its face.  The head features five composite eyes on top, which makes it look even more alien.  The animal has a fleshy \"skirt\" which undulates for allowing locomotion.  Perhaps the less revealing part is the tail, which looks similar enough from that of a lobster for you to consider cooking it as if it were one.",
+<<<<<<< HEAD
     "volume": "100 ml",
     "weight": "110 g",
 	"default_faction": "touhou_arthropod_aquatic_small",
@@ -305,6 +670,18 @@
     "harvest": "arthropod_shrimplike_harvest",
 	"hp": 5,
     "speed": 100,
+=======
+    "volume": "90 ml",
+    "weight": "100 g",
+	"//": "Scaled down from 25 cm long tiger prawns",
+	"default_faction": "touhou_arthropod_aquatic_small",
+    "bodytype": "crab",
+    "categories": [ "WILDLIFE" ],
+    "species": [ "ARTHROPOD" ],
+    "harvest": "arthropod_shrimplike_harvest",
+	"hp": 5,
+    "speed": 150,
+>>>>>>> testing
 	"material": [ "flesh" ],
 	"color": "pink",
 	"symbol": "y",
@@ -312,17 +689,27 @@
     "morale": 10,
     "melee_skill": 1,
 	"melee_dice": 1,
+<<<<<<< HEAD
     "melee_dice_sides": 5,
     "melee_cut": 1,
+=======
+    "melee_dice_sides": 2,
+	"melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
+>>>>>>> testing
 	"dodge": 2,
 	"vision_night": 10,
 	"path_settings": { "max_dist": 8 },
 	"reproduction": { "baby_egg": "egg_arthropod_aquatic_small", "baby_count": 12, "baby_timer": 7 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "fear_triggers": [ "HURT" ],
+<<<<<<< HEAD
 	"placate_triggers": [ "MEAT" ],
 	"flags": [ "ANIMAL", "AQUATIC", "FISHABLE", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
     "//": "Based on Opabinia sp.. No weight or reproductive data"
+=======
+	"flags": [ "ANIMAL", "AQUATIC", "ARTHROPOD_BLOOD", "FISHABLE", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
+    "//2": "Based on Opabinia sp., this one's slightly oversized. No weight or reproductive data"
+>>>>>>> testing
 	},
 	{
     "id": "mon_opabinia_baby",
@@ -337,9 +724,169 @@
     "morale": 0,
 	"melee_dice": 1,
     "melee_dice_sides": 1,
+<<<<<<< HEAD
     "melee_cut": 0,
 	"dodge": 3,
 	"upgrades": { "age_grow": 12, "into": "mon_opabinia" },
 	"extend": { "flags": [ "NO_BREED" ] }
+=======
+	"melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
+	"dodge": 3,
+	"upgrades": { "age_grow": 12, "into": "mon_opabinia" },
+	"extend": { "flags": [ "NO_BREED" ] }
+	},
+	{
+    "id": "mon_pambdelurion",
+    "type": "MONSTER",
+    "name": { "str": "pambdelurion", "str_pl": "pambdelurion" },
+    "description": "An ugly looking arthropod.  Somewhat flat, the two frontal, barbed appendages extend in front of the head like an open claw, serving as tactory and olfactory organs instead.  Small feet-like limbs beneath the flaps work for locomotion, as the animal seems unable to swim.",
+    "volume": "300 ml", 
+    "weight": "320 g",
+	"default_faction": "touhou_arthropod_aquatic_small",
+    "bodytype": "crab",
+    "categories": [ "WILDLIFE" ],
+    "species": [ "ARTHROPOD" ],
+    "harvest": "arthropod_shrimplike_harvest",
+	"hp": 35,
+    "speed": 105,
+	"material": [ "flesh" ],
+	"color": "brown",
+	"symbol": "ϒ",
+    "aggression": -5,
+    "morale": 10,
+    "melee_skill": 2,
+	"melee_dice": 1,
+    "melee_dice_sides": 3,
+	"melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
+	"dodge": 2,
+	"vision_day": 15,
+	"vision_night": 15,
+	"path_settings": { "max_dist": 8 },
+	"reproduction": { "baby_egg": "egg_arthropod_aquatic_small", "baby_count": 6, "baby_timer": 8 },
+    "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
+    "anger_triggers": [ "HURT", "PLAYER_WEAK" ],
+	"flags": [ "ANIMAL", "AQUATIC", "ARTHROPOD_BLOOD", "FISHABLE", "SEES", "SMELLS", "WATER_CAMOUFLAGE" ],
+    "//": "Based on Pambdelurion sp.  No weight or reproductive data"
+	},
+	{
+    "id": "mon_pambdelurion_baby",
+    "type": "MONSTER",
+    "name": { "str": "baby pambdelurion", "str_pl": "baby pambdelurion" },
+    "copy-from": "mon_pambdelurion",
+	"description": "A small Pambdelurion, as ugly as an adult one.",
+    "volume": "5 ml",
+    "weight": "5 g",
+	"hp": 4,
+    "speed": 115,
+	"color": "dark_gray",
+    "aggression": -10,
+    "morale": 5,
+    "melee_skill": 2,
+	"melee_dice": 1,
+    "melee_dice_sides": 1,
+	"melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
+	"dodge": 1,
+	"upgrades": { "age_grow": 10, "into": "mon_pambdelurion" },
+	"extend": { "flags": [ "NO_BREED" ] }
+	},
+	{
+    "id": "mon_parastylonurus",
+    "type": "MONSTER",
+    "name": { "str": "parastylonurus", "str_pl": "parastylonurus" },
+    "description": "An ancient arachnid, looking somewhat like a lobster.  The overall shape is that of a flat crustacean, with a rounded cephalotorax and a long, segmented and flexible tail.  The chelicera are small stubs in front of the animal, the rather meaty legs are oriented downwards as they're used for walking, given the animal seems unable to swim.",
+    "volume": "11000 ml", 
+    "weight": "10000 g",
+	"default_faction": "touhou_arthropod_aquatic_small",
+    "bodytype": "crab",
+    "categories": [ "WILDLIFE" ],
+    "species": [ "ARTHROPOD" ],
+    "harvest": "arthropod_small_harvest",
+	"hp": 30,
+    "speed": 150,
+	"material": [ "flesh" ],
+	"color": "brown",
+	"symbol": "ᛉ",
+    "aggression": 20,
+    "morale": 20,
+    "melee_skill": 2,
+	"melee_dice": 2,
+    "melee_dice_sides": 3,
+	"melee_damage": [ { "damage_type": "cut", "amount": 2 } ],
+	"dodge": 3,
+	"armor_bash": 2,
+	"armor_cut": 1,
+	"armor_stab": 1,
+	"vision_day": 25,
+	"vision_night": 20,
+	"path_settings": { "max_dist": 8 },
+	"reproduction": { "baby_egg": "egg_eurypterid_small", "baby_count": 6, "baby_timer": 10 },
+    "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
+    "anger_triggers": [ "HURT", "PLAYER_WEAK" ],
+	"flags": [ "ANIMAL", "ARTHROPOD_BLOOD", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
+    "//": "Based on Parastylonurus sp. According to Paleos' image this was 21 cm long, that's not very menacing so values are for a bigger one"
+	},
+	{
+    "id": "mon_parastylonurus_baby",
+    "type": "MONSTER",
+    "name": { "str": "baby parastylonurus", "str_pl": "baby parastylonurus" },
+    "copy-from": "mon_parastylonurus",
+	"description": "A small Parastylonurus, or a weird scorpion-lobster thing.  You decide.",
+    "volume": "300 ml",
+    "weight": "400 g",
+	"hp": 6,
+    "speed": 170,
+	"color": "dark_gray",
+    "aggression": 15,
+    "morale": 15,
+    "melee_skill": 2,
+	"melee_dice": 2,
+    "melee_dice_sides": 2,
+	"melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
+	"dodge": 4,
+	"armor_bash": 1,
+	"armor_cut": 0,
+	"armor_stab": 0,
+	"upgrades": { "age_grow": 12, "into": "mon_parastylonurus" },
+	"extend": { "flags": [ "NO_BREED" ] }
+	},
+	{
+    "id": "mon_sidneyia",
+    "type": "MONSTER",
+    "name": { "str": "sidneyia", "str_pl": "sidneyia" },
+	"copy-from": "mon_opabinia",
+    "description": "A wide crustacean.  Very similar to a shrimp, except this one's extended and flattened, meatier, and with a single pair of thick antennae.",
+    "volume": "100 ml",
+    "weight": "110 g",
+	"hp": 6,
+    "speed": 155,
+	"color": "brown",
+    "aggression": 0,
+    "melee_skill": 1,
+	"melee_dice": 1,
+    "melee_dice_sides": 2,
+	"melee_damage": [ { "damage_type": "cut", "amount": 1 } ],
+	"reproduction": { "baby_egg": "egg_arthropod_aquatic_small", "baby_count": 8, "baby_timer": 10 },
+    "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
+	"flags": [ "ANIMAL", "AQUATIC", "ARTHROPOD_BLOOD", "FISHABLE", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
+    "//": "Based on Sidneyia sp.. No weight or reproductive data"
+	},
+	{
+    "id": "mon_sidneyia_baby",
+    "type": "MONSTER",
+    "name": { "str": "baby sidneyia", "str_pl": "baby sidneyia" },
+    "copy-from": "mon_sidneyia",
+	"description": "A tiny Sidneyia.  Will grow one day to be a proud, flat shrimp.",
+    "volume": "5 ml",
+    "weight": "5 g",
+	"hp": 1,
+    "aggression": 0,
+    "morale": 0,
+	"melee_dice": 1,
+    "melee_dice_sides": 1,
+	"melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
+	"dodge": 3,
+	"upgrades": { "age_grow": 12, "into": "mon_sidneyia" },
+	"extend": { "flags": [ "NO_BREED" ] }
+>>>>>>> testing
 	}
 ]
