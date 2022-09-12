@@ -23,7 +23,8 @@
 		{ "monster": "mon_cat_liquid_kitten", "weight": 1, "cost_multiplier": 0 },
 		{ "monster": "mon_cat_mutant_prism", "weight": 10, "cost_multiplier": 0 },
 		{ "monster": "mon_cat_mutant_kitten_prism", "weight": 1, "cost_multiplier": 0 },
-		{ "monster": "mon_moschorhinus", "weight": 233, "cost_multiplier": 0, "starts": "2 days" }
+		{ "monster": "mon_moschorhinus", "weight": 233, "cost_multiplier": 0, "starts": "2 days" },
+		{ "monster": "mon_nochnitsa", "weight": 466, "cost_multiplier": 0, "starts": "2 days", "conditions": [ "DUSK", "NIGHT" ] }
     ]
 	},
 	{
@@ -35,6 +36,7 @@
 		{ "monster": "mon_dog_mutant_mongrel", "weight": 5, "cost_multiplier": 0 },
 		{ "monster": "mon_thylacine", "weight": 10, "cost_multiplier": 0, "starts": "2 days" },
 		{ "monster": "mon_pristerognathus", "weight": 10, "cost_multiplier": 0, "starts": "2 days" },
+		{ "monster": "mon_viatkogorgon", "weight": 20, "cost_multiplier": 0, "starts": "2 days", "conditions": [ "DUSK", "NIGHT" ] },
 		{ "monster": "mon_chupacabra", "weight": 10, "cost_multiplier": 0, "starts": "2 days" }
     ]
 	}

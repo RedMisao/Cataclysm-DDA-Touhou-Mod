@@ -9,11 +9,37 @@
     "price_postapoc": 0,
     "symbol": "*",
     "color": "white",
-    "material": [ "steel" ],
+    "material": [ "magic_fire" ],
+    "material_thickness": 0,
 	"armor": [ 
 		{ "covers": [ "torso" ], "coverage": 0, "encumbrance": [ 0, 0 ] }
 	],
     "flags": [ "AURA", "LIGHT_36", "NO_TAKEOFF", "NONCONDUCTIVE", "ONLY_ONE", "OVERSIZE", "SEMITANGIBLE", "TRADER_AVOID", "ZERO_WEIGHT" ]
+	},
+	{
+    "id": "aura_reflectionslash",
+    "type": "ARMOR",
+	"name": { "str": "Reflection slash (aura)", "str_pl": "Reflection slash (auras)" },
+    "description": "A barrier created by cutting… something.",
+    "weight": "0 g",
+    "volume": "0 ml",
+    "price_postapoc": 0,
+    "symbol": "*",
+    "color": "light_gray",
+    "material": [ "steel" ],
+    "material_thickness": 0,
+	"armor": [
+        { "covers": [ "arm_l", "arm_r" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
+		{ "covers": [ "eyes" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
+		{ "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
+		{ "covers": [ "hand_l", "hand_r" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
+		{ "covers": [ "head" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
+		{ "covers": [ "mouth" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
+        { "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 0, 0 ] }
+	],
+	"relic_data": { "passive_effects": [ { "id": "ench_reflectionslash" } ] },
+    "flags": [ "AURA", "NO_TAKEOFF", "NONCONDUCTIVE", "ONLY_ONE", "OVERSIZE", "SEMITANGIBLE", "TRADER_AVOID", "ZERO_WEIGHT" ]
 	},
 	{
     "id": "aura_stickleback",
@@ -24,7 +50,8 @@
     "volume": "0 ml",
     "symbol": "*",
     "color": "blue",
-    "material": [ "steel" ],
+    "material": [ "magic_electricity" ],
+    "material_thickness": 0,
     "relic_data": { "passive_effects": [ 
 		{ 
 		"has": "WORN", 
@@ -77,6 +104,179 @@
     "flags": [ "NO_EXPLOSION_SFX", "NO_PROJECTILE" ]
 	},
 	{
+    "id": "aura_tigerrelease",
+    "type": "ARMOR",
+	"name": { "str": "Tiger qi release (aura)", "str_pl": "Tiger qi release (auras)" },
+    "description": "The physical manifestation of your Tiger qi.",
+    "weight": "0 g",
+    "volume": "0 ml",
+    "price_postapoc": 0,
+    "symbol": "*",
+    "color": "white",
+    "material": [ "magic_qi" ],
+    "material_thickness": 1,
+	"armor": [ 
+        { "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_elbow_l", "arm_elbow_r", "arm_lower_l", "arm_lower_r" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
+		{ "covers": [ "hand_l", "hand_r" ], "coverage": 0, "encumbrance": [ 0, 0 ] },
+		{ "covers": [ "foot_l", "foot_r" ], "coverage": 0, "encumbrance": [ 0, 0 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_knee_l", "leg_knee_r", "leg_lower_l", "leg_lower_r" ], "coverage": 0, "encumbrance": [ 0, 0 ] }
+	],
+	"relic_data": { "passive_effects": [ 
+		{ 
+		"has": "WORN", 
+		"condition": "ALWAYS", 
+		"hit_you_effect": [ { "id": "tiger_bonk" } ] 
+		} 
+		] 
+	},
+    "flags": [ "AURA", "NO_TAKEOFF", "NONCONDUCTIVE", "ONLY_ONE", "OVERSIZE", "SEMITANGIBLE", "TRADER_AVOID", "UNARMED_WEAPON", "ZERO_WEIGHT" ]
+	},
+	{
+    "id": "tiger_bonk",
+    "type": "SPELL",
+    "name": "Tiger qi release (damage)",
+    "description": "dmg component for meiling_tigerrelease ",
+    "spell_class": "NONE",
+	"effect": "attack",
+    "valid_targets": [ "hostile" ],
+	"shape": "blast",
+	"damage_type": "bash",
+	"min_damage": 3,
+    "max_damage": 20,
+    "//2": 1.77,
+	"min_pierce": 8,
+	"max_pierce": 8,
+	"min_range": 1,
+    "max_range": 1,
+	"max_level": 1,
+	"difficulty": -10,
+	"base_casting_time": 0,
+	"base_energy_cost": 0,
+	"energy_source": "MANA",
+    "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SILENT" ],
+	"//": "Max dmg should be double her melee dmg ceiling while unarmed and using her martial arts"
+	},
+	{
+    "id": "aura_vampiric",
+    "type": "ARMOR",
+	"name": { "str": "Vampiric aura (aura)", "str_pl": "Vampiric aura (auras)" },
+    "description": "Your unleashed vampiric essence.",
+    "weight": "0 g",
+    "volume": "0 ml",
+    "price_postapoc": 0,
+    "symbol": "*",
+    "color": "white",
+    "material": [ "magic_blood" ],
+    "material_thickness": 1,
+	"armor": [ 
+		{ "covers": [ "hand_l", "hand_r" ], "coverage": 0, "encumbrance": [ 0, 0 ] }
+	],
+	"relic_data": { "passive_effects": [ 
+		{ "id": "ench_vampiricaura" },
+		{ 
+		"has": "WORN", 
+		"condition": "ALWAYS", 
+		"hit_you_effect": [ { "id": "vampiric_claw" }, { "id": "vampiric_drain" } ] 
+		}
+		] 
+	},
+    "flags": [ "AURA", "NO_TAKEOFF", "NONCONDUCTIVE", "ONLY_ONE", "OVERSIZE", "SEMITANGIBLE", "TRADER_AVOID", "UNARMED_WEAPON", "ZERO_WEIGHT" ]
+	},
+	{
+    "id": "vampiric_claw",
+    "type": "SPELL",
+    "name": "Vampiric claw",
+    "description": "dmg component for remilia_vampiricaura ",
+    "spell_class": "NONE",
+	"effect": "attack",
+    "valid_targets": [ "hostile" ],
+	"shape": "blast",
+	"damage_type": "cut",
+	"min_damage": 6,
+    "max_damage": 24,
+	"min_range": 1,
+    "max_range": 1,
+	"max_level": 1,
+	"difficulty": -10,
+	"base_casting_time": 0,
+	"base_energy_cost": 0,
+	"energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_LEGS", "RANDOM_DAMAGE", "SILENT" ]
+	},
+	{
+    "id": "vampiric_drain",
+    "type": "SPELL",
+    "name": "Vampiric DRAIN",
+    "description": "heal component for remilia_vampiricaura ",
+    "spell_class": "NONE",
+	"effect": "attack",
+    "valid_targets": [ "hostile" ],
+	"shape": "blast",
+	"damage_type": "bash",
+	"min_damage": 1,
+    "max_damage": 4,
+	"min_range": 1,
+    "max_range": 1,
+	"max_level": 1,
+	"difficulty": -10,
+	"base_casting_time": 0,
+	"base_energy_cost": 0,
+	"energy_source": "MANA",
+    "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SILENT" ]
+	},
+	{
+    "id": "aura_windsickle",
+    "type": "ARMOR",
+    "name": { "str": "Wind sickle veiling (aura)", "str_pl": "Wind sickle veilings (aura)" },
+    "description": "A rapidly spinning wind shield protecting you from enemy attacks.",
+    "weight": "0 g",
+    "volume": "0 ml",
+    "symbol": "*",
+    "color": "blue",
+    "material": [ "magic_wind" ],
+    "material_thickness": 1,
+	"armor": [
+        { "covers": [ "arm_l", "arm_r" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
+		{ "covers": [ "eyes" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
+		{ "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
+		{ "covers": [ "hand_l", "hand_r" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
+		{ "covers": [ "head" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
+		{ "covers": [ "mouth" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
+        { "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 0, 0 ] }
+	],
+    "relic_data": { "passive_effects": [ 
+		{ 
+		"has": "WORN", 
+		"condition": "ALWAYS", 
+		"hit_me_effect": [ 
+			{ "id": "windsickle_dmg" } 
+		] 
+		} 
+	] 
+	},
+    "flags": [ "AURA", "NO_TAKEOFF", "NONCONDUCTIVE", "ONLY_ONE", "OVERSIZE", "SEMITANGIBLE",  "TRADER_AVOID", "ZERO_WEIGHT"  ]
+	},
+	{
+    "id": "windsickle_dmg",
+    "type": "SPELL",
+    "name": "Wind sickle (damage)",
+    "description": "Dmg component for aya_windsickle ",
+    "spell_class": "NONE",
+    "valid_targets": [ "hostile" ],
+    "effect": "attack",
+    "shape": "blast",
+    "damage_type": "cut",
+    "min_damage": 11,
+    "max_damage": 11,
+    "max_level": 1,
+    "difficulty": -10,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_PROJECTILE" ]
+	},
+	{
     "id": "fusion_blade",
     "type": "ARMOR",
 	"name": { "str": "Fusion blade (aura)", "str_pl": "Fusion blades (aura)" },
@@ -87,6 +287,7 @@
     "symbol": "w",
     "color": "yellow",
     "material": [ "magic_fire" ],
+    "material_thickness": 1,
 	"use_action": [ 
 		{
 		"type": "firestarter",
@@ -97,7 +298,14 @@
 		{ "covers": [ "hand_r" ], "coverage": 0, "encumbrance": [ 0, 0 ] }
 	],
     "//": " 'enchantments': [ { 'condition': 'ALWAYS', 'values': [ { 'value': 'LUMINATION', 'add': 48 } ] } ], ",
-	"relic_data": { "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "hit_you_effect": [ { "id": "fusion_bonk" } ] } ] },
+	"relic_data": { "passive_effects": [ 
+		{ 
+		"has": "WORN", 
+		"condition": "ALWAYS", 
+		"hit_you_effect": [ { "id": "fusion_bonk" } ] 
+		} 
+		] 
+	},
     "flags": [ "AURA", "LIGHT_12", "NO_TAKEOFF", "NONCONDUCTIVE", "ONLY_ONE", "OVERSIZE", "SEMITANGIBLE", "TRADER_AVOID", "ZERO_WEIGHT" ]
 	},
 	{
@@ -113,7 +321,7 @@
 	"damage_type": "heat",
 	"min_damage": 4,
     "max_damage": 29,
-    "damage_increment": 2.5,
+    "//2": 2.5,
 	"min_pierce": 6,
 	"max_pierce": 6,
 	"min_range": 1,
@@ -137,6 +345,7 @@
     "symbol": "o",
     "color": "red",
     "material": [ "magic_fire" ],
+    "material_thickness": 1,
 	"use_action": [ 
 		{
 		"type": "firestarter",
@@ -215,8 +424,8 @@
     "description": "The divine that never misses the mark is your plaything.",
 	"weight": "2000 g",
     "volume": "2000 ml",
-	"longest_side": "3000 cm",
-	"price": 0,
+	"longest_side": "300 cm",
+	"price_postapoc": 0,
 	"to_hit": {
 		"balance": "good", 
 		"grip": "weapon", 
@@ -240,7 +449,7 @@
     "description": "A sophisticated ofuda carrying Yoshika's personality, think about it like her customizable terminal.  Attaching it on a zombie corpse enables what remains of her personality to take over, until the borrowed body receives enough damage or something destroys the talisman.  Don't worry though, as the \"real\" Yoshika is kept somewhere safe enough.",
     "weight": "50 g",
     "volume": "100 ml",
-    "price": 0,
+    "price_postapoc": 0,
 	"to_hit": {
 		"balance": "neutral", 
 		"grip": "none", 
@@ -260,7 +469,7 @@
     "description": "A small black sun hovering over your head.  Looks like an eclipse.",
     "weight": "0 kg",
     "volume": "0 L",
-    "price": 0,
+    "price_postapoc": 0,
     "symbol": "🔅",
     "color": "black",
     "covers": [ "head" ],

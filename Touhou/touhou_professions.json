@@ -16,9 +16,11 @@
 		{ "level": 1, "id": "mokou_phoenixtalons" }
 	],
     "skills": [
-		{ "level": 3, "name": "cooking" },
-		{ "level": 2, "name": "dodge" },
+		{ "level": 2, "name": "cooking" },
+		{ "level": 1, "name": "dodge" },
+		{ "level": 1, "name": "firstaid" },
 		{ "level": 3, "name": "melee" },
+		{ "level": 2, "name": "survival" },
 		{ "level": 2, "name": "tailor" },
 		{ "level": 3, "name": "unarmed" }
     ],
@@ -49,8 +51,7 @@
         ]
     },
     "flags": [ "SCEN_ONLY" ],
-	"//": "Lorewise she sould have lots of numbers, skills, proficiencies, etc. Balancewise that's not very good. Also, I took the yakitori joke seriously",
-	"//2": "All her spells, at least the actively destructive ones, should cost HP to cast alongside mana. This isn't implemented yet"
+	"//": "Lorewise she sould have lots of numbers, skills, proficiencies, etc. Balancewise that's not very good. Also, I took the yakitori joke seriously"
 	},
 	{
     "ident": "hong_meiling",
@@ -62,16 +63,19 @@
 	"spells": [ 
 		{ "level": 1, "id": "dash_meiling" },
 		{ "level": 1, "id": "meiling_bloodfm" },
-		{ "level": 1, "id": "meiling_chiheal" },
+		{ "level": 1, "id": "meiling_mountainbreak" },
 		{ "level": 1, "id": "meiling_qiblast" },
-		{ "level": 1, "id": "meiling_qipunch" }
+		{ "level": 1, "id": "meiling_qiheal" },
+		{ "level": 1, "id": "meiling_qipunch" },
+		{ "level": 1, "id": "meiling_redrelease" },
+		{ "level": 1, "id": "meiling_tigerrelease" }
 	],
-	"//": "meiling_risingkick is not added because it should move her + the target and dashes can't do that. If implemented as a technique, I don't know a way for the player to choose when to use it",
+	"//": "A barrier/counter spell would be nice, something like a hit_me_effect trigger to grant a buff_meiling_onblock (her martial arts technique)",
     "skills": [
-		{ "level": 2, "name": "cooking" },
-		{ "level": 3, "name": "dodge" },
-		{ "level": 4, "name": "melee" },
-		{ "level": 4, "name": "unarmed" }
+		{ "level": 1, "name": "cooking" },
+		{ "level": 1, "name": "dodge" },
+		{ "level": 2, "name": "melee" },
+		{ "level": 3, "name": "unarmed" }
     ],
 	"traits": [
         "DEFT",
@@ -107,14 +111,14 @@
 	"type": "profession",
     "name": "Oarfish Messenger",
     "description": "The last day was very busy.  First, you were given a message to deliver to the head of the Hinanawi.  After reaching the clan however, you were told by them and your superiors to find Tenshi as soon as possible.  You followed her down in Earth, when the event struck.  Now you don't only have to complete your mission, but you also seem to be stuck here.",
-    "points": 0,
+    "points": 4,
     "skills": [
-		{ "level": 3, "name": "bashing" },
-		{ "level": 3, "name": "cutting" },
-		{ "level": 4, "name": "dodge" },
-		{ "level": 4, "name": "melee" },
-		{ "level": 3, "name": "throw" },
-        { "level": 4, "name": "unarmed" }
+		{ "level": 2, "name": "bashing" },
+		{ "level": 1, "name": "cutting" },
+		{ "level": 2, "name": "dodge" },
+		{ "level": 2, "name": "melee" },
+		{ "level": 2, "name": "speech" },
+		{ "level": 4, "name": "swimming" }
     ],
 	"spells": [ 
 		{ "level": 1, "id": "dash_basic" },
@@ -153,7 +157,7 @@
 	"type": "profession",
     "name": "Hell's traffic accident",
     "description": "It was yet another uneventful day down there helping Okuu with the reactor: corpses burning, spirits floating, fusion fuel being distilled, eating lunch with your master… You craved a nap at the Shrine, so you snuck to reach your goal… and somehow got lost.  You smell death *everywhere*, which would be amazing if it wasn't that these dead are moving, they're angry, and they're not listening to what you have to say.",
-    "points": 0,
+    "points": 4,
 	"spells": [ 
 		{ "level": 1, "id": "dash_basic" },
 		{ "level": 1, "id": "kaenbyou_immolate" },
@@ -162,12 +166,10 @@
 		{ "level": 1, "id": "kaenbyou_vsrelease" }
 	],
 	"skills": [
-		{ "level": 2, "name": "cutting" },
 		{ "level": 2, "name": "dodge" },
 		{ "level": 4, "name": "driving" },
 		{ "level": 2, "name": "mechanics" },
-		{ "level": 2, "name": "melee" },
-		{ "level": 3, "name": "speech" }
+		{ "level": 2, "name": "speech" }
     ],
 	"vehicle": "kaenbyou_wheelbarrow2",
 	"traits": [
@@ -205,7 +207,7 @@
 	"type": "profession",
     "name": "Lateral-Thinking Kappa",
     "description": "WIP.",
-    "points": 0,
+    "points": 4,
     "skills": [
 		{ "level": 6, "name": "dodge" },
 		{ "level": 8, "name": "electronics" },
@@ -253,12 +255,12 @@
 	],
 	"skills": [
         { "level": 2, "name": "dodge" },
-		{ "level": 3, "name": "firstaid" },
-        { "level": 3, "name": "gun" },
+		{ "level": 2, "name": "firstaid" },
+        { "level": 2, "name": "gun" },
 		{ "level": 1, "name": "launcher" },
 		{ "level": 3, "name": "pistol" },
-		{ "level": 3, "name": "rifle" },
-        { "level": 3, "name": "smg" },
+		{ "level": 2, "name": "rifle" },
+        { "level": 2, "name": "smg" },
 		{ "level": 1, "name": "shotgun" }
     ],
 	"traits": [
@@ -290,8 +292,6 @@
             "bra",
             "panties"
         ],
-	"//": "Udonge should have short-distance stealth at will, it should make her fully undetectable at 8-10 tiles with a linear fall off",
-	"//2": "her finger bullets should do mind dmg alongside bullet. I need to find a way to implement the Frostfire effect from WOTLK that checks the lower resistance and uses that to deal dmg",
 	"//3": "if possible, implement a shot spread effect with 2-3 bullets on a cone and 8-7 illusionary bullets that deal no damage, and change the sprite because I don't like the current * ",
 	"//4": "Finally, see if I can implement her LoLK bomb, or not if that would be outright broken alongside her stealth passive that should have priority"
 	},
@@ -305,12 +305,16 @@
     "points": 4,
 	"spells": [ 
 		{ "level": 1, "id": "create_ammo_lunar_medium" },
-		{ "level": 1, "id": "dash_reisen" }
+		{ "level": 1, "id": "dash_reisen" },
+		{ "level": 1, "id": "reisen_entanglement" },
+		{ "level": 1, "id": "reisen_optimism" },
+		{ "level": 1, "id": "reisen_probabilitynoise" },
+		{ "level": 1, "id": "reisen_uncertaintybox" }
 	],
 	"skills": [
         { "level": 2, "name": "dodge" },
 		{ "level": 2, "name": "gun" },
-		{ "level": 2, "name": "melee" },
+		{ "level": 1, "name": "melee" },
 		{ "level": 2, "name": "rifle" },
 		{ "level": 2, "name": "stabbing" }
     ],
@@ -331,8 +335,7 @@
 				"ldc_skirt",
 				"ldc_suit",
 				"ldc_tie",
-				"ldc_veil_deactivated",
-				"mini_hakkero_replica"
+				"ldc_veil_deactivated"
 			],
 			"entries": [ 
 				{ "item": "lunar_rifle2", "ammo-item": "ammo_lunar_medium_1", "charges": 11, "contents-item": "shoulder_strap" } 
@@ -361,16 +364,17 @@
 		{ "level": 1, "id": "dash_remi" },
 		{ "level": 1, "id": "remilia_bloodboil" },
 		{ "level": 1, "id": "remilia_consumeblood" },
+		{ "level": 1, "id": "remilia_demonfork" },
 		{ "level": 1, "id": "remilia_gungnir" },
 		{ "level": 1, "id": "remilia_gungnir_throw" },
 		{ "level": 1, "id": "remilia_miserablefate" },
-		{ "level": 1, "id": "remilia_scarletshot" }
+		{ "level": 1, "id": "remilia_vampiricaura" }
 	],
 	"skills": [
-        { "level": 3, "name": "dodge" },
+        { "level": 2, "name": "dodge" },
 		{ "level": 3, "name": "melee" },
-		{ "level": 4, "name": "stabbing" },
-		{ "level": 4, "name": "throw" }
+		{ "level": 3, "name": "stabbing" },
+		{ "level": 3, "name": "throw" }
 	],
 	"traits": [
 		"TABLEMANNERS",
@@ -402,7 +406,7 @@
 	"type": "profession",
     "name": "Maid of the Scarlet Devil",
     "description": "Despite being suspicious of the errand your Mistress' gave you outside the Barrier, you went to carry it out.  The Cataclysm struck in the middle of that, however, interrumpting you.  How annoying.",
-    "points": 0,
+    "points": 4,
 	"proficiencies": [ "prof_food_prep", "prof_knife_skills" ],
 	"spells": [ 
 		{ "level": 1, "id": "dash_sakuya" },
@@ -414,10 +418,10 @@
 		{ "level": 1, "id": "sakuya_timestop" }
 	],
 	"skills": [
-		{ "level": 6, "name": "cooking" },
-		{ "level": 4, "name": "cutting" },
-		{ "level": 4, "name": "dodge" },
-		{ "level": 4, "name": "melee" },
+		{ "level": 4, "name": "cooking" },
+		{ "level": 2, "name": "cutting" },
+		{ "level": 2, "name": "dodge" },
+		{ "level": 1, "name": "melee" },
 		{ "level": 4, "name": "throw" }
 	],
 	"traits": [
@@ -472,8 +476,10 @@
 		{ "level": 1, "id": "seiga_wallwalk" }
 	],
     "skills": [
-        { "level": 2, "name": "dodge" },
-		{ "level": 4, "name": "firstaid" },
+        { "level": 3, "name": "chemistry" },
+		{ "level": 1, "name": "dodge" },
+		{ "level": 3, "name": "firstaid" },
+        { "level": 2, "name": "speech" },
         { "level": 2, "name": "survival" }
     ],
 	"traits": [
@@ -509,13 +515,17 @@
     "description": "There wasn't a lot going on so you went to visit some of your friends.  First stop was the Shrine Maiden, but she was more dismissive than usual.  Second stop was Momiji, but she wasn't available.  Third stop was the Village librarian, but she was sleeping.  Going through the Bamboo Forest of the Lost you, well… it was bound to happen some time.  You're pretty sure these people wearing filthy Outside world clothing shouldn't be here, which means this one's good!",
     "points": 4,
     "spells": [ 
-		{ "level": 1, "id": "dash_basic" },
-		{ "level": 1, "id": "aya_stormgust" }
+		{ "level": 1, "id": "dash_aya" },
+		{ "level": 1, "id": "aya_deadlineday" },
+		{ "level": 1, "id": "aya_draftblast" },
+		{ "level": 1, "id": "aya_fanwind" },
+		{ "level": 1, "id": "aya_stormgust" },
+		{ "level": 1, "id": "aya_windsickle" }
 	],
 	"skills": [
 		{ "level": 2, "name": "cutting" },
-		{ "level": 6, "name": "dodge" },
-		{ "level": 3, "name": "speech" }
+		{ "level": 4, "name": "dodge" },
+		{ "level": 2, "name": "speech" }
     ],
 	"//": "Cutting for katana and other Tengu (Japanese) weapons I think",
 	"traits": [
@@ -558,9 +568,11 @@
 		{ "level": 1, "id": "tenko_unletting_soil" }
 	],
 	"skills": [
-        { "level": 4, "name": "cutting" },
-        { "level": 2, "name": "dodge" },
-		{ "level": 3, "name": "melee" }
+        { "level": 2, "name": "bashing" },
+		{ "level": 2, "name": "cutting" },
+        { "level": 1, "name": "dodge" },
+		{ "level": 3, "name": "melee" },
+		{ "level": 2, "name": "swimming" }
     ],
 	"traits": [
 		"CELESTIAL_SPECIES",
@@ -608,7 +620,9 @@
 		{ "level": 1, "id": "utsuho_ugeyser" }
 	],
 	"skills": [
-        { "level": 2, "name": "dodge" }
+        { "level": 1, "name": "bashing" },
+		{ "level": 1, "name": "dodge" },
+		{ "level": 2, "name": "melee" }
     ],
 	"traits": [
         "HELLRAVEN_SPECIES",
@@ -640,20 +654,20 @@
 	"type": "profession",
     "name": "Phantom Gardener",
     "description": "You were preparing tea for your Mistress when the shikigami of the Gap Youkai came to deliver an urgent private message.  Your Mistress then gave you some cryptic errand at the Shrine, and to \"take care\".  You didn't understand the last part, until you didn't recognize your surroundings minutes before reaching the Shrine.",
-    "points": 0,
-	"CBMs":[
-        "bio_torsionratchet",
-        "bio_uncanny_dodge",
-        "bio_power_storage_mkII"
-	],
+    "points": 4,
 	"spells": [ 
-		{ "level": 1, "id": "dash_youmu" }
+		{ "level": 1, "id": "dash_youmu" },
+		{ "level": 1, "id": "youmu_doublewheel" },
+		{ "level": 1, "id": "youmu_halfbody" },
+		{ "level": 1, "id": "youmu_reflectionslash" },
+		{ "level": 1, "id": "youmu_slasheternal" },
+		{ "level": 1, "id": "youmu_slashnether" }
 	],
     "skills": [
         { "level": 3, "name": "cooking" },
 		{ "level": 4, "name": "cutting" },
-        { "level": 4, "name": "dodge" },
-		{ "level": 4, "name": "melee" }
+        { "level": 3, "name": "dodge" },
+		{ "level": 2, "name": "melee" }
     ],
 	"traits": [
         "HALF_PHANTOM_SPECIES",

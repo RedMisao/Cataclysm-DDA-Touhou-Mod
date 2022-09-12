@@ -3,7 +3,7 @@
 	"type": "MOD_INFO",
     "category": "touhou",
     "name": "Touhou Professions",
-    "description": "Touhou-inspired professions. Coregame balance not guaranteed.",
+    "description": "Adds Touhou Project characters as professions.  Coregame balance not guaranteed.",
     "authors": [ "Original by Taberone, editions by RedMisao" ],
     "dependencies": [ "dda" ]
 }

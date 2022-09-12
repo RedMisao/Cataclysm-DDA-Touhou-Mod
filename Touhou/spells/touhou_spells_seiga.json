@@ -58,7 +58,7 @@
     "id": "seiga_chidrain2",
     "type": "SPELL",
     "name": "Xie qi (heal component)",
-    "description": "Focus on the qi of the target, applying a curse to drain it and transform into healing for yourself.",
+    "description": "Healing component of seiga_chidrain ",
 	"spell_class": "NONE",
 	"valid_targets": [ "self" ],
     "effect": "attack",
@@ -106,7 +106,7 @@
     "id": "seiga_chireversal2",
     "type": "SPELL",
     "name": "Qi nizhuan (cripple component)",
-    "description": "First ripple component for seiga_chireversal ",
+    "description": "First cripple component for seiga_chireversal ",
 	"spell_class": "NONE",
 	"valid_targets": [ "ally", "hostile" ],
     "effect": "attack",
@@ -115,12 +115,14 @@
     "damage_type": "pure",
 	"min_damage": 1,
     "max_damage": 1,
+	"min_duration": 400,
+    "max_duration": 1200,
     "max_level": 1,
 	"difficulty": -10,
     "base_casting_time": 0,
     "base_energy_cost": 0,
 	"energy_source": "MANA",
-	"flags": [ "NO_EXPLOSION_SFX", "SILENT" ]
+	"flags": [ "NO_EXPLOSION_SFX", "RANDOM_DURATION", "SILENT" ]
 	},
 	{
     "id": "seiga_chireversal3",
@@ -135,12 +137,14 @@
     "damage_type": "pure",
 	"min_damage": 1,
     "max_damage": 1,
+	"min_duration": 400,
+    "max_duration": 1200,
     "max_level": 1,
 	"difficulty": -10,
     "base_casting_time": 0,
     "base_energy_cost": 0,
 	"energy_source": "MANA",
-	"flags": [ "NO_EXPLOSION_SFX", "SILENT" ]
+	"flags": [ "NO_EXPLOSION_SFX", "RANDOM_DURATION", "SILENT" ]
 	},
 	{
     "id": "seiga_chireversal4",
@@ -240,7 +244,7 @@
 	"flags": [ "NO_HANDS", "SOMATIC" ],
 	"//": "Name is 'hermit walk' in Chinese"
 	},
-		{
+	{
     "id": "seiga_hermitwalk2",
     "type": "SPELL",
     "name": "Xianren zhou (flags)",
@@ -289,7 +293,7 @@
     "base_casting_time": 100,
 	"base_energy_cost": 200,
 	"energy_source": "MANA",
-	"flags": [ "NO_LEGS" ]
+	"flags": [ "NO_LEGS", "SOMATIC" ]
 	},
 	{
     "id": "seiga_wallwalk",

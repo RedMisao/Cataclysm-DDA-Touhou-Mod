@@ -126,17 +126,41 @@
 	"type": "MONSTER_FACTION",
     "base_faction": "animal",
 	"neutral":[ "touhou_reptile_marine_large" ],
-    "by_mood": [ "insect", "fox", "small_animal", "touhou_pristerognathus" ],
+    "by_mood": [ "insect", "fox", "small_animal", "touhou_moschorhinus", "touhou_nochnitsa", "touhou_pristerognathus", "touhou_viatkogorgon" ],
 	"hate": [ "animal", "bear", "big_cat", "dog", "exodii", "fungus", "herbivore", "human", "your_followers", "mi-go", "mutant", "triffid", "touhou_herbivoreancient_large", "touhou_mib", "touhou_sasquatch", "touhou_yeti", "touhou_oni", "zombie" ],
 	"//": "Apex predator. These should hunt whatever is bigger than a dog (including dogs because those bark)"
+	},
+	{
+	"name": "touhou_moschorhinus",
+	"type": "MONSTER_FACTION",
+    "base_faction": "small_animal",
+    "by_mood": [ "exodii", "human", "insect", "nether", "fungus", "zombie", "your_followers", "touhou_inostrancevia", "touhou_nochnitsa", "touhou_pristerognathus", "touhou_viatkogorgon" ],
+    "hate": [ "small_animal" ],
+	"//": "Adapted from the cat faction"
+	},
+	{
+	"name": "touhou_nochnitsa",
+	"type": "MONSTER_FACTION",
+    "base_faction": "small_animal",
+    "by_mood": [ "exodii", "human", "insect", "nether", "fungus", "zombie", "your_followers", "touhou_inostrancevia", "touhou_moschorhinus", "touhou_pristerognathus", "touhou_viatkogorgon" ],
+    "hate": [ "small_animal" ],
+	"//": "Adapted from the cat faction"
 	},
 	{
     "name": "touhou_pristerognathus",
 	"type": "MONSTER_FACTION",
     "base_faction": "animal",
-    "by_mood": [ "exodii", "human", "insect", "your_followers", "touhou_inostrancevia", "touhou_moschorhinus" ],
+    "by_mood": [ "exodii", "human", "insect", "your_followers", "touhou_inostrancevia", "touhou_nochnitsa", "touhou_moschorhinus", "touhou_viatkogorgon" ],
 	"hate": [ "bear", "big_cat", "dog", "fox", "fungus", "herbivore", "mi-go", "mutant", "small_animal", "triffid", "zombie" ],
 	"//": "Wolf-sized, these can hunt whatever a pack of wolves can"
+	},
+	{
+    "name": "touhou_viatkogorgon",
+	"type": "MONSTER_FACTION",
+    "base_faction": "animal",
+    "by_mood": [ "exodii", "human", "insect", "your_followers", "touhou_inostrancevia", "touhou_nochnitsa", "touhou_moschorhinus", "touhou_pristerognathus" ],
+	"hate": [ "dog", "fox", "fungus", "herbivore", "mi-go", "mutant", "small_animal", "triffid", "zombie" ],
+	"//": "Slightly smaller than a coyote, these can hunt whatever a coyote can"
 	},
 	{
     "name": "touhou_herbivoreancient_large",
@@ -152,14 +176,6 @@
     "neutral": [ "animal" ],
     "by_mood": [ "nether", "fungus", "touhou_youkai_neutral", "touhou_youkai_hostile", "zombie" ],
     "hate": [ "exodii", "human", "mutant", "triffid", "your_followers" ]
-	},
-	{
-	"name": "touhou_moschorhinus",
-	"type": "MONSTER_FACTION",
-    "base_faction": "small_animal",
-    "by_mood": [ "exodii", "human", "insect", "nether", "fungus", "zombie", "your_followers", "touhou_inostrancevia", "touhou_pristerognathus" ],
-    "hate": [ "small_animal" ],
-	"//": "Adapted from the cat faction"
 	},
 	{
     "name": "touhou_piscivore",

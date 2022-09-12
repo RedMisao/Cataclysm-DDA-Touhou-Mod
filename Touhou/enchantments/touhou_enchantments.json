@@ -33,8 +33,7 @@
 			]
 			}
 		]
-    },
-	"//": "add spell that causes ATTACKMON on nearby enemies"
+    }
 	},
 	{
     "id": "lampad_insanity",
@@ -53,5 +52,26 @@
     "min_duration": 1100,
     "max_duration": 1100,
     "flags": [ "MUTATE_TRAIT", "NO_PROJECTILE", "SILENT" ]
+	},
+	{
+    "id": "ench_reflectionslash",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "ARMOR_BULLET", "multiply": -1 }
+	]
+	},
+	{
+    "id": "ench_vampiricaura",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "ARMOR_CUT", "add": 2 },
+		{ "value": "ARMOR_BASH", "add": 2 },
+		{ "value": "ARMOR_STAB", "add": 4 },
+		{ "value": "ARMOR_BULLET", "add": 2 }
+	]
 	}
 ]

@@ -353,7 +353,8 @@
 		{ "monster": "mon_holoptychius", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
 		{ "monster": "mon_coccosteus", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
 		{ "monster": "mon_dipterus", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
-		{ "monster": "mon_lamprey", "weight": 100, "pack_size": [ 1, 5 ], "starts": "2 days" }
+		{ "monster": "mon_lamprey", "weight": 100, "pack_size": [ 1, 5 ], "starts": "2 days" },
+		{ "monster": "mon_agoniatites", "weight": 100, "pack_size": [ 2, 4 ], "starts": "2 days" }
     ]
 	}
 ]

@@ -18,7 +18,10 @@
 	},
     "bashing": 1,
     "cutting": 8,
-    "material": [ "silver" ],
+	"material": [
+		{ "type": "silver" },
+		{ "type": "steel", "portion": 9 }
+	],
     "symbol": ";",
     "looks_like": "throwing_knife",
 	"color": "light_gray",

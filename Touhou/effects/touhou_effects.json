@@ -1,5 +1,27 @@
 [
 	{
+    "id": "aya_mspeed",
+	"type": "effect_type",
+    "name": [ "Deadline day (speed)" ],
+    "desc": [ "Movement speed is increased." ],
+    "apply_message": "Your movement speed is greatly increased.",
+    "remove_message": "You move as usual again.",
+	"rating": "good",
+    "base_mods": { "speed_mod": [ 200 ] }
+	},
+	{
+    "id": "reisen_pnoise",
+	"type": "effect_type",
+    "name": [ "Probability noise (effect)" ],
+    "desc": [ "It is as if your hitbox was phased." ],
+    "apply_message": "You see yourself turn translucent!",
+    "remove_message": "You return to normality.",
+	"rating": "good",
+	"base_mods": { "dodge_mod": [ 4 ], "bash_mod": [ 2 ], "cut_mod": [ 2 ] },
+    "removes_effects": [ "beartrap", "downed", "fetid_goop", "frenzy", "grabbed", "hot_speed", "paralyzepoison", "sap", "slimed", "staggered", "supercharged", "teargas", "webbed", "zapped" ],
+	"//": "Should remove all 'external' or imposed movement speed effects"
+	},
+	{
     "id": "sakuya_contraction_effect",
 	"type": "effect_type",
     "name": [ "Temporal contraction (effect)" ],
@@ -7,8 +29,7 @@
     "apply_message": "The world seems to accelerate around you!",
     "remove_message": "Time is flowing normally again.",
 	"rating": "bad",
-    "base_mods": { "speed_mod": [ -50 ] },
-    "scaling_mods": { "speed_mod": [ -5 ] }
+    "base_mods": { "speed_mod": [ -50 ] }
 	},
 	{
     "id": "sakuya_dilation2",
@@ -45,7 +66,7 @@
     "id": "seiga_mspeed",
 	"type": "effect_type",
     "name": [ "Hermit walk (speed)" ],
-    "desc": [ "Movement speed is increased" ],
+    "desc": [ "Movement speed is increased." ],
     "apply_message": "Your movement speed is slightly increased.",
     "remove_message": "You move normally again.",
 	"rating": "good",
@@ -59,9 +80,8 @@
     "apply_message": "Mental processes become focused.",
     "remove_message": "You relax your thoughts.",
 	"rating": "good",
-    "base_mods": { "pkill_amount": [ -1 ], "stim_amount": [ 2 ] },
-	"scaling_mods": { "int_mod": [ 2 ] },
-    "removes_effects": [ "udonge_perception", "udonge_stealth" ]
+    "base_mods": { "int_mod": [ 2 ], "pkill_amount": [ -1 ], "stim_amount": [ 2 ] },
+    "removes_effects": [ "fearparalyze", "taint", "tindrift", "visuals", "udonge_perception", "udonge_stealth" ]
 	},
 	{
     "id": "udonge_perception",
@@ -71,7 +91,7 @@
     "apply_message": "You harness the shadows that stride between the worlds.",
     "remove_message": "Your vision becomes normal again.",
 	"rating": "good",
-	"scaling_mods": { "per_mod": [ 2 ] },
+    "base_mods": { "per_mod": [ 3 ] },
     "removes_effects": [ "udonge_insight", "udonge_stealth" ],
 	"flags": [ "INFRARED", "NIGHT_VISION", "SUPER_HEARING" ]
 	},

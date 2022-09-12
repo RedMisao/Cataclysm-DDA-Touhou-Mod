@@ -10,9 +10,11 @@
     "name": "GROUP_THERIODONTIA_LIGHT",
     "type": "monstergroup",
     "monsters": [ 
-		{ "monster": "mon_inostrancevia", "weight": 100, "pack_size": [ 1, 1 ], "starts": "2 days" },
+		{ "monster": "mon_inostrancevia", "weight": 65, "pack_size": [ 1, 1 ], "starts": "2 days" },
 		{ "monster": "mon_moschorhinus", "weight": 400, "pack_size": [ 2, 4 ], "starts": "2 days" },
-		{ "monster": "mon_pristerognathus", "weight": 500, "pack_size": [ 3, 4 ], "starts": "2 days" }
+		{ "monster": "mon_nochnitsa", "weight": 600, "pack_size": [ 1, 4 ], "starts": "2 days", "conditions": [ "DUSK", "NIGHT" ] },
+		{ "monster": "mon_pristerognathus", "weight": 500, "pack_size": [ 1, 4 ], "starts": "2 days" },
+		{ "monster": "mon_viatkogorgon", "weight": 800, "pack_size": [ 3, 4 ], "starts": "2 days", "conditions": [ "DUSK", "NIGHT" ] }
 	]
 	},
 	{
@@ -29,12 +31,13 @@
     "type": "monstergroup",
     "monsters": [ 
 		{ "monster": "mon_aegirocassis", "weight": 100, "pack_size": [ 1, 1 ], "starts": "2 days" },
+
 		{ "monster": "mon_anomalocaris", "weight": 65, "pack_size": [ 2, 4 ], "starts": "2 days" },
 		{ "monster": "mon_chasmataspis", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
 		{ "monster": "mon_eusarcana", "weight": 100, "pack_size": [ 2, 3 ], "starts": "2 days" },
 		{ "monster": "mon_hurdia", "weight": 100, "pack_size": [ 3, 9 ], "starts": "2 days" },
 		{ "monster": "mon_jaekelopterus", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
-		{ "monster": "mon_megalograptus", "weight": 100, "pack_size": [ 2, 6 ], "starts": "2 days" },	
+		{ "monster": "mon_megalograptus", "weight": 100, "pack_size": [ 2, 6 ], "starts": "2 days" },
 		{ "monster": "mon_opabinia", "weight": 100, "pack_size": [ 3, 9 ], "starts": "2 days" },
 		{ "monster": "mon_pambdelurion", "weight": 100, "pack_size": [ 4, 8 ], "starts": "2 days" },
 		{ "monster": "mon_sidneyia", "weight": 100, "pack_size": [ 3, 9 ], "starts": "2 days" },
@@ -45,6 +48,12 @@
 		{ "monster": "mon_lamprey", "weight": 100, "pack_size": [ 3, 5 ], "starts": "2 days" },
 		{ "monster": "mon_megamastax", "weight": 100, "pack_size": [ 2, 3 ], "starts": "2 days" },
 		{ "monster": "mon_saurichthys", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
+		{ "monster": "mon_agoniatites", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_cleoniceras", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_endoceras", "weight": 100, "pack_size": [ 2, 4 ], "starts": "2 days" },
+		{ "monster": "mon_michelinoceras", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_paracoroniceras", "weight": 100, "pack_size": [ 2, 4 ], "starts": "2 days" },
+		{ "monster": "mon_parapuzosia", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
 		{ "monster": "mon_ichthyosaurus", "weight": 50, "pack_size": [ 1, 1 ], "starts": "2 days" },
 		{ "monster": "mon_plesiosaurus", "weight": 50, "pack_size": [ 1, 1 ], "starts": "2 days" }
 	],
@@ -60,6 +69,8 @@
 		{ "monster": "mon_megalograptus", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },	
 		{ "monster": "mon_coccosteus", "weight": 100, "pack_size": [ 1, 4 ], "starts": "2 days" },
 		{ "monster": "mon_dunkleosteus", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_endoceras", "weight": 100, "pack_size": [ 2, 4 ], "starts": "2 days" },
+		{ "monster": "mon_parapuzosia", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
 		{ "monster": "mon_ichthyosaurus", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
 		{ "monster": "mon_plesiosaurus", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" }
 	],
@@ -82,6 +93,11 @@
 		{ "monster": "mon_lamprey", "weight": 100, "pack_size": [ 3, 6 ], "starts": "2 days" },
 		{ "monster": "mon_megamastax", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
 		{ "monster": "mon_saurichthys", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
+		{ "monster": "mon_agoniatites", "weight": 100, "pack_size": [ 3, 5 ], "starts": "2 days" },
+		{ "monster": "mon_cleoniceras", "weight": 100, "pack_size": [ 2, 4 ], "starts": "2 days" },
+		{ "monster": "mon_endoceras", "weight": 100, "pack_size": [ 0, 1 ], "starts": "2 days" },
+		{ "monster": "mon_michelinoceras", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
+		{ "monster": "mon_paracoroniceras", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
 		{ "monster": "mon_ichthyosaurus_baby", "weight": 85, "pack_size": [ 1, 3 ], "starts": "2 days" },
 		{ "monster": "mon_plesiosaurus_baby", "weight": 85, "pack_size": [ 1, 4 ], "starts": "2 days" }
 	],
@@ -166,7 +182,9 @@
 		{ "monster": "mon_andrewsarchus", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
 		{ "monster": "mon_glossotherium", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
 		{ "monster": "mon_glyptodont", "weight": 100, "pack_size": [ 2, 3 ], "starts": "2 days" },
+		{ "monster": "mon_herpetotherium", "weight": 100, "pack_size": [ 2, 4 ], "starts": "2 days" },
 		{ "monster": "mon_megatherium", "weight": 100, "pack_size": [ 1, 1 ], "starts": "2 days" },
+		{ "monster": "mon_taeniolabis", "weight": 100, "pack_size": [ 1, 3 ], "starts": "2 days" },
 		{ "monster": "mon_thylacine", "weight": 100, "pack_size": [ 2, 6 ], "starts": "2 days" },
 		{ "monster": "mon_scutosaurus", "weight": 100, "pack_size": [ 1, 5 ], "starts": "2 days" },
 		{ "monster": "mon_weigeltisaurus", "weight": 100, "pack_size": [ 1, 5 ], "starts": "2 days" },
@@ -217,7 +235,9 @@
 		{ "monster": "mon_cotylorhynchus", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
 		{ "monster": "mon_lystrosaurus", "weight": 100, "pack_size": [ 1, 12 ], "starts": "2 days" },
 		{ "monster": "mon_moschorhinus", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_nochnitsa", "weight": 300, "pack_size": [ 1, 4 ], "starts": "2 days", "conditions": [ "DUSK", "NIGHT" ] },
 		{ "monster": "mon_pristerognathus", "weight": 100, "pack_size": [ 1, 2 ], "starts": "2 days" },
+		{ "monster": "mon_viatkogorgon", "weight": 300, "pack_size": [ 1, 3 ], "starts": "2 days", "conditions": [ "DUSK", "NIGHT" ] },
 		{ "monster": "mon_chupacabra", "weight": 50, "pack_size": [ 1, 2 ], "starts": "2 days" }
 	],
 	"//": "Things that can walk on land AND can't swim AND are not dangerous to have around"

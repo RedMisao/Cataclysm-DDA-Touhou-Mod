@@ -129,9 +129,31 @@
     "monsters": [ { "monster": "mon_moa_chick" } ]
 	},
 	{
+    "name": "GROUP_EGG_MOLLUSK_LARGE",
+    "type": "monstergroup",
+    "monsters": [ 
+		{ "monster": "mon_cleoniceras" },
+		{ "monster": "mon_endoceras" },
+		{ "monster": "mon_parapuzosia" } 
+	]
+	},
+	{
+    "name": "GROUP_EGG_MOLLUSK_SMALL",
+    "type": "monstergroup",
+    "monsters": [ 
+		{ "monster": "mon_agoniatites_baby" },
+		{ "monster": "mon_michelinoceras" }
+	]
+	},
+	{
     "name": "GROUP_EGG_MOSCHORHINUS",
     "type": "monstergroup",
     "monsters": [ { "monster": "mon_moschorhinus_pup" } ]
+	},
+	{
+    "name": "GROUP_EGG_NOCHNITSA",
+    "type": "monstergroup",
+    "monsters": [ { "monster": "mon_nochnitsa_pup" } ]
 	},
 	{
     "name": "GROUP_EGG_PEDERPES",
@@ -162,6 +184,11 @@
     "name": "GROUP_EGG_SMILOSUCHUS",
     "type": "monstergroup",
     "monsters": [ { "monster": "mon_smilosuchus_baby" } ]
+	},
+	{
+    "name": "GROUP_EGG_VIATKOGORGON",
+    "type": "monstergroup",
+    "monsters": [ { "monster": "mon_viatkogorgon_pup" } ]
 	},
 	{
     "name": "GROUP_EGG_WEIGELTISAURUS",

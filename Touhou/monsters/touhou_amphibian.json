@@ -156,7 +156,8 @@
 	"special_attacks": [ [ "EAT_FOOD", 65 ] ],
     "flags": [ "ANIMAL", "HEARS", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
 	"//": "Based on Platyoposaurus sp. I couldn't find almost anything other than the size at 2.5 m average so most data are estimates",
-	"//2": "Add 'grasping bite' attack"
+	"//2": "Add 'grasping bite' attack",
+	"//3": "Should have no movement speed demerit while in water"
 	},
 	{
     "id": "mon_platyoposaurus_baby",
@@ -220,7 +221,8 @@
 	"special_attacks": [ [ "EAT_FOOD", 85 ] ],
     "flags": [ "ANIMAL", "HEARS", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
 	"//": "Based on Prionosuchus plummeri. No reproductive data",
-	"//2": "Add 'grasping bite' attack"
+	"//2": "Add 'grasping bite' attack",
+	"//3": "Should have no movement speed demerit while in water"
 	},
 	{
     "id": "mon_prionosuchus_baby",

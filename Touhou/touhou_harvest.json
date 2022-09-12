@@ -28,7 +28,7 @@
 	{
     "id": "arthropod_shrimplike_harvest",
     "type": "harvest",
-    "message": "You gut and fillet the giant critter.",
+    "message": "You gut and fillet the critter.",
     "entries": [
 		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
 		{ "drop": "shrimplike_meat", "type": "flesh", "mass_ratio": 0.65 },
@@ -188,6 +188,28 @@
 	"//": "Based on mammal_large_leather, removed leather, made stomach smaller, reduced meat, increased meat scraps"
 	},
 	{
+    "id": "mollusk_large_shelled",
+    "type": "harvest",
+    "entries": [
+		{ "drop": "chitin_piece", "type": "skin", "mass_ratio": 0.5 },
+		{ "drop": "fat", "type": "flesh", "mass_ratio": 0.1 },
+		{ "drop": "fat", "type": "offal", "mass_ratio": 0.1 },
+		{ "drop": "mollusk", "type": "flesh", "mass_ratio": 0.3 }
+    ],
+	"//": "Based on mollusk , added chitin_piece drops"
+	},
+	{
+    "id": "mollusk_small_shelled",
+    "type": "harvest",
+    "entries": [
+		{ "drop": "chitin_piece", "type": "skin", "mass_ratio": 0.35 },
+		{ "drop": "fat", "type": "flesh", "mass_ratio": 0.1 },
+		{ "drop": "fat", "type": "offal", "mass_ratio": 0.1 },
+		{ "drop": "mollusk", "type": "flesh", "mass_ratio": 0.3 }
+    ],
+	"//": "Based on mollusk , slightly reduced mollusk flesh and added chitin_piece drops"
+	},
+	{
     "id": "oni_harvest",
     "type": "harvest",
     "entries": [
@@ -332,6 +354,6 @@
 		{ "drop": "meat_tainted", "type": "flesh", "mass_ratio": 0.25 },
 		{ "drop": "touhou_human_eggs", "type": "wicked", "base_num": [ 0, 1 ] }
 	],
-	"//2": "Only adds 50% to drop a bunch of human_egg "
+	"//2": "Only adds 50% chance to drop a bunch of human_egg "
 	}
 ]

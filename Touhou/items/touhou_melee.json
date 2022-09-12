@@ -221,7 +221,11 @@
 	},
     "bashing": 8,
     "cutting": 25,
-    "material": [ "wood", "steel", "silver" ],
+	"material": [
+		{ "type": "wood" },
+		{ "type": "silver" },
+		{ "type": "steel", "portion": 9 }
+	],
     "symbol": ";",
     "color": "dark_gray",
     "min_skills": [ [ "weapon", 2 ], [ "melee", 1 ] ],
@@ -247,7 +251,7 @@
 		"length": "hand", 
 		"surface": "any"
 	},
-    "bashing": 22,
+    "bashing": 19,
     "cutting": 0,
     "material": [ "wood" ],
     "symbol": ";",
@@ -349,6 +353,34 @@
 	"flags" : [ "DURABLE_MELEE", "SHEATH_SWORD", "STURDY", "TRADER_AVOID" ]
 	},
 	{
+    "id": "youmu_hakurouken",
+    "type": "TOOL",
+	"category": "weapons",
+    "name": { "str_sp": "Hakurouken" },
+    "copy-from": "wakizashi",
+	"description": "This wakizashi is a Konpaku family heirloom.  It was made from some special metal and forged by youkai.  It has the power to dispel confusion of those it cuts.  Your guess is  that when someone's cut down they really can't be confused anymore.  Strangely, when phantoms are affected by this they're directly sent to Nirvana.",
+    "volume": "1500 ml",
+	"weight": "800 g",
+    "longest_side": "60 cm",
+    "price_postapoc": 24000,
+    "to_hit": { 
+		"balance": "good", 
+		"grip": "weapon", 
+		"length": "short", 
+		"surface": "line"
+	},
+	"bashing": 2,
+    "cutting": 42,
+	"material": [ "steel" ],
+    "//2": " For me, 'send phantoms to Nirvana' is synonymous with 'instakill phantoms'. Its damage should be equal if not higher than Roukanken, but purely soul ",
+    "symbol": "/",
+    "color": "light_gray",
+    "techniques": [ "VORPAL", "WBLOCK_2" ],
+    "qualities": [ [ "CUT", 1 ], [ "BUTCHER", 4 ] ],
+    "weapon_category": [ "JAPANESE_SWORDS", "SHORT_SWORDS" ],
+    "flags": [ "DURABLE_MELEE", "SHEATH_SWORD" ]
+	},
+	{
     "id": "youmu_roukanken",
     "type": "TOOL",
 	"category": "weapons",
@@ -376,34 +408,6 @@
     "techniques": [ "VORPAL", "WBLOCK_2", "WIDE" ],
     "qualities": [ [ "CUT", 1 ] ],
     "weapon_category": [ "JAPANESE_SWORDS", "LONG_SWORDS" ],
-    "flags": [ "DURABLE_MELEE", "SHEATH_SWORD" ]
-	},
-	{
-    "id": "youmu_hakurouken",
-    "type": "TOOL",
-	"category": "weapons",
-    "name": { "str_sp": "Hakurouken" },
-    "copy-from": "wakizashi",
-	"description": "This wakizashi is a Konpaku family heirloom.  It was made from some special metal and forged by youkai.  It has the power to dispel confusion of those it cuts.  Your guess is  that when someone's cut down they really can't be confused anymore.  Strangely, when phantoms are affected by this they're directly sent to Nirvana.",
-    "volume": "1500 ml",
-	"weight": "800 g",
-    "longest_side": "60 cm",
-    "price_postapoc": 24000,
-    "to_hit": { 
-		"balance": "good", 
-		"grip": "weapon", 
-		"length": "short", 
-		"surface": "line"
-	},
-	"bashing": 2,
-    "cutting": 42,
-	"material": [ "steel" ],
-    "//2": " For me, 'send phantoms to Nirvana' is synonymous with 'instakill phantoms'. Its damage should be equal if not higher than Roukanken, but purely soul ",
-    "symbol": "/",
-    "color": "light_gray",
-    "techniques": [ "VORPAL", "WBLOCK_2" ],
-    "qualities": [ [ "CUT", 1 ], [ "BUTCHER", 4 ] ],
-    "weapon_category": [ "JAPANESE_SWORDS", "SHORT_SWORDS" ],
     "flags": [ "DURABLE_MELEE", "SHEATH_SWORD" ]
 	}
 ]

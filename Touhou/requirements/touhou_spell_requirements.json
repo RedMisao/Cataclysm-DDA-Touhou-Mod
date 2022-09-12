@@ -44,6 +44,11 @@
 	] ]
 	},
 	{
+    "id": "spell_components_tengufan",
+    "type": "requirement",
+    "tools": [ [ [ "tengu_fan", -1 ] ] ]
+	},
+	{
     "id": "spell_components_tenkojian",
     "type": "requirement",
     "tools": [ [ [ "tenshi_jian_extended", -1 ] ] ]
@@ -62,5 +67,22 @@
     "id": "spell_components_utsuhosun",
     "type": "requirement",
     "components": [ [ [ "utsuho_minisun", 1 ] ] ]
+	},
+	{
+    "id": "spell_components_youmuhaku",
+    "type": "requirement",
+    "tools": [ [ [ "youmu_hakurouken", -1 ] ] ]
+	},
+	{
+    "id": "spell_components_youmurouka",
+    "type": "requirement",
+    "tools": [ [ [ "youmu_roukanken", -1 ] ] ]
+	},
+	{
+    "id": "spell_components_youmuswords",
+    "type": "requirement",
+    "tools": [ [ 
+		[ "youmu_roukanken", -1 ] , [ "youmu_hakurouken", -1 ] 
+	] ]
 	}
 ]

@@ -68,7 +68,7 @@ Various things:
 	Done, Meiling added
 
 - Aya profession (Really fast runner)
-	Done, Aya added (WIP)
+	Done, Aya added
 
 - Nitori profession (master crafter)
 
