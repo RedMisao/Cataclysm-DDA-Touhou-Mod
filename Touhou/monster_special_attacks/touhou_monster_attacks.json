@@ -5,11 +5,7 @@
     "attack_type": "melee",
     "cooldown": 1,
 	"move_cost": 100,
-<<<<<<< HEAD
-	"damage_max_instance": [ { "damage_type": "stab", "amount": 20, "armor_penetration": 8 } ],
-=======
 	"damage_max_instance": [ { "damage_type": "stab", "amount": 20, "armor_penetration": 4 } ],
->>>>>>> testing
 	"min_mul": 0.4,
 	"max_mul": 0.75,
 	"hitsize_min": 1,
@@ -68,8 +64,6 @@
 	"//": "Neck bite from a huge thing, like the Beast of Gévaudan. Realistically should kill humans, but that's not really fair I guess"
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "headbutt_2d6",
 	"type": "monster_attack",
     "attack_type": "melee",
@@ -110,7 +104,6 @@
 	"//": "Headbutt for Scutosaurus"
 	},
 	{
->>>>>>> testing
     "id": "heart_strike",
 	"type": "monster_attack",
     "attack_type": "melee",
@@ -128,8 +121,6 @@
     "blockable": true
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "oni_smash_7d5",
 	"type": "monster_attack",
     "attack_type": "melee",
@@ -192,7 +183,6 @@
 	"//": "Oni SMASH for human-sized oni"
 	},
 	{
->>>>>>> testing
     "id": "slash_base",
 	"type": "monster_attack",
     "attack_type": "melee",
@@ -276,8 +266,6 @@
 	"dodgeable": true,
     "blockable": true,
 	"//": "Weak stab attack for Vengeful spirits"
-<<<<<<< HEAD
-=======
 	},
 	{
     "id": "youmumyon_slash",
@@ -302,6 +290,5 @@
 	],
 	"dodgeable": true,
     "blockable": true
->>>>>>> testing
 	}
 ]

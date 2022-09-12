@@ -6,13 +6,8 @@
     "name": { "str": "corpse cart controls", "str_pl": "sets of corpse cart controls" },
     "copy-from": "vehicle_controls",
 	"description": "Corpse cart controls, made mostly of wood.",
-<<<<<<< HEAD
-    "weight": "2000 g",
-	"volume": "2 L",
-=======
 	"volume": "2 L",
 	"weight": "2000 g",
->>>>>>> testing
 	"price": 40000,
 	"price_postapoc": 500,
 	"material": [ "steel", "wood" ],
@@ -23,8 +18,6 @@
 	"//": "These come from data/json/items/vehicle"
 	},
 	{
-<<<<<<< HEAD
-=======
 	"id": "controls_keystone",
 	"type": "GENERIC",
 	"category": "veh_parts",
@@ -41,20 +34,14 @@
 	"bashing": 16
 	},
 	{
->>>>>>> testing
 	"id": "frame_corpsecart",
 	"type": "GENERIC",
 	"category": "veh_parts",
 	"name": { "str": "corpse cart frame" },
     "copy-from": "frame_wood",
 	"description": "Corpse cart frame, made of wood.",
-<<<<<<< HEAD
-	"weight": "14300 g",
-	"volume": "22 L",
-=======
 	"volume": "22 L",
 	"weight": "14300 g",
->>>>>>> testing
 	"price": 4000,
 	"price_postapoc": 100,
 	"material": [ "wood" ],
@@ -70,13 +57,8 @@
 	"name": { "str": "corpse cart front" },
 	"copy-from": "wood_plate",
 	"description": "Front plate for a corpse cart, made of wood.",
-<<<<<<< HEAD
-	"weight": "2600 g",
-	"volume": "4 L",
-=======
 	"volume": "4 L",
 	"weight": "2600 g",
->>>>>>> testing
 	"price": 12000,
 	"price_postapoc": 100,
 	"material": [ "wood" ],
@@ -91,13 +73,8 @@
 	"category": "veh_parts",
 	"name": { "str": "corpse cart handle" },
 	"description": "Corpse cart handles.",
-<<<<<<< HEAD
-	"weight": "2000 g",
-	"volume": "3 L",
-=======
 	"volume": "3 L",
 	"weight": "2000 g",
->>>>>>> testing
 	"price": 4000,
 	"price_postapoc": 100,
 	"material": [ "wood" ],
@@ -113,13 +90,8 @@
 	"name": { "str": "corpse reactor" },
 	"copy-from": "v8_diesel",
 	"description": "Corpse cart reactor.  It feeds from prepared corpses.",
-<<<<<<< HEAD
-    "weight": "100000 g",
-    "volume": "6 L",
-=======
     "volume": "6 L",
 	"weight": "100000 g",
->>>>>>> testing
     "price": 26500,
     "price_postapoc": 1750,
     "material": [ "steel" ],
@@ -127,8 +99,6 @@
 	"flags": [ "TARDIS" ]
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "reactor_keystone",
     "type": "ENGINE",
 	"category": "veh_parts",
@@ -145,7 +115,6 @@
 	"flags": [ "TARDIS" ]
 	},
 	{
->>>>>>> testing
 	"id": "seat_corpsecart",
 	"type": "GENERIC",
     "name": { "str": "corpse cart seat" },
@@ -156,8 +125,6 @@
     "price_postapoc": 250
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "storage_battery_keystone",
     "type": "GENERIC",
 	"category": "veh_parts",
@@ -179,20 +146,14 @@
 	"flags": [ "TARDIS" ]
 	},
 	{
->>>>>>> testing
     "id": "storage_corpsecart",
     "type": "GENERIC",
 	"category": "veh_parts",
 	"name": { "str": "corpse cart tray" },
 	"copy-from": "cargo_rack",
     "description": "Storage for the corpse cart.",
-<<<<<<< HEAD
-    "weight": "20000 g",
-    "volume": "85000 ml",
-=======
     "volume": "85000 ml",
 	"weight": "20000 g",
->>>>>>> testing
     "price": 48000,
     "price_postapoc": 750,
     "material": [ "steel", "plastic" ],
@@ -207,13 +168,8 @@
 	"category": "veh_parts",
 	"name": { "str": "corpse cart support" },
 	"description": "Support for the corpse cart",
-<<<<<<< HEAD
-	"weight": "1000 g",
-	"volume": "1500 ml",
-=======
 	"volume": "1500 ml",
 	"weight": "1000 g",
->>>>>>> testing
 	"price": 4000,
 	"price_postapoc": 100,
 	"material": [ "wood" ],
@@ -228,13 +184,8 @@
 	"category": "veh_parts",
 	"name": { "str": "corpse reactor tank" },
 	"description": "Storage for the corpse cart.",
-<<<<<<< HEAD
-    "weight": "30000 g",
-    "volume": "85 L",
-=======
     "volume": "85 L",
 	"weight": "30000 g",
->>>>>>> testing
 	"price": 3000,
     "price_postapoc": 100,
     "material": [ "steel" ],
@@ -258,35 +209,21 @@
     "name": { "str": "corpse cart wheel" },
 	"copy-from": "wheel_wood",
 	"description": "A spoken wooden wheel, made from a strange Former Hell wood.",
-<<<<<<< HEAD
-    "weight": "5000 g",
-    "volume": "7500 ml",
-	"price": 1200,
-=======
     "volume": "7500 ml",
 	"weight": "5000 g",
 	"longest_side": "40 cm",
->>>>>>> testing
     "price_postapoc": 100,
     "material": [ "wood" ],
 	"looks_like": "wheel_wood",
 	"symbol": "]",
     "color": "brown",
-<<<<<<< HEAD
-=======
 	"to_hit": -4,
 	"bashing": 8,
->>>>>>> testing
 	"diameter": 20,
     "width": 6,
 	"//": "wheel_type: treads is not recognized as a field",
 	"//2": " contact_area: 3267 cm is not recognized as a field",
 	"//3": "rolling_resistance: 1 is not recognized as a field",
-<<<<<<< HEAD
-	"longest_side": "40 cm",
-	"to_hit": -4,
-	"bashing": 8,
-=======
 	"flags": [ "STABLE", "STEERABLE", "WHEEL" ]
 	},
 	{
@@ -305,7 +242,6 @@
     "bashing": 8,
     "diameter": 20,
     "width": 10,
->>>>>>> testing
 	"flags": [ "STABLE", "STEERABLE", "WHEEL" ]
 	},
 	{
@@ -315,23 +251,13 @@
     "name": { "str": "corpse cart wheel mount" },
 	"copy-from": "wheel_mount_medium",
 	"description": "A wheel mount, designed for the corpse cart's wooden wheels.",
-<<<<<<< HEAD
-    "weight": "1500 g",
-    "volume": "1000 ml",
-=======
     "volume": "1000 ml",
 	"weight": "1500 g",
 	"longest_side": "20 cm",
->>>>>>> testing
 	"price": 3000,
 	"price_postapoc": 500,
     "material": [ "wood", "steel" ],
     "symbol": ";",
-<<<<<<< HEAD
-    "color": "brown",
-	"longest_side": "20 cm"
-=======
     "color": "brown"
->>>>>>> testing
 	}	
 ]

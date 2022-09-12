@@ -1,7 +1,5 @@
 [
 	{
-<<<<<<< HEAD
-=======
     "name": "GROUP_EGG_AEGIROCASSIS",
     "type": "monstergroup",
     "monsters": [ { "monster": "mon_aegirocassis_baby" } ]
@@ -12,19 +10,11 @@
     "monsters": [ { "monster": "mon_anatosuchus_baby" } ]
 	},
 	{
->>>>>>> testing
     "name": "GROUP_EGG_ANOMALOCARIS",
     "type": "monstergroup",
     "monsters": [ { "monster": "mon_anomalocaris_baby" } ]
 	},
 	{
-<<<<<<< HEAD
-    "name": "GROUP_EGG_ARTHROPODAQUATIC_SMALL",
-    "type": "monstergroup",
-    "monsters": [ 
-		{ "monster": "mon_opabinia_baby" },
-		{ "monster": "mon_hurdia" }
-=======
     "name": "GROUP_EGG_ARTHROPLEURA",
     "type": "monstergroup",
     "monsters": [ { "monster": "mon_arthropleura_baby" } ]
@@ -38,7 +28,6 @@
 		{ "monster": "mon_opabinia_baby" },
 		{ "monster": "mon_pambdelurion_baby" },
 		{ "monster": "mon_sidneyia_baby" }
->>>>>>> testing
 	]
 	},
 	{
@@ -47,8 +36,6 @@
     "monsters": [ { "monster": "mon_carnufex_baby" } ]
 	},
 	{
-<<<<<<< HEAD
-=======
     "name": "GROUP_EGG_COTYLORHYNCHUS",
     "type": "monstergroup",
     "monsters": [ { "monster": "mon_cotylorhynchus_baby" } ]
@@ -59,14 +46,11 @@
     "monsters": [ { "monster": "mon_dimetrodon_baby" } ]
 	},
 	{
->>>>>>> testing
     "name": "GROUP_EGG_DODO",
     "type": "monstergroup",
     "monsters": [ { "monster": "mon_dodo_chick" } ]
 	},
 	{
-<<<<<<< HEAD
-=======
     "name": "GROUP_EGG_ECTOPISTES",
     "type": "monstergroup",
     "monsters": [ { "monster": "mon_ectopistes_chick" } ]
@@ -77,7 +61,6 @@
     "monsters": [ { "monster": "mon_eryops_baby" } ]
 	},
 	{
->>>>>>> testing
     "name": "GROUP_EGG_EURYPTERID",
     "type": "monstergroup",
     "monsters": [ 
@@ -87,11 +70,6 @@
 	]
 	},
 	{
-<<<<<<< HEAD
-    "name": "GROUP_EGG_FISHANCIENT_MEDIUM",
-    "type": "monstergroup",
-    "monsters": [ { "monster": "mon_megamastax_baby" } ]
-=======
     "name": "GROUP_EGG_EURYPTERID_SMALL",
     "type": "monstergroup",
     "monsters": [ 
@@ -105,7 +83,6 @@
 		{ "monster": "mon_megamastax_baby" },
 		{ "monster": "mon_saurichthys_baby" }
 	]
->>>>>>> testing
 	},
 	{
     "name": "GROUP_EGG_FISHANCIENT_SMALL",
@@ -117,11 +94,6 @@
 	]
 	},
 	{
-<<<<<<< HEAD
-    "name": "GROUP_EGG_MOA",
-    "type": "monstergroup",
-    "monsters": [ { "monster": "mon_moa_chick" } ]
-=======
     "name": "GROUP_EGG_HESPEROSUCHUS",
     "type": "monstergroup",
     "monsters": [ { "monster": "mon_hesperosuchus_baby" } ]
@@ -222,6 +194,5 @@
     "name": "GROUP_EGG_WEIGELTISAURUS",
     "type": "monstergroup",
     "monsters": [ { "monster": "mon_weigeltisaurus_baby" } ]
->>>>>>> testing
 	}
 ]

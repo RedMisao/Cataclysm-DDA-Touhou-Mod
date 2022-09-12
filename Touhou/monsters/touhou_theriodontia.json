@@ -1,14 +1,5 @@
 [
 	{
-<<<<<<< HEAD
-    "id": "mon_gorgonopsid_generic",
-    "type": "MONSTER",
-    "name": { "str": "gorgonopsid", "str_pl": "gorgonopsids" },
-    "description": "A dog-looking… beast, this animal looks like a mix between a big cat, a bear, a dinosaur and other animals you can't think at the moment.  The gait is unlike anything you have seen before, both awkward yet agile. The tail is thick and short, the limbs somewhat resemble those of a human, but shorter in relation to the body, with the hind limbs being shorter than the front limbs, each of them ends on a feet with short claws, capable of rudimentary grappling.  The most shocking part of the animal is the very robust, huge trapezoidal head, with equally huge fangs showing well past the reptilian lips.  Looking at it forces a primal bubble of fear from the depths of your mind come to the surface, ready to cavitate.",
-    "volume": "300000 ml",
-    "weight": "350000 g",
-	"default_faction": "touhou_gorgonopsid_inostrancevia",
-=======
     "id": "mon_inostrancevia",
     "type": "MONSTER",
     "name": { "str": "inostrancevia", "str_pl": "inostrancevia" },
@@ -16,16 +7,11 @@
     "volume": "300 L",
     "weight": "350 kg",
 	"default_faction": "touhou_inostrancevia",
->>>>>>> testing
     "bodytype": "dog",
     "categories": [ "WILDLIFE" ],
     "species": [ "MAMMAL" ],
     "harvest": "mammal_large_leather",
-<<<<<<< HEAD
-	"hp": 250,
-=======
 	"hp": 300,
->>>>>>> testing
     "speed": 175,
     "material": [ "flesh" ],
     "symbol": "G",
@@ -35,53 +21,17 @@
     "melee_skill": 8,
     "melee_dice": 4,
     "melee_dice_sides": 8,
-<<<<<<< HEAD
-    "melee_cut": 8,
-    "dodge": 4,
-=======
 	"melee_damage": [ { "damage_type": "cut", "amount": 8 } ],
     "dodge": 3,
->>>>>>> testing
     "bleed_rate": 33,
     "vision_day": 35,
     "vision_night": 25,
     "path_settings": { "max_dist": 25 },
-<<<<<<< HEAD
-    "special_attacks": [ [ "bite_3d6", 4 ] ],
-    "anger_triggers": [ "HURT", "FRIEND_ATTACKED", "FRIEND_DIED", "PLAYER_WEAK", "PLAYER_CLOSE", "STALK" ],
-    "placate_triggers": [ "MEAT" ],
-    "flags": [ "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "SEES", "WARM" ],
-	"//": "Generic Gorgonopsid, this template is for animals that look like Inostrancevia + Pristerognathus. The later is technically a Therocephalian but they look similar enough and until there are enough of them there's no need for a different identification. This should NOT spawn, mon_gorgonopsid_inostrancevia is the 'active' version",
-	"//2": "The harvest of these should be more mammal than reptilian, however currently both have the same values"
-	},
-	{
-    "id": "mon_gorgonopsid_inostrancevia",
-    "type": "MONSTER",
-    "name": { "str": "inostrancevia", "str_pl": "inostrancevia" },
-    "copy-from": "mon_gorgonopsid_generic",
-	"description": "A dog-looking… beast, this animal looks like a mix between a big cat, a bear, a dinosaur and other animals you can't even think of.  The gait is unlike anything you have seen before, both awkward yet agile. The tail is thick and short, the limbs somewhat resemble those of a human, but shorter in relation to the body, with the hind limbs being shorter than the front limbs, each of them ends on feet with short claws, capable of rudimentary grappling.  The most shocking part of the animal is the very robust, huge trapezoidal head, with equally huge fangs showing well past the lips.  Looking at it forces a primal bubble of fear from the depths of your mind come to the surface, ready to cavitate.",
-    "armor_bash": 6,
-=======
 	"armor_bash": 6,
->>>>>>> testing
     "armor_cut": 6,
     "armor_bullet": 4,
     "armor_stab": 4,
     "armor_elec": 6,
-<<<<<<< HEAD
-	"special_attacks": [ [ "bite_3d6", 4 ] ],
-    "flags": [ "BASHES", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "PUSH_MON", "SEES", "WARM" ]
-	},
-	{
-    "id": "mon_gorgonopsid_pristerognathus",
-    "type": "MONSTER",
-    "name": { "str": "pristerognathus", "str_pl": "pristerognathus" },
-    "copy-from": "mon_gorgonopsid_generic",
-	"description": "A dog-looking… beast, this animal looks like a mix between man's best friend, a dinosaur and other animals you can't even think of.  The gait is unlike anything you have seen before, both awkward yet agile, with the animal running on a similar way you'd imagine a crocodile can. The tail is thick and short, the weirdly human-looking limbs sprawl at the sides, each of them ends on feet with short claws.  The most shocking part of the animal is the very robust, huge, flat trapezoidal head, with equally huge fangs showing well past the lips.  You think, you know deep inside you a bite will really hurt.",
-    "volume": "30000 ml",
-    "weight": "35 kg",
-	"default_faction": "touhou_gorgonopsid_pristerognathus",
-=======
 	"special_attacks": [ 
 		[ "bite_3d6", 4 ], 
 		[ "EAT_FOOD", 85 ]
@@ -127,19 +77,10 @@
     "volume": "8 L",
     "weight": "8 kg",
 	"default_faction": "touhou_moschorhinus",
->>>>>>> testing
     "bodytype": "dog",
     "categories": [ "WILDLIFE" ],
     "species": [ "MAMMAL" ],
     "harvest": "mammal_leather",
-<<<<<<< HEAD
-	"hp": 75,
-    "speed": 150,
-    "material": [ "flesh" ],
-    "symbol": "g",
-    "color": "light_gray",
-    "aggression": 25,
-=======
 	"hp": 16,
     "speed": 140,
     "material": [ "flesh" ],
@@ -275,25 +216,10 @@
     "material": [ "flesh" ],
     "symbol": "g",
     "color": "light_gray",
->>>>>>> testing
     "morale": 35,
     "melee_skill": 6,
     "melee_dice": 3,
     "melee_dice_sides": 3,
-<<<<<<< HEAD
-    "melee_cut": 8,
-    "dodge": 4,
-    "armor_bash": 2,
-    "armor_cut": 2,
-    "armor_bullet": 4,
-    "armor_stab": 2,
-    "vision_day": 35,
-    "vision_night": 15,
-    "path_settings": { "max_dist": 20 },
-	"special_attacks": [ [ "bite_3d5", 4 ] ],
-    "flags": [ "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "SEES", "SWARMS", "WARM" ],
-	"//": "Dog-sized but sprawls instead of having an erect posture, with different body part ratios too"
-=======
 	"melee_damage": [ { "damage_type": "stab", "amount": 4 } ],
     "dodge": 4,
     "armor_bash": 2,
@@ -401,6 +327,5 @@
 	"special_attacks": [ [ "EAT_FOOD", 45 ] ],
 	"upgrades": { "age_grow": 48, "into": "mon_viatkogorgon" },
     "extend": { "flags": [ "NO_BREED" ] }
->>>>>>> testing
 	}
 ]

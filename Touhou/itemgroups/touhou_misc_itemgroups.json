@@ -5,12 +5,6 @@
     "//": "All items considered for reverse-spiriting away on generic mystery spots",
     "subtype": "distribution",
     "entries": [
-<<<<<<< HEAD
-		{ "group": "touhou_ammo_kurz_boxed", "prob": 100 },
-		{ "item": "idw", "prob": 100 },
-		{ "group": "touhou_idw_gunmods", "prob": 100 },
-		{ "item": "stg44", "prob": 100 }
-=======
 		{ "group": "exotic_books", "prob": 100 },
 		{ "group": "forgotten_ammo", "prob": 100 },
 		{ "group": "forgotten_weapons", "prob": 100 },
@@ -61,7 +55,6 @@
 		{ "item": "stg44", "prob": 100 },
 		{ "group": "nested_tkb002_items", "prob": 100 },
 		{ "item": "wa2000", "prob": 100 }
->>>>>>> testing
     ]
 	}
 ]

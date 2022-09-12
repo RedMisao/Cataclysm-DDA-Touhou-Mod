@@ -1,7 +1,5 @@
 [
 	{
-<<<<<<< HEAD
-=======
     "id": "nested_silver_knife",
 	"type": "item_group",
     "subtype": "collection",
@@ -12,7 +10,6 @@
 	]
 	},
 	{
->>>>>>> testing
     "id": "thrown_weapons",
 	"type": "item_group",
     "items": [
@@ -40,15 +37,9 @@
 		[ "knife_carving", 1 ],
 		[ "knife_bread", 1 ],
 		[ "knife_vegetable_cleaver", 1 ],
-<<<<<<< HEAD
-		[ "knife_meat_cleaver", 1 ]
-	]
-  }
-=======
 		[ "knife_meat_cleaver", 1 ],
 		[ "sakuya_knife", 1 ],
 		[ "silver_knife", 1 ]
 	]
 	}
->>>>>>> testing
 ]

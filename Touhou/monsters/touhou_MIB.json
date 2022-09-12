@@ -45,12 +45,8 @@
 		"fake_skills": [ [ "gun", 3 ], [ "pistol", 4 ] ],
 		"gun_type": "glock_17",
 		"move_cost": 120,
-<<<<<<< HEAD
-		"targeting_cost": 100,
-=======
 		"targeting_cost": 105,
 		"require_targeting_player": true,
->>>>>>> testing
         "ranges": [ [ 2, 12, "BURST" ], [ 13, 18, "SEMI_AUTO" ] ]
 		},
 		[ "PARROT_AT_DANGER", 16 ]

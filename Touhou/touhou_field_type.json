@@ -19,8 +19,6 @@
 	"//": "faster decaying blood for effects"
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "fd_incendiary2",
     "type": "field_type",
     "legacy_enum_id": 10,
@@ -49,7 +47,6 @@
 	"//": "Fire field for mokou_fujiyamakazan , closest thing to the 6 - 9 turn fire field I wanted"
 	},
 	{
->>>>>>> testing
     "id": "fd_poison",
     "type": "field_type",
     "looks_like": "fd_bile",
@@ -85,8 +82,6 @@
     "phase": "gas",
     "display_items": true,
     "display_field": true
-<<<<<<< HEAD
-=======
 	},
 	{
     "id": "fd_rubble2",
@@ -100,6 +95,5 @@
     "display_field": true,
     "looks_like": "f_rubble",
     "legacy_make_rubble": false
->>>>>>> testing
 	}
 ]

@@ -1,7 +1,5 @@
 [
 	{
-<<<<<<< HEAD
-=======
     "id": "bipod_ceamm1",
     "type": "GUNMOD",
     "name": { "str": "CEAM Mòdele 1 bipod" },
@@ -29,19 +27,10 @@
     "min_skills": [ [ "weapon", 2 ] ]
 	},
 	{
->>>>>>> testing
     "id": "bipod_idw",
     "type": "GUNMOD",
     "name": { "str": "IDW bipod" },
     "description": "A bipod created for the IDW, which can be used for SMGs, and even pistols too, in case you would ever need that.",
-<<<<<<< HEAD
-    "weight": "400 g",
-    "volume": "500 ml",
-    "price": 68000,
-    "price_postapoc": 500,
-    "to_hit": -1,
-    "bashing": 10,
-=======
     "volume": "500 ml",
 	"weight": "400 g",
     "price": 68000,
@@ -53,7 +42,6 @@
 		"surface": "any"
 	},
     "bashing": 4,
->>>>>>> testing
     "material": [ "steel" ],
     "symbol": ":",
     "color": "dark_gray",

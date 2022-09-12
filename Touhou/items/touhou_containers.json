@@ -3,13 +3,8 @@
     "id": "box_kurz",
     "type": "GENERIC",
     "category": "container",
-<<<<<<< HEAD
-    "name": { "str": "7.92x39mm ammo box", "str_pl": "7.92x39mm ammo boxes" },
-    "description": "A small cardboard box, with a sticker on the side indicating it once held 7.92x39mm ammo.",
-=======
     "name": { "str": "7.92x33mm ammo box", "str_pl": "7.92x33mm ammo boxes" },
     "description": "A small cardboard box, with a sticker on the side indicating it once held 7.92x33mm ammo.",
->>>>>>> testing
     "weight": "25 g",
     "volume": "90 ml",
 	"longest_side": "6 cm",
@@ -19,16 +14,6 @@
     "material": [ "cardboard" ],
     "symbol": ")",
     "color": "brown",
-<<<<<<< HEAD
-    "pocket_data": [ {
-        "pocket_type": "CONTAINER",
-        "rigid": true,
-        "max_contains_volume": "95 ml",
-        "max_contains_weight": "260 g",
-        "max_item_length": "6 cm"
-	} ],
-	"flags": [ "TARDIS" ]
-=======
     "pocket_data": [
 		{
         "pocket_type": "CONTAINER",
@@ -95,6 +80,5 @@
 		}
     ],
     "flags": [ "BELTED", "TARDIS" ]
->>>>>>> testing
 	}
 ]

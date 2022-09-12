@@ -1,40 +1,17 @@
 [
 	{
-<<<<<<< HEAD
-    "id": "lunar_medium_mag",
-    "type": "MAGAZINE",
-    "name": { "str": "Test mag for medium-sized Lunar ammo" },
-    "description": "A compact 10-round clip for medium-sized Lunar weapons, made of polymer.",
-    "weight": "20 g",
-    "volume": "150 ml",
-    "price": 1000,
-=======
     "id": "lunar_medium_mag11",
     "type": "MAGAZINE",
     "name": { "str": "Magazine for medium-sized Lunar ammo" },
     "description": "A compact 11-round clip for medium-sized Lunar weapons, made of polymer.",
     "weight": "35 g",
     "volume": "150 ml",
->>>>>>> testing
     "price_postapoc": 50,
     "material": [ "plastic" ],
     "symbol": "#",
     "looks_like": "762R_clip",
 	"color": "light_gray",
     "ammo_type": [ "ammo_lunar_medium" ],
-<<<<<<< HEAD
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "ammo_lunar_medium": 10 } } ],
-	"flags": [ "MAG_COMPACT" ]
-	},
-	{
-    "id": "lunar_small_mag12",
-    "type": "MAGAZINE",
-    "name": { "str": "Test mag for small-sized Lunar ammo" },
-    "description": "A compact 12-round clip for small-sized Lunar weapons, made of polymer.",
-    "weight": "20 g",
-    "volume": "150 ml",
-    "price": 1000,
-=======
     "pocket_data": [ 
 		{ 
 		"pocket_type": "MAGAZINE", 
@@ -51,17 +28,12 @@
     "description": "A compact 13-round magazine for small-sized Lunar weapons, made of polymer.",
     "weight": "25 g",
     "volume": "150 ml",
->>>>>>> testing
     "price_postapoc": 50,
     "material": [ "plastic" ],
     "symbol": "#",
     "looks_like": "m1911mag",
 	"color": "light_gray",
     "ammo_type": [ "ammo_lunar_small" ],
-<<<<<<< HEAD
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "ammo_lunar_small": 12 } } ],
-	"flags": [ "MAG_COMPACT" ]
-=======
     "pocket_data": [ 
 		{ 
 		"pocket_type": "MAGAZINE", 
@@ -159,6 +131,5 @@
 		} 
 	],
 	"flags": [ "MAG_COMPACT", "TARDIS" ]
->>>>>>> testing
 	}
 ]

@@ -80,11 +80,7 @@
 	"//2": "Didn't found the recipe for repairing the base necktie, so this data should be rechecked accordingly"
 	},
 	{
-<<<<<<< HEAD
-    "result": "lunar_kneesocks",
-=======
     "result": "ldc_kneesocks",
->>>>>>> testing
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "category": "CC_ARMOR",

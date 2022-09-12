@@ -2,19 +2,6 @@
 	{
     "id": "wheel_corpsecart",
     "type": "vehicle_part",
-<<<<<<< HEAD
-    "name": { "str": "corpse cart wheel" },
-	"item": "wheel_corpsecart",
-	"location": "under",
-	"symbol": "|",
-	"categories": [ "movement" ],
-	"color": "brown",
-	"broken_symbol": "x",
-	"broken_color": "red",
-	"durability": 200,
-	"folded_volume": "1000 ml",
-	"description": "WIP",
-=======
 	"categories": [ "movement" ],
     "name": { "str": "corpse cart wheel" },
 	"description": "WIP",
@@ -26,7 +13,6 @@
 	"color": "brown",
 	"broken_color": "red",
 	"durability": 200,
->>>>>>> testing
 	"breaks_into": [ { "item": "splinter", "count": [ 7, 9 ] }, { "item": "nail", "charges": [ 5, 10 ] } ],
 	"requirements": {
 		"install": { "skills": [ [ "mechanics", 2 ] ], "time": "5 m", "using": [ [ "vehicle_wrench_1", 1 ] ] },
@@ -41,8 +27,6 @@
 	"looks_like": "wheel_wood",
 	"flags": [ "FOLDABLE", "NEEDS_JACKING", "STABLE", "STEERABLE", "WHEEL" ],
 	"//3": "No idea what FOLDABLE and NEEDS_JACKING do"
-<<<<<<< HEAD
-=======
 	},
 	{
     "id": "wheel_keystone",
@@ -70,6 +54,5 @@
     "contact_area": 200,
 	"looks_like": "wheel_wood",
 	"flags": [ "FOLDABLE", "STABLE", "STEERABLE", "WHEEL" ]
->>>>>>> testing
 	}
 ]

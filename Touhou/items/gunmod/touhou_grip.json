@@ -4,13 +4,8 @@
     "type": "GUNMOD",
     "name": { "str": "bashing grip" },
     "description": "A set of metal parts designed to protect the weapon for melee damage, because you can now use it as knuckles to bash faces with it!  You do need strength for that though.",
-<<<<<<< HEAD
-    "weight": "600 g",
-    "volume": "200 ml",
-=======
     "volume": "200 ml",
 	"weight": "600 g",
->>>>>>> testing
     "price": 48000,
     "price_postapoc": 750,
     "install_time": "5 m",

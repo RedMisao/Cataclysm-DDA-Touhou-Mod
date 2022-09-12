@@ -2,19 +2,12 @@
 	{
     "id": "reactor_corpsecart",
 	"type": "vehicle_part",
-<<<<<<< HEAD
-=======
 	"categories": [ "movement" ],
->>>>>>> testing
 	"name": { "str": "corpse reactor" },
 	"description": "Test engine for kaenbyou_wheelbarrow ",
 	"item": "reactor_corpsecart",
     "location": "engine_block",
 	"symbol": "*",
-<<<<<<< HEAD
-	"categories": [ "movement" ],
-=======
->>>>>>> testing
 	"color": "light_red",
 	"broken_color": "red",
 	"durability": 200,
@@ -36,8 +29,6 @@
     "//2": "Can't find the exact amount of watts produced by burning an average adult human body, so this value equals 81500 Kcal burned in 1 hour",
 	"energy_consumption": 190000,
 	"flags": [ "ENGINE", "E_COMBUSTION", "E_HEATER" ]
-<<<<<<< HEAD
-=======
 	},
 	{
     "id": "reactor_keystone",
@@ -68,6 +59,5 @@
     "//2": "Can't find the exact amount of watts produced by burning an average adult human body, so this value equals 81500 Kcal burned in 1 hour",
 	"energy_consumption": 190000,
 	"flags": [ "E_STARTS_INSTANTLY", "ENGINE" ]
->>>>>>> testing
 	}
 ]

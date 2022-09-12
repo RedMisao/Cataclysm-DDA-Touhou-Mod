@@ -1,14 +1,5 @@
 [
 	{
-<<<<<<< HEAD
-    "id": "idw",
-    "type": "GUN",
-    "name": { "str_sp": "IDW" },
-    "copy-from": "tec9",
-	"description": "A prototype that never saw light of day, the 90s IDW is (would've been) the smallest SMG in the world.  It's made from machined steel, being heavier than it looks.  Using 9mm Parabellum bullets, it was supposed to be highly customizable, allowing attachments for the stock, sights, barrels, and even a bipod.  It also featured an electronic control mechanism to regulate the rate of fire to automatically limit the recoil.",
-    "weight": "2150 g",
-    "volume": "650 ml",
-=======
     "id": "aresfmg_unfolded",
     "type": "GUN",
     "name": { "str": "ARES FMG", "str_pl": "ARES FMG" },
@@ -199,7 +190,6 @@
 	"description": "A prototype that never saw light of day, the '90s IDW is (would've been) the smallest SMG in the world.  Made from machined steel, the weapon is heavier than it looks.  Using 9mm Parabellum bullets, it was supposed to be highly customizable, allowing attachments for the stock, sights, barrels, and even a bipod.  It also featured an electronic control mechanism to regulate the rate of fire to automatically limit the recoil.",
     "volume": "650 ml",
 	"weight": "2150 g",
->>>>>>> testing
     "longest_side": "276 mm",
 	"price": 125000,
     "price_postapoc": 2750,
@@ -217,21 +207,12 @@
     "ammo": [ "9mm" ],
     "dispersion": 360,
     "durability": 7,
-<<<<<<< HEAD
-    "min_cycle_recoil": 50,
-    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 20 ] ],
-    "skill": "smg",
-	"reload_noise_volume": 8,
-	"valid_mod_locations": [
-		[ "accessories", 1 ],
-=======
     "min_cycle_recoil": 600,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 4 ] ],
     "skill": "smg",
 	"reload_noise_volume": 8,
 	"valid_mod_locations": [
 		[ "accessories", 2 ],
->>>>>>> testing
 		[ "barrel", 1 ],
 		[ "brass catcher", 1 ],
 		[ "grip", 1 ],
@@ -241,13 +222,6 @@
 		[ "sights", 1 ],
 		[ "sling", 1 ],
 		[ "stock", 1 ],
-<<<<<<< HEAD
-		[ "underbarrel", 1 ]
-    ],
-    "faults": [ "fault_gun_blackpowder", "fault_gun_dirt", "fault_gun_chamber_spent" ],
-    "pocket_data": [ {
-        "pocket_type": "MAGAZINE_WELL",
-=======
 		[ "stock accessory", 1 ],
 		[ "stock mount", 1 ],
 		[ "underbarrel", 1 ]
@@ -257,32 +231,18 @@
 		{
         "pocket_type": "MAGAZINE_WELL",
 		"rigid": true, 
->>>>>>> testing
         "item_restriction": [ 
 			"idwmag20", 
 			"idwmag28", 
 			"idwmag32"
 		] 
-<<<<<<< HEAD
-	} ],
-=======
 		} 
 	],
->>>>>>> testing
     "weapon_category": [ "AUTOMATIC_PISTOLS" ],
 	"//": "This is a hybrid between the finished PDW prototype and the manufactured IDW",
 	"//2": "Data obtained from http //firearmsworld.net/britain/phidw/idw.htm . Some values are approximates, such as the volume."
 	},
 	{
-<<<<<<< HEAD
-    "id": "m76",
-    "type": "GUN",
-    "name": { "str_sp": "M76 Zastava" },
-    "copy-from": "svd",
-	"description": "WIP",
-    "weight": "4600 g",
-    "volume": "3000 ml",
-=======
     "id": "kar98",
     "type": "GUN",
     "name": { "str": "Karabiner 98 kurz", "str_pl": "Karabiner 98 kurz" },
@@ -355,7 +315,6 @@
 	"description": "A gas-operated, semi-auto Serbian DMR, based on the Soviet SVD-63.  Created to fulfill the (then novel) role as its spiritual predecesor, it was first deployed during the Yugoslav Wars.  Unlike the SVD however, the M76 is actually based on the AK design, overhauled to fit the bigger 7.92x57mm Mauser.",
     "volume": "3000 ml",
 	"weight": "4600 g",
->>>>>>> testing
     "longest_side": "1135 mm",
     "price": 19000,
     "price_postapoc": 3000,
@@ -367,22 +326,6 @@
 	},
     "bashing": 11,
     "material": [ "plastic", "steel", "wood" ],
-<<<<<<< HEAD
-    "looks_like": "ak47",
-	"color": "brown",
-    "ammo": [ "792x57" ],
-    "built_in_mods": [ "onm76_scope" ],
-	"dispersion": 100,
-    "//": "Accuracy is typically around 1.5 MOA, which is good for a Kalashnikov design and entirely acceptable for the designated marksman role. ",
-	"//2": "The dispersion at 900 m (984 yd) is described as 50 × 50 cm (19.7 × 19.7 in), which is ≈ 1.9 MOA.",
-	"durability": 9,
-	"loudness": 12,
-	"min_cycle_recoil": 1600,
-    "modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
-	"range": 800,
-	"reload": 500,
-	"reload_noise_volume": 8,
-=======
     "looks_like": "svd",
 	"color": "brown",
     "ammo": [ "792x57" ],
@@ -411,23 +354,11 @@
         "weight": 1
 		}
 	],
->>>>>>> testing
 	"valid_mod_locations": [
 		[ "muzzle", 1 ],
 		[ "rail mount", 1 ],
 		[ "sights", 1 ],
 		[ "sling", 1 ],
-<<<<<<< HEAD
-		[ "stock mount", 1 ],
-		[ "underbarrel mount", 1 ]
-    ],
-    "pocket_data": [ {
-        "pocket_type": "MAGAZINE_WELL",
-        "item_restriction": [
-			"m76mag10"
-        ]
-	} ]
-=======
 		[ "stock", 1 ],
 		[ "stock accessory", 2 ],
 		[ "underbarrel mount", 1 ]
@@ -657,24 +588,15 @@
 		} 
 	],
     "flags": [ "NEVER_JAMS", "RELOAD_EJECT", "RELOAD_ONE" ]
->>>>>>> testing
 	},
 	{
     "id": "sig550",
     "type": "GUN",
-<<<<<<< HEAD
-    "name": { "str": "SIG 550" },
-    "copy-from": "rifle_auto",
-	"description": "A selective fire automatic rifle designed for the Swiss military.  This is an old iteration of the 550 series, heavier and bulkier.",
-    "weight": "4100 g",
-    "volume": "3200 ml",
-=======
     "name": { "str": "SIG 550", "str_pl": "SIGs 550" },
     "copy-from": "rifle_auto",
 	"description": "Also known as SG 550, this weapon is a selective fire automatic rifle designed for the Swiss military.  This is an old iteration of the 550 series, heavier and bulkier.",
     "volume": "3200 ml",
 	"weight": "4100 g",
->>>>>>> testing
     "longest_side": "998 mm",
     "price": 320000,
     "price_postapoc": 6000,
@@ -689,15 +611,6 @@
     "looks_like": "ar15",
 	"ammo": [ "223" ],
     "built_in_mods": [ "folding_stock" ],
-<<<<<<< HEAD
-	"dispersion": 150,
-    "//2": "I don't understand where these dispersion values come from. For reference, M16 has 10 shot group dispersion of 32 cm @ 300 m (calculated ~3.67 moa), AK-47 has 10 shot dispersion of 44 cm @ 300 m (calculated ~5.04 moa)), AK-74 has a R50 of 24 cm @ 300 m ( 24*2*0.937 ≈ 45 cm = 5.16 moa, close to the AK-47 value). But, both M16 and AK-74 have 150 dispersion in C:DDA. To make things worse (for me), SIG 550 has a R50 of 14 cm @ 300 m ( 14*2*0.937 ≈ 26.2 cm = 3 moa), which is LOWER than M16 but SIG 553 dispersion is 180 in C:DDA. M4A1 has a 24 in (61 cm) grouping at 300 yards (270 m) ( ~67.8 cm @ 300 m = 7.77 moa ), but has 180 dispersion too in C:DDA. 1 moa = 3.4 inches = 8.72 cm @ 300 m ",
-	"//3": "I'm assuming *total* 3.5 moa = 210, 3 moa = 180, 2.5 moa = 150, 2 moa = 120, 1.5 moa = 90, 1 moa = 60",
-	"durability": 9,
-	"loudness": 9,
-	"min_cycle_recoil": 1350,
-    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "3 rd.", 3 ], [ "AUTO", "auto", 20 ] ],
-=======
 	"dispersion": 155,
     "//2": "I don't understand where these dispersion values come from. For reference, M16 has 10 shot group dispersion of 32 cm @ 300 m (calculated ~3.84 moa), AK-47 has 10 shot dispersion of 44 cm @ 300 m (calculated ~5.28 moa)), AK-74 has a R50 of 24 cm @ 300 m ( 24*2*0.937 ≈ 45 cm = 5.4 moa). But, both M16 and AK-74 have 150 dispersion in C:DDA. To make things worse (for me), SIG 550 has a R50 of 14 cm @ 300 m ( 14*2*0.937 ≈ 26.2 cm = 3.14 moa), which is LOWER than M16 but dispersion for the SIG 553 is 180 in C:DDA. M4A1 has a 24 in grouping at 300 yards = 8 moa, but 180 dispersion in C:DDA too",
 	"//3": "1 moa = 3 in @ 300 yd = 7.62 cm in @ 274.3 m = 8.33 cm @ 300 m ",
@@ -705,7 +618,6 @@
 	"durability": 9,
 	"min_cycle_recoil": 1350,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "3 rd.", 3 ], [ "AUTO", "auto", 5 ] ],
->>>>>>> testing
 	"reload": 420,
 	"reload_noise_volume": 10,
 	"valid_mod_locations": [
@@ -713,13 +625,6 @@
 		[ "rail mount", 1 ],
 		[ "sights", 1 ],
 		[ "sling", 1 ],
-<<<<<<< HEAD
-		[ "stock mount", 1 ],
-		[ "underbarrel mount", 1 ]
-    ],
-	"pocket_data": [ {
-        "pocket_type": "MAGAZINE_WELL",
-=======
 		[ "stock", 1 ],
 		[ "stock mount", 1 ],
 		[ "underbarrel mount", 1 ]
@@ -728,7 +633,6 @@
 		{
         "pocket_type": "MAGAZINE_WELL",
 		"rigid": true, 
->>>>>>> testing
         "item_restriction": [
 			"sig550mag5",
 			"sig550mag10",
@@ -743,26 +647,16 @@
 			"stanag60",
 			"survivor223mag"
         ]
-<<<<<<< HEAD
-	} ],
-=======
 		} 
 	],
->>>>>>> testing
     "weapon_category": [ "AUTOMATIC_RIFLES" ]
 	},
 	{
     "id": "sig550_sniper",
     "type": "GUN",
-<<<<<<< HEAD
-    "name": { "str": "SIG 550-1" },
-    "copy-from": "sig550",
-	"description": "A selective fire automatic rifle designed for the Swiss military.  This version has an integrated cheek pad, ergonomic pistol grip, and comes with a SUSAT scope.",
-=======
     "name": { "str": "SIG 550-1", "str_pl": "SIGs 550-1" },
     "copy-from": "sig550",
 	"description": "Also known as SG 550-1, this weapon is a selective fire automatic rifle designed for the Swiss military.  This version has an integrated cheek pad, ergonomic pistol grip, and comes with a SUSAT scope.",
->>>>>>> testing
 	"built_in_mods": [ "cheek_pad", "folding_stock", "pistol_grip", "susat_scope2" ],
 	"dispersion": 145,
 	"valid_mod_locations": [
@@ -771,25 +665,12 @@
 		[ "rail mount", 1 ],
 		[ "sights", 1 ],
 		[ "sling", 1 ],
-<<<<<<< HEAD
-=======
 		[ "stock", 1 ],
->>>>>>> testing
 		[ "stock mount", 1 ],
 		[ "underbarrel mount", 1 ]
 	]
 	},
 	{
-<<<<<<< HEAD
-    "id": "stg44",
-    "type": "GUN",
-    "name": { "str": "StG 44" },
-    "copy-from": "ak47",
-    "//": "Ironic",
-	"description": "WIP",
-    "weight": "4600 g",
-    "volume": "2200 ml",
-=======
     "id": "spanish_m1893",
     "type": "GUN",
     "name": { "str_sp": "Spanish Model 1983" },
@@ -915,7 +796,6 @@
 	"description": "The Sturmgewehr 44 or Maschinenpistole 43 (depending on who you ask) was among the first \"assault rifles\" ever created, and the first successful one.  Gas-operated and featuring selective fire, it used the intermediate 7.92x33mm Kurz cartridge, having the goal to give soldiers enough firepower for mid-range engagements.  A timeless classic, you'd be the envy of the breathing post-Cataclysm weapon collectors.",
     "volume": "2200 ml",
 	"weight": "4600 g",
->>>>>>> testing
     "longest_side": "94 cm",
     "price": 290000,
     "price_postapoc": 4000,
@@ -927,39 +807,22 @@
 	},
     "bashing": 11,
     "material": [ "steel", "wood" ],
-<<<<<<< HEAD
-    "color": "brown",
-=======
     "color": "dark_gray",
->>>>>>> testing
 	"looks_like": "ak47",
 	"ammo": [ "792x33" ],
     "dispersion": 160,
     "//2": "though the report accepted that its accuracy was 'excellent for a weapon of its type' ",
 	"//3": "Assuming this means more than less 3 moa due being an early 'assault rifle', and modern 'assault rifles' having ~3 moa",
-<<<<<<< HEAD
-	"durability": 9,
-    "min_cycle_recoil": 2100,
-    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 25 ] ],
-    "ranged_damage": { "damage_type": "bullet", "amount": 2 },
-=======
 	"durability": 8,
     "min_cycle_recoil": 2100,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 5 ] ],
     "ranged_damage": { "damage_type": "bullet", "amount": 1 },
->>>>>>> testing
 	"valid_mod_locations": [
 		[ "barrel", 1 ],
 		[ "brass catcher", 1 ],
 		[ "grip", 1 ],
 		[ "sights", 1 ],
 		[ "sling", 1 ],
-<<<<<<< HEAD
-		[ "stock", 1 ]
-    ],
-    "pocket_data": [ {
-        "pocket_type": "MAGAZINE_WELL",
-=======
 		[ "stock", 1 ],
 		[ "stock accessory", 2 ],
 		[ "stock mount", 1 ]
@@ -968,30 +831,16 @@
 		{
         "pocket_type": "MAGAZINE_WELL",
 		"rigid": true, 
->>>>>>> testing
         "item_restriction": [
 			"stg44mag25",
 			"stg44mag30"
         ]
-<<<<<<< HEAD
-	} ]
-=======
 		} 
 	]
->>>>>>> testing
 	},
 	{
     "id": "svd",
     "type": "GUN",
-<<<<<<< HEAD
-    "name": { "str_sp": "Dragunov Sniper rifle (SVD-63)" },
-    "copy-from": "rifle_auto",
-	"description": "WIP",
-    "weight": "4300 g",
-    "volume": "3200 ml",
-    "longest_side": "1225 mm",
-    "price": 19000,
-=======
     "name": { "str": "SVD-63", "str_pl": "SVDs-63" },
     "copy-from": "rifle_semi",
 	"description": "A famous semi-auto, gas-operated, Soviet era DMR, using the old, trusty 7.62x54mmR, easily recognizable by the shape of the stock.  Widely known around the world with more than half a century of service, it has enough field testing to prove its reliability and effectiveness.",
@@ -999,7 +848,6 @@
 	"weight": "4300 g",
     "longest_side": "1225 mm",
     "price": 220000,
->>>>>>> testing
     "price_postapoc": 3000,
 	"to_hit": {
 		"balance": "neutral", 
@@ -1016,16 +864,6 @@
 	"dispersion": 120,
     "//": "When using standard grade 57-N-323S cartridges, the accuracy of the SVD is reduced to 2.21 MOA extreme vertical spread. The extreme vertical spreads for the SVD are established by shooting 5-shot groups at 300 m range.",
 	"durability": 9,
-<<<<<<< HEAD
-	"loudness": 12,
-	"min_cycle_recoil": 1600,
-    "modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
-	"range": 800,
-	"reload": 450,
-	"reload_noise_volume": 8,
-	"valid_mod_locations": [
-		[ "barrel", 1 ],
-=======
 	"min_cycle_recoil": 1200,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
 	"reload": 450,
@@ -1043,18 +881,10 @@
 	"valid_mod_locations": [
 		[ "barrel", 1 ],
 		[ "bore", 1 ],
->>>>>>> testing
 		[ "muzzle", 1 ],
 		[ "rail mount", 1 ],
 		[ "sights", 1 ],
 		[ "sling", 1 ],
-<<<<<<< HEAD
-		[ "stock mount", 1 ],
-		[ "underbarrel mount", 1 ]
-    ],
-    "pocket_data": [ {
-        "pocket_type": "MAGAZINE_WELL",
-=======
 		[ "stock accessory", 2 ],
 		[ "underbarrel mount", 1 ]
     ],
@@ -1062,14 +892,10 @@
 		{
         "pocket_type": "MAGAZINE_WELL",
 		"rigid": true, 
->>>>>>> testing
         "item_restriction": [
 			"svdmag10",
 			"svdmag20"
         ]
-<<<<<<< HEAD
-	} ]
-=======
 		} 
 	]
 	},
@@ -1213,89 +1039,46 @@
 		} 
 	],
 	"//": "Hybrid between fn_p90 and ak47. Values I couldn't find, like dispersion, ammo, etc were copied from the ak47"
->>>>>>> testing
 	},
 	{
     "id": "vss",
     "type": "GUN",
-<<<<<<< HEAD
-    "name": { "str_sp": "VSS Vintorez" },
-    "copy-from": "rifle_auto",
-	"description": "WIP",
-    "weight": "2600 g",
-    "volume": "2000 ml",
-    "longest_side": "894 mm",
-=======
     "name": { "str": "VSS Vintorez", "str_pl": "VSS Vintorez" },
     "copy-from": "rifle_auto",
 	"description": "The VSS is a compact, subsonic Soviet DMR featuring an integrated supressor and PSO-1 scope.  Designed alongside other \"spetsialnaya\" group Soviet era weapons such as the AS Val and the OTs-14 \"Groza\", in order to replace general use weapons, such as the AK-74.  Ironically enough, the Vintorez also lacks a niche: it can be used in stealth operations, as marksman rifle, as a pseudo-SMG, and as general use \"assault weapon\".  The only downsides are the relative low effective range and the pronunciated bullet drop, both due the properties of the 9x39mm.",
     "volume": "2000 ml",
 	"weight": "2040 g",
     "longest_side": "694 mm",
->>>>>>> testing
     "price": 19000,
     "price_postapoc": 3000,
 	"to_hit": {
 		"balance": "good", 
-<<<<<<< HEAD
-		"grip": "none", 
-=======
 		"grip": "solid", 
->>>>>>> testing
 		"length": "long", 
 		"surface": "point"
 	},
     "bashing": 9,
     "material": [ "plastic", "steel", "wood" ],
-<<<<<<< HEAD
-    "looks_like": "ar15",
-	"color": "brown",
-    "ammo": [ "9x39" ],
-    "built_in_mods": [ "pso1_scope2" ],
-=======
     "looks_like": "ak47",
 	"color": "brown",
     "ammo": [ "9x39" ],
     "built_in_mods": [ "pso1_scope2", "suppressor_vss2" ],
->>>>>>> testing
     "dispersion": 60,
     "//": "We did not have the facilities at this time to measure group size, although we understand that the accuracy is excellent out to 150 meters and our observation indicated 1-2 MOA.",
 	"//2": "Assuming *total* 1.5 moa with 9x39mm SP-5",
 	"durability": 8,
-<<<<<<< HEAD
-	"loudness": 2,
-	"min_cycle_recoil": 1350,
-    "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 10 ] ],
-    "ranged_damage": { "damage_type": "bullet", "amount": 2 },
-	"//3": "9x39 damage is too, so I'm increasing it a bit here and with the ammo",
-	"//4": "Ideally, the VSS should instead have increased crit chance and higher crit dmg modifier, to emulate the late-game scaling with proficiency",
-	"range": 420,
-=======
 	"loudness": 22,
 	"min_cycle_recoil": 1350,
     "modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 4 ] ],
     "ranged_damage": { "damage_type": "bullet", "amount": 2 },
 	"//3": "9x39 damage is too low, so I'm increasing it a bit here and with the ammo",
 	"//4": "Ideally, the VSS should instead have increased crit chance and higher crit dmg modifier, to emulate the late-game scaling with proficiency",
->>>>>>> testing
 	"reload": 330,
 	"reload_noise_volume": 4,
 	"valid_mod_locations": [
 		[ "rail mount", 1 ],
 		[ "sights", 1 ],
 		[ "sling", 1 ],
-<<<<<<< HEAD
-		[ "stock mount", 1 ]
-    ],
-    "pocket_data": [ {
-        "pocket_type": "MAGAZINE_WELL",
-        "item_restriction": [
-			"9x39mag10",
-			"9x39mag20"
-        ]
-	} ],
-    "weapon_category": [ "AUTOMATIC_RIFLES" ]
-=======
 		[ "stock accessory", 1 ]
     ],
     "pocket_data": [ 
@@ -1373,6 +1156,5 @@
     "looks_like": "wa2000",
     "color": "black",
 	"//": "Polymer version, the variants field doesn't support material replacement"
->>>>>>> testing
 	}
 ]

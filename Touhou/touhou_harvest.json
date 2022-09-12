@@ -14,11 +14,6 @@
 	"//2": "Assuming that giant bugs are just bugs but oversized, and that giant bug flesh from 400 mya is edible"
 	},
 	{
-<<<<<<< HEAD
-    "id": "arthropod_shrimplike_harvest",
-    "type": "harvest",
-    "message": "You gut and fillet the giant critter.",
-=======
     "id": "arthropod_small_harvest",
     "type": "harvest",
     "message": "You gut and fillet the bug.",
@@ -34,33 +29,18 @@
     "id": "arthropod_shrimplike_harvest",
     "type": "harvest",
     "message": "You gut and fillet the critter.",
->>>>>>> testing
     "entries": [
 		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
 		{ "drop": "shrimplike_meat", "type": "flesh", "mass_ratio": 0.65 },
 		{ "drop": "fat", "type": "offal", "mass_ratio": 0.001 },
 		{ "drop": "meat_scrap", "type": "flesh", "mass_ratio": 0.15 }
 	],
-<<<<<<< HEAD
-	"//": "Basically cleaning the unedible parts from a giant shrimp-like creature, read: one that may taste like a shrimp or won't make someone vomit while cooking"
-=======
 	"//": "Basically cleaning the unedible parts from a giant shrimp-like creature (read: one that may taste like a shrimp or won't make someone vomit while cooking)"
->>>>>>> testing
 	},
 	{
     "id": "bird_large_nonmutant_harvest",
     "type": "harvest",
     "entries": [
-<<<<<<< HEAD
-		{ "drop": "meat", "type": "flesh", "mass_ratio": 0.4 },
-		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
-		{ "drop": "liver", "type": "offal", "mass_ratio": 0.01 },
-		{ "drop": "feather", "type": "skin", "mass_ratio": 0.01 },
-		{ "drop": "down_feather", "type": "skin", "mass_ratio": 0.005 },
-		{ "drop": "bone", "type": "bone", "mass_ratio": 0.1 }
-	],
-	"//": "Same as bird_small but adds bones"
-=======
 		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
 		{ "drop": "bird_leg_large", "type": "flesh", "scale_num": [ 1, 2 ], "max": 2 },
 		{ "drop": "bird_meat", "type": "flesh", "mass_ratio": 0.30 },
@@ -98,21 +78,11 @@
 		{ "drop": "liver", "type": "offal", "mass_ratio": 0.01 }
 	],
 	"//": "Same as bird_large_nonmutant_harvest with bigger haunches"
->>>>>>> testing
 	},
 	{
     "id": "bird_small",
     "type": "harvest",
     "entries": [
-<<<<<<< HEAD
-		{ "drop": "bird_meat", "type": "flesh", "mass_ratio": 0.35 },
-		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
-		{ "drop": "liver", "type": "offal", "mass_ratio": 0.01 },
-		{ "drop": "feather", "type": "skin", "mass_ratio": 0.01 },
-		{ "drop": "down_feather", "type": "skin", "mass_ratio": 0.005 }
-    ],
-	"//": "This combines dda meat + meat_scrap from birds into bird_meat"
-=======
 		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
 		{ "drop": "bird_leg_small", "type": "flesh", "scale_num": [ 1, 2 ], "max": 2 },
 		{ "drop": "bird_meat", "type": "flesh", "mass_ratio": 0.25 },
@@ -122,20 +92,11 @@
     ],
 	"//": "This combines dda meat + meat_scrap from birds into bird_meat , also adds haunches",
 	"//2": "Chicken legs ratio to whole chicken goes from ~1/10 to 1/7 "
->>>>>>> testing
 	},
 	{
     "id": "bird_tiny",
     "type": "harvest",
     "entries": [
-<<<<<<< HEAD
-		{ "drop": "bird_meat", "type": "flesh", "mass_ratio": 0.4 },
-		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
-		{ "drop": "feather", "type": "skin", "mass_ratio": 0.01 },
-		{ "drop": "down_feather", "type": "skin", "mass_ratio": 0.005 }
-    ],
-	"//": "This replaces dda birds dropping meat_scrap into bird_meat"
-=======
 		{ "drop": "animal_blood", "type": "blood", "mass_ratio": 0.1 },
 		{ "drop": "bird_leg_tiny", "type": "flesh", "scale_num": [ 1, 2 ], "max": 2 },
 		{ "drop": "bird_meat", "type": "flesh", "mass_ratio": 0.3 },
@@ -143,24 +104,12 @@
 		{ "drop": "feather", "type": "skin", "mass_ratio": 0.01 }
     ],
 	"//": "This replaces dda birds dropping meat_scrap to bird_meat , also adds haunches"
->>>>>>> testing
 	},
 	{
     "id": "human",
     "//": "a monstrous horror, probably the most destructive entity you will ever see",
     "type": "harvest",
     "entries": [
-<<<<<<< HEAD
-		{ "drop": "human_sample", "type": "mutagen_group" },
-		{ "drop": "skull_human", "type": "bone", "scale_num": [ 1, 1 ], "max": 1 },
-		{ "drop": "human_flesh", "type": "flesh", "mass_ratio": 0.2 },
-		{ "drop": "hstomach", "scale_num": [ 1, 1 ], "max": 1, "type": "offal" },
-		{ "drop": "human_fat", "type": "flesh", "mass_ratio": 0.1 },
-		{ "drop": "blood", "type": "blood", "mass_ratio": 0.1 },
-		{ "drop": "bone_human", "type": "bone", "mass_ratio": 0.12 },
-		{ "drop": "sinew", "type": "bone", "mass_ratio": 0.001 },
-		{ "drop": "raw_hleather", "type": "skin", "mass_ratio": 0.01 },
-=======
 		{ "drop": "blood", "type": "blood", "mass_ratio": 0.1 },
 		{ "drop": "bone_human", "type": "bone", "mass_ratio": 0.12 },
 		{ "drop": "hstomach", "scale_num": [ 1, 1 ], "max": 1, "type": "offal" },
@@ -169,7 +118,6 @@
 		{ "drop": "raw_hleather", "type": "skin", "mass_ratio": 0.01 },
 		{ "drop": "skull_human", "type": "bone", "scale_num": [ 1, 1 ], "max": 1 },
 		{ "drop": "sinew", "type": "bone", "mass_ratio": 0.001 },
->>>>>>> testing
 		{ "drop": "touhou_human_eggs", "type": "wicked", "base_num": [ 0, 1 ] }
     ],
 	"//2": "Only adds 50% to drop a bunch of human_egg "
@@ -201,8 +149,6 @@
     ]
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "mammal_large_osteoderm",
     "type": "harvest",
     "entries": [
@@ -223,7 +169,6 @@
 	"//": "Based on mammal_large_fur, removed fur, added bone for skin"
 	},
 	{
->>>>>>> testing
     "id": "mammal_noleather_harvest",
     "type": "harvest",
     "entries": [
@@ -240,9 +185,6 @@
 		{ "drop": "stomach", "scale_num": [ 1, 1 ], "max": 1, "type": "offal" },
 		{ "drop": "sweetbread", "type": "flesh", "mass_ratio": 0.002 }
     ],
-<<<<<<< HEAD
-	"//": "Based on mammal_large_leather, removing the leather, making the stomach smaller, reducing meat, increasing meat scraps"
-=======
 	"//": "Based on mammal_large_leather, removed leather, made stomach smaller, reduced meat, increased meat scraps"
 	},
 	{
@@ -296,7 +238,6 @@
 		{ "drop": "stomach", "scale_num": [ 1, 1 ], "max": 1, "type": "offal" }
     ],
 	"//": "Based on human , changed blood for animal_blood, reduced meat, increased sinew"
->>>>>>> testing
 	},
 	{
     "id": "reptile_marine_harvest",
@@ -312,11 +253,6 @@
 		{ "drop": "lung", "type": "flesh", "mass_ratio": 0.0035 },
 		{ "drop": "meat_scrap", "type": "flesh", "mass_ratio": 0.02 },
 		{ "drop": "stomach_large", "scale_num": [ 1, 1 ], "max": 1, "type": "offal" },
-<<<<<<< HEAD
-		{ "drop": "sweetbread", "type": "flesh", "mass_ratio": 0.002 }
-	],
-	"//": "Mix between and fish_large reptile_large_leather without the leather"
-=======
 		{ "drop": "sinew", "type": "bone", "mass_ratio": 0.00035 },
 		{ "drop": "sweetbread", "type": "flesh", "mass_ratio": 0.002 }
 	],
@@ -354,7 +290,6 @@
 		{ "drop": "raw_leather", "type": "skin", "mass_ratio": 0.02 },
 		{ "drop": "sinew", "type": "bone", "mass_ratio": 0.00035 }
     ]
->>>>>>> testing
 	},
 	{
     "id": "sasquatch_harvest",
@@ -372,8 +307,6 @@
 	"//": "Based on human_fur, removed as much human and mutant stuff as possible"
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "tsukumogami_seat_airplane_harvest",
     "type": "harvest",
     "entries": [
@@ -411,20 +344,10 @@
     ]
 	},
 	{
->>>>>>> testing
     "id": "zombie",
     "//": "your bog standard zombie",
     "type": "harvest",
     "entries": [
-<<<<<<< HEAD
-		{ "drop": "meat_tainted", "type": "flesh", "mass_ratio": 0.25 },
-		{ "drop": "blood_tainted", "type": "blood", "mass_ratio": 0.1 },
-		{ "drop": "fat_tainted", "type": "flesh", "mass_ratio": 0.08 },
-		{ "drop": "bone_tainted", "type": "bone", "mass_ratio": 0.1 },
-		{ "drop": "touhou_human_eggs", "type": "wicked", "base_num": [ 0, 1 ] }
-	],
-	"//2": "Only adds 50% to drop a bunch of human_egg "
-=======
 		{ "drop": "blood_tainted", "type": "blood", "mass_ratio": 0.1 },
 		{ "drop": "bone_tainted", "type": "bone", "mass_ratio": 0.1 },
 		{ "drop": "fat_tainted", "type": "flesh", "mass_ratio": 0.08 },
@@ -432,6 +355,5 @@
 		{ "drop": "touhou_human_eggs", "type": "wicked", "base_num": [ 0, 1 ] }
 	],
 	"//2": "Only adds 50% chance to drop a bunch of human_egg "
->>>>>>> testing
 	}
 ]

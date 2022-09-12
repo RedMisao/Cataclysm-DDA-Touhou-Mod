@@ -1,7 +1,5 @@
 [
 	{
-<<<<<<< HEAD
-=======
     "id": "mon_anatosuchus",
 	"type": "MONSTER",
     "name": { "str_sp": "anatosuchus" },
@@ -63,26 +61,17 @@
     "extend": { "flags": [ "NO_BREED" ] }
 	},
 	{
->>>>>>> testing
     "id": "mon_carnufex",
 	"type": "MONSTER",
     "name": { "str_sp": "carnufex" },
     "description": "This curious animal looks like a crocodile, but it's leaner, bipedal and it can run.  It also has two functional, if short, arms to hold prey while it takes chunks from it.",
 	"volume": "150 L",
     "weight": "150 kg",
-<<<<<<< HEAD
-	"default_faction": "touhou_crocodylomorpha_large",
-    "bodytype": "bear",
-    "categories": [ "WILDLIFE" ],
-	"species": [ "REPTILE" ],
-    "harvest": "reptile_large_leather",
-=======
 	"default_faction": "touhou_crocodilelike_large",
     "bodytype": "bear",
     "categories": [ "WILDLIFE" ],
 	"species": [ "REPTILE" ],
     "harvest": "reptile_terrestrial_large_leather",
->>>>>>> testing
     "hp": 115,
     "speed": 145,
     "material": [ "flesh" ],
@@ -93,23 +82,6 @@
     "morale": 50,
     "melee_skill": 6,
     "melee_dice": 3,
-<<<<<<< HEAD
-    "melee_dice_sides": 6,
-    "melee_cut": 6,
-    "dodge": 4,
-    "armor_bash": 4,
-    "armor_cut": 6,
-    "armor_stab": 2,
-    "armor_bullet": 6,
-	"vision_night": 5,
-	"path_settings": { "max_dist": 10 },
-	"reproduction": { "baby_egg": "egg_carnufex", "baby_count": 10, "baby_timer": 30 },
-    "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
-    "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "PLAYER_WEAK", "HURT" ],
-    "placate_triggers": [ "MEAT" ],
-	"special_attacks": [ [ "EAT_FOOD", 80 ], [ "GRAB", 20 ] ],
-    "flags": [ "ANIMAL", "HEARS", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM" ],
-=======
     "melee_dice_sides": 4,
 	"melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
     "dodge": 4,
@@ -124,7 +96,6 @@
     "anger_triggers": [ "PLAYER_CLOSE", "PLAYER_WEAK", "HURT" ],
 	"special_attacks": [ [ "EAT_FOOD", 80 ], [ "GRAB", 20 ] ],
     "flags": [ "ANIMAL", "HEARS", "PATH_AVOID_DANGER_1", "SEES", "SMELLS" ],
->>>>>>> testing
 	"//": "Based on Carnufex sp.. No reproductive data"
 	},
 	{
@@ -140,16 +111,6 @@
 	"color": "dark_gray",
     "morale": 25,
 	"melee_skill": 4,
-<<<<<<< HEAD
-	"melee_dice": 3,
-    "melee_dice_sides": 4,
-    "melee_cut": 6,
-    "armor_bash": 2,
-    "armor_cut": 2,
-    "armor_stab": 0,
-    "armor_bullet": 2,
-	"upgrades": { "age_grow": 30, "into": "mon_carnufex" },
-=======
 	"melee_dice": 2,
     "melee_dice_sides": 4,
 	"melee_damage": [ { "damage_type": "cut", "amount": 4 } ],
@@ -158,13 +119,10 @@
     "armor_stab": 1,
     "armor_bullet": 2,
 	"upgrades": { "age_grow": 28, "into": "mon_carnufex" },
->>>>>>> testing
     "special_attacks": [ [ "EAT_FOOD", 50 ] ],
     "extend": { "flags": [ "NO_BREED" ] }
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "mon_hesperosuchus",
 	"type": "MONSTER",
     "name": { "str_sp": "hesperosuchus" },
@@ -228,7 +186,6 @@
     "extend": { "flags": [ "NO_BREED" ] }
 	},
 	{
->>>>>>> testing
     "id": "mon_ichthyosaurus",
     "type": "MONSTER",
     "name": { "str": "ichthyosaurus", "str_pl": "ichthyosaurus" },
@@ -241,11 +198,7 @@
     "species": [ "REPTILE" ],
     "harvest": "reptile_marine_harvest",
 	"hp": 175,
-<<<<<<< HEAD
-    "speed": 150,
-=======
     "speed": 200,
->>>>>>> testing
 	"material": [ "flesh" ],
 	"color": "light_blue",
 	"symbol": "I",
@@ -254,28 +207,17 @@
 	"melee_skill": 4,
 	"melee_dice": 2,
     "melee_dice_sides": 6,
-<<<<<<< HEAD
-    "melee_cut": 6,
-=======
 	"melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
->>>>>>> testing
 	"dodge": 2,
     "armor_bash": 2,
 	"armor_cut": 3,
 	"armor_stab": 4,
 	"reproduction": { "baby_monster": "mon_ichthyosaurus_baby", "baby_count": 1, "baby_timer": 20 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
-<<<<<<< HEAD
-    "anger_triggers": [ "HURT", "FRIEND_ATTACKED", "PLAYER_NEAR_BABY" ],
-	"fear_triggers": [ "FRIEND_DIED" ],
-    "special_attacks": [ [ "EAT_FOOD", 100 ], [ "PARROT", 12 ] ],
-	"flags": [ "ANIMAL", "AQUATIC", "SEES", "SMELLS", "SWIMS", "WATER_CAMOUFLAGE" ],
-=======
     "anger_triggers": [ "FRIEND_ATTACKED", "HURT", "PLAYER_NEAR_BABY" ],
 	"fear_triggers": [ "FRIEND_DIED" ],
     "special_attacks": [ [ "EAT_FOOD", 100 ], [ "PARROT", 12 ] ],
 	"flags": [ "ANIMAL", "AQUATIC", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "SWIMS", "WARM", "WATER_CAMOUFLAGE" ],
->>>>>>> testing
     "//": "Ichthyosaurus communis used as reference. Don't know if they had vocalizations but that's how I imagine them to be",
 	"//2": "Coprolites include fish and squid, and the big characteristic eyes indicate it could hunt in low light conditions, with great depths included"
 	},
@@ -288,22 +230,14 @@
     "volume": "5 L",
     "weight": "5 kg",
 	"hp": 55,
-<<<<<<< HEAD
-    "speed": 125,
-=======
     "speed": 175,
->>>>>>> testing
 	"color": "blue",
     "aggression": 10,
     "morale": 15,
 	"melee_skill": 4,
 	"melee_dice": 2,
     "melee_dice_sides": 3,
-<<<<<<< HEAD
-    "melee_cut": 5,
-=======
 	"melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
->>>>>>> testing
 	"dodge": 3,
     "armor_bash": 1,
 	"armor_cut": 2,
@@ -325,11 +259,7 @@
     "species": [ "REPTILE" ],
     "harvest": "reptile_marine_harvest",
 	"hp": 145,
-<<<<<<< HEAD
-    "speed": 125,
-=======
     "speed": 175,
->>>>>>> testing
 	"material": [ "flesh" ],
 	"color": "light_gray",
 	"symbol": "J",
@@ -338,11 +268,7 @@
 	"melee_skill": 3,
 	"melee_dice": 2,
     "melee_dice_sides": 7,
-<<<<<<< HEAD
-    "melee_cut": 6,
-=======
 	"melee_damage": [ { "damage_type": "cut", "amount": 6 } ],
->>>>>>> testing
 	"dodge": 2,
     "armor_bash": 2,
 	"armor_cut": 3,
@@ -364,22 +290,14 @@
     "volume": "3500 ml",
     "weight": "3000 g",
 	"hp": 40,
-<<<<<<< HEAD
-    "speed": 115,
-=======
     "speed": 165,
->>>>>>> testing
 	"color": "light_blue",
     "aggression": 10,
     "morale": 15,
 	"melee_skill": 3,
 	"melee_dice": 2,
     "melee_dice_sides": 5,
-<<<<<<< HEAD
-    "melee_cut": 3,
-=======
 	"melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
->>>>>>> testing
 	"dodge": 3,
     "armor_bash": 1,
 	"armor_cut": 1,
@@ -387,8 +305,6 @@
 	"upgrades": { "age_grow": 20, "into": "mon_plesiosaurus" },
     "special_attacks": [ [ "EAT_FOOD", 25 ] ],
     "extend": { "flags": [ "NO_BREED" ] }
-<<<<<<< HEAD
-=======
 	},
 	{
     "id": "mon_scutosaurus",
@@ -574,6 +490,5 @@
 	"upgrades": { "age_grow": 24, "into": "mon_weigeltisaurus" },
     "special_attacks": [ [ "EAT_FOOD", 85 ] ],
     "extend": { "flags": [ "NO_BREED" ] }
->>>>>>> testing
 	}
 ]

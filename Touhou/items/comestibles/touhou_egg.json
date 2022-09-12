@@ -1,11 +1,5 @@
 [
 	{
-<<<<<<< HEAD
-    "id": "egg_anomalocaris",
-	"type": "COMESTIBLE",
-    "name": { "str": "anomalocaris egg" },
-	"description": "Anomalocaris' egg.",
-=======
     "id": "egg_aegirocassis",
 	"type": "COMESTIBLE",
     "name": { "str": "aegirocassis egg" },
@@ -44,7 +38,6 @@
 	"type": "COMESTIBLE",
     "name": { "str": "anomalocaris egg" },
 	"description": "A clump of Anomalocaris' eggs.",
->>>>>>> testing
 	"weight": "150 g",
     "volume": "100 ml",
     "price_postapoc": 35,
@@ -58,20 +51,6 @@
 	"healthy": 0,
     "quench": 4,
 	"spoils_in": "7 days",
-<<<<<<< HEAD
-    "stack_size": 1,
-    "rot_spawn": "GROUP_EGG_ANOMALOCARIS",
-    "rot_spawn_chance": 44,
-    "vitamins": [ [ "vitA", 15 ], [ "calcium", 3 ], [ "iron", 12 ], [ "vitB", 45 ] ],
-	"flags": [ "FREEZERBURN", "RAW" ],
-	"//": "Arbitrary values, based on egg_insect but reduced"
-	},
-		{
-    "id": "egg_arthropod_aquatic_small",
-	"type": "COMESTIBLE",
-    "name": { "str": "ancient arthropod egg" },
-	"description": "Ancient arthropod egg.",
-=======
     "stack_size": 6,
     "rot_spawn": "GROUP_EGG_ANOMALOCARIS",
     "rot_spawn_chance": 44,
@@ -100,7 +79,6 @@
     "name": { "str": "ancient arthropod eggs" },
 	"description": "A clump of ancient arthropod's eggs.",
 	"comestible_type": "FOOD",
->>>>>>> testing
 	"weight": "15 g",
     "volume": "10 ml",
     "price_postapoc": 30,
@@ -109,25 +87,14 @@
     "looks_like": "razorclaw_roe",
     "symbol": "o",
 	"calories": 100,
-<<<<<<< HEAD
-	"comestible_type": "FOOD",
-=======
->>>>>>> testing
     "fun": -10,
 	"healthy": 0,
     "quench": 4,
 	"spoils_in": "7 days",
-<<<<<<< HEAD
-    "stack_size": 1,
-    "rot_spawn": "GROUP_EGG_ARTHROPODAQUATIC_SMALL",
-    "rot_spawn_chance": 33,
-    "vitamins": [ [ "vitA", 15 ], [ "calcium", 3 ], [ "iron", 12 ], [ "vitB", 45 ] ],
-=======
     "stack_size": 6,
     "rot_spawn": "GROUP_EGG_ARTHROPODAQUATIC_SMALL",
     "rot_spawn_chance": 33,
     "vitamins": [ [ "calcium", 3 ], [ "iron", 12 ], [ "vitA", 15 ], [ "vitB", 45 ] ],
->>>>>>> testing
 	"flags": [ "FREEZERBURN", "RAW" ],
 	"//": "Arbitrary values, based on egg_insect but reduced"
 	},
@@ -136,22 +103,13 @@
 	"type": "COMESTIBLE",
     "name": { "str": "carnufex egg" },
     "copy-from": "egg_reptile",
-<<<<<<< HEAD
-    "description": "An egg belonging to one of reptile species found in New England.",
-	"weight": "60 g",
-=======
     "description": "A Carnufex egg.",
     "comestible_type": "FOOD",
 	"weight": "200 g",
->>>>>>> testing
     "volume": "250 ml",
     "price_postapoc": 50,
 	"color": "white",
     "spoils_in": "28 days",
-<<<<<<< HEAD
-    "comestible_type": "FOOD",
-=======
->>>>>>> testing
     "symbol": "o",
     "quench": 3,
     "healthy": 1,
@@ -164,8 +122,6 @@
     "flags": [ "RAW" ]
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "egg_cotylorhynchus",
 	"type": "COMESTIBLE",
     "name": { "str": "cotylorhynchus egg" },
@@ -208,16 +164,12 @@
 	"//": "Arbitrary values, based on a 16 x 8 cm egg"
 	},
 	{
->>>>>>> testing
     "id": "egg_dodo",
 	"type": "COMESTIBLE",
     "name": { "str": "dodo egg" },
     "copy-from": "egg_turkey",
 	"description": "A dodo's egg.",
-<<<<<<< HEAD
-=======
 	"comestible_type": "FOOD",
->>>>>>> testing
 	"weight": "135 g",
     "volume": "130 ml",
     "price_postapoc": 50,
@@ -225,10 +177,6 @@
 	"color": "light_gray",
     "symbol": "o",
 	"calories": 135,
-<<<<<<< HEAD
-	"comestible_type": "FOOD",
-=======
->>>>>>> testing
     "fun": -8,
 	"healthy": 2,
     "quench": 6,
@@ -240,8 +188,6 @@
 	"//": "1.5 times the size and volume of the largest turkey egg. There's no confirmed data about dodo eggs."
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "egg_ectopistes",
 	"type": "COMESTIBLE",
     "name": { "str": "ectopistes egg" },
@@ -274,17 +220,12 @@
 	"//": "Arbitrary values"
 	},
 	{
->>>>>>> testing
     "id": "egg_eurypterid",
 	"type": "COMESTIBLE",
     "name": { "str": "eurypterid egg" },
 	"copy-from": "egg_insect",
-<<<<<<< HEAD
-	"description": "An eurypterid's egg.",
-=======
 	"description": "A bunch of Eurypterid's egg.",
 	"comestible_type": "FOOD",
->>>>>>> testing
 	"weight": "450 g",
     "volume": "400 ml",
     "price_postapoc": 25,
@@ -293,10 +234,6 @@
     "looks_like": "spider_egg",
 	"symbol": "%",
 	"calories": 120,
-<<<<<<< HEAD
-	"comestible_type": "FOOD",
-=======
->>>>>>> testing
     "fun": -10,
 	"healthy": 3,
     "quench": 4,
@@ -304,17 +241,11 @@
     "stack_size": 1,
     "rot_spawn": "GROUP_EGG_EURYPTERID",
     "rot_spawn_chance": 33,
-<<<<<<< HEAD
-    "vitamins": [ [ "vitA", 15 ], [ "calcium", 3 ], [ "iron", 12 ], [ "vitB", 45 ] ],
-=======
     "vitamins": [ [ "calcium", 3 ], [ "iron", 12 ], [ "vitA", 15 ], [ "vitB", 45 ] ],
->>>>>>> testing
 	"flags": [ "FREEZERBURN", "RAW" ],
 	"//": "Arbitrary values, based on egg_insect but reduced"
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "egg_eurypterid_small",
 	"type": "COMESTIBLE",
     "name": { "str": "eurypterid eggs" },
@@ -340,7 +271,6 @@
 	"flags": [ "FREEZERBURN", "RAW" ]
 	},
 	{
->>>>>>> testing
     "id": "egg_fishancient_medium",
 	"type": "COMESTIBLE",
     "name": { "str": "ancient roe" },
@@ -367,8 +297,6 @@
 	"flags": [ "RAW" ]
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "egg_hesperosuchus",
 	"type": "COMESTIBLE",
     "name": { "str": "hesperosuchus egg" },
@@ -469,32 +397,20 @@
 	"flags": [ "FREEZERBURN", "RAW" ]
 	},
 	{
->>>>>>> testing
     "id": "egg_moa",
 	"type": "COMESTIBLE",
     "name": { "str": "moa egg" },
     "copy-from": "egg_turkey",
 	"description": "A moa's egg.",
-<<<<<<< HEAD
-	"weight": "3000 g",
-    "volume": "2200 ml",
-	"longest_side": "190 cm",
-=======
 	"comestible_type": "FOOD",
 	"weight": "3000 g",
     "volume": "2200 ml",
 	"longest_side": "19 cm",
->>>>>>> testing
 	"//": "190x150 mm egg",
     "price_postapoc": 150,
     "material": [ "egg" ],
 	"color": "light_gray",
-<<<<<<< HEAD
-    "calories": 135,
-	"comestible_type": "FOOD",
-=======
     "calories": 300,
->>>>>>> testing
     "fun": -10,
 	"healthy": 4,
     "quench": 12,
@@ -503,9 +419,6 @@
     "symbol": "o",
     "rot_spawn": "GROUP_EGG_MOA",
     "rot_spawn_chance": 95,
-<<<<<<< HEAD
-    "flags": [ "FREEZERBURN", "RAW" ]
-=======
     "vitamins": [ [ "calcium", 24 ], [ "iron", 54 ], [ "vitB", 2 ] ],
     "flags": [ "FREEZERBURN", "RAW" ],
 	"//2": "Arbitrary vitamins values"
@@ -740,6 +653,5 @@
     "rot_spawn": "GROUP_EGG_WEIGELTISAURUS",
     "rot_spawn_chance": 80,
     "flags": [ "RAW" ]
->>>>>>> testing
 	}
 ]

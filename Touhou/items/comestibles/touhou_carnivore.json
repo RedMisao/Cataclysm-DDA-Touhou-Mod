@@ -15,15 +15,9 @@
 	"type": "COMESTIBLE",
     "name": { "str_sp": "dehydrated arthropod meat" },
     "copy-from": "arthropod_cooked",
-<<<<<<< HEAD
-    "description": "Dehydrated bug meat strips… With proper storage, this dried food will remain edible for an incredibly long time.",
-    "weight": "66 g",
-    "volume": "95 ml",
-=======
     "description": "Dehydrated bug meat strips… With proper storage, this dried food will remain edible (?) for an incredibly long time.",
     "volume": "86 ml",
     "weight": "80 g",
->>>>>>> testing
     "price_postapoc": 100,
 	"primary_material": "cured_meat",
 	"color": "light_gray",
@@ -36,11 +30,7 @@
 	"type": "COMESTIBLE",
     "name": { "str": "chunk of arthropod fat", "str_pl": "chunks of arthropod fat" },
     "copy-from": "fat",
-<<<<<<< HEAD
-    "description": "Freshly butchered bug fat.  You could eat it raw, but it is better used as an ingredient in other foods or projects. Definitely.",
-=======
     "description": "Freshly butchered bug fat.  You could eat it raw, but it is better used as an ingredient in other foods or projects.  Definitely.",
->>>>>>> testing
 	"price_postapoc": 200,
 	"color": "white",
 	"calories": 1740,
@@ -52,17 +42,10 @@
     "name": { "str": "arthropod meat", "str_pl": "arthropod meat" },
     "copy-from": "flesh",
 	"description": "Pieces of arthropod meat.  Yikes.",
-<<<<<<< HEAD
-    "weight": "100 g",
-    "volume": "140 ml",
-    "price_postapoc": 30,
-    "calories": 364,
-=======
     "volume": "130 ml",
     "weight": "120 g",
     "price_postapoc": 30,
     "calories": 180,
->>>>>>> testing
 	"color": "light_gray",
 	"smoking_result": "arthropod_smoked",
 	"spoils_in": "12 hours",
@@ -97,8 +80,6 @@
     "flags": [ "EATEN_HOT" ]
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "arthropod_rehydrated",
 	"type": "COMESTIBLE",
     "name": { "str": "rehydrated arthropod meat" },
@@ -111,7 +92,6 @@
     "delete": { "flags": [ "NUTRIENT_OVERRIDE" ] }
 	},
 	{
->>>>>>> testing
     "id": "arthropod_smoked",
     "type": "COMESTIBLE",
     "name": { "str_sp": "smoked arthropod meat" },
@@ -151,13 +131,8 @@
     "name": { "str_sp": "dehydrated bird meat" },
     "copy-from": "bird_cooked",
     "description": "Dehydrated bird meat strips.  With proper storage, this dried food will remain edible for an incredibly long time.",
-<<<<<<< HEAD
-    "weight": "66 g",
-    "volume": "100 ml",
-=======
     "volume": "100 ml",
 	"weight": "80 g",
->>>>>>> testing
     "price": 500,
     "price_postapoc": 250,
 	"primary_material": "cured_meat",
@@ -168,8 +143,6 @@
     "flags": [ "EDIBLE_FROZEN" ]
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "bird_leg_large",
     "type": "COMESTIBLE",
     "name": { "str": "large bird leg", "str_pl": "large bird legs" },
@@ -261,40 +234,25 @@
 	"//": "Taking a 500 g bird as reference"
 	},
 	{
->>>>>>> testing
     "id": "bird_meat",
     "type": "COMESTIBLE",
     "name": { "str": "bird meat", "str_pl": "bird meat" },
     "copy-from": "flesh",
 	"description": "Pieces of bird meat.  Unsafe to eat raw.",
-<<<<<<< HEAD
-    "weight": "100 g",
-    "volume": "150 ml",
-    "price": 500,
-    "price_postapoc": 50,
-    "calories": 361,
-=======
     "volume": "150 ml",
 	"weight": "120 g",
     "price": 500,
     "price_postapoc": 50,
     "calories": 182,
->>>>>>> testing
 	"color": "pink",
 	"smoking_result": "bird_smoked",
 	"spoils_in": "12 hours",
 	"use_action": [ "POISON" ],
-<<<<<<< HEAD
-	"vitamins": [ [ "calcium", 3 ], [ "iron", 5 ], [ "vitA", 0 ], [ "vitB", 10 ], [ "vitC", 1 ] ],
-=======
 	"vitamins": [ [ "calcium", 4 ], [ "iron", 6 ], [ "vitA", 0 ], [ "vitB", 12 ], [ "vitC", 1 ] ],
->>>>>>> testing
 	"flags": [ "RAW", "SMOKABLE" ],
     "//": " 10.1038/ejcn.2015.149 used as reference, using chicken values"
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "bird_rehydrated",
 	"type": "COMESTIBLE",
     "name": { "str": "rehydrated bird meat" },
@@ -307,7 +265,6 @@
     "delete": { "flags": [ "NUTRIENT_OVERRIDE" ] }
 	},
 	{
->>>>>>> testing
     "id": "bird_smoked",
     "type": "COMESTIBLE",
     "name": { "str_sp": "smoked bird meat" },
@@ -340,13 +297,8 @@
     "name": { "str_sp": "dehydrated lamprey" },
     "copy-from": "lamprey_cooked",
     "description": "Dehydrated lamprey strips.  With proper storage, this dried food will remain edible for an incredibly long time.",
-<<<<<<< HEAD
-    "weight": "60 g",
-    "volume": "90 ml",
-=======
     "volume": "92 ml",
 	"weight": "80 g",
->>>>>>> testing
     "price": 500,
     "price_postapoc": 250,
 	"primary_material": "cured_meat",
@@ -361,21 +313,12 @@
     "name": { "str": "fillet of lamprey", "str_pl": "fillets of lamprey" },
     "copy-from": "flesh",
 	"description": "Strips of lamprey meat.",
-<<<<<<< HEAD
-    "weight": "100 g",
-    "volume": "150 ml",
-    "price": 500,
-    "price_postapoc": 50,
-	"color": "white",
-	"calories": 273,
-=======
     "volume": "140 ml",
 	"weight": "120 g",
     "price": 500,
     "price_postapoc": 50,
 	"color": "white",
 	"calories": 328,
->>>>>>> testing
     "smoking_result": "lamprey_smoked",
 	"spoils_in": "12 hours",
     "vitamins": [ [ "calcium", 1 ], [ "iron", 6 ], [ "vitA", 80 ], [ "vitB", 60 ], [ "vitC", 2 ] ],
@@ -384,8 +327,6 @@
 	"flags": [ "RAW", "SMOKABLE" ]
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "lamprey_rehydrated",
 	"type": "COMESTIBLE",
     "name": { "str": "rehydrated lamprey meat" },
@@ -398,7 +339,6 @@
     "delete": { "flags": [ "NUTRIENT_OVERRIDE" ] }
 	},
 	{
->>>>>>> testing
     "id": "lamprey_smoked",
     "type": "COMESTIBLE",
     "name": { "str_sp": "smoked lamprey" },
@@ -429,13 +369,8 @@
     "name": { "str_sp": "dehydrated shrimplike meat" },
     "copy-from": "shrimplike_cooked",
     "description": "Dehydrated shrimplike meat strips.  With proper storage, this dried food will remain edible for an incredibly long time.",
-<<<<<<< HEAD
-    "weight": "60 g",
-    "volume": "85 ml",
-=======
     "volume": "102 ml",
 	"weight": "80 g",
->>>>>>> testing
     "price_postapoc": 350,
 	"primary_material": "cured_meat",
 	"color": "dark_gray",
@@ -449,19 +384,11 @@
     "name": { "str": "shrimplike meat", "str_pl": "shrimplike meat" },
     "copy-from": "flesh",
 	"description": "Pieces of meat that would pass as shrimp if it weren't for the size and sometimes color.",
-<<<<<<< HEAD
-    "weight": "100 g",
-    "volume": "385 ml",
-    "price_postapoc": 75,
-	"color": "pink",
-	"calories": 97,
-=======
     "volume": "155 ml",
 	"weight": "120 g",
     "price_postapoc": 75,
 	"color": "pink",
 	"calories": 116,
->>>>>>> testing
     "smoking_result": "shrimplike_smoked",
 	"spoils_in": "12 hours",
 	"vitamins": [ [ "calcium", 17 ], [ "iron", 2 ], [ "vitA", 0 ], [ "vitB", 23 ], [ "vitC", 0 ] ],
@@ -469,8 +396,6 @@
     "//": "Nutrition values based on Tiger prawn, from slism dot com"
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "shrimplike_rehydrated",
 	"type": "COMESTIBLE",
     "name": { "str": "rehydrated shrimplike meat" },
@@ -483,7 +408,6 @@
     "delete": { "flags": [ "NUTRIENT_OVERRIDE" ] }
 	},
 	{
->>>>>>> testing
     "id": "shrimplike_smoked",
     "type": "COMESTIBLE",
     "name": { "str_sp": "smoked shrimplike meat" },

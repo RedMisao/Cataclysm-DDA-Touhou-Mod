@@ -2,17 +2,6 @@
 	{
     "id": "frame_corpsecart",
 	"type": "vehicle_part",
-<<<<<<< HEAD
-	"name": { "str": "corpse cart frame" },
-	"item": "frame_corpsecart",
-    "location": "structure",
-	"symbol": "X",
-	"categories": [ "hull" ],
-	"color": "brown",
-	"broken_color": "red",
-	"durability": 200,
-	"description": "Test wooden frame for kaenbyou_wheelbarrow ",
-=======
 	"categories": [ "hull" ],
 	"name": { "str": "corpse cart frame" },
 	"description": "Test wooden frame for kaenbyou_wheelbarrow ",
@@ -22,7 +11,6 @@
 	"durability": 200,
 	"item": "frame_corpsecart",
     "location": "structure",
->>>>>>> testing
 	"breaks_into": [ { "item": "splinter", "count": [ 7, 9 ] }, { "item": "nail", "charges": [ 5, 10 ] } ],
 	"requirements": {
 		"install": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_nail_install", 1 ] ] },
@@ -31,8 +19,6 @@
     },
 	"damage_reduction": { "all": 10 },
 	"flags": [ "INITIAL_PART", "MOUNTABLE" ]
-<<<<<<< HEAD
-=======
 	},
 	{
     "id": "frame_keystone",
@@ -55,6 +41,5 @@
     },
     "flags": [ "CARGO", "FLOATS", "INITIAL_PART", "SEAT" ],
     "damage_reduction": { "all": 12 }
->>>>>>> testing
 	}
 ]

@@ -1,15 +1,5 @@
 [
 	{
-<<<<<<< HEAD
-    "id": "9x39mag10",
-    "type": "MAGAZINE",
-    "name": { "str": "VSS Vintorez 10-round magazine" },
-    "description": "A compact 10-round magazine for Spetsiálny-group weapons, made of polymer.",
-    "weight": "65 g",
-    "volume": "151 ml",
-    "price": 3000,
-    "price_postapoc": 100,
-=======
     "id": "792x57_clip",
     "type": "MAGAZINE",
     "name": { "str": "7.92x57mm 5-round clip" },
@@ -35,15 +25,11 @@
 	"weight": "153 g",
     "price": 3000,
     "price_postapoc": 3000,
->>>>>>> testing
     "material": [ "plastic" ],
     "symbol": "#",
     "looks_like": "akmag10",
 	"color": "light_gray",
     "ammo_type": [ "9x39" ],
-<<<<<<< HEAD
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "9x39": 10 } } ],
-=======
     "pocket_data": [ 
 		{ 
 		"pocket_type": "MAGAZINE", 
@@ -51,35 +37,22 @@
 		"ammo_restriction": { "9x39": 10 } 
 		} 
 	],
->>>>>>> testing
 	"flags": [ "MAG_COMPACT" ]
 	},
 	{
     "id": "9x39mag20",
     "type": "MAGAZINE",
-<<<<<<< HEAD
-    "name": { "str": "VSS Vintorez 20-round magazine" },
-    "description": "A compact 20-round magazine for Spetsiálny-group weapons, made of polymer.",
-    "weight": "92 g",
-    "volume": "265 ml",
-    "price": 3000,
-    "price_postapoc": 100,
-=======
     "name": { "str": "9x39mm 20-round magazine" },
     "description": "A compact 20-round magazine for Spetsiálny-group weapons, made of polymer.",
     "volume": "265 ml",
 	"weight": "218 g",
     "price": 4000,
     "price_postapoc": 4500,
->>>>>>> testing
     "material": [ "plastic" ],
     "symbol": "#",
     "looks_like": "akmag20",
 	"color": "light_gray",
     "ammo_type": [ "9x39" ],
-<<<<<<< HEAD
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "9x39": 20 } } ],
-=======
     "pocket_data": [ 
 		{ 
 		"pocket_type": "MAGAZINE", 
@@ -110,34 +83,20 @@
 		"ammo_restriction": { "9x39": 30 } 
 		} 
 	],
->>>>>>> testing
 	"flags": [ "MAG_COMPACT" ]
 	},
 	{
     "id": "idwmag20",
     "type": "MAGAZINE",
     "name": { "str": "IDW 20-round magazine" },
-<<<<<<< HEAD
-	"copy-from": "tec9mag_10rd",
-	"description": "A compact 20-round magazine for the IDW, made of machined steel.",
-    "weight": "256 g",
-    "volume": "165 ml",
-=======
 	"copy-from": "tec9mag_20rd",
 	"description": "A compact 20-round magazine for the IDW, made of machined steel.",
     "volume": "280 ml",
 	"weight": "160 g",
->>>>>>> testing
     "price": 3300,
     "price_postapoc": 100,
     "material": [ "steel" ],
     "symbol": "#",
-<<<<<<< HEAD
-    "looks_like": "akmag10",
-	"color": "light_gray",
-    "ammo_type": [ "9mm" ],
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "9mm": 20 } } ],
-=======
     "looks_like": "uzimag_20rd",
 	"color": "light_gray",
     "ammo_type": [ "9mm" ],
@@ -148,7 +107,6 @@
 		"ammo_restriction": { "9mm": 20 } 
 		} 
 	],
->>>>>>> testing
 	"flags": [ "MAG_COMPACT" ]
 	},
 	{
@@ -157,11 +115,6 @@
     "name": { "str": "IDW 28-round magazine" },
 	"copy-from": "idwmag20",
 	"description": "A 28-round magazine for the IDW, made of machined steel.",
-<<<<<<< HEAD
-    "weight": "380 g",
-    "volume": "230 ml",
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "9mm": 28 } } ],
-=======
     "volume": "290 ml",
 	"weight": "170 g",
     "looks_like": "uzimag_25rd",
@@ -172,7 +125,6 @@
 		"ammo_restriction": { "9mm": 28 } 
 		} 
 	],
->>>>>>> testing
 	"flags": [ "MAG_COMPACT" ]
 	},
 	{
@@ -181,11 +133,6 @@
     "name": { "str": "IDW 32-round magazine" },
 	"copy-from": "idwmag20",
 	"description": "A 32-round magazine for the IDW, made of machined steel.",
-<<<<<<< HEAD
-    "weight": "450 g",
-    "volume": "260 ml",
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "9mm": 32 } } ],
-=======
     "volume": "300 ml",
 	"weight": "180 g",
     "looks_like": "uzimag",
@@ -196,7 +143,6 @@
 		"ammo_restriction": { "9mm": 32 } 
 		} 
 	],
->>>>>>> testing
 	"flags": [ "MAG_COMPACT" ]
 	},
 	{
@@ -205,13 +151,8 @@
     "name": { "str": "M76 Zastava 10-round magazine" },
 	"copy-from": "akmag10",
 	"description": "A compact 10-round magazine for the M76 Zastava, made of stamped steel.",
-<<<<<<< HEAD
-    "weight": "130 g",
-    "volume": "151 ml",
-=======
     "volume": "151 ml",
 	"weight": "130 g",
->>>>>>> testing
     "price": 3000,
     "price_postapoc": 100,
     "material": [ "steel" ],
@@ -219,12 +160,6 @@
     "looks_like": "akmag10",
 	"color": "light_gray",
     "ammo_type": [ "792x57" ],
-<<<<<<< HEAD
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "792x57": 10 } } ],
-    "flags": [ "MAG_COMPACT" ]
-	},
-	{
-=======
     "pocket_data": [ 
 		{ 
 		"pocket_type": "MAGAZINE", 
@@ -259,7 +194,6 @@
     "flags": [ "MAG_BULKY" ]
 	},
 	{
->>>>>>> testing
     "id": "sig550mag5",
     "type": "MAGAZINE",
     "name": { "str": "SIG 550 5-round magazine" },
@@ -310,17 +244,10 @@
 	{
     "id": "stg44mag25",
     "type": "MAGAZINE",
-<<<<<<< HEAD
-    "name": { "str": "StG 25-round 'Bananenmagazin' " },
-    "description": "25-round magazine for the StG 44, made of stamped steel.  Nicknamed 'Banana magazine' for evident reasons.",
-    "weight": "294 g",
-    "volume": "320 ml",
-=======
     "name": { "str": "StG 25-round \"Bananenmagazin\" " },
     "description": "25-round magazine for the StG 44, made of stamped steel.  Nicknamed \"banana magazine\" for evident reasons.",
     "volume": "320 ml",
 	"weight": "294 g",
->>>>>>> testing
     "price": 2800,
     "price_postapoc": 250,
     "material": [ "steel" ],
@@ -328,9 +255,6 @@
     "looks_like": "akmag20",
 	"color": "light_gray",
     "ammo_type": [ "792x33" ],
-<<<<<<< HEAD
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "792x33": 25 } } ],
-=======
     "pocket_data": [ 
 		{ 
 		"pocket_type": "MAGAZINE", 
@@ -338,23 +262,15 @@
 		"ammo_restriction": { "792x33": 25 } 
 		} 
 	],
->>>>>>> testing
     "flags": [ "MAG_COMPACT" ]
 	},
 	{
     "id": "stg44mag30",
     "type": "MAGAZINE",
-<<<<<<< HEAD
-    "name": { "str": "StG 30-round 'Bananenmagazin' " },
-    "description": "30-round magazine for the StG 44, made of stamped steel.  Nicknamed 'Banana magazine' for evident reasons.",
-    "weight": "350 g",
-    "volume": "380 ml",
-=======
     "name": { "str": "StG 30-round \"Bananenmagazin\" " },
     "description": "30-round magazine for the StG 44, made of stamped steel.  Nicknamed \"banana magazine\" for evident reasons.",
     "volume": "380 ml",
 	"weight": "350 g",
->>>>>>> testing
     "price": 2800,
     "price_postapoc": 250,
     "material": [ "steel" ],
@@ -362,9 +278,6 @@
     "looks_like": "akmag30",
 	"color": "light_gray",
     "ammo_type": [ "792x33" ],
-<<<<<<< HEAD
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "792x33": 30 } } ],
-=======
     "pocket_data": [ 
 		{ 
 		"pocket_type": "MAGAZINE", 
@@ -372,7 +285,6 @@
 		"ammo_restriction": { "792x33": 30 } 
 		} 
 	],
->>>>>>> testing
     "flags": [ "MAG_COMPACT" ],
 	"//": "This mag should have problems such as wear out after some use, unlike the stg44mag25 "
 	},
@@ -382,13 +294,8 @@
     "name": { "str": "SVD-63 10-round magazine" },
 	"copy-from": "akmag10",
 	"description": "A compact 10-round magazine for the SVD-63, made of polymer.",
-<<<<<<< HEAD
-    "weight": "65 g",
-    "volume": "151 ml",
-=======
     "volume": "151 ml",
 	"weight": "65 g",
->>>>>>> testing
     "price": 3000,
     "price_postapoc": 100,
     "material": [ "plastic" ],
@@ -396,9 +303,6 @@
     "looks_like": "akmag10",
 	"color": "light_gray",
     "ammo_type": [ "762R" ],
-<<<<<<< HEAD
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "762R": 10 } } ],
-=======
     "pocket_data": [ 
 		{ 
 		"pocket_type": "MAGAZINE", 
@@ -406,7 +310,6 @@
 		"ammo_restriction": { "762R": 10 } 
 		} 
 	],
->>>>>>> testing
     "flags": [ "MAG_COMPACT" ]
 	},
 	{
@@ -415,13 +318,8 @@
     "name": { "str": "SVD-63 20-round magazine" },
 	"copy-from": "akmag20",
 	"description": "A compact 20-round magazine for the SVD-63, made of polymer.",
-<<<<<<< HEAD
-    "weight": "142 g",
-    "volume": "265 ml",
-=======
     "volume": "265 ml",
 	"weight": "142 g",
->>>>>>> testing
     "price": 3000,
     "price_postapoc": 100,
     "material": [ "plastic" ],
@@ -429,9 +327,6 @@
     "looks_like": "akmag10",
 	"color": "light_gray",
     "ammo_type": [ "762R" ],
-<<<<<<< HEAD
-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "762R": 20 } } ],
-=======
     "pocket_data": [ 
 		{ 
 		"pocket_type": "MAGAZINE", 
@@ -487,7 +382,6 @@
 		"ammo_restriction": { "300": 10 } 
 		} 
 	],
->>>>>>> testing
     "flags": [ "MAG_COMPACT" ]
 	}
 ]

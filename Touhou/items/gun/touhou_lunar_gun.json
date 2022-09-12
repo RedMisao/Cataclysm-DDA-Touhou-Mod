@@ -3,15 +3,9 @@
     "id": "lunatic_pistol2",
     "type": "GUN",
     "name": "lunatic pistol",
-<<<<<<< HEAD
-    "description": "A standard issue LDC pistol with bunny ears on top of the muzzle and burst-fire capability. This is the second or third iteration of a design based on an old human weapon.  For that reason, it's mostly incompatible with human tools and modifications.  It's powered by the spiritual energy of the user.",
-    "weight": "750 g",
-    "volume": "1 L",
-=======
     "description": "A standard issue LDC pistol with burst-fire capability.  This belongs to an intermediate tier between old human weapons adapted with Lunarian technology and Lunarian tech proper weaponized, as noted by the very wide trumpet-like muzzle and (artificial) bunny ears on top of it.  For that reason, it's mostly incompatible with human tools and modifications.  It's powered by the spiritual energy of the user.",
     "volume": "1 L",
 	"weight": "750 g",
->>>>>>> testing
 	"price_postapoc": 5500,
 	"to_hit": {
 		"balance": "good", 
@@ -20,11 +14,7 @@
 		"surface": "any"
 	},
     "bashing": 12,
-<<<<<<< HEAD
-    "material": [ "steel", "plastic" ],
-=======
     "material": [ "plastic", "steel" ],
->>>>>>> testing
     "symbol": "(",
 	"looks_like": "glock_17",
 	"color": "white",
@@ -32,33 +22,12 @@
 	"ammo_effects": [ "LASER" ],
 	"dispersion": 120,
     "durability": 8,
-<<<<<<< HEAD
-	"loudness": 8,
-	"min_cycle_recoil": 500,
-	"modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "AUTO", "auto", 3 ] ],
-	"pocket_data": [ { 
-		"pocket_type": "MAGAZINE_WELL", 
-        "item_restriction": [ 
-			"lunar_small_mag12" 
-		] 
-	} ],
-	"range": 35,
-=======
 	"min_cycle_recoil": 500,
 	"modes": [ [ "DEFAULT", "semi-auto", 1 ], [ "BURST", "3 shots", 3 ] ],
->>>>>>> testing
     "reload": 220,
 	"reload_noise_volume": 5,
 	"skill": "pistol",
 	"valid_mod_locations": [
-<<<<<<< HEAD
-		[ "accessories", 2 ],
-		[ "rail", 1 ],
-		[ "underbarrel", 1 ]
-    ],
-    "weapon_category": [ "AUTOMATIC_PISTOLS" ],
-    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NO_UNLOAD", "NON-FOULING", "TRADER_AVOID" ]
-=======
 		[ "accessories", 1 ],
 		[ "rail", 1 ],
 		[ "underbarrel", 1 ]
@@ -74,24 +43,15 @@
 	],
     "weapon_category": [ "AUTOMATIC_PISTOLS" ],
     "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NON-FOULING", "TRADER_AVOID" ]
->>>>>>> testing
 	},
 	{
     "id": "lunar_rifle2",
     "type": "GUN",
-<<<<<<< HEAD
-    "name": "lunar rifle",
-    "description": "A standard issue LDC bolt-action rifle with an integrated bayonet. The design is based on an old human weapon, fabricated by and upgraded with Lunarian technology.  For that reason, it's mostly compatible with human tools and modifications.  It's powered by the spiritual energy of the user.",
-	"//": "The SSiB training rifle is either based on a Mosin or the Japanese Type 89 that used 'type 38 chamber in 7.62×38mmR tracer' according to some post on Reddit. However, Type 89 doesn't seem to exist, only the Type 38 (6.5×50mm Arisaka) or 99 (7.7×58mm Arisaka), which is the one I'll use as basis",
-	"weight": "3790 g",
-    "volume": "3 L",
-=======
     "name": "lunar service rifle",
     "description": "A standard issue bolt-action LDC rifle with an integrated bayonet.  The design is based on an old human weapon, fabricated by and upgraded with Lunarian technology.  For that reason, it's mostly compatible with human tools and modifications.  It's powered by the spiritual energy of the user.",
 	"//": "The SSiB training rifle is either based on a Mosin or the Japanese Type 89 that used 'type 38 chamber in 7.62×38mmR tracer' according to some post on Reddit. However, Type 89 doesn't seem to exist, only the Type 38 (6.5×50mm Arisaka) or 99 (7.7×58mm Arisaka), which is the one I'll use as basis",
     "volume": "3 L",
 	"weight": "3790 g",
->>>>>>> testing
     "longest_side": "1258 mm",
     "price_postapoc": 6000,
 	"to_hit": {
@@ -111,19 +71,8 @@
 	"built_in_mods": [ "inter_bayonet" ],
 	"dispersion": 120,
     "durability": 8,
-<<<<<<< HEAD
-	"loudness": 12,
-	"modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
-	"pocket_data": [ { 
-		"pocket_type": "MAGAZINE", 
-		"ammo_restriction": { "ammo_lunar_medium": 10 }
-	} ],
-    "range": 50,
-	"reload": 70,
-=======
 	"modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
 	"reload": 85,
->>>>>>> testing
 	"reload_noise_volume": 5,
 	"skill": "rifle",
     "valid_mod_locations": [
@@ -135,18 +84,6 @@
 		[ "stock", 1 ],
 		[ "underbarrel", 1 ]
     ],
-<<<<<<< HEAD
-    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "RELOAD_ONE", "STAB", "STURDY", "NON-FOULING", "TRADER_AVOID" ]
-	},
-	{
-    "id": "lunar_thermos",
-    "type": "GUN",
-    "name": "mizuho Mk. II",
-    "description": "A blue gray-ish cylinder, with a round bottom and something akin to a handle on top.  It's small enough to handle with one hand.",
-	"weight": "1800 g",
-    "volume": "1200 L",
-    "longest_side": "25 cm",
-=======
 	"pocket_data": [
 		{ 
 		"pocket_type": "MAGAZINE", 
@@ -289,7 +226,6 @@
 	"weight": "2000 g",
     "longest_side": "30 cm",
 	"//": "9 * 30 cm thermos, the barrel is ~25 cm long",
->>>>>>> testing
     "price_postapoc": 8000,
 	"to_hit": {
 		"balance": "uneven", 
@@ -307,22 +243,6 @@
     "clip_size": 3,
 	"dispersion": 120,
     "durability": 7,
-<<<<<<< HEAD
-	"loudness": 10,
-	"modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
-	"pocket_data": [ { 
-		"pocket_type": "MAGAZINE", 
-		"ammo_restriction": { "ammo_lunar_big": 3 }
-	} ],
-    "range": 50,
-	"reload": 200,
-	"reload_noise_volume": 6,
-	"skill": "rifle",
-    "valid_mod_locations": [
-		[ "sling", 1 ]
-    ],
-    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "STURDY", "NON-FOULING", "TRADER_AVOID" ]
-=======
 	"modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
 	"reload": 600,
 	"reload_noise_volume": 6,
@@ -520,6 +440,5 @@
 	],
 	"//3": "When used by non-Gyokuto it should debuff the user by giving headaches, things like that. When used by non-elite Gyokuto it should consume rnd(1.5-2) times more mana",
 	"//4": "Stat loss should affect this weapon way more, i.e. DEX or PER red numbers when using it should translate to worse-than-usual penalties"
->>>>>>> testing
 	}
 ]

@@ -1,7 +1,4 @@
 [
-<<<<<<< HEAD
-    {
-=======
 	{
     "id": "ARTHROPOD",
 	"type": "SPECIES",
@@ -10,7 +7,6 @@
     "bleeds": "fd_blood"
 	},
 	{
->>>>>>> testing
     "id": "GYOKUTO_TOUHOU",
 	"type": "SPECIES",
     "description": "a Gyokuto",
@@ -19,8 +15,6 @@
     "bleeds": "fd_blood"
     },
 	{
-<<<<<<< HEAD
-=======
 	"id": "ONI_TOUHOU",
 	"type": "SPECIES",
     "description": "an oni",
@@ -28,7 +22,6 @@
     "bleeds": "fd_blood"
     },
 	{
->>>>>>> testing
     "id": "PHANTOM_TOUHOU",
 	"type": "SPECIES",
     "description": "a phantom",
@@ -54,9 +47,6 @@
     "description": "a vampire",
     "anger_triggers": [ "HURT", "FRIEND_ATTACKED" ],
 	"fear_triggers": [ "FIRE" ],
-<<<<<<< HEAD
-    "//": "add WATER, RAIN, SUNLIGHT in fear. Remove FIRE from fear_triggers, add SUNLIGHT in anger, but as a pouring gas on the fire sort of way once"
-=======
     "//": "add WATER, RAIN, SUNLIGHT in fear. Remove FIRE from fear_triggers, add SUNLIGHT in anger, but as a 'pouring gas on the fire' sort of way"
     },
 	{
@@ -64,27 +54,18 @@
 	"type": "SPECIES",
     "description": "an animated object",
     "anger_triggers": [ "HURT", "PLAYER_WEAK" ]
->>>>>>> testing
     },
 	{
 	"id": "YOUKAI_HOSTILE_TOUHOU",
 	"type": "SPECIES",
     "description": "a youkai",
-<<<<<<< HEAD
-    "anger_triggers": [ "HURT", "PLAYER_NEAR_BABY" ]
-=======
     "anger_triggers": [ "HURT", "PLAYER_CLOSE", "PLAYER_NEAR_BABY", "PLAYER_WEAK" ]
->>>>>>> testing
     },
 	{
 	"id": "YOUKAI_NEUTRAL_TOUHOU",
 	"type": "SPECIES",
     "description": "a youkai",
-<<<<<<< HEAD
-    "anger_triggers": [ "HURT", "PLAYER_CLOSE", "PLAYER_NEAR_BABY", "PLAYER_WEAK" ]
-=======
     "anger_triggers": [ "HURT", "PLAYER_NEAR_BABY" ]
->>>>>>> testing
     },
 	{
 	"id": "YOUKAI_PSEUDO",

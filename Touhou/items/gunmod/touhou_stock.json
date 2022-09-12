@@ -1,14 +1,5 @@
 [
 	{
-<<<<<<< HEAD
-    "id": "stock_idw",
-    "type": "GUNMOD",
-    "name": { "str": "IDW stock" },
-    "description": "A retractable stock, tailored for the IDW but also usable for other small weapons.  Due its length, or rather the diminute size of the IDW, this stock greatly increases its overall handling.",
-    "//": "This should give the following bonuses to the IDW and reduced bonuses to other weapons",
-	"weight": "250 g",
-    "volume": "250 ml",
-=======
     "id": "cheek_pad_ots-48",
     "type": "GUNMOD",
     "name": { "str": "OTs-48 cheek pad" },
@@ -130,22 +121,12 @@
 	"weight": "250 g",
     "integral_volume": "200 ml",
     "integral_weight": "0 g",
->>>>>>> testing
     "price": 30000,
     "price_postapoc": 250,
     "material": [ "steel" ],
     "symbol": ":",
     "color": "dark_gray",
     "aim_speed_modifier": 4,
-<<<<<<< HEAD
-	"dispersion_modifier": -30,
-	"handling_modifier": 2,
-    "integral_weight": "0 g",
-    "install_time": "5 m",
-    "location": "stock",
-    "mod_targets": [ "pistol", "smg" ],
-    "min_skills": [ [ "weapon", 2 ] ]
-=======
 	"dispersion_modifier": -10,
 	"handling_modifier": 2,
     "install_time": "15 m",
@@ -177,6 +158,5 @@
 	"dispersion_modifier": 10,
     "handling_modifier": -2,
     "flags": [ "FOLDED_STOCK" ]
->>>>>>> testing
 	}
 ]

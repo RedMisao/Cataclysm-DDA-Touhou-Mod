@@ -2,13 +2,6 @@
 	{
     "id": "controls_corpsecart",
 	"type": "vehicle_part",
-<<<<<<< HEAD
-	"name": { "str": "corpse cart controls" },
-	"item": "controls_corpsecart",
-    "location": "anywhere",
-	"symbol": "$",
-    "categories": [ "operations" ],
-=======
     "categories": [ "operations" ],
 	"name": { "str": "corpse cart controls" },
 	"copy-from": "controls",
@@ -16,15 +9,10 @@
 	"item": "controls_corpsecart",
     "location": "anywhere",
 	"symbol": "$",
->>>>>>> testing
 	"color": "black",
 	"broken_color": "red",
 	"durability": 200,
 	"folded_volume": "1500 ml",
-<<<<<<< HEAD
-	"description": "Test controls for kaenbyou_wheelbarrow ",
-=======
->>>>>>> testing
 	"breaks_into": [ { "item": "splinter", "count": [ 7, 9 ] }, { "item": "nail", "charges": [ 5, 10 ] } ],
 	"requirements": {
 		"install": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "vehicle_nail_install", 3 ] ] },
@@ -32,10 +20,6 @@
 		"repair": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "adhesive", 3 ] ] }
     },
 	"damage_reduction": { "all": 10 },
-<<<<<<< HEAD
-	"copy-from": "controls",
-	"flags": [ "FOLDABLE", "CONTROLS" ]
-=======
 	"flags": [ "CONTROLS", "FOLDABLE" ]
 	},
 	{
@@ -60,6 +44,5 @@
 		"repair": { "skills": [ [ "mechanics", 20 ] ], "time": "60 m", "using": [ [ "welding_standard", 10 ] ] }
     },
 	"flags": [ "CONTROLS", "FOLDABLE" ]
->>>>>>> testing
 	}
 ]

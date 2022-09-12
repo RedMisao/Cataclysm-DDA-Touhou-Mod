@@ -1,7 +1,5 @@
 [
 	{
-<<<<<<< HEAD
-=======
 	"speaker": "mon_ectopistes",
 	"type": "speech",
 	"sound": "*rash clucking*",
@@ -50,7 +48,6 @@
 	"volume": 24
     },
 	{
->>>>>>> testing
 	"speaker": "mon_gyokuto_base",
 	"type": "speech",
 	"sound": "\"Don't come any closer!\"",
@@ -123,8 +120,6 @@
 	"volume": 6
     },
 	{
-<<<<<<< HEAD
-=======
 	"speaker": "mon_meganeura",
 	"type": "speech",
 	"sound": "*buzzing*",
@@ -155,7 +150,6 @@
 	"volume": 6
     },
 	{
->>>>>>> testing
 	"speaker": "mon_mib1",
 	"type": "speech",
 	"sound": "Stop!",

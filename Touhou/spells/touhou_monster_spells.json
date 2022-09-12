@@ -65,11 +65,7 @@
     "id": "death_mib",
     "type": "SPELL",
     "name": { "str": "MIB death (chain component)" },
-<<<<<<< HEAD
-    "description": "Bigger chance to just die, equal chance to spawn something else on death.",
-=======
     "description": "Chance to just die, or to spawn something else on death.",
->>>>>>> testing
     "effect": "summon",
 	"extra_effects": [
 		{ "id": "death_mib_none" },
@@ -89,26 +85,6 @@
 	{
     "id": "death_mib_none",
     "type": "SPELL",
-<<<<<<< HEAD
-    "name": "Spell misfire",
-    "description": "Spell failure",
-    "spell_class": "NONE",
-    "valid_targets": [ "ground", "hostile" ],
-	"effect": "attack",
-    "shape": "line",
-	"message": "The mini hakkero fizzles",
-	"damage_type": "bash",
-	"min_damage": 0,
-    "max_damage": 0,
-    "damage_increment": 0,
-    "min_range": 1,
-    "max_range": 1,
-	"max_level": 1,
-	"difficulty": -20,
-    "base_casting_time": 0,
-	"base_energy_cost": 0,
-	"energy_source": "MANA"
-=======
     "name": "Normal death",
     "description": "Default MIB death",
     "spell_class": "NONE",
@@ -122,7 +98,6 @@
     "min_aoe": 1,
     "max_aoe": 1,
     "flags": [ "SILENT" ]
->>>>>>> testing
 	},
 	{
     "id": "death_mib_shadowspawn",

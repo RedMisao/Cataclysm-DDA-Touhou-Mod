@@ -4,18 +4,10 @@
 	"type": "GENERIC",
     "name": { "str": "kanabo", "str_pl": "kanabo" },
     "description": "A legendary weapon.  Attributed to oni, it's reported it was used by strong soldiers to break the legs of enemy horses and perhaps to smash through armor too.  Similar to a bat made, the \"head\" is covered by a hexagonal cap featuring metal studs, the handle is unremarkable except for a thick iron ring attached to the opposite end.  Somewhat unwieldy due its size, you will need plenty of strength to use this.",
-<<<<<<< HEAD
-    "weight": "6000 g",
-    "volume": "2100 ml",
-    "longest_side": "120 cm",
-	"//": "Calculated as 4 * 110 cm wooden cylinder with a 5.5 * 60 cm octogonal iron cap, reduced weight. 10 cm metal ring not considered",
-    "price": 16000,
-=======
     "volume": "2100 ml",
 	"weight": "6000 g",
     "longest_side": "120 cm",
 	"//": "Calculated as 4 * 110 cm wooden cylinder with a 5.5 * 60 cm octogonal iron cap, reduced weight. 10 cm metal ring not considered",
->>>>>>> testing
     "price_postapoc": 350,
     "to_hit": { 
 		"grip": "weapon", 
@@ -49,18 +41,10 @@
     "name": { "str": "kanabo (short)", "str_pl": "kanabo (short)" },
 	"copy-from": "kanabo",
     "description": "A legendary weapon.  Attributed to oni, it's reported it was used by strong soldiers to break the legs of enemy horses and perhaps to smash through armor too.  Looks like a bat made out of iron, the \"head\" is a hexagonal prism with metal studs, the wooden handle is unremarkable, ending with a thick iron ring.  You will need lots of strength to wield this.",
-<<<<<<< HEAD
-    "weight": "4000 g",
-    "volume": "1300 ml",
-    "longest_side": "70 cm",
-	"//": "Calculated as 4 * 70 cm wooden cylinder with a 5.5 * 60 cm octogonal iron cap. 10 cm metal ring not considered",
-    "price": 14000,
-=======
     "volume": "1300 ml",
 	"weight": "4000 g",
     "longest_side": "70 cm",
 	"//": "Calculated as 4 * 70 cm wooden cylinder with a 5.5 * 60 cm octogonal iron cap. 10 cm metal ring not considered",
->>>>>>> testing
     "price_postapoc": 300,
     "to_hit": { 
 		"grip": "weapon", 
@@ -96,18 +80,10 @@
     "name": { "str": "kanabo (two-handed)", "str_pl": "kanabo (two-handed)" },
 	"copy-from": "kanabo",
     "description": "A very large weapon based on the kanabo.  Consists of two studded metal caps attached to a long stout wooden rod.  Heavy enough to require two hands to wield, to say being hurt by this would be an understatment.",
-<<<<<<< HEAD
-    "weight": "11000 g",
-    "volume": "4000 ml",
-    "longest_side": "200 cm",
-	"//": "Calculated as a 4* 200 cm wooden cylinder with two 6 * 60 cm octogonal iron caps, reduced weight",
-    "price": 20000,
-=======
     "volume": "4000 ml",
 	"weight": "11000 g",
     "longest_side": "200 cm",
 	"//": "Calculated as a 4 * 200 cm wooden cylinder with two 6 * 60 cm octogonal iron caps, reduced weight",
->>>>>>> testing
     "price_postapoc": 500,
     "to_hit": { 
 		"grip": "weapon", 
@@ -138,16 +114,6 @@
 	{
     "id": "kanabo_oni",
 	"type": "GENERIC",
-<<<<<<< HEAD
-    "name": { "str": "kanabo", "str_pl": "kanabo" },
-	"copy-from": "kanabo",
-    "description": "A legendary weapon.  Attributed to oni, it's reported it was used by strong soldiers to break the legs of enemy horses and perhaps to smash through armor too.  This one is crude, it looks like a metal bat with metal studs, with a thick iron ring at one end.  Extremely heavy, seems whoever uses this should have superhuman strength.",
-    "weight": "18000 g",
-    "volume": "2300 ml",
-    "longest_side": "120 cm",
-	"//": "Calculated as a 4.5 * 50 cm handle with a 5.5 * 60 cm octogon, iron density. 10 cm metal ring at the end not considered",
-    "price": 16000,
-=======
     "name": { "str": "iron kanabo", "str_pl": "iron kanabo" },
 	"copy-from": "kanabo",
     "description": "A legendary weapon.  Attributed to oni, it's reported it was used by strong soldiers to break the legs of enemy horses and perhaps to smash through armor too.  This one is crude, fully metallic with metal studs, with a thick iron ring at one end.  Extremely heavy, seems whoever uses this should have superhuman strength.",
@@ -155,7 +121,6 @@
 	"weight": "18000 g",
     "longest_side": "120 cm",
 	"//": "Calculated as a 4.5 * 50 cm handle with a 5.5 * 60 cm octogon, iron density. 10 cm metal ring at the end not considered",
->>>>>>> testing
     "price_postapoc": 350,
     "to_hit": { 
 		"grip": "weapon", 
@@ -174,8 +139,6 @@
 	"flags": [ "DURABLE_MELEE", "MESSY" ]
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "kanabo_oni_spiked",
 	"type": "GENERIC",
     "name": { "str": "iron kanabo (spiked)", "str_pl": "iron kanabo (spiked)" },
@@ -241,22 +204,14 @@
 	"flags": [ "ALWAYS_TWOHAND", "DURABLE_MELEE", "MESSY", "REACH_ATTACK" ]
 	},
 	{
->>>>>>> testing
     "id": "sakuya_knife",
     "type": "TOOL",
     "category": "weapons",
     "name": { "str": "Sakuya's knife", "str_pl": "Sakuya's knives" },
     "description": "A seemingly plain knife compared to her silver ones.  This one has a single edge, no hilt, and a drop point.  It's much sharper and made from a different material though.",
-<<<<<<< HEAD
-    "weight": "450 g",
-    "volume": "350 ml",
-    "longest_side": "30 cm",
-    "price": 100000,
-=======
 	"volume": "350 ml",
 	"weight": "450 g",
     "longest_side": "30 cm",
->>>>>>> testing
     "price_postapoc": 12500,
 	"to_hit": {
 		"balance": "good", 
@@ -266,15 +221,11 @@
 	},
     "bashing": 8,
     "cutting": 25,
-<<<<<<< HEAD
-    "material": [ "wool", "steel", "silver" ],
-=======
 	"material": [
 		{ "type": "wood" },
 		{ "type": "silver" },
 		{ "type": "steel", "portion": 9 }
 	],
->>>>>>> testing
     "symbol": ";",
     "color": "dark_gray",
     "min_skills": [ [ "weapon", 2 ], [ "melee", 1 ] ],
@@ -290,16 +241,9 @@
     "category": "weapons",
     "name": { "str": "Tengu fan", "str_pl": "Tengu fans" },
     "description": "A big maple leaf attached to a wooden handle.  It can be used to cool yourself down, or to send strong gales towards your enemies.",
-<<<<<<< HEAD
-    "weight": "300 g",
-    "volume": "600 ml",
-    "longest_side": "40 cm",
-    "price": 150000,
-=======
     "volume": "600 ml",
 	"weight": "300 g",
     "longest_side": "40 cm",
->>>>>>> testing
     "price_postapoc": 7500,
 	"to_hit": {
 		"balance": "good", 
@@ -307,11 +251,7 @@
 		"length": "hand", 
 		"surface": "any"
 	},
-<<<<<<< HEAD
-    "bashing": 2,
-=======
     "bashing": 19,
->>>>>>> testing
     "cutting": 0,
     "material": [ "wood" ],
     "symbol": ";",
@@ -325,18 +265,10 @@
     "category": "weapons",
     "name": { "str": "Tengu sword", "str_pl": "Tengu sword" },
     "description": "A big, heavy and relatively thick metal sword, somewhat looking like a fang.  Very fitting for its intended users.",
-<<<<<<< HEAD
-    "weight": "3000 g",
-    "volume": "2000 ml",
-    "longest_side": "140 cm",
-    "//": "Double length from tengu_shield , taken as reference",
-	"price": 150000,
-=======
     "volume": "2000 ml",
 	"weight": "3000 g",
     "longest_side": "140 cm",
     "//": "Double length from tengu_shield , taken as reference",
->>>>>>> testing
     "price_postapoc": 7500,
 	"to_hit": {
 		"grip": "weapon",
@@ -362,24 +294,10 @@
     "name": { "str": "sword of hisou (dismissed)", "str_pl": "swords of hisou (dismissed)" },
 	"description": "A golden, shape-shifting jian that is spiritually summoned into battle, allowing it to be stored without taking up a significant amount of space or weighing the user down. Activate to summon it.",
     "//": "Touhou Wiki states that it's a golden Chinese jian, the sword is shape shifting, and that the sword is probably spiritually summoned into battle.",
-<<<<<<< HEAD
-	"use_action": {
-		"type": "transform",
-		"menu_text": "Summon Sword",
-		"msg": "You summon your sword.",
-		"target": "tenshi_jian_extended"
-	},
-    "weight": "300 g",
-    "volume": "80 ml",
-    "longest_side": "15 cm",
-	"//2": "These numbers come from a 15 cm, 2.5 cm diameter hilt",
-	"price": 160000,
-=======
 	"volume": "80 ml",
 	"weight": "300 g",
     "longest_side": "15 cm",
 	"//2": "These numbers come from a 15 cm, 2.5 cm diameter hilt",
->>>>>>> testing
     "price_postapoc": 8000,
 	"to_hit": {
 		"balance": "good", 
@@ -389,12 +307,6 @@
 	},
 	"bashing": 5,
 	"cutting": 0,
-<<<<<<< HEAD
-    "material": "gold",
-	"symbol": "/",
-    "color": "light_gray",
-    "techniques": [ "WBLOCK_1" ],
-=======
     "material": [ "steel" ],
 	"symbol": "/",
     "color": "yellow",
@@ -405,7 +317,6 @@
 		"msg": "You summon your sword.",
 		"target": "tenshi_jian_extended"
 	},
->>>>>>> testing
 	"flags" : [ "DURABLE_MELEE", "TRADER_AVOID", "UNARMED_WEAPON" ]
 	},
 	{
@@ -415,24 +326,10 @@
 	"name": { "str": "sword of hisou (summoned)", "str_pl": "swords of hisou (summoned)" },
 	"description": "A golden, shape-shifting jian that is spiritually summoned into battle, allowing it to be stored without taking up a significant amount of space or weighing the user down. Activate to dismiss it.",
     "//": "Touhou Wiki states that it's a golden Chinese jian, the sword is shape shifting, and that the sword is probably spiritually summoned into battle.",
-<<<<<<< HEAD
-	"use_action": {
-		"menu_text": "Dismiss Sword",
-		"type": "transform",
-		"target": "tenshi_jian",
-		"msg": "You dismiss your sword."
-	},
-    "weight": "300 g",
-	"volume": "1300 ml",
-    "longest_side": "65 cm",
-	"//2": "I assume the blade of the sword looks like a flame so it has a dynamic volume, but that one should be the average for a static 50 cm long, 5 cm wide blade + the hilt",
-	"price": 160000,
-=======
 	"volume": "1300 ml",
 	"weight": "300 g",
     "longest_side": "65 cm",
 	"//2": "I assume the blade of the sword looks like a flame so it has a dynamic volume, but that one should be the average for a static 50 cm long, 5 cm wide blade + the hilt",
->>>>>>> testing
     "price_postapoc": 8000,
 	"to_hit": {
 		"balance": "good", 
@@ -442,27 +339,6 @@
 	},
 	"bashing": 8,
     "cutting": 30,
-<<<<<<< HEAD
-    "material": "gold",
-	"symbol": "/",
-    "color": "light_gray",
-    "techniques": [ "WBLOCK_2" ],
-    "weapon_category": [ "JAPANESE_SWORDS", "SHORT_SWORDS" ],
-	"flags" : [ "DURABLE_MELEE", "SHEATH_SWORD", "STURDY", "TRADER_AVOID" ]
-	},
-	{
-    "id": "youmu_roukanken",
-    "type": "TOOL",
-    "name": { "str_sp": "Roukanken" },
-    "copy-from": "katana",
-	"category": "weapons",
-	"description": "A long katana, made from some special metal and forged by youkai.  The hilt is decorated with cherry blossom petals.  The things that it cannot cut are close to none.",
-    "weight": "1350 g",
-    "volume": "2000 ml",
-    "longest_side": "110 cm",
-    "//": "This should be 'too long to be wielded by normal humans' ",
-	"price": 120000,
-=======
     "material": [ "steel" ],
 	"symbol": "/",
     "color": "yellow",
@@ -515,7 +391,6 @@
 	"weight": "1350 g",
     "longest_side": "110 cm",
     "//": "This should be 'too long to be wielded by normal humans' ",
->>>>>>> testing
     "price_postapoc": 24000,
     "to_hit": { 
 		"balance": "good", 
@@ -534,37 +409,5 @@
     "qualities": [ [ "CUT", 1 ] ],
     "weapon_category": [ "JAPANESE_SWORDS", "LONG_SWORDS" ],
     "flags": [ "DURABLE_MELEE", "SHEATH_SWORD" ]
-<<<<<<< HEAD
-	},
-	{
-    "id": "youmu_hakurouken",
-    "type": "TOOL",
-    "name": { "str_sp": "Hakurouken" },
-    "copy-from": "wakizashi",
-	"category": "weapons",
-	"description": "This wakizashi is a Konpaku family heirloom.  It was made from some special metal and forged by youkai.  It has the power to dispel confusion of those it cuts.  Your guess is  that when someone's cut down they really can't be confused anymore.  Strangely, when phantoms are affected by this they're directly sent to Nirvana.",
-    "weight": "800 g",
-    "volume": "1500 ml",
-    "longest_side": "60 cm",
-	"price": 120000,
-    "price_postapoc": 24000,
-    "to_hit": { 
-		"balance": "good", 
-		"grip": "weapon", 
-		"length": "short", 
-		"surface": "line"
-	},
-	"bashing": 2,
-    "cutting": 42,
-	"material": [ "steel" ],
-    "//2": " For me, 'send phantoms to Nirvana' is synonymous with 'instakill phantoms'. Its damage should be equal if not higher than Roukanken, but purely soul ",
-    "symbol": "/",
-    "color": "light_gray",
-    "techniques": [ "VORPAL", "WBLOCK_2" ],
-    "qualities": [ [ "CUT", 1 ], [ "BUTCHER", 4 ] ],
-    "weapon_category": [ "JAPANESE_SWORDS", "SHORT_SWORDS" ],
-    "flags": [ "DURABLE_MELEE", "SHEATH_SWORD" ]
-=======
->>>>>>> testing
 	}
 ]

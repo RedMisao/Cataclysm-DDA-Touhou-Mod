@@ -1,55 +1,5 @@
 [
 	{
-<<<<<<< HEAD
-    "id": "utsuho_blade",
-    "type": "SPELL",
-    "name": "Fusion blade (timer)",
-    "description": "Timer effect for utsuho_blade",
-    "spell_class": "NONE",
-	"effect": "attack",
-	"effect_str": "utsuho_blade2",
-	"valid_targets": [ "hostile" ],
-	"shape": "blast",
-	"min_duration": 6000,
-    "max_duration": 6000,
-	"max_level": 1,
-	"difficulty": -10,
-	"base_casting_time": 200,
-	"base_energy_cost": 100,
-	"energy_source": "MANA",
-    "flags": [ "IGNITE_FLAMMABLE", "NO_LEGS", "NO_PROJECTILE" ]
-	},
-	{
-    "id": "utsuho_blade2",
-	"type": "enchantment",
-    "condition": "ACTIVE",
-	"//": " 'values': [ { 'value': 'light', 'add': 240 } ], should go here but LUMINATION and LIGHT are not recognized as values",
-    "hit_you_effect": [ { "id": "utsuho_blade3", "hit_self": false } ],
-	"has": "WORN"
-	},
-	{
-    "id": "utsuho_blade3",
-    "type": "SPELL",
-    "name": "Fusion blade (damage)",
-    "description": "On hit component for utsuho_blade",
-    "spell_class": "NONE",
-	"effect": "attack",
-    "valid_targets": [ "hostile" ],
-	"shape": "blast",
-	"damage_type": "heat",
-	"min_damage": 45,
-    "max_damage": 45,
-	"min_pierce": 44,
-	"max_pierce": 44,
-	"min_range": 1,
-    "max_range": 1,
-	"max_level": 1,
-	"difficulty": -10,
-	"base_casting_time": 200,
-	"base_energy_cost": 200,
-	"energy_source": "MANA",
-    "flags": [ "IGNITE_FLAMMABLE", "NO_LEGS", "NO_PROJECTILE" ]
-=======
     "id": "ench_lampad_torch_off",
 	"type": "enchantment",
     "condition": "ALWAYS",
@@ -123,6 +73,5 @@
 		{ "value": "ARMOR_STAB", "add": 4 },
 		{ "value": "ARMOR_BULLET", "add": 2 }
 	]
->>>>>>> testing
 	}
 ]

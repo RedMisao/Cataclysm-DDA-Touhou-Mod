@@ -1,10 +1,5 @@
 [
 	{
-<<<<<<< HEAD
-    "id": "spell_components_blacksun",
-    "type": "requirement",
-    "components": [ [ [ "utsuho_sun2", 1 ] ] ]
-=======
     "id": "spell_components_battery_ultralight",
     "type": "requirement",
     "components": [ [ [ "light_minus_battery_cell", 1 ] ] ]
@@ -30,7 +25,6 @@
     "components": [ [ [ "blood", 1 ] ] ],
 	"//": "Should be 250 ml, not 1 ml",
 	"//2": "hblood is not recognized as a valid item template, but it should be there"
->>>>>>> testing
 	},
 	{
     "id": "spell_components_gungnir",
@@ -43,11 +37,6 @@
     "components": [ [ [ "human_egg", 20 ] ] ]
 	},
 	{
-<<<<<<< HEAD
-    "id": "spell_components_keystone",
-    "type": "requirement",
-    "components": [ [ [ "tenko_keystone2", 1 ] ] ]
-=======
     "id": "spell_components_ikuscarf",
     "type": "requirement",
     "tools": [ [ 
@@ -95,6 +84,5 @@
     "tools": [ [ 
 		[ "youmu_roukanken", -1 ] , [ "youmu_hakurouken", -1 ] 
 	] ]
->>>>>>> testing
 	}
 ]

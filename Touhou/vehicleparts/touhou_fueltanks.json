@@ -1,9 +1,5 @@
 [
 	{
-<<<<<<< HEAD
-    "id": "tank_corpsecart",
-	"type": "vehicle_part",
-=======
     "id": "storage_battery_keystone",
 	"type": "vehicle_part",
 	"categories": [ "energy", "movement" ],
@@ -29,16 +25,11 @@
     "id": "tank_corpsecart",
 	"type": "vehicle_part",
 	"categories": [ "energy", "movement" ],
->>>>>>> testing
 	"name": { "str": "corpse reactor tank" },
 	"description": "Test corpse reactor tank for kaenbyou_wheelbarrow ",
 	"item": "tank_corpsecart",
     "location": "fuel_source",
 	"symbol": "X",
-<<<<<<< HEAD
-	"categories": [ "energy", "movement" ],
-=======
->>>>>>> testing
 	"color": "brown",
 	"broken_color": "red",
 	"durability": 200,

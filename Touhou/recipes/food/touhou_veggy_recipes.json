@@ -1,7 +1,5 @@
 [
 	{
-<<<<<<< HEAD
-=======
     "result": "ab_blank",
 	"type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
@@ -285,7 +283,6 @@
     ]
 	},
 	{
->>>>>>> testing
     "result": "satsumaimo_baked",
 	"type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
@@ -297,35 +294,6 @@
     "autolearn": true,
     "qualities": [ { "id": "COOK", "level": 1 } ],
     "tools": [ [ [ "surface_heat", 3, "LIST" ] ] ],
-<<<<<<< HEAD
-    "components": [ [ [ "satsumaimo", 1 ], [ "irradiated_satsumaimo", 1 ] ] ],
-	"//": "Add dried leaves at some point"
-	},
-	{
-    "result": "satsumaimo_chips_thick",
-	"type": "recipe",
-    "activity_level": "LIGHT_EXERCISE",
-    "result_mult": 3,
-    "category": "CC_FOOD",
-    "subcategory": "CSC_FOOD_VEGGI",
-    "skill_used": "cooking",
-    "difficulty": 3,
-    "time": "15 m",
-    "autolearn": true,
-    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "COOK", "level": 2 } ],
-    "tools": [ [ [ "surface_heat", 8, "LIST" ] ], [ [ "frying_oil", 1, "LIST" ] ] ],
-    "proficiencies": [
-		{ "proficiency": "prof_food_prep" },
-		{ "proficiency": "prof_frying" }
-    ],
-    "components": [
-		[ [ "satsumaimo", 1 ], [ "irradiated_satsumaimo", 1 ] ],
-		[ [ "salt", 2 ], [ "seasoning_salt", 2 ] ],
-		[ [ "fry_oil", 4, "LIST" ] ]
-    ]
-	},
-	{
-=======
     "components": [ [ 
 		[ "satsumaimo", 1 ], 
 		[ "irradiated_satsumaimo", 1 ] 
@@ -333,7 +301,6 @@
 	"//": "Add dried leaves at some point"
 	},
 	{
->>>>>>> testing
     "result": "satsumaimo_chips",
 	"type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
@@ -355,18 +322,11 @@
 		[ [ "satsumaimo", 1 ], [ "irradiated_satsumaimo", 1 ] ],
 		[ [ "salt", 2 ], [ "seasoning_salt", 2 ] ],
 		[ [ "fry_oil", 4, "LIST" ] ]
-<<<<<<< HEAD
-    ]
-	},
-	{
-    "result": "satsumaimo_french_fries",
-=======
     ],
 	"//": "Adapted from fresh_fries "
 	},
 	{
     "result": "satsumaimo_chips_thick",
->>>>>>> testing
 	"type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "result_mult": 3,
@@ -374,16 +334,6 @@
     "subcategory": "CSC_FOOD_VEGGI",
     "skill_used": "cooking",
     "difficulty": 3,
-<<<<<<< HEAD
-    "time": "20 m",
-    "autolearn": true,
-    "qualities": [ { "id": "CUT", "level": 2 }, { "id": "COOK", "level": 2 } ],
-    "tools": [ [ [ "surface_heat", 8, "LIST" ] ], [ [ "frying_oil", 1, "LIST" ] ] ],
-    "proficiencies": [
-		{ "proficiency": "prof_food_prep" },
-		{ "proficiency": "prof_frying" },
-		{ "proficiency": "prof_knife_skills", "time_multiplier": 2 }
-=======
     "time": "15 m",
     "autolearn": true,
     "qualities": [ { "id": "CUT", "level": 1 }, { "id": "COOK", "level": 2 } ],
@@ -391,7 +341,6 @@
     "proficiencies": [
 		{ "proficiency": "prof_food_prep" },
 		{ "proficiency": "prof_frying" }
->>>>>>> testing
     ],
     "components": [
 		[ [ "satsumaimo", 1 ], [ "irradiated_satsumaimo", 1 ] ],
@@ -418,8 +367,6 @@
 		[ [ "cheese", 1 ], [ "cheese_hard", 1 ], [ "can_cheese", 1 ] ],
 		[ [ "satsumaimo_french_fries", 1 ] ] 
 	]
-<<<<<<< HEAD
-=======
 	},
 	{
     "result": "satsumaimo_french_fries",
@@ -538,6 +485,5 @@
 		[ [ "water_clean", 1 ] ]
     ],
 	"//": "RL recipe uses 200 ml of milk too, which is omitted due the difficulty in obtaining it"
->>>>>>> testing
 	}
 ]

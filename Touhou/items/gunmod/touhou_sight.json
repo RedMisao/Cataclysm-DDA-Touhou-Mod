@@ -4,19 +4,12 @@
     "type": "GUNMOD",
     "name": { "str": "PSO-1 scope" },
     "copy-from": "rifle_scope",
-<<<<<<< HEAD
-    "description": "A x4 scope, designed for the SVD-63.  It's side mounted, which does not interfer with the weapon's iron sights, sealed with nitrogen which prevents foggy sight, and has a characteristic reticle that helps compensate for bullet drop up to 1000 m.  It's somewhat bulky however, relative to other scopes.",
-    "weight": "600 g",
-    "volume": "1000 ml",
-    "//2": "Whole volume is 3.46 L.",
-=======
     "description": "A x4 scope, originally designed for the SVD-63.  It's side mounted, which does not interfer with the weapon's iron sights, sealed with nitrogen which prevents foggy sight, and has a characteristic reticle that helps compensate for bullet drop up to 1000 m.  It's somewhat bulky however, relative to other scopes.",
     "volume": "3460 ml",
 	"weight": "600 g",
 	"integral_volume": "1000 ml", 
 	"integral_longest_side": "0 cm",
     "//2": "Whole volume is 3.46 L, I really don't know how but it's getting reduced.",
->>>>>>> testing
 	"price": 68000,
     "price_postapoc": 750,
     "material": [ "aluminum", "glass" ],
@@ -38,11 +31,7 @@
     "name": { "str": "PSO-1 scope (fixed)" },
     "copy-from": "pso1_scope",
     "description": "A x4 scope, designed for the SVD-63.  It's side mounted, which does not interfer with the weapon's iron sights, sealed with nitrogen which prevents foggy sight, and has a characteristic reticle that helps compensate for bullet drop up to 1000 m.  It's somewhat bulky however, relative to other scopes.  This is fixed to the weapon, so it can't be removed.",
-<<<<<<< HEAD
-    "flags": [ "DISABLE_SIGHTS", "IRREMOVABLE", "ZOOM" ]
-=======
     "flags": [ "IRREMOVABLE", "ZOOM" ]
->>>>>>> testing
 	},
 	{
     "id": "onm76_scope",
@@ -55,8 +44,6 @@
     "flags": [ "DISABLE_SIGHTS", "ZOOM" ]
 	},
 	{
-<<<<<<< HEAD
-=======
     "id": "scrome_scope",
     "type": "GUNMOD",
     "name": { "str": "SCROME LTE scope" },
@@ -80,19 +67,13 @@
 	"//": "No idea what these values do"
 	},
 	{
->>>>>>> testing
     "id": "susat_scope",
     "type": "GUNMOD",
     "name": { "str": "SUSAT scope" },
     "copy-from": "rifle_scope",
     "description": "A x4 scope, designed for medium-range engagements.  Thanks to the tritium painting on the reticle, it can be used in low light conditions.",
-<<<<<<< HEAD
-    "weight": "417 g",
-    "volume": "480 ml",
-=======
     "volume": "480 ml",
 	"weight": "417 g",
->>>>>>> testing
     "price": 68000,
     "price_postapoc": 750,
     "material": [ "aluminum", "glass" ],
