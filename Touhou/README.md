@@ -14,7 +14,7 @@ This mod is intended to be some sort of Touhou-flavored conversion for CDDA, ins
 
 and more, but those are the most important now.
 
-It greatly expands upon the original, primarily by further developing each existing character with custom spells, clothing, martial arts, special items, etc.
+It greatly expands upon the original mod, primarily by further developing each existing character with custom spells, clothing, martial arts, special items, etc.
 
 It also adds a lot of stuff from the Touhou series, going from the relatively simple and direct stuff like generic youkai enemies (WIP), to more obscure tidbits of lore such as extinct fauna, to finally stuff that would be fun to have in both a Touhou game and a CDDA mod, like as forgotten firearms and magical items (WIP).
 
