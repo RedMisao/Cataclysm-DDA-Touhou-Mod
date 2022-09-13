@@ -1,7 +1,7 @@
 # Cataclysm-DDA-Touhou-Mod
 This is a fork of Taberone's [Touhou Professions](https://github.com/Taberone/Cataclysm-DDA-Touhou-Mod) mod.
 
-**This mod goes in /data/mods**
+**This mod goes in /data/mods**.  Last updated for game version: 2022-09-09 experimental (2020-09-09-2339).
 
 To pick any of the characters, you have to select the **Touhou Mod** scenario when creating a new character.
 
