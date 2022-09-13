@@ -35,18 +35,18 @@ Additionally, there's the
 
 
 ### Characters
+* **Aya Shameimaru:** Uses wind spells.  The earnest, most pure, fastest Tengu reporter is always on the look of interesting news.
 * **Fujiwara no Mokou:** Uses fire spells, fights with a custom martial art that increases her damage the more she fights, while also making her more vulnerable.  Sadly not immortal anymore.
 * **Hong Meiling:** Uses qi spells, fights using a special form of Tai Chi focused on defense, with windows of opportunity after blocking attacks.  Nap time can't come soon enough.
 * **Iku Nagae:** Uses electric spells, fights by whipping and shocking enemies to death, while dancing elegantly on the battlefield.
-* **Reisen Udongein Inaba:** Uses wavelength manipulation.  Former member of the Elite Lunarian Defence Corps, proficient with firearms with a touch of medicine at the side.  Starts with a Lunarian tech pistol.
 * **Reisen:** Uses a mysterious ability.  Recently conscripted into the Lunarian Defence Corps, fights aided by her service Lunarian rifle, and "basic" military training.  She's trying her best!
-* **Reiuji Utsuho:** Uses nuclear spells.  She's half Hell Raven, half sun god, half pet, wholly awesome.
+* **Reisen Udongein Inaba:** Uses wavelength manipulation.  Former member of the Elite Lunarian Defence Corps, proficient with firearms with a touch of medicine at the side.  Starts with a Lunarian tech pistol.
 * **Remilia Scarlet:** Uses Red Magic.  The charismatic leader of the Scarlet Devil Mansion, nothing can oppose her when she's serious.
 * **Rin Kaenbyou :** Uses destructive fire spells, and calls forth Vengeful spirits to assist her in battle.  Drives a wooden cart powered by her dead enemies
 * **Sakuya Izayoi:** Uses time spells, fights by throwing knives and cleaning it elegantly and perfectly up afterwards.
-* **Seiga Kaku:** Uses wicked spells, fights without care for human life and norms, all while forcing "collateral damage" victims back to life to fight for her.
-* **Shameimaru Aya:** Uses wind spells.  The earnest, most pure, fastest Tengu reporter is always on the look of interesting news.
+* **Seiga Kaku:** Uses wicked spells, fights without care for human life or norms, all while forcing "collateral damage" victims back to life to fight for her.
 * **Tenshi Hinanawi:** Uses earth spells.  Very resistant to physical damage, very susceptible to boredom, she wields the Sword of Hisou and fights with a martial art focused on critical attacks over anything else.
+* **Utsuho Reiuji:** Uses nuclear spells.  She's half Hell Raven, half sun god, half pet, wholly awesome.
 * **Youmu Konpaku:** Uses sword techniques.  Also trained in gardening, she wields Roukanken and Hakurouken, two Youkai katana capable of cutting anything!
 
 
