@@ -21,7 +21,7 @@ It also adds a lot of stuff from the Touhou series, going from the relatively si
 
 ## Contents
 The mods includes so far:
-- [13 characters](characters) from several Touhou games and works (as professions), each with new spells among other things
+- [13 characters](https://github.com/RedMisao/Cataclysm-DDA-Touhou-Mod/tree/master/Touhou#characters) from several Touhou games and works (as professions), each with new spells among other things
 - [Lots of new weapons](new-weapons), including new ammo types, magazines, gunmods, etc.
 - [Lots of extinct fauna](extinct-fauna), to hunt or be hunted by
 - [Some youkai enemies](youkai), to be haunted by
