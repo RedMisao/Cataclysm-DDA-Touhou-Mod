@@ -86,7 +86,7 @@
         { "item": "vending_food", "x": 2, "y": 21, "chance": 75 }
       ],
 		"place_monsters": [ 
-			{ "monster": "GROUP_YOUKAI_CITY_DUMPSTER", "x": [ 21, 23 ], "y": [ 8, 14 ], "chance": 15 }
+			{ "monster": "GROUP_YOUKAI_CITY_DUMPSTER", "x": [ 21, 23 ], "y": [ 8, 14 ], "chance": 65 }
 		],
       "place_vehicles": [
         { "vehicle": "shopping_cart", "x": 14, "y": 9, "chance": 10 },

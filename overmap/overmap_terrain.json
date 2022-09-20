@@ -1,0 +1,23 @@
+[
+	{
+    "id": [
+		"shrine_medium_1"
+    ],
+	"type": "overmap_terrain",
+    "name": "shrine",
+    "sym": "⛩",
+    "color": "red",
+    "see_cost": 2
+	},
+	{
+    "id": [
+		"shrine_medium_1_roof"
+    ],
+	"type": "overmap_terrain",
+    "name": "shrine roof",
+    "sym": "⛩",
+    "color": "red",
+    "see_cost": 2,
+    "spawns": { "group": "GROUP_ROOF_ANIMAL", "population": [ 1, 3 ], "chance": 10 }
+	}
+]

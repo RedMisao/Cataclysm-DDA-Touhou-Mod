@@ -144,11 +144,11 @@
 		{ "chance": 15, "density": 0.25, "monster": "GROUP_ZOMBIE", "x": 60, "y": 58 }
 		],
       "place_monster": [
-		{ "monster": "mon_tsukumogami_seat_stool_1", "x": [ 10, 23 ], "y": [ 27, 42 ], "chance": 17, "repeat": [ 1, 2 ] },
-		{ "monster": "mon_tsukumogami_seat_stool_1", "x": [ 24, 24 ], "y": [ 26, 42 ], "chance": 9, "repeat": [ 1, 2 ] },
-		{ "monster": "mon_tsukumogami_seat_stool_1", "x": [ 49, 63 ], "y": [ 27, 42 ], "chance": 17, "repeat": [ 1, 2 ] },
-		{ "monster": "mon_tsukumogami_seat_stool_1", "x": [ 10, 23 ], "y": [ 51, 66 ], "chance": 17, "repeat": [ 1, 2 ] },
-		{ "monster": "mon_tsukumogami_seat_stool_1", "x": [ 49, 63 ], "y": [ 51, 66 ], "chance": 17, "repeat": [ 1, 2 ] }
+		{ "monster": "mon_tsukumogami_seat_stool_1", "x": [ 10, 23 ], "y": [ 27, 42 ], "chance": 25, "repeat": [ 1, 2 ] },
+		{ "monster": "mon_tsukumogami_seat_stool_1", "x": [ 24, 24 ], "y": [ 26, 42 ], "chance": 17, "repeat": [ 1, 2 ] },
+		{ "monster": "mon_tsukumogami_seat_stool_1", "x": [ 49, 63 ], "y": [ 27, 42 ], "chance": 25, "repeat": [ 1, 2 ] },
+		{ "monster": "mon_tsukumogami_seat_stool_1", "x": [ 10, 23 ], "y": [ 51, 66 ], "chance": 25, "repeat": [ 1, 2 ] },
+		{ "monster": "mon_tsukumogami_seat_stool_1", "x": [ 49, 63 ], "y": [ 51, 66 ], "chance": 25, "repeat": [ 1, 2 ] }
       ],
       "place_item": [
         { "item": "ketchup", "repeat": 1, "x": 65, "y": 16 },

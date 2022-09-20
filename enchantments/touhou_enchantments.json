@@ -1,13 +1,43 @@
 [
 	{
+    "id": "ench_autumn_melancholy",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "HELD",
+    "values": [ 
+		{ "value": "HUNGER", "multiply": 0.66 }
+	]
+	},
+	{
+    "id": "ench_death_coin",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "HELD",
+    "values": [ 
+		{ "value": "ATTACK_SPEED", "multiply": -0.05 },
+		{ "value": "SPEED", "multiply": -0.05 },
+		{ "value": "FATIGUE", "multiply": 0.1 }
+	]
+	},
+	{
+    "id": "ench_esper_cloak",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "MAX_MANA", "multiply": 0.33 },
+		{ "value": "REGEN_MANA", "multiply": 0.33 }
+	]
+	},
+	{
     "id": "ench_lampad_torch_off",
 	"type": "enchantment",
     "condition": "ALWAYS",
     "has": "WIELD",
     "values": [ 
-		{ "value": "INTELLIGENCE", "multiply": 0.95 },
-		{ "value": "PERCEPTION", "multiply": 0.95 },
-		{ "value": "ATTACK_SPEED", "multiply": 1.1 },
+		{ "value": "INTELLIGENCE", "multiply": -0.05 },
+		{ "value": "PERCEPTION", "multiply": -0.05 },
+		{ "value": "ATTACK_SPEED", "multiply": 0.1 },
 		{ "value": "MOVE_COST", "add": -20 }
 	]
 	},
@@ -17,10 +47,10 @@
     "condition": "ALWAYS",
     "has": "WIELD",
     "values": [ 
-		{ "value": "INTELLIGENCE", "multiply": 0.9 },
-		{ "value": "PERCEPTION", "multiply": 0.85 },
-		{ "value": "STRENGTH", "multiply": 1.1 },
-		{ "value": "ATTACK_SPEED", "multiply": 1.2 },
+		{ "value": "INTELLIGENCE", "multiply": -0.1 },
+		{ "value": "PERCEPTION", "multiply": -0.15 },
+		{ "value": "STRENGTH", "multiply": 0.1 },
+		{ "value": "ATTACK_SPEED", "multiply": 0.2 },
 		{ "value": "BONUS_DODGE", "add": -1 },
 		{ "value": "MOVE_COST", "add": -35 }
 	],
@@ -54,12 +84,36 @@
     "flags": [ "MUTATE_TRAIT", "NO_PROJECTILE", "SILENT" ]
 	},
 	{
+    "id": "ench_lucky_charm",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "HELD",
+    "mutations": [ "lucky_charm_mut" ]
+	},
+	{
     "id": "ench_reflectionslash",
 	"type": "enchantment",
     "condition": "ALWAYS",
     "has": "WORN",
     "values": [ 
 		{ "value": "ARMOR_BULLET", "multiply": -1 }
+	]
+	},
+	{
+    "id": "ench_spider_blessing",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "HELD",
+    "mutations": [ "spider_blessing_mut" ]
+	},
+	{
+    "id": "ench_strong_ice",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "HELD",
+    "values": [ 
+		{ "value": "INTELLIGENCE", "add": -3 },
+		{ "value": "STRENGTH", "add": 9 }
 	]
 	},
 	{
@@ -72,6 +126,128 @@
 		{ "value": "ARMOR_BASH", "add": 2 },
 		{ "value": "ARMOR_STAB", "add": 4 },
 		{ "value": "ARMOR_BULLET", "add": 2 }
+	],
+	"//": "ARMOR_X add +n REDUCES armor for n value, this is intended here as the aura increases melee dmg while reducing defense"
+	},
+	{
+    "id": "ench_wind_blessing",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "DEXTERITY", "add": 1 },
+		{ "value": "INTELLIGENCE", "add": 1 },
+		{ "value": "PERCEPTION", "add": 1 },
+		{ "value": "STRENGTH", "add": 1 }
+	],
+	"intermittent_activation": { "effects": [ { "frequency": "1 h", "spell_effects": [ { "id": "wind_blessing" } ] } ] }
+	},
+	{
+    "id": "ench_wind_blessing_dex2",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "DEXTERITY", "add": 3 }
+	]
+	},
+	{
+    "id": "ench_wind_blessing_dex3",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "DEXTERITY", "add": 6 }
+	]
+	},
+	{
+    "id": "ench_wind_blessing_dex4",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "DEXTERITY", "add": 9 }
+	]
+	},
+	{
+    "id": "ench_wind_blessing_int2",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "INTELLIGENCE", "add": 3 }
+	]
+	},
+	{
+    "id": "ench_wind_blessing_int3",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "INTELLIGENCE", "add": 6 }
+	]
+	},
+	{
+    "id": "ench_wind_blessing_int4",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "INTELLIGENCE", "add": 9 }
+	]
+	},
+	{
+    "id": "ench_wind_blessing_per2",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "PERCEPTION", "add": 3 }
+	]
+	},
+	{
+    "id": "ench_wind_blessing_per3",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "PERCEPTION", "add": 6 }
+	]
+	},
+	{
+    "id": "ench_wind_blessing_per4",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "PERCEPTION", "add": 9 }
+	]
+	},
+	{
+    "id": "ench_wind_blessing_str2",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "STRENGTH", "add": 3 }
+	]
+	},
+	{
+    "id": "ench_wind_blessing_str3",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "STRENGTH", "add": 6 }
+	]
+	},
+	{
+    "id": "ench_wind_blessing_str4",
+	"type": "enchantment",
+    "condition": "ALWAYS",
+    "has": "WORN",
+    "values": [ 
+		{ "value": "STRENGTH", "add": 9 }
 	]
 	}
 ]

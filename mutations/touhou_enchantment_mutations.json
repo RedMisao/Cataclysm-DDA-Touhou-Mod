@@ -1,0 +1,25 @@
+[
+	{
+    "id": "lucky_charm_mut",
+	"type": "mutation",
+    "name": "Lucky",
+    "points": 0,
+    "description": "You feel lucky!",
+	"profession": false,
+	"purifiable": false,
+	"starting_trait": false,
+    "valid": true
+	},
+	{
+    "id": "spider_blessing_mut",
+	"type": "mutation",
+    "name": "Disease immunity",
+    "points": 0,
+    "description": "You're immune to diseases.",
+	"profession": false,
+	"purifiable": false,
+	"starting_trait": false,
+    "valid": true,
+	"flags": [ "NO_DISEASE" ]
+	}
+]

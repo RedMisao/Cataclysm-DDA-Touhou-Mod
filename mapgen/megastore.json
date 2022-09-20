@@ -258,7 +258,7 @@
         "T": { "item": "office", "chance": 20 }
       },
       "place_monster": [
-        { "monster": "mon_tsukumogami_seat_chair_1", "x": [ 8, 15 ], "y": [ 12, 16 ], "chance": 17, "repeat": [ 1, 2 ] }
+        { "monster": "mon_tsukumogami_seat_chair_1", "x": [ 8, 15 ], "y": [ 12, 16 ], "chance": 25, "repeat": [ 1, 2 ] }
       ]
     }
   },
@@ -304,7 +304,7 @@
         "T": { "item": "office", "chance": 20 }
       },
       "place_monster": [
-        { "monster": "mon_tsukumogami_seat_chair_1", "x": [ 8, 15 ], "y": [ 12, 16 ], "chance": 17, "repeat": [ 1, 2 ] }
+        { "monster": "mon_tsukumogami_seat_chair_1", "x": [ 8, 15 ], "y": [ 12, 16 ], "chance": 25, "repeat": [ 1, 2 ] }
       ]
     }
   },
@@ -350,7 +350,7 @@
         "T": { "item": "office", "chance": 20 }
       },
       "place_monster": [
-        { "monster": "mon_tsukumogami_seat_chair_1", "x": [ 8, 15 ], "y": [ 12, 16 ], "chance": 17, "repeat": [ 1, 2 ] }
+        { "monster": "mon_tsukumogami_seat_chair_1", "x": [ 8, 15 ], "y": [ 12, 16 ], "chance": 25, "repeat": [ 1, 2 ] }
       ]
     }
   },
@@ -396,7 +396,7 @@
         "T": { "item": "office", "chance": 20 }
       },
       "place_monster": [
-        { "monster": "mon_tsukumogami_seat_chair_1", "x": [ 8, 15 ], "y": [ 12, 16 ], "chance": 17, "repeat": [ 1, 2 ] }
+        { "monster": "mon_tsukumogami_seat_chair_1", "x": [ 8, 15 ], "y": [ 12, 16 ], "chance": 25, "repeat": [ 1, 2 ] }
       ]
     }
   },
@@ -442,7 +442,7 @@
         "T": { "item": "office", "chance": 20 }
       },
       "place_monster": [
-        { "monster": "mon_tsukumogami_seat_chair_1", "x": [ 8, 15 ], "y": [ 12, 16 ], "chance": 17, "repeat": [ 1, 2 ] }
+        { "monster": "mon_tsukumogami_seat_chair_1", "x": [ 8, 15 ], "y": [ 12, 16 ], "chance": 25, "repeat": [ 1, 2 ] }
       ]
     }
   },
@@ -1504,7 +1504,7 @@
       "palettes": [ "megastore", "mega_goods_b" ],
       "set": [ { "square": "terrain", "x": 9, "y": 9, "x2": 14, "y2": 14, "id": "t_concrete" } ],
       "place_monster": [
-        { "monster": "mon_tsukumogami_seat_chair_1", "x": [ 4, 18 ], "y": [ 10, 16 ], "chance": 17, "repeat": [ 1, 2 ] }
+        { "monster": "mon_tsukumogami_seat_chair_1", "x": [ 4, 18 ], "y": [ 10, 16 ], "chance": 25, "repeat": [ 1, 2 ] }
       ]
     }
   },
@@ -1942,7 +1942,7 @@
       "rotation": 0,
       "palettes": [ "megastore" ],
       "place_monster": [
-        { "monster": "mon_tsukumogami_seat_chair_1", "x": [ 9, 15 ], "y": [ 13, 16 ], "chance": 17, "repeat": [ 1, 2 ] }
+        { "monster": "mon_tsukumogami_seat_chair_1", "x": [ 9, 15 ], "y": [ 13, 16 ], "chance": 25, "repeat": [ 1, 2 ] }
       ]
     }
   },

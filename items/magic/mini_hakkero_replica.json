@@ -17,8 +17,10 @@
 	"material": [ "plastic", "steel", "wood" ],
 	"symbol": "☲",
     "color": "light_blue",
-	"charges_per_use": 0,
+	"charges_per_use": 1,
     "qualities": [ [ "COOK", 1 ] ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "battery": 5 } } ],
+    "relic_data": { "charge_info": { "regenerate_ammo": true, "recharge_type": "periodic", "time": "30 s" } },
     "use_action": [ 
 		"HOTPLATE", 
 		{ 
@@ -31,7 +33,7 @@
 		{ "type": "cast_spell", "spell_id": "mini_hakkero_replica_mspark", "no_fail": true, "level": 1 },
 		{ "type": "cast_spell", "spell_id": "mini_hakkero_replica_mmissile", "no_fail": true, "level": 1 }
 	],
-	"flags": [ "BELT_CLIP", "TRADER_AVOID", "USE_PLAYER_ENERGY" ]
+	"flags": [ "BELT_CLIP", "NO_RELOAD", "NO_UNLOAD", "TRADER_AVOID" ]
 	},
 	{
     "id": "mini_hakkero_replica_on",

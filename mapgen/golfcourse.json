@@ -18,8 +18,8 @@
       "items": { "&": { "item": "trash", "chance": 25, "repeat": 2 }, "v": { "item": "golf_green", "chance": 10 } },
 		"place_monsters": [ 
 			{ "monster": "GROUP_PARK_ANIMAL", "x": [ 2, 21 ], "y": [ 2, 21 ], "repeat": [ 0, 2 ] },
-			{ "monster": "GROUP_YOUKAI_OPENFIELD", "x": [ 2, 21 ], "y": [ 2, 21 ], "chance": 10, "density": 0.05 }
-			],
+			{ "monster": "GROUP_YOUKAI_OPENFIELD", "x": [ 1, 23 ], "y": [ 1, 23 ], "chance": 35, "density": 0.05 }
+		],
       "rows": [
         "........................",
         "...................ws...",
@@ -98,7 +98,7 @@
       "furniture": { ".": "f_null", "4": "f_null", "_": "f_null", "s": "f_null" },
 		"place_monsters": [ 
 			{ "monster": "GROUP_PARK_ANIMAL", "x": [ 2, 21 ], "y": [ 2, 21 ], "repeat": [ 0, 2 ] },
-			{ "monster": "GROUP_YOUKAI_OPENFIELD", "x": [ 2, 21 ], "y": [ 2, 21 ], "chance": 10, "density": 0.05 }
+			{ "monster": "GROUP_YOUKAI_OPENFIELD", "x": [ 1, 23 ], "y": [ 1, 23 ], "chance": 35, "density": 0.05 }
 			],
       "rows": [
         "44_...._444_...._4sss444",

@@ -80,5 +80,30 @@
 		}
     ],
     "flags": [ "BELTED", "TARDIS" ]
+	},
+	{
+    "id": "occult_sphere",
+    "type": "GENERIC",
+    "category": "container",
+    "name": { "str": "occult sphere", "str_pl": "occult sphere" },
+    "description": "WIP",
+    "weight": "3700 g",
+    "volume": "5575 ml",
+	"longest_side": "11 cm",
+    "price_postapoc": 0,
+    "material": [ "steel" ],
+    "symbol": "O",
+    "color": "magenta",
+    "pocket_data": [
+		{
+        "pocket_type": "CONTAINER",
+        "rigid": true,
+        "max_contains_volume": "150 L",
+        "max_contains_weight": "150 kg",
+        "max_item_length": "300 cm"
+		} 
+	],
+    "flags": [ "TARDIS" ],
+	"//": "This should be destroyed after looting, or be rendered unusable, or become super heavy so it's basically useless"
 	}
 ]

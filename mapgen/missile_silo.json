@@ -146,8 +146,8 @@
       "toilets": { "&": {  } },
       "monster": { ".": { "monster": "mon_zombie_soldier", "chance": 10 } },
       "place_monster": [
-		{ "monster": "mon_tsukumogami_seat_chair_1", "x": [ 2, 8 ], "y": [ 2, 6 ], "chance": 17, "repeat": [ 1, 2 ] },
-		{ "monster": "mon_tsukumogami_seat_chair_1", "x": [ 15, 19 ], "y": [ 2, 6 ], "chance": 17, "repeat": [ 1, 2 ] }
+		{ "monster": "mon_tsukumogami_seat_chair_1", "x": [ 2, 8 ], "y": [ 2, 6 ], "chance": 25, "repeat": [ 1, 2 ] },
+		{ "monster": "mon_tsukumogami_seat_chair_1", "x": [ 15, 19 ], "y": [ 2, 6 ], "chance": 25, "repeat": [ 1, 2 ] }
       ]
     }
   },
@@ -268,7 +268,7 @@
       "toilets": { "&": {  } },
       "monster": { ",": { "monster": "mon_zombie_scientist", "chance": 10 } },
       "place_monster": [
-		{ "monster": "mon_tsukumogami_seat_chair_1", "x": [ 8, 10 ], "y": [ 1, 4 ], "chance": 17, "repeat": [ 1, 2 ] }
+		{ "monster": "mon_tsukumogami_seat_chair_1", "x": [ 8, 10 ], "y": [ 1, 4 ], "chance": 25, "repeat": [ 1, 2 ] }
       ]
     }
   },
@@ -523,7 +523,7 @@
       "place_graffiti": [ { "text": "Warning!  Automatic security measures engaged due to the lockdown order!", "x": 17, "y": 20 } ],
       "place_monster": [ 
 		{ "monster": "mon_zombie_hazmat", "x": 8, "y": 15 },
-		{ "monster": "mon_tsukumogami_seat_chair_1", "x": [ 18, 21 ], "y": [ 14, 18 ], "chance": 17, "repeat": [ 1, 2 ] }
+		{ "monster": "mon_tsukumogami_seat_chair_1", "x": [ 18, 21 ], "y": [ 14, 18 ], "chance": 25, "repeat": [ 1, 2 ] }
 	]
     }
   }

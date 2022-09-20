@@ -205,7 +205,7 @@
 	"energy_source": "MANA",
 	"flags": [ "NO_HANDS", "NO_PROJECTILE", "SILENT" ]
 	},
-		{
+	{
     "id": "tenko_keystonefloating",
     "type": "SPELL",
     "name": "Summon: floating keystone",

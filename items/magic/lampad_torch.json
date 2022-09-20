@@ -19,14 +19,16 @@
 	"symbol": "/",
 	"looks_like": "torch",
     "color": "brown",
-    "initial_charges": 20,
-    "max_charges": 20,
-	"charges_per_use": 0,
+	"charges_per_use": 1,
     "techniques": [ "WBLOCK_1" ],
-	"relic_data": { "passive_effects": [ { "id": "ench_lampad_torch_off" } ] },
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "battery": 20 } } ],
+	"relic_data": { 
+		"passive_effects": [ { "id": "ench_lampad_torch_off" } ],
+		"charge_info": { "regenerate_ammo": true, "recharge_type": "periodic", "time": "3 m" }
+	},
     "use_action": [ 
 		{
-		"target": "torch_lit",
+		"target": "lampad_torch_lit",
 		"type": "transform",
 		"msg": "You light the torch. ",
 		"menu_text": "Light torch",
@@ -34,7 +36,7 @@
 		"need_fire": 1
 		}
 	],
-	"flags": [ "BURNOUT" ]
+	"flags": [ "BURNOUT", "NO_RELOAD", "NO_UNLOAD" ]
 	},
 	{
     "id": "lampad_torch_lit",
@@ -56,22 +58,23 @@
 	"symbol": "/",
 	"looks_like": "torch",
     "color": "brown",
-    "initial_charges": 20,
     "max_charges": 20,
-    "turns_per_charge": 0,
+    "turns_per_charge": 300,
     "revert_to": "lampad_torch",
     "techniques": [ "WBLOCK_1" ],
+	"charges_per_use": 1,
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "battery": 20 } } ],
 	"relic_data": { "passive_effects": [ { "id": "ench_lampad_torch_lit" } ] },
     "use_action": [
 		{ "type": "firestarter", "moves": 100 },
 		{
-			"target": "torch",
+			"target": "lampad_torch",
 			"type": "transform",
 			"msg": "THE torch is extinguished…",
 			"menu_text": "Extinguish",
 			"active": false
 		}
     ],
-	"flags": [ "BURNOUT", "FIRE", "FLAMING", "LIGHT_40", "TRADER_AVOID" ]
+	"flags": [ "BURNOUT", "FIRE", "FLAMING", "LIGHT_40", "NO_RELOAD", "NO_UNLOAD", "TRADER_AVOID" ]
 	}
 ]

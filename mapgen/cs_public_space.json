@@ -46,7 +46,7 @@
       "furniture": { "S": "f_statue", "b": "f_bench", "D": "f_dumpster", "N": "f_bulletin", "f": "f_bluebell" },
       "items": { "D": { "item": "oa_custom_trash", "chance": 70 }, "b": { "item": "oa_discarded_news", "chance": 5 } },
 		"place_monsters": [ 
-			{ "monster": "GROUP_YOUKAI_CITY", "x": [ 1, 16 ], "y": [ 1, 16 ], "density": 0.1 }
+			{ "monster": "GROUP_YOUKAI_CITY", "x": [ 1, 16 ], "y": [ 1, 16 ], "chance": 65 }
 		]
     }
   }

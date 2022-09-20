@@ -3,7 +3,7 @@
     "id": "mokou_blazekick",
     "type": "SPELL",
     "name": "Blaze kick",
-    "description": "Spin into a whirldwind of flames, dealing damage and kicking enemies back.  The knockback distance increases with levels.",
+    "description": "Spin into a whirldwind of flames, dealing damage and kicking enemies back.",
 	"spell_class": "NONE",
 	"valid_targets": [ "ground", "hostile" ],
     "effect": "attack",
@@ -22,7 +22,7 @@
     "base_casting_time": 50,
     "base_energy_cost": 150,
 	"energy_source": "MANA",
-	"flags": [ "NO_HANDS", "LOUD", "SOMATIC" ]
+	"flags": [ "LOUD", "NO_HANDS", "SOMATIC" ]
 	},
 	{
     "id": "mokou_blazekick2",
@@ -113,7 +113,7 @@
     "base_casting_time": 33,
     "base_energy_cost": 100,
 	"energy_source": "MANA",
-	"flags": [ "NO_HANDS", "LOUD" ]
+	"flags": [ "LOUD", "NO_HANDS" ]
 	},
 	{
     "id": "mokou_combustion2",

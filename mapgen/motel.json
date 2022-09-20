@@ -533,7 +533,7 @@
         { "monster": "GROUP_ZOMBIE", "x": [ 24, 47 ], "y": [ 0, 23 ] },
         { "monster": "GROUP_ZOMBIE", "x": [ 0, 23 ], "y": [ 24, 47 ] },
         { "monster": "GROUP_ZOMBIE", "x": [ 24, 47 ], "y": [ 24, 47 ] },
-		{ "monster": "GROUP_YOUKAI_CITY_DUMPSTER", "x": [ 1, 11 ], "y": [ 41, 47 ], "chance": 15 }
+		{ "monster": "GROUP_YOUKAI_CITY_DUMPSTER", "x": [ 1, 11 ], "y": [ 41, 47 ], "chance": 65 }
       ]
     }
   },
@@ -826,8 +826,7 @@
       "place_signs": [ { "signage": "Travelier MOTEL", "x": 23, "y": 1 } ],
       "place_monsters": [ 
 		{ "monster": "GROUP_ZOMBIE", "x": [ 7, 22 ], "y": [ 5, 16 ] },
-		{ "monster": "GROUP_YOUKAI_CITY_DUMPSTER", "x": [ 10, 12 ], "y": [ 4, 8 ], "chance": 3 },
-		{ "monster": "GROUP_YOUKAI_CITY_DUMPSTER", "x": [ 13, 23 ], "y": [ 4, 8 ], "chance": 16 }
+		{ "monster": "GROUP_YOUKAI_CITY_DUMPSTER", "x": [ 10, 23 ], "y": [ 4, 8 ], "chance": 65 }
 		],
       "place_vehicles": [ { "chance": 30, "fuel": 15, "vehicle": "rv", "x": 30, "y": 8 } ],
       "place_graffiti": [ { "text": "Big half-erased pink X", "x": 44, "y": 2 } ]

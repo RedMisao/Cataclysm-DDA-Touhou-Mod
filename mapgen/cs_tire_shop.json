@@ -79,7 +79,7 @@
         { "item": "vending_drink_items", "chance": 60, "repeat": [ 3, 12 ], "x": 14, "y": 18 }
       ],
 		"place_monsters": [ 
-			{ "monster": "GROUP_YOUKAI_CITY_DUMPSTER", "x": [ 5, 22 ], "y": 22, "chance": 15 }
+			{ "monster": "GROUP_YOUKAI_CITY_DUMPSTER", "x": [ 5, 22 ], "y": 22, "chance": 65 }
 		],
       "add": [ { "item": "microwave", "x": 16, "y": 18, "chance": 2 }, { "item": "coffeemaker", "x": 16, "y": 19, "chance": 2 } ],
       "toilets": { "T": {  } },

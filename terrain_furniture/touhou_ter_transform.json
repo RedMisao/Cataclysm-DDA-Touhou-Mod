@@ -2,7 +2,7 @@
 	{
     "id": "groundmelt_ter",
 	"type": "ter_furn_transform",
-    "furniture": [
+    "terrain": [
 		{
         "result": "t_lava",
         "message": "The ground heats up and turns into lava!",
@@ -50,9 +50,30 @@
 	{
     "id": "nukeglassing_ter",
 	"type": "ter_furn_transform",
-    "furniture": [
+    "terrain": [
 		{
         "result": "t_glassed_sand",
+		"valid_flags": [ "DIGGABLE" ]
+		}
+    ]
+	},
+	{
+    "id": "prankster_pit_ter",
+	"type": "ter_furn_transform",
+    "terrain": [
+		{ 
+		"result": "t_hole", 
+		"valid_flags": [ "DIGGABLE", "PLOWABLE" ]
+		}
+    ]
+	},
+	{
+    "id": "sunflower_spam_fur",
+	"type": "ter_furn_transform",
+    "furniture": [
+		{
+        "result": [ [ "f_sunflower", 2 ], [ "f_null", 3 ] ],
+        "message": "Sunflowers sprout around you!",
 		"valid_flags": [ "DIGGABLE" ]
 		}
     ]

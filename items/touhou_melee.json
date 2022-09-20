@@ -337,8 +337,8 @@
 		"length": "short", 
 		"surface": "any"
 	},
-	"bashing": 8,
-    "cutting": 30,
+	"bashing": 5,
+    "cutting": 28,
     "material": [ "steel" ],
 	"symbol": "/",
     "color": "yellow",
@@ -370,9 +370,10 @@
 		"surface": "line"
 	},
 	"bashing": 2,
-    "cutting": 42,
+    "cutting": 40,
 	"material": [ "steel" ],
     "//2": " For me, 'send phantoms to Nirvana' is synonymous with 'instakill phantoms'. Its damage should be equal if not higher than Roukanken, but purely soul ",
+	"ascii_picture": "katana",
     "symbol": "/",
     "color": "light_gray",
     "techniques": [ "VORPAL", "WBLOCK_2" ],
@@ -407,7 +408,7 @@
     "color": "light_gray",
     "techniques": [ "VORPAL", "WBLOCK_2", "WIDE" ],
     "qualities": [ [ "CUT", 1 ] ],
-    "weapon_category": [ "JAPANESE_SWORDS", "LONG_SWORDS" ],
+    "weapon_category": [ "GREAT_SWORDS", "JAPANESE_SWORDS", "LONG_SWORDS" ],
     "flags": [ "DURABLE_MELEE", "SHEATH_SWORD" ]
 	}
 ]

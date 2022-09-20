@@ -85,7 +85,7 @@
       ],
 		"place_monsters": [ 
 			{ "monster": "GROUP_ZOMBIE_FAT_BASE", "chance": 1, "x": [ 4, 9 ], "y": [ 5, 13 ] },
-			{ "monster": "GROUP_YOUKAI_CITY_DUMPSTER", "x": [ 10, 21 ], "y": [ 20, 22 ], "chance": 15 }
+			{ "monster": "GROUP_YOUKAI_CITY_DUMPSTER", "x": [ 10, 21 ], "y": [ 20, 22 ], "chance": 65 }
 		],
       "place_fields": [
         { "field": "fd_blood", "x": [ 4, 7 ], "y": [ 5, 12 ], "repeat": [ 8, 12 ] },
@@ -290,7 +290,7 @@
       ],
 		"place_monsters": [ 
 			{ "monster": "GROUP_ZOMBIE_FAT_BASE", "chance": 1, "x": [ 4, 9 ], "y": [ 5, 13 ] },
-			{ "monster": "GROUP_YOUKAI_CITY_DUMPSTER", "x": [ 10, 21 ], "y": [ 20, 22 ], "chance": 15 }
+			{ "monster": "GROUP_YOUKAI_CITY_DUMPSTER", "x": [ 10, 21 ], "y": [ 20, 22 ], "chance": 65 }
 		],
       "place_fields": [
         { "field": "fd_blood", "x": [ 5, 8 ], "y": [ 12, 14 ], "repeat": [ 8, 12 ] },
@@ -484,7 +484,7 @@
       ],
 		"place_monsters": [ 
 			{ "monster": "GROUP_ANIMALPOUND_DOGS", "chance": 1, "x": [ 5, 10 ], "y": [ 13, 15 ] },
-			{ "monster": "GROUP_YOUKAI_CITY_DUMPSTER", "x": [ 11, 22 ], "y": [ 19, 21 ], "chance": 15 }
+			{ "monster": "GROUP_YOUKAI_CITY_DUMPSTER", "x": [ 11, 22 ], "y": [ 19, 21 ], "chance": 65 }
 		],
       "place_fields": [
         { "field": "fd_blood", "x": [ 5, 8 ], "y": [ 12, 14 ], "repeat": [ 8, 12 ] },

@@ -95,5 +95,42 @@
     "display_field": true,
     "looks_like": "f_rubble",
     "legacy_make_rubble": false
+	},
+	{
+    "id": "fd_smoke2",
+    "type": "field_type",
+    "legacy_enum_id": 12,
+    "intensity_levels": [
+		{
+        "name": "thin darkness",
+        "sym": "8",
+        "dangerous": true,
+        "translucency": 1
+		},
+		{
+        "name": "darkness",
+        "color": "light_gray",
+        "transparent": false,
+        "translucency": 10,
+        "scent_neutralization": 1
+		},
+		{
+        "name": "thick darkness",
+        "color": "dark_gray",
+        "translucency": 0,
+        "scent_neutralization": 5
+		}
+    ],
+    "decay_amount_factor": 2,
+    "dirty_transparency_cache": true,
+    "percent_spread": 10,
+    "outdoor_age_speedup": "0 turns",
+    "priority": 8,
+    "half_life": "6 seconds",
+    "phase": "gas",
+    "accelerated_decay": false,
+    "display_items": false,
+    "display_field": true,
+    "looks_like": "fd_smoke"
 	}
 ]
