@@ -62,4 +62,4 @@ Fixed bugs:
 * Tenko's sword being super fragile
 
 
-**Note:** seems that dash spells are all bugged: they don't do damage at the location, and randomly either not cast secondary effects, or do it at double the designated distance. See issues #53511 and #60704 from the C:DDA repo
+**Note:** seems that dash spells are all bugged: they don't do damage at the location, and randomly either not cast secondary effects, or do it at double the designated distance. See issues #53511 and #53532 from the C:DDA repo
