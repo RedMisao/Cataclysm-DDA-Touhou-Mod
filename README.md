@@ -27,7 +27,37 @@ New items:
     * Strong ice: makes you the strongest
     * Sunflower pin: spams sunflowers
     * Wind priesess charm: grants you positive buffs
+    * (WIP) Gap generator: would create gaps to shorten distances
 
 
 New locations:
 * Shrine: a simple Shinto-style shrine.  Magical items should spawn here, for the moment being.
+
+
+New monsters:
+* Jackalope: a horned hare
+* Skinwalkers: various (in)famous, dangerous wilderness beasts that mimmick humans, with varying degrees of intelligence and cunning
+* Female ghosts: banshee, La Llorona, white lady
+* Squonk: a warty entity that cries all the time
+
+
+New spells:
+* Aya, Remi and Utsuho now have wings mutations. While active, it enables them to fly over ledges and open spaces, consuming stamina
+* Udonge has another Wavelength manipulation spell: Mental fortitude, which renders her immune to mental debuffs
+
+
+New weather:
+* Scarlet mist and fog. Should happen randomly, and reduce sun intensity
+* (WIP) Night parade and Silence hour: random events
+
+
+Other changes:
+* Lunar weapons were changed (again), now automatically regen ammo over time, and can't be unloaded or reloaded
+
+
+Fixes and minor changes
+* Temporary fix for dashes over open air not working (cdda issues #53511 and #53532).
+* Fixed Tenko's keystone dismissal not dismissing pillar keystones
+* Fixed Tenko's keystone pillar not being castable on top of enemies
+* Reduced loudness of Lunar weapons
+* Fixed and tweaked some character mutations values. Also fixed a bug where mutation stat modifiers increased cost while on character selection
