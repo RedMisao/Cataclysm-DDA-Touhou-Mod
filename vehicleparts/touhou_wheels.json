@@ -25,8 +25,8 @@
     "contact_area": 40,
 	"//": "Calculated area for the wheel's dimensions are 754 cm2 ",
 	"looks_like": "wheel_wood",
-	"flags": [ "FOLDABLE", "NEEDS_JACKING", "STABLE", "STEERABLE", "WHEEL" ],
-	"//3": "No idea what FOLDABLE and NEEDS_JACKING do"
+	"flags": [ "NEEDS_JACKING", "STABLE", "STEERABLE", "WHEEL" ],
+	"//3": "No idea what NEEDS_JACKING does"
 	},
 	{
     "id": "wheel_keystone",
@@ -53,6 +53,6 @@
     "wheel_type": "threads",
     "contact_area": 200,
 	"looks_like": "wheel_wood",
-	"flags": [ "FOLDABLE", "STABLE", "STEERABLE", "WHEEL" ]
+	"flags": [ "STABLE", "STEERABLE", "WHEEL" ]
 	}
 ]

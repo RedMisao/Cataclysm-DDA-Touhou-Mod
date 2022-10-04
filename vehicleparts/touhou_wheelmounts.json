@@ -20,7 +20,7 @@
 		"repair": { "skills": [ [ "mechanics", 3 ] ], "time": "10 m", "using": [ [ "adhesive", 2 ] ] }
     },
 	"damage_reduction": { "all": 10 },
-	"flags": [ "FOLDABLE", "NEEDS_JACKING", "STEERABLE", "WHEEL_MOUNT_MEDIUM" ],
-    "//": "No idea what FOLDABLE and NEEDS_JACKING do"
+	"flags": [ "NEEDS_JACKING", "STEERABLE", "WHEEL_MOUNT_MEDIUM" ],
+    "//": "No idea what NEEDS_JACKING does"
   }
 ]

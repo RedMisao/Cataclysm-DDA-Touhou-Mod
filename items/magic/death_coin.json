@@ -23,7 +23,13 @@
     "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "battery": 3 } } ],
     "relic_data": { 
 		"charge_info": { "regenerate_ammo": true, "recharge_type": "periodic", "time": "20 s" },
-		"passive_effects": [ { "id": "ench_death_coin" } ]
+		"passive_effects": [ 
+			{
+			"has": "HELD",
+			"condition": "ALWAYS",
+			"mutations": [ "death_coin_mut" ]
+			}
+		]
 	},
     "use_action": [ 
 		{ 

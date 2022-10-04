@@ -20,7 +20,15 @@
 	"looks_like": "rock",
     "color": "white",
     "techniques": [ "BRUTAL" ],
-	"relic_data": { "passive_effects": [ { "id": "ench_strong_ice" } ] },
+	"relic_data": { 
+		"passive_effects": [ 
+			{
+			"has": "WIELD",
+			"condition": "ALWAYS",
+			"mutations": [ "strong_ice_mut" ]
+			}
+		] 
+	},
 	"flags": [ "DURABLE_MELEE" ]
 	}
 ]

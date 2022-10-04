@@ -165,7 +165,7 @@
     "max_level": 10,
     "difficulty": -10,
     "base_casting_time": 100,
-    "base_energy_cost": 166,
+    "base_energy_cost": 133,
 	"energy_source": "MANA",
 	"flags": [ "NO_LEGS", "SOMATIC" ]
 	},
@@ -190,7 +190,7 @@
     "max_level": 20,
     "difficulty": -10,
     "base_casting_time": 200,
-	"base_energy_cost": 33,
+	"base_energy_cost": 66,
 	"energy_source": "MANA",
 	"flags": [ "NO_LEGS", "SOMATIC" ]
 	},

@@ -19,7 +19,15 @@
 	"symbol": "🐸",
 	"looks_like": "mon_frog",
     "color": "green",
-    "relic_data": { "passive_effects": [ { "id": "ench_wind_blessing" } ] },
+    "relic_data": { 
+		"passive_effects": [ 
+			{
+			"has": "HELD",
+			"condition": "ALWAYS",
+			"mutations": [ "wind_priestess_charm_mut" ]
+			}
+		] 
+	},
 	"armor": [ { "covers": [ "head" ], "specifically_covers": [ "head_crown" ], "coverage": 0, "encumbrance": 0 } ],
 	"flags": [ "DURABLE_MELEE", "FANCY", "ONLY_ONE", "SEMITANGIBLE", "SKINTIGHT" ]
 	},

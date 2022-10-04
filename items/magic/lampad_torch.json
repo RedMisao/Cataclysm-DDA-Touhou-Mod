@@ -23,7 +23,13 @@
     "techniques": [ "WBLOCK_1" ],
     "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "battery": 20 } } ],
 	"relic_data": { 
-		"passive_effects": [ { "id": "ench_lampad_torch_off" } ],
+		"passive_effects": [ 
+			{
+			"has": "WIELD",
+			"condition": "ALWAYS",
+			"mutations": [ "lampad_torch_off_mut" ]
+			} 
+		],
 		"charge_info": { "regenerate_ammo": true, "recharge_type": "periodic", "time": "3 m" }
 	},
     "use_action": [ 
@@ -64,15 +70,23 @@
     "techniques": [ "WBLOCK_1" ],
 	"charges_per_use": 1,
     "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "battery": 20 } } ],
-	"relic_data": { "passive_effects": [ { "id": "ench_lampad_torch_lit" } ] },
+	"relic_data": { 
+		"passive_effects": [ 
+			{
+			"has": "WIELD",
+			"condition": "ALWAYS",
+			"mutations": [ "lampad_torch_lit_mut" ]
+			}
+		] 
+	},
     "use_action": [
 		{ "type": "firestarter", "moves": 100 },
 		{
-			"target": "lampad_torch",
-			"type": "transform",
-			"msg": "THE torch is extinguished…",
-			"menu_text": "Extinguish",
-			"active": false
+		"target": "lampad_torch",
+		"type": "transform",
+		"msg": "THE torch is extinguished…",
+		"menu_text": "Extinguish",
+		"active": false
 		}
     ],
 	"flags": [ "BURNOUT", "FIRE", "FLAMING", "LIGHT_40", "NO_RELOAD", "NO_UNLOAD", "TRADER_AVOID" ]

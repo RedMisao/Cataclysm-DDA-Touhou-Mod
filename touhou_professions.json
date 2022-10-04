@@ -130,6 +130,7 @@
 		{ "level": 1, "id": "iku_waterveil" }
 	],
     "traits": [
+		"OARFISH_SPECIES",
 		"PROF_IKU",
 		"SPIRIT_USER"
 	],
@@ -173,8 +174,11 @@
     ],
 	"vehicle": "kaenbyou_wheelbarrow2",
 	"traits": [
-        "KASHA_SPECIES",
+        "KASHA_EARS",
+		"KASHA_SPECIES",
+		"KASHA_TAILS",		
 		"PROF_KAENBYOU",
+		"YOUKAI_SPECIES",
 		"SPIRIT_USER"
     ],
     "items": {
@@ -216,6 +220,7 @@
 		{ "level": 8, "name": "swimming" }
     ],
 	"traits": [
+		"YOUKAI_SPECIES",
 		"SPIRIT_USER"
     ],
     "items": {
@@ -246,10 +251,10 @@
     "points": 4,
 	"proficiencies": [ "prof_intro_biology", "prof_intro_chemistry", "prof_inorganic_chemistry", "prof_pharmaceutical" ], 
 	"spells": [ 
-		{ "level": 1, "id": "create_ammo_lunar_small" },
 		{ "level": 1, "id": "dash_basic" },
 		{ "level": 1, "id": "udonge_iblast" },
 		{ "level": 1, "id": "udonge_waveinsight" },
+		{ "level": 1, "id": "udonge_wavemfortitude" },
 		{ "level": 1, "id": "udonge_waveperception" },
 		{ "level": 1, "id": "udonge_wavestealth" }
 	],
@@ -304,7 +309,6 @@
     "description": "You were accompanying the Watatsuki sisters on their visit to Earth when the Cataclysm struck! In the chaos and panic that followed the collapse of the Barrier (or that's what you heard from them), you got separated and left alone.  To make things worse, you can't contact your peers by use of the Gyokuto network.  You've got some skills from your Lunar Defense Corps training, but you'll need more than that to survive…",
     "points": 4,
 	"spells": [ 
-		{ "level": 1, "id": "create_ammo_lunar_medium" },
 		{ "level": 1, "id": "dash_reisen" },
 		{ "level": 1, "id": "reisen_entanglement" },
 		{ "level": 1, "id": "reisen_optimism" },
@@ -379,6 +383,7 @@
 	"traits": [
 		"TABLEMANNERS",
 		"VAMPIRE_SPECIES",
+		"WINGS_BAT_REMI",
 		"PROF_REMI",
 		"SPIRIT_USER"
     ],
@@ -425,11 +430,11 @@
 		{ "level": 4, "name": "throw" }
 	],
 	"traits": [
+		"MYSTERIOUS",
         "PSYCHOPATH",
 		"SPIRIT_USER"
 	],
 	"//": "Change PSYCHOPATH for something like CALLOUS instead: no bonuses like PSYCHOPATH but no demerits for killing and butchering humans and children specifically",
-	"//2": "I want to add some deep and mysterious species to her that does nothing other than lore flavor but I'm missing the perfect (and elegant) name",
 	"items": {
         "both": {
             "items": [
@@ -530,6 +535,8 @@
 	"//": "Cutting for katana and other Tengu (Japanese) weapons I think",
 	"traits": [
 		"TENGUCROW_SPECIES",
+		"WINGS_TENGUCROW",
+		"YOUKAI_SPECIES",
 		"PROF_AYA"
     ],
     "items": {
@@ -626,6 +633,9 @@
     ],
 	"traits": [
         "HELLRAVEN_SPECIES",
+		"WINGS_HELLRAVEN",
+		"YATAGARASU_VESSEL",
+		"YOUKAI_SPECIES",
 		"PROF_OKUU",
 		"SPIRIT_USER"
     ],

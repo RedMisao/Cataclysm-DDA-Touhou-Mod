@@ -19,7 +19,15 @@
 	"symbol": "🥕",
 	"looks_like": "carrot",
     "color": "light_red",
-	"relic_data": { "passive_effects": [ { "id": "ench_lucky_charm" } ] },
+	"relic_data": { 
+		"passive_effects": [ 
+			{
+			"has": "HELD",
+			"condition": "ALWAYS",
+			"mutations": [ "lucky_charm_mut" ]
+			}
+		] 
+	},
 	"flags": [ "DURABLE_MELEE" ]
 	}
 ]

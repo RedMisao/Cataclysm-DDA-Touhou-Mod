@@ -148,7 +148,7 @@
     "base_casting_time": 150,
     "base_energy_cost": 0,
 	"energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],
+    "flags": [ "IGNORE_WALLS", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],
 	"//": "This can be replaced by EOCs automatically disabling the summoned terrain... eventually"
 	},
 	{
@@ -157,7 +157,7 @@
     "name": "Pillar of earthen punishment",
     "description": "Call upon a Keystone pillar crashing down, acting as a temporary, solid wall.",
     "spell_class": "NONE",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [ "ground", "hostile" ],
     "effect": "ter_transform",
     "effect_str": "keystone_pillar_fur",
 	"extra_effects": [ { "id": "tenko_keystonepillar2" } ],

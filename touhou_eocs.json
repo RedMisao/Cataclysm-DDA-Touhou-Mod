@@ -1,0 +1,15 @@
+[
+	{
+    "id": "daily_randomization",
+	"type": "effect_on_condition",
+	"recurrence": "24 hours",
+    "effect": [
+		{ "arithmetic": [ { "u_val": "var", "var_name": "night_parade_proc" }, "=", { "rand": 99 } ] },
+		{ "arithmetic": [ { "u_val": "var", "var_name": "silence_hour_proc" }, "=", { "rand": 99 } ] },
+		{ "arithmetic": [ { "u_val": "var", "var_name": "silence_hour_hour" }, "=", { "rand": 23 } ] },
+		{ "arithmetic": [ { "u_val": "var", "var_name": "silence_hour_minute" }, "=", { "rand": 59 } ] },
+		{ "arithmetic": [ { "u_val": "var", "var_name": "silence_hour_second" }, "=", { "rand": 59 } ] }
+    ],
+	"//": "Should: reroll these daily, for use in special events and whatnot"
+	}
+]

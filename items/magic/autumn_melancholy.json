@@ -19,7 +19,15 @@
 	"symbol": "🍁",
 	"looks_like": "coin_dollar",
     "color": "red",
-    "relic_data": { "passive_effects": [ { "id": "ench_autumn_melancholy" } ] },
+    "relic_data": { 
+		"passive_effects": [ 
+			{
+			"has": "HELD",
+			"condition": "ALWAYS",
+			"mutations": [ "autumn_melancholy_mut" ]
+			}
+		] 
+	},
 	"flags": [ "DURABLE_MELEE" ]
 	}
 ]

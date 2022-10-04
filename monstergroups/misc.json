@@ -82,7 +82,7 @@
     "is_safe": true,
     "is_animal": true,
     "monsters": [
-		{ "monster": "mon_null", "weight": 200 },
+		{ "monster": "mon_null", "weight": 170 },
 		{ "monster": "mon_bat", "weight": 10 },
 		{ "monster": "mon_bobcat", "weight": 10 },
 		{ "monster": "mon_chicken", "weight": 10 },
@@ -133,7 +133,8 @@
 		{ "monster": "mon_pristerognathus", "weight": 10, "starts": "2 days" },
 		{ "monster": "mon_scutosaurus", "weight": 25, "starts": "2 days" },
 		{ "monster": "mon_thylacine", "weight": 10, "starts": "2 days" },
-		{ "monster": "mon_weigeltisaurus", "weight": 50, "starts": "2 days" }
+		{ "monster": "mon_weigeltisaurus", "weight": 50, "starts": "2 days" },
+		{ "monster": "mon_jackalope", "weight": 33, "starts": "2 days" }
     ],
 	"//": "Same as GROUP_SAFE, increases overall spawning and adds the last monsters, seems like the extend field is not yet implemented"
 	}

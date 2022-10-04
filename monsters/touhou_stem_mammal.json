@@ -97,10 +97,7 @@
     "vision_day": 30,
     "vision_night": 20,
     "path_settings": { "max_dist": 20 },
-    "special_attacks": [ 
-		[ "bite_3d6", 6 ], 
-		[ "EAT_FOOD", 100 ] 
-	],
+    "special_attacks": [ [ "bite_6d3", 6 ], [ "EAT_FOOD", 100 ] ],
     "anger_triggers": [ "HURT", "FRIEND_ATTACKED", "STALK" ],
 	"fear_triggers": [ "FRIEND_DIED" ],
     "reproduction": { "baby_egg": "egg_dimetrodon", "baby_count": 6, "baby_timer": 150 },
@@ -169,7 +166,7 @@
     "path_settings": { "max_dist": 20 },
     "special_attacks": [ 
 		[ "EAT_CROP", 50 ],
-		{ "id": "headbutt_2d6", "attack_upper": false, "cooldown": 4 }
+		{ "id": "headbutt_6d2", "attack_upper": false, "cooldown": 4 }
 	],
 	"fear_triggers": [ "HURT", "FRIEND_ATTACKED", "FRIEND_DIED", "STALK" ],
     "reproduction": { "baby_egg": "egg_lystrosaurus", "baby_count": 6, "baby_timer": 20 },

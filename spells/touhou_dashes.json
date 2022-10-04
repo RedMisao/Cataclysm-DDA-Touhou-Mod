@@ -7,6 +7,7 @@
 	"spell_class": "NONE",
 	"valid_targets": [ "ground", "hostile" ],
     "effect": "dash",
+    "extra_effects": [ { "id": "dash_basic_levitate" } ],
     "shape": "line",
     "min_range": 4,
     "max_range": 4,
@@ -15,8 +16,27 @@
 	"base_casting_time": 80,
 	"base_energy_cost": 2500,
 	"energy_source": "STAMINA",
-	"flags": [ "NO_HANDS", "NO_LEGS", "SILENT" ],
+	"flags": [ "EXTRA_EFFECTS_FIRST", "NO_HANDS", "NO_LEGS", "SILENT" ],
 	"//": "Stamina severely limits the usage of this spell. Another new resource should be used instead to emulate an average of 3 charges that quickly recovers over time during battle. This would allow the use of wind up and telegraph mechanics for enemies and make combat more dynamic. Different characters have different variations of the dash: Remi should have a shorter spammeable dash that automatically does damage if targeted to an enemy, while Utsuho's should be longer and spawn perpendicular danmaku so she keeps her distance. Because of the current stamina limitations, I assume a pool of 8000 stamina for each confrontation"
+	},
+	{
+    "id": "dash_basic_levitate",
+    "type": "SPELL",
+    "name": { "str": "Dash (levitation)" },
+    "description": "Grants temporary LEVITATION for dashes",
+	"spell_class": "NONE",
+    "valid_targets": [ "self" ],
+    "effect": "attack",
+    "effect_str": "dash_levitation",
+    "shape": "blast",
+	"min_aoe": 20,
+	"max_aoe": 20,
+    "max_level": 1,
+    "difficulty": -20,
+	"base_casting_time": 0,
+	"base_energy_cost": 0,
+	"energy_source": "STAMINA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ]
 	},
 	{
     "id": "dash_aya",
@@ -26,6 +46,7 @@
 	"spell_class": "NONE",
 	"valid_targets": [ "ground", "hostile" ],
     "effect": "dash",
+    "extra_effects": [ { "id": "dash_basic_levitate" } ],
     "shape": "line",
     "min_range": 6,
     "max_range": 6,
@@ -34,7 +55,7 @@
 	"base_casting_time": 15,
 	"base_energy_cost": 2225,
 	"energy_source": "STAMINA",
-	"flags": [ "NO_HANDS", "NO_LEGS" ]
+	"flags": [ "EXTRA_EFFECTS_FIRST", "NO_HANDS", "NO_LEGS" ]
 	},
 	{
     "id": "dash_meiling",
@@ -44,6 +65,7 @@
 	"spell_class": "NONE",
 	"valid_targets": [ "ground", "hostile" ],
     "effect": "dash",
+    "extra_effects": [ { "id": "dash_basic_levitate" } ],
 	"shape": "line",
 	"damage_type": "bash",
     "min_damage": 30,
@@ -59,7 +81,7 @@
 	"base_casting_time": 100,
 	"base_energy_cost": 2500,
 	"energy_source": "STAMINA",
-	"flags": [ "NO_PROJECTILE" ],
+	"flags": [ "EXTRA_EFFECTS_FIRST", "NO_PROJECTILE" ],
 	"//": "This should move her + the target along the way, should be a spell and not a martial arts technique in order to cast it at will"
 	},
 	{
@@ -70,6 +92,7 @@
 	"spell_class": "NONE",
 	"valid_targets": [ "ground", "hostile" ],
     "effect": "dash",
+    "extra_effects": [ { "id": "dash_basic_levitate" } ],
 	"shape": "line",
     "damage_type": "heat",
 	"min_damage": 24,
@@ -81,7 +104,7 @@
 	"base_casting_time": 80,
 	"base_energy_cost": 2000,
 	"energy_source": "STAMINA",
-	"flags": [ "IGNITE_FLAMMABLE", "LOUD", "NO_HANDS" ]
+	"flags": [ "EXTRA_EFFECTS_FIRST", "IGNITE_FLAMMABLE", "LOUD", "NO_HANDS" ]
 	},
 	{
     "id": "dash_reisen",
@@ -109,6 +132,7 @@
 	"spell_class": "NONE",
 	"valid_targets": [ "ground", "hostile" ],
     "effect": "dash",
+    "extra_effects": [ { "id": "dash_basic_levitate" } ],
 	"shape": "line",
     "damage_type": "cut",
 	"min_damage": 20,
@@ -124,7 +148,7 @@
     "base_casting_time": 66,
     "base_energy_cost": 2000,
     "energy_source": "STAMINA",
-	"flags": [ "NO_HANDS", "NO_LEGS", "SILENT" ],
+	"flags": [ "EXTRA_EFFECTS_FIRST", "NO_HANDS", "NO_LEGS", "SILENT" ],
 	"//": "Sadly the HEART can't be prioritized. OR CAN IT"
 	},
 	{
@@ -178,7 +202,7 @@
 	"spell_class": "NONE",
 	"valid_targets": [ "ground", "hostile" ],
     "effect": "dash",
-    "extra_effects": [ { "id": "dash_utsuho2" } ],
+    "extra_effects": [ { "id": "dash_utsuho2" }, { "id": "dash_basic_levitate" } ],
 	"shape": "line",
     "damage_type": "bash",
 	"min_damage": 30,
@@ -192,7 +216,7 @@
 	"base_casting_time": 80,
     "base_energy_cost": 2500,
     "energy_source": "STAMINA",
-	"flags": [ "NO_HANDS", "NO_LEGS" ],
+	"flags": [ "EXTRA_EFFECTS_FIRST", "NO_HANDS", "NO_LEGS" ],
 	"//2": "How long is the travel time for dashes?"
 	},
 	{
@@ -247,6 +271,7 @@
 	"valid_targets": [ "ground", "hostile" ],
     "components": "spell_components_youmuswords",
     "effect": "dash",
+    "extra_effects": [ { "id": "dash_basic_levitate" } ],
     "shape": "line",
     "damage_type": "cut",
 	"min_damage": 20,
@@ -259,7 +284,7 @@
     "base_casting_time": 50,
     "base_energy_cost": 2500,
     "energy_source": "STAMINA",
-	"flags": [ "NO_HANDS", "NO_LEGS" ],
+	"flags": [ "EXTRA_EFFECTS_FIRST", "NO_HANDS", "NO_LEGS" ],
 	"//": "This should do half soul half cut dmg. Also, cherry blossom petals should linger around after I figure how to use field effects...",
 	"//2": "A second dash could be: Youmu activates it and puts down an aoe field. When the first enemy crosses it, she slashes past it 1-2 tiles while dealing heavy cut/soul damage. It should last 4-6 seconds at most, be automatic and if it fails (due no enemy, cc or whatever) it refunds half the cost. Also 1-2 turns after the damage cherry blossom petals should explode from the target."
 	}

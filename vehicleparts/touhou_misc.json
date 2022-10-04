@@ -29,7 +29,6 @@
 		"heat": 40, 
 		"electric": 40 
 		},
-	"flags": [ "FOLDABLE", "PROTRUSION" ],
-	"//": "No idea what FOLDABLE does"
+	"flags": [ "PROTRUSION" ]
 	}
 ]

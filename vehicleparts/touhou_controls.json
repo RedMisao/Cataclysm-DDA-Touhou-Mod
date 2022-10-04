@@ -20,7 +20,7 @@
 		"repair": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "adhesive", 3 ] ] }
     },
 	"damage_reduction": { "all": 10 },
-	"flags": [ "CONTROLS", "FOLDABLE" ]
+	"flags": [ "CONTROLS" ]
 	},
 	{
     "id": "controls_keystone",
@@ -43,6 +43,6 @@
 		"removal": { "skills": [ [ "mechanics", 20 ] ], "time": "60 m", "using": [ [ "vehicle_weld_removal", 10 ] ] },
 		"repair": { "skills": [ [ "mechanics", 20 ] ], "time": "60 m", "using": [ [ "welding_standard", 10 ] ] }
     },
-	"flags": [ "CONTROLS", "FOLDABLE" ]
+	"flags": [ "CONTROLS" ]
 	}
 ]

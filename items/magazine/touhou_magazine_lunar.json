@@ -60,7 +60,7 @@
 		{ 
 		"pocket_type": "MAGAZINE", 
 		"rigid": true, 
-		"ammo_restriction": { "ammo_lunar_small": 13 } 
+		"ammo_restriction": { "ammo_lunar_small": 23 } 
 		} 
 	],
 	"flags": [ "MAG_COMPACT" ]

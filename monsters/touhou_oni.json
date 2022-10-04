@@ -31,7 +31,7 @@
     "vision_night": 25,
     "path_settings": { "max_dist": 25 },
 	"anger_triggers": [ "HURT", "FRIEND_ATTACKED" ],
-	"special_attacks": [ [ "ABSORB_MEAT", 51 ], [ "GRAB", 27 ], [ "oni_smash_10d5", 13 ] ],
+	"special_attacks": [ [ "ABSORB_MEAT", 51 ], [ "GRAB", 27 ], [ "oni_smash_9d4", 13 ] ],
     "death_drops": [
 		{ "group": "oni_drops", "prob": 100 },
 		{
@@ -61,7 +61,7 @@
     "melee_dice_sides": 4,
 	"anger_triggers": [ "HURT" ],
     "fear_triggers": [ "FRIEND_DIED", "FRIEND_ATTACKED" ],
-	"special_attacks": [ [ "ABSORB_MEAT", 51 ], [ "GRAB", 27 ], [ "oni_smash_7d5", 13 ] ],
+	"special_attacks": [ [ "ABSORB_MEAT", 51 ], [ "GRAB", 27 ], [ "oni_smash_7d4", 13 ] ],
     "death_drops": [
 		{ "group": "oni_drops", "prob": 100 },
 		{
@@ -131,7 +131,7 @@
     "melee_dice_sides": 5,
     "dodge": 2,
 	"anger_triggers": [ "HURT" ],
-	"special_attacks": [ [ "ABSORB_MEAT", 67 ], [ "GRAB", 19 ], [ "oni_smash_10d5", 17 ] ],
+	"special_attacks": [ [ "ABSORB_MEAT", 67 ], [ "GRAB", 19 ], [ "oni_smash_9d4", 17 ] ],
     "death_drops": [
 		{ "group": "oni_drops", "prob": 100 },
 		{

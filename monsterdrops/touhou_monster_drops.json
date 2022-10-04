@@ -61,5 +61,23 @@
 		]
 		}
 	]
+	},
+	{
+    "id": "skinwalker_witch_drops",
+	"type": "item_group",
+    "subtype": "collection",
+    "entries": [
+		{
+		"distribution": [
+			{ "item": "chestwrap_fur", "prob": 42, "damage": [ 0, 4 ] }
+		]
+		},
+		{
+		"collection": [
+			{ "item": "skinwalker_pelt", "prob": 25, "damage": [ 0, 3 ] },
+			{ "item": "loincloth_fur", "prob": 85, "damage": [ 0, 4 ] }
+		]
+		}
+	]
 	}
 ]

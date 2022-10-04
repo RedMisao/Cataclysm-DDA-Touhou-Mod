@@ -637,7 +637,7 @@
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "biosignature": { "biosig_item": "feces_thylacine", "biosig_timer": 8 },
     "anger_triggers": [ "HURT", "FRIEND_ATTACKED", "FRIEND_DIED", "PLAYER_NEAR_BABY" ],
-    "special_attacks": [ [ "EAT_FOOD", 100 ], [ "PARROT", 2 ] ],
+    "special_attacks": [ [ "EAT_FOOD", 100 ], [ "PARROT", 4 ] ],
     "flags": [ "ANIMAL", "GROUP_MORALE", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "SEES", "SWARMS", "WARM" ],
 	"//": " Previously extinct in the Outside world, they were passively transferred to Gensokyo at some point in the past. ",
 	"//2": "These technically should have zombie versions, but I don't like that idea"
@@ -664,7 +664,7 @@
     "vision_night": 10,
     "path_settings": { "max_dist": 6 },
     "upgrades": { "age_grow": 40, "into": "mon_thylacine" },
-    "special_attacks": [ [ "EAT_FOOD", 85 ], [ "PARROT", 4 ] ],
+    "special_attacks": [ [ "EAT_FOOD", 85 ], [ "PARROT", 11 ] ],
     "extend": { "flags": [ "NO_BREED" ] }
 	}
 ]

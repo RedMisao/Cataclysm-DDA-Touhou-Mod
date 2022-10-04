@@ -32,24 +32,17 @@
 		[ "rail", 1 ],
 		[ "underbarrel", 1 ]
     ],
-	"pocket_data": [
-		{ 
-		"pocket_type": "MAGAZINE_WELL", 
-		"rigid": true, 
-        "item_restriction": [ 
-			"lunar_small_mag13" 
-		] 
-		}
-	],
+	"pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "ammo_lunar_small": 13 } } ],
+    "relic_data": { "charge_info": { "regenerate_ammo": true, "recharge_type": "periodic", "time": "5 s" } },
     "weapon_category": [ "AUTOMATIC_PISTOLS" ],
-    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NON-FOULING", "TRADER_AVOID" ]
+    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NO_RELOAD", "NO_UNLOAD", "STURDY", "TRADER_AVOID" ],
+	"//2": "Recharge time should be full every 30 seconds, however currently there's a bug making artifacts recharge at twice the speed"
 	},
 	{
     "id": "lunar_rifle2",
     "type": "GUN",
     "name": "lunar service rifle",
     "description": "A standard issue bolt-action LDC rifle with an integrated bayonet.  The design is based on an old human weapon, fabricated by and upgraded with Lunarian technology.  For that reason, it's mostly compatible with human tools and modifications.  It's powered by the spiritual energy of the user.",
-	"//": "The SSiB training rifle is either based on a Mosin or the Japanese Type 89 that used 'type 38 chamber in 7.62×38mmR tracer' according to some post on Reddit. However, Type 89 doesn't seem to exist, only the Type 38 (6.5×50mm Arisaka) or 99 (7.7×58mm Arisaka), which is the one I'll use as basis",
     "volume": "3 L",
 	"weight": "3790 g",
     "longest_side": "1258 mm",
@@ -67,7 +60,7 @@
 	"color": "white",
     "ammo": [ "ammo_lunar_medium" ],
 	"ammo_effects": [ "LASER" ],
-    "clip_size": 10,
+    "clip_size": 5,
 	"built_in_mods": [ "inter_bayonet" ],
 	"dispersion": 120,
     "durability": 8,
@@ -84,14 +77,11 @@
 		[ "stock", 1 ],
 		[ "underbarrel", 1 ]
     ],
-	"pocket_data": [
-		{ 
-		"pocket_type": "MAGAZINE", 
-		"rigid": true, 
-		"ammo_restriction": { "ammo_lunar_medium": 11 }
-		}
-	],
-    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NON-FOULING", "RELOAD_ONE", "STAB", "STURDY", "TRADER_AVOID" ]
+	"pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "ammo_lunar_medium": 5 } } ],
+    "relic_data": { "charge_info": { "regenerate_ammo": true, "recharge_type": "periodic", "time": "12 s" } },
+    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NO_RELOAD", "NO_UNLOAD", "STAB", "STURDY", "TRADER_AVOID" ],
+	"//": "The SSiB training rifle is either based on a Mosin or the Japanese Type 89 that used 'type 38 chamber in 7.62×38mmR tracer' according to some post on Reddit. However, Type 89 doesn't seem to exist, only the Type 38 (6.5×50mm Arisaka) or 99 (7.7×58mm Arisaka), which is the one I'll use as basis",
+	"//2": "Recharge time should be full every 30 seconds, however currently there's a bug making artifacts recharge at twice the speed"
 	},
 	{
     "id": "lunar_bousan",
@@ -141,7 +131,7 @@
 		"rigid": true
 		} 
 	],
-    "flags": [ "FIRE_TWOHAND", "NEEDS_NO_LUBE", "NEVER_JAMS", "NON-FOULING", "PUMP_ACTION", "RELOAD_ONE", "STURDY", "TRADER_AVOID", "WATERPROOF_GUN" ]
+    "flags": [ "FIRE_TWOHAND", "NEEDS_NO_LUBE", "NEVER_JAMS", "NON_FOULING", "PUMP_ACTION", "RELOAD_ONE", "STURDY", "TRADER_AVOID", "WATERPROOF_GUN" ]
 	},
 	{
     "id": "lunar_bousan2",
@@ -167,7 +157,7 @@
 		"msg": "You switch between modes, allowing your weapon to generate vacuum.",
 		"target": "lunar_bousan"
 	},
-    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NON-FOULING", "PUMP_ACTION", "RELOAD_ONE", "STURDY", "TRADER_AVOID" ]
+    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NON_FOULING", "PUMP_ACTION", "RELOAD_ONE", "STURDY", "TRADER_AVOID" ]
 	},
 	{
     "id": "lunar_chagyo",
@@ -215,7 +205,7 @@
 		"ammo_restriction": { "ammo_lunar_medium": 10 }
 		}
 	],
-    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NON-FOULING", "RELOAD_ONE", "STURDY", "TRADER_AVOID" ]
+    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NON_FOULING", "RELOAD_ONE", "STURDY", "TRADER_AVOID" ]
 	},
 	{
     "id": "lunar_suitai",
@@ -257,7 +247,7 @@
 		"ammo_restriction": { "ammo_lunar_big": 3 }
 		}
 	],
-    "flags": [ "FIRE_TWOHAND", "NEEDS_NO_LUBE", "NEVER_JAMS", "NON-FOULING", "STURDY", "TRADER_AVOID" ]
+    "flags": [ "FIRE_TWOHAND", "NEEDS_NO_LUBE", "NEVER_JAMS", "NON_FOULING", "STURDY", "TRADER_AVOID" ]
 	},
 	{
     "id": "lunar_fourdrifle_1",

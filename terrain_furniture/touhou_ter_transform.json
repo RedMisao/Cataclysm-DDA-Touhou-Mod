@@ -1,5 +1,16 @@
 [
 	{
+    "id": "gap_fur",
+	"type": "ter_furn_transform",
+    "furniture": [
+		{
+        "result": "f_gap",
+        "message": "A gap opens up!",
+		"valid_flags": [ "EASY_DECONSTRUCT", "FLAMMABLE", "FLAMMABLE_ASH", "FLAMMABLE_HARD", "MINEABLE", "TRANSPARENT" ]
+		}
+    ]
+	},
+	{
     "id": "groundmelt_ter",
 	"type": "ter_furn_transform",
     "terrain": [
@@ -42,7 +53,7 @@
     "furniture": [
 		{
         "result": "f_keystone_pillar",
-        "message": "The ground quakes, and a keystone pillar quickly rises up!",
+        "message": "A pillar keystone materializes and crashes down!",
 		"valid_flags": [ "EASY_DECONSTRUCT", "FLAMMABLE", "FLAMMABLE_ASH", "FLAMMABLE_HARD", "MINEABLE", "TRANSPARENT" ]
 		}
     ]

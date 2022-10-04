@@ -19,7 +19,15 @@
 	"looks_like": "cloak",
     "color": "black",
 	"armor": [ { "covers": [ "torso", "arm_l", "arm_r", "leg_l", "leg_r" ], "coverage": 65, "encumbrance": 4 } ],
-    "relic_data": { "passive_effects": [ { "id": "ench_esper_cloak" } ] },
+    "relic_data": { 
+		"passive_effects": [ 
+			{
+			"has": "WORN",
+			"condition": "ALWAYS",
+			"mutations": [ "esper_cloak_mut" ]
+			}
+		]
+	},
 	"flags": [ "FANCY", "HOOD", "ONLY_ONE", "OUTER", "OVERSIZE" ]
 	}
 ]

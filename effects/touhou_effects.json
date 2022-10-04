@@ -1,5 +1,25 @@
 [
 	{
+    "id": "dash_levitation",
+	"type": "effect_type",
+    "name": [ "Dash (effect)" ],
+    "desc": [ " " ],
+    "rating": "good",
+    "show_in_info": false,
+    "flags": [ "LEVITATION" ]
+	},
+	{
+    "id": "aya_levitation",
+	"type": "effect_type",
+    "name": [ "Crow wings (flight) (effect)" ],
+    "desc": [ "Allows you to fly over ledges.  Also increases your movement speed." ],
+    "rating": "good",
+    "show_in_info": false,
+    "base_mods": { "speed_mod": [ 33 ], "stamina_chance": [ 1 ], "stamina_min": [ -100 ] },
+	"//3": "~1.66 total movement speed, up from ~133 movement speed from base Aya",
+    "flags": [ "LEVITATION" ]
+	},
+	{
     "id": "aya_mspeed",
 	"type": "effect_type",
     "name": [ "Deadline day (speed)" ],
@@ -20,6 +40,17 @@
 	"base_mods": { "dodge_mod": [ 4 ], "bash_mod": [ 2 ], "cut_mod": [ 2 ] },
     "removes_effects": [ "beartrap", "downed", "fetid_goop", "frenzy", "grabbed", "hot_speed", "paralyzepoison", "sap", "slimed", "staggered", "supercharged", "teargas", "webbed", "zapped" ],
 	"//": "Should remove all 'external' or imposed movement speed effects"
+	},
+	{
+    "id": "remi_levitation",
+	"type": "effect_type",
+    "name": [ "Bat wings (flight) (effect)" ],
+    "desc": [ "Allows you to fly over ledges.  Also increases your movement speed." ],
+    "rating": "good",
+    "show_in_info": false,
+    "base_mods": { "speed_mod": [ 25 ], "stamina_chance": [ 1 ], "stamina_min": [ -100 ] },
+	"//3": "~1.5 total movement speed, up from the 1.25x movement speed from base vampires",
+    "flags": [ "LEVITATION" ]
 	},
 	{
     "id": "sakuya_contraction_effect",
@@ -81,7 +112,17 @@
     "remove_message": "You relax your thoughts.",
 	"rating": "good",
     "base_mods": { "int_mod": [ 2 ], "pkill_amount": [ -1 ], "stim_amount": [ 2 ] },
-    "removes_effects": [ "fearparalyze", "taint", "tindrift", "visuals", "udonge_perception", "udonge_stealth" ]
+    "removes_effects": [ "udonge_mfortitude", "udonge_perception", "udonge_stealth" ]
+	},
+	{
+    "id": "udonge_mfortitude",
+	"type": "effect_type",
+    "name": [ "Wavelength manipulation (Mental fortitude)" ],
+    "desc": [ "You clear your mind from external interferences, returning your brain waves to a basal state." ],
+    "apply_message": "You enter a mindfulness-like state.",
+    "remove_message": "You relax your thoughts.",
+	"rating": "good",
+    "removes_effects": [ "fearparalyze", "taint", "tindrift", "visuals", "udonge_insight", "udonge_perception", "udonge_stealth" ]
 	},
 	{
     "id": "udonge_perception",
@@ -91,8 +132,8 @@
     "apply_message": "You harness the shadows that stride between the worlds.",
     "remove_message": "Your vision becomes normal again.",
 	"rating": "good",
-    "base_mods": { "per_mod": [ 3 ] },
-    "removes_effects": [ "udonge_insight", "udonge_stealth" ],
+    "base_mods": { "per_mod": [ 2 ] },
+    "removes_effects": [ "udonge_insight", "udonge_mfortitude", "udonge_stealth" ],
 	"flags": [ "INFRARED", "NIGHT_VISION", "SUPER_HEARING" ]
 	},
 	{
@@ -103,7 +144,17 @@
     "apply_message": "Your wavelength becomes minimal, turning you invisible.",
     "remove_message": "You become perceptible again.",
 	"rating": "good",
-    "removes_effects": [ "udonge_insight", "udonge_perception" ],
+    "removes_effects": [ "udonge_insight", "udonge_mfortitude", "udonge_perception" ],
 	"flags": [ "INVISIBLE", "NO_SCENT" ]
+	},
+	{
+    "id": "utsuho_levitation",
+	"type": "effect_type",
+    "name": [ "Hell raven wings (flight) (effect)" ],
+    "desc": [ "Allows you to fly over ledges." ],
+    "rating": "good",
+    "show_in_info": false,
+    "base_mods": { "stamina_chance": [ 1 ], "stamina_min": [ -100 ] },
+    "flags": [ "LEVITATION" ]
 	}
 ]

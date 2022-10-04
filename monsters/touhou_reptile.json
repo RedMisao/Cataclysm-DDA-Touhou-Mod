@@ -340,10 +340,7 @@
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "anger_triggers": [ "PLAYER_NEAR_BABY" ],
     "fear_triggers": [ "HURT", "FRIEND_ATTACKED" ],
-	"special_attacks": [ 
-		[ "EAT_CROP", 90 ], 
-		[ "headbutt_5d5", 5 ]
-	],
+	"special_attacks": [ [ "EAT_CROP", 90 ], [ "headbutt_5d5", 5 ] ],
     "flags": [ "ANIMAL", "HEARS", "SEES", "SMELLS" ],
 	"//": "Based on Scutosaurus sp. No reproductive data. Probably lived alone"
 	},
@@ -369,10 +366,7 @@
     "armor_stab": 3,
     "armor_bullet": 3,
 	"upgrades": { "age_grow": 56, "into": "mon_scutosaurus" },
-    "special_attacks": [ 
-		[ "EAT_CROP", 60 ],
-		[ "headbutt_2d6", 6 ]
-	],
+    "special_attacks": [ [ "EAT_CROP", 60 ], [ "headbutt_6d2", 6 ] ],
     "extend": { "flags": [ "NO_BREED" ] }
 	},
 	{

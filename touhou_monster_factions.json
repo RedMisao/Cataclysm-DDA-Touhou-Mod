@@ -225,11 +225,17 @@
 	"//": "Default faction for touhou summons (vengeful spirits), these should attack everything on sight except for the caster (and allies or neutral parties)"
 	},
 	{
+    "name": "touhou_youkai_female",
+	"type": "MONSTER_FACTION",
+	"neutral": [ "touhou_youkai_hostile", "touhou_youkai_neutral" ],
+    "by_mood": [ "animal", "fungus", "mi-go", "mutant", "triffid" ],
+	"hate": [ "exodii", "human", "your_followers", "zombie", "touhou_mib" ]
+	},
+	{
     "name": "touhou_youkai_hostile",
 	"type": "MONSTER_FACTION",
     "friendly": [ "touhou_youkai_neutral" ],
-	"neutral": [ "animal", "touhou_youkai_hostile" ],
-    "by_mood": [ "mutant" ],
+    "by_mood": [ "animal", "fungus", "mi-go", "mutant", "triffid", "touhou_youkai_hostile", "touhou_mib" ],
 	"hate": [ "exodii", "human", "your_followers", "zombie" ],
 	"//": "Default faction for naturally hostile youkai, these should prey on humans and company, on a psychological level"
 	},
@@ -237,9 +243,17 @@
     "name": "touhou_youkai_neutral",
 	"type": "MONSTER_FACTION",
 	"friendly": [ "touhou_youkai_hostile" ],
-	"neutral": [ "animal", "touhou_youkai_neutral" ],
-    "by_mood": [ "your_followers" ],
+	"neutral": [ "touhou_youkai_neutral" ],
+    "by_mood": [ "animal", "exodii", "fungus", "human", "mi-go", "mutant", "triffid", "your_followers", "zombie", "touhou_mib" ],
 	"//": "Default faction for neutral youkai, these should be neutral to humans and company until attacked. Think of passively causing fear or at least a sense of caution in humans"
+	},
+	{
+    "name": "touhou_youkai_skinwalker",
+	"type": "MONSTER_FACTION",
+	"neutral": [ "touhou_youkai_neutral" ],
+    "by_mood": [ "touhou_youkai_hostile" ],
+	"hate": [ "animal", "exodii", "fungus", "human", "mi-go", "mutant", "triffid", "your_followers", "zombie", "touhou_mib" ],
+	"//": "Even more aggressive than touhou_youkai_hostile "
 	},
 	{
     "name": "touhou_oni",

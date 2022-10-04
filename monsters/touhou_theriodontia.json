@@ -32,10 +32,7 @@
     "armor_bullet": 4,
     "armor_stab": 4,
     "armor_elec": 6,
-	"special_attacks": [ 
-		[ "bite_3d6", 4 ], 
-		[ "EAT_FOOD", 85 ]
-	],
+	"special_attacks": [ [ "bite_6d3", 4 ], [ "EAT_FOOD", 85 ] ],
     "reproduction": { "baby_egg": "egg_inostrancevia", "baby_count": 3, "baby_timer": 60 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "flags": [ "ANIMAL", "BASHES", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "PUSH_MON", "SEES", "WARM" ],
@@ -98,7 +95,7 @@
     "anger_triggers": [ "HURT", "PLAYER_WEAK" ],
 	"fear_triggers": [ "FRIEND_ATTACKED" ],
 	"special_attacks": [ 
-		[ "bite_3d5", 8 ],
+		[ "bite_5d3", 8 ],
 		[ "EAT_FOOD", 65 ],
 		{ "id": "scratch", "attack_upper": false, "cooldown": 10 }
 	],
@@ -165,9 +162,7 @@
     "anger_triggers": [ "HURT" ],
 	"fear_triggers": [ "PLAYER_CLOSE" ],
 	"placate_triggers": [ "PLAYER_WEAK" ],
-	"special_attacks": [ 
-		[ "EAT_FOOD", 50 ]
-	],
+	"special_attacks": [ [ "EAT_FOOD", 50 ] ],
     "reproduction": { "baby_egg": "egg_nochnitsa", "baby_count": 4, "baby_timer": 32 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "flags": [ "ANIMAL", "HEARS", "HIT_AND_RUN", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "SWARMS", "WARM" ],
@@ -226,10 +221,7 @@
     "armor_cut": 1,
     "armor_bullet": 4,
     "armor_stab": 1,
-	"special_attacks": [ 
-		[ "bite_3d5", 6 ],
-		[ "EAT_FOOD", 75 ]
-	],
+	"special_attacks": [ [ "bite_5d3", 6 ], [ "EAT_FOOD", 75 ] ],
     "reproduction": { "baby_egg": "egg_pristerognathus", "baby_count": 4, "baby_timer": 60 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "flags": [ "ANIMAL", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "SEES", "SWARMS", "WARM" ],
@@ -293,10 +285,7 @@
     "armor_stab": 1,
     "anger_triggers": [ "PLAYER_WEAK" ],
 	"fear_triggers": [ "HURT" ],
-	"special_attacks": [ 
-		[ "bite_3d5", 8 ],
-		[ "EAT_FOOD", 65 ]
-	],
+	"special_attacks": [ [ "bite_5d3", 8 ], [ "EAT_FOOD", 65 ] ],
     "reproduction": { "baby_egg": "egg_viatkogorgon", "baby_count": 4, "baby_timer": 32 },
     "baby_flags": [ "SPRING", "SUMMER", "AUTUMN", "WINTER" ],
     "flags": [ "ANIMAL", "HEARS", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "SWARMS", "WARM" ],

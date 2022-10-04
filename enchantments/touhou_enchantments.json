@@ -1,96 +1,5 @@
 [
 	{
-    "id": "ench_autumn_melancholy",
-	"type": "enchantment",
-    "condition": "ALWAYS",
-    "has": "HELD",
-    "values": [ 
-		{ "value": "HUNGER", "multiply": 0.66 }
-	]
-	},
-	{
-    "id": "ench_death_coin",
-	"type": "enchantment",
-    "condition": "ALWAYS",
-    "has": "HELD",
-    "values": [ 
-		{ "value": "ATTACK_SPEED", "multiply": -0.05 },
-		{ "value": "SPEED", "multiply": -0.05 },
-		{ "value": "FATIGUE", "multiply": 0.1 }
-	]
-	},
-	{
-    "id": "ench_esper_cloak",
-	"type": "enchantment",
-    "condition": "ALWAYS",
-    "has": "WORN",
-    "values": [ 
-		{ "value": "MAX_MANA", "multiply": 0.33 },
-		{ "value": "REGEN_MANA", "multiply": 0.33 }
-	]
-	},
-	{
-    "id": "ench_lampad_torch_off",
-	"type": "enchantment",
-    "condition": "ALWAYS",
-    "has": "WIELD",
-    "values": [ 
-		{ "value": "INTELLIGENCE", "multiply": -0.05 },
-		{ "value": "PERCEPTION", "multiply": -0.05 },
-		{ "value": "ATTACK_SPEED", "multiply": 0.1 },
-		{ "value": "MOVE_COST", "add": -20 }
-	]
-	},
-	{
-    "id": "ench_lampad_torch_lit",
-	"type": "enchantment",
-    "condition": "ALWAYS",
-    "has": "WIELD",
-    "values": [ 
-		{ "value": "INTELLIGENCE", "multiply": -0.1 },
-		{ "value": "PERCEPTION", "multiply": -0.15 },
-		{ "value": "STRENGTH", "multiply": 0.1 },
-		{ "value": "ATTACK_SPEED", "multiply": 0.2 },
-		{ "value": "BONUS_DODGE", "add": -1 },
-		{ "value": "MOVE_COST", "add": -35 }
-	],
-    "intermittent_activation": {
-		"effects": [
-			{
-			"frequency": "10 s",
-			"spell_effects": [
-				{ "id": "lampad_insanity" }
-			]
-			}
-		]
-    }
-	},
-	{
-    "id": "lampad_insanity",
-    "type": "SPELL",
-    "name": "Lampad insanity",
-    "description": "Monster infight enabler.",
-    "spell_class": "NONE",
-    "valid_targets": [ "ally", "hostile" ],
-    "effect": "mutate",
-	"effect_str": "ATTACKMON",
-    "shape": "blast",
-    "min_damage": 3333,
-    "max_damage": 3333,
-    "min_aoe": 16,
-    "max_aoe": 16,
-    "min_duration": 1100,
-    "max_duration": 1100,
-    "flags": [ "MUTATE_TRAIT", "NO_PROJECTILE", "SILENT" ]
-	},
-	{
-    "id": "ench_lucky_charm",
-	"type": "enchantment",
-    "condition": "ALWAYS",
-    "has": "HELD",
-    "mutations": [ "lucky_charm_mut" ]
-	},
-	{
     "id": "ench_reflectionslash",
 	"type": "enchantment",
     "condition": "ALWAYS",
@@ -100,21 +9,11 @@
 	]
 	},
 	{
-    "id": "ench_spider_blessing",
+    "id": "ench_skinwalker_pelt",
 	"type": "enchantment",
     "condition": "ALWAYS",
-    "has": "HELD",
-    "mutations": [ "spider_blessing_mut" ]
-	},
-	{
-    "id": "ench_strong_ice",
-	"type": "enchantment",
-    "condition": "ALWAYS",
-    "has": "HELD",
-    "values": [ 
-		{ "value": "INTELLIGENCE", "add": -3 },
-		{ "value": "STRENGTH", "add": 9 }
-	]
+    "has": "WORN",
+    "mutations": [ "CANNIBAL", "skinwalker_pelt_mut" ]
 	},
 	{
     "id": "ench_vampiricaura",

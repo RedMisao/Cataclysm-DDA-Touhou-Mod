@@ -1,0 +1,17 @@
+[
+	{
+    "id": "WINGS_BAT_REMI_spread_stop",
+	"type": "effect_on_condition",
+	"condition": { 
+		"and": [ 
+			{ "u_has_effect": "remi_levitation" }, 
+			{ "compare_int": [ { "u_val": "stamina" }, "<=", { "const": 100 } ] } 
+		] 
+	},
+    "effect": [
+		{ "u_lose_effect": "remi_levitation" },
+		{ "u_message": "You are too tired to fly!", "type": "bad" }
+    ],
+	"//": "This does not work... and I don't know why. Regardless, flying without stamina hurts Remi so that's enough of a demerit, for now"
+	}
+]
