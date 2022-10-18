@@ -92,8 +92,8 @@
 				"meiling_cheongsam_lower",
 				"meiling_hat",
 				"meiling_shirt",
-				"tai_chi_pants",
-				"socks"
+				"socks",
+				"tai_chi_pants"
         ],
         "male": [
             "boxer_shorts"
@@ -184,15 +184,15 @@
     "items": {
         "both": {
             "items": [
-            "kasha_book",
-			"kaenbyou_dress",
-			"kaenbyou_leg_lace",
-			"kaenbyou_shoes",
-			"kaenbyou_vest",
-			"ribbon_black",
-			"ribbon_black",
-            "ribbon_black",
-			"ribbon_black"
+				"kasha_book",
+				"kaenbyou_dress",
+				"kaenbyou_leg_lace",
+				"kaenbyou_shoes",
+				"kaenbyou_vest",
+				"ribbon_black",
+				"ribbon_black",
+				"ribbon_black",
+				"ribbon_black"
 			]
 		},
         "male": [
@@ -333,13 +333,13 @@
             "items": [
 				"ldc_dress_shirt",
 				"ldc_dress_shoes",
-				"lunar_guide1",
 				"ldc_helmet",
 				"ldc_kneesocks",
 				"ldc_skirt",
 				"ldc_suit",
 				"ldc_tie",
-				"ldc_veil_deactivated"
+				"ldc_veil_deactivated",
+				"lunar_guide1"
 			],
 			"entries": [ 
 				{ "item": "lunar_rifle2", "ammo-item": "ammo_lunar_medium_1", "charges": 11, "contents-item": "shoulder_strap" } 
@@ -389,7 +389,6 @@
     ],
     "items": {
         "both": [
-			"bloomers",
 			"remi_bowbelt",
 			"remi_dress",
 			"remi_hat",
@@ -401,7 +400,7 @@
 		],
         "female": [
             "bra",
-            "panties"
+            "bloomers"
 		]
 	},
     "flags": [ "SCEN_ONLY" ]
@@ -466,7 +465,7 @@
     "ident": "seiga_kaku",
 	"type": "profession",
     "name": "Wicked Hermit",
-    "description": "You're a wicked, amoral hermit with the ability to pass through walls and enslave the undead.  You never really cared about anyone else, only seeing fit to manipulate them for your own ends. Surviving the cataclysm should be… Interesting.",
+    "description": "You're a wicked, amoral hermit with the ability to pass through walls and enslave the undead.  You never really cared about anyone else, only seeing fit to manipulate them for your own ends. Surviving the cataclysm should be… interesting.",
     "points": 4,
 	"proficiencies": [ "prof_intro_biology", "prof_intro_chemistry", "prof_lockpicking", "prof_pharmaceutical", "prof_physiology" ],
 	"spells": [ 
@@ -537,7 +536,8 @@
 		"TENGUCROW_SPECIES",
 		"WINGS_TENGUCROW",
 		"YOUKAI_SPECIES",
-		"PROF_AYA"
+		"PROF_AYA",
+		"SPIRIT_USER"
     ],
     "items": {
         "both": [
@@ -614,7 +614,7 @@
     "ident": "utsuho_reiuji",
 	"type": "profession",
     "name": "Subterranean sun",
-    "description": "Resuming your duties after lunch, you master asked you to go look for Orin, and she was indeed missing again. You to the surface, noticing the friendly cave spider wasn't at her usual spot, maybe both went together!  You know she likes to go nap at the Shrine, so you went… to the wrong one, and noticing this was no mountain, nothing close, you looked back, you saw no \"back\".  You're aware you can get lost sometimes, but this is too much even for yourself.  Now you have to find Orin, find the Tsuchigumo, and return.",
+    "description": "Resuming your duties after lunch, you master asked you to go look for Orin, and she was indeed missing again.  You went to the surface, noticing the friendly cave spider wasn't at her usual spot, maybe both went together!  You know she likes to go nap at the Shrine, so you went… to the wrong one, and noticing this was no mountain, nothing close, you looked back, you saw no \"back\".  You're aware you can get lost sometimes, but this is too much even for yourself.  Now you have to find Orin, find the Tsuchigumo, and return.",
     "points": 4,
     "spells": [ 
 		{ "level": 1, "id": "dash_utsuho" },
@@ -660,6 +660,54 @@
 	"flags": [ "SCEN_ONLY" ]
 	},
 	{
+    "ident": "yamame_kurodani",
+	"type": "profession",
+    "name": "Friendly Youkai of the Cave",
+    "description": "It was sales day at the nearby market, so you left home at the entrance to try that new \"coffee\" product, perhaps share it at the weekly danmaku exhibitions, or at the hotsprings.  However, seems you somehow lost yourself on the way back, not recognizing landmarks, and not meeting anyone to ask about it.",
+    "points": 4,
+	"spells": [ 
+		{ "level": 1, "id": "dash_basic" },
+		{ "level": 1, "id": "yamame_curedisease" },
+		{ "level": 1, "id": "yamame_damnedrope" },
+		{ "level": 1, "id": "yamame_unconstrainedfever" },
+		{ "level": 1, "id": "yamame_webbridge" },
+		{ "level": 1, "id": "yamame_webcapture" },
+		{ "level": 1, "id": "yamame_webrappel" }
+	],
+    "skills": [
+        { "level": 2, "name": "dodge" },
+		{ "level": 2, "name": "fabrication" },
+		{ "level": 2, "name": "speech" },
+        { "level": 2, "name": "tailor" }
+    ],
+	"traits": [
+        "TSUCHIGUMO_SPECIES",
+		"YOUKAI_SPECIES",
+		"PROF_YAMAME",
+		"SPIRIT_USER"
+    ],
+	"items": {
+        "both": {
+            "items": [
+				"dress_shoes",
+				"socks",
+				"yamame_dress",
+				"yamame_ribbon",
+				"yamame_shirt"
+            ]
+		},
+		"male": [
+            "boxer_shorts"
+        ],
+        "female": [
+            "bra",
+            "bloomers"
+        ]
+    },
+    "flags": [ "SCEN_ONLY" ],
+	"//2": "WIP" 
+	},
+	{
     "ident": "youmu_konpaku",
 	"type": "profession",
     "name": "Phantom Gardener",
@@ -689,7 +737,6 @@
 	"items": {
         "both": {
             "items": [
-				"bloomers",
 				"dress_shirt",
 				"dress_shoes",
 				"knit_scarf",
@@ -708,7 +755,7 @@
         ],
         "female": [
             "bra",
-            "panties"
+            "bloomers"
         ]
     },
     "flags": [ "SCEN_ONLY" ]

@@ -44,8 +44,8 @@
 		},
 		"place_loot": [ { "group": "touhou_magical_item", "x": [ 12, 13 ], "y": [ 6, 6 ], "chance": 100 } ],
 		"place_monsters": [ 
-			{ "monster": "GROUP_YOUKAI_ONI_ALL", "x": [ 5, 20 ], "y": [ 2, 10 ], "chance": 35 }, 
-			{ "monster": "GROUP_YOUKAI_ONI_ALL", "x": [ 3, 22 ], "y": [ 16, 22 ], "chance": 35 }
+			{ "monster": "GROUP_YOUKAI_ONI_ALL", "x": [ 5, 20 ], "y": [ 2, 10 ], "chance": 3 }, 
+			{ "monster": "GROUP_YOUKAI_ONI_ALL", "x": [ 3, 22 ], "y": [ 16, 22 ], "chance": 3 }
 		]
 	}
 	},

@@ -1,5 +1,44 @@
 [
 	{
+    "id": "cure_disease",
+	"type": "effect_type",
+    "removes_effects": [
+		"bloodworms",
+		"brainworms",
+		"common_cold",
+		"dermatik",
+		"flu",
+		"foodpoison",
+		"fungus",
+		"infected",
+		"infection",
+		"paincysts",
+		"rat_bite_fever",
+		"rat",
+		"spores",
+		"tapeworm",
+		"tetanus",
+		"toxin_buildup"
+    ],
+	"//": "Mostly infectious diseases, not sure if 'non-living' things like poison (proteins) should go here"
+	},
+	{
+    "id": "damnedrope_str",
+	"type": "effect_type",
+    "name": [ "Spider strength (effect)" ],
+    "desc": [ " " ],
+    "rating": "good",
+    "show_in_info": false,
+    "enchantments": [ 
+		{ 
+		"condition": "ALWAYS", 
+		"values": [ 
+			{ "value": "STRENGTH", "add": 40 } 
+		] 
+		} 
+	]
+	},
+	{
     "id": "dash_levitation",
 	"type": "effect_type",
     "name": [ "Dash (effect)" ],
@@ -9,15 +48,30 @@
     "flags": [ "LEVITATION" ]
 	},
 	{
+    "id": "immolate_light",
+	"type": "effect_type",
+    "name": [ "Immolate (light)" ],
+    "desc": [ "Lumination effect for kaenbyou_immolate " ],
+	"rating": "bad",
+    "enchantments": [ 
+		{ 
+		"condition": "ALWAYS", 
+		"values": [ 
+			{ "value": "LUMINATION", "add": 36 } 
+		] 
+		} 
+	]
+	},
+	{
     "id": "aya_levitation",
 	"type": "effect_type",
     "name": [ "Crow wings (flight) (effect)" ],
     "desc": [ "Allows you to fly over ledges.  Also increases your movement speed." ],
     "rating": "good",
     "show_in_info": false,
-    "base_mods": { "speed_mod": [ 33 ], "stamina_chance": [ 1 ], "stamina_min": [ -100 ] },
-	"//3": "~1.66 total movement speed, up from ~133 movement speed from base Aya",
-    "flags": [ "LEVITATION" ]
+    "base_mods": { "speed_mod": [ 33 ] },
+    "flags": [ "LEVITATION" ],
+	"//": "~1.66 total movement speed, up from ~1.33 movement speed from base Aya"
 	},
 	{
     "id": "aya_mspeed",
@@ -38,8 +92,23 @@
     "remove_message": "You return to normality.",
 	"rating": "good",
 	"base_mods": { "dodge_mod": [ 4 ], "bash_mod": [ 2 ], "cut_mod": [ 2 ] },
-    "removes_effects": [ "beartrap", "downed", "fetid_goop", "frenzy", "grabbed", "hot_speed", "paralyzepoison", "sap", "slimed", "staggered", "supercharged", "teargas", "webbed", "zapped" ],
-	"//": "Should remove all 'external' or imposed movement speed effects"
+    "removes_effects": [ 
+		"beartrap", 
+		"downed", 
+		"fetid_goop", 
+		"frenzy", 
+		"grabbed", 
+		"hot_speed", 
+		"paralyzepoison", 
+		"sap", 
+		"slimed", 
+		"staggered", 
+		"supercharged", 
+		"teargas", 
+		"webbed", 
+		"zapped" 
+	],
+	"//": "Should remove all 'external' or imposed effects, focused on movement speed effects"
 	},
 	{
     "id": "remi_levitation",
@@ -48,9 +117,9 @@
     "desc": [ "Allows you to fly over ledges.  Also increases your movement speed." ],
     "rating": "good",
     "show_in_info": false,
-    "base_mods": { "speed_mod": [ 25 ], "stamina_chance": [ 1 ], "stamina_min": [ -100 ] },
-	"//3": "~1.5 total movement speed, up from the 1.25x movement speed from base vampires",
-    "flags": [ "LEVITATION" ]
+    "base_mods": { "speed_mod": [ 25 ] },
+    "flags": [ "LEVITATION" ],
+	"//": "~1.5 total movement speed, up from the 1.25x movement speed from base vampires"
 	},
 	{
     "id": "sakuya_contraction_effect",
@@ -154,7 +223,6 @@
     "desc": [ "Allows you to fly over ledges." ],
     "rating": "good",
     "show_in_info": false,
-    "base_mods": { "stamina_chance": [ 1 ], "stamina_min": [ -100 ] },
     "flags": [ "LEVITATION" ]
 	}
 ]

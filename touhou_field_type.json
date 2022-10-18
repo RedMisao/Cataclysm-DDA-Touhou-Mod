@@ -49,7 +49,6 @@
 	{
     "id": "fd_poison",
     "type": "field_type",
-    "looks_like": "fd_bile",
 	"legacy_enum_id": 7,
     "intensity_levels": [
 		{ "name": "poison splatter", "sym": "5", "color": "yellow", "translucency": 1, "dangerous": true, 
@@ -81,7 +80,8 @@
     "half_life": "12 turns",
     "phase": "gas",
     "display_items": true,
-    "display_field": true
+    "display_field": true,
+    "looks_like": "fd_bile"
 	},
 	{
     "id": "fd_rubble2",
@@ -132,5 +132,42 @@
     "display_items": false,
     "display_field": true,
     "looks_like": "fd_smoke"
+	},
+	{
+    "id": "fd_web2",
+    "type": "field_type",
+    "legacy_enum_id": 5,
+    "intensity_levels": [
+		{
+        "name": "cobwebs",
+        "sym": "}",
+        "effects": [
+			{ "effect_id": "webbed", "intensity": 1, "min_duration": "1 s", "immune_in_vehicle": true, "is_environmental": false }
+        ]
+		},
+		{
+        "name": "webs",
+        "effects": [
+			{ "effect_id": "webbed", "intensity": 2, "min_duration": "1 s", "immune_in_vehicle": true, "is_environmental": false }
+        ]
+		}
+    ],
+    "description_affix": "covered_in",
+    "immunity_data": { "flags": [ "WEBWALK" ] },
+    "decrease_intensity_on_contact": false,
+    "priority": 2,
+    "half_life": "1 seconds",
+    "phase": "gas",
+    "display_items": false,
+    "bash": {
+		"str_min": 10,
+		"str_max": 20,
+		"sound_vol": 2,
+		"sound_fail_vol": 2,
+		"sound": " !",
+		"msg_success": "You brush aside some webs."
+    },
+    "display_field": true,
+    "looks_like": "fd_web"
 	}
 ]

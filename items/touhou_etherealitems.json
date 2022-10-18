@@ -1,22 +1,5 @@
 [
 	{
-    "id": "aura_immolate_light",
-    "type": "ARMOR",
-	"name": { "str": "Immolate (illumination component) (item)", "str_pl": "Immolate (illumination component) (items)" },
-    "description": "Aura effect to illuminate the burning target.",
-    "weight": "0 g",
-    "volume": "0 ml",
-    "price_postapoc": 0,
-    "symbol": "*",
-    "color": "white",
-    "material": [ "magic_fire" ],
-    "material_thickness": 0,
-	"armor": [ 
-		{ "covers": [ "torso" ], "coverage": 0, "encumbrance": [ 0, 0 ] }
-	],
-    "flags": [ "AURA", "LIGHT_36", "NO_TAKEOFF", "NONCONDUCTIVE", "ONLY_ONE", "OVERSIZE", "SEMITANGIBLE", "TRADER_AVOID", "ZERO_WEIGHT" ]
-	},
-	{
     "id": "aura_reflectionslash",
     "type": "ARMOR",
 	"name": { "str": "Reflection slash (aura)", "str_pl": "Reflection slash (auras)" },

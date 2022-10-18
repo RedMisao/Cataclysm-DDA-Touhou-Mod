@@ -113,14 +113,10 @@
       "terrain": { "o": "t_concrete" },
       "gaspumps": { "G": { "fuel": "gasoline", "amount": [ 50000, 268750 ] } },
 		"place_monsters": [ 
-        { "monster": "GROUP_YOUKAI_FOREST", "x": [ 4, 23 ], "y": [ 4, 23 ], "chance": 8, "density": 0.2 },
-        { "monster": "GROUP_YOUKAI_FOREST", "x": [ 24, 47 ], "y": [ 4, 23 ], "chance": 8, "density": 0.2 },
-        { "monster": "GROUP_YOUKAI_FOREST", "x": [ 4, 23 ], "y": [ 24, 47 ], "chance": 8, "density": 0.2 },
-        { "monster": "GROUP_YOUKAI_FOREST", "x": [ 24, 47 ], "y": [ 24, 47 ], "chance": 8, "density": 0.2 },
-        { "monster": "GROUP_YOUKAI_FOREST", "x": [ 4, 23 ], "y": [ 48, 71 ], "chance": 8, "density": 0.2 },
-        { "monster": "GROUP_YOUKAI_FOREST", "x": [ 24, 47 ], "y": [ 48, 71 ], "chance": 8, "density": 0.2 },
-        { "monster": "GROUP_YOUKAI_FOREST", "x": [ 4, 23 ], "y": [ 72, 94 ], "chance": 8, "density": 0.2 },
-        { "monster": "GROUP_YOUKAI_FOREST", "x": [ 24, 47 ], "y": [ 72, 94 ], "chance": 8, "density": 0.2 }
+        { "monster": "GROUP_YOUKAI_FOREST", "x": [ 1, 23 ], "y": [ 1, 23 ], "chance": 5, "density": 0.16 },
+        { "monster": "GROUP_YOUKAI_FOREST", "x": [ 24, 47 ], "y": [ 1, 23 ], "chance": 5, "density": 0.16 },
+        { "monster": "GROUP_YOUKAI_FOREST", "x": [ 1, 23 ], "y": [ 24, 47 ], "chance": 5, "density": 0.16 },
+        { "monster": "GROUP_YOUKAI_FOREST", "x": [ 24, 47 ], "y": [ 24, 47 ], "chance": 5, "density": 0.16 }
 		],
 	  "place_vehicles": [
         { "vehicle": "flatbed_truck", "x": [ 43, 45 ], "y": 33, "chance": 30, "fuel": 25, "status": 1, "rotation": 90 },
@@ -172,7 +168,7 @@
       ],
       "palettes": [ "lumberyard" ],
 		"place_monsters": [ 
-			{ "monster": "GROUP_YOUKAI_FOREST", "x": [ 1, 23 ], "y": [ 1, 23 ], "chance": 15, "density": 0.2 }
+			{ "monster": "GROUP_YOUKAI_FOREST", "x": [ 1, 23 ], "y": [ 1, 23 ], "chance": 6, "density": 0.2 }
 		]
     }
   },
@@ -211,7 +207,7 @@
       ],
       "palettes": [ "lumberyard" ],
 		"place_monsters": [ 
-			{ "monster": "GROUP_YOUKAI_FOREST", "x": [ 1, 23 ], "y": [ 1, 23 ], "chance": 15, "density": 0.2 }
+			{ "monster": "GROUP_YOUKAI_FOREST", "x": [ 1, 23 ], "y": [ 1, 23 ], "chance": 6, "density": 0.2 }
 		]
     }
   },
@@ -250,7 +246,7 @@
       ],
       "palettes": [ "lumberyard" ],
 		"place_monsters": [ 
-			{ "monster": "GROUP_YOUKAI_FOREST", "x": [ 1, 23 ], "y": [ 1, 23 ], "chance": 15, "density": 0.2 }
+			{ "monster": "GROUP_YOUKAI_FOREST", "x": [ 1, 23 ], "y": [ 1, 23 ], "chance": 6, "density": 0.2 }
 		]
     }
   },
@@ -289,7 +285,7 @@
       ],
       "palettes": [ "lumberyard" ],
 		"place_monsters": [ 
-			{ "monster": "GROUP_YOUKAI_FOREST", "x": [ 1, 23 ], "y": [ 1, 23 ], "chance": 15, "density": 0.2 }
+			{ "monster": "GROUP_YOUKAI_FOREST", "x": [ 1, 23 ], "y": [ 1, 23 ], "chance": 6, "density": 0.2 }
 		]
     }
   },
@@ -328,7 +324,7 @@
       ],
       "palettes": [ "lumberyard" ],
 		"place_monsters": [ 
-			{ "monster": "GROUP_YOUKAI_FOREST", "x": [ 1, 23 ], "y": [ 1, 23 ], "chance": 15, "density": 0.2 }
+			{ "monster": "GROUP_YOUKAI_FOREST", "x": [ 1, 23 ], "y": [ 1, 23 ], "chance": 6, "density": 0.2 }
 		]
     }
   },
@@ -367,7 +363,7 @@
       ],
       "palettes": [ "lumberyard" ],
 		"place_monsters": [ 
-			{ "monster": "GROUP_YOUKAI_FOREST", "x": [ 1, 23 ], "y": [ 1, 23 ], "chance": 15, "density": 0.2 }
+			{ "monster": "GROUP_YOUKAI_FOREST", "x": [ 1, 23 ], "y": [ 1, 23 ], "chance": 6, "density": 0.2 }
 		]
     }
   }

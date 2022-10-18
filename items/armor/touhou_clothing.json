@@ -20,7 +20,7 @@
 	],
 	"armor": [
 		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
-		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_upper_l", "arm_upper_r" ], "coverage": 5, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "arm_l", "arm_r" ], "specifically_covers": [ "arm_upper_l", "arm_upper_r" ], "coverage": 10, "encumbrance": [ 2, 4 ] },
 		{ "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] }
 	],
     "flags": [ "FANCY", "VARSIZE" ]
@@ -76,6 +76,7 @@
 	"description": "A long, dark blue almost black skirt with frills at the end.",
     "warmth": 10,
     "material_thickness": 1,
+    "color": "black",
     "armor": [
 		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
 		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 95, "encumbrance": [ 2, 4 ] },
@@ -250,7 +251,7 @@
     "color": "green",
     "warmth": 10,
     "armor": [ 
-		{ "covers": [ "head" ], "coverage": 40 } 
+		{ "covers": [ "head" ], "specifically_covers": [ "head_crown" ], "coverage": 80 } 
 	],
     "flags": [ "VARSIZE", "WATER_FRIENDLY" ]
 	},
@@ -347,7 +348,7 @@
 	"symbol": "[",
     "color": "white",
     "armor": [
-		{ "covers": [ "head" ], "coverage": 0, "encumbrance": [ 0, 0 ] }
+		{ "covers": [ "head" ], "specifically_covers": [ "head_crown" ], "coverage": 15, "encumbrance": [ 0, 0 ] }
     ],
 	"flags": [ "FANCY", "NO_WEAR_EFFECT", "STURDY" ]
     },
@@ -465,7 +466,7 @@
     "color": "light_red",
 	"warmth": 5,
 	"armor": [
-        { "covers": [ "head" ], "coverage": 10, "encumbrance": [ 2, 6 ] }
+        { "covers": [ "head" ], "specifically_covers": [ "head_crown" ], "coverage": 80, "encumbrance": [ 2, 6 ] }
 	],
 	"flags": [ "FANCY", "OUTER", "STURDY" ]
     },
@@ -546,6 +547,7 @@
 	"copy-from": "dress",
 	"description": "A teal dress with a white and blue vest, floral design, and Chinese patterns.  There is a flower secured by a belt on the waist.",
 	"repairs_like": "jeans",
+    "color": "light_blue",
     "flags": [ "FANCY", "VARSIZE" ]
 	},
 	{
@@ -564,7 +566,7 @@
 	"use_action": [ "PICK_LOCK" ],
 	"qualities": [ [ "LOCKPICK", 3 ] ],
 	"armor": [
-        { "covers": [ "head" ], "coverage": 5, "specifically_covers": [ "head_crown" ], "encumbrance": [ 0, 0 ] }
+        { "covers": [ "head" ], "specifically_covers": [ "head_crown" ], "coverage": 5, "encumbrance": [ 0, 0 ] }
 	],
 	"flags": [ "ALLOWS_NATURAL_ATTACKS", "FANCY", "OUTER", "OVERSIZE", "WATER_FRIENDLY" ]
 	},
@@ -596,6 +598,7 @@
 	"name": { "str": "celestial hat", "str_pl": "celestial hats" },
     "copy-from": "bowhat",
 	"description": "A bowler hat decorated with heavenly peaches and leaves.",
+    "color": "black",
     "flags": [ "FANCY", "OUTER" ]
 	},
 	{
@@ -604,8 +607,9 @@
 	"category": "armor",
 	"name": { "str": "celestial skirt", "str_pl": "celestial skirts" },
 	"copy-from": "skirt",
-    "description": "A super elegant blue skirt.", 
+    "description": "A super elegant blue skirt.",
 	"material_thickness": 2,
+    "color": "blue",
 	"flags": [ "SUPER_FANCY", "VARSIZE" ]
 	},
 	{
@@ -618,6 +622,7 @@
 	"repairs_like": "dress",
 	"//": "There's no cotton apron, I should add the specs for this specific apron when I figure out how material definitions work",
 	"material_thickness": 3,
+    "color": "white",
 	"armor": [
         { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 8, 12 ] },
         { "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ],"coverage": 100, "encumbrance": [ 4, 8 ] },
@@ -683,8 +688,8 @@
     "looks_like": "skirt",
 	"color": "pink",
 	"armor": [
-        { "covers": [ "leg_r", "leg_l" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
-        { "covers": [ "leg_r", "leg_l" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 85, "encumbrance": [ 2, 4 ] }
+        { "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_hip_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
+        { "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_upper_l", "leg_upper_r" ], "coverage": 85, "encumbrance": [ 2, 4 ] }
 	]
 	},
 	{
@@ -733,7 +738,7 @@
 	"symbol": "[",
     "color": "green",
     "armor": [ 
-		{ "covers": [ "head" ], "coverage": 20, "encumbrance": [ 4, 8 ] }
+		{ "covers": [ "head" ], "specifically_covers": [ "head_crown" ], "coverage": 15, "encumbrance": [ 0, 4 ] }
 	],
 	"flags": [ "FANCY", "NO_WEAR_EFFECT", "OUTER", "STURDY" ]
     },
@@ -788,8 +793,9 @@
 	"name": { "str": "Utsuho's skirt", "str_pl": "Utsuho's skirts" },
 	"copy-from": "skirt",
 	"description": "A green skirt.  A white pattern representing nuclear decay is embroided on it.",
-	"//2": "I remember reading that the pattern corresponds to either Uranium orbitals or the pattern left by subatomic particles on a cloud chamber, but can't remember where", 
-	"flags": [ "FANCY" ]
+    "color": "green",
+	"flags": [ "FANCY" ],
+	"//2": "I remember reading that the pattern corresponds to either Uranium orbitals or the pattern left by subatomic particles on a cloud chamber, but can't remember where"
 	},
 	{
     "id": "youmu_skirt",
@@ -798,7 +804,71 @@
 	"name": { "str": "phantom skirt", "str_pl": "phantom skirts" },
     "copy-from": "skirt",
 	"description": "A green skirt.  Ghost insignias are present on the edges.",
+    "color": "green",
 	"flags": [ "FANCY" ]
+	},
+	{
+    "id": "yamame_dress",
+	"type": "ARMOR",
+	"category": "armor",
+	"name": "spider dress",
+	"copy-from": "dress",
+	"description": "A brown dress, with eight decorative buttons.  Thight on the torso, very puffy below the waist, with enough space to hide say, four spider legs, from unwanted observers.",
+    "weight": "900 g",
+    "volume": "8000 ml",
+	"repairs_like": "dress",
+    "color": "brown",
+	"pocket_data": [ 
+		{ "pocket_type": "CONTAINER", "max_contains_volume": "2000 ml", "max_contains_weight": "2000 g", "moves": 500 } 
+	],
+    "armor": [ 
+		{ "covers": [ "torso" ], "coverage": 80, "encumbrance": 7 },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_upper_l", "leg_hip_r", "leg_upper_r" ], "encumbrance": 2, "coverage": 95 },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_knee_l", "leg_knee_r" ], "encumbrance": 2, "coverage": 50 } 		
+	],
+    "flags": [ "FANCY", "VARSIZE" ]
+	},
+	{
+    "id": "yamame_ribbon",
+    "type": "TOOL_ARMOR",
+    "category": "armor",
+	"name": "spider ribbon",
+	"description": "A large, dark brown ribbon with yellow embroidery.  Keeps your hair tied up in a bun.",
+	"volume": "400 ml",
+	"weight": "200 g",
+	"price": 1000,
+	"price_postapoc": 10,
+    "material": [ "cotton" ],
+	"material_thickness": 1,
+	"symbol": "[",
+    "color": "black",
+    "armor": [ 
+		{ "covers": [ "head" ], "specifically_covers": [ "head_crown" ], "coverage": 15, "encumbrance": [ 0, 0 ] }
+	],
+	"flags": [ "FANCY", "NO_WEAR_EFFECT", "OUTER" ]
+    },
+	{
+    "id": "yamame_shirt",
+    "type": "ARMOR",
+    "category": "armor",
+	"name": "spider shirt",
+	"description": "A dark brown bell dress shirt with bell sleeves.  It can be worn under your normal day clothes, or be used as a casual shirt.",
+	"weight": "250 g",
+    "volume": "750 ml",
+    "price": 15000,
+    "price_postapoc": 1500,
+    "material": [ "cotton" ],
+    "material_thickness": 1,
+	"symbol": "[",
+	"looks_like": "dress_shirt",
+    "color": "black",
+    "warmth": 10,
+	"armor": [
+		{ "covers": [ "arm_l", "arm_r" ], "coverage": 85, "encumbrance": [ 2, 4 ] },
+		{ "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_hip_l", "leg_upper_l", "leg_hip_r", "leg_upper_r" ], "encumbrance": [ 2, 4 ], "coverage": 80 },
+		{ "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 2, 4 ] }
+	],
+    "flags": [ "FANCY", "VARSIZE" ]
 	},
 	{
     "id": "youmu_ribbon",
@@ -813,9 +883,9 @@
     "material": [ "cotton" ],
 	"material_thickness": 1,
 	"symbol": "[",
-    "color": "pink",
+    "color": "black",
     "armor": [ 
-		{ "covers": [ "head" ], "coverage": 15, "encumbrance": [ 0, 0 ] }
+		{ "covers": [ "head" ], "specifically_covers": [ "head_crown" ], "coverage": 10, "encumbrance": [ 0, 0 ] }
 	],
 	"flags": [ "FANCY", "NO_WEAR_EFFECT", "OUTER" ]
     },
@@ -909,7 +979,7 @@
 	"material_thickness": 2,
 	"symbol": "[",
 	"looks_like": "vest_leather",
-    "color": "pink",
+    "color": "green",
 	"weight_capacity_bonus": "1 kg",
 	"warmth": 15,
 	"armor": [ 

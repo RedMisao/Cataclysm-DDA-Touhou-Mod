@@ -7,7 +7,8 @@
 	"spell_class": "NONE",
 	"valid_targets": [ "hostile" ],
     "effect": "attack",
-    "extra_effects": [ { "id": "kaenbyou_immolate2" }, { "id": "kaenbyou_immolate3" } ],
+	"effect_str": "immolate_light",
+    "extra_effects": [ { "id": "kaenbyou_immolate2" } ],
     "shape": "blast",
     "damage_type": "heat",
 	"min_damage": 10,
@@ -21,7 +22,8 @@
     "base_energy_cost": 100,
 	"energy_source": "MANA",
 	"learn_spells": { "kaenbyou_blazingwheel": 6 },
-	"flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ]
+	"flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
+	"//": "This (and yamame_unconstrainedfever ) should tag the target with an effect, which enables secondary effects from different effects, but that's using EOCs"
 	},
 	{
     "id": "kaenbyou_immolate2",
@@ -51,30 +53,6 @@
 	"energy_source": "MANA",
 	"flags": [ "NO_HANDS", "NO_LEGS" ],
 	"//": "Ideally, the dot should have a flame field effect"
-	},
-	{
-    "id": "kaenbyou_immolate3",
-    "type": "SPELL",
-    "name": "Immolate (illumination component)",
-    "description": "Light effect for kaenbyou_immolate ",
-    "spell_class": "NONE",
-    "valid_targets": [ "hostile" ],
-    "effect": "spawn_item",
-    "effect_str": "aura_immolate_light",
-    "shape": "blast",
-    "min_damage": 1,
-    "max_damage": 1,
-	"min_range": 12,
-    "max_range": 12,
-    "min_duration": 1066,
-    "max_duration": 2400,
-    "duration_increment": 134,
-    "max_level": 10,
-	"difficulty": -10,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-	"energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ]
 	},
 	{
     "id": "kaenbyou_blazingwheel",

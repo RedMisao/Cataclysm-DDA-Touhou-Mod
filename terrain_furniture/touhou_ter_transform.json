@@ -88,5 +88,38 @@
 		"valid_flags": [ "DIGGABLE" ]
 		}
     ]
+	},
+	{
+    "id": "web_bridge_fur",
+	"type": "ter_furn_transform",
+    "furniture": [ 
+		{ 
+		"result": "f_web_bridge",
+		"valid_flags": [ "NO_FLOOR", "TRANSPARENT" ]
+		} 
+	]
+	},
+	{
+    "id": "web_dismiss_fur",
+	"type": "ter_furn_transform",
+    "furniture": [ 
+		{ 
+		"result": "f_null", 
+		"message": "Webs around you quickly disintegrate.",
+		"valid_furniture": [
+			"f_web_up"
+        ]
+		} 
+	]
+	},
+	{
+    "id": "web_rappel_fur",
+	"type": "ter_furn_transform",
+    "furniture": [ 
+		{ 
+		"result": "f_web_rappel", 
+		"valid_flags": [ "NO_FLOOR" ]
+		} 
+	]
 	}
 ]

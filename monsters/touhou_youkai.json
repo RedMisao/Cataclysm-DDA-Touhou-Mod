@@ -497,11 +497,41 @@
     "anger_triggers": [ "PLAYER_CLOSE", "STALK" ],
     "fear_triggers": [ "FRIEND_ATTACKED", "HURT" ],
     "special_attacks": [ 
-		[ "ABSORB_MEAT", 100 ] 
-	
-	
+		[ "ABSORB_MEAT", 100 ], 
+		{ 
+		"spell_data": { "id": "squonk_dissolve" }, 
+		"type": "spell", 
+		"cooldown": 3 
+		}
 	],
-	"flags": [ "HEARS", "PATH_AVOID_DANGER_1", "PACIFIST", "SEES", "SMELLS", "WARM" ]
+	"flags": [ "HEARS", "PATH_AVOID_DANGER_1", "PACIFIST", "SEES", "SMELLS", "WARM" ],
+	"//": "The squonk should go around, run from the player when encountered, until it reaches the anger_triggers threshold, then casts squonk_dissolve and transforms into the harvest-less, drop-less mon_squonk_death to finish the death process. It would be harvestable only if caught by surprise"
+	},
+	{
+	"id": "mon_squonk_death",
+    "type": "MONSTER",
+    "name": { "str": "squonk", "str_pl": "squonk" },
+	"copy-from": "mon_squonk",
+    "harvest": "exempt",
+    "hp": 1,
+    "aggression": -99,
+    "morale": 99,
+	"vision_day": 50,
+    "vision_night": 50,
+    "path_settings": { "max_dist": 50 },
+    "biosignature": { "biosig_item": "water", "biosig_timer": 1 },
+    "death_function": {
+		"message": "The %s dissolves in its own tears!",
+		"corpse_type": "NO_CORPSE"
+    },
+    "special_attacks": [ 
+		{ 
+		"spell_data": { "id": "squonk_death_dissolve" }, 
+		"type": "spell", 
+		"cooldown": 3 
+		}
+	],
+	"flags": [ "GOODHEARING", "IMMOBILE", "KEENNOSE", "NO_BREATHE", "PACIFIST", "SEES", "WARM" ]
 	},
 	{
 	"id": "mon_gyokuto_base",

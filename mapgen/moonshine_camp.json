@@ -80,9 +80,8 @@
         { "chance": 55, "item": "trash", "x": 9, "y": 12 },
         { "chance": 55, "item": "trash", "x": 10, "y": 10 }
       ],
-      "place_monster": [
-        { "monster": "mon_tsukumogami_seat_chair_1", "x": [ 13, 19 ], "y": [ 5, 8 ], "chance": 25, "repeat": [ 1, 2 ] },
-        { "monster": "mon_tsukumogami_seat_chair_1", "x": [ 13, 17 ], "y": [ 12, 14 ], "chance": 25, "repeat": [ 1, 2 ] }
+      "place_monsters": [
+        { "monster": "GROUP_YOUKAI_TSUKUMOGAMI_SEAT_CHAIRS", "x": [ 13, 19 ], "y": [ 5, 8 ], "chance": 2 }
       ]
     }
   },

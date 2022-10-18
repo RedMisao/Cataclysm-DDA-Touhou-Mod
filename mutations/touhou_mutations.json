@@ -226,7 +226,7 @@
 		"mutations": [ "TOLERANCE" ]
 		}
 	],
-	"cancels": [ "PRETTY", "UGLY", "DEFORMED", "DEFORMED2", "DEFORMED3", "CLUMSY", "SLOWRUNNER", "LIGHT_BONES" ]
+	"cancels": [ "PRETTY", "UGLY", "DEFORMED", "DEFORMED2", "DEFORMED3", "CLUMSY", "SLOWRUNNER", "LIGHT_BONES" ],
 	"//2": "TOLERANCE because I can't find a way to set alcohol resistance only to something like 95%"
 	},
 	{
@@ -241,8 +241,14 @@
     "valid": false,
 	"armor": [ { "parts": "ALL", "acid": 4 } ],
 	"//1": "This should block minor acid damage",
-	"//3": "Also, add some kind of social bonus for enemies with the YOUKAI trait or plus ARACHNID. In fact I should probably check all social interactions of Youkai in general at some point",
-	"flags": [ "BIO_IMMUNE", "FEATHER_FALL", "NO_DISEASE", "PARAIMMUNE" ]
+	"enchantments": [
+		{
+        "condition": "ALWAYS",
+		"mutations": [ "WEB_WALKER" ]
+		}
+	],
+	"flags": [ "BIO_IMMUNE", "CLIMB_NO_LADDER", "NO_DISEASE", "PARAIMMUNE", "WEB_RAPPEL" ],
+	"//3": "Also, add some kind of social bonus for enemies with the YOUKAI trait or plus ARACHNID. In fact I should probably check all social interactions of Youkai in general at some point"
 	},
 	{
     "id": "VAMPIRE_SPECIES",
@@ -410,8 +416,12 @@
 	"purifiable": false,
 	"starting_trait": false,
 	"valid": false,
-	"//4": "Add like 2-4 soul dmg reduction when I implement that",
-	"//5": "Add some kind of social bonus for enemies with both the UNDEAD and SPIRIT/SOUL trait, this would allow for Vengeful spirits be neutral/friendly to her and not also affect every single Zed out there"
+	"anger_relations": [ 
+		[ "GHOST_TOUHOU", -20 ], 
+		[ "PHANTOM_TOUHOU", -20 ], 
+		[ "JIANGSHI_TOUHOU", -20 ] 
+	],
+	"//4": "Add like 2-4 soul dmg reduction when I implement that"
 	},
 	{
     "id": "PROF_MEILING",
@@ -488,6 +498,26 @@
 	"initial_ma_styles": [ "style_celestial_brawling_tenko" ]
     },
 	{
+    "id": "PROF_YAMAME",
+	"type": "mutation",
+    "name": "Bright web from the dark cave",
+    "description": "You're the good-natured earth spider youkai living at the Underground entrance.",
+    "points": 0,
+	"profession": true,
+	"purifiable": false,
+	"starting_trait": false,
+	"valid": false,
+	"anger_relations": [ 
+		[ "ONI_TOUHOU", -25 ], 
+		[ "YOUKAI_FEMALE_TOUHOU", -25 ], 
+		[ "YOUKAI_HOSTILE_TOUHOU", -25 ], 
+		[ "YOUKAI_NEUTRAL_TOUHOU", -25 ], 
+		[ "YOUKAI_SKINWALKER_TOUHOU", -25 ], 
+		[ "YOUKAI_PSEUDO", -25 ] 
+	],
+	"social_modifiers": { "intimidate": -6, "persuade": 4 }
+	},
+	{
     "id": "PROF_YOUMU",
 	"type": "mutation",
     "name": "Half-Human Half-Phantom dual-wielding gardener",
@@ -534,9 +564,10 @@
 	"starting_trait": false,
 	"valid": false,
 	"active": true,
+	"activated_eocs": [ "WINGS_HELLRAVEN_activate" ],
 	"ugliness": 2,
 	"visibility": 8,
-	"transform": { "target": "WINGS_HELLRAVEN_spread", "msg_transform": "You prepare your wings to fly.", "active": false, "moves": 100 },
+	"transform": { "target": "WINGS_HELLRAVEN_spread", "active": false, "moves": 100 },
 	"cancels": [ "WINGS_BAT", "WINGS_BIRD", "WINGS_BUTTERFLY", "WINGS_INSECT", "WINGS_STUB" ]
     },
 	{
@@ -552,30 +583,35 @@
 		"ench_effects": [ { "effect": "utsuho_levitation", "intensity": 1 } ]
 		}
 	],
-	"transform": { "target": "WINGS_HELLRAVEN", "msg_transform": "You relax your wings.", "active": false, "moves": 100 }
+	"transform": { "target": "WINGS_HELLRAVEN", "active": false, "moves": 100 }
     },
 	{
     "id": "WINGS_BAT_REMI",
 	"type": "mutation",
     "name": "Bat wings",
-    "description": "You have a pair of bat wings.  Activate the mutation to enable flight.",
+    "description": "You have a pair of bat wings.  Enables flight while active.",
     "points": 0,
 	"profession": true,
 	"purifiable": false,
 	"starting_trait": false,
 	"valid": false,
 	"active": true,
-	"ugliness": 4,
+	"activated_eocs": [ "WINGS_BAT_REMI_activate" ],
+	"ugliness": 1,
 	"visibility": 8,
-	"transform": { "target": "WINGS_BAT_REMI_spread", "msg_transform": "You prepare your wings to fly.", "active": false, "moves": 100 },
+	"transform": { "target": "WINGS_BAT_REMI_spread", "active": false, "moves": 100 },
 	"cancels": [ "WINGS_BAT", "WINGS_BIRD", "WINGS_BUTTERFLY", "WINGS_INSECT", "WINGS_STUB" ]
     },
 	{
     "id": "WINGS_BAT_REMI_spread",
 	"type": "mutation",
     "name": "Bat wings (flight)",
-	"copy-from": "WINGS_BAT_REMI",
     "description": "If nothing else revealed you're a vampire, this will surely do.  Activate to disable flight.",
+    "points": 0,
+	"profession": true,
+	"purifiable": false,
+	"starting_trait": false,
+	"valid": false,
 	"active": true,
     "enchantments": [
 		{
@@ -583,7 +619,10 @@
 		"ench_effects": [ { "effect": "remi_levitation", "intensity": 1 } ]
 		}
 	],
-	"transform": { "target": "WINGS_BAT_REMI", "msg_transform": "You relax your wings.", "active": false, "moves": 100 }
+	"ugliness": 3,
+	"visibility": 8,
+	"transform": { "target": "WINGS_BAT_REMI", "active": false, "moves": 100 },
+	"cancels": [ "WINGS_BAT", "WINGS_BIRD", "WINGS_BUTTERFLY", "WINGS_INSECT", "WINGS_STUB" ]
     },
 	{
     "id": "WINGS_TENGUCROW",
@@ -596,6 +635,7 @@
 	"starting_trait": false,
 	"valid": false,
 	"active": true,
+	"activated_eocs": [ "WINGS_TENGUCROW_activate" ],
 	"visibility": 4,
 	"transform": { "target": "WINGS_TENGUCROW_spread", "msg_transform": "You prepare your wings to fly.", "active": false, "moves": 100 },
 	"cancels": [ "WINGS_BAT", "WINGS_BIRD", "WINGS_BUTTERFLY", "WINGS_INSECT", "WINGS_STUB" ]

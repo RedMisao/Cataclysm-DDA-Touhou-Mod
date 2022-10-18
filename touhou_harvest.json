@@ -317,6 +317,14 @@
     ]
 	},
 	{
+    "id": "tsukumogami_seat_armchair_harvest",
+    "type": "harvest",
+    "entries": [
+		{ "drop": "2x4", "type": "flesh", "base_num": [ 1, 3 ], "max": 4 },
+		{ "drop": "nail", "type": "bone", "base_num": [ 1, 6 ], "max": 8 }
+    ]
+	},
+	{
     "id": "tsukumogami_seat_chair_harvest",
     "type": "harvest",
     "entries": [
@@ -330,6 +338,15 @@
     "entries": [
 		{ "drop": "2x4", "type": "flesh", "base_num": [ 1, 3 ], "max": 3 },
 		{ "drop": "nail", "type": "bone", "base_num": [ 2, 6 ], "max": 6 }
+    ]
+	},
+	{
+    "id": "tsukumogami_table_harvest",
+    "type": "harvest",
+    "entries": [
+		{ "drop": "2x4", "type": "flesh", "base_num": [ 1, 4 ], "max": 4 },
+		{ "drop": "nail", "type": "bone", "base_num": [ 3, 8 ], "max": 8 },
+		{ "drop": "wood_panel", "type": "flesh", "base_num": [ 0, 1 ], "max": 1 }
     ]
 	},
 	{

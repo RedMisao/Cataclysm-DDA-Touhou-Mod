@@ -8,7 +8,7 @@
 	"valid_targets": [ "hostile" ],
 	"effect": "charm_monster",
 	"shape": "blast",
-    "damage_type": "bash",
+    "damage_type": "pure",
     "min_damage": 40,
     "max_damage": 520,
     "damage_increment": 16,
