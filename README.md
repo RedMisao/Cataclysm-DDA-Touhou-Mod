@@ -1,13 +1,17 @@
 # Cataclysm-DDA-Touhou-Mod
 This is a fork of Taberone's [Touhou Professions](https://github.com/Taberone/Cataclysm-DDA-Touhou-Mod) mod.
 
-**This mod goes in /data/mods**.  Last updated for game version: 2022-09-18 experimental.
+**This mod goes in /data/mods**.  Last updated for game version: 2022-10-14 experimental.
 
 This branch is for new additions that produce non-critical errors when running the mod.  **Read:** the contents are *technically* stable but don't expect proper functionality in-game
 
 ----
 
 **Changelog over the master branch (0.9.3.14c):**
+
+New characters:
+* (WIP) Yamame. Currently has clothing and traits, but she's missing spells so she's not playable yet
+
 
 New items:
 * Magical items: based on different Touhou characters abilities and skills.
@@ -39,10 +43,11 @@ New monsters:
 * Skinwalkers: various (in)famous, dangerous wilderness beasts that mimmick humans, with varying degrees of intelligence and cunning
 * Female ghosts: banshee, La Llorona, white lady
 * Squonk: a warty entity that cries all the time
+* Tsukumogami: of the armchair and table variety
 
 
 New spells:
-* Aya, Remi and Utsuho now have wings mutations. While active, it enables them to fly over ledges and open spaces, consuming stamina
+* Aya, Remi and Utsuho now have "wings". While active (View/active mutations key), it enables them to fly over ledges and open spaces, consuming stamina until they're tired enough
 * Udonge has another Wavelength manipulation spell: Mental fortitude, which renders her immune to mental debuffs
 
 
@@ -53,11 +58,13 @@ New weather:
 
 Other changes:
 * Lunar weapons were changed (again), now automatically regen ammo over time, and can't be unloaded or reloaded
+* Increased youkai presence around the region, and fixed the spawn chance (it was either too low or too high)
 
 
-Fixes and minor changes
+Fixes and minor changes:
 * Temporary fix for dashes over open air not working (cdda issues #53511 and #53532).
 * Fixed Tenko's keystone dismissal not dismissing pillar keystones
 * Fixed Tenko's keystone pillar not being castable on top of enemies
 * Reduced loudness of Lunar weapons
 * Fixed and tweaked some character mutations values. Also fixed a bug where mutation stat modifiers increased cost while on character selection
+* MIB now actually shoot and die properly (heh)
