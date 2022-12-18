@@ -10,7 +10,7 @@ This branch is for new additions that produce non-critical errors when running t
 **Changelog over the master branch (0.9.3.14c):**
 
 New characters:
-* (WIP) Yamame. Currently has clothing and traits, but she's missing spells so she's not playable yet
+* (WIP) Yamame. Currently has clothing and traits, I'm working on her spells, so she's not playable yet
 
 
 New items:
@@ -30,12 +30,15 @@ New items:
     * Spider charm: grants you disease immunity
     * Strong ice: makes you the strongest
     * Sunflower pin: spams sunflowers
-    * Wind priesess charm: grants you positive buffs
+    * Wind priesess charm: grants you random positive buffs
     * (WIP) Gap generator: would create gaps to shorten distances
+* Monster drops: MIB now may drop their Neuralysers and Standard Series pistol, rifle or smg. Also their fancy glasses
+* Fluff: Aya has her reporter stuff
 
 
 New locations:
 * Shrine: a simple Shinto-style shrine.  Magical items should spawn here, for the moment being.
+* (WIP) UFO crash
 
 
 New monsters:
@@ -48,7 +51,7 @@ New monsters:
 
 New spells:
 * Aya, Remi and Utsuho now have "wings". While active (View/active mutations key), it enables them to fly over ledges and open spaces, consuming stamina until they're tired enough
-* Udonge has another Wavelength manipulation spell: Mental fortitude, which renders her immune to mental debuffs
+* Udonge's Wavelength manipulation spells are now "auras", toggled by casting spells. She also has a new one, Mental fortitude, which renders her immune to mental debuffs as long as it's active
 
 
 New weather:
@@ -68,3 +71,4 @@ Fixes and minor changes:
 * Reduced loudness of Lunar weapons
 * Fixed and tweaked some character mutations values. Also fixed a bug where mutation stat modifiers increased cost while on character selection
 * MIB now actually shoot and die properly (heh)
+* Changed how previous buffs from spells work (instead of creating wearable item -> enchantment, they now grant a visible buff -> enchantment)
