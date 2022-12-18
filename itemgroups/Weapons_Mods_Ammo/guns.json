@@ -1,5 +1,15 @@
 [
 	{
+    "id": "guns_mib",
+	"type": "item_group",
+    "subtype": "distribution",
+    "items":[
+	    [ "mib_pistol_sidearm", 50 ],
+	    [ "mib_smg_7", 35 ],
+	    [ "mib_rifle_4", 15 ]
+    ]
+	},
+	{
     "id": "guns_pistol_common_display",
 	"type": "item_group",
     "subtype": "distribution",

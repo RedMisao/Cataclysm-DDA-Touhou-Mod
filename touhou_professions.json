@@ -539,16 +539,21 @@
 		"PROF_AYA",
 		"SPIRIT_USER"
     ],
-    "items": {
-        "both": [
-			"aya_shirt",
-			"aya_skirt",
-			"ribbon_neck",
-			"socks_ankle",
-			"tengu_fan",
-			"tengu_geta",
-			"tengu_hat"
-        ],
+	"items": {
+        "both": {
+            "items": [
+				"aya_shirt",
+				"aya_skirt",
+				"ribbon_neck",
+				"socks_ankle",
+				"tengu_fan",
+				"tengu_geta",
+				"tengu_hat"
+			],
+			"entries": [
+				{ "item": "tengu_reporter_holster", "contents-group": "nested_tengu_reporter" }
+			]
+        },
         "male": [
             "boxer_shorts"
         ],
@@ -669,7 +674,9 @@
 		{ "level": 1, "id": "dash_basic" },
 		{ "level": 1, "id": "yamame_curedisease" },
 		{ "level": 1, "id": "yamame_damnedrope" },
-		{ "level": 1, "id": "yamame_unconstrainedfever" },
+		{ "level": 1, "id": "yamame_icypyrexia" },
+		{ "level": 1, "id": "yamame_scarletplague" },
+		{ "level": 1, "id": "yamame_unconstrainedrot" },
 		{ "level": 1, "id": "yamame_webbridge" },
 		{ "level": 1, "id": "yamame_webcapture" },
 		{ "level": 1, "id": "yamame_webrappel" }
@@ -705,7 +712,11 @@
         ]
     },
     "flags": [ "SCEN_ONLY" ],
-	"//2": "WIP" 
+	"//2": "WIP!!! There's a lot of fun stuff that can't be implemented, or I don't know how to",
+	"//3": "There's no way to check for monsters having effects, so the idea of a base dot disease + applying different effects on top of that can't be used. Worse, this also affects other spells that rely on dots, like kaenbyou_immolate ",
+	"//4": "Enchantments don't work on monsters either, so things like reduced attack speed can't be set at all",
+	"//5": "EOCs don't work with monsters, so a disease that causes outburst to spread to nearby enemies currently can't exist",
+	"//6": "There's an issue with the remove_field spell effect that causes it to remove 1 field in the entire aoe, so Yamame can't dismiss webs from yamame_webcapture"
 	},
 	{
     "ident": "youmu_konpaku",

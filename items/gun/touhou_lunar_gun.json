@@ -109,15 +109,15 @@
 	"dispersion": 650,
     "durability": 8,
 	"modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
-    "ranged_damage": { "damage_type": "bash", "amount": 45, "armor_penetration": 15 },
     "min_cycle_recoil": 800,
+    "ranged_damage": { "damage_type": "bash", "amount": 45, "armor_penetration": 15 },
 	"reload": 100,
 	"reload_noise_volume": 6,
 	"skill": "shotgun",
 	"use_action": {
 		"type": "transform",
 		"menu_text": "Switch mode: Ammo",
-		"msg": "You switch between modes, allowing your weapon to consume shotgun ammo.",
+		"msg": "You switch between modes, allowing your weapon to shoot.",
 		"target": "lunar_bousan2"
 	},
     "valid_mod_locations": [
@@ -140,13 +140,6 @@
     "copy-from": "lunar_bousan",
     "description": "The \"Boudou Sandanjou\" is an revolving LDC auto shotgun.  This belongs to an intermediate tier between old human weapons adapted with Lunarian technology and Lunarian tech proper weaponized, as noted by the extremely wide barrel.  Alongside the normal shotgun operation, the weapon is capable of generating vacuum in the action mechanism to release powerful, short ranged blasts after pulling the trigger.  Switching between modes is done by activating a button in the thumbhole.",
 	"dispersion": 450,
-    "pocket_data": [ 
-		{ 
-		"pocket_type": "MAGAZINE", 
-		"rigid": true,
-		"ammo_restriction": { "shot": 6 }
-		} 
-	],
     "ranged_damage": { "damage_type": "bash", "amount": 0, "armor_penetration": 0 },
 	"reload": 125,
 	"reload_noise_volume": 4,
@@ -157,6 +150,13 @@
 		"msg": "You switch between modes, allowing your weapon to generate vacuum.",
 		"target": "lunar_bousan"
 	},
+    "pocket_data": [ 
+		{ 
+		"pocket_type": "MAGAZINE", 
+		"rigid": true,
+		"ammo_restriction": { "shot": 6 }
+		} 
+	],
     "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NON_FOULING", "PUMP_ACTION", "RELOAD_ONE", "STURDY", "TRADER_AVOID" ]
 	},
 	{

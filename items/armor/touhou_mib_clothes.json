@@ -151,6 +151,27 @@
     "flags": [ "VARSIZE", "SKINTIGHT" ]
 	},
 	{
+    "id": "sunglasses_mib",
+    "type": "ARMOR",
+    "name": { "str": "pair of sunglasses", "str_pl": "pairs of sunglasses" },
+	"copy-from": "sunglasses",
+    "description": "A pair of fancy sunglasses.",
+    "repairs_like": "sunglasses",
+    "volume": "250 ml",
+	"weight": "35 g",
+    "price_postapoc": 200,
+	"to_hit": {
+		"balance": "neutral", 
+		"grip": "bad", 
+		"length": "hand", 
+		"surface": "any"
+	},
+    "looks_like": "sunglasses",
+    "color": "black",
+    "armor": [ { "covers": [ "eyes" ], "coverage": 100, "encumbrance": 1, "rigid_layer_only": true } ],
+    "flags": [ "FANCY", "FLASH_PROTECTION", "FRAGILE", "SKINTIGHT", "SUN_GLASSES", "WATER_FRIENDLY" ]
+	},
+	{
     "id": "tie_black",
     "type": "ARMOR",
     "name": { "str": "black necktie" },

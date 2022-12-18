@@ -1,92 +1,5 @@
 [
 	{
-    "id": "aura_reflectionslash",
-    "type": "ARMOR",
-	"name": { "str": "Reflection slash (aura)", "str_pl": "Reflection slash (auras)" },
-    "description": "A barrier created by cutting… something.",
-    "weight": "0 g",
-    "volume": "0 ml",
-    "price_postapoc": 0,
-    "symbol": "*",
-    "color": "light_gray",
-    "material": [ "steel" ],
-    "material_thickness": 0,
-	"armor": [
-        { "covers": [ "arm_l", "arm_r" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
-		{ "covers": [ "eyes" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
-		{ "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
-		{ "covers": [ "hand_l", "hand_r" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
-		{ "covers": [ "head" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
-		{ "covers": [ "mouth" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
-        { "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 0, 0 ] }
-	],
-	"relic_data": { "passive_effects": [ { "id": "ench_reflectionslash" } ] },
-    "flags": [ "AURA", "NO_TAKEOFF", "NONCONDUCTIVE", "ONLY_ONE", "OVERSIZE", "SEMITANGIBLE", "TRADER_AVOID", "ZERO_WEIGHT" ]
-	},
-	{
-    "id": "aura_stickleback",
-    "type": "ARMOR",
-    "name": { "str": "Thundercloud Stickleback (aura)", "str_pl": "Thundercloud Sticklebacks (aura)" },
-    "description": "A spiky, pulsating electric shell that seems eager to shock your enemies.",
-    "weight": "0 g",
-    "volume": "0 ml",
-    "symbol": "*",
-    "color": "blue",
-    "material": [ "magic_electricity" ],
-    "material_thickness": 0,
-    "relic_data": { "passive_effects": [ 
-		{ 
-		"has": "WORN", 
-		"condition": "ALWAYS", 
-		"hit_me_effect": [ 
-			{ "id": "stickleback_shock" }, 
-			{ "id": "stickleback_knockback" }
-		] 
-		} 
-	] 
-	},
-    "flags": [ "AURA", "LIGHT_4", "NO_TAKEOFF", "NONCONDUCTIVE", "ONLY_ONE", "OVERSIZE", "SEMITANGIBLE",  "TRADER_AVOID", "ZERO_WEIGHT"  ]
-	},
-	{
-    "id": "stickleback_shock",
-    "type": "SPELL",
-    "name": "Thundercloud Stickleback (shock)",
-    "description": "Dmg component for iku_thundercloud ",
-    "spell_class": "NONE",
-    "valid_targets": [ "hostile" ],
-    "effect": "attack",
-    "shape": "blast",
-    "damage_type": "electric",
-    "min_damage": 11,
-    "max_damage": 11,
-    "max_level": 1,
-    "difficulty": -10,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "NO_PROJECTILE" ]
-	},
-	{
-    "id": "stickleback_knockback",
-    "type": "SPELL",
-    "name": "Thundercloud Stickleback (knockback)",
-    "description": "Knockback component for iku_thundercloud ",
-    "spell_class": "NONE",
-    "valid_targets": [ "hostile" ],
-	"effect": "directed_push",
-    "shape": "blast",
-    "damage_type": "electric",
-    "min_damage": 2,
-    "max_damage": 2,
-    "max_level": 1,
-    "difficulty": -10,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_PROJECTILE" ]
-	},
-	{
     "id": "aura_tigerrelease",
     "type": "ARMOR",
 	"name": { "str": "Tiger qi release (aura)", "str_pl": "Tiger qi release (auras)" },
@@ -106,12 +19,10 @@
 	],
 	"relic_data": { "passive_effects": [ 
 		{ 
-		"has": "WORN", 
 		"condition": "ALWAYS", 
 		"hit_you_effect": [ { "id": "tiger_bonk" } ] 
 		} 
-		] 
-	},
+	] },
     "flags": [ "AURA", "NO_TAKEOFF", "NONCONDUCTIVE", "ONLY_ONE", "OVERSIZE", "SEMITANGIBLE", "TRADER_AVOID", "UNARMED_WEAPON", "ZERO_WEIGHT" ]
 	},
 	{
@@ -155,14 +66,18 @@
 		{ "covers": [ "hand_l", "hand_r" ], "coverage": 0, "encumbrance": [ 0, 0 ] }
 	],
 	"relic_data": { "passive_effects": [ 
-		{ "id": "ench_vampiricaura" },
 		{ 
-		"has": "WORN", 
-		"condition": "ALWAYS", 
-		"hit_you_effect": [ { "id": "vampiric_claw" }, { "id": "vampiric_drain" } ] 
+		"condition": "ALWAYS",
+		"hit_you_effect": [ { "id": "vampiric_claw" } ],
+		"values": [ 
+			{ "value": "ARMOR_BASH", "add": 2 },
+			{ "value": "ARMOR_CUT", "add": 2 },
+			{ "value": "ARMOR_STAB", "add": 4 },
+			{ "value": "ARMOR_BULLET", "add": 2 }
+		],
+		"//": "ARMOR_X add +n REDUCES armor for n value, this is intended here as the aura increases melee dmg while reducing defense"
 		}
-		] 
-	},
+	] },
     "flags": [ "AURA", "NO_TAKEOFF", "NONCONDUCTIVE", "ONLY_ONE", "OVERSIZE", "SEMITANGIBLE", "TRADER_AVOID", "UNARMED_WEAPON", "ZERO_WEIGHT" ]
 	},
 	{
@@ -172,10 +87,11 @@
     "description": "dmg component for remilia_vampiricaura ",
     "spell_class": "NONE",
 	"effect": "attack",
+	"extra_effects": [ { "id": "vampiric_drain" } ],
     "valid_targets": [ "hostile" ],
 	"shape": "blast",
 	"damage_type": "cut",
-	"min_damage": 6,
+	"min_damage": 12,
     "max_damage": 24,
 	"min_range": 1,
     "max_range": 1,
@@ -193,71 +109,19 @@
     "description": "heal component for remilia_vampiricaura ",
     "spell_class": "NONE",
 	"effect": "attack",
-    "valid_targets": [ "hostile" ],
+    "valid_targets": [ "self" ],
 	"shape": "blast",
-	"damage_type": "bash",
-	"min_damage": 1,
-    "max_damage": 4,
-	"min_range": 1,
-    "max_range": 1,
+	"damage_type": "pure",
+	"min_damage": -2,
+    "max_damage": -6,
+	"min_aoe": 2,
+    "max_aoe": 2,
 	"max_level": 1,
 	"difficulty": -10,
 	"base_casting_time": 0,
 	"base_energy_cost": 0,
 	"energy_source": "MANA",
     "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SILENT" ]
-	},
-	{
-    "id": "aura_windsickle",
-    "type": "ARMOR",
-    "name": { "str": "Wind sickle veiling (aura)", "str_pl": "Wind sickle veilings (aura)" },
-    "description": "A rapidly spinning wind shield protecting you from enemy attacks.",
-    "weight": "0 g",
-    "volume": "0 ml",
-    "symbol": "*",
-    "color": "blue",
-    "material": [ "magic_wind" ],
-    "material_thickness": 1,
-	"armor": [
-        { "covers": [ "arm_l", "arm_r" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
-		{ "covers": [ "eyes" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
-		{ "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
-		{ "covers": [ "hand_l", "hand_r" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
-		{ "covers": [ "head" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
-		{ "covers": [ "leg_l", "leg_r" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
-		{ "covers": [ "mouth" ], "coverage": 100, "encumbrance": [ 0, 0 ] },
-        { "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 0, 0 ] }
-	],
-    "relic_data": { "passive_effects": [ 
-		{ 
-		"has": "WORN", 
-		"condition": "ALWAYS", 
-		"hit_me_effect": [ 
-			{ "id": "windsickle_dmg" } 
-		] 
-		} 
-	] 
-	},
-    "flags": [ "AURA", "NO_TAKEOFF", "NONCONDUCTIVE", "ONLY_ONE", "OVERSIZE", "SEMITANGIBLE",  "TRADER_AVOID", "ZERO_WEIGHT"  ]
-	},
-	{
-    "id": "windsickle_dmg",
-    "type": "SPELL",
-    "name": "Wind sickle (damage)",
-    "description": "Dmg component for aya_windsickle ",
-    "spell_class": "NONE",
-    "valid_targets": [ "hostile" ],
-    "effect": "attack",
-    "shape": "blast",
-    "damage_type": "cut",
-    "min_damage": 11,
-    "max_damage": 11,
-    "max_level": 1,
-    "difficulty": -10,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "NO_PROJECTILE" ]
 	},
 	{
     "id": "fusion_blade",
@@ -280,16 +144,16 @@
 	"armor": [ 
 		{ "covers": [ "hand_r" ], "coverage": 0, "encumbrance": [ 0, 0 ] }
 	],
-    "//": " 'enchantments': [ { 'condition': 'ALWAYS', 'values': [ { 'value': 'LUMINATION', 'add': 48 } ] } ], ",
 	"relic_data": { "passive_effects": [ 
 		{ 
-		"has": "WORN", 
 		"condition": "ALWAYS", 
-		"hit_you_effect": [ { "id": "fusion_bonk" } ] 
-		} 
+		"hit_you_effect": [ { "id": "fusion_bonk" } ],
+		"values": [ 
+			{ "value": "LUMINATION", "add": 20 }
 		] 
-	},
-    "flags": [ "AURA", "LIGHT_12", "NO_TAKEOFF", "NONCONDUCTIVE", "ONLY_ONE", "OVERSIZE", "SEMITANGIBLE", "TRADER_AVOID", "ZERO_WEIGHT" ]
+		}
+	] },
+    "flags": [ "AURA", "NO_TAKEOFF", "NONCONDUCTIVE", "ONLY_ONE", "OVERSIZE", "SEMITANGIBLE", "TRADER_AVOID", "ZERO_WEIGHT" ]
 	},
 	{
     "id": "fusion_bonk",
@@ -302,9 +166,8 @@
     "components": "spell_components_utsuhorod",
 	"shape": "blast",
 	"damage_type": "heat",
-	"min_damage": 4,
-    "max_damage": 29,
-    "//2": 2.5,
+	"min_damage": 16,
+    "max_damage": 26,
 	"min_pierce": 6,
 	"max_pierce": 6,
 	"min_range": 1,
@@ -314,8 +177,7 @@
 	"base_casting_time": 0,
 	"base_energy_cost": 0,
 	"energy_source": "MANA",
-    "flags": [ "IGNITE_FLAMMABLE", "NO_LEGS", "NO_PROJECTILE", "RANDOM_DAMAGE", "SILENT" ],
-	"//": "utsuho_rod + fusion_bonk dmg should be 45 at most"
+    "flags": [ "IGNITE_FLAMMABLE", "NO_LEGS", "NO_PROJECTILE", "RANDOM_DAMAGE", "SILENT" ]
 	},
 	{
     "id": "mokou_fingerflame_item",
@@ -338,7 +200,7 @@
 	"armor": [ 
 		{ "covers": [ "hand_r" ], "specifically_covers": [ "hand_fingers_r" ], "coverage": 0, "encumbrance": [ 0, 0 ] }
 	],
-    "flags": [ "AURA", "LIGHT_3", "NO_TAKEOFF", "NONCONDUCTIVE", "ONLY_ONE", "OVERSIZE", "SEMITANGIBLE", "TRADER_AVOID", "WATER_BREAK", "ZERO_WEIGHT" ]
+    "flags": [ "AURA", "LIGHT_8", "NO_TAKEOFF", "NONCONDUCTIVE", "ONLY_ONE", "OVERSIZE", "SEMITANGIBLE", "TRADER_AVOID", "WATER_BREAK", "ZERO_WEIGHT" ]
 	},
 	{
     "id": "mokou_fireball2",
@@ -415,8 +277,8 @@
 		"length": "long", 
 		"surface": "line"
 	},
-    "bashing": 10,
-    "cutting": 35,
+    "bashing": 8,
+    "cutting": 32,
 	"material": [ "magic_blood" ],
 	"symbol": "/",
     "color": "red",
@@ -456,6 +318,6 @@
     "symbol": "🔅",
     "color": "black",
     "covers": [ "head" ],
-    "flags": [ "AURA", "LIGHT_48", "SEMITANGIBLE", "ZERO_WEIGHT" ]
+    "flags": [ "AURA", "LIGHT_56", "SEMITANGIBLE", "ZERO_WEIGHT" ]
 	}
 ]

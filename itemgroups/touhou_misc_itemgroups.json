@@ -1,5 +1,15 @@
 [
 	{
+    "id": "nested_tengu_reporter",
+	"type": "item_group",
+    "subtype": "collection",
+    "entries": [ 
+		{ "item": "aya_notes" }, 
+		{ "item": "camera_aya" }, 
+		{ "item": "pen" }
+	]
+	},
+	{
     "id": "touhou_rspirited",
 	"type": "item_group",
     "subtype": "distribution",

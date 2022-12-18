@@ -35,7 +35,7 @@
     "ammo_type": "ammo_lunar_medium",
     "count": 11,
     "stack_size": 11,
-	"damage": { "damage_type": "bullet", "amount": 56, "armor_penetration": 14 },
+	"damage": { "damage_type": "bullet", "amount": 37, "armor_penetration": 6 },
 	"loudness": 168,
 	"dispersion": 15,
 	"range": 100,
@@ -57,7 +57,7 @@
 	"ammo_type": "ammo_lunar_small",
     "count": 13,
     "stack_size": 13,
-	"damage": { "damage_type": "bullet", "amount": 35, "armor_penetration": 9 },
+	"damage": { "damage_type": "bullet", "amount": 23, "armor_penetration": 6 },
 	"loudness": 105,
     "dispersion": 35,
 	"range": 50,
@@ -71,7 +71,7 @@
     "name": { "str_sp": "lunar ammo (small) (shot)" },
 	"copy-from": "ammo_lunar_small_1",
 	"description": "Small-sized shot-type Lunar ammo, crafted from mana.",
-	"damage": { "damage_type": "bullet", "amount": 35, "armor_penetration": 9 },
+	"damage": { "damage_type": "bullet", "amount": 23, "armor_penetration": 6 },
     "effects": [ "CASELESS_ROUNDS", "NEVER_MISFIRES", "SHOT" ]
 	},
 	{

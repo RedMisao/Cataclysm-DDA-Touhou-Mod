@@ -55,8 +55,8 @@
     "id": "stock_asval_folded",
     "type": "GUNMOD",
     "name": { "str": "AS Val stock (folded)", "str_pl": "AS Val stocks (folded)" },
-    "description": "A folded AS Val stock.  Currently folded, reducing the size, at the cost of also reducing handling.",
     "copy-from": "stock_asval_unfolded",
+    "description": "A folded AS Val stock.  Currently folded, reducing the size, at the cost of also reducing handling.",
     "use_action": {
 		"target": "stock_asval_unfolded",
 		"type": "transform",
@@ -99,8 +99,8 @@
     "id": "stock_ceamm1_folded",
     "type": "GUNMOD",
     "name": { "str": "CEAM Mòdele 1 stock (folded)", "str_pl": "CEAM Mòdele 1 stocks (folded)" },
-    "description": "A folded wooden stock.  Currently folded, reducing the size, at the cost of also reducing handling.",
     "copy-from": "stock_ceamm1_unfolded",
+    "description": "A folded wooden stock.  Currently folded, reducing the size, at the cost of also reducing handling.",
     "use_action": {
 		"target": "stock_ceamm1_unfolded",
 		"type": "transform",
@@ -145,8 +145,8 @@
     "id": "stock_idw_folded",
     "type": "GUNMOD",
     "name": { "str": "IDW stock (folded)", "str_pl": "IDW stocks (folded)" },
-    "description": "A retracted IDW stock.  Currently folded, reducing size but also overall handling.",
     "copy-from": "stock_idw_unfolded",
+    "description": "A retracted IDW stock.  Currently folded, reducing size but also overall handling.",
     "use_action": {
 		"target": "stock_idw_unfolded",
 		"type": "transform",
@@ -157,6 +157,50 @@
     "aim_speed_modifier": -4,
 	"dispersion_modifier": 10,
     "handling_modifier": -2,
+    "flags": [ "FOLDED_STOCK" ]
+	},
+	{
+    "id": "stock_mib_smg_7_unfolded",
+    "type": "GUNMOD",
+    "name": { "str": "series 7 de-scatterer stock" },
+    "description": "A folding stock for the series 7 de-scatterer.  Currently unfolded.",
+    "volume": "600 ml",
+	"weight": "300 g",
+    "longest_side": "260 mm",
+    "integral_volume": "0 ml",
+    "integral_weight": "0 g",
+    "price_postapoc": 300,
+    "material": [ "aluminum", "steel" ],
+    "symbol": ":",
+	"color": "light_gray",
+	"dispersion_modifier": -2,
+	"handling_modifier": 2,
+    "install_time": "10 m",
+    "location": "stock",
+    "mod_targets": [ "smg" ],
+    "min_skills": [ [ "weapon", 3 ] ],
+	"use_action": {
+		"target": "stock_mib_smg_7_folded",
+		"type": "transform",
+		"msg": "You fold the stock.",
+		"menu_text": "Fold",
+		"moves": 133
+    }
+	},
+	{
+    "id": "stock_mib_smg_7_folded",
+    "type": "GUNMOD",
+    "name": { "str": "series 7 de-scatterer stock (folded)", "str_pl": "series 7 de-scatterer stocks (folded)" },
+    "copy-from": "stock_mib_smg_7_unfolded",
+    "description": "A folding stock for the series 7 de-scatterer.  Currently folded, reducing the size, at the cost of also reducing handling.",
+    "use_action": {
+		"target": "stock_mib_smg_7_unfolded",
+		"type": "transform",
+		"msg": "You unfold the stock.",
+		"menu_text": "Unfold",
+		"moves": 133
+    },
+    "handling_modifier": -8,
     "flags": [ "FOLDED_STOCK" ]
 	}
 ]

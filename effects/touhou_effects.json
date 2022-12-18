@@ -36,7 +36,8 @@
 			{ "value": "STRENGTH", "add": 40 } 
 		] 
 		} 
-	]
+	],
+	"//": "This doesn't work because effects take 1 turn or so into activating, regardless of how they're used (but then how is that dash_levitation works?). Maybe try with EOCs"
 	},
 	{
     "id": "dash_levitation",
@@ -46,6 +47,15 @@
     "rating": "good",
     "show_in_info": false,
     "flags": [ "LEVITATION" ]
+	},
+	{
+    "id": "icy_pyrexia",
+	"type": "effect_type",
+    "name": [ "Icy pyrexia (effect)" ],
+    "desc": [ "Your limbs feel cold and rigid.  Movement speed is reduced." ],
+    "base_mods": { "dex_mod": [ -4 ], "speed_mod": [ -33 ] },
+	"max_intensity": 1,
+	"max_effective_intensity": 1
 	},
 	{
     "id": "immolate_light",
@@ -61,6 +71,23 @@
 		] 
 		} 
 	]
+	},
+	{
+    "id": "scarlet_plague",
+	"type": "effect_type",
+    "name": [ "Scarlet plague (effect)" ],
+    "desc": [ "You feel debilitated and numb.  Your attacks are weaker." ],
+    "base_mods": { "bash_mod": [ -2 ], "cut_mod": [ -2 ], "hit_mod": [ -1 ], "str_mod": [ -2 ] },
+	"max_intensity": 1 ,
+	"max_effective_intensity": 1
+	},
+	{
+    "id": "unscontrained_rot",
+	"type": "effect_type",
+    "name": [ "Unconstrained rot (effect)" ],
+    "desc": [ "Your guts are decomposing rapidly!" ],
+	"max_intensity": 1 ,
+	"max_effective_intensity": 1
 	},
 	{
     "id": "aya_levitation",

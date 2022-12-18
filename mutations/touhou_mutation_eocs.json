@@ -1,5 +1,30 @@
 [
 	{
+    "id": "eoc_wind_blessing",
+	"type": "effect_on_condition",
+    "condition": { "u_has_trait": "wind_priestess_charm_mut" },
+    "effect": [ 
+		{ "queue_eocs": [ "eoc_wind_blessing_repeat" ], "time_in_future": "30 m" }
+	],
+    "false_effect": [ 
+		{ "u_lose_trait": "wind_priestess_charm_mut" }
+	]
+	},
+	{
+    "id": "eoc_wind_blessing_repeat",
+	"type": "effect_on_condition",
+    "condition": { "u_has_trait": "wind_priestess_charm_mut" },
+    "effect": [
+		{ "arithmetic": [ { "u_val": "var", "var_name": "var_wind_blessing_dex" }, "=", { "rand": 3 } ] },
+		{ "arithmetic": [ { "u_val": "var", "var_name": "var_wind_blessing_int" }, "=", { "rand": 3 } ] },
+		{ "arithmetic": [ { "u_val": "var", "var_name": "var_wind_blessing_per" }, "=", { "rand": 3 } ] },
+		{ "arithmetic": [ { "u_val": "var", "var_name": "var_wind_blessing_str" }, "=", { "rand": 3 } ] }
+    ],
+    "false_effect": [ 
+		{ "u_lose_trait": "wind_priestess_charm_mut" }
+	]
+	},
+	{
     "id": "WINGS_HELLRAVEN_activate",
 	"type": "effect_on_condition",
     "condition": { "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 200 } ] },

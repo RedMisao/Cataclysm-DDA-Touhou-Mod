@@ -1,5 +1,17 @@
 [
 	{
+    "id": "touhou_everything",
+	"type": "effect_on_condition",
+	"eoc_type": "SCENARIO_SPECIFIC",
+    "effect": [
+		{ "run_eocs": [ "daily_randomization" ] }, 
+		{ "u_add_var": "var_wind_blessing_dex", "type": "number", "context": "wind_priestess_charm", "value": "0" },
+		{ "u_add_var": "var_wind_blessing_int", "type": "number", "context": "wind_priestess_charm", "value": "0" },
+		{ "u_add_var": "var_wind_blessing_per", "type": "number", "context": "wind_priestess_charm", "value": "0" },
+		{ "u_add_var": "var_wind_blessing_str", "type": "number", "context": "wind_priestess_charm", "value": "0" }
+    ]
+	},
+	{
     "id": "daily_randomization",
 	"type": "effect_on_condition",
 	"recurrence": "24 hours",
