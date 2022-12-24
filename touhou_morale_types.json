@@ -3,5 +3,20 @@
     "id": "morale_craving_dix",
     "type": "morale_type",
     "text": "Craving D-IX"
+	},
+	{
+    "id": "morale_skinwalker_scream_demoralize",
+    "type": "morale_type",
+    "text": "Heard an horrifying scream!"
+	},
+	{
+    "id": "morale_wailing_demoralize",
+    "type": "morale_type",
+    "text": "Heard a disturbing wail!"
+	},
+	{
+    "id": "morale_white_lady_demoralize",
+    "type": "morale_type",
+    "text": "You felt a cursed presence."
 	}
 ]

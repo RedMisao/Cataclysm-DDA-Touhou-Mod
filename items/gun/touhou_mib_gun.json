@@ -26,6 +26,7 @@
     "durability": 8,
 	"min_cycle_recoil": 450,
 	"modes": [ [ "DEFAULT", "semi-auto", 1 ] ],
+	"range": 35,
     "ranged_damage": [ 
 		{ "damage_type": "electric", "amount": 11, "armor_penetration": 2 },
 		{ "damage_type": "heat", "amount": 11, "armor_penetration": 2 } 
@@ -69,14 +70,15 @@
 	"color": "light_gray",
     "ammo": "battery",
 	"ammo_effects": [ "LASER" ],
-    "ammo_to_fire": 11,
+    "ammo_to_fire": 7,
 	"dispersion": 150,
 	"durability": 8,
 	"min_cycle_recoil": 3600,
     "modes": [ [ "BURST", "2 rd.", 2 ], [ "DEFAULT", "3 rd.", 3 ], [ "AUTO", "auto", 6 ] ],
+	"range": 50,
     "ranged_damage": [ 
-		{ "damage_type": "electric", "amount": 7, "armor_penetration": 3 },
-		{ "damage_type": "heat", "amount": 7, "armor_penetration": 3 } 
+		{ "damage_type": "electric", "amount": 8, "armor_penetration": 3 },
+		{ "damage_type": "heat", "amount": 8, "armor_penetration": 3 } 
 	],
 	"skill": "rifle",
 	"valid_mod_locations": [
@@ -116,15 +118,16 @@
 	"color": "light_gray",
     "ammo": "battery",
 	"ammo_effects": [ "LASER" ],
-    "ammo_to_fire": 8,
+    "ammo_to_fire": 4,
 	"built_in_mods": [ "stock_mib_smg_7_unfolded" ],
 	"dispersion": 120,
 	"durability": 7,
 	"min_cycle_recoil": 540,
     "modes": [ [ "DEFAULT", "3 rd.", 3 ], [ "AUTO", "auto", 5 ] ],
+	"range": 40,
     "ranged_damage": [ 
-		{ "damage_type": "electric", "amount": 6, "armor_penetration": 2 },
-		{ "damage_type": "heat", "amount": 6, "armor_penetration": 2 } 
+		{ "damage_type": "electric", "amount": 4, "armor_penetration": 2 },
+		{ "damage_type": "heat", "amount": 4, "armor_penetration": 2 } 
 	],
 	"skill": "smg",
 	"valid_mod_locations": [

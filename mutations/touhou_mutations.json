@@ -9,11 +9,9 @@
 	"purifiable": false,
 	"starting_trait": false,
     "valid": false,
-    "armor": [ { "parts": "ALL", "bash": 12, "cut": 12, "stab": 12, "bullet": 16, "acid": 8, "cold": 8, "electric": 8, "heat": 8 } ],
-	"//": "12 natural physical defense (increased for bullets due their higher damage) and 8 elemental defense",
-	"bleed_resist": 100,
-	"//2": "I have no idea how this works, this should cover minor to some medium blood damage, such as zombie scratchs and maybe someone without sword proficiencies hitting Tenko with a sword",
-	"cardio_multiplier": 1.5,
+    "armor": [ { "parts": "ALL", "bash": 8, "cut": 8, "stab": 8, "bullet": 16, "acid": 8, "cold": 8, "electric": 8, "heat": 8 } ],
+	"bleed_resist": 8,
+	"stamina_regen_modifier": 0.5,
 	"wet_protection": [
         { "part": "LEG_L", "neutral": 3 }, 
         { "part": "LEG_R", "neutral": 3 }, 
@@ -22,7 +20,7 @@
         { "part": "TORSO", "neutral": 3 } 
 	],
 	"cancels": [  "FLIMSY", "FLIMSY2", "FLIMSY3", "THICKSKIN", "THINSKIN", "TOUGH", "TOUGH2" ],
-	"//3": "Ideally she should have minor reduction to pain, half of PAINRESIST if not 66%. More ideally, she should gain pain resist buffs while fighting on melee"
+	"//": "Ideally she should have minor reduction to pain, half of PAINRESIST if not 66%. More ideally, she should gain pain resist buffs while fighting on melee"
     },
 	{
     "id": "GYOKUTO_SPECIES",
@@ -103,8 +101,8 @@
 	"purifiable": false,
 	"starting_trait": false,
     "valid": false,
-	"armor": [ { "parts": "ALL", "heat": 12 } ],
-	"//2": "Can't find how to use percentage dmg reduction, this value should be 66% of all received fire damage + base say, 4, so it blocks minor fire attacks instead of being completely immune",
+	"armor": [ { "parts": "ALL", "heat": 6 } ],
+	"//": "Can't find how to use percentage dmg reduction, this value should be 66% of all received fire damage + base say, 4, so it blocks minor fire attacks instead of being completely immune",
 	"movecost_modifier": 0.8,
     "weakness_to_water": 1,
     "enchantments": [
@@ -126,27 +124,55 @@
 	"valid": false,
 	"healing_awake": 1,
 	"healing_resting": 1,
-	"flags": [ "BIO_IMMUNE", "NO_DISEASE", "NO_RADIATION", "PARAIMMUNE" ],
-	"//": "Is there a way to implement actual immortality? Not just fast health regen but something that blocks hp going below 1, and slowly (days) regenerates lost limbs and such. If so, remove the healing above"
+	"flags": [ "BIO_IMMUNE", "NO_DISEASE", "NO_RADIATION", "PARAIMMUNE" ]
     },
 	{
     "id": "KASHA_SPECIES",
 	"type": "mutation",
     "name": "Kasha",
-    "description": "You're a feline-looking youkai originating from (Former) Hell.",
+    "description": "You're a feline-looking youkai originating from (Former) Hell.  Currently, you're posing as a human.  Activate the mutation to switch to youkai form.",
     "points": 0,
 	"profession": true,
 	"purifiable": false,
 	"starting_trait": false,
     "valid": false,
+	"active": true,
+	"armor": [ { "parts": "ALL", "heat": 6 } ],
 	"ugliness": 3,
 	"visibility": 4,
     "weakness_to_water": 1,
-	"armor": [ { "parts": "ALL", "heat": 8 } ],
-	"//3": "This should block minor fire attacks",
+	"transform": { "target": "KASHA_SPECIES_active", "active": false, "moves": 100 },
 	"cancels": [ "FRESHWATEROSMOSIS", "GILLS", "MEMBRANE", "SCALES", "SLEEK_SCALES", "SLIMY", "WATERSLEEPER", "WEBBED", "WEBBED_FEET" ],
-	"//2": "If only there was a way to instead block all animalistic mutations instead..."
+	"//": "If only there was a way to instead block all animalistic mutations instead..."
 	},
+	{
+    "id": "KASHA_SPECIES_active",
+	"type": "mutation",
+    "name": "Kasha (youkai form)",
+	"copy-from": "KASHA_SPECIES",
+    "description": "You're a feline-looking youkai originating from (Former) Hell.  Currently, you're transformed into your feline-like form.  Activate the mutation to switch forms.",
+	"active": true,
+	"movecost_modifier": 0.9,
+	"social_modifiers": { "persuade": -4 },
+	"stamina_regen_modifier": 0.2,
+	"ugliness": 0,
+	"visibility": 0,
+	"rand_cut_bonus": { "min": 2, "max": 4 },
+    "weakness_to_water": 2,
+	"weight_capacity_modifier": 0.33,
+    "enchantments": [
+		{
+        "condition": "ALWAYS",
+        "values": [ 
+			{ "value": "FOOTSTEP_NOISE", "multiply": -0.67 },
+			{ "value": "MELEE_DAMAGE", "multiply": -0.5 },
+			{ "value": "METABOLISM", "multiply": -0.5 }
+		]
+		}
+	],
+	"transform": { "target": "KASHA_SPECIES", "active": false, "moves": 100 },
+	"extend": { "flags": [ "SMALL" ] }
+    },
 	{
     "id": "KASHA_EARS",
 	"type": "mutation",
@@ -211,9 +237,8 @@
 	"purifiable": false,
 	"starting_trait": false,
 	"valid": false,
-	"cardio_multiplier": 1.25,
+	"stamina_regen_modifier": 0.25,
 	"movecost_modifier": 0.8,
-	"//": "These bonuses should apply ONLY with the character in a running state (it is, 200% running speed). This way I can set the walking speed to something like 1.2",
 	"ugliness": -2,
 	"weight_capacity_modifier": 0.8,
     "enchantments": [
@@ -227,29 +252,55 @@
 		}
 	],
 	"cancels": [ "PRETTY", "UGLY", "DEFORMED", "DEFORMED2", "DEFORMED3", "CLUMSY", "SLOWRUNNER", "LIGHT_BONES" ],
-	"//2": "TOLERANCE because I can't find a way to set alcohol resistance only to something like 95%"
+	"//": "TOLERANCE because I can't find a way to set alcohol resistance only to something like 95%"
 	},
 	{
     "id": "TSUCHIGUMO_SPECIES",
 	"type": "mutation",
-    "name": "Tsuchigumo",
-    "description": "You're a spider youkai originating from caves and dark places in the Earth.",
+    "name": "Tsuchigumo (human form)",
+    "description": "You're a spider youkai originating from caves and dark places in the Earth.  Currently, you're posing as a human.  Activate the mutation to switch forms.",
     "points": 0,
 	"profession": true,
 	"purifiable": false,
 	"starting_trait": false,
     "valid": false,
-	"armor": [ { "parts": "ALL", "acid": 4 } ],
-	"//1": "This should block minor acid damage",
+	"active": true,
+	"armor": [ { "parts": "ALL", "acid": 6 } ],
 	"enchantments": [
 		{
         "condition": "ALWAYS",
 		"mutations": [ "WEB_WALKER" ]
 		}
 	],
-	"flags": [ "BIO_IMMUNE", "CLIMB_NO_LADDER", "NO_DISEASE", "PARAIMMUNE", "WEB_RAPPEL" ],
-	"//3": "Also, add some kind of social bonus for enemies with the YOUKAI trait or plus ARACHNID. In fact I should probably check all social interactions of Youkai in general at some point"
+	"transform": { "target": "TSUCHIGUMO_SPECIES_active", "active": false, "moves": 100 },
+	"flags": [ "BIO_IMMUNE", "NO_DISEASE", "PARAIMMUNE" ],
+	"//": "Also, add some kind of social bonus for enemies with the YOUKAI trait or plus ARACHNID. In fact I should probably check all social interactions of Youkai in general at some point",
+	"//2": "This needs some sort of small bonus over the active form below, so she has a reason to switch forms at all"
 	},
+	{
+    "id": "TSUCHIGUMO_SPECIES_active",
+	"type": "mutation",
+    "name": "Tsuchigumo (youkai form)",
+	"copy-from": "TSUCHIGUMO_SPECIES",
+    "description": "You're a spider youkai originating from caves and dark places in the Earth.  Currently, you're (partially) transformed into your youkai form, revealing your hidden legs.  Activate the mutation to switch forms.",
+	"active": true,
+	"movecost_obstacle_modifier": 0.5,
+	"movecost_swim_modifier": 1.5,
+	"social_modifiers": { "intimidate": 4, "persuade": -4 },
+	"ugliness": 4,
+	"visibility": 8,
+	"enchantments": [
+		{
+        "condition": "ALWAYS",
+		"mutations": [ "WEB_WALKER" ],
+        "values": [ 
+			{ "value": "METABOLISM", "multiply": 0.2 }
+		]
+		}
+	],
+	"transform": { "target": "TSUCHIGUMO_SPECIES", "active": false, "moves": 100 },
+	"extend": { "flags": [ "CLIMB_NO_LADDER", "LARGE", "WEB_RAPPEL" ] }
+    },
 	{
     "id": "VAMPIRE_SPECIES",
 	"type": "mutation",
@@ -260,11 +311,10 @@
 	"purifiable": false,
 	"starting_trait": false,
 	"valid": false,
-	"//3": "Add BLOODTHIRST trait that makes you crave blood and get debuffed if you go long enough without it. Check for PYROMANIA code for reference",
 	"healing_awake": 4,
 	"healing_resting": 4,
 	"mending_modifier": 2,
-	"//4": "I want to set the default passive regen high, and double or triple the active regen by 'digesting' human blood",
+	"//": "Should be (1, 1, 0.5), then and double or triple that by 'digesting' human blood, with an active ability",
 	"movecost_modifier": 0.8,
 	"ugliness": -4,
 	"visibility": 1,
@@ -283,7 +333,7 @@
 		}
 	],
 	"cancels": [ "ANIMALEMPATH", "ANIMALEMPATH2", "LIAR", "PACIFIST", "PRETTY", "PSYCHOPATH", "UGLY", "DEFORMED", "DEFORMED2", "DEFORMED3", "VEGETARIAN", "HERBIVORE" ],
-	"//6": "I will change this flag for something else. I need to set the penalty (and bonus) of eating human flesh to 0, but add a bonus for eating human blood or RBC instead"
+	"//2": "I need to set the penalty (and bonus) of eating human flesh to 0"
 	},
 	{
     "id": "YOUKAI_SPECIES",
@@ -295,8 +345,8 @@
 	"purifiable": false,
 	"starting_trait": false,
 	"valid": false,
-	"social_modifiers": { "intimidate": 6 },
-	"visibility": 3,
+	"social_modifiers": { "intimidate": 4 },
+	"visibility": 1,
 	"enchantments": [
 		{
         "condition": "ALWAYS",
@@ -304,9 +354,8 @@
 		}
 	],
 	"cancels": [ "MORE_PAIN", "PAINRESIST", "MORE_PAIN2", "MORE_PAIN3", "PACIFIST", "PSYCHOPATH", "VEGETARIAN", "HERBIVORE" ],
-	"//2": "I need to set the penalty (and bonus) of eating human flesh to 0",
-	"//3": "There are peaceful youkai, so I need to further divide this into subspecies such as 'Vampire' ",
-	"//4": "I can't find a way to modify pain resistant, Youkai should have it at 0.5-0.66 for physical attacks or something"
+	"//": "I need to set the penalty (and bonus) of eating human flesh to 0",
+	"//2": "There are peaceful youkai, so I need to further divide this into subspecies such as 'Vampire' "
 	},
 	{
     "id": "SPIRIT_USER",
@@ -361,7 +410,6 @@
 	"starting_trait": false,
 	"valid": false,
 	"movecost_modifier": 0.9399,
-	"social_modifiers": { "intimidate": -6 },
     "enchantments": [
 		{
         "condition": "ALWAYS",
@@ -383,7 +431,6 @@
 	"starting_trait": false,
 	"valid": false,
 	"bash_dmg_bonus": 4,
-	"//2": "Both Remi and Flan have the countertrait 'Light Eater' for the BLOODTHIRST trait, that makes the long enough -> very long.",
 	"ugliness": -2,
     "enchantments": [
 		{
@@ -421,7 +468,7 @@
 		[ "PHANTOM_TOUHOU", -20 ], 
 		[ "JIANGSHI_TOUHOU", -20 ] 
 	],
-	"//4": "Add like 2-4 soul dmg reduction when I implement that"
+	"//": "Add like 2 - 4 soul dmg reduction when I implement that"
 	},
 	{
     "id": "PROF_MEILING",
@@ -462,14 +509,12 @@
 	"purifiable": false,
 	"starting_trait": false,
     "valid": false,
-	"social_modifiers": { "intimidate": -6 },
     "enchantments": [
 		{
         "condition": "ALWAYS",
         "values": [ { "value": "INTELLIGENCE", "add": -1 } ]
 		}
-	],
-	"//4": "Add wings (big) and see if there's flying as mechanic. The problem is, how do I make those wings not interfer with her clothing?"
+	]
 	},
 	{
     "id": "PROF_REMI",
@@ -481,9 +526,7 @@
 	"purifiable": false,
     "starting_trait": false,
 	"valid": false,
-	"//2": "Both Remi and Flan have the countertrait 'Light Eater' for the BLOODTHIRST trait, that makes the long enough -> very long.",
-	"ugliness": -1,
-	"//4": "add toggle alternative form: cloud of scarlet bats for Remi, possibly with CMB or something"
+	"ugliness": -1
     },
 	{
     "id": "PROF_TENKO",
@@ -512,10 +555,9 @@
 		[ "YOUKAI_FEMALE_TOUHOU", -25 ], 
 		[ "YOUKAI_HOSTILE_TOUHOU", -25 ], 
 		[ "YOUKAI_NEUTRAL_TOUHOU", -25 ], 
-		[ "YOUKAI_SKINWALKER_TOUHOU", -25 ], 
-		[ "YOUKAI_PSEUDO", -25 ] 
-	],
-	"social_modifiers": { "intimidate": -6, "persuade": 4 }
+		[ "YOUKAI_PSEUDO", -25 ], 
+		[ "YOUKAI_SKINWALKER_TOUHOU", -25 ]
+	]
 	},
 	{
     "id": "PROF_YOUMU",
@@ -527,8 +569,30 @@
     "purifiable": false,
 	"starting_trait": false,
 	"valid": false,
+	"social_modifiers": { "lie": -2 },
 	"initial_ma_styles": [ "style_youmu" ]
     },
+	{
+    "id": "IMPURE",
+	"type": "mutation",
+    "name": { "str": "Impure" },
+    "description": "Well, that's it.  You've gained impurity.  The good news is that Earthly food doesn't feel as… empty anymore.",
+    "points": 0,
+	"profession": false,
+    "purifiable": false,
+	"starting_trait": false,
+	"valid": true,
+	"triggers": [ [ 
+		{
+		"condition": {  
+			"and": [ 
+				{ "u_has_trait": "LUNARDIET" },
+				{ "compare_int": [ { "u_val": "vitamin", "name": "impurity" }, ">", { "const": 504 } ] }
+			]
+		}
+		}
+	] ]
+	},
 	{
     "id": "LUNARDIET",
 	"type": "mutation",
@@ -539,8 +603,22 @@
     "purifiable": false,
 	"starting_trait": false,
 	"valid": false,
-    "vitamins_absorb_multi": [ [ "flesh", [ [ "calcium", 0.25 ], [ "iron", 0.25 ], [ "vitA", 0.25 ], [ "vitB", 0.25 ], [ "vitC", 0.25 ] ] ] ],
-	"//": "This should apply to ALL existing C:DDA food, and be naturally be lost over time after repeated consumption, then gain IMPURE trait in exchange"
+	"triggers": [ [ 
+		{
+		"condition": {  
+			"and": [ 
+				{ "u_has_trait": "IMPURE" },
+				{ "compare_int": [ { "u_val": "vitamin", "name": "impurity" }, "<=", { "const": 503 } ] }
+			]
+		}
+		}
+	] ],
+    "vitamins_absorb_multi": [ 
+		[ "cured_meat", [ [ "calcium", 0.66 ], [ "iron", 0.66 ], [ "vitA", 0.66 ], [ "vitB", 0.66 ], [ "vitC", 0.66 ] ] ],
+		[ "flesh", [ [ "calcium", 0.66 ], [ "iron", 0.66 ], [ "vitA", 0.66 ], [ "vitB", 0.66 ], [ "vitC", 0.66 ] ] ],
+		[ "processed_food", [ [ "calcium", 0.90 ], [ "iron", 0.90 ], [ "vitA", 0.90 ], [ "vitB", 0.90 ], [ "vitC", 0.90 ] ] ],
+		[ "veggy", [ [ "calcium", 0.95 ], [ "iron", 0.95 ], [ "vitA", 0.95 ], [ "vitB", 0.95 ], [ "vitC", 0.95 ] ] ]
+	]
 	},
 	{
     "id": "MYSTERIOUS",
@@ -600,7 +678,8 @@
 	"ugliness": 1,
 	"visibility": 8,
 	"transform": { "target": "WINGS_BAT_REMI_spread", "active": false, "moves": 100 },
-	"cancels": [ "WINGS_BAT", "WINGS_BIRD", "WINGS_BUTTERFLY", "WINGS_INSECT", "WINGS_STUB" ]
+	"cancels": [ "WINGS_BAT", "WINGS_BIRD", "WINGS_BUTTERFLY", "WINGS_INSECT", "WINGS_STUB" ],
+	"//": "Change for: youkai form (cloud of black scarlet bats)"
     },
 	{
     "id": "WINGS_BAT_REMI_spread",

@@ -39,7 +39,7 @@
     "max_level": 1,
     "difficulty": -10,
     "base_casting_time": 100,
-    "base_energy_cost": 100,
+    "base_energy_cost": 50,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ]
 	},
@@ -56,7 +56,7 @@
     "max_level": 1,
     "difficulty": -10,
     "base_casting_time": 100,
-    "base_energy_cost": 100,
+    "base_energy_cost": 50,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],
 	"//": "Udonge, like any other GYOKUTO_SPECIES , should in fact be immune to mental effects. However, this is more interactive"
@@ -74,7 +74,7 @@
     "max_level": 1,
     "difficulty": -10,
     "base_casting_time": 100,
-    "base_energy_cost": 100,
+    "base_energy_cost": 50,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ]
 	},
@@ -91,7 +91,7 @@
     "max_level": 1,
     "difficulty": -10,
     "base_casting_time": 100,
-    "base_energy_cost": 100,
+    "base_energy_cost": 50,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],
 	"//": "Ideally, this should be a short ranged stealth, say 8 - 10 tiles only, with a change for her to not be detected past that point"

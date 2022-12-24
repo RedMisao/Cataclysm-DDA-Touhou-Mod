@@ -64,7 +64,7 @@
     "base_energy_cost": 150,
 	"energy_source": "MANA",
 	"flags": [ "NO_HANDS", "NO_LEGS" ],
-	"//": "This should be castable only without a ceiling"
+	"//": "This should be castable only without a ceiling. Tried to use an eoc intermediate with u_is_outside but it forces the spell to be casted with Tenko as axis"
 	},
 	{
     "id": "tenko_keystonecrash2",
@@ -155,7 +155,7 @@
     "id": "tenko_keystonepillar",
     "type": "SPELL",
     "name": "Pillar of earthen punishment",
-    "description": "Call upon a Keystone pillar crashing down, acting as a temporary, solid wall.",
+    "description": "Draw a nearby keystone from underground, acting as a temporary, solid wall.",
     "spell_class": "NONE",
     "valid_targets": [ "ground", "hostile" ],
     "effect": "ter_transform",

@@ -325,9 +325,9 @@
 	"traits": [
 		"GYOKUTO_SPECIES",
 		"GYOKUTO_EARS",
+		"LUNARDIET",
 		"SPIRIT_UNTRAINED"
     ],
-    "//": "Add LUNARDIET trait when fully tested",
 	"items": {
         "both": {
             "items": [
@@ -417,6 +417,7 @@
 		{ "level": 1, "id": "sakuya_contraction" },
 		{ "level": 1, "id": "sakuya_dilation" },
 		{ "level": 1, "id": "sakuya_jackknife" },
+		{ "level": 1, "id": "sakuya_maidsecret" },
 		{ "level": 1, "id": "sakuya_quickrest" },
 		{ "level": 1, "id": "sakuya_timeparadox" },
 		{ "level": 1, "id": "sakuya_timestop" }
