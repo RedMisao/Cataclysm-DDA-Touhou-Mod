@@ -1,28 +1,79 @@
 [
 	{
-    "id": "eoc_wind_blessing",
+    "id": "wind_blessing_eoc",
 	"type": "effect_on_condition",
+	"recurrence": "30 m",
     "condition": { "u_has_trait": "wind_priestess_charm_mut" },
+    "deactivate_condition": { "not": { "u_has_trait": "wind_priestess_charm_mut" } },
     "effect": [ 
-		{ "queue_eocs": [ "eoc_wind_blessing_repeat" ], "time_in_future": "30 m" }
-	],
-    "false_effect": [ 
-		{ "u_lose_trait": "wind_priestess_charm_mut" }
+		{ "queue_eocs": [
+			{
+            "id": "wind_blessing_randomization_eoc",
+            "condition": { "u_has_trait": "wind_priestess_charm_mut" },
+            "effect": [
+				{ "arithmetic": [ { "u_val": "var", "var_name": "var_wind_blessing_dex" }, "=", { "rand": 3 } ] },
+				{ "arithmetic": [ { "u_val": "var", "var_name": "var_wind_blessing_int" }, "=", { "rand": 3 } ] },
+				{ "arithmetic": [ { "u_val": "var", "var_name": "var_wind_blessing_per" }, "=", { "rand": 3 } ] },
+				{ "arithmetic": [ { "u_val": "var", "var_name": "var_wind_blessing_str" }, "=", { "rand": 3 } ] }
+            ],
+			"false_effect": [
+				{ "arithmetic": [ { "u_val": "var", "var_name": "var_wind_blessing_dex" }, "=", { "const": 0 } ] },
+				{ "arithmetic": [ { "u_val": "var", "var_name": "var_wind_blessing_int" }, "=", { "const": 0 } ] },
+				{ "arithmetic": [ { "u_val": "var", "var_name": "var_wind_blessing_per" }, "=", { "const": 0 } ] },
+				{ "arithmetic": [ { "u_val": "var", "var_name": "var_wind_blessing_str" }, "=", { "const": 0 } ] }
+            ]
+			}
+        ], "time_in_future": "30 m" }
 	]
 	},
 	{
-    "id": "eoc_wind_blessing_repeat",
+    "id": "WINGS_BAT_REMI_activate",
 	"type": "effect_on_condition",
-    "condition": { "u_has_trait": "wind_priestess_charm_mut" },
+    "condition": { "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 200 } ] },
+    "effect": { "queue_eocs": [ "WINGS_BAT_REMI_drain1" ], "time_in_future": "2 s" },
+    "false_effect": { "run_eocs": "WINGS_BAT_REMI_stop" },
+	"//": "queue_eocs instead of run_eocs as the latter triggers immediately, before WINGS_BAT_REMI_spread (and remi_levitation) are present, not running the cycle"
+	},
+	{
+    "id": "WINGS_BAT_REMI_drain1",
+	"type": "effect_on_condition",
+    "condition": { 
+		"and": [ 
+			{ "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 200 } ] },
+			{ "u_has_effect": "remi_levitation" }
+		]
+	},
     "effect": [
-		{ "arithmetic": [ { "u_val": "var", "var_name": "var_wind_blessing_dex" }, "=", { "rand": 3 } ] },
-		{ "arithmetic": [ { "u_val": "var", "var_name": "var_wind_blessing_int" }, "=", { "rand": 3 } ] },
-		{ "arithmetic": [ { "u_val": "var", "var_name": "var_wind_blessing_per" }, "=", { "rand": 3 } ] },
-		{ "arithmetic": [ { "u_val": "var", "var_name": "var_wind_blessing_str" }, "=", { "rand": 3 } ] }
+		{ "arithmetic": [ { "u_val": "stamina" }, "-=", { "const": 200 } ] },
+		{ "run_eocs": "WINGS_BAT_REMI_drain2" }
     ],
-    "false_effect": [ 
-		{ "u_lose_trait": "wind_priestess_charm_mut" }
-	]
+    "false_effect": { "run_eocs": "WINGS_BAT_REMI_stop" },
+	"//": "Uses remi_levitation so the cycle can be stopped early by 'disabling' VAMPIRE_BAT_REMI_active"
+	},
+	{
+    "id": "WINGS_BAT_REMI_drain2",
+	"type": "effect_on_condition",
+    "condition": { 
+		"and": [ 
+			{ "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 200 } ] },
+			{ "u_has_effect": "remi_levitation" }
+		]
+	},
+    "effect": { "queue_eocs": [ "WINGS_BAT_REMI_drain1" ], "time_in_future": "2 s" },
+    "false_effect": { "run_eocs": "WINGS_BAT_REMI_stop" }
+	},
+	{
+    "id": "WINGS_BAT_REMI_stop",
+	"type": "effect_on_condition",
+	"condition": { "compare_int": [ { "u_val": "stamina" }, "<=", { "const": 200 } ] },
+    "effect": [
+		{ "u_message": "You are too tired to fly!", "type": "bad" },
+		{ "u_lose_effect": "WINGS_BAT_REMI_activate" },
+		{ "u_lose_effect": "WINGS_BAT_REMI_drain1" },
+		{ "u_lose_effect": "WINGS_BAT_REMI_drain2" },
+		{ "u_lose_trait": "VAMPIRE_BAT_REMI_active" },
+		{ "u_add_trait": "VAMPIRE_BAT_REMI" }
+    ]
 	},
 	{
     "id": "WINGS_HELLRAVEN_activate",
@@ -69,55 +120,6 @@
 		{ "u_lose_effect": "WINGS_HELLRAVEN_drain2" },
 		{ "u_lose_trait": "WINGS_HELLRAVEN_spread" },
 		{ "u_add_trait": "WINGS_HELLRAVEN" }
-    ]
-	},
-	{
-    "id": "WINGS_BAT_REMI_activate",
-	"type": "effect_on_condition",
-    "condition": { "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 200 } ] },
-    "effect": { "queue_eocs": [ "WINGS_BAT_REMI_drain1" ], "time_in_future": "2 s" },
-    "false_effect": { "run_eocs": "WINGS_BAT_REMI_stop" },
-	"//": "queue_eocs instead of run_eocs as the latter triggers immediately, before WINGS_BAT_REMI_spread (and remi_levitation) are present, not running the cycle"
-	},
-	{
-    "id": "WINGS_BAT_REMI_drain1",
-	"type": "effect_on_condition",
-    "condition": { 
-		"and": [ 
-			{ "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 200 } ] },
-			{ "u_has_effect": "remi_levitation" }
-		]
-	},
-    "effect": [
-		{ "arithmetic": [ { "u_val": "stamina" }, "-=", { "const": 200 } ] },
-		{ "run_eocs": "WINGS_BAT_REMI_drain2" }
-    ],
-    "false_effect": { "run_eocs": "WINGS_BAT_REMI_stop" },
-	"//": "Uses remi_levitation so the cycle can be stopped early by 'disabling' WINGS_BAT_REMI_spread"
-	},
-	{
-    "id": "WINGS_BAT_REMI_drain2",
-	"type": "effect_on_condition",
-    "condition": { 
-		"and": [ 
-			{ "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 200 } ] },
-			{ "u_has_effect": "remi_levitation" }
-		]
-	},
-    "effect": { "queue_eocs": [ "WINGS_BAT_REMI_drain1" ], "time_in_future": "2 s" },
-    "false_effect": { "run_eocs": "WINGS_BAT_REMI_stop" }
-	},
-	{
-    "id": "WINGS_BAT_REMI_stop",
-	"type": "effect_on_condition",
-	"condition": { "compare_int": [ { "u_val": "stamina" }, "<=", { "const": 200 } ] },
-    "effect": [
-		{ "u_message": "You are too tired to fly!", "type": "bad" },
-		{ "u_lose_effect": "WINGS_BAT_REMI_activate" },
-		{ "u_lose_effect": "WINGS_BAT_REMI_drain1" },
-		{ "u_lose_effect": "WINGS_BAT_REMI_drain2" },
-		{ "u_lose_trait": "WINGS_BAT_REMI_spread" },
-		{ "u_add_trait": "WINGS_BAT_REMI" }
     ]
 	},
 	{

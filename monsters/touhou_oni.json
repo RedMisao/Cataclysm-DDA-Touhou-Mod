@@ -32,15 +32,7 @@
     "path_settings": { "max_dist": 25 },
 	"anger_triggers": [ "HURT", "FRIEND_ATTACKED" ],
 	"special_attacks": [ [ "ABSORB_MEAT", 51 ], [ "GRAB", 27 ], [ "oni_smash_9d4", 13 ] ],
-    "death_drops": [
-		{ "group": "oni_drops", "prob": 100 },
-		{
-		"distribution": [
-			{ "group": "touhou_oni_kanabo_small", "prob": 50 },
-			{ "group": "touhou_oni_kanabo_medium", "prob": 50 }
-		]
-		}
-	],
+    "death_drops": [ { "group": "oni_drops", "prob": 100 } ],
     "flags": [ "BASHES", "CAN_OPEN_DOORS", "HEARS", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM" ],
 	"//": "Template only"
 	},
@@ -62,17 +54,9 @@
 	"anger_triggers": [ "HURT" ],
     "fear_triggers": [ "FRIEND_DIED", "FRIEND_ATTACKED" ],
 	"special_attacks": [ [ "ABSORB_MEAT", 51 ], [ "GRAB", 27 ], [ "oni_smash_7d4", 13 ] ],
-    "death_drops": [
-		{ "group": "oni_drops", "prob": 100 },
-		{
-		"distribution": [
-			{ "group": "touhou_oni_kanabo_small", "prob": 100 }
-		]
-		}
-	],
+    "death_drops": [ { "group": "oni_drops", "prob": 100 } ],
     "flags": [ "BASHES", "CAN_OPEN_DOORS", "HEARS", "SEES", "SMELLS", "WARM" ],
-	"//": "These should be dumb, weak-ish to physical attacks, hit hard and be cowardly",
-	"//2": "ADD CLOTH DROPS !!!"
+	"//": "These should be dumb, weak-ish to physical attacks, hit hard and be cowardly"
 	},
 	{
     "id": "mon_oni_lesser2",
@@ -132,17 +116,8 @@
     "dodge": 2,
 	"anger_triggers": [ "HURT" ],
 	"special_attacks": [ [ "ABSORB_MEAT", 67 ], [ "GRAB", 19 ], [ "oni_smash_9d4", 17 ] ],
-    "death_drops": [
-		{ "group": "oni_drops", "prob": 100 },
-		{
-		"distribution": [
-			{ "group": "touhou_oni_kanabo_small", "prob": 50 },
-			{ "group": "touhou_oni_kanabo_medium", "prob": 50 }
-		]
-		}
-	],
+    "death_drops": [ { "group": "oni_humanoid_drops", "prob": 100 } ],
     "flags": [ "BASHES", "CAN_OPEN_DOORS", "HEARS", "PATH_AVOID_DANGER_2", "SEES", "SMELLS", "WARM" ],
-	"//": "Human-oni hybrid",
-	"//2": "ADD PROPER WEAPON DROPS !!!"
+	"//": "Human-oni hybrid"
 	}
 ]

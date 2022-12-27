@@ -19,7 +19,8 @@
 	"symbol": "🐸",
 	"looks_like": "mon_frog",
     "color": "green",
-    "relic_data": { 
+	"armor": [ { "covers": [ "head" ], "specifically_covers": [ "head_crown" ], "coverage": 0, "encumbrance": 0 } ],
+	"relic_data": { 
 		"passive_effects": [ 
 			{
 			"condition": "ALWAYS",
@@ -27,25 +28,8 @@
 			}
 		] 
 	},
-	"armor": [ { "covers": [ "head" ], "specifically_covers": [ "head_crown" ], "coverage": 0, "encumbrance": 0 } ],
 	"flags": [ "DURABLE_MELEE", "FANCY", "ONLY_ONE", "SEMITANGIBLE", "SKINTIGHT" ],
-	"//": "Seems the passive_effects is currently bugged (?), things like enchantment_ids and mutations_ids are not being granted properly, even when those work separatedly"
-	},
-	{
-    "id": "wind_blessing",
-    "type": "SPELL",
-    "name": "Wind blessing effects",
-    "description": "Subspell for wind_priestess_charm_mut ",
-    "valid_targets": [ "self" ],
-    "spell_class": "NONE",
-    "effect": "effect_on_condition",
-    "effect_str": "eoc_wind_blessing",
-    "shape": "blast",
-    "max_level": 1,
-    "difficulty": -10,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "SILENT" ]
+	"//": "This item grants the visible mutation which grants the enchantment. The mutation is a visible tag for the player and allows to detect it via EOC. The enchantment grants extra stats according to the formula 1 + ( 3 * var_wind_blessing_X ). Each var_X value is set by the EOC wind_blessing_eoc , that runs every 1 h and queues the independent randomization of each stat",
+	"//2": "Seems enchantments from items are broken again. The mutation is being granted, but the enchantment inside is not giving any stats. Moving *both* the mutation plus the enchantment values to HOURAI_SPECIES works (it grants the +1 to all stats and it fluctuates every hour, according to the EOC), yet moving only the mutation doesn't work (does not grant the +1 to all stats nor fluctuate every hour)"
 	}
 ]

@@ -259,5 +259,22 @@
 		{ "arithmetic": [ { "u_val": "var", "var_name": "var_wavestealth" }, "=", { "const": 0 } ] },
 		{ "u_lose_effect": "udonge_stealth" }
     ]
+	},
+	{
+    "id": "yamame_damnedrope_start",
+    "type": "effect_on_condition",
+    "condition": { "u_has_trait": "TSUCHIGUMO_SPECIES" },
+    "effect": [
+		{ "u_add_trait": "damnedrope_str_mut" },
+		{ "queue_eocs": [ "yamame_damnedrope_end" ], "time_in_future": "5 s" }
+    ]
+    },
+	{
+    "id": "yamame_damnedrope_end",
+	"type": "effect_on_condition",
+    "condition": { "u_has_trait": "damnedrope_str_mut" },
+    "effect": [
+		{ "u_lose_trait": "damnedrope_str_mut" }
+    ]
 	}
 ]

@@ -58,7 +58,7 @@
 	"type": "profession",
     "name": "Gatekeeper of the Devil",
     "description": "Another uneventful day: holding the gates, doing repeats, not napping… The Mistress called you, very unusual for her to be awake at daytime.  She asked to lock down everything and go track the head maid for \"security reasons\".  You complied, almost caught up, really just at the boundary of your vision, when she… vanished?  Seems that you lost yourself too, you can't recall the last time humans walked without qi.",
-    "points": 4,
+    "points": 2,
 	"proficiencies": [ "prof_food_prep" ],
 	"spells": [ 
 		{ "level": 1, "id": "dash_meiling" },
@@ -158,7 +158,7 @@
 	"type": "profession",
     "name": "Hell's traffic accident",
     "description": "It was yet another uneventful day down there helping Okuu with the reactor: corpses burning, spirits floating, fusion fuel being distilled, eating lunch with your master… You craved a nap at the Shrine, so you snuck to reach your goal… and somehow got lost.  You smell death *everywhere*, which would be amazing if it wasn't that these dead are moving, they're angry, and they're not listening to what you have to say.",
-    "points": 4,
+    "points": 2,
 	"spells": [ 
 		{ "level": 1, "id": "dash_basic" },
 		{ "level": 1, "id": "kaenbyou_immolate" },
@@ -172,7 +172,7 @@
 		{ "level": 2, "name": "mechanics" },
 		{ "level": 2, "name": "speech" }
     ],
-	"vehicle": "kaenbyou_wheelbarrow2",
+	"vehicle": "kaenbyou_wheelbarrow",
 	"traits": [
         "KASHA_EARS",
 		"KASHA_SPECIES",
@@ -360,10 +360,7 @@
 	"type": "profession",
     "name": "Scarlet Devil",
     "description": "That scheming youkai refusing to elaborate was part of her plan for you to move.  Both sides knew that, but that's a custom when dealing important matters to you, so you didn't mind.  What pisses you off is that innocent parties are involved with this much of a threat.  This better be interesting.",
-    "points": 4,
-	"CBMs": [
-		"bio_vampiric_constitution"
-	],
+    "points": 5,
 	"spells": [ 
 		{ "level": 1, "id": "dash_remi" },
 		{ "level": 1, "id": "remilia_bloodboil" },
@@ -383,7 +380,7 @@
 	"traits": [
 		"TABLEMANNERS",
 		"VAMPIRE_SPECIES",
-		"WINGS_BAT_REMI",
+		"VAMPIRE_BAT_REMI",
 		"PROF_REMI",
 		"SPIRIT_USER"
     ],
@@ -518,7 +515,7 @@
 	"type": "profession",
     "name": "Crow Tengu Journalist",
     "description": "There wasn't a lot going on so you went to visit some of your friends.  First stop was the Shrine Maiden, but she was more dismissive than usual.  Second stop was Momiji, but she wasn't available.  Third stop was the Village librarian, but she was sleeping.  Going through the Bamboo Forest of the Lost you, well… it was bound to happen some time.  You're pretty sure these people wearing filthy Outside world clothing shouldn't be here, which means this one's good!",
-    "points": 4,
+    "points": 1,
     "spells": [ 
 		{ "level": 1, "id": "dash_aya" },
 		{ "level": 1, "id": "aya_deadlineday" },
@@ -575,6 +572,7 @@
 		{ "level": 1, "id": "dash_basic" },
 		{ "level": 1, "id": "tenko_earthquake" },
 		{ "level": 1, "id": "tenko_keystonecrash" },
+		{ "level": 1, "id": "tenko_keystonefloating" },
 		{ "level": 1, "id": "tenko_keystonepillar" },
 		{ "level": 1, "id": "tenko_keystonedismiss" },
 		{ "level": 1, "id": "tenko_scarletperception" },
@@ -621,7 +619,7 @@
 	"type": "profession",
     "name": "Subterranean sun",
     "description": "Resuming your duties after lunch, you master asked you to go look for Orin, and she was indeed missing again.  You went to the surface, noticing the friendly cave spider wasn't at her usual spot, maybe both went together!  You know she likes to go nap at the Shrine, so you went… to the wrong one, and noticing this was no mountain, nothing close, you looked back, you saw no \"back\".  You're aware you can get lost sometimes, but this is too much even for yourself.  Now you have to find Orin, find the Tsuchigumo, and return.",
-    "points": 4,
+    "points": 2,
     "spells": [ 
 		{ "level": 1, "id": "dash_utsuho" },
 		{ "level": 1, "id": "utsuho_blacksun" },
@@ -674,8 +672,8 @@
 	"spells": [ 
 		{ "level": 1, "id": "dash_basic" },
 		{ "level": 1, "id": "yamame_curedisease" },
-		{ "level": 1, "id": "yamame_damnedrope" },
 		{ "level": 1, "id": "yamame_icypyrexia" },
+		{ "level": 1, "id": "yamame_miasmashot" },
 		{ "level": 1, "id": "yamame_scarletplague" },
 		{ "level": 1, "id": "yamame_unconstrainedrot" },
 		{ "level": 1, "id": "yamame_webbridge" },
@@ -713,11 +711,11 @@
         ]
     },
     "flags": [ "SCEN_ONLY" ],
-	"//2": "WIP!!! There's a lot of fun stuff that can't be implemented, or I don't know how to",
-	"//3": "There's no way to check for monsters having effects, so the idea of a base dot disease + applying different effects on top of that can't be used. Worse, this also affects other spells that rely on dots, like kaenbyou_immolate ",
+	"//2": "WIP!!! There's a lot of fun stuff that can't be implemented, or I don't know how to. Plus she's missing at least two more spells",
+	"//3": "There's no way to check for monsters having effects, so the idea of a base dot disease + applying different effects on top of that can't be used. Worse, this also affects other effects that rely on dot spells, like kaenbyou_immolate ",
 	"//4": "Enchantments don't work on monsters either, so things like reduced attack speed can't be set at all",
 	"//5": "EOCs don't work with monsters, so a disease that causes outburst to spread to nearby enemies currently can't exist",
-	"//6": "There's an issue with the remove_field spell effect that causes it to remove 1 field in the entire aoe, so Yamame can't dismiss webs from yamame_webcapture"
+	"//6": "There's an issue with the remove_field spell effect that causes it to remove 1 field in the entire aoe, so Yamame can't aoe dismiss webs from yamame_webcapture"
 	},
 	{
     "ident": "youmu_konpaku",

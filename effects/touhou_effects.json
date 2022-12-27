@@ -65,7 +65,6 @@
 		"foodpoison",
 		"fungus",
 		"infected",
-		"infection",
 		"paincysts",
 		"rat_bite_fever",
 		"rat",
@@ -75,23 +74,6 @@
 		"toxin_buildup"
     ],
 	"//": "Mostly infectious diseases, not sure if 'non-living' things like poison (proteins) should go here"
-	},
-	{
-    "id": "damnedrope_str",
-	"type": "effect_type",
-    "name": [ "Spider strength (effect)" ],
-    "desc": [ " " ],
-    "rating": "good",
-    "show_in_info": false,
-    "enchantments": [ 
-		{ 
-		"condition": "ALWAYS", 
-		"values": [ 
-			{ "value": "STRENGTH", "add": 40 } 
-		] 
-		} 
-	],
-	"//": "This doesn't work because effects take 1 turn or so into activating, regardless of how they're used (but then how is that dash_levitation works?). Maybe try with EOCs"
 	},
 	{
     "id": "dash_levitation",
@@ -125,38 +107,6 @@
 		] 
 		} 
 	]
-	},
-	{
-    "id": "impurity_none",
-	"type": "effect_type",
-    "name": [ "Pure" ],
-    "desc": [ " " ],
-    "rating": "mixed",
-	"show_in_info": false
-	},
-	{
-    "id": "impurity_verylow",
-	"type": "effect_type",
-    "name": [ "Slight impurity" ],
-    "desc": [ " " ],
-    "rating": "mixed",
-	"show_in_info": false
-	},
-	{
-    "id": "impurity_low",
-	"type": "effect_type",
-    "name": [ "Impure" ],
-    "desc": [ " " ],
-    "rating": "mixed",
-	"show_in_info": false
-	},
-	{
-    "id": "impurity_high",
-	"type": "effect_type",
-    "name": [ "Impure (2)" ],
-    "desc": [ " " ],
-    "rating": "mixed",
-	"show_in_info": false
 	},
 	{
     "id": "scarlet_plague",

@@ -3,8 +3,8 @@
     "id": "autumn_melancholy_mut",
 	"type": "mutation",
     "name": "Autumn melancholy",
-    "points": 0,
     "description": "Food feels more filling.",
+	"points": 0,
 	"profession": false,
 	"purifiable": false,
 	"starting_trait": false,
@@ -12,11 +12,30 @@
 	"metabolism_modifier": -0.333
 	},
 	{
+    "id": "damnedrope_str_mut",
+	"type": "mutation",
+    "name": "Spider's strength",
+    "description": " ",
+	"points": 0,
+	"profession": false,
+	"purifiable": false,
+	"starting_trait": false,
+    "valid": true,
+    "enchantments": [ 
+		{ 
+		"condition": "ALWAYS", 
+		"values": [ 
+			{ "value": "STRENGTH", "add": 80 } 
+		] 
+		} 
+	]
+	},
+	{
     "id": "death_coin_mut",
 	"type": "mutation",
     "name": "Shinigami work ethic",
-    "points": 0,
     "description": "Taking it easy.",
+	"points": 0,
 	"profession": false,
 	"purifiable": false,
 	"starting_trait": false,
@@ -29,8 +48,8 @@
     "id": "esper_cloak_mut",
 	"type": "mutation",
     "name": "Chuuni enlightenment",
-    "points": 0,
     "description": "Doing magic feels easier.",
+	"points": 0,
 	"profession": false,
 	"purifiable": false,
 	"starting_trait": false,
@@ -49,8 +68,8 @@
     "id": "lampad_torch_off_mut",
 	"type": "mutation",
     "name": "Light Madness",
-    "points": 0,
     "description": "Your head feels light, your steps heavy, you're not more tired.",
+	"points": 0,
 	"profession": false,
 	"purifiable": false,
 	"starting_trait": false,
@@ -71,8 +90,8 @@
     "id": "lampad_torch_lit_mut",
 	"type": "mutation",
     "name": "Madness",
-    "points": 0,
     "description": "Your head feels heavy , your steps light, can't stay still.",
+	"points": 0,
 	"profession": false,
 	"purifiable": false,
 	"starting_trait": false,
@@ -123,8 +142,8 @@
     "id": "lucky_charm_mut",
 	"type": "mutation",
     "name": "Lucky",
-    "points": 0,
     "description": "You feel lucky!",
+	"points": 0,
 	"profession": false,
 	"purifiable": false,
 	"starting_trait": false,
@@ -134,8 +153,8 @@
     "id": "skinwalker_pelt_mut",
 	"type": "mutation",
     "name": "Skinwalker pelt",
-    "points": 0,
     "description": "You feel strange… suddenly craving more meat and hating anyone too close around you.",
+	"points": 0,
 	"profession": false,
 	"purifiable": false,
 	"starting_trait": false,
@@ -148,8 +167,8 @@
     "id": "spider_charm_mut",
 	"type": "mutation",
     "name": "Earth spider protection",
-    "points": 0,
     "description": "You feel strangely healthy.",
+	"points": 0,
 	"profession": false,
 	"purifiable": false,
 	"starting_trait": false,
@@ -160,8 +179,8 @@
     "id": "strong_ice_mut",
 	"type": "mutation",
     "name": "Strongness",
-    "points": 0,
     "description": "You feel strong.",
+	"points": 0,
 	"profession": false,
 	"purifiable": false,
 	"starting_trait": false,
@@ -180,16 +199,16 @@
     "id": "wind_priestess_charm_mut",
 	"type": "mutation",
     "name": "Wind blessing",
-    "points": 0,
     "description": "You feel blessed.",
+	"points": 0,
 	"profession": false,
 	"purifiable": false,
 	"starting_trait": false,
     "valid": true,
     "enchantments": [
 		{
-        "condition": "ALWAYS",
-        "values": [ 
+		"condition": "ALWAYS",
+		"values": [ 
 			{ 
 			"value": "DEXTERITY", 
 			"add": { "arithmetic": [ 
@@ -217,21 +236,9 @@
 				{ "const": 1 }, "+",
 					{ "arithmetic": [ { "const": 3 }, "*", { "u_val": "var", "var_name": "var_wind_blessing_str" } ] }
 				] }
-			},
-			{ "value": "ITEM_DAMAGE_PURE", "add": { "arithmetic": [ { "u_val": "intelligence" } ] } }
-		],
-		"intermittent_activation": { 
-			"effects": [ 
-				{ 
-				"frequency": "30 m", 
-				"spell_effects": [ 
-					{ "id": "wind_blessing" } 
-				] 
-				} 
-			] 
+			}
+		]
 		}
-		}
-	],
-	"//": "This seems to not be refreshing every 30 minutes or so, but the stat bonus at least it's working now"
+	]
 	}
 ]

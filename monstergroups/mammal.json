@@ -4,11 +4,11 @@
     "type": "monstergroup",
     "is_safe": true,
     "monsters": [
-		{ "monster": "mon_null", "weight": 680 },
+		{ "monster": "mon_null", "weight": 700 },
 		{ "monster": "mon_cow", "weight": 100, "cost_multiplier": 10, "ends": "7 days" },
 		{ "monster": "mon_cow", "weight": 50, "cost_multiplier": 5, "starts": "7 days" },
-		{ "monster": "mon_cotylorhynchus", "weight": 85, "cost_multiplier": 4, "starts": "2 days" },
-		{ "monster": "mon_scutosaurus", "weight": 85, "cost_multiplier": 4, "starts": "2 days" }
+		{ "monster": "mon_cotylorhynchus", "weight": 75, "cost_multiplier": 4, "starts": "2 days" },
+		{ "monster": "mon_scutosaurus", "weight": 75, "cost_multiplier": 4, "starts": "2 days" }
     ]
 	},
 	{
@@ -16,15 +16,15 @@
     "type": "monstergroup",
     "default": "mon_cat",
     "monsters": [
-		{ "group": "GROUP_PET_CATS", "weight": 733, "cost_multiplier": 0 },
+		{ "group": "GROUP_PET_CATS", "weight": 766, "cost_multiplier": 0 },
 		{ "monster": "mon_cat_void", "weight": 10, "cost_multiplier": 0 },
 		{ "monster": "mon_cat_void_kitten", "weight": 1, "cost_multiplier": 0 },
 		{ "monster": "mon_cat_liquid", "weight": 10, "cost_multiplier": 0 },
 		{ "monster": "mon_cat_liquid_kitten", "weight": 1, "cost_multiplier": 0 },
 		{ "monster": "mon_cat_mutant_prism", "weight": 10, "cost_multiplier": 0 },
 		{ "monster": "mon_cat_mutant_kitten_prism", "weight": 1, "cost_multiplier": 0 },
-		{ "monster": "mon_moschorhinus", "weight": 233, "cost_multiplier": 0, "starts": "2 days" },
-		{ "monster": "mon_nochnitsa", "weight": 466, "cost_multiplier": 0, "starts": "2 days", "conditions": [ "DUSK", "NIGHT" ] }
+		{ "monster": "mon_moschorhinus", "weight": 100, "cost_multiplier": 0, "starts": "2 days" },
+		{ "monster": "mon_nochnitsa", "weight": 100, "cost_multiplier": 0, "starts": "2 days", "conditions": [ "DUSK", "NIGHT" ] }
     ]
 	},
 	{

@@ -48,24 +48,5 @@
     "reload": 0,
 	"skill": "pistol",
     "flags": [ "NEVER_JAMS", "NO_UNWIELD", "TRADER_AVOID", "ZERO_WEIGHT" ]
-	},
-	{
-    "id": "bio_vampiric_constitution",
-    "type": "BIONIC_ITEM",
-    "category": "bionics",
-	"name": { "str_sp": "Vampiric constitution" },
-	"description": "You have vampiric constitution",
-	"copy-from": "bionic_general",
-	"weight": "0 g",
-    "volume": "0 ml",
-	"material": [ "steel" ],
-	"symbol": "#",
-	"color": "red",
-	"looks_like": "bio_int_enhancer",
-    "price": 1000000,
-	"use_action": [ "install_bionic" ],
-	"is_upgrade": false,
-	"faults": [ "fault_bionic_salvaged" ],
-	"flags": [ "CBM", "ZERO_WEIGHT" ]
 	}
 ]

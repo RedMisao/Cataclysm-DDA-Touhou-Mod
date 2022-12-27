@@ -336,6 +336,48 @@
 	"//2": "I need to set the penalty (and bonus) of eating human flesh to 0"
 	},
 	{
+    "id": "VAMPIRE_BAT_REMI",
+	"type": "mutation",
+    "name": "Vampire shapeshifting (human)",
+    "description": "Your nature allows you to shapeshift, although almost completely as your bat wings are still visible.  Currently, you're posing as a human.  Activate the mutation to switch to youkai form.",
+    "points": 0,
+	"profession": true,
+	"purifiable": false,
+	"starting_trait": false,
+	"valid": false,
+	"active": true,
+	"activated_eocs": [ "WINGS_BAT_REMI_activate" ],
+	"ugliness": 1,
+	"visibility": 8,
+	"transform": { "target": "VAMPIRE_BAT_REMI_active", "active": false, "moves": 100 },
+	"cancels": [ "WINGS_BAT", "WINGS_BIRD", "WINGS_BUTTERFLY", "WINGS_INSECT", "WINGS_STUB" ]
+    },
+	{
+    "id": "VAMPIRE_BAT_REMI_active",
+	"type": "mutation",
+    "name": "Vampire shapeshifting (bat)",
+	"copy-from": "VAMPIRE_BAT_REMI",
+    "description": "If nothing else revealed you're a vampire, this will surely do.  You're currently transformed into bat form.  Activate the mutation to switch forms.",
+	"active": true,
+	"ugliness": 4,
+	"visibility": 6,
+	"weight_capacity_modifier": 0.33,
+	"enchantments": [
+		{
+        "condition": "ALWAYS",
+		"ench_effects": [ { "effect": "remi_levitation", "intensity": 1 } ],
+        "values": [ 
+			{ "value": "FOOTSTEP_NOISE", "multiply": -0.80 },
+			{ "value": "MELEE_DAMAGE", "multiply": -0.5 },
+			{ "value": "METABOLISM", "multiply": -0.5 }
+		]
+		}
+	],
+	"transform": { "target": "VAMPIRE_BAT_REMI", "active": false, "moves": 100 },
+	"extend": { "flags": [ "SMALL" ] },
+	"cancels": [ "WINGS_BAT", "WINGS_BIRD", "WINGS_BUTTERFLY", "WINGS_INSECT", "WINGS_STUB" ]
+    },
+	{
     "id": "YOUKAI_SPECIES",
 	"type": "mutation",
     "name": "Youkai",
@@ -662,46 +704,6 @@
 		}
 	],
 	"transform": { "target": "WINGS_HELLRAVEN", "active": false, "moves": 100 }
-    },
-	{
-    "id": "WINGS_BAT_REMI",
-	"type": "mutation",
-    "name": "Bat wings",
-    "description": "You have a pair of bat wings.  Enables flight while active.",
-    "points": 0,
-	"profession": true,
-	"purifiable": false,
-	"starting_trait": false,
-	"valid": false,
-	"active": true,
-	"activated_eocs": [ "WINGS_BAT_REMI_activate" ],
-	"ugliness": 1,
-	"visibility": 8,
-	"transform": { "target": "WINGS_BAT_REMI_spread", "active": false, "moves": 100 },
-	"cancels": [ "WINGS_BAT", "WINGS_BIRD", "WINGS_BUTTERFLY", "WINGS_INSECT", "WINGS_STUB" ],
-	"//": "Change for: youkai form (cloud of black scarlet bats)"
-    },
-	{
-    "id": "WINGS_BAT_REMI_spread",
-	"type": "mutation",
-    "name": "Bat wings (flight)",
-    "description": "If nothing else revealed you're a vampire, this will surely do.  Activate to disable flight.",
-    "points": 0,
-	"profession": true,
-	"purifiable": false,
-	"starting_trait": false,
-	"valid": false,
-	"active": true,
-    "enchantments": [
-		{
-        "condition": "ALWAYS",
-		"ench_effects": [ { "effect": "remi_levitation", "intensity": 1 } ]
-		}
-	],
-	"ugliness": 3,
-	"visibility": 8,
-	"transform": { "target": "WINGS_BAT_REMI", "active": false, "moves": 100 },
-	"cancels": [ "WINGS_BAT", "WINGS_BIRD", "WINGS_BUTTERFLY", "WINGS_INSECT", "WINGS_STUB" ]
     },
 	{
     "id": "WINGS_TENGUCROW",

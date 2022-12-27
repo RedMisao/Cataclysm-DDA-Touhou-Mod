@@ -60,7 +60,21 @@
     "entries": [
 		{
 		"collection": [
-			{ "group": "loincloth", "prob": 85, "damage": [ 0, 4 ] }
+			{ "group": "loincloth", "prob": 95, "damage": [ 0, 4 ] },
+			{ "group": "touhou_oni_kanabo", "prob": 75, "damage": [ 0, 4 ] }
+		]
+		}
+	]
+	},
+	{
+    "id": "oni_humanoid_drops",
+	"type": "item_group",
+    "subtype": "collection",
+    "entries": [
+		{
+		"collection": [
+			{ "group": "loincloth", "prob": 95, "damage": [ 0, 4 ] },
+			{ "group": "touhou_oni_humanoid_kanabo", "prob": 75, "damage": [ 0, 4 ] }
 		]
 		}
 	]
@@ -72,7 +86,7 @@
     "entries": [
 		{
 		"distribution": [
-			{ "item": "chestwrap_fur", "prob": 42, "damage": [ 0, 4 ] }
+			{ "item": "chestwrap_fur", "prob": 49, "damage": [ 0, 4 ] }
 		]
 		},
 		{

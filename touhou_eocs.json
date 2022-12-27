@@ -4,7 +4,11 @@
 	"type": "effect_on_condition",
 	"eoc_type": "SCENARIO_SPECIFIC",
     "effect": [
-		{ "run_eocs": [ "daily_randomization" ] }, 
+		{ "u_add_var": "var_wind_blessing_dex", "type": "number", "context": "wind_priestess_charm", "value": "0" },
+		{ "u_add_var": "var_wind_blessing_int", "type": "number", "context": "wind_priestess_charm", "value": "0" },
+		{ "u_add_var": "var_wind_blessing_per", "type": "number", "context": "wind_priestess_charm", "value": "0" },
+		{ "u_add_var": "var_wind_blessing_str", "type": "number", "context": "wind_priestess_charm", "value": "0" },
+		{ "run_eocs": [ "daily_randomization_eoc" ] }, 
 		{ "run_eocs": [
 			{
             "id": "vampire_bloodthirst_start",
@@ -15,15 +19,11 @@
 				] }
 			]
 			}
-		] },
-		{ "u_add_var": "var_wind_blessing_dex", "type": "number", "context": "wind_priestess_charm", "value": "0" },
-		{ "u_add_var": "var_wind_blessing_int", "type": "number", "context": "wind_priestess_charm", "value": "0" },
-		{ "u_add_var": "var_wind_blessing_per", "type": "number", "context": "wind_priestess_charm", "value": "0" },
-		{ "u_add_var": "var_wind_blessing_str", "type": "number", "context": "wind_priestess_charm", "value": "0" }
+		] }
     ]
 	},
 	{
-    "id": "daily_randomization",
+    "id": "daily_randomization_eoc",
 	"type": "effect_on_condition",
 	"recurrence": "24 hours",
     "effect": [
@@ -45,10 +45,7 @@
             "id": "impurity_none",
             "condition": { "compare_int": [ { "u_val": "vitamin", "name": "impurity" }, "<", { "const": 0 } ] },
             "effect": [
-				{ "u_lose_effect": "impurity_high" },
-				{ "u_lose_effect": "impurity_low" },
-				{ "u_lose_effect": "impurity_verylow" },
-				{ "u_add_effect": "impurity_none", "duration": "20 m" }
+				{ "arithmetic": [ { "u_val": "var", "var_name": "var_impurity" }, "=", { "const": 0 } ] }
             ]
 			},
 			{
@@ -60,10 +57,7 @@
 				]
 			},
             "effect": [
-				{ "u_lose_effect": "impurity_high" },
-				{ "u_lose_effect": "impurity_low" },
-				{ "u_lose_effect": "impurity_none" },
-				{ "u_add_effect": "impurity_verylow", "duration": "20 m" }
+				{ "arithmetic": [ { "u_val": "var", "var_name": "var_impurity" }, "=", { "const": 1 } ] }
             ]
 			},
 			{
@@ -75,29 +69,24 @@
 				]
 			},
             "effect": [
-				{ "u_lose_effect": "impurity_high" },
-				{ "u_lose_effect": "impurity_verylow" },
-				{ "u_lose_effect": "impurity_none" },
-				{ "u_add_effect": "impurity_low", "duration": "20 m" }
+				{ "arithmetic": [ { "u_val": "var", "var_name": "var_impurity" }, "=", { "const": 2 } ] }
             ]
 			},
 			{
             "id": "impurity_high",
             "condition": { "compare_int": [ { "u_val": "vitamin", "name": "impurity" }, ">=", { "const": 505 } ] },
             "effect": [
-				{ "u_lose_effect": "impurity_low" },
-				{ "u_lose_effect": "impurity_verylow" },
-				{ "u_lose_effect": "impurity_none" },
-				{ "u_add_effect": "impurity_high", "duration": "20 m" }
+				{ "arithmetic": [ { "u_val": "var", "var_name": "var_impurity" }, "=", { "const": 3 } ] }
             ]
 			}
         ] }
 	],
 	"//": "1 impurity every 20 min equals 72 impurity per day or 504 in 7 days, and that's not even considering consuming Earthly stuff",
-	"//2": "Boundaries for each impure tier: 0 - 24 h (verylow), 1 - 7 days (low), >7 (high)"
+	"//2": "Boundaries for each impure tier: 0 - 24 h (verylow), 1 - 7 days (low), >7 days (high)",
+	"//3": "Impurity tiers are named: Pure, Slight impurity, Impure, Impure (2) "
 	},
 	{
-    "id": "mokou_death",
+    "id": "mokou_death_eoc",
     "type": "effect_on_condition",
     "eoc_type": "PREVENT_DEATH",
     "condition": { 
@@ -122,10 +111,9 @@
 	"//2": "Every time Mokou dies she gets var_mokoudeath, which lasts for 7 days and slowly decreases over time. Every time she revives, the value is checked, so the more she dies in a short time the harder it is for her to not give up for real"
 	},
 	{
-    "id": "mokou_resurrect_counter",
+    "id": "mokou_resurrect_counter_eoc",
 	"type": "effect_on_condition",
     "recurrence": "1 hour",
-    "global": true,
     "condition": { 
 		"and": [ 
 			{ "u_has_trait": "PROF_MOKOU" },

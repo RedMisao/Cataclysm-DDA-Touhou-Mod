@@ -3,7 +3,7 @@
     "name": "DUMP_ANIMALS",
 	"type": "monstergroup",
     "monsters": [
-		{ "monster": "mon_null", "weight": 378 },
+		{ "monster": "mon_null", "weight": 230 },
 		{ "monster": "mon_fly", "weight": 100 },
 		{ "monster": "mon_crow", "weight": 75 },
 		{ "monster": "mon_raven", "weight": 75 },
@@ -19,7 +19,7 @@
 		{ "monster": "mon_rattlesnake_giant", "weight": 5, "cost_multiplier": 2 },
 		{ "monster": "mon_worm", "weight": 20 },
 		{ "monster": "mon_wasp_small", "weight": 10 },
-		{ "monster": "mon_jinmenken", "weight": 200, "pack_size": [ 1, 3 ], "starts": "2 days", "conditions": [ "NIGHT", "DUSK" ] }
+		{ "monster": "mon_jinmenken", "weight": 150, "pack_size": [ 1, 3 ], "starts": "2 days", "conditions": [ "NIGHT", "DUSK" ] }
     ],
 	"//": "Same as DUMP_ANIMALS but adds spawning for the last monsters, seems like the extend field is not yet implemented"
 	},
@@ -82,7 +82,7 @@
     "is_safe": true,
     "is_animal": true,
     "monsters": [
-		{ "monster": "mon_null", "weight": 170 },
+		{ "monster": "mon_null", "weight": 200 },
 		{ "monster": "mon_bat", "weight": 10 },
 		{ "monster": "mon_bobcat", "weight": 10 },
 		{ "monster": "mon_chicken", "weight": 10 },
@@ -123,10 +123,10 @@
 		{ "monster": "mon_llama", "weight": 10 },
 		{ "monster": "mon_woodlouse", "weight": 10 },
 		{ "monster": "mon_cicada_nymph", "weight": 10 },
-		{ "monster": "mon_cotylorhynchus", "weight": 25, "starts": "2 days" },
-		{ "monster": "mon_dodo", "weight": 85, "starts": "2 days" },
+		{ "monster": "mon_cotylorhynchus", "weight": 15, "starts": "2 days" },
+		{ "monster": "mon_dodo", "weight": 75, "starts": "2 days" },
 		{ "monster": "mon_ectopistes", "weight": 50, "starts": "2 days" },
-		{ "monster": "mon_icadyptes", "weight": 50, "starts": "2 days" },
+		{ "monster": "mon_icadyptes", "weight": 35, "starts": "2 days" },
 		{ "monster": "mon_lystrosaurus", "weight": 35, "pack_size": [ 1, 2 ], "starts": "2 days" },
 		{ "monster": "mon_moa", "weight": 35, "starts": "2 days" },
 		{ "monster": "mon_moschorhinus", "weight": 10, "starts": "2 days" },
@@ -134,7 +134,7 @@
 		{ "monster": "mon_scutosaurus", "weight": 25, "starts": "2 days" },
 		{ "monster": "mon_thylacine", "weight": 10, "starts": "2 days" },
 		{ "monster": "mon_weigeltisaurus", "weight": 50, "starts": "2 days" },
-		{ "monster": "mon_jackalope", "weight": 33, "starts": "2 days" }
+		{ "monster": "mon_jackalope", "weight": 35, "starts": "2 days" }
     ],
 	"//": "Same as GROUP_SAFE, increases overall spawning and adds the last monsters, seems like the extend field is not yet implemented"
 	}

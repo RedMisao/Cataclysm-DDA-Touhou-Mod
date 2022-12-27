@@ -33,10 +33,10 @@
 		[ "underbarrel", 1 ]
     ],
 	"pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "ammo_lunar_small": 13 } } ],
-    "relic_data": { "charge_info": { "regenerate_ammo": true, "recharge_type": "periodic", "time": "5 s" } },
+    "relic_data": { "charge_info": { "regenerate_ammo": true, "recharge_type": "periodic", "time": "18 s" } },
     "weapon_category": [ "AUTOMATIC_PISTOLS" ],
     "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NO_RELOAD", "NO_UNLOAD", "STURDY", "TRADER_AVOID" ],
-	"//2": "Recharge time should be full every 30 seconds, however currently there's a bug making artifacts recharge at twice the speed"
+	"//2": "Recharge time should be full from empty every 30 s. However, recharge time is automatic and there's a bug making artifacts recharge at twice the speed, so total recharge time is set at 120 s ingame"
 	},
 	{
     "id": "lunar_rifle2",
@@ -78,10 +78,10 @@
 		[ "underbarrel", 1 ]
     ],
 	"pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "ammo_lunar_medium": 5 } } ],
-    "relic_data": { "charge_info": { "regenerate_ammo": true, "recharge_type": "periodic", "time": "12 s" } },
+    "relic_data": { "charge_info": { "regenerate_ammo": true, "recharge_type": "periodic", "time": "48 s" } },
     "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NO_RELOAD", "NO_UNLOAD", "STAB", "STURDY", "TRADER_AVOID" ],
 	"//": "The SSiB training rifle is either based on a Mosin or the Japanese Type 89 that used 'type 38 chamber in 7.62×38mmR tracer' according to some post on Reddit. However, Type 89 doesn't seem to exist, only the Type 38 (6.5×50mm Arisaka) or 99 (7.7×58mm Arisaka), which is the one I'll use as basis",
-	"//2": "Recharge time should be full every 30 seconds, however currently there's a bug making artifacts recharge at twice the speed"
+	"//2": "Recharge time should be full from empty every 30 s. However, recharge time is automatic and there's a bug making artifacts recharge at twice the speed, so total recharge time is set at 120 s ingame"
 	},
 	{
     "id": "lunar_bousan",

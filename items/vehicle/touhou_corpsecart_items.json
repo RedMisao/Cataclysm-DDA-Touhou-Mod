@@ -18,22 +18,6 @@
 	"//": "These come from data/json/items/vehicle"
 	},
 	{
-	"id": "controls_keystone",
-	"type": "GENERIC",
-	"category": "veh_parts",
-	"name": { "str": "keystone controls" },
-    "copy-from": "vehicle_controls",
-	"description": "Floating keystone controls.",
-	"volume": "20 ml",
-	"weight": "20 g",
-	"price_postapoc": 100,
-	"material": [ "steel" ],
-	"symbol": "|",
-	"color": "light_gray",
-    "to_hit": -2,
-	"bashing": 16
-	},
-	{
 	"id": "frame_corpsecart",
 	"type": "GENERIC",
 	"category": "veh_parts",
@@ -99,51 +83,14 @@
 	"flags": [ "TARDIS" ]
 	},
 	{
-    "id": "reactor_keystone",
-    "type": "ENGINE",
-	"category": "veh_parts",
-	"name": { "str": "keystone reactor" },
-	"copy-from": "motor",
-	"description": "Keystone reactor.",
-    "volume": "10 ml",
-	"weight": "10 g",
-    "price": 26500,
-    "price_postapoc": 1750,
-    "material": [ "steel" ],
-	"symbol": "v",
-	"displacement": 450,
-	"flags": [ "TARDIS" ]
-	},
-	{
 	"id": "seat_corpsecart",
 	"type": "GENERIC",
     "name": { "str": "corpse cart seat" },
 	"copy-from": "seat_leather",
 	"description": "A seat, for the corpse cart.",
-    "material": [ "cotton", "leather", "wood" ],
     "price": 60000,
-    "price_postapoc": 250
-	},
-	{
-    "id": "storage_battery_keystone",
-    "type": "GENERIC",
-	"category": "veh_parts",
-	"name": { "str": "keystone tank" },
-	"description": "Floating keystone storage.",
-    "volume": "50 ml",
-	"weight": "50 g",
-	"price": 3000,
-    "price_postapoc": 100,
-    "material": [ "steel" ],
-	"symbol": "]",
-	"looks_like": "cargo_rack",
-	"color": "light_gray",
-    "pocket_data": [ {
-        "pocket_type": "CONTAINER",
-        "rigid": true,
-        "ammo_restriction": { "magic_fuel_ammo": 10000 } 
-	} ],
-	"flags": [ "TARDIS" ]
+    "price_postapoc": 250,
+    "material": [ "cotton", "leather", "wood" ]
 	},
 	{
     "id": "storage_corpsecart",
@@ -221,27 +168,6 @@
 	"bashing": 8,
 	"diameter": 20,
     "width": 6,
-	"//": "wheel_type: treads is not recognized as a field",
-	"//2": " contact_area: 3267 cm is not recognized as a field",
-	"//3": "rolling_resistance: 1 is not recognized as a field",
-	"flags": [ "STABLE", "STEERABLE", "WHEEL" ]
-	},
-	{
-    "id": "wheel_keystone",
-    "type": "WHEEL",
-    "category": "veh_parts",
-    "name": "keystone levitator",
-    "description": "The lowest part of the keystone that seems to enable floating.  Or not, and the entire thing just hovers.",
-    "volume": "500 ml",
-	"weight": "500 g",
-    "price_postapoc": 1,
-    "material": [ "steel" ],
-    "symbol": "]",
-    "color": "light_gray",
-    "to_hit": -4,
-    "bashing": 8,
-    "diameter": 20,
-    "width": 10,
 	"flags": [ "STABLE", "STEERABLE", "WHEEL" ]
 	},
 	{
