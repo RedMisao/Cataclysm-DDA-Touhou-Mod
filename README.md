@@ -46,6 +46,7 @@ New mechanics:
 * Impurity (WIP).  Currently a dummy mechanic, it naturally increases over time and also by consuming "impure" stuff (which is everything edible so far).  Has no effect, except for Reisen who starts with the LUNARDIET trait and loses it after acquiring enough impurity
 * Kaenbyou can now toggle between her human or youkai forms.  Cat form is smaller, slightly more nimble, and less loud, but carries less weight and deals reduced melee damage
 * Mokou is now immortal.  She resurrects after dying, immediately restoring her body.  She can die as many times as she wants, but there's a soft cap relative to how many times she has died in a period of time, plus a small-ish pain debuff that ramps up, to discourage savescumming
+* Remi can now toggle between her human or bat forms.  Bat form is smaller, faster, and more silent, but carries less weight and deals reduced melee damage
 
 
 New monsters:
@@ -59,18 +60,20 @@ New monsters:
 New spells:
 * Aya, Remi and Utsuho now have "wings". While active (View/active mutations key), it enables them to fly over ledges and open spaces, consuming stamina until they're tired enough
 * Sakuya has a new spell, "Maid's secret", which is a toggle-able aura that increases her movement speed and stamina regeneration as long as she is focused.  Becoming tired or hostiles getting close automatically toggle it off
+* Tenko has a new spell, "Summon: Floating Keystone", which creates a… floating keystone that she can ride
 * Udonge's Wavelength manipulation spells were changed into "auras", toggled ON or OFF by casting each spell.  Additionally, there's a new wavelength manipulation: Mental fortitude, which renders her immune to mental debuffs as long as it's active
 
 
 New weather:
-* Scarlet mist and fog. Should happen randomly, and reduce sun intensity
+* Scarlet mist and fog.  Should happen randomly, and reduce sun intensity
 * (WIP) Night parade and Silence hour: random events
 
 
 Other changes:
 * Mokou is now immune to smoke
-* Lunar weapons were changed (again), now automatically regen ammo over time, and can't be unloaded or reloaded
+* Lunar weapons were changed (again): now automatically regen ammo over time, and can't be unloaded or reloaded
 * Increased youkai presence around the region, and fixed the spawn chance (it was either too low or too high)
+* Tweaked several spell values
 
 
 Fixes and minor changes:
@@ -78,13 +81,16 @@ Fixes and minor changes:
 * Fixed Tenko's keystone dismissal not dismissing pillar keystones
 * Fixed Tenko's keystone pillar not being castable on top of enemies
 * Reduced loudness of Lunar weapons
-* Fixed and tweaked some character mutations values. Also fixed a bug where mutation stat modifiers increased cost while on character selection
+* Fixed and tweaked some character mutations and mutation values.  Also fixed a bug where mutation stat modifiers increased cost while on character selection (again)
 * MIB now actually shoot and die properly (heh)
 * Changed how previous buffs from spells work (instead of creating wearable item -> enchantment, they now grant a visible buff -> enchantment)
-* Touhou scenario now starts at day 1
+* Touhou scenario now starts at day 1 (61 of Spring)
 * Skinwalkers, banshee and White Lady demoralizing spell components are now working properly
+* Several minor description, value and edition changes
+* Removed some unused and incomplete data
 
 
 Known bugs:
 * Mokou's resurrection moves her 3 tiles to the right, every time she revives. I have no idea how or why this happens; this is potentially very very bad for the player
-* The increased youkai presence may be higher than intended
+* Youkai and ancient fauna presence may be (slightly) higher than intended, may not
+* Seems enchantments are broken again: anything inside the `passive_effects` field from items is not working properly (e.g. a mutation is visible but the bonus from that mutation aren't applied).  This seems to be an issue with base cdda
