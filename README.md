@@ -110,13 +110,13 @@ Sadly, there's also the
 
 ### Weather
 * Scarlet mist and fog.  Should happen randomly, and reduce sun intensity.
-* Night parade and Silence hour.  Should also happen randomly, and have similar minor effects.  These are intended to be random events in the future.
 
 
 ## WIP
 Relatively easy things to add, not in order:
 * Professions: Nitori and Yamame are still not playable.  I want to add Kasen and maybe Flandre too.
 * Monsters: a lot more.  Fairies, rocs, banshees, more tsukumogami, etc.
+* Events: Night parade and Silence hour.  Future weather/events that happen randomly.
 * Items: 16 new items that grant various special abilities or passive bonuses were already designed but not fully implemented (see Known Bugs).
 * Locations: Power spots, basically small zones of interest for the player to explore/search, where forgotten items reappear and certain monsters gather, depending on the spot type or surroundings.  A small Shinto-style shrine has been added, but it's unfinished.
 * Visual effects: Can it be done with fields? For example, when Youmu dashes, cherry petals appear on the path.
