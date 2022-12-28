@@ -5,6 +5,7 @@ This is a fork of Taberone's [Touhou Professions](https://github.com/Taberone/Ca
 
 To pick any of the characters, you have to select the **Touhou Mod** scenario when creating a new character.
 
+Also check the [Expansion](https://github.com/RedMisao/Cataclysm-DDA-Touhou-Expansion) mod!
 
 ## About the mod
 This mod is intended to be some sort of Touhou-flavored conversion for CDDA, inspired by the following questions:
