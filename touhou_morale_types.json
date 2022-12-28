@@ -1,10 +1,5 @@
 [
 	{
-    "id": "morale_craving_dix",
-    "type": "morale_type",
-    "text": "Craving D-IX"
-	},
-	{
     "id": "morale_skinwalker_scream_demoralize",
     "type": "morale_type",
     "text": "Heard an horrifying scream!"
