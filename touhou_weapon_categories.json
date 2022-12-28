@@ -1,10 +1,5 @@
 [
 	{
-	"id": "SHIELDS",
-	"type": "weapon_category",
-	"name": "SHIELDS"
-	},
-	{
 	"id": "WHIPS",
 	"type": "weapon_category",
 	"name": "WHIPS"

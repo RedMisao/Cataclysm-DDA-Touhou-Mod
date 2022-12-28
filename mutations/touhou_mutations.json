@@ -505,11 +505,6 @@
 	"purifiable": false,
 	"starting_trait": false,
 	"valid": false,
-	"anger_relations": [ 
-		[ "GHOST_TOUHOU", -20 ], 
-		[ "PHANTOM_TOUHOU", -20 ], 
-		[ "JIANGSHI_TOUHOU", -20 ] 
-	],
 	"//": "Add like 2 - 4 soul dmg reduction when I implement that"
 	},
 	{
@@ -591,15 +586,7 @@
 	"profession": true,
 	"purifiable": false,
 	"starting_trait": false,
-	"valid": false,
-	"anger_relations": [ 
-		[ "ONI_TOUHOU", -25 ], 
-		[ "YOUKAI_FEMALE_TOUHOU", -25 ], 
-		[ "YOUKAI_HOSTILE_TOUHOU", -25 ], 
-		[ "YOUKAI_NEUTRAL_TOUHOU", -25 ], 
-		[ "YOUKAI_PSEUDO", -25 ], 
-		[ "YOUKAI_SKINWALKER_TOUHOU", -25 ]
-	]
+	"valid": false
 	},
 	{
     "id": "PROF_YOUMU",
