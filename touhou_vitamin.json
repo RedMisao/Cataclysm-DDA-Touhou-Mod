@@ -1,5 +1,5 @@
 [
-	{
+  {
     "id": "hblood_vitamin",
     "type": "vitamin",
     "vit_type": "counter",
@@ -7,7 +7,7 @@
     "min": 0,
     "max": 792,
     "rate": "20 m",
-	"flags": [ "NO_DISPLAY" ],
-	"//": "No deficiency field/effect so this can be only detected by a trait (VAMPIRE_SPECIES) + vit counter EOC. See the vampire_bloodthirst sub-EOCs"
-	}
+    "flags": [ "NO_DISPLAY" ],
+    "//": "No deficiency field/effect so this can be only detected by a trait (VAMPIRE_SPECIES) + vit counter EOC. See the vampire_bloodthirst sub-EOCs"
+  }
 ]

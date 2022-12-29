@@ -1,44 +1,32 @@
 [
-	{
+  {
     "id": "camera_aya",
     "type": "TOOL",
     "category": "tools",
     "name": { "str": "old-fashioned camera", "str_pl": "old-fashioned cameras" },
     "description": "A relatively old-looking photo camera.  You can look at your photos on the screen.  Uses conventional batteries.",
     "volume": "650 ml",
-	"weight": "1000 g",
+    "weight": "1000 g",
     "longest_side": "12 cm",
     "price_postapoc": 50,
-	"to_hit": {
-		"balance": "neutral", 
-		"grip": "solid", 
-		"length": "hand", 
-		"surface": "any"
-	},
+    "to_hit": { "balance": "neutral", "grip": "solid", "length": "hand", "surface": "any" },
     "material": [ "plastic", "steel" ],
-	"symbol": ";",
+    "symbol": ";",
     "color": "black",
     "bashing": 2,
-	"charges_per_use": 5,
-    "use_action": [
-		{ 
-		"type": "cast_spell", 
-		"spell_id": "camera_aya_flash", 
-		"no_fail": true, 
-		"level": 1 
-		}
-    ],
+    "charges_per_use": 5,
+    "use_action": [ { "type": "cast_spell", "spell_id": "camera_aya_flash", "no_fail": true, "level": 1 } ],
     "pocket_data": [
-		{
+      {
         "pocket_type": "MAGAZINE_WELL",
         "rigid": true,
         "flag_restriction": [ "BATTERY_ULTRA_LIGHT", "BATTERY_LIGHT" ],
         "default_magazine": "light_plus_battery_cell"
-		}
+      }
     ],
     "flags": [ "BELT_CLIP" ]
-	},
-	{
+  },
+  {
     "id": "camera_aya_flash",
     "type": "SPELL",
     "name": "Camera flash",
@@ -54,5 +42,5 @@
     "min_range": 5,
     "max_range": 5,
     "flags": [ "NO_LEGS", "NO_HANDS", "NO_PROJECTILE", "RANDOM_DAMAGE" ]
-	}
+  }
 ]

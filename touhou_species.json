@@ -1,14 +1,14 @@
 [
-	{
+  {
     "id": "PHANTOM_TOUHOU",
-	"type": "SPECIES",
+    "type": "SPECIES",
     "description": "a phantom",
     "anger_triggers": [ "HURT", "STALK" ]
-    },
-	{
+  },
+  {
     "id": "JIANGSHI_TOUHOU",
-	"type": "SPECIES",
+    "type": "SPECIES",
     "description": "a jiang shi",
     "anger_triggers": [ "HURT" ]
-    }
+  }
 ]

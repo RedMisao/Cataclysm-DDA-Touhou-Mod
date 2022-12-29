@@ -1,7 +1,7 @@
 [
-	{
-	"id": "WHIPS",
-	"type": "weapon_category",
-	"name": "WHIPS"
-	}
+  {
+    "id": "WHIPS",
+    "type": "weapon_category",
+    "name": "WHIPS"
+  }
 ]
