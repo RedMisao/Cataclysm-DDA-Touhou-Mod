@@ -750,11 +750,12 @@
     "name": "Downward slash",
     "messages": [ "You rise your weapon high, and forcefully hit %s", "<npcname> rises their weapon and then forcefully hits %s" ],
     "skill_requirements": [ { "name": "melee", "level": 4 } ],
-    "melee_allowed": false,
+    "melee_allowed": true,
     "unarmed_allowed": false,
     "weighting": 1,
     "flat_bonuses": [ { "stat": "arpen", "type": "cut", "scaling-stat": "str", "scale": 1.5 } ],
-    "mult_bonuses": [ { "stat": "movecost", "scale": 1.1 }, { "stat": "damage", "type": "cut", "scale": 1.33 } ]
+    "mult_bonuses": [ { "stat": "movecost", "scale": 1.1 }, { "stat": "damage", "type": "cut", "scale": 1.33 } ],
+    "attack_vectors": [ "WEAPON" ]
   },
   {
     "id": "tec_youmu_high_slash",
@@ -762,11 +763,12 @@
     "name": "High slash",
     "messages": [ "You slash upwards at %s", "<npcname> slashes upwards at %s" ],
     "skill_requirements": [ { "name": "melee", "level": 3 } ],
-    "melee_allowed": false,
+    "melee_allowed": true,
     "unarmed_allowed": false,
     "weighting": 2,
     "flat_bonuses": [ { "stat": "arpen", "type": "cut", "scaling-stat": "str", "scale": 1 } ],
     "mult_bonuses": [ { "stat": "damage", "type": "cut", "scale": 1.2 } ],
+    "attack_vectors": [ "WEAPON" ],
     "//": "Should target torso and head only"
   },
   {
@@ -775,11 +777,12 @@
     "name": "Hilt nudge",
     "messages": [ "You strike %s with the hilt of your weapon", "<npcname> strikes %s with the hilt of their weapon" ],
     "skill_requirements": [ { "name": "melee", "level": 3 } ],
-    "melee_allowed": false,
+    "melee_allowed": true,
     "unarmed_allowed": false,
     "weighting": 1,
     "flat_bonuses": [ { "stat": "damage", "type": "bash", "scaling-stat": "str", "scale": 1.334 } ],
-    "mult_bonuses": [ { "stat": "movecost", "scale": 0.9 } ]
+    "mult_bonuses": [ { "stat": "movecost", "scale": 0.9 } ],
+    "attack_vectors": [ "WEAPON" ]
   },
   {
     "id": "tec_youmu_rising_fang",
@@ -787,10 +790,11 @@
     "name": "Rising fang",
     "messages": [ "You slice %s sideways while jumping", "<npcname> slices %s sideways while jumping" ],
     "skill_requirements": [ { "name": "melee", "level": 6 } ],
-    "melee_allowed": false,
+    "melee_allowed": true,
     "unarmed_allowed": false,
     "weighting": -3,
     "mult_bonuses": [ { "stat": "movecost", "scale": 1.25 }, { "stat": "damage", "type": "cut", "scale": 2 } ],
+    "attack_vectors": [ "WEAPON" ],
     "//": "Swatter but called Rising Fang"
   },
   {
@@ -799,7 +803,7 @@
     "name": "Stinger",
     "messages": [ "You powerfully stab %s", "<npcname> stabs %s" ],
     "skill_requirements": [ { "name": "melee", "level": 5 } ],
-    "melee_allowed": false,
+    "melee_allowed": true,
     "unarmed_allowed": false,
     "attack_override": true,
     "aoe": "impale",
@@ -808,6 +812,7 @@
       { "stat": "arpen", "type": "stab", "scaling-stat": "str", "scale": 2 },
       { "stat": "damage", "type": "stab", "scaling-stat": "str", "scale": 4 }
     ],
+    "attack_vectors": [ "WEAPON" ],
     "//": "Should transform weapon damage to stab, with 2 times str as arpen instead"
   },
   {
@@ -816,12 +821,13 @@
     "name": "Sweep",
     "messages": [ "You sweep at %s, slowing them down", "<npcname> sweeps at %s, slowing them down" ],
     "skill_requirements": [ { "name": "melee", "level": 3 } ],
-    "melee_allowed": false,
+    "melee_allowed": true,
     "unarmed_allowed": false,
     "down_dur": 2,
     "aoe": "wide",
     "weighting": -1,
     "mult_bonuses": [ { "stat": "damage", "type": "cut", "scale": 0.9 } ],
+    "attack_vectors": [ "WEAPON" ],
     "//": "Should target legs and feet only"
   },
   {
@@ -830,11 +836,12 @@
     "name": "WIP",
     "messages": [ "WIP %s", "<npcname> WIP %s" ],
     "skill_requirements": [ { "name": "melee", "level": 6 } ],
-    "melee_allowed": false,
+    "melee_allowed": true,
     "unarmed_allowed": false,
     "down_dur": 1,
     "weighting": -1,
     "mult_bonuses": [ { "stat": "movecost", "scale": 0.8 }, { "stat": "damage", "type": "cut", "scale": 0.95 } ],
+    "attack_vectors": [ "WEAPON" ],
     "//": "CHANGE THIS"
   }
 ]
