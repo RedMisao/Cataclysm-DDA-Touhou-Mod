@@ -39,7 +39,7 @@
     "display_items": false,
     "display_field": true,
     "looks_like": "fd_fire",
-    "immunity_data": { "traits": [ "PROF_MOKOU" ] },
+    "immunity_data": { "flags": [ "PROF_MOKOU" ] },
     "//": "Fire field for mokou_fujiyamakazan , closest thing to the 6 - 9 turn fire field I wanted"
   },
   {
@@ -68,7 +68,7 @@
       { "name": "poison streak" },
       { "name": "pool of poison" }
     ],
-    "immunity_data": { "traits": [ "BIO_IMMUNE" ] },
+    "immunity_data": { "flags": [ "BIO_IMMUNE" ] },
     "underwater_age_speedup": "2 turns",
     "decay_amount_factor": 3,
     "gas_absorption_factor": 6,

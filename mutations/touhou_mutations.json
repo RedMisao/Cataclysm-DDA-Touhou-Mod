@@ -10,7 +10,6 @@
     "starting_trait": false,
     "valid": false,
     "armor": [ { "parts": "ALL", "bash": 8, "cut": 8, "stab": 8, "bullet": 16, "acid": 8, "cold": 8, "electric": 8, "heat": 8 } ],
-    "bleed_resist": 8,
     "stamina_regen_modifier": 0.5,
     "wet_protection": [
       { "part": "LEG_L", "neutral": 3 },
@@ -121,7 +120,6 @@
     "starting_trait": false,
     "valid": false,
     "healing_awake": 1,
-    "healing_resting": 1,
     "flags": [ "BIO_IMMUNE", "NO_DISEASE", "NO_RADIATION", "PARAIMMUNE" ]
   },
   {
@@ -305,7 +303,6 @@
     "starting_trait": false,
     "valid": false,
     "healing_awake": 4,
-    "healing_resting": 4,
     "mending_modifier": 2,
     "//": "Should be (1, 1, 0.5), then and double or triple that by 'digesting' human blood, with an active ability",
     "movecost_modifier": 0.8,

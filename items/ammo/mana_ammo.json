@@ -61,7 +61,7 @@
     "description": "Mana fuel for magical vehicles",
     "volume": "1 ml",
     "weight": "1 g",
-    "bashing": 1,
+    "melee_damage": { "bash": 1 },
     "material": [ "magic_fuel_mat" ],
     "symbol": "?",
     "color": "white",

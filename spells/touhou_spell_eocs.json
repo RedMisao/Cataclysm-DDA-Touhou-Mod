@@ -22,7 +22,7 @@
       "and": [
         { "compare_int": [ { "u_val": "mana" }, ">=", { "const": 100 } ] },
         { "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 2000 } ] },
-        { "compare_int": [ { "global_val": "monsters_nearby", "radius": 14 }, "=", { "const": 0 } ] },
+		{ "math": [ "u_monsters_nearby('radius': 14)", "==", "0" ] },
         { "compare_int": [ { "u_val": "var", "var_name": "var_sakuyafocus" }, ">", { "const": 0 } ] }
       ]
     },
@@ -64,7 +64,8 @@
       { "u_lose_effect": "udonge_stealth" },
       { "run_eocs": [ "udonge_waveinsight_cycle1" ] }
     ],
-    "//": "Always activates every time the spell is cast. It sets var_waveinsight > 0 to signal that aura is ON. It also sets the other auras OFF"
+    "//": "Always activates every time the spell udonge_waveinsight is cast. It sets var_waveinsight > 0 to signal that aura is ON. It also sets the other auras OFF",
+	"//2": "This is the 'base aura', the others are modeled after this"
   },
   {
     "id": "udonge_waveinsight_cycle1",
@@ -88,7 +89,8 @@
       { "u_add_effect": "udonge_insight", "duration": "3 s" },
       { "queue_eocs": [ "udonge_waveinsight_cycle1" ], "time_in_future": "2 s" }
     ],
-    "false_effect": { "run_eocs": "udonge_wave_oom" }
+    "false_effect": { "run_eocs": "udonge_wave_oom" },
+	"//": "This keeps the aura active as long as the player has enough mana, plus reduces it a bit. Otherwise the udonge_wave_oom stop triggers"
   },
   {
     "id": "udonge_waveinsight_toggle",
@@ -97,7 +99,8 @@
     "effect": [
       { "arithmetic": [ { "u_val": "var", "var_name": "var_waveinsight" }, "=", { "const": 0 } ] },
       { "u_lose_effect": "udonge_insight" }
-    ]
+    ],
+	"//": "If the player has cast udonge_waveinsight twice, this runs and deactivates the aura"
   },
   {
     "id": "udonge_wave_oom",
@@ -110,7 +113,8 @@
       { "u_lose_effect": "udonge_mfortitude" },
       { "u_lose_effect": "udonge_perception" },
       { "u_lose_effect": "udonge_stealth" }
-    ]
+    ],
+	"//": "If the player runs reaches the amount of mana specified above, the aura(s) deactivate"
   },
   {
     "id": "udonge_wavemfortitude_start",

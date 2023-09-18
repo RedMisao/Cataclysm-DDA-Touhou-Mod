@@ -345,7 +345,7 @@
     "proficiencies": [ "prof_intro_biology", "prof_intro_chemistry", "prof_lockpicking", "prof_pharmaceutical", "prof_physiology" ],
     "spells": [
       { "level": 1, "id": "dash_basic" },
-      { "level": 1, "id": "seiga_charmcorpse" },
+      { "level": 1, "id": "seiga_charm" },
       { "level": 1, "id": "seiga_chidrain" },
       { "level": 1, "id": "seiga_chireversal" },
       { "level": 1, "id": "seiga_darksplash" },

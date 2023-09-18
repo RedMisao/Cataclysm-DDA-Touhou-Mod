@@ -5,7 +5,7 @@
     "name": { "str": "corpse cart front" },
     "item": "front_corpsecart",
     "location": "armor",
-    "symbol": "X",
+    "variants": [ { "symbols": "X", "symbols_broken": "#" } ],
     "categories": [ "warfare" ],
     "color": "brown",
     "broken_color": "red",

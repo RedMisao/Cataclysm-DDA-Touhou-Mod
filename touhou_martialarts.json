@@ -136,14 +136,14 @@
       {
         "id": "buff_celestial_brawling_tenko_static",
         "name": "Celestial stance (Fallen)",
-        "description": "You're used to do as much damage as possible without care for your safety.  Solid as a keystone, your chance to land hits is increased, you're immune to throws and evasive actions are reduced.",
+        "description": "You're used to do as much damage as possible without care for your safety.  Solid as a keystone, your chance to land hits is increased, and evasive actions are reduced.",
         "unarmed_allowed": true,
         "melee_allowed": true,
         "bonus_dodges": -1,
-        "throw_immune": true,
         "flat_bonuses": [ { "stat": "hit", "scale": 1 } ]
       }
     ],
+    "//": "throw_immune was deprecated... Tenko is not longer immune to being downed",
     "onhit_buffs": [
       {
         "id": "buff_celestial_brawling_tenko_onattack",
@@ -158,10 +158,10 @@
           { "stat": "crit_chance", "scaling-stat": "dex", "scale": 0.2 },
           { "stat": "crit_chance", "scaling-stat": "per", "scale": 0.2 },
           { "stat": "crit_chance", "scaling-stat": "int", "scale": 0.2 }
-        ],
-        "//": "Should tag a debuff on enemies"
+        ]
       }
     ],
+    "//2": "Should tag a debuff on enemies instead of buffing herself",
     "oncrit_buffs": [
       {
         "id": "buff_celestial_brawling_tenko_oncrit",
@@ -176,7 +176,7 @@
           { "stat": "arpen", "type": "cut", "scale": 8 },
           { "stat": "arpen", "type": "stab", "scale": 8 }
         ],
-        "//": "Arpen component should be a debuff on enemies"
+        "//": "Arpen component should also be a debuff on enemies"
       },
       {
         "id": "buff_celestial_brawling_tenko_oncrit2",

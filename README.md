@@ -1,7 +1,7 @@
 # Cataclysm-DDA-Touhou-Mod
 This is a fork of Taberone's [Touhou Professions](https://github.com/Taberone/Cataclysm-DDA-Touhou-Mod) mod.
 
-**The mod's folder goes in /data/mods/**.  Last updated for game version: 2022-12-24 experimental.
+**The mod's folder goes in /data/mods/**.  Last updated for game version: 2022-09-17-0952 experimental.
 
 Also check the [Expansion](https://github.com/RedMisao/Cataclysm-DDA-Touhou-Expansion) mod!
 
@@ -49,7 +49,7 @@ Relatively easy things to add, not in order:
 ## Major milestones
 Relatively hard or complex things to add, not in order:
 * Even MORE 2hus.
-* Things that are currently hardcoded, like new damage types, new resources (plus a visual indicator), new kind of spells (like using proyectiles, different shape, being active at a location, etc.), more mechanics, etc.
+* Things that are currently hardcoded, like new resources (plus a visual indicator), new kind of spells (like using proyectiles, different shape, being active at a location, etc.), more mechanics, etc.
 * Spellcards?
 
 

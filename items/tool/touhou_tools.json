@@ -13,7 +13,7 @@
     "material": [ "plastic", "steel" ],
     "symbol": ";",
     "color": "black",
-    "bashing": 2,
+    "melee_damage": { "bash": 2 },
     "charges_per_use": 5,
     "use_action": [ { "type": "cast_spell", "spell_id": "camera_aya_flash", "no_fail": true, "level": 1 } ],
     "pocket_data": [

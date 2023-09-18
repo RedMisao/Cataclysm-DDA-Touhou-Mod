@@ -11,13 +11,14 @@
             "condition": { "u_has_trait": "VAMPIRE_SPECIES" },
             "effect": [
               {
-                "arithmetic": [ { "u_val": "vitamin", "name": "hblood_vitamin" }, "=", { "arithmetic": [ { "const": 648 }, "+", { "rand": 144 } ] } ]
+                "math": [ "u_val('vitamin', 'name:hblood_vitamin')", "=", "648 + rand(144)" ]
               }
             ]
           }
         ]
       }
-    ]
+    ],
+	"//": "Adds hblood_vitamin if the player is a VAMPIRE_SPECIES plus a smaller random amount, see vampire_bloodthirst_eoc below"
   },
   {
     "id": "mokou_death_eoc",
@@ -26,7 +27,7 @@
     "condition": {
       "and": [
         { "u_has_trait": "PROF_MOKOU" },
-        { "compare_int": [ { "u_val": "var", "var_name": "var_mokoudeath" }, "<", { "rand": 504 } ] }
+        { "math": [ "var_mokoudeath", "<", "rand(504)" ] }
       ]
     },
     "effect": [
@@ -36,13 +37,13 @@
       { "u_add_effect": "mokou_resurrectpain", "duration": "168 hours" },
       { "u_set_hp": 100, "only_increase": true },
       { "u_cast_spell": { "id": "mokou_resurrectionphoenix" }, "targeted": false },
-      { "arithmetic": [ { "u_val": "var", "var_name": "var_mokoudeath" }, "+=", { "const": 168 } ] },
-      { "arithmetic": [ { "u_val": "fatigue" }, "=", { "const": 0 } ] },
-      { "arithmetic": [ { "u_val": "mana" }, "=", { "const": 800 } ] },
-      { "arithmetic": [ { "u_val": "pain" }, "=", { "const": 0 } ] }
+      { "math": [ "var_mokoudeath", "+=", "168" ] },
+      { "math": [ "u_val('fatigue')", "=", "0" ] },
+      { "math": [ "u_val('mana')", "=", "800" ] },
+      { "math": [ "u_pain()", "=", "0" ] }
     ],
-    "//": "ANY trait that revives the character should be lost every time Mokou dies. So far, it's just PORTAL_RESURRECTION ",
-    "//2": "Every time Mokou dies she gets var_mokoudeath, which lasts for 7 days and slowly decreases over time. Every time she revives, the value is checked, so the more she dies in a short time the harder it is for her to not give up for real"
+    "//": "This eoc enables PROF_MOKOU to resurrect/revive. Every time Mokou dies she gets var_mokoudeath, which lasts for 7 days and decreases slowly over time. Every time she revives, the value is checked vs a random number, so the more she dies in a short time the harder it is for her to not give up for real",
+	"//2": "ANY trait that revives the character should be lost every time Mokou dies. So far, it's just PORTAL_RESURRECTION "
   },
   {
     "id": "mokou_resurrect_counter_eoc",
@@ -51,11 +52,14 @@
     "condition": {
       "and": [
         { "u_has_trait": "PROF_MOKOU" },
-        { "compare_int": [ { "u_val": "var", "var_name": "var_mokoudeath" }, ">", { "const": 0 } ] }
+        { "math": [ "var_mokoudeath", ">", "0" ] }
       ]
     },
-    "deactivate_condition": { "compare_int": [ { "u_val": "var", "var_name": "var_mokoudeath" }, "<=", { "const": 0 } ] },
-    "effect": [ { "arithmetic": [ { "u_val": "var", "var_name": "var_mokoudeath" }, "-=", { "const": 1 } ] } ]
+    "deactivate_condition": { "math": [ "var_mokoudeath", "<=", "0" ] },
+    "effect": [ 
+		{ "math": [ "var_mokoudeath", "-=", "1" ] } 
+	],
+	"//": "Reduces var_mokoudeath over time"
   },
   {
     "id": "vampire_bloodthirst_eoc",
@@ -67,7 +71,7 @@
         "run_eocs": [
           {
             "id": "vampire_bloodthirst_veryhigh",
-            "condition": { "compare_int": [ { "u_val": "vitamin", "name": "hblood_vitamin" }, "<", { "const": 144 } ] },
+            "condition": { "math": [ "u_val('vitamin', 'name:hblood_vitamin')", "<", "144" ] },
             "effect": [
               { "u_lose_effect": "bloodthirst_low" },
               { "u_lose_effect": "bloodthirst_medium" },
@@ -79,8 +83,8 @@
             "id": "vampire_bloodthirst_high",
             "condition": {
               "and": [
-                { "compare_int": [ { "u_val": "vitamin", "name": "hblood_vitamin" }, ">=", { "const": 145 } ] },
-                { "compare_int": [ { "u_val": "vitamin", "name": "hblood_vitamin" }, "<", { "const": 288 } ] }
+                { "math": [ "u_val('vitamin', 'name:hblood_vitamin')", ">=", "145" ] },
+                { "math": [ "u_val('vitamin', 'name:hblood_vitamin')", "<", "288" ] }
               ]
             },
             "effect": [
@@ -94,8 +98,8 @@
             "id": "vampire_bloodthirst_medium",
             "condition": {
               "and": [
-                { "compare_int": [ { "u_val": "vitamin", "name": "hblood_vitamin" }, ">=", { "const": 289 } ] },
-                { "compare_int": [ { "u_val": "vitamin", "name": "hblood_vitamin" }, "<", { "const": 432 } ] }
+                { "math": [ "u_val('vitamin', 'name:hblood_vitamin')", ">=", "289" ] },
+                { "math": [ "u_val('vitamin', 'name:hblood_vitamin')", "<", "432" ] }
               ]
             },
             "effect": [
@@ -109,8 +113,8 @@
             "id": "vampire_bloodthirst_low",
             "condition": {
               "and": [
-                { "compare_int": [ { "u_val": "vitamin", "name": "hblood_vitamin" }, ">=", { "const": 433 } ] },
-                { "compare_int": [ { "u_val": "vitamin", "name": "hblood_vitamin" }, "<", { "const": 576 } ] }
+                { "math": [ "u_val('vitamin', 'name:hblood_vitamin')", ">=", "433" ] },
+                { "math": [ "u_val('vitamin', 'name:hblood_vitamin')", "<", "576" ] }
               ]
             },
             "effect": [
@@ -122,7 +126,7 @@
           },
           {
             "id": "vampire_bloodthirst_verylow",
-            "condition": { "and": [ { "compare_int": [ { "u_val": "vitamin", "name": "hblood_vitamin" }, ">=", { "const": 577 } ] } ] },
+            "condition": { "and": [ { "math": [ "u_val('vitamin', 'name:hblood_vitamin')", ">=", "577" ] } ] },
             "effect": [
               { "u_lose_effect": "bloodthirst_low" },
               { "u_lose_effect": "bloodthirst_medium" },

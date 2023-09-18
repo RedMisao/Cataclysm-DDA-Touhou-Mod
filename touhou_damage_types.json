@@ -1,0 +1,23 @@
+[
+  {
+    "id": "soul",
+    "type": "damage_type",
+    "name": "soul",
+    "physical": false,
+    "material_required": false,
+    "magic_color": "white",
+    "mon_difficulty": true,
+    "immune_flags": { "character": [ "SOULDMG_IMMUNE" ] },
+    "//": "soul/spirit damage, should do no dmg to things like robots and c:dda zombies, double (more?) to youkai, normal to everything else like normal wildlife"
+  },
+  {
+    "id": "soul",
+    "type": "damage_info_order",
+    "info_display": "detailed",
+    "ablative_info": { "order": 1000, "show_type": true },
+    "bionic_info": { "order": 1000, "show_type": true },
+    "melee_combat_info": { "order": 1000, "show_type": true },
+    "pet_prot_info": { "order": 1000, "show_type": true },
+	"protection_info": { "order": 1000, "show_type": true }
+  }
+]

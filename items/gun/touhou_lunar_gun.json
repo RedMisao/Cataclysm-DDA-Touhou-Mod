@@ -8,7 +8,7 @@
     "weight": "750 g",
     "price_postapoc": 5500,
     "to_hit": { "balance": "good", "grip": "weapon", "length": "hand", "surface": "any" },
-    "bashing": 12,
+    "melee_damage": { "bash": 12 },
     "material": [ "plastic", "steel" ],
     "symbol": "(",
     "looks_like": "glock_17",
@@ -39,7 +39,7 @@
     "longest_side": "1258 mm",
     "price_postapoc": 6000,
     "to_hit": { "balance": "neutral", "grip": "solid", "length": "long", "surface": "point" },
-    "bashing": 12,
+    "melee_damage": { "bash": 12 },
     "material": [ "steel", "wood" ],
     "symbol": "(",
     "looks_like": "mosin91_30",
@@ -65,7 +65,7 @@
     ],
     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "ammo_lunar_medium": 5 } } ],
     "relic_data": { "charge_info": { "regenerate_ammo": true, "recharge_type": "periodic", "time": "48 s" } },
-    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NO_RELOAD", "NO_UNLOAD", "STAB", "STURDY", "TRADER_AVOID" ],
+    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NO_RELOAD", "NO_UNLOAD", "STURDY", "TRADER_AVOID" ],
     "//": "The SSiB training rifle is either based on a Mosin or the Japanese Type 89 that used 'type 38 chamber in 7.62×38mmR tracer' according to some post on Reddit. However, Type 89 doesn't seem to exist, only the Type 38 (6.5×50mm Arisaka) or 99 (7.7×58mm Arisaka), which is the one I'll use as basis",
     "//2": "Recharge time should be full from empty every 30 s. However, recharge time is automatic and there's a bug making artifacts recharge at twice the speed, so total recharge time is set at 120 s ingame"
   }

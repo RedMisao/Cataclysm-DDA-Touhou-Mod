@@ -245,8 +245,8 @@
       },
       {
         "pocket_type": "CONTAINER",
-        "max_contains_volume": "20 ml",
-        "max_contains_weight": "50 g",
+        "max_contains_volume": "40 ml",
+        "max_contains_weight": "10 g",
         "max_item_length": "25 cm",
         "holster": true,
         "moves": 200

@@ -10,8 +10,7 @@
     "price": 0,
     "price_postapoc": 0,
     "to_hit": { "balance": "good", "grip": "weapon", "length": "hand", "surface": "line" },
-    "bashing": 8,
-    "cutting": 25,
+    "melee_damage": { "bash": 8, "cut": 25 },
     "material": [ "wood", "steel", "silver" ],
     "symbol": ";",
     "color": "dark_gray",
@@ -23,7 +22,7 @@
     "range": 24,
     "recoil": 0,
     "effects": [ "CASELESS_ROUNDS", "NEVER_MISFIRES", "NOGIB" ],
-    "flags": [ "DURABLE_MELEE", "STAB" ]
+    "flags": [ "DURABLE_MELEE" ]
   },
   {
     "id": "myon_bullet_bullet",
@@ -35,8 +34,7 @@
     "longest_side": "2 cm",
     "price_postapoc": 0,
     "to_hit": { "balance": "neutral", "grip": "weapon", "length": "hand", "surface": "any" },
-    "bashing": 2,
-    "cutting": 0,
+    "melee_damage": { "bash": 2 },
     "material": [ "steel" ],
     "symbol": ";",
     "color": "dark_gray",

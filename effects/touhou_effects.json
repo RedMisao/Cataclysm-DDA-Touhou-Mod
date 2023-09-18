@@ -107,6 +107,15 @@
     "max_effective_intensity": 1
   },
   {
+    "id": "slow_fantornado",
+    "type": "effect_type",
+    "name": [ "Slow (Wind)" ],
+    "desc": [ "Winds around you impede your movement." ],
+    "base_mods": { "dex_mod": [ -1 ], "speed_mod": [ -25 ] },
+    "max_intensity": 1,
+    "max_effective_intensity": 1
+  },
+  {
     "id": "smoke",
     "type": "effect_type",
     "name": [ { "ctxt": "inhaled", "str": "Smoke" } ],
@@ -118,7 +127,7 @@
     "max_duration": "10 m",
     "base_mods": { "str_mod": [ -1 ], "dex_mod": [ -1 ], "cough_chance": [ 10 ] },
     "show_in_info": true,
-    "immunity_flags": [ "PROF_MOKOU" ],
+    "immune_flags": [ "PROF_MOKOU" ],
     "//": "Exactly the same flag, only adds immunity for Mokou"
   },
   {

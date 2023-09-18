@@ -36,7 +36,6 @@
       "OVERSIZE",
       "SEMITANGIBLE",
       "TRADER_AVOID",
-      "UNARMED_WEAPON",
       "ZERO_WEIGHT"
     ]
   },
@@ -101,7 +100,6 @@
       "OVERSIZE",
       "SEMITANGIBLE",
       "TRADER_AVOID",
-      "UNARMED_WEAPON",
       "ZERO_WEIGHT"
     ]
   },
@@ -233,7 +231,7 @@
     "weight": "200 g",
     "volume": "300 ml",
     "to_hit": { "balance": "neutral", "grip": "weapon", "length": "hand", "surface": "every" },
-    "bashing": 2,
+    "melee_damage": { "bash": 2 },
     "material": [ "magic_fire" ],
     "symbol": "o",
     "color": "red",
@@ -271,8 +269,7 @@
     "explosion": { "power": 250, "max_noise": 12 },
     "use_action": {
       "type": "explosion",
-      "explosion": { "power": 250 },
-      "no_deactivate_msg": "The ball is already unstable! It's a matter of time until it explodes!"
+      "explosion": { "power": 250 }
     },
     "flags": [ "LIGHT_32", "TRADER_AVOID" ]
   },
@@ -287,8 +284,7 @@
     "longest_side": "300 cm",
     "price_postapoc": 0,
     "to_hit": { "balance": "good", "grip": "weapon", "length": "long", "surface": "line" },
-    "bashing": 8,
-    "cutting": 32,
+    "melee_damage": { "bash": 8, "cut": 32 },
     "material": [ "magic_blood" ],
     "symbol": "/",
     "color": "red",

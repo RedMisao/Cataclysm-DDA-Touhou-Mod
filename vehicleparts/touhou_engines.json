@@ -7,7 +7,7 @@
     "description": "Test engine for kaenbyou_wheelbarrow ",
     "item": "reactor_corpsecart",
     "location": "engine_block",
-    "symbol": "*",
+    "variants": [ { "symbols": "*", "symbols_broken": "#" } ],
     "color": "light_red",
     "broken_color": "red",
     "durability": 200,

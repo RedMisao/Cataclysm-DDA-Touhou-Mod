@@ -1,11 +1,22 @@
 [
   {
-    "id": "seiga_charmcorpse",
+    "id": "seiga_charm",
     "type": "SPELL",
-    "name": "Meihuo Sile",
-    "description": "Charm enemies by doing the equivalent of spiritual lobotomy.  Helped by a handy skill, they temporarily believe you're on their side.",
+    "name": "Mèilì rénxíng",
+    "description": "A dark taoist technique that allows the user to charm humans (*), working better the worse state the target is.  (*) Should work for beings that are close enough too, right?",
     "spell_class": "NONE",
-    "valid_targets": [ "hostile" ],
+    "valid_targets": [ "ally", "hostile" ],
+    "targeted_monster_ids": [ 
+	  "mon_mutant_alpha", 
+	  "mon_mutant_alpha_boss", 
+	  "mon_mutant_antler", 
+	  "mon_mutant_arthropod", 
+	  "mon_mutant_camouflaged", 
+	  "mon_mutant_evolved", 
+	  "mon_mutant_experimental", 
+	  "mon_mutant_mollusk" 
+	],
+    "targeted_monster_species": [ "FERAL", "HUMAN", "ZOMBIE" ],
     "effect": "charm_monster",
     "shape": "blast",
     "damage_type": "pure",
@@ -25,7 +36,8 @@
     "base_energy_cost": 200,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS" ],
-    "//": "Name is 'charm dead' in Chinese. Based on the names of her second spellcard"
+    "//": "Name is 'charm humanoid' in Chinese",
+	"//2": "I thought about splitting the spell into a guaranteed charm if the target is/was human, and a chance to fail with different effects if it's closer-but-not-quite-human (like explode, heal it, etc), but it was too complex for relatively little return, at least for now"
   },
   {
     "id": "seiga_chidrain",
