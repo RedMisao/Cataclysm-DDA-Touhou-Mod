@@ -37,7 +37,7 @@
       [ "underbarrel", 1 ]
     ],
     "weapon_category": [ "AUTOMATIC_PISTOLS" ],
-    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NO_UNLOAD", "NON-FOULING", "TRADER_AVOID" ]
+    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NO_UNLOAD", "NON_FOULING", "TRADER_AVOID" ]
   },
   {
     "id": "lunar_rifle",
@@ -77,6 +77,6 @@
       [ "stock", 1 ],
       [ "underbarrel", 1 ]
     ],
-    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NO_UNLOAD", "STURDY", "NON-FOULING", "TRADER_AVOID" ]
+    "flags": [ "NEEDS_NO_LUBE", "NEVER_JAMS", "NO_UNLOAD", "STURDY", "NON_FOULING", "TRADER_AVOID" ]
   }
 ]
