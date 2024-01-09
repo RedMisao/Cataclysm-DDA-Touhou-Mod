@@ -18,14 +18,20 @@
       { "part": "ARM_R", "neutral": 3 },
       { "part": "TORSO", "neutral": 3 }
     ],
-    "cancels": [ "FLIMSY", "FLIMSY2", "FLIMSY3", "THICKSKIN", "THINSKIN", "TOUGH", "TOUGH2" ],
-    "//": "Ideally she should have minor reduction to pain, half of PAINRESIST if not 66%. More ideally, she should gain pain resist buffs while fighting on melee"
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ { "value": "PAIN", "multiply": -0.16 } ] 
+      } 
+    ],
+    "cancels": [ "FLIMSY", "FLIMSY2", "FLIMSY3", "PAINRESIST", "THICKSKIN", "THINSKIN", "TOUGH", "TOUGH2", "TOUGH3" ],
+    "//": "Maybe replace the passive pain resist for pain resist/reduction while fighting"
   },
   {
     "id": "GYOKUTO_SPECIES",
     "type": "mutation",
     "name": "Gyokuto",
-    "description": "You're a Moon rabbit. Your kind was [REDACTED] by the Lunarians to serve them like tools. Not that you mind (that much), as you're naturally carefree. How convenient.",
+    "description": "You're a Moon rabbit.  Your kind was [REDACTED] by the Lunarians to serve them like tools.  Not that you mind (that much), as you're naturally carefree.  How convenient.",
     "points": 0,
     "profession": true,
     "purifiable": false,
@@ -35,8 +41,33 @@
     "movecost_modifier": 0.95,
     "ugliness": -2,
     "weight_capacity_modifier": 0.8,
-    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "DEXTERITY", "add": 2 }, { "value": "PERCEPTION", "add": 2 } ] } ],
-    "cancels": [ "BADHEARING", "PRETTY", "BEAUTIFUL", "BEAUTIFUL2", "BEAUTIFUL3", "UGLY", "DEFORMED", "DEFORMED2", "DEFORMED3" ],
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "DEXTERITY", "add": 2 }, 
+          { "value": "PERCEPTION", "add": 2 } 
+		] 
+      } 
+    ],
+    "cancels": [ 
+      "BADHEARING", 
+      "DEAF", 
+      "CHAOTIC_BAD", 
+      "UNSTABLE", 
+      "CHEMIMBALANCE", 
+      "HYPEROPIC", 
+      "MYOPIC", 
+      "PRETTY", 
+      "BEAUTIFUL", 
+      "BEAUTIFUL2", 
+      "BEAUTIFUL3", 
+      "SCHIZOPHRENIC", 
+      "UGLY", 
+      "DEFORMED", 
+      "DEFORMED2", 
+      "DEFORMED3" 
+    ],
     "//": "This trait should also grant immunity to mental effects, like the taint and visuals effects"
   },
   {
@@ -51,7 +82,7 @@
     "valid": false,
     "ugliness": -2,
     "visibility": 3,
-    "cancels": [ "FELINE_EARS", "URSINE_EARS", "ELFA_EARS", "CANINE_EARS", "LUPINE_EARS" ]
+    "cancels": [ "CANINE_EARS", "ELFA_EARS", "FELINE_EARS", "LUPINE_EARS", "MOUSE_EARS", "RABBIT_EARS", "URSINE_EARS" ]
   },
   {
     "id": "GYOKUTO_TAIL",
@@ -71,6 +102,7 @@
       "TAIL_FIN",
       "TAIL_FLUFFY",
       "TAIL_LONG",
+      "TAIL_RABBIT",
       "TAIL_RAPTOR",
       "TAIL_RAT",
       "TAIL_STING",
@@ -107,7 +139,12 @@
     "//": "Can't find how to use percentage dmg reduction, this value should be 66% of all received fire damage + base say, 4, so it blocks minor fire attacks instead of being completely immune",
     "movecost_modifier": 0.8,
     "weakness_to_water": 1,
-    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "INTELLIGENCE", "add": -2 } ] } ]
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ { "value": "INTELLIGENCE", "add": -2 } ] 
+      } 
+    ]
   },
   {
     "id": "HOURAI_SPECIES",
@@ -119,8 +156,20 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "healing_awake": 1,
-    "flags": [ "BIO_IMMUNE", "NO_DISEASE", "NO_RADIATION", "PARAIMMUNE" ]
+    "healing_awake": 2,
+    "mending_modifier": 2,
+    "flags": [ "BIO_IMMUNE", "INFECTION_IMMUNE", "NO_DISEASE", "NO_RADIATION", "PARAIMMUNE", "POISRESIST" ],
+    "cancels": [ 
+      "ASTHMA", 
+      "CHAOTIC_BAD", 
+      "UNSTABLE", 
+      "CHEMIMBALANCE", 
+      "DISIMMUNE", 
+      "DISRESISTANT", 
+      "EATPOISON", 
+      "INFIMMUNE", 
+      "INFRESIST" 
+    ]
   },
   {
     "id": "KASHA_SPECIES",
@@ -134,7 +183,7 @@
     "valid": false,
     "active": true,
     "armor": [ { "parts": "ALL", "heat": 6 } ],
-    "ugliness": 3,
+    "ugliness": 4,
     "visibility": 4,
     "weakness_to_water": 1,
     "transform": { "target": "KASHA_SPECIES_active", "active": false, "moves": 100 },
@@ -146,7 +195,7 @@
     "type": "mutation",
     "name": "Kasha (youkai form)",
     "copy-from": "KASHA_SPECIES",
-    "description": "You're a feline-looking youkai originating from (Former) Hell.  Currently, you're transformed into your feline-like form.  Activate the mutation to switch forms.",
+    "description": "You're a feline-looking youkai originating from (Former) Hell.  Currently, you're transformed into your feline-like form.  Activate the mutation to switch to human form.",
     "active": true,
     "movecost_modifier": 0.9,
     "social_modifiers": { "persuade": -4 },
@@ -156,6 +205,7 @@
     "rand_cut_bonus": { "min": 2, "max": 4 },
     "weakness_to_water": 2,
     "weight_capacity_modifier": 0.33,
+	"encumbrance_always": [ [ "hand_l", 30 ], [ "hand_r", 30 ] ],
     "enchantments": [
       {
         "condition": "ALWAYS",
@@ -181,7 +231,7 @@
     "valid": false,
     "ugliness": -2,
     "visibility": 3,
-    "cancels": [ "FELINE_EARS", "URSINE_EARS", "ELFA_EARS", "CANINE_EARS", "LUPINE_EARS" ]
+    "cancels": [ "CANINE_EARS", "ELFA_EARS", "FELINE_EARS", "LUPINE_EARS", "MOUSE_EARS", "RABBIT_EARS", "URSINE_EARS" ]
   },
   {
     "id": "KASHA_TAILS",
@@ -201,6 +251,7 @@
       "TAIL_FIN",
       "TAIL_FLUFFY",
       "TAIL_LONG",
+      "TAIL_RABBIT",
       "TAIL_RAPTOR",
       "TAIL_RAT",
       "TAIL_STING",
@@ -209,10 +260,41 @@
     ]
   },
   {
+    "id": "LUNARDIET",
+    "type": "mutation",
+    "name": { "str": "Lunar diet" },
+    "description": "Eating food wasn't a problem until this point.  It's possible for you to eat food coming from Earth and other impure places, but you will obtain less nutrition from it.",
+    "points": 0,
+    "profession": true,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": false,
+    "vitamins_absorb_multi": [
+      [ "cured_meat", [ [ "calcium", 0.5 ], [ "iron", 0.5 ], [ "vitA", 0.5 ], [ "vitB", 0.5 ], [ "vitC", 0.5 ] ] ],
+      [ "flesh", [ [ "calcium", 0.5 ], [ "iron", 0.5 ], [ "vitA", 0.5 ], [ "vitB", 0.5 ], [ "vitC", 0.5 ] ] ],
+      [
+        "processed_food",
+        [ [ "calcium", 0.85 ], [ "iron", 0.85 ], [ "vitA", 0.85 ], [ "vitB", 0.85 ], [ "vitC", 0.85 ] ]
+      ],
+      [ "veggy", [ [ "calcium", 0.9 ], [ "iron", 0.9 ], [ "vitA", 0.9 ], [ "vitB", 0.9 ], [ "vitC", 0.9 ] ] ]
+    ]
+  },
+  {
+    "id": "MYSTERIOUS",
+    "type": "mutation",
+    "name": "Mysterious",
+    "points": 0,
+    "description": "You have a mysterious past.",
+    "profession": false,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": true
+  },
+  {
     "id": "NON_HUMAN_SPECIES",
     "type": "mutation",
     "name": "Non-human",
-    "description": "You're fundamentally not human despite looking like one, and thus you're not bound by their customs and rules. You're 'just' 'off' according to genuine humans.",
+    "description": "You're fundamentally not human despite looking like one, and thus you're not bound by their customs and rules.  You're 'just' 'off' according to genuine humans.",
     "points": 0,
     "profession": true,
     "purifiable": false,
@@ -244,6 +326,7 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
+    "armor": [ { "parts": "ALL", "bash": -1 } ],
     "stamina_regen_modifier": 0.25,
     "movecost_modifier": 0.8,
     "ugliness": -2,
@@ -255,14 +338,14 @@
         "mutations": [ "TOLERANCE" ]
       }
     ],
-    "cancels": [ "PRETTY", "UGLY", "DEFORMED", "DEFORMED2", "DEFORMED3", "CLUMSY", "SLOWRUNNER", "LIGHT_BONES" ],
+    "cancels": [ "CLUMSY", "LIGHT_BONES", "LIGHTWEIGHT", "PRETTY", "UGLY", "DEFORMED", "DEFORMED2", "DEFORMED3", "SLOWRUNNER" ],
     "//": "TOLERANCE because I can't find a way to set alcohol resistance only to something like 95%"
   },
   {
     "id": "TSUCHIGUMO_SPECIES",
     "type": "mutation",
     "name": "Tsuchigumo (human form)",
-    "description": "You're a spider youkai originating from caves and dark places in the Earth.  Currently, you're posing as a human.  Activate the mutation to switch forms.",
+    "description": "You're a spider youkai originating from caves and dark places in the Earth.  Currently, you're posing as a human.  Activate the mutation to switch to youkai form.",
     "points": 0,
     "profession": true,
     "purifiable": false,
@@ -270,7 +353,12 @@
     "valid": false,
     "active": true,
     "armor": [ { "parts": "ALL", "acid": 6 } ],
-    "enchantments": [ { "condition": "ALWAYS", "mutations": [ "WEB_WALKER" ] } ],
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "mutations": [ "WEB_WALKER" ] 
+      } 
+    ],
     "transform": { "target": "TSUCHIGUMO_SPECIES_active", "active": false, "moves": 100 },
     "flags": [ "BIO_IMMUNE", "NO_DISEASE", "PARAIMMUNE" ],
     "//": "Also, add some kind of social bonus for enemies with the YOUKAI trait or plus ARACHNID. In fact I should probably check all social interactions of Youkai in general at some point",
@@ -281,14 +369,20 @@
     "type": "mutation",
     "name": "Tsuchigumo (youkai form)",
     "copy-from": "TSUCHIGUMO_SPECIES",
-    "description": "You're a spider youkai originating from caves and dark places in the Earth.  Currently, you're (partially) transformed into your youkai form, revealing your hidden legs.  Activate the mutation to switch forms.",
+    "description": "You're a spider youkai originating from caves and dark places in the Earth.  Currently, you're (partially) transformed into your youkai form, revealing your hidden legs.  Activate the mutation to switch to human form.",
     "active": true,
     "movecost_obstacle_modifier": 0.5,
     "movecost_swim_modifier": 1.5,
     "social_modifiers": { "intimidate": 4, "persuade": -4 },
-    "ugliness": 4,
+    "ugliness": 6,
     "visibility": 8,
-    "enchantments": [ { "condition": "ALWAYS", "mutations": [ "WEB_WALKER" ], "values": [ { "value": "METABOLISM", "multiply": 0.2 } ] } ],
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "mutations": [ "WEB_WALKER" ], 
+        "values": [ { "value": "METABOLISM", "multiply": 0.2 } ] 
+      } 
+    ],
     "transform": { "target": "TSUCHIGUMO_SPECIES", "active": false, "moves": 100 },
     "extend": { "flags": [ "CLIMB_NO_LADDER", "LARGE", "WEB_RAPPEL" ] }
   },
@@ -302,9 +396,9 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "healing_awake": 4,
+    "healing_awake": 2,
     "mending_modifier": 2,
-    "//": "Should be (1, 1, 0.5), then and double or triple that by 'digesting' human blood, with an active ability",
+    "//": "Should be double or triple that by 'digesting' human blood",
     "movecost_modifier": 0.8,
     "ugliness": -4,
     "visibility": 1,
@@ -360,10 +454,11 @@
     "type": "mutation",
     "name": "Vampire shapeshifting (bat)",
     "copy-from": "VAMPIRE_BAT_REMI",
-    "description": "If nothing else revealed you're a vampire, this will surely do.  You're currently transformed into bat form.  Activate the mutation to switch forms.",
+    "description": "If nothing else revealed you're a vampire, this will surely do.  You're currently transformed into bat form.  Activate the mutation to switch to human form.",
     "active": true,
     "ugliness": 4,
     "visibility": 6,
+    "encumbrance_always": [ [ "hand_l", 30 ], [ "hand_r", 30 ] ],
     "weight_capacity_modifier": 0.33,
     "enchantments": [
       {
@@ -377,8 +472,7 @@
       }
     ],
     "transform": { "target": "VAMPIRE_BAT_REMI", "active": false, "moves": 100 },
-    "extend": { "flags": [ "SMALL" ] },
-    "cancels": [ "WINGS_BAT", "WINGS_BIRD", "WINGS_BUTTERFLY", "WINGS_INSECT", "WINGS_STUB" ]
+    "extend": { "flags": [ "SMALL" ] }
   },
   {
     "id": "YOUKAI_SPECIES",
@@ -392,8 +486,13 @@
     "valid": false,
     "social_modifiers": { "intimidate": 4 },
     "visibility": 1,
-    "enchantments": [ { "condition": "ALWAYS", "mutations": [ "CANNIBAL" ] } ],
-    "cancels": [ "MORE_PAIN", "PAINRESIST", "MORE_PAIN2", "MORE_PAIN3", "PACIFIST", "PSYCHOPATH", "VEGETARIAN", "HERBIVORE" ],
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+	    "mutations": [ "CANNIBAL" ] 
+	  } 
+	],
+    "cancels": [ "MORE_PAIN", "MORE_PAIN2", "MORE_PAIN3", "PACIFIST", "PAINRESIST", "PSYCHOPATH", "VEGETARIAN", "HERBIVORE" ],
     "//": "I need to set the penalty (and bonus) of eating human flesh to 0",
     "//2": "There are peaceful youkai, so I need to further divide this into subspecies such as 'Vampire' "
   },
@@ -429,7 +528,7 @@
     "id": "SPIRIT_UNTRAINED",
     "type": "mutation",
     "name": "Spiritual energy user (untrained)",
-    "description": "While you can use spiritual energy, the lack of training makes you regenerate it much slower over time, but still, much faster than the average human.",
+    "description": "While you can use spiritual energy, the lack of training makes you regenerate it much slower over time, still much faster than the average human.",
     "points": 0,
     "profession": true,
     "purifiable": false,
@@ -438,177 +537,6 @@
     "mana_regen_multiplier": 4,
     "cancels": [  ],
     "//": "This equals a full mana pool every 2 h or so"
-  },
-  {
-    "id": "PROF_AYA",
-    "type": "mutation",
-    "name": "Wind god girl",
-    "description": "You're a member of the Tengu, specifically of the Crow caste.",
-    "points": 0,
-    "profession": true,
-    "purifiable": false,
-    "starting_trait": false,
-    "valid": false,
-    "movecost_modifier": 0.9399,
-    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "DEXTERITY", "add": 2 }, { "value": "INTELLIGENCE", "add": 1 } ] } ]
-  },
-  {
-    "id": "PROF_FLAN",
-    "type": "mutation",
-    "name": "The Devil's Destructive Little Sister",
-    "description": "You're the little sister of the Scarlet Devil.",
-    "points": 0,
-    "profession": true,
-    "purifiable": false,
-    "starting_trait": false,
-    "valid": false,
-    "bash_dmg_bonus": 4,
-    "ugliness": -2,
-    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "STRENGTH", "add": 2 } ] } ]
-  },
-  {
-    "id": "PROF_IKU",
-    "type": "mutation",
-    "name": "Scarlet messenger",
-    "description": "You're the Dragon Palace messenger in charge of Gensokyo, and the Hinanawi clan as of late.",
-    "points": 0,
-    "profession": true,
-    "purifiable": false,
-    "starting_trait": false,
-    "valid": false,
-    "initial_ma_styles": [ "style_celestial_brawling_iku" ]
-  },
-  {
-    "id": "PROF_KAENBYOU",
-    "type": "mutation",
-    "name": "Corpse carrier cheering hellcat",
-    "description": "You're one of the pets of the mistress of Chireiden, a Former Hell mansion.  Your job is to carry corpses to the Hell of Blazing fires (read: the Remains of Blazing Hell), to regulate its heat with your trusty corpse wheelbarrow.",
-    "points": 0,
-    "profession": true,
-    "purifiable": false,
-    "starting_trait": false,
-    "valid": false,
-    "//": "Add like 2 - 4 soul dmg reduction when I implement that"
-  },
-  {
-    "id": "PROF_MEILING",
-    "type": "mutation",
-    "name": "Rainbow Gatekeeper",
-    "description": "You're the laid back, sleepy, yet loyal guard and garden keeper of the Scarlet Devil Mansion.",
-    "points": 0,
-    "profession": true,
-    "purifiable": false,
-    "starting_trait": false,
-    "valid": false,
-    "fatigue_modifier": 0.25,
-    "fatigue_regen_modifier": 0.25,
-    "initial_ma_styles": [ "style_meiling" ],
-    "cancels": [ "EASYSLEEPER2", "SLEEPY", "SLEEPY2" ]
-  },
-  {
-    "id": "PROF_MOKOU",
-    "type": "mutation",
-    "name": "Immortal Guide of the Bamboo Forest",
-    "description": "Your countless years of fighting your rival has granted you lots of fighting skills, primarily with kicking attacks and strong direct blows.",
-    "points": 0,
-    "profession": true,
-    "purifiable": false,
-    "starting_trait": false,
-    "valid": false,
-    "initial_ma_styles": [ "style_mokou" ],
-    "cancels": [ "NOPAIN", "PAINRESIST" ],
-    "flags": [ "HEAT_IMMUNE" ]
-  },
-  {
-    "id": "PROF_OKUU",
-    "type": "mutation",
-    "name": "Vessel of Yatagarasu",
-    "description": "You're the pet of the mistress of Chireiden, a Former Hell mansion.  Your job was helping Orin in regulate the Hell of Blazing Fires, but you were \"promoted\" into being a key component from the Underground Nuclear Reactor after absorbing the remains of Yatagarasu, and later helping the Kappa into developing a more automatic Fusion version.  A wild life for sure.",
-    "points": 0,
-    "profession": true,
-    "purifiable": false,
-    "starting_trait": false,
-    "valid": false,
-    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "INTELLIGENCE", "add": -1 } ] } ]
-  },
-  {
-    "id": "PROF_REMI",
-    "type": "mutation",
-    "name": "Eternal Young Scarlet Moon",
-    "description": "You're the Mistress of the Scarlet Devil Mansion.",
-    "points": 0,
-    "profession": true,
-    "purifiable": false,
-    "starting_trait": false,
-    "valid": false,
-    "ugliness": -1
-  },
-  {
-    "id": "PROF_TENKO",
-    "type": "mutation",
-    "name": "Girl between the Spheres of Perception",
-    "description": "You're the Eldest daughter of the Hinanawi clan.  Very carefree, very problematic, and very spoiled, you do what you want whenever you want.",
-    "points": 0,
-    "profession": true,
-    "purifiable": false,
-    "starting_trait": false,
-    "valid": false,
-    "initial_ma_styles": [ "style_celestial_brawling_tenko" ]
-  },
-  {
-    "id": "PROF_YAMAME",
-    "type": "mutation",
-    "name": "Bright web from the dark cave",
-    "description": "You're the good-natured earth spider youkai living at the Underground entrance.",
-    "points": 0,
-    "profession": true,
-    "purifiable": false,
-    "starting_trait": false,
-    "valid": false
-  },
-  {
-    "id": "PROF_YOUMU",
-    "type": "mutation",
-    "name": "Half-Human Half-Phantom dual-wielding gardener",
-    "description": "You're the gardener and guardian of Hakugyokurou, a Netherworld mansion.",
-    "points": 0,
-    "profession": true,
-    "purifiable": false,
-    "starting_trait": false,
-    "valid": false,
-    "social_modifiers": { "lie": -2 },
-    "initial_ma_styles": [ "style_youmu" ]
-  },
-  {
-    "id": "LUNARDIET",
-    "type": "mutation",
-    "name": { "str": "Lunar diet" },
-    "description": "Eating food wasn't a problem until this point.  It's possible for you to eat food coming from Earth and other impure places, but you will obtain slight less nutrition from it.",
-    "points": 0,
-    "profession": true,
-    "purifiable": false,
-    "starting_trait": false,
-    "valid": false,
-    "vitamins_absorb_multi": [
-      [ "cured_meat", [ [ "calcium", 0.85 ], [ "iron", 0.85 ], [ "vitA", 0.85 ], [ "vitB", 0.85 ], [ "vitC", 0.85 ] ] ],
-      [ "flesh", [ [ "calcium", 0.85 ], [ "iron", 0.85 ], [ "vitA", 0.85 ], [ "vitB", 0.85 ], [ "vitC", 0.85 ] ] ],
-      [
-        "processed_food",
-        [ [ "calcium", 0.95 ], [ "iron", 0.95 ], [ "vitA", 0.95 ], [ "vitB", 0.95 ], [ "vitC", 0.95 ] ]
-      ],
-      [ "veggy", [ [ "calcium", 0.95 ], [ "iron", 0.95 ], [ "vitA", 0.95 ], [ "vitB", 0.95 ], [ "vitC", 0.95 ] ] ]
-    ]
-  },
-  {
-    "id": "MYSTERIOUS",
-    "type": "mutation",
-    "name": "Mysterious",
-    "points": 0,
-    "description": "You have a mysterious past.",
-    "profession": false,
-    "purifiable": false,
-    "starting_trait": false,
-    "valid": true
   },
   {
     "id": "WINGS_HELLRAVEN",
@@ -634,7 +562,12 @@
     "copy-from": "WINGS_HELLRAVEN",
     "description": "Your wings are now prepared for flying.  Activate the mutation to fold your wings, disabling flight.",
     "active": true,
-    "enchantments": [ { "condition": "ALWAYS", "ench_effects": [ { "effect": "utsuho_levitation", "intensity": 1 } ] } ],
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+	    "ench_effects": [ { "effect": "utsuho_levitation", "intensity": 1 } ] 
+      } 
+    ],
     "transform": { "target": "WINGS_HELLRAVEN", "active": false, "moves": 100 }
   },
   {
@@ -660,7 +593,12 @@
     "copy-from": "WINGS_TENGUCROW",
     "description": "Your wings are now prepared for flying.  Activate to disable flight.",
     "active": true,
-    "enchantments": [ { "condition": "ALWAYS", "ench_effects": [ { "effect": "aya_levitation", "intensity": 1 } ] } ],
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "ench_effects": [ { "effect": "aya_levitation", "intensity": 1 } ] 
+      } 
+    ],
     "transform": { "target": "WINGS_TENGUCROW", "msg_transform": "You relax your wings.", "active": false, "moves": 100 }
   },
   {
@@ -674,5 +612,195 @@
     "starting_trait": false,
     "valid": false,
     "flags": [ "GLARE_RESIST", "HEAT_IMMUNE", "NO_RADIATION", "PARAIMMUNE" ]
+  },
+  {
+    "id": "PROF_AYA",
+    "type": "mutation",
+    "name": "Wind god girl",
+    "description": "You're a member of the Tengu, belonging to the Crow caste.",
+    "points": 0,
+    "profession": true,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": false,
+    "movecost_modifier": 0.9399,
+    "enchantments": [ 
+      { 
+      "condition": "ALWAYS", 
+      "values": [ 
+	    { "value": "DEXTERITY", "add": 2 }, 
+        { "value": "INTELLIGENCE", "add": 1 } 
+      ] 
+      } 
+    ]
+  },
+  {
+    "id": "PROF_FLAN",
+    "type": "mutation",
+    "name": "The Devil's Destructive Little Sister",
+    "description": "You're the little sister of the Scarlet Devil.",
+    "points": 0,
+    "profession": true,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": false,
+    "bash_dmg_bonus": 4,
+    "ugliness": -2,
+    "enchantments": [ 
+      { 
+      "condition": "ALWAYS", 
+      "values": [ { "value": "STRENGTH", "add": 2 } ] 
+      } 
+    ]
+  },
+  {
+    "id": "PROF_IKU",
+    "type": "mutation",
+    "name": "Scarlet messenger",
+    "description": "You're the Dragon Palace messenger in charge of Gensokyo, and the Hinanawi clan as of late.",
+    "points": 0,
+    "profession": true,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": false,
+    "initial_ma_styles": [ "style_celestial_brawling_iku" ]
+  },
+  {
+    "id": "PROF_KAENBYOU",
+    "type": "mutation",
+    "name": "Corpse carrier cheering hellcat",
+    "description": "You're one of the pets of the mistress of Chireiden, a Former Hell mansion.  Your job is to carry corpses to the Hell of Blazing fires (read: the Remains of Blazing Hell), to regulate its heat with your trusty corpse wheelbarrow.",
+    "points": 0,
+    "profession": true,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": false,
+    "armor": [ { "parts": "ALL", "soul": 2 } ]
+  },
+  {
+    "id": "PROF_MEILING",
+    "type": "mutation",
+    "name": "Rainbow Gatekeeper",
+    "description": "You're the laid back, sleepy, yet loyal guard and garden keeper of the Scarlet Devil Mansion.",
+    "points": 0,
+    "profession": true,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": false,
+    "fatigue_modifier": 0.25,
+    "fatigue_regen_modifier": 0.25,
+    "initial_ma_styles": [ "style_meiling" ],
+    "enchantments": [ 
+      { 
+      "condition": "ALWAYS", 
+      "values": [ { "value": "SLEEPY", "add": 25 } ]
+      } 
+    ],
+    "cancels": [ "EASYSLEEPER", "EASYSLEEPER2", "HEAVYSLEEPER2", "INSOMNIA", "SLEEPY", "SLEEPY2" ],
+    "flags": [ "DEFT", "HEAVYSLEEPER" ]
+  },
+  {
+    "id": "PROF_MOKOU",
+    "type": "mutation",
+    "name": "Immortal Guide of the Bamboo Forest",
+    "description": "Your countless years of fighting your rival has granted you lots of fighting skills, primarily with kicking attacks and strong direct blows.",
+    "points": 0,
+    "profession": true,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": false,
+    "initial_ma_styles": [ "style_mokou" ],
+    "cancels": [ "NOPAIN", "PAINRESIST" ],
+    "flags": [ "HEAT_IMMUNE" ]
+  },
+  {
+    "id": "PROF_OKUU",
+    "type": "mutation",
+    "name": "Vessel of Yatagarasu",
+    "description": "You're the pet of the mistress of Chireiden, a Former Hell mansion.  Your job was helping Orin in regulate the Hell of Blazing Fires, but you were \"promoted\" into being a key component from the Underground Nuclear Reactor after absorbing the remains of Yatagarasu, and later helping the Kappa into developing a more automatic Fusion version.  A wild life for sure.",
+    "points": 0,
+    "profession": true,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": false,
+    "enchantments": [ 
+      { 
+      "condition": "ALWAYS", 
+      "values": [ { "value": "INTELLIGENCE", "add": -1 } ] 
+      } 
+    ]
+  },
+  {
+    "id": "PROF_REMI",
+    "type": "mutation",
+    "name": "Eternal Young Scarlet Moon",
+    "description": "You're the Mistress of the Scarlet Devil Mansion.",
+    "points": 0,
+    "profession": true,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": false,
+    "ugliness": -1,
+    "flags": [ "SQUEAMISH", "TABLEMANNERS" ],
+    "cancels": [ "STYLISH" ]
+  },
+  {
+    "id": "PROF_SAKUYA",
+	"type": "mutation",
+    "name": { "str": "Sakuya" },
+    "description": "Sakuya's specific CHANGING flag.",
+    "points": 0,
+    "player_display": false,
+    "purifiable": false,
+    "valid": false,
+    "flags": [ "CHANGING", "SQUEAMISH", "TABLEMANNERS" ]
+  },
+  {
+    "id": "PROF_SEIGA",
+	"type": "mutation",
+    "name": { "str": "Seiga" },
+    "description": "Seiga's specific CHANGING flag.",
+    "points": 0,
+    "player_display": false,
+    "purifiable": false,
+    "valid": false,
+    "flags": [ "CHANGING" ]
+  },
+  {
+    "id": "PROF_TENKO",
+    "type": "mutation",
+    "name": "Girl between the Spheres of Perception",
+    "description": "You're the Eldest daughter of the Hinanawi clan.  Very carefree, very problematic, and very spoiled, you do what you want whenever you want.",
+    "points": 0,
+    "profession": true,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": false,
+    "initial_ma_styles": [ "style_celestial_brawling_tenko" ],
+    "flags": [ "HATES_BOOKS", "SLOWLEARNER" ]
+  },
+  {
+    "id": "PROF_YAMAME",
+    "type": "mutation",
+    "name": "Bright web from the dark cave",
+    "description": "You're the good-natured earth spider youkai living at the Underground entrance.",
+    "points": 0,
+    "profession": true,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": false
+  },
+  {
+    "id": "PROF_YOUMU",
+    "type": "mutation",
+    "name": "Half-Human Half-Phantom dual-wielding gardener",
+    "description": "You're the gardener and guardian of Hakugyokurou, a Netherworld mansion.",
+    "points": 0,
+    "profession": true,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": false,
+    "social_modifiers": { "lie": -2 },
+    "initial_ma_styles": [ "style_youmu" ]
   }
 ]

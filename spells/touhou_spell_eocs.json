@@ -1,6 +1,6 @@
 [
   {
-    "id": "sakuya_maidsecret_start",
+    "id": "sakuya_maidsecret_eoc",
     "type": "effect_on_condition",
     "effect": [
       { "arithmetic": [ { "u_val": "var", "var_name": "var_sakuyafocus" }, "++" ] },
@@ -22,7 +22,7 @@
       "and": [
         { "compare_int": [ { "u_val": "mana" }, ">=", { "const": 100 } ] },
         { "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 2000 } ] },
-		{ "math": [ "u_monsters_nearby('radius': 14)", "==", "0" ] },
+		{ "math": [ "u_monsters_nearby()", "<", "( - (u_skill('stabbing') * 0.5 ) - (u_skill('dodge') * 0.5 ) + 20 )" ] },
         { "compare_int": [ { "u_val": "var", "var_name": "var_sakuyafocus" }, ">", { "const": 0 } ] }
       ]
     },
@@ -31,7 +31,8 @@
       { "u_add_effect": "sakuya_maidsecret_effect", "duration": "3 s" },
       { "queue_eocs": [ "sakuya_maidsecret_cycle1" ], "time_in_future": "2 s" }
     ],
-    "false_effect": { "run_eocs": "sakuya_maidsecret_broken" }
+    "false_effect": { "run_eocs": "sakuya_maidsecret_broken" },
+    "//": "The math function in condition checks if there are monsters closer than 16 - 6 tiles around Sakuya, scaling down with higher (stabbing + dodge) "
   },
   {
     "id": "sakuya_maidsecret_toggle",

@@ -13,7 +13,7 @@
     "desc": [ "You're thirsty.  It's starting to hurt you." ],
     "rating": "mixed",
     "apply_message": "You're thirsty for blood.",
-    "base_mods": { "pain_amount": [ 1, 2 ], "pain_chance": [ 8000, 16000 ], "speed_mod": [ -10 ] }
+    "base_mods": { "pain_amount": [ 1, 2 ], "pain_chance": [ 8000, 16000 ], "speed_mod": [ -5 ] }
   },
   {
     "id": "bloodthirst_high",
@@ -29,7 +29,7 @@
       "int_mod": [ -1 ],
       "per_mod": [ -1 ],
       "str_mod": [ -1 ],
-      "speed_mod": [ -20 ]
+      "speed_mod": [ -15 ]
     }
   },
   {
@@ -46,7 +46,7 @@
       "int_mod": [ -2 ],
       "per_mod": [ -2 ],
       "str_mod": [ -2 ],
-      "speed_mod": [ -30 ]
+      "speed_mod": [ -25 ]
     }
   },
   {

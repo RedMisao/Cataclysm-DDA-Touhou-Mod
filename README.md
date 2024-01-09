@@ -1,7 +1,7 @@
 # Cataclysm-DDA-Touhou-Mod
 This is a fork of Taberone's [Touhou Professions](https://github.com/Taberone/Cataclysm-DDA-Touhou-Mod) mod.
 
-**The mod's folder goes in /data/mods/**.  Last updated for game version: 2022-09-17-0952 experimental.
+**The mod's folder goes in /data/mods/**.  Last updated for game version: 2024-01-04-2303 experimental.
 
 Also check the [Expansion](https://github.com/RedMisao/Cataclysm-DDA-Touhou-Expansion) mod!
 
@@ -27,9 +27,10 @@ This mod adds Touhou Project characters as professions.  Each character (2hu) ha
 
 
 ## New mechanics
-* Auras.  Sakuya and Udongein have "aura" type abilities, each with different passive effects as long as they're active.  These are toggled by casting specific spells.
+* Auras.  Sakuya and Udongein have "aura" type abilities, each granting different passive effects as long as they're active, and can be toggled ON or OFF by casting specific spells.
+* Spell growth.  All character spells and spell effects now scale proportionally to their main skills, instead of spell level.
 * Blood thirst.  Remi now has to consume blood (or human flesh, with less effectiveness) in any shape or form, in order to keep the thirst at bay.
-* Immortality (for Mokou).  She resurrects after dying, immediately restoring her body.  She can die as many times as she wants, but there's a soft cap relative to how many times she has died in a period of time, plus a small-ish pain debuff that ramps up, to discourage savescumming.
+* Immortality (for Mokou).  She resurrects after dying, immediately restoring her body.  She can die as many times as she wants, but there's a soft cap relative to how many times she has died in a period of time, plus a small-ish pain debuff that stacks, to discourage savescumming.
 * Wings.  Aya, Remi and Utsuho can now "fly" (read: hover) over over ledges and open spaces, consuming stamina until they're tired enough.  This is done by activating a mutation (View/active mutations key).
 * Youkai form toggle.  Kaenbyou and Remi can now switch between their human and youkai forms, each having different effects.  This is done by activating a mutation (View/active mutations key).
 
@@ -40,7 +41,7 @@ Every 2hu has their own custom set of clothing.  Not all are just cosmetics chan
 
 ## Minor milestones
 Relatively easy things to add, not in order:
-* More 2hus: Nitori and Yamame are still not playable.  I want to add Kasen and maybe Flandre too.
+* More 2hus: Nitori and Yamame are still not playable.  I want to add Kasen and Kokoro, maybe Flandre and Joon too.
 * Visual effects: Can it be done with fields? For example, when Youmu dashes, cherry petals appear on the path.
 * Vehicles: Make an engine that can use corpses as fuel.
 * Balance: CDDA is a roguelike, but the mod feels RPG-ish at times.

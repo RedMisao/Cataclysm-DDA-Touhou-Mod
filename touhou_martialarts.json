@@ -44,6 +44,7 @@
         "name": "Celestial elegance",
         "description": "Landing critical hits on enemies is electrifying, it allows you to evade attacks more easily.",
         "unarmed_allowed": true,
+        "melee_allowed": true,
         "buff_duration": 4,
         "max_stacks": 2,
         "bonus_dodges": 1,
@@ -56,6 +57,7 @@
         "name": "Dance combo",
         "description": "Allows using Earthen crescent after landing attacks.",
         "unarmed_allowed": false,
+        "melee_allowed": true,
         "unarmed_weapons_allowed": false,
         "weapon_categories_allowed": [ "WHIPS" ],
         "buff_duration": 2,
@@ -68,15 +70,17 @@
         "name": "Celestial grace",
         "description": "Moving around stimulates you, increasing your critical chance the more you move…",
         "unarmed_allowed": true,
+        "melee_allowed": true,
         "buff_duration": 3,
         "max_stacks": 5,
-        "flat_bonuses": [ { "stat": "crit_chance", "scale": 7 } ]
+        "flat_bonuses": [ { "stat": "crit_chance", "scale": 10 } ]
       },
       {
         "id": "buff_celestial_brawling_iku_onmove2",
         "name": "Celestial grace (debuff)",
         "description": "…also decreasing your physical damage and avoidance immediately after.  Dampening.",
         "unarmed_allowed": true,
+        "melee_allowed": true,
         "buff_duration": 1,
         "max_stacks": 10,
         "flat_bonuses": [ { "stat": "dodge", "scale": -0.4 } ],
@@ -92,6 +96,8 @@
         "id": "buff_celestial_brawling_iku_onpause",
         "name": "Lighting step",
         "description": "\"Grounding\" a portion of the stored charge on a target keeps the energy flowing.",
+        "unarmed_allowed": true,
+        "melee_allowed": true,
         "buff_duration": 2,
         "max_stacks": 1,
         "mult_bonuses": [
@@ -104,9 +110,7 @@
     ],
     "techniques": [
       "tec_celestial_brawling_break_melee",
-      "tec_celestial_brawling_break_melee2",
       "tec_celestial_brawling_break_unarmed",
-      "tec_celestial_brawling_break_unarmed2",
       "tec_celestial_brawling_disarm_melee",
       "tec_celestial_brawling_disarm_unarmed",
       "tec_iku_earthen_crescent",
@@ -136,14 +140,13 @@
       {
         "id": "buff_celestial_brawling_tenko_static",
         "name": "Celestial stance (Fallen)",
-        "description": "You're used to do as much damage as possible without care for your safety.  Solid as a keystone, your chance to land hits is increased, and evasive actions are reduced.",
+        "description": "You're used to do as much damage as possible without care for your safety.  Solid as a keystone, your chance to land hits is increased, you're immune to throws and evasive actions are reduced.",
         "unarmed_allowed": true,
         "melee_allowed": true,
         "bonus_dodges": -1,
         "flat_bonuses": [ { "stat": "hit", "scale": 1 } ]
       }
     ],
-    "//": "throw_immune was deprecated... Tenko is not longer immune to being downed",
     "onhit_buffs": [
       {
         "id": "buff_celestial_brawling_tenko_onattack",
@@ -152,22 +155,23 @@
         "unarmed_allowed": true,
         "melee_allowed": true,
         "buff_duration": 2,
-        "max_stacks": 8,
-        "mult_bonuses": [
+        "max_stacks": 10,
+        "flat_bonuses": [
           { "stat": "crit_chance", "scaling-stat": "str", "scale": 0.2 },
           { "stat": "crit_chance", "scaling-stat": "dex", "scale": 0.2 },
           { "stat": "crit_chance", "scaling-stat": "per", "scale": 0.2 },
           { "stat": "crit_chance", "scaling-stat": "int", "scale": 0.2 }
-        ]
+        ],
+        "//": "Should tag a debuff on enemies"
       }
     ],
-    "//2": "Should tag a debuff on enemies instead of buffing herself",
     "oncrit_buffs": [
       {
         "id": "buff_celestial_brawling_tenko_oncrit",
         "name": "Sphere of perception",
         "description": "Certain attacks allow you to read the spirit of the target.  You're more aware of their actions…",
         "unarmed_allowed": true,
+        "melee_allowed": true,
         "buff_duration": 6,
         "max_stacks": 1,
         "flat_bonuses": [
@@ -176,16 +180,17 @@
           { "stat": "arpen", "type": "cut", "scale": 8 },
           { "stat": "arpen", "type": "stab", "scale": 8 }
         ],
-        "//": "Arpen component should also be a debuff on enemies"
+        "//": "Arpen component should be a debuff on enemies"
       },
       {
         "id": "buff_celestial_brawling_tenko_oncrit2",
         "name": "Sphere of non-perception",
         "description": "…Which interfers with your own focus, blocking you from repeating effective attacks immediately after landing then.",
         "unarmed_allowed": true,
+        "melee_allowed": true,
         "buff_duration": 1,
         "max_stacks": 1,
-        "flat_bonuses": [ { "stat": "hit", "scale": -1 }, { "stat": "crit_chance", "scale": -100 } ],
+        "flat_bonuses": [ { "stat": "crit_chance", "scale": -100 } ],
         "//": "Ideally, the onattack crit component should instead be completely removed when critting"
       }
     ],
@@ -194,7 +199,9 @@
         "id": "buff_celestial_brawling_tenko_onpause",
         "name": "Temperament manipulation",
         "description": "Enter a power stance, as if taunting the enemy.  In reality, that's how you (like to) tamper with temperaments around you.  Defensive actions are hampered, physical attacks are greatly increased for the following immediate strike.",
-        "buff_duration": 1,
+        "unarmed_allowed": true,
+        "melee_allowed": true,
+        "buff_duration": 2,
         "max_stacks": 1,
         "flat_bonuses": [ { "stat": "dodge", "scale": -1 }, { "stat": "block", "scale": -1 }, { "stat": "hit", "scale": 1 } ],
         "mult_bonuses": [
@@ -206,9 +213,7 @@
     ],
     "techniques": [
       "tec_celestial_brawling_break_melee",
-      "tec_celestial_brawling_break_melee2",
       "tec_celestial_brawling_break_unarmed",
-      "tec_celestial_brawling_break_unarmed2",
       "tec_celestial_brawling_disarm_melee",
       "tec_celestial_brawling_disarm_unarmed",
       "tec_celestial_brawling_earthen_crescent",
@@ -385,7 +390,10 @@
         "unarmed_allowed": true,
         "buff_duration": 1,
         "max_stacks": 1,
-        "flat_bonuses": [ { "stat": "movecost", "scale": -15 }, { "stat": "hit", "scale": 1 } ]
+        "flat_bonuses": [ 
+          { "stat": "movecost", "scale": -15 }, 
+          { "stat": "hit", "scale": 1 } 
+        ]
       }
     ],
     "ondodge_buffs": [
@@ -396,7 +404,7 @@
         "unarmed_allowed": true,
         "buff_duration": 3,
         "max_stacks": 4,
-        "mult_bonuses": [
+        "flat_bonuses": [
           { "stat": "armor", "type": "bash", "scale": -0.25 },
           { "stat": "armor", "type": "cut", "scale": -0.25 },
           { "stat": "armor", "type": "stab", "scale": -0.25 }
@@ -434,10 +442,14 @@
         "id": "buff_mokou_onpause",
         "name": "One second against eternity",
         "description": "Stopping for a second calms your intense inner fire from consuming everything.  Clearing your mind, you let it consume itself.",
-        "buff_duration": 1,
+        "unarmed_allowed": true,
+        "buff_duration": 2,
         "max_stacks": 4,
         "bonus_blocks": 1,
-        "mult_bonuses": [ { "stat": "block", "scaling-stat": "str", "scale": 0.4 }, { "stat": "block", "scaling-stat": "int", "scale": 0.6 } ]
+        "flat_bonuses": [ 
+          { "stat": "block", "scaling-stat": "str", "scale": 0.4 }, 
+          { "stat": "block", "scaling-stat": "int", "scale": 0.6 } 
+        ]
       }
     ],
     "techniques": [
@@ -470,18 +482,17 @@
       {
         "id": "buff_youmu_static",
         "name": "Training results",
-        "description": "Always being ready gives you a slight improvement to all your physical related skills.",
+        "description": "Always being ready gives you a slight improvement to  physical skills.",
         "melee_allowed": true,
+        "flat_bonuses": [ 
+          { "stat": "hit", "scale": 1 },
+          { "stat": "crit_chance", "scale": 5 },
+          { "stat": "speed", "scale": 10 },
+          { "stat": "block_effectiveness", "scale": 1 },
+          { "stat": "dodge", "scale": 1 }
+        ],
         "mult_bonuses": [
-          { "stat": "hit", "scale": 1.1 },
-          { "stat": "crit_chance", "scale": 1.1 },
-          { "stat": "damage", "type": "cut", "scale": 1.1 },
-          { "stat": "speed", "scale": 1.1 },
-          { "stat": "armor", "type": "bash", "scale": 1.1 },
-          { "stat": "armor", "type": "cut", "scale": 1.1 },
-          { "stat": "armor", "type": "stab", "scale": 1.1 },
-          { "stat": "block_effectiveness", "scale": 1.1 },
-          { "stat": "dodge", "scale": 1.1 }
+          { "stat": "damage", "type": "cut", "scale": 1.1 }
         ]
       }
     ],
@@ -494,7 +505,10 @@
         "buff_duration": 1,
         "max_stacks": 1,
         "bonus_dodges": 3,
-        "mult_bonuses": [ { "stat": "hit", "scale": 0.5 }, { "stat": "dodge", "scale": 2 } ]
+        "flat_bonuses": [ 
+          { "stat": "hit", "scale": 0.5 }, 
+          { "stat": "dodge", "scale": 1 } 
+        ]
       }
     ],
     "onattack_buffs": [
@@ -505,7 +519,10 @@
         "melee_allowed": true,
         "buff_duration": 2,
         "max_stacks": 3,
-        "flat_bonuses": [ { "stat": "hit", "scale": 0.667 }, { "stat": "crit_chance", "scale": 5 } ],
+        "flat_bonuses": [ 
+          { "stat": "hit", "scale": 0.5 }, 
+          { "stat": "crit_chance", "scale": 2 } 
+        ],
         "mult_bonuses": [
           { "stat": "damage", "type": "bash", "scale": 0.78 },
           { "stat": "damage", "type": "stab", "scale": 0.78 },
@@ -522,10 +539,10 @@
         "buff_duration": 2,
         "max_stacks": 3,
         "bonus_blocks": 1,
-        "mult_bonuses": [
-          { "stat": "armor", "type": "bash", "scale": 0.89 },
-          { "stat": "armor", "type": "cut", "scale": 0.89 },
-          { "stat": "armor", "type": "stab", "scale": 0.89 }
+        "flat_bonuses": [
+          { "stat": "armor", "type": "bash", "scale": -0.5 },
+          { "stat": "armor", "type": "cut", "scale": -0.5 },
+          { "stat": "armor", "type": "stab", "scale": -0.5 }
         ]
       }
     ],
@@ -535,14 +552,16 @@
         "name": "Half-phantom rest",
         "description": "Pause, clear your mind, and prepare yourself for what follows, increasing accuracy, attack speed and movement rate.  Ever heard about the concept of emptiness, though? Way harder than it sounds, like trying to think about no thing.",
         "melee_allowed": true,
-        "buff_duration": 1,
+        "buff_duration": 2,
         "max_stacks": 1,
-        "flat_bonuses": [ { "stat": "crit_chance", "scale": 10 } ],
-        "mult_bonuses": [
+        "flat_bonuses": [ 
+          { "stat": "crit_chance", "scale": 10 },
           { "stat": "hit", "scale": 2 },
-          { "stat": "speed", "scale": 1.33 },
-          { "stat": "dodge", "scale": 0.5 },
-          { "stat": "movecost", "scale": 0.33 }
+          { "stat": "speed", "scale": 20 },
+          { "stat": "dodge", "scale": -2 }
+        ],
+        "mult_bonuses": [
+          { "stat": "movecost", "scale": 0.5 }
         ]
       }
     ],

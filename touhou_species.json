@@ -1,14 +1,16 @@
 [
   {
-    "id": "PHANTOM_TOUHOU",
-    "type": "SPECIES",
-    "description": "a phantom",
-    "anger_triggers": [ "HURT", "STALK" ]
-  },
-  {
     "id": "JIANGSHI_TOUHOU",
     "type": "SPECIES",
     "description": "a jiang shi",
-    "anger_triggers": [ "HURT" ]
+    "anger_triggers": [ "HURT" ],
+    "flags": [ "SOULDMG_EXTRA" ]
+  },
+  {
+    "id": "PHANTOM_TOUHOU",
+    "type": "SPECIES",
+    "description": "a phantom",
+    "anger_triggers": [ "HURT", "STALK" ],
+    "flags": [ "SOULDMG_EXTRA" ]
   }
 ]

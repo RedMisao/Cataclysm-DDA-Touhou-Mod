@@ -1,5 +1,13 @@
 [
   {
+    "id": "NO_SOUL",
+    "type": "monster_flag"
+  },
+  {
+    "id": "SOULDMG_EXTRA",
+    "type": "monster_flag"
+  },
+  {
     "id": "SOULDMG_IMMUNE",
     "type": "json_flag"
   }

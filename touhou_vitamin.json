@@ -7,6 +7,7 @@
     "min": 0,
     "max": 792,
     "rate": "20 m",
+	"weight_per_unit": "50 g",
     "flags": [ "NO_DISPLAY" ],
     "//": "No deficiency field/effect so this can be only detected by a trait (VAMPIRE_SPECIES) + vit counter EOC. See the vampire_bloodthirst sub-EOCs"
   }
