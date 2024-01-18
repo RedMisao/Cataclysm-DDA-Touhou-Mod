@@ -146,7 +146,7 @@
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS" ],
     "//": "Inspired by summon_floating_disk from Magyclism. I'm not dealing with vehicles from scratch again",
-	"//2": "Goes from 1 - 5 hours"
+    "//2": "Goes from 1 - 5 hours"
   },
   {
     "id": "tenko_keystonedismiss",

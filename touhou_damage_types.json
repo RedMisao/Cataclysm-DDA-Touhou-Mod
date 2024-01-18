@@ -7,10 +7,10 @@
     "material_required": false,
     "magic_color": "white",
     "mon_difficulty": true,
-	"//": " 'onhit_eocs': [ 'soul_dmg_check_EOC' ], ;; not active as I can't think of a way to directly apply the stored damage to the target after the on hit effect",
+    "//": " 'onhit_eocs': [ 'soul_dmg_check_EOC' ], ;; not active as I can't think of a way to directly apply the stored damage to the target after the on hit effect",
     "immune_flags": { "character": [ "SOULDMG_IMMUNE" ], "monster": [ "NO_SOUL" ] },
     "//2": "soul/spiritual damage, should do no dmg to things that are not alive or lack a 'soul' component, normal dmg to the average living thing, and double (more?) to youkai & purely spiritual entities like ghosts & spiritual amalgamations (soul forced into something)",
-	"//3": " 'yeah but what is a soul' lol but not lmao"
+    "//3": " 'yeah but what is a soul' lol but not lmao"
   },
   {
     "id": "soul",
@@ -20,22 +20,22 @@
     "bionic_info": { "order": 1000, "show_type": true },
     "melee_combat_info": { "order": 1000, "show_type": true },
     "pet_prot_info": { "order": 1000, "show_type": true },
-	"protection_info": { "order": 1000, "show_type": true }
+    "protection_info": { "order": 1000, "show_type": true }
   },
   {
     "id": "soul_dmg_check_EOC",
-	"type": "effect_on_condition",
+    "type": "effect_on_condition",
     "condition": {
       "and": [ 
         { "npc_has_flag": "SOULDMG_EXTRA" },
-		{ "math": [ "_damage_taken", ">", "0" ] }
+        { "math": [ "_damage_taken", ">", "0" ] }
       ]
     },
-	"effect": [
+    "effect": [
       { "math": [ "soul_dmg_taken", "=", "1" ] },
-	  { "math": [ "soul_dmg_var", "=", "_damage_taken" ] },
+      { "math": [ "soul_dmg_var", "=", "_damage_taken" ] },
       { "run_eocs": [ 
-	    { 
+        { 
         "id": "soul_dmg_bonus_EOC",
         "condition": { "and": [
               { "npc_has_flag": "SOULDMG_EXTRA" },
@@ -44,9 +44,9 @@
         },
         "effect": [ { "math": [ "soul_dmg_taken", "=", "0" ] } ],
         "false_effect": [ { "math": [ "soul_dmg_taken", "=", "0" ] } ]
-	    }
-	  ]  
-	  }
+        }
+      ]  
+      }
     ]
   }
 ]

@@ -10,15 +10,38 @@
             "id": "vampire_bloodthirst_start",
             "condition": { "u_has_trait": "VAMPIRE_SPECIES" },
             "effect": [
-              {
-                "math": [ "u_val('vitamin', 'name:hblood_vitamin')", "=", "648 + rand(144)" ]
-              }
-            ]
+              { "math": [ "u_vitamin('hblood_vitamin')", "=", "648 + rand(144)" ] }
+            ],
+            "//": "Adds hblood_vitamin if the player is a VAMPIRE_SPECIES plus a smaller random amount, see vampire_bloodthirst_eoc below"
+          },
+          {
+            "id": "kokoro_stance_set",
+            "condition": { "u_has_trait": "PROF_KOKORO" },
+            "effect": [
+              { "math": [ "var_kokoro_stance", "=", "1" ] },
+              { "math": [ "var_kokoro_mask", "=", "rand(3)" ] },
+              { "math": [ "var_kokoro_unstable_rnd", "=", "rand(1)" ] },
+              { "run_eocs": [ "kokoro_mask_eocs" ] },
+              { "run_eocs": [ "kokoro_timer_eoc" ] }
+            ],
+            "//2": "The first EOC runs the default condition for Kokoro: 'base' stance plus random mask",
+            "//3": "The second EOC runs the timer for the mask duration and automatic rotation"
           }
         ]
       }
+    ]
+  },
+  {
+    "id": "kokoro_timer_eoc",
+    "type": "effect_on_condition",
+    "recurrence": "15 s",
+    "condition": { "u_has_trait": "PROF_KOKORO" },
+    "deactivate_condition": { "not": { "u_has_trait": "PROF_KOKORO" } },
+    "effect": [ 
+        { "math": [ "var_kokoro_timer", "-=", "15" ] },
+        { "run_eocs": [ "kokoro_instability_check_eoc" ] }
     ],
-	"//": "Adds hblood_vitamin if the player is a VAMPIRE_SPECIES plus a smaller random amount, see vampire_bloodthirst_eoc below"
+    "//": "Reduces var_kokoro_timer every 15 s and checks if she has enough instability"
   },
   {
     "id": "mokou_death_eoc",
@@ -35,7 +58,7 @@
       { "u_lose_trait": "PORTAL_RESURRECTION" },
       { "u_add_effect": "mokou_resurrectcleanse", "duration": "6 s" },
       { "u_add_effect": "mokou_resurrectpain", "duration": "168 hours" },
-      { "u_set_hp": 100, "only_increase": true },
+      { "math": [ "u_hp('ALL')", "=", "100" ] },
       { "u_cast_spell": { "id": "mokou_resurrectionphoenix" }, "targeted": false },
       { "math": [ "var_mokoudeath", "+=", "168" ] },
       { "math": [ "u_val('fatigue')", "=", "0" ] },
@@ -43,7 +66,7 @@
       { "math": [ "u_pain()", "=", "0" ] }
     ],
     "//": "This eoc enables PROF_MOKOU to resurrect/revive. Every time Mokou dies she gets var_mokoudeath, which lasts for 7 days and decreases slowly over time. Every time she revives, the value is checked vs a random number, so the more she dies in a short time the harder it is for her to not give up for real",
-	"//2": "ANY trait that revives the character should be lost every time Mokou dies. So far, it's just PORTAL_RESURRECTION "
+    "//2": "ANY trait that revives the character should be lost every time Mokou dies. So far, it's just PORTAL_RESURRECTION "
   },
   {
     "id": "mokou_resurrect_counter_eoc",
@@ -57,9 +80,9 @@
     },
     "deactivate_condition": { "math": [ "var_mokoudeath", "<=", "0" ] },
     "effect": [ 
-		{ "math": [ "var_mokoudeath", "-=", "1" ] } 
-	],
-	"//": "Reduces var_mokoudeath over time"
+        { "math": [ "var_mokoudeath", "-=", "1" ] } 
+    ],
+    "//": "Reduces var_mokoudeath over time"
   },
   {
     "id": "vampire_bloodthirst_eoc",
@@ -70,8 +93,15 @@
       {
         "run_eocs": [
           {
+            "id": "vampire_bloodthirst_lowerlimit",
+            "condition": { "math": [ "u_vitamin('hblood_vitamin')", "<=", "0" ] },
+            "effect": [
+              { "math": [ "u_vitamin('hblood_vitamin')", "=", "0" ] }
+            ]
+          },
+          {
             "id": "vampire_bloodthirst_veryhigh",
-            "condition": { "math": [ "u_val('vitamin', 'name:hblood_vitamin')", "<", "144" ] },
+            "condition": { "math": [ "u_vitamin('hblood_vitamin')", "<", "144" ] },
             "effect": [
               { "u_lose_effect": "bloodthirst_low" },
               { "u_lose_effect": "bloodthirst_medium" },
@@ -83,8 +113,8 @@
             "id": "vampire_bloodthirst_high",
             "condition": {
               "and": [
-                { "math": [ "u_val('vitamin', 'name:hblood_vitamin')", ">=", "145" ] },
-                { "math": [ "u_val('vitamin', 'name:hblood_vitamin')", "<", "288" ] }
+                { "math": [ "u_vitamin('hblood_vitamin')", ">=", "145" ] },
+                { "math": [ "u_vitamin('hblood_vitamin')", "<", "288" ] }
               ]
             },
             "effect": [
@@ -98,8 +128,8 @@
             "id": "vampire_bloodthirst_medium",
             "condition": {
               "and": [
-                { "math": [ "u_val('vitamin', 'name:hblood_vitamin')", ">=", "289" ] },
-                { "math": [ "u_val('vitamin', 'name:hblood_vitamin')", "<", "432" ] }
+                { "math": [ "u_vitamin('hblood_vitamin')", ">=", "289" ] },
+                { "math": [ "u_vitamin('hblood_vitamin')", "<", "432" ] }
               ]
             },
             "effect": [
@@ -113,8 +143,8 @@
             "id": "vampire_bloodthirst_low",
             "condition": {
               "and": [
-                { "math": [ "u_val('vitamin', 'name:hblood_vitamin')", ">=", "433" ] },
-                { "math": [ "u_val('vitamin', 'name:hblood_vitamin')", "<", "576" ] }
+                { "math": [ "u_vitamin('hblood_vitamin')", ">=", "433" ] },
+                { "math": [ "u_vitamin('hblood_vitamin')", "<", "576" ] }
               ]
             },
             "effect": [
@@ -126,12 +156,19 @@
           },
           {
             "id": "vampire_bloodthirst_verylow",
-            "condition": { "and": [ { "math": [ "u_val('vitamin', 'name:hblood_vitamin')", ">=", "577" ] } ] },
+            "condition": { "and": [ { "math": [ "u_vitamin('hblood_vitamin')", ">=", "577" ] } ] },
             "effect": [
               { "u_lose_effect": "bloodthirst_low" },
               { "u_lose_effect": "bloodthirst_medium" },
               { "u_lose_effect": "bloodthirst_high" },
               { "u_lose_effect": "bloodthirst_veryhigh" }
+            ]
+          },
+          {
+            "id": "vampire_bloodthirst_upperlimit",
+            "condition": { "math": [ "u_vitamin('hblood_vitamin')", ">=", "792" ] },
+            "effect": [
+              { "math": [ "u_vitamin('hblood_vitamin')", "=", "792" ] }
             ]
           }
         ]

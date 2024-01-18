@@ -34,11 +34,11 @@
     "max_range": 1,
     "max_level": 1,
     "difficulty": -10,
-    "base_casting_time": { "math": [ "( - (max( u_skill('rifle'), u_skill('speech'), ( ( u_skill('rifle') + u_skill('speech') ) * 0.5 ) ) * 150 ) + 3000 )" ] },
+    "base_casting_time": { "math": [ "( - ( (max( (u_skill('rifle') - 2 ), u_skill('speech') ) ) * 150 ) + 2550 )" ] },
     "base_energy_cost": 200,
     "energy_source": "MANA",
     "flags": [ "CONCENTRATE", "NO_LEGS", "SOMATIC", "VERBAL" ],
-	"//": "Formula tl;dr it picks the larger value between (rifle, speech OR the average), and uses it to calculate the casting time, between 2400 - 900, shorter with higher skill"
+    "//": "Formula tl;dr it picks the larger value between (rifle - 2, speech), and uses it to calculate the casting time, between 2400 - 900, shorter with higher skill"
   },
   {
     "id": "reisen_optimism2",
@@ -51,9 +51,8 @@
     "effect_str": "PAIN",
     "shape": "blast",
     "damage_type": "pure",
-    "min_damage": { "math": [ "( (max( u_skill('rifle'), u_skill('speech'), ( ( u_skill('rifle') + u_skill('speech') ) * 0.5 ) ) * 1.66 ) - 1.66 )" ] },
+    "min_damage": { "math": [ "( (max( (u_skill('rifle') - 2 ), u_skill('speech') ) * 1.5 ) + 3.5 )" ] },
     "max_damage": 20,
-    "damage_increment": 1,
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,
@@ -62,7 +61,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "CONCENTRATE", "NO_EXPLOSION_SFX", "NO_LEGS", "SOMATIC" ],
-	"//": "Formula tl;dr it picks the larger value between (rifle, speech OR the average), and uses it to calculate min_damage "
+    "//": "Formula tl;dr it picks the larger value between (rifle - 2, speech), and uses it to calculate min_damage ",
+    "//2": "min dmg 5"
   },
   {
     "id": "reisen_optimism3",
@@ -93,14 +93,15 @@
     "effect": "attack",
     "effect_str": "reisen_pnoise",
     "shape": "blast",
-    "min_duration": { "math": [ "( (u_skill('dodge') * 240 ) + 480 )" ] },
+    "min_duration": { "math": [ "( (u_skill('dodge') * 240 ) + 720 )" ] },
     "max_duration": 3600,
     "max_level": 1,
     "difficulty": -10,
     "base_casting_time": 100,
     "base_energy_cost": 233,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ]
+    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
+    "//": "min dur 1200"
   },
   {
     "id": "reisen_uncertaintybox",
@@ -112,7 +113,7 @@
     "effect": "attack",
     "extra_effects": [ { "id": "reisen_uncertaintybox2" } ],
     "shape": "blast",
-    "min_range": { "math": [ "( (u_skill('dodge') * 0.5 ) + 2.5 )" ] },
+    "min_range": { "math": [ "( (u_skill('dodge') * 0.5 ) + 3 )" ] },
     "max_range": 9,
     "min_aoe": 3,
     "max_aoe": 3,
@@ -121,7 +122,8 @@
     "base_casting_time": 150,
     "base_energy_cost": 200,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SILENT", "UNSAFE_TELEPORT" ]
+    "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SILENT", "UNSAFE_TELEPORT" ],
+    "//": "min range 4"
   },
   {
     "id": "reisen_uncertaintybox2",
@@ -132,7 +134,7 @@
     "valid_targets": [ "ally", "hostile", "self" ],
     "effect": "short_range_teleport",
     "shape": "blast",
-    "min_range": { "math": [ "( (u_skill('dodge') * 2.4 ) + 0.8 )" ] },
+    "min_range": { "math": [ "( (u_skill('dodge') * 2.4 ) + 3.2 )" ] },
     "max_range": 32,
     "min_aoe": 2,
     "max_aoe": 2,
@@ -141,6 +143,7 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "UNSAFE_TELEPORT" ]
+    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "UNSAFE_TELEPORT" ],
+    "//": "min range 4"
   }
 ]

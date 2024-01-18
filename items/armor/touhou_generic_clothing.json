@@ -267,7 +267,7 @@
     "color": "black",
     "material": [ "cotton" ],
     "armor": [ { "covers": [ "head" ], "coverage": 0, "encumbrance": [ 0, 0 ] } ],
-    "flags": [ "FANCY", "NO_WEAR_EFFECT" ]
+    "flags": [ "FANCY", "NO_WEAR_EFFECT", "SEMITANGIBLE" ]
   },
   {
     "id": "ribbon_neck",

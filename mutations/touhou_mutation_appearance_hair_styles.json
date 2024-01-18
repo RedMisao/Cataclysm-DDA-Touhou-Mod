@@ -10,7 +10,7 @@
     "player_display": true,
     "vanity": true,
     "types": [ "hair_style" ],
-	"//": "Starting hair for Aya"
+    "//": "Starting hair for Aya"
   },
   {
     "id": "hair_mokou",
@@ -23,7 +23,20 @@
     "player_display": true,
     "vanity": true,
     "types": [ "hair_style" ],
-	"//": "Starting hair for Mokou"
+    "//": "Starting hair for Mokou"
+  },
+  {
+    "id": "hair_kokoro",
+    "type": "mutation",
+    "name": { "str": "Hair: pink, long" },
+    "description": "You have long, puffy pink hair.",
+    "points": 0,
+    "starting_trait": false,
+    "valid": false,
+    "player_display": true,
+    "vanity": true,
+    "types": [ "hair_style" ],
+    "//": "Starting hair for Kokoro"
   },
   {
     "id": "hair_tenko",
@@ -36,7 +49,7 @@
     "player_display": true,
     "vanity": true,
     "types": [ "hair_style" ],
-	"//": "Starting hair for Tenko"
+    "//": "Starting hair for Tenko"
   },
   {
     "id": "hair_meiling",
@@ -49,7 +62,7 @@
     "player_display": true,
     "vanity": true,
     "types": [ "hair_style" ],
-	"//": "Starting hair for Meiling"
+    "//": "Starting hair for Meiling"
   },
   {
     "id": "hair_iku",
@@ -62,7 +75,7 @@
     "player_display": true,
     "vanity": true,
     "types": [ "hair_style" ],
-	"//": "Starting hair for Iku"
+    "//": "Starting hair for Iku"
   },
   {
     "id": "hair_kaenbyou",
@@ -75,7 +88,7 @@
     "player_display": true,
     "vanity": true,
     "types": [ "hair_style" ],
-	"//": "Starting hair for Kaenbyou"
+    "//": "Starting hair for Kaenbyou"
   },
   {
     "id": "hair_udongein",
@@ -88,7 +101,7 @@
     "player_display": true,
     "vanity": true,
     "types": [ "hair_style" ],
-	"//": "Starting hair for Udonge"
+    "//": "Starting hair for Udonge"
   },
   {
     "id": "hair_reisen",
@@ -101,7 +114,7 @@
     "player_display": true,
     "vanity": true,
     "types": [ "hair_style" ],
-	"//": "Starting hair for Reisen"
+    "//": "Starting hair for Reisen"
   },
   {
     "id": "hair_remilia",
@@ -114,7 +127,7 @@
     "player_display": true,
     "vanity": true,
     "types": [ "hair_style" ],
-	"//": "Starting hair for Remilia"
+    "//": "Starting hair for Remilia"
   },
   {
     "id": "hair_sakuya",
@@ -127,7 +140,7 @@
     "player_display": true,
     "vanity": true,
     "types": [ "hair_style" ],
-	"//": "Starting hair for Sakuya"
+    "//": "Starting hair for Sakuya"
   },
   {
     "id": "hair_seiga",
@@ -140,7 +153,7 @@
     "player_display": true,
     "vanity": true,
     "types": [ "hair_style" ],
-	"//": "Starting hair for Seiga"
+    "//": "Starting hair for Seiga"
   },
   {
     "id": "hair_utsuho",
@@ -153,7 +166,7 @@
     "player_display": true,
     "vanity": true,
     "types": [ "hair_style" ],
-	"//": "Starting hair for Utsuho"
+    "//": "Starting hair for Utsuho"
   },
   {
     "id": "hair_yamame",
@@ -166,7 +179,7 @@
     "player_display": true,
     "vanity": true,
     "types": [ "hair_style" ],
-	"//": "Starting hair for Yamame"
+    "//": "Starting hair for Yamame"
   },
   {
     "id": "hair_youmu",
@@ -179,6 +192,6 @@
     "player_display": true,
     "vanity": true,
     "types": [ "hair_style" ],
-	"//": "Starting hair for Youmu"
+    "//": "Starting hair for Youmu"
   }
 ]

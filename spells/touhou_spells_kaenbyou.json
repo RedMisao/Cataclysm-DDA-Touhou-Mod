@@ -49,7 +49,7 @@
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS" ],
     "//": "Ideally, the dot should have a flame field visual effect",
-	"//2": "Instead of increase the max_dot dmg to 8, max_pierce from 3 - 4. This is not optimal but the granularity of small numbers isn't the best"
+    "//2": "Instead of increase the max_dot dmg to 8, max_pierce from 3 - 4. This is not optimal but the granularity of small numbers isn't the best"
   },
   {
     "id": "kaenbyou_blazingwheel",

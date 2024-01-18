@@ -47,7 +47,7 @@
         "values": [ 
           { "value": "DEXTERITY", "add": 2 }, 
           { "value": "PERCEPTION", "add": 2 } 
-		] 
+        ] 
       } 
     ],
     "cancels": [ 
@@ -205,7 +205,7 @@
     "rand_cut_bonus": { "min": 2, "max": 4 },
     "weakness_to_water": 2,
     "weight_capacity_modifier": 0.33,
-	"encumbrance_always": [ [ "hand_l", 30 ], [ "hand_r", 30 ] ],
+    "encumbrance_always": [ [ "hand_l", 30 ], [ "hand_r", 30 ] ],
     "enchantments": [
       {
         "condition": "ALWAYS",
@@ -278,6 +278,17 @@
       ],
       [ "veggy", [ [ "calcium", 0.9 ], [ "iron", 0.9 ], [ "vitA", 0.9 ], [ "vitB", 0.9 ], [ "vitC", 0.9 ] ] ]
     ]
+  },
+  {
+    "id": "MENREIKI_SPECIES",
+    "type": "mutation",
+    "name": "Menreiki",
+    "points": 0,
+    "description": "You are a Menreiki, a subspecies of Tsukumogami.  Your humanoid form is the subconcious proyection of your inner self, which is in turn compossed of 66 Noh masks turned youkai.",
+    "profession": false,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": true
   },
   {
     "id": "MYSTERIOUS",
@@ -489,9 +500,9 @@
     "enchantments": [ 
       { 
         "condition": "ALWAYS", 
-	    "mutations": [ "CANNIBAL" ] 
-	  } 
-	],
+        "mutations": [ "CANNIBAL" ] 
+      } 
+    ],
     "cancels": [ "MORE_PAIN", "MORE_PAIN2", "MORE_PAIN3", "PACIFIST", "PAINRESIST", "PSYCHOPATH", "VEGETARIAN", "HERBIVORE" ],
     "//": "I need to set the penalty (and bonus) of eating human flesh to 0",
     "//2": "There are peaceful youkai, so I need to further divide this into subspecies such as 'Vampire' "
@@ -565,7 +576,7 @@
     "enchantments": [ 
       { 
         "condition": "ALWAYS", 
-	    "ench_effects": [ { "effect": "utsuho_levitation", "intensity": 1 } ] 
+        "ench_effects": [ { "effect": "utsuho_levitation", "intensity": 1 } ] 
       } 
     ],
     "transform": { "target": "WINGS_HELLRAVEN", "active": false, "moves": 100 }
@@ -628,7 +639,7 @@
       { 
       "condition": "ALWAYS", 
       "values": [ 
-	    { "value": "DEXTERITY", "add": 2 }, 
+        { "value": "DEXTERITY", "add": 2 }, 
         { "value": "INTELLIGENCE", "add": 1 } 
       ] 
       } 
@@ -678,6 +689,21 @@
     "armor": [ { "parts": "ALL", "soul": 2 } ]
   },
   {
+    "id": "PROF_KOKORO",
+    "type": "mutation",
+    "name": "Emotionless and expressive Menreiki",
+    "description": "You're the conglomeration of Noh masks left forgotten countless years ago, now with a sense of self, and a personality of your own.  Due your nature, emotional states are not part of your physiology, so you rely on your masks to express your emotions.",
+    "points": 0,
+    "profession": true,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": false,
+    "cardio_multiplier": 1.25,
+    "initial_ma_styles": [ "style_kokoro" ],
+    "cancels": [ "JEKYLL", "SEASONAL_AFFECTIVE", "GOODCARDIO", "GOODCARDIO2", "OPTIMISTIC", "BADKNEES", "REALLYBADKNEES", "BADCARDIO", "BADTEMPER", "MOODSWINGS" ],
+    "flags": [  ]
+  },
+  {
     "id": "PROF_MEILING",
     "type": "mutation",
     "name": "Rainbow Gatekeeper",
@@ -710,6 +736,12 @@
     "starting_trait": false,
     "valid": false,
     "initial_ma_styles": [ "style_mokou" ],
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "mutations": [ "KI_STRIKE" ]
+      }
+    ],
     "cancels": [ "NOPAIN", "PAINRESIST" ],
     "flags": [ "HEAT_IMMUNE" ]
   },
@@ -746,7 +778,7 @@
   },
   {
     "id": "PROF_SAKUYA",
-	"type": "mutation",
+    "type": "mutation",
     "name": { "str": "Sakuya" },
     "description": "Sakuya's specific CHANGING flag.",
     "points": 0,
@@ -757,7 +789,7 @@
   },
   {
     "id": "PROF_SEIGA",
-	"type": "mutation",
+    "type": "mutation",
     "name": { "str": "Seiga" },
     "description": "Seiga's specific CHANGING flag.",
     "points": 0,

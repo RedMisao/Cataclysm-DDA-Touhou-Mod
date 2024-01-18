@@ -29,7 +29,7 @@
     "name": { "str": "keystone controls" },
     "copy-from": "controls",
     "description": "A set of small bumps in the rock, that handle the keystone.  Or not and the keystone just goes wherever you want it to.",
-	"variants": [ { "symbols": "^", "symbols_broken": "#" } ],
+    "variants": [ { "symbols": "^", "symbols_broken": "#" } ],
     "looks_like": "rock",
     "color": "light_gray",
     "broken_color": "red",

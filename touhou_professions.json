@@ -7,9 +7,10 @@
     "points": 4,
     "skills": [ 
       { "level": 2, "name": "cutting" }, 
-	  { "level": 4, "name": "dodge" }, 
-	  { "level": 6, "name": "speech" } 
-	],
+      { "level": 4, "name": "dodge" }, 
+      { "level": 4, "name": "speech" } 
+    ],
+    "//": "Cutting for katana and other Tengu (Japanese) weapons I think",
     "spells": [
       { "level": 1, "id": "dash_aya" },
       { "level": 1, "id": "aya_deadlineday" },
@@ -18,7 +19,6 @@
       { "level": 1, "id": "aya_stormgust" },
       { "level": 1, "id": "aya_windsickle" }
     ],
-    "//": "Cutting for katana and other Tengu (Japanese) weapons I think",
     "traits": [ "TENGUCROW_SPECIES", "WINGS_TENGUCROW", "PROF_AYA", "YOUKAI_SPECIES", "SPIRIT_USER", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_aya" ],
     "items": {
       "both": {
@@ -39,12 +39,12 @@
     "proficiencies": [ "prof_food_prep", "prof_wound_care" ],
     "skills": [
       { "level": 2, "name": "cooking" },
-      { "level": 4, "name": "dodge" },
+      { "level": 3, "name": "dodge" },
       { "level": 2, "name": "firstaid" },
-      { "level": 6, "name": "melee" },
+      { "level": 4, "name": "melee" },
       { "level": 4, "name": "survival" },
       { "level": 2, "name": "tailor" },
-      { "level": 6, "name": "unarmed" }
+      { "level": 4, "name": "unarmed" }
     ],
     "spells": [
       { "level": 1, "id": "dash_mokou" },
@@ -70,6 +70,34 @@
     "//": "I took the yakitori joke seriously"
   },
   {
+    "ident": "hata_no_kokoro",
+    "type": "profession",
+    "name": "Expressive Poker Face",
+    "description": "It was time to retrieve a fancy new costume the Puppeteer crafred for your show next week.  On your way through the forest, a human attacked you without declaring a duel.  Given they were wearing clothes from the Outside, you defended yourself… pretty sure you didn't hit them that hard.  You're also pretty sure this isn't the Forest at all.",
+    "points": 4,
+    "skills": [ 
+      { "level": 4, "name": "dodge" }, 
+      { "level": 4, "name": "melee" } 
+    ],
+    "spells": [
+      { "level": 1, "id": "dash_basic" },
+      { "level": 1, "id": "kokoro_mask_boost" },
+      { "level": 1, "id": "kokoro_mask_swap" },
+      { "level": 1, "id": "kokoro_mask_neutral" },
+      { "level": 1, "id": "kokoro_spirit_naginata" }
+    ],
+    "traits": [ "MENREIKI_SPECIES", "PROF_KOKORO", "SPIRIT_USER", "eye_pink_touhou", "FACIAL_HAIR_NONE", "hair_kokoro" ],
+    "items": {
+      "both": {
+        "items": [ "dress_shirt", "kokoro_skirt", "kokoro_socks", "kokoro_vest" ]
+      },
+      "male": [ "boxer_shorts" ],
+      "female": [ "bra", "bloomers" ]
+    },
+    "flags": [ "SCEN_ONLY" ],
+    "//": "She lacks YOUKAI_SPECIES as I'm assuming tsukumogami have diverged enough they don't need to consume humans, they're either pissed at them (canon) or can exploit their emotions more efficiently (spooky possession, Kokoro performing, Kogasa uhh trying, etc)"
+  },
+  {
     "ident": "hong_meiling",
     "type": "profession",
     "name": "Gatekeeper of the Devil",
@@ -78,9 +106,9 @@
     "proficiencies": [ "prof_food_prep" ],
     "skills": [
       { "level": 2, "name": "cooking" },
-      { "level": 4, "name": "dodge" },
-      { "level": 6, "name": "melee" },
-      { "level": 6, "name": "unarmed" }
+      { "level": 3, "name": "dodge" },
+      { "level": 4, "name": "melee" },
+      { "level": 4, "name": "unarmed" }
     ],
     "spells": [
       { "level": 1, "id": "dash_meiling" },
@@ -171,7 +199,7 @@
     "proficiencies": [ "prof_intro_biology", "prof_intro_chemistry", "prof_inorganic_chemistry", "prof_pharmaceutical" ],
     "skills": [
       { "level": 4, "name": "dodge" },
-      { "level": 4, "name": "firstaid" },
+      { "level": 3, "name": "firstaid" },
       { "level": 4, "name": "gun" },
       { "level": 2, "name": "launcher" },
       { "level": 6, "name": "pistol" },
@@ -216,10 +244,10 @@
     "description": "You were accompanying the Watatsuki sisters on their visit to Earth when the Cataclysm struck! In the chaos and panic that followed the collapse of the Barrier (or that's what you heard from them), you got separated and left alone.  To make things worse, you can't contact your peers by use of the Gyokuto network.  You've got some skills from your Lunar Defense Corps training, but you'll need more than that to survive…",
     "points": 4,
     "skills": [
-      { "level": 3, "name": "dodge" },
+      { "level": 2, "name": "dodge" },
       { "level": 3, "name": "gun" },
       { "level": 2, "name": "melee" },
-      { "level": 4, "name": "rifle" },
+      { "level": 3, "name": "rifle" },
       { "level": 2, "name": "stabbing" }
     ],
     "spells": [
@@ -309,9 +337,6 @@
           "kaenbyou_leg_lace",
           "kaenbyou_shoes",
           "kaenbyou_vest",
-          "ribbon_black",
-          "ribbon_black",
-          "ribbon_black",
           "ribbon_black"
         ]
       },
@@ -325,16 +350,16 @@
     "ident": "sakuya_izayoi",
     "type": "profession",
     "name": "Maid of the Scarlet Devil",
-    "description": "Despite being suspicious of the errand your Mistress' gave you outside the Barrier, you went to carry it out.  The Cataclysm struck in the middle of that, however, interrumpting you.  How annoying.",
+    "description": "Despite being suspicious of the errand your Mistress' gave you outside the Barrier, you went to carry it out.  The Cataclysm struck in the middle of that, interrumpting you.  How annoying.",
     "points": 4,
     "proficiencies": [ "prof_food_prep", "prof_knife_skills" ],
     "skills": [
       { "level": 6, "name": "cooking" },
       { "level": 4, "name": "cutting" },
       { "level": 4, "name": "dodge" },
-      { "level": 4, "name": "melee" },
+      { "level": 3, "name": "melee" },
       { "level": 4, "name": "stabbing" },
-      { "level": 6, "name": "throw" }
+      { "level": 4, "name": "throw" }
     ],
     "spells": [
       { "level": 1, "id": "dash_sakuya" },
@@ -376,7 +401,7 @@
       { "level": 4, "name": "speech" },
       { "level": 2, "name": "survival" }
     ],
-	"spells": [
+    "spells": [
       { "level": 1, "id": "dash_basic" },
       { "level": 1, "id": "seiga_charm" },
       { "level": 1, "id": "seiga_chidrain" },
@@ -434,9 +459,9 @@
     "points": 4,
     "skills": [ 
       { "level": 3, "name": "bashing" }, 
-	  { "level": 3, "name": "dodge" }, 
-	  { "level": 3, "name": "melee" } 
-	],
+      { "level": 2, "name": "dodge" }, 
+      { "level": 3, "name": "melee" } 
+    ],
     "spells": [
       { "level": 1, "id": "dash_utsuho" },
       { "level": 1, "id": "utsuho_blacksun" },
@@ -464,7 +489,7 @@
     "skills": [
       { "level": 4, "name": "dodge" },
       { "level": 4, "name": "fabrication" },
-      { "level": 6, "name": "speech" },
+      { "level": 4, "name": "speech" },
       { "level": 4, "name": "tailor" }
     ],
     "spells": [
@@ -499,7 +524,7 @@
     "points": 4,
     "skills": [
       { "level": 4, "name": "cooking" },
-      { "level": 6, "name": "cutting" },
+      { "level": 5, "name": "cutting" },
       { "level": 4, "name": "dodge" },
       { "level": 4, "name": "melee" }
     ],

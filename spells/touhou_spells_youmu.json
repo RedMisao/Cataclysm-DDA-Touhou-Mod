@@ -13,14 +13,15 @@
     "max_damage": 1,
     "min_aoe": 3,
     "max_aoe": 3,
-    "min_duration": { "math": [ "( (u_skill('cutting') * 135 ) + (u_skill('dodge') * 135 ) - 450 )" ] },
+    "min_duration": { "math": [ "( (u_skill('cutting') * 90 ) + (u_skill('dodge') * 90 ) + 990 )" ] },
     "max_duration": 3600,
     "max_level": 1,
     "difficulty": -10,
     "base_casting_time": 100,
     "base_energy_cost": 133,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ]
+    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ],
+    "//": "min dur 1800"
   },
   {
     "id": "youmu_halfbody",
@@ -36,14 +37,15 @@
     "max_damage": 1,
     "min_aoe": 3,
     "max_aoe": 3,
-    "min_duration": { "math": [ "( (u_skill('cutting') * 240 ) + (u_skill('dodge') * 240 ) )" ] },
+    "min_duration": { "math": [ "( (u_skill('cutting') * 90 ) + (u_skill('dodge') * 90 ) + 990 )" ] },
     "max_duration": 3600,
     "max_level": 1,
     "difficulty": -10,
     "base_casting_time": 100,
     "base_energy_cost": 133,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ]
+    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ],
+    "//": "min dur 1800"
   },
   {
     "id": "youmu_reflectionslash",
@@ -56,7 +58,7 @@
     "effect": "attack",
     "effect_str": "aura_reflectionslash",
     "shape": "blast",
-    "min_duration": { "math": [ "( (u_skill('cutting') * 60 ) + (u_skill('dodge') * 60 ) + 200 )" ] },
+    "min_duration": { "math": [ "( (u_skill('cutting') * 60 ) + (u_skill('dodge') * 60 ) + 260 )" ] },
     "max_duration": 2000,
     "max_level": 1,
     "difficulty": -10,
@@ -64,7 +66,8 @@
     "base_energy_cost": 133,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "This should protect her from any attack that comes from 3+ tiles away, but I don't know how to do that, so it just blocks bullet damage"
+    "//": "This should protect her from any attack that comes from 3+ tiles away, but I don't know how to do that, so it just blocks bullet damage",
+    "//": "min dur 800"
   },
   {
     "id": "youmu_slasheternal",
@@ -99,7 +102,7 @@
     "effect": "attack",
     "shape": "cone",
     "damage_type": "cut",
-    "min_damage": { "math": [ "( (u_skill('cutting') * 2.25 ) + (u_skill('dodge') * 2.25 ) - 7.5 )" ] },
+    "min_damage": { "math": [ "( (u_skill('cutting') * 2.25 ) + (u_skill('dodge') * 2.25 ) - 5.25 )" ] },
     "max_damage": 60,
     "min_range": 3,
     "max_range": 3,
@@ -110,7 +113,8 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "SOMATIC" ]
+    "flags": [ "NO_LEGS", "SOMATIC" ],
+    "//": "min dmg 15"
   },
   {
     "id": "youmu_slashnether",
@@ -123,11 +127,11 @@
     "effect": "attack",
     "shape": "line",
     "damage_type": "cut",
-    "min_damage": { "math": [ "( (u_skill('cutting') * 9.8 ) + (u_skill('dodge') * 9.8 ) - 42 )" ] },
+    "min_damage": { "math": [ "( (u_skill('cutting') * 9.8 ) + (u_skill('dodge') * 9.8 ) - 32.2 )" ] },
     "max_damage": 252,
     "min_pierce": 14,
     "max_pierce": 14,
-    "min_range": { "math": [ "( (u_skill('cutting') * 0.4 ) + (u_skill('dodge') * 0.4 ) )" ] },
+    "min_range": { "math": [ "( (u_skill('cutting') * 0.4 ) + (u_skill('dodge') * 0.4 ) + 0.4 )" ] },
     "max_range": 12,
     "max_level": 1,
     "difficulty": -10,
@@ -135,6 +139,6 @@
     "base_energy_cost": 133,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-	"//": "Dmg is function of youmu_roukanken . Pierce is set at the same amount of soul dmg of the item"
+    "//": "Dmg is function of youmu_roukanken . Pierce is set at the same amount of soul dmg of the item. min range 4"
   }
 ]

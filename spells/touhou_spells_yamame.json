@@ -29,11 +29,11 @@
     "effect_str": "icy_pyrexia",
     "shape": "blast",
     "damage_type": "cold",
-    "min_dot": { "math": [ "( (u_skill('speech') * 0.2 ) + (u_skill('dodge') * 0.2 ) )" ] },
+    "min_dot": { "math": [ "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.5 )" ] },
     "max_dot": 5,
-    "min_range": { "math": [ "( (u_skill('speech') * 0.4 ) + (u_skill('dodge') * 0.4 ) + 4 )" ] },
+    "min_range": { "math": [ "( (u_skill('speech') * 0.4 ) + (u_skill('dodge') * 0.4 ) + 4.8 )" ] },
     "max_range": 16,
-    "min_duration": { "math": [ "( (u_skill('speech') * 30 ) + (u_skill('dodge') * 30 ) + 1200 )" ] },
+    "min_duration": { "math": [ "( (u_skill('speech') * 30 ) + (u_skill('dodge') * 30 ) + 1260 )" ] },
     "max_duration": 2100,
     "max_level": 1,
     "difficulty": -10,
@@ -41,7 +41,8 @@
     "base_energy_cost": 133,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "Sadly can't reduce attack speed too"
+    "//": "Sadly can't reduce attack speed too",
+    "//2": "min dot 2, min range 8, min dur 1500"
   },
   {
     "id": "yamame_miasmashot",
@@ -60,7 +61,7 @@
     "max_duration": 3200,
     "field_id": "fd_web",
     "field_chance": 1,
-    "min_field_intensity": { "math": [ "( (u_skill('speech') * 0.25 ) + (u_skill('dodge') * 0.25 ) - 1.5 )" ] },
+    "min_field_intensity": { "math": [ "( (u_skill('speech') * 0.5 ) + (u_skill('dodge') * 0.5 ) - 1 )" ] },
     "max_field_intensity": 6,
     "max_level": 1,
     "difficulty": -10,
@@ -68,7 +69,8 @@
     "base_energy_cost": 100,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "Based on Poison Water: Unsanitary Rain"
+    "//": "Based on Poison Water: Unsanitary Rain",
+    "//2": "min field intensity 1"
   },
   {
     "id": "yamame_scarletplague",
@@ -81,11 +83,11 @@
     "effect_str": "scarlet_plague",
     "shape": "blast",
     "damage_type": "stab",
-    "min_dot": { "math": [ "( (u_skill('speech') * 0.2 ) + (u_skill('dodge') * 0.2 ) )" ] },
-    "max_dot": 6,
-    "min_range": { "math": [ "( (u_skill('speech') * 0.4 ) + (u_skill('dodge') * 0.4 ) + 4 )" ] },
+    "min_dot": { "math": [ "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.5 )" ] },
+    "max_dot": 5,
+    "min_range": { "math": [ "( (u_skill('speech') * 0.4 ) + (u_skill('dodge') * 0.4 ) + 4.8 )" ] },
     "max_range": 16,
-    "min_duration": { "math": [ "( (u_skill('speech') * 30 ) + (u_skill('dodge') * 30 ) + 1200 )" ] },
+    "min_duration": { "math": [ "( (u_skill('speech') * 30 ) + (u_skill('dodge') * 30 ) + 1260 )" ] },
     "max_duration": 2100,
     "max_level": 1,
     "difficulty": -10,
@@ -106,18 +108,19 @@
     "extra_effects": [ { "id": "yamame_unconstrainedrot2" } ],
     "shape": "blast",
     "damage_type": "biological",
-    "min_dot": { "math": [ "( (u_skill('speech') * 0.2 ) + (u_skill('dodge') * 0.2 ) )" ] },
-    "max_dot": 6,
-    "min_range": { "math": [ "( (u_skill('speech') * 0.4 ) + (u_skill('dodge') * 0.4 ) + 4 )" ] },
+    "min_dot": { "math": [ "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.5 )" ] },
+    "max_dot": 5,
+    "min_range": { "math": [ "( (u_skill('speech') * 0.4 ) + (u_skill('dodge') * 0.4 ) + 4.8 )" ] },
     "max_range": 16,
-    "min_duration": { "math": [ "( (u_skill('speech') * 30 ) + (u_skill('dodge') * 30 ) + 1200 )" ] },
+    "min_duration": { "math": [ "( (u_skill('speech') * 30 ) + (u_skill('dodge') * 30 ) + 1260 )" ] },
     "max_duration": 2100,
     "max_level": 1,
     "difficulty": -10,
     "base_casting_time": 100,
     "base_energy_cost": 166,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "SOMATIC" ]
+    "flags": [ "NO_LEGS", "SOMATIC" ],
+    "//": "min dot 2, min range 8, min dur 1500"
   },
   {
     "id": "yamame_unconstrainedrot2",
@@ -129,7 +132,7 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "pure",
-    "min_dot": { "math": [ "( (u_skill('speech') * 0.1 ) + (u_skill('dodge') * 0.1 ) )" ] },
+    "min_dot": { "math": [ "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) - 1.2 )" ] },
     "max_dot": 3,
     "min_range": { "math": [ "( (u_skill('speech') * 0.4 ) + (u_skill('dodge') * 0.4 ) + 4 )" ] },
     "max_range": 16,
@@ -140,7 +143,8 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "SILENT", "SOMATIC" ]
+    "flags": [ "NO_LEGS", "SILENT", "SOMATIC" ],
+    "//": "min dot 0, min range 8, min dur 1500"
   },
   {
     "id": "yamame_webbridge",
@@ -154,17 +158,17 @@
     "shape": "blast",
     "min_damage": 1,
     "max_damage": 1,
-    "min_range": { "math": [ "( (u_skill('speech') * 0.6 ) + (u_skill('dodge') * 0.6 ) + 6 )" ] },
-    "max_range": 24,
-    "min_duration": { "math": [ "( (u_skill('speech') * 16500 ) + (u_skill('dodge') * 16500 ) - 135000 )" ] },
+    "min_range": { "math": [ "( (u_skill('speech') * 0.7 ) + (u_skill('dodge') * 0.7 ) + 0.4 )" ] },
+    "max_range": 20,
+    "min_duration": { "math": [ "( (u_skill('speech') * 16500 ) + (u_skill('dodge') * 16500 ) - 102000 )" ] },
     "max_duration": 360000,
     "max_level": 1,
     "difficulty": -10,
-    "base_casting_time": 100,
+    "base_casting_time": 200,
     "base_energy_cost": 100,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-	"//": "Duration goes from 5 min to 1 h"
+    "//": "min range 6, dur 30000 - 360000"
   },
   {
     "id": "yamame_webcapture",
@@ -177,9 +181,9 @@
     "shape": "blast",
     "min_range": 6,
     "max_range": 6,
-    "min_aoe": { "math": [ "( (u_skill('speech') * 0.2 ) + (u_skill('dodge') * 0.2 ) + 2 )" ] },
+    "min_aoe": { "math": [ "( (u_skill('speech') * 0.2 ) + (u_skill('dodge') * 0.2 ) + 2.4 )" ] },
     "max_aoe": 8,
-    "min_duration": { "math": [ "( (u_skill('speech') * 125 ) + (u_skill('dodge') * 125 ) + 250 )" ] },
+    "min_duration": { "math": [ "( (u_skill('speech') * 125 ) + (u_skill('dodge') * 125 ) + 500 )" ] },
     "max_duration": 4000,
     "field_id": "fd_web",
     "field_chance": 2,
@@ -191,7 +195,8 @@
     "base_energy_cost": 133,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "Shouldn't hit flying targets or be activated without ground"
+    "//": "Shouldn't hit flying targets or be activated without ground",
+    "//2": "min aoe 4, min dur 1500"
   },
   {
     "id": "yamame_webrappel",
@@ -207,7 +212,7 @@
     "max_damage": 1,
     "min_range": 4,
     "max_range": 4,
-    "min_duration": { "math": [ "( (u_skill('speech') * 16500 ) + (u_skill('dodge') * 16500 ) - 135000 )" ] },
+    "min_duration": { "math": [ "( (u_skill('speech') * 16500 ) + (u_skill('dodge') * 16500 ) - 102000 )" ] },
     "max_duration": 360000,
     "max_level": 1,
     "difficulty": -10,
@@ -215,6 +220,6 @@
     "base_energy_cost": 100,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-	"//": "Duration goes from 5 min to 1 h. Should always be the same as yamame_webbridge "
+    "//": "Should always be the same as yamame_webbridge "
   }
 ]

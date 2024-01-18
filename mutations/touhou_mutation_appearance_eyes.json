@@ -39,6 +39,19 @@
     "types": [ "eye_color" ]
   },
   {
+    "id": "eye_pink_touhou",
+    "type": "mutation",
+    "name": { "str": "Eye color: pink" },
+    "description": "You have pink eyes.",
+    "points": 0,
+    "starting_trait": true,
+    "valid": false,
+    "purifiable": false,
+    "player_display": true,
+    "vanity": false,
+    "types": [ "eye_color" ]
+  },
+  {
     "id": "eye_red_touhou",
     "type": "mutation",
     "name": { "str": "Eye color: red" },

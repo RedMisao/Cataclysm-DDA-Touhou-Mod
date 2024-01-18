@@ -15,7 +15,7 @@
     "looks_like": "f_boulder_medium",
     "color": "light_gray",
     "to_hit": -2,
-	"melee_damage": { "bash": 2 }
+    "melee_damage": { "bash": 2 }
   },
   {
     "id": "seat_keystone",
@@ -46,7 +46,7 @@
     "looks_like": "f_boulder_medium",
     "color": "light_gray",
     "to_hit": -4,
-	"melee_damage": { "bash": 8 },
+    "melee_damage": { "bash": 8 },
     "diameter": 20,
     "width": 10,
     "flags": [ "STABLE", "STEERABLE", "WHEEL" ]

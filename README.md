@@ -12,7 +12,7 @@ This mod adds Touhou Project characters as professions.  Each character (2hu) ha
 
 ## 2hus
 * **Aya Shameimaru:** Uses wind spells.  The earnest, most pure, fastest Tengu reporter is always on the look of interesting news.
-* **Fujiwara no Mokou:** Uses fire spells.  Fights with a custom martial art that increases her damage over time, while also making her more vulnerable.  Death has no meaning to her.
+* **Fujiwara no Mokou:** Uses fire spells.  Fights using a custom brawling style.  Her attacks do increased damage with more pain.  Death has no meaning to her.
 * **Hong Meiling:** Uses qi.  Fights using a special form of Tai Chi focused on defense, with windows of opportunity after blocking attacks.  Nap time can't come soon enough.
 * **Iku Nagae:** Uses electric spells.  Fights by whipping and shocking enemies to death, while dancing on the battlefield.
 * **Reisen:** Uses a mysterious ability.  Recently conscripted into the Lunarian Defence Corps, fights aided by her service Lunarian rifle and basic military training.  She's trying her best!
@@ -30,7 +30,7 @@ This mod adds Touhou Project characters as professions.  Each character (2hu) ha
 * Auras.  Sakuya and Udongein have "aura" type abilities, each granting different passive effects as long as they're active, and can be toggled ON or OFF by casting specific spells.
 * Spell growth.  All character spells and spell effects now scale proportionally to their main skills, instead of spell level.
 * Blood thirst.  Remi now has to consume blood (or human flesh, with less effectiveness) in any shape or form, in order to keep the thirst at bay.
-* Immortality (for Mokou).  She resurrects after dying, immediately restoring her body.  She can die as many times as she wants, but there's a soft cap relative to how many times she has died in a period of time, plus a small-ish pain debuff that stacks, to discourage savescumming.
+* Immortality.  Mokou resurrects after dying, immediately restoring her body.  She can die as many times as she wants, but there's a soft cap relative to how many times she has died in a period of time, plus a small-ish pain debuff that stacks, to discourage savescumming.
 * Wings.  Aya, Remi and Utsuho can now "fly" (read: hover) over over ledges and open spaces, consuming stamina until they're tired enough.  This is done by activating a mutation (View/active mutations key).
 * Youkai form toggle.  Kaenbyou and Remi can now switch between their human and youkai forms, each having different effects.  This is done by activating a mutation (View/active mutations key).
 

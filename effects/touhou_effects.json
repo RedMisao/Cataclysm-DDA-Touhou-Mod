@@ -4,7 +4,8 @@
     "type": "effect_type",
     "name": [ "Blood thirst (low)" ],
     "desc": [ "It's been some time since you consumed human blood.  You feel a small discomfort, but it's nothing serious." ],
-    "rating": "good"
+    "rating": "mixed",
+    "apply_message": "You feel slightly uncomfortable."
   },
   {
     "id": "bloodthirst_medium",
@@ -158,6 +159,79 @@
     "remove_message": "You move as usual again.",
     "rating": "good",
     "base_mods": { "speed_mod": [ 200 ] }
+  },
+  {
+    "id": "kokoro_anger_effect",
+    "type": "effect_type",
+    "name": [ "Hannya mask (anger)" ],
+    "desc": [ "You are ANGRY." ],
+    "apply_message": "You wear the Hannya mask.  Anger.",
+    "rating": "mixed"
+  },
+  {
+    "id": "kokoro_anger_effect_boost",
+    "type": "effect_type",
+    "name": [ "Hannya mask (anger) (boost)" ],
+    "desc": [ "You are VERY ANGRY." ],
+    "apply_message": "The Hannya mask is overflowing with fury!",
+    "rating": "mixed"
+  },
+  {
+    "id": "kokoro_determination_effect",
+    "type": "effect_type",
+    "name": [ "Inari mask (determination)" ],
+    "desc": [ "You are motivated." ],
+    "apply_message": "You wear the Inari mask.  Motivated!",
+    "rating": "mixed"
+  },
+  {
+    "id": "kokoro_determination_effect_boost",
+    "type": "effect_type",
+    "name": [ "Inari mask (determination) (boost)" ],
+    "desc": [ "You are very motivated!" ],
+    "apply_message": "The Inari mask is overflowing with resolve!",
+    "rating": "mixed"
+  },
+  {
+    "id": "kokoro_happiness_effect",
+    "type": "effect_type",
+    "name": [ "Hyottoko mask (happiness)" ],
+    "desc": [ "You are happy :)" ],
+    "apply_message": "You wear the Hyottoko mask.  Ha ha!",
+    "rating": "mixed"
+  },
+  {
+    "id": "kokoro_happiness_effect_boost",
+    "type": "effect_type",
+    "name": [ "Hyottoko mask (happiness) (boost)" ],
+    "desc": [ "You are ecstatic 😂😂😂" ],
+    "apply_message": "The Hyottoko mask is overflowing with elation!",
+    "rating": "mixed"
+  },
+  {
+    "id": "kokoro_melancholy_effect",
+    "type": "effect_type",
+    "name": [ "Uba mask (melancholy)" ],
+    "desc": [ "You are sad…" ],
+    "apply_message": "You wear the Uba mask.  Sadness.",
+    "rating": "mixed"
+  },
+  {
+    "id": "kokoro_melancholy_effect_boost",
+    "type": "effect_type",
+    "name": [ "Uba mask (melancholy) (boost)" ],
+    "desc": [ "…" ],
+    "apply_message": "The Uba mask is overflowing with melancholy!",
+    "rating": "mixed",
+    "base_mods": { "speed_mod": [ -15 ] }
+  },
+  {
+    "id": "kokoro_neutral_effect",
+    "type": "effect_type",
+    "name": [ "No mask (neutral)" ],
+    "desc": [ "Lost emotion." ],
+    "apply_message": "You feel nothing.",
+    "rating": "mixed"
   },
   {
     "id": "mokou_resurrectcleanse",
@@ -452,7 +526,7 @@
     "desc": [ "Your personal bubble is being dilated." ],
     "apply_message": "The world seems to accelerate around you!",
     "remove_message": "Time is flowing normally again.",
-    "rating": "bad",
+    "rating": "mixed",
     "base_mods": { "speed_mod": [ -50 ] }
   },
   {

@@ -4,7 +4,7 @@
     "type": "GENERIC",
     "name": { "str": "bullwhip" },
     "copy-from": "bullwhip",
-	"melee_damage": { "cut": 6 },
+    "melee_damage": { "cut": 6 },
     "extend": { "weapon_category": [ "WHIPS" ] }
   },
   {

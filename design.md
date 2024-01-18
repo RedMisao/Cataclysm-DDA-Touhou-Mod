@@ -5,38 +5,38 @@ An attempt to explain how balance is done, or rather why is missing, from the mo
 
 
 ## Character balance 
-	
+    
 Lore-wise, 2hus can be considered "broken" in one way or another.  Usually it's either due their ability or another of their traits.  Transforming their abilities or traits from qualitative (2hu can manipulate wavelengths) to quantitative power (Udonge's aura spells) is not simple, if it can be done at all (2hu can manipulate fate… and cdda has no LCK stat)
-	
+    
 Thus, translating the characters into cdda is going to be a nerf more often than not.  At the same time this has to be done in such a way each 2hu feels stronger than the average human, and is able to feel stronger with in-game progression, while having some depth in how to play, so to speak.  Some reference points about how to do this are explained below
 
 
 ### Species
 
 The initial component for a 2hu's power is her species.  In Touhou there is a large number of species, each 2hu being her own is a good estimate.  This would be the basis of a 2hu's raw stats, and may add extra abilities:
-	* Youkai: (more of a Genus, or even Family) would gain or lose no raw stats by itself, so this is more of a tag for gameplay purposes
-	* Human: the standard
-	* Gyokuto: -STR, +AGI +PER, MANA would cap lower than a human's
-	* Vampire: Youkai subspecies, increased stats, lots of weaknesses (passives), can do fun vampire stuff like turn into a bat and suck blood (actives), etc
+    * Youkai: (more of a Genus, or even Family) would gain or lose no raw stats by itself, so this is more of a tag for gameplay purposes
+    * Human: the standard
+    * Gyokuto: -STR, +AGI +PER, MANA would cap lower than a human's
+    * Vampire: Youkai subspecies, increased stats, lots of weaknesses (passives), can do fun vampire stuff like turn into a bat and suck blood (actives), etc
 
 
 ### Character background
 
 The second component is each character's background data.  This is mostly if not fully based on the canon (games + written works) for consistency.  This tweaks the previous layer:
-	* Kaenbyou (species Youkai, subspecies Kasha): +AGI due being a feline youkai cosplaying as a human by changing forms (active), and smells like corpses (^)
-	* Sakuya (human, mysterious): her ability passively grants +AGI.  She is also perfect and elegant (^), dislikes being around humans (^)
-	* Youmu (half-human half-ghost): -MANA because she's melee/sword oriented, -STR because she's small.  Fully centered around her ability (^).  She also should have below-average INT, but that's mean
-	* Mokou (former human, Person of Hourai): +MANA and plenty of experience in virtually every field of due living for so long; otherwise average stats due the elixir (^).  She literally cannot die, and has been tired of being alive for the last… 800 years or so (^)
-	* Udonge (Gyokuto): increased military-oriented skills due being an elite soldier of the Lunarian Defense Force
-	* Remi (Vampire): *very* strong, even by vampire standards (^), somewhat childish (^)
-	
+    * Kaenbyou (species Youkai, subspecies Kasha): +AGI due being a feline youkai cosplaying as a human by changing forms (active), and smells like corpses (^)
+    * Sakuya (human, mysterious): her ability passively grants +AGI.  She is also perfect and elegant (^), dislikes being around humans (^)
+    * Youmu (half-human half-ghost): -MANA because she's melee/sword oriented, -STR because she's small.  Fully centered around her ability (^).  She also should have below-average INT, but that's mean
+    * Mokou (former human, Person of Hourai): +MANA and plenty of experience in virtually every field of due living for so long; otherwise average stats due the elixir (^).  She literally cannot die, and has been tired of being alive for the last… 800 years or so (^)
+    * Udonge (Gyokuto): increased military-oriented skills due being an elite soldier of the Lunarian Defense Force
+    * Remi (Vampire): *very* strong, even by vampire standards (^), somewhat childish (^)
+    
 This is the first place where decisions have to be made: every (^) indicates traits that cannot be directly translated into numbers, or that cannot be done in a "fun" way for the player (maxing stats isn't fun).  Some traits, like Youmu being the archetype swordswoman fighter, can be done under the normal cdda modding framework relatively easy.  Others like Mokou not dying or Remi being overpowered are complex to balance.  Added to this layer is the speculation component, which **is** encouraged by ZUN: can Remi just oneshot everything or she's bluffing because her personality?
 
 
 ### Abilities
 
 The third layer consists of what's basically *designed* to not be translated into numbers.  A JoJo reference, if you will, abilities are an independent dimension to a 2hu's total power.  See, Sakuya may be a strong human (capable of fighting against gods and other powerful enemies, helped by the spellcard rules), but now she can also stop time.  Thankfully, this is (relatively) easy to port to cdda, in the form of movement speed modifiers and stuns.  In the case of Remi however, how can fate manipulation be translated into anything?  Not only that, but each 2hu is able to use their ability as easy as they breathe, which requires to be toned down
-	
+    
 Regardless of what the ability is, it's better to make them actives (i.e. spells), so the player can *use* and feel the weight in-game
 
 
@@ -52,14 +52,14 @@ Some features, like those examples, are thus half-baked into the mod
 ## Combat
 
 The standard combat scenario is when the PC fights a group of enemies over a very short period of time (1 - 5 ingame min).  After that, the player reconsiders if they want to continue, or go away.  Yet in cdda it is the pain mechanic, not HP, what soft-locks players from reentering combat: pain slows the PC down and makes it prone to fail attacks and dodges, which quickly results in a spiral of avatar death.
-	
+    
 Pain is thus, the first element players have to deal with during and after combat.  The mod tries to be balanced around the idea of enabling the different roles/fantasies (2hus and some TH setting) without getting too far away from basic cdda combat.  In other words, the answer to the question of "How would your [insert your favorite Touhou] survive during the apocalypse?".  A major component of this are spells
 
 
 ### Spells
 
 Unlike Magiclysm, where players are able to build the PCs as they want, 2hus already are already fulfill different archetypes.  This means that, when picking Sakuya, the PC automatically knows spells related to time manipulation and traits related to Sakuya's background, but it also locks their spells to that character in order to "be" Sakuya.  Thus, this is a deliberate design choice
-	
+    
 Another difference is mana recovery time, which is increased x4 - x12.  This enables a PC who can exit the combat with relatively minor wounds to keep going after a short recovery, which encourages the player to play more risky.  Additionally, I think it feels more lore accurate, and more fun
 
 
@@ -133,39 +133,39 @@ Their firearm tech can be categorized into tiers:
 ### Disorganized misc stuff
 
 * Two battle types: 'world' combat (the existing one) and 'spellcard duels'
-	* Spellcard duels would be similar to how they're in the games/lore: use of large, fancy declared spells to dodge and catch the opponent on your danmaku pattern
-	* A new 'instance' for the spellcard duel would have to be created, where everything (except story items) is consumed/destroyed/moved/affected as normal, with the exception there's no 'death' by reaching 0 HP, and after the duel full health and half mana are restored to both sides
-	* Spellcard duels would happen when meeting/talking/confronting another 2hu, with the rules automatically triggered by specific dialogue options (such as, the more you piss them off the harder the duel is).  This is obviously a complex task so it's more of a long term goal
-	* Several win conditions are possible: health reaching 0, race mode, gain X of certain item, not going OOM, time, etc.
-	* There is a story reason why the spellcard rules are now applying outside Gensokyo (spoilers)
-		* "We are definitely not in Gensokyo. Why are the rules still applying?"
+    * Spellcard duels would be similar to how they're in the games/lore: use of large, fancy declared spells to dodge and catch the opponent on your danmaku pattern
+    * A new 'instance' for the spellcard duel would have to be created, where everything (except story items) is consumed/destroyed/moved/affected as normal, with the exception there's no 'death' by reaching 0 HP, and after the duel full health and half mana are restored to both sides
+    * Spellcard duels would happen when meeting/talking/confronting another 2hu, with the rules automatically triggered by specific dialogue options (such as, the more you piss them off the harder the duel is).  This is obviously a complex task so it's more of a long term goal
+    * Several win conditions are possible: health reaching 0, race mode, gain X of certain item, not going OOM, time, etc.
+    * There is a story reason why the spellcard rules are now applying outside Gensokyo (spoilers)
+        * "We are definitely not in Gensokyo. Why are the rules still applying?"
 
 * Reisen Alter (heavily based on KKHTA) shows up as hostile NPC when playing any SDM member or any Gyokuto:
-	* She would be extremely difficult to fight because she's there to kill, not just fight, the PC.  Normally, she would win 90-95% of cases by using underhanded tactics over the course of the fight (not by granting her immediate victory but by giving her more and more advantage until the player can't keep up).  At some point she would try to deal the killing blow, but the spellcard rules would unexpectedly be active, so she exchanges some dialogue and runs away
-		* This would be the only, or the second only time the spellcard rules activate outside of normal conditions
-	* She would show up a second time, and do something that implicitly tells the player she overcame the rules, like killing/severely injuring someone during a spellcard duel between two different people, so the player understands they CAN die this time
-		* If the player wins, she runs away again
+    * She would be extremely difficult to fight because she's there to kill, not just fight, the PC.  Normally, she would win 90-95% of cases by using underhanded tactics over the course of the fight (not by granting her immediate victory but by giving her more and more advantage until the player can't keep up).  At some point she would try to deal the killing blow, but the spellcard rules would unexpectedly be active, so she exchanges some dialogue and runs away
+        * This would be the only, or the second only time the spellcard rules activate outside of normal conditions
+    * She would show up a second time, and do something that implicitly tells the player she overcame the rules, like killing/severely injuring someone during a spellcard duel between two different people, so the player understands they CAN die this time
+        * If the player wins, she runs away again
 
 * Yorihime shows up using a patch
-	* Not related to Reisen Alter, it would be an unrelated teaser/bait
+    * Not related to Reisen Alter, it would be an unrelated teaser/bait
 
 * Non-humanoid (placeholder) tech: 
-	* Yithian: rusted/opaque metal, flat beams and bars, look like faraday cages turn into objects
-	* Mi-go: tangible and intangible (looks, but isn't magic)
-	* Elder Thing tech: organic/living but isn't disgusting/gory, more like bizarre (Geiger-like?)
-	* Shoggoth tech: consists of their modified protoplasm, disgusting, possibly incompatible due physiology(mechanistic)/ergonomics
+    * Yithian: rusted/opaque metal, flat beams and bars, look like faraday cages turn into objects
+    * Mi-go: tangible and intangible (looks, but isn't magic)
+    * Elder Thing tech: organic/living but isn't disgusting/gory, more like bizarre (Geiger-like?)
+    * Shoggoth tech: consists of their modified protoplasm, disgusting, possibly incompatible due physiology(mechanistic)/ergonomics
 
 ### Quest ideas
-	
+    
 * Find random items with messages or signs the PC can recognized (without examining the object!).  Example: Sakuya finding Reimu's discarded ofuda, which enables the quest "Find the Shrine Maiden"
 * Find random items that are being tracked by more than one faction.  Example: McGuffin that the LDC and Tengu are interested in, the player has to decide which faction they help, with different consequences
-	* If the PC has some connection with either faction, they may get additional benefits by siding with them
-	* Additionally, the PC can choose to steal the object, ignore it, or let them fight for it
+    * If the PC has some connection with either faction, they may get additional benefits by siding with them
+    * Additionally, the PC can choose to steal the object, ignore it, or let them fight for it
 * Visiting reverse-spirited away locations.  Example: the PC was traveling between cities and sees the Hakurei shrine, goes to visit finds a NPC Sanae
-	* This would allow the player to know the 'Sanae' side of the story, potentially opening several other quests
+    * This would allow the player to know the 'Sanae' side of the story, potentially opening several other quests
 * Meeting a NPC that was just fighting "something".  Example: the PC was exploring a city and meets an NPC Sanae who is finishing a previously unseen enemy.  Sanae stops the PC, exchanges some dialogue saying "these things did not exist in Gensokyo, nor the Outside World.  Where are they coming from?"
-	* This would enable the previously unseen enemy to start spawning
-	* The unseen enemy are linked to the activity of different factions, for example a horror to the LDC
+    * This would enable the previously unseen enemy to start spawning
+    * The unseen enemy are linked to the activity of different factions, for example a horror to the LDC
 
 
 ## Glossary

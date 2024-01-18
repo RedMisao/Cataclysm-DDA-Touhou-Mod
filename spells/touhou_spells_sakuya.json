@@ -11,18 +11,19 @@
     "effect_str": "sakuya_contraction_effect",
     "shape": "blast",
     "damage_type": "bash",
-    "min_aoe": { "math": [ "( (u_skill('throw') * 0.25 ) + (u_skill('dodge') * 0.25 ) + 1.5 )" ] },
+    "min_aoe": { "math": [ "( (u_skill('throw') * 0.25 ) + (u_skill('dodge') * 0.25 ) + 2 )" ] },
     "max_aoe": 9,
-    "min_range": { "math": [ "( (u_skill('throw') * 0.5 ) + (u_skill('dodge') * 0.5 ) )" ] },
+    "min_range": { "math": [ "( (u_skill('throw') * 0.55 ) + (u_skill('dodge') * 0.55 ) + 0.6 )" ] },
     "max_range": 16,
-    "min_duration": { "math": [ "( (u_skill('throw') * 120 ) + (u_skill('dodge') * 120 ) )" ] },
+    "min_duration": { "math": [ "( (u_skill('throw') * 120 ) + (u_skill('dodge') * 120 ) + 240 )" ] },
     "max_duration": 3600,
     "max_level": 1,
     "difficulty": -10,
     "base_casting_time": 100,
     "base_energy_cost": 133,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_PROJECTILE", "SILENT" ]
+    "flags": [ "NO_HANDS", "NO_PROJECTILE", "SILENT" ],
+    "//": "min aoe 4, min range 5, min dur 1200"
   },
   {
     "id": "sakuya_dilation",
@@ -36,14 +37,15 @@
     "shape": "blast",
     "min_aoe": 2,
     "max_aoe": 2,
-    "min_duration": { "math": [ "( (u_skill('throw') * 1200 ) + (u_skill('dodge') * 1200 ) - 6000 )" ] },
+    "min_duration": { "math": [ "( (u_skill('throw') * 1200 ) + (u_skill('dodge') * 1200 ) - 3600 )" ] },
     "max_duration": 30000,
     "max_level": 1,
     "difficulty": -10,
     "base_casting_time": 200,
     "base_energy_cost": 133,
     "energy_source": "MANA",
-    "flags": [ "IGNORE_WALLS", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "VERBAL" ]
+    "flags": [ "IGNORE_WALLS", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "VERBAL" ],
+    "//": "min dur 6000"
   },
   {
     "id": "sakuya_jackknife",
@@ -57,7 +59,7 @@
     "shape": "blast",
     "min_damage": 1,
     "max_damage": 1,
-    "min_duration": { "math": [ "( (u_skill('throw') * 60 ) + (u_skill('stabbing') * 60 ) + 300 )" ] },
+    "min_duration": { "math": [ "( (u_skill('throw') * 15 ) + (u_skill('stabbing') * 15 ) + 780 )" ] },
     "max_duration": 1200,
     "max_level": 1,
     "difficulty": -10,
@@ -65,7 +67,8 @@
     "base_energy_cost": 66,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SILENT" ],
-    "//": "Changing the silver_knife type to AMMO and setting a count of 3 doesn't enable spawning more than one knife, not even by casting the spell twice + using the NO_HANDS flag: the second knife automatically spawns on the ground"
+    "//": "Changing the silver_knife type to AMMO and setting a count of 3 doesn't enable spawning more than one knife, not even by casting the spell twice + using the NO_HANDS flag: the second knife automatically spawns on the ground",
+    "//2": "min dur 900"
   },
   {
     "id": "sakuya_maidsecret",
@@ -77,16 +80,34 @@
     "effect": "effect_on_condition",
     "effect_str": "sakuya_maidsecret_eoc",
     "shape": "blast",
-    "min_aoe": { "math": [ "( - (u_skill('stabbing') * 0.5 ) - (u_skill('dodge') * 0.5 ) + 20 )" ] },
-	"//": "aoe starts at 14 and goes down to 6 at maxed skills",
+    "min_aoe": { "math": [ "( - (u_skill('stabbing') * 0.4 ) - (u_skill('dodge') * 0.4 ) + 17.2 )" ] },
     "max_aoe": 14,
     "max_level": 1,
     "difficulty": -10,
     "base_casting_time": 100,
     "base_energy_cost": 50,
     "energy_source": "MANA",
-    "flags": [ "IGNORE_WALLS", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],
+    "flags": [ "IGNORE_WALLS", "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],
+    "//": "aoe is 14 - 6, scaling down with skills",
     "//2": "This should also break after attacking or being attacked, but currently there seems no way to check either"
+  },
+  {
+    "id": "sakuya_maidsecret2",
+    "type": "SPELL",
+    "name": "Maid's secret (visual effect)",
+    "description": "Visual effect for the aoe, so the player is aware of the effect boundary",
+    "spell_class": "NONE",
+    "valid_targets": [ "self" ],
+    "effect": "attack",
+    "shape": "blast",
+    "min_aoe": { "math": [ "( - (u_skill('stabbing') * 0.4 ) - (u_skill('dodge') * 0.4 ) + 17.2 )" ] },
+    "max_aoe": 14,
+    "max_level": 1,
+    "difficulty": -10,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "IGNORE_WALLS", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ]
   },
   {
     "id": "sakuya_quickrest",
@@ -106,7 +127,7 @@
     "base_energy_cost": 200,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SILENT" ],
-	"//": "The effects cannot scale with the math field..."
+    "//": "The effects cannot scale with the math field..."
   },
   {
     "id": "sakuya_timeparadox",
@@ -122,14 +143,15 @@
     "max_damage": 1,
     "min_aoe": 3,
     "max_aoe": 3,
-    "min_duration": { "math": [ "( (u_skill('throw') * 60 ) + (u_skill('stabbing') * 60 ) - 80 )" ] },
+    "min_duration": { "math": [ "( (u_skill('throw') * 35 ) + (u_skill('stabbing') * 35 ) + 620 )" ] },
     "max_duration": 1600,
     "max_level": 1,
     "difficulty": -10,
     "base_casting_time": 0,
     "base_energy_cost": 200,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "SILENT", "SOMATIC" ]
+    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "SILENT", "SOMATIC" ],
+    "//": "min dur 900"
   },
   {
     "id": "sakuya_timestop",
@@ -144,14 +166,15 @@
     "shape": "blast",
     "min_aoe": 3,
     "max_aoe": 3,
-    "min_duration": { "math": [ "( (u_skill('throw') * 45 ) + (u_skill('stabbing') * 45 ) + (u_skill('dodge') * 45 ) + 271 )" ] },
-    "max_duration": 2250,
+    "min_duration": { "math": [ "( (u_skill('throw') * 70 ) + (u_skill('stabbing') * 70 ) + (u_skill('dodge') * 140 ) + 140 )" ] },
+    "max_duration": 2100,
     "max_level": 1,
     "difficulty": -10,
     "base_casting_time": 100,
     "base_energy_cost": 233,
     "energy_source": "MANA",
-    "flags": [ "IGNORE_WALLS", "LOUD", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "VERBAL" ]
+    "flags": [ "IGNORE_WALLS", "LOUD", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "VERBAL" ],
+    "//": "min dur 700"
   },
   {
     "id": "sakuya_timestop2",
@@ -162,8 +185,8 @@
     "valid_targets": [ "ally", "field", "ground", "hostile", "item" ],
     "effect": "mod_moves",
     "shape": "blast",
-    "min_damage": { "math": [ "( - (u_skill('throw') * 45 ) - (u_skill('stabbing') * 45 ) - (u_skill('dodge') * 45 ) - 271 )" ] },
-    "max_damage": -2250,
+    "min_damage": { "math": [ "( - (u_skill('throw') * 70 ) - (u_skill('stabbing') * 70 ) - (u_skill('dodge') * 140 ) + 140 )" ] },
+    "max_damage": -2100,
     "min_aoe": 26,
     "max_aoe": 26,
     "max_level": 1,

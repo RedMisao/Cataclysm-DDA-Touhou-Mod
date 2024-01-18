@@ -113,7 +113,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-	"//": "The base spell remilia_demonfork requires NO_EXPLOSION_SFX otherwise it shows every damage instance. By adding this subspell with a single dummy attack instance, the effect is only shown once"
+    "//": "The base spell remilia_demonfork requires NO_EXPLOSION_SFX otherwise it shows every damage instance. By adding this subspell with a single dummy attack instance, the effect is only shown once"
   },
   {
     "id": "remilia_demonfork3",
@@ -226,7 +226,7 @@
     "base_energy_cost": 200,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-	"//": "Reduced dmg increment per lvl to rely on the stun component"
+    "//": "Reduced dmg increment per lvl to rely on the stun component"
   },
   {
     "id": "remilia_miserablefate2",
@@ -239,7 +239,7 @@
     "shape": "blast",
     "min_damage": { "math": [ "( (u_skill('stabbing') * 30 ) + (u_skill('melee') * 30 ) + 60 )" ] },
     "max_damage": 900,
-	"min_aoe": 3,
+    "min_aoe": 3,
     "max_aoe": 3,
     "max_level": 1,
     "difficulty": -10,
@@ -261,7 +261,7 @@
     "min_damage": 1,
     "max_damage": 1,
     "min_duration": { "math": [ "( (u_skill('stabbing') * 300 ) + (u_skill('melee') * 300 ) + 3600 )" ] },
-	"max_duration": 12000,
+    "max_duration": 12000,
     "max_level": 1,
     "difficulty": -10,
     "base_casting_time": 100,
