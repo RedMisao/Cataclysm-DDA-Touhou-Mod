@@ -67,7 +67,7 @@
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
     "//": "This should protect her from any attack that comes from 3+ tiles away, but I don't know how to do that, so it just blocks bullet damage",
-    "//": "min dur 800"
+    "//2": "min dur 800"
   },
   {
     "id": "youmu_slasheternal",
