@@ -73,17 +73,20 @@
     "ident": "hata_no_kokoro",
     "type": "profession",
     "name": "Expressive Poker Face",
-    "description": "It was time to retrieve a fancy new costume the Puppeteer crafred for your show next week.  On your way through the forest, a human attacked you without declaring a duel.  Given they were wearing clothes from the Outside, you defended yourself… pretty sure you didn't hit them that hard.  You're also pretty sure this isn't the Forest at all.",
+    "description": "It was time to retrieve a fancy new costume the Puppeteer crafted for your show next week.  On your way through the forest, a human attacked you without declaring a duel.  Given they were wearing clothes from the Outside, you defended yourself… pretty sure you didn't hit them that hard.  You're also pretty sure this isn't the Forest at all.",
     "points": 4,
     "skills": [ 
       { "level": 4, "name": "dodge" }, 
       { "level": 4, "name": "melee" } 
     ],
     "spells": [
-      { "level": 1, "id": "dash_basic" },
+      { "level": 1, "id": "dash_kokoro" },
       { "level": 1, "id": "kokoro_mask_boost" },
       { "level": 1, "id": "kokoro_mask_swap" },
       { "level": 1, "id": "kokoro_mask_neutral" },
+      { "level": 1, "id": "kokoro_backsweep" },
+      { "level": 1, "id": "kokoro_quick_attack" },
+      { "level": 1, "id": "kokoro_shouting_gspider" },
       { "level": 1, "id": "kokoro_spirit_naginata" }
     ],
     "traits": [ "MENREIKI_SPECIES", "PROF_KOKORO", "SPIRIT_USER", "eye_pink_touhou", "FACIAL_HAIR_NONE", "hair_kokoro" ],
@@ -443,7 +446,7 @@
       { "level": 1, "id": "tenko_scarletperception" },
       { "level": 1, "id": "tenko_unletting_soil" }
     ],
-    "traits": [ "CELESTIAL_SPECIES", "PAINRESIST", "PROF_TENKO", "SPIRIT_USER", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_tenko" ],
+    "traits": [ "CELESTIAL_SPECIES", "PROF_TENKO", "SPIRIT_USER", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_tenko" ],
     "items": {
       "both": [ "boots", "knit_scarf", "socks", "tenshi_bowbelt", "tenshi_bowhat", "tenshi_jian", "tenshi_shirt", "tenshi_skirt" ],
       "male": [ "boxer_shorts" ],

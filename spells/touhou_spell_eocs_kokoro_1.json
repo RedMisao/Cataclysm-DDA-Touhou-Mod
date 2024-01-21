@@ -76,7 +76,7 @@
             },
             "effect": [
               { "u_message": "INSTABILITY_DRAIN_2", "type": "mixed" },
-              { "math": [ "var_kokoro_instability", "-=", "15 + rand(60)" ] },
+              { "math": [ "var_kokoro_instability", "-=", "15 + rand(90)" ] },
               { "math": [ "var_kokoro_mask", "=", "rand(3)" ] },
               { "math": [ "var_kokoro_unstable_rnd", "=", "rand(1)" ] },
               { "run_eocs": [ "kokoro_mask_eocs" ] }
@@ -102,7 +102,7 @@
     "false_effect": [ { "run_eocs": [ "kokoro_mask_default" ] } ],
     "//": "This EOC determines where Kokoro will add or drain instability. If she's at the 'neutral' or 'boost' stances, she will add; if she's at the 'base' or 'unstable', she will drain",
     "//2": "The first three states will add/drain 15 instability every 15 s, until it reaches zero and it defaults",
-    "//3": "The 'unstable' stance will drain ~45 instability (15 + average(60)) and randomize her mask every 15 s, until the instability reaches zero and it defaults",
+    "//3": "The 'unstable' stance will drain ~60 instability (15 + average(90)) and randomize her mask every 15 s, until the instability reaches zero and it defaults",
     "//4": "Additionally, there 'base' state can only drain instability to zero, no negatives so she can't stack 'stability' "
   },
   {
@@ -166,7 +166,7 @@
     "condition": { "not": { "math": [ "var_kokoro_stance", "==", "3" ] } },
     "effect": [
       { "math": [ "var_kokoro_mask", "=", "rand(3)" ] },
-      { "math": [ "var_kokoro_instability", "+=", "450 + rand(450)" ] },
+      { "math": [ "var_kokoro_instability", "+=", "600 + rand(600)" ] },
       { "run_eocs": [ "kokoro_mask_eocs" ] }
     ],
     "false_effect": [ 

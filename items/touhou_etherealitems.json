@@ -193,6 +193,34 @@
     "flags": [ "IGNITE_FLAMMABLE", "NO_LEGS", "NO_PROJECTILE", "RANDOM_DAMAGE", "SILENT" ]
   },
   {
+    "id": "kokoro_naginata",
+    "type": "GENERIC",
+    "category": "weapons",
+    "copy-from": "naginata",
+    "name": { "str": "spirit naginata" },
+    "description": "A naginata, made from spiritual energy.  You can summon it at will.",
+    "price_postapoc": 0,
+    "melee_damage": { "bash": 5, "cut": 31, "soul": 11 },
+    "material": [ "steel" ],
+    "symbol": "/",
+    "color": "light_cyan",
+    "techniques": [ "PRECISE", "SWEEP", "WBLOCK_1" ],
+    "weapon_category": [ "POLEARMS" ],
+    "flags": [
+      "ALWAYS_TWOHAND",
+      "MAGIC_FOCUS",
+      "NO_REPAIR",
+      "NO_SALVAGE",
+      "NONCONDUCTIVE",
+      "ONLY_ONE",
+      "REACH_ATTACK",
+      "SPEAR",
+      "UNBREAKABLE_MELEE",
+      "TRADER_AVOID"
+    ],
+    "//": "SPEAR instead of POLEARM so she can use it at close melee like in the fighting games"
+  },
+  {
     "id": "mokou_fingerflame_item",
     "type": "ARMOR",
     "name": { "str": "Finger flame (item)", "str_pl": "Finger flames (item)" },
@@ -269,34 +297,6 @@
       "explosion": { "power": 250 }
     },
     "flags": [ "LIGHT_32", "TRADER_AVOID" ]
-  },
-  {
-    "id": "kokoro_naginata",
-    "type": "GENERIC",
-    "category": "weapons",
-    "copy-from": "naginata",
-    "name": { "str": "spirit naginata" },
-    "description": "A naginata, made from spiritual energy.  You can summon it at will.",
-    "price_postapoc": 0,
-    "melee_damage": { "bash": 5, "cut": 31, "soul": 11 },
-    "material": [ "steel" ],
-    "symbol": "/",
-    "color": "light_cyan",
-    "techniques": [ "PRECISE", "SWEEP", "WBLOCK_1" ],
-    "weapon_category": [ "POLEARMS" ],
-    "flags": [
-      "ALWAYS_TWOHAND",
-      "MAGIC_FOCUS",
-      "NO_REPAIR",
-      "NO_SALVAGE",
-      "NONCONDUCTIVE",
-      "ONLY_ONE",
-      "REACH_ATTACK",
-      "SPEAR",
-      "UNBREAKABLE_MELEE",
-      "TRADER_AVOID"
-    ],
-    "//": "SPEAR instead of POLEARM so she can use it at close melee like in the fighting games"
   },
   {
     "id": "remilia_gungnir2",

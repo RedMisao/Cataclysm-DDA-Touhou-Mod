@@ -159,6 +159,45 @@
       "msg_success": "You brush aside some webs."
     },
     "display_field": true,
-    "looks_like": "fd_web"
+    "looks_like": "fd_web",
+    "//": "Fire field for Yamame spell effects, main change is phase gas and reduced duration"
+  },
+  {
+    "id": "fd_web3",
+    "type": "field_type",
+    "legacy_enum_id": 5,
+    "intensity_levels": [
+      {
+        "name": "cobwebs",
+        "sym": "}",
+        "effects": [
+          { "effect_id": "webbed", "intensity": 1, "min_duration": "12 s", "immune_in_vehicle": true, "is_environmental": false }
+        ]
+      },
+      {
+        "name": "webs",
+        "effects": [
+          { "effect_id": "webbed", "intensity": 2, "min_duration": "12 s", "immune_in_vehicle": true, "is_environmental": false }
+        ]
+      }
+    ],
+    "description_affix": "covered_in",
+    "immunity_data": { "flags": [ "WEBWALK", "PROF_KOKORO" ] },
+    "decrease_intensity_on_contact": false,
+    "priority": 2,
+    "half_life": "12 seconds",
+    "phase": "gas",
+    "display_items": true,
+    "bash": {
+      "str_min": 10,
+      "str_max": 20,
+      "sound_vol": 2,
+      "sound_fail_vol": 2,
+      "sound": " !",
+      "msg_success": "You brush aside some webs."
+    },
+    "display_field": true,
+    "looks_like": "fd_web",
+    "//": "Web field for kokoro_shouting_gspider , so she can walk over this without suffering the demerit"
   }
 ]

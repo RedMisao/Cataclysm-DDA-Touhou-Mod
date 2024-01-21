@@ -10,7 +10,7 @@
     "starting_trait": false,
     "valid": false,
     "armor": [ { "parts": "ALL", "bash": 8, "cut": 8, "stab": 8, "bullet": 16, "acid": 8, "cold": 8, "electric": 8, "heat": 8 } ],
-    "stamina_regen_modifier": 0.5,
+    "stamina_regen_modifier": 0.25,
     "wet_protection": [
       { "part": "LEG_L", "neutral": 3 },
       { "part": "LEG_R", "neutral": 3 },
@@ -26,6 +26,25 @@
     ],
     "cancels": [ "FLIMSY", "FLIMSY2", "FLIMSY3", "PAINRESIST", "THICKSKIN", "THINSKIN", "TOUGH", "TOUGH2", "TOUGH3" ],
     "//": "Maybe replace the passive pain resist for pain resist/reduction while fighting"
+  },
+  {
+    "id": "CELESTIAL_STANCE_KNOCKS",
+    "type": "mutation",
+    "name": { "str": "Celestial stance (cc resist)" },
+    "description": "Knockback and knockdown resistance for Tenko's martial art.",
+    "points": 0,
+    "player_display": false,
+    "purifiable": false,
+    "valid": false,
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "KNOCKBACK_RESIST", "add": 100 },
+          { "value": "KNOCKDOWN_RESIST", "add": 100 } 
+        ] 
+      } 
+    ]
   },
   {
     "id": "GYOKUTO_SPECIES",
@@ -135,14 +154,16 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "armor": [ { "parts": "ALL", "heat": 6 } ],
-    "//": "Can't find how to use percentage dmg reduction, this value should be 66% of all received fire damage + base say, 4, so it blocks minor fire attacks instead of being completely immune",
+    "armor": [ { "parts": "ALL", "heat": 2 } ],
     "movecost_modifier": 0.8,
     "weakness_to_water": 1,
     "enchantments": [ 
       { 
         "condition": "ALWAYS", 
-        "values": [ { "value": "INTELLIGENCE", "add": -2 } ] 
+        "values": [ 
+          { "value": "INTELLIGENCE", "add": -2 },
+          { "value": "ARMOR_HEAT", "multiply": -0.66 }
+        ] 
       } 
     ]
   },
@@ -182,10 +203,18 @@
     "starting_trait": false,
     "valid": false,
     "active": true,
-    "armor": [ { "parts": "ALL", "heat": 6 } ],
     "ugliness": 4,
     "visibility": 4,
     "weakness_to_water": 1,
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "ARMOR_HEAT", "multiply": -0.33 },
+          { "value": "FALL_DAMAGE", "multiply": -0.33 }
+        ] 
+      } 
+    ],
     "transform": { "target": "KASHA_SPECIES_active", "active": false, "moves": 100 },
     "cancels": [ "FRESHWATEROSMOSIS", "GILLS", "MEMBRANE", "SCALES", "SLEEK_SCALES", "SLIMY", "WATERSLEEPER", "WEBBED", "WEBBED_FEET" ],
     "//": "If only there was a way to instead block all animalistic mutations instead..."
@@ -210,9 +239,10 @@
       {
         "condition": "ALWAYS",
         "values": [
-          { "value": "FOOTSTEP_NOISE", "multiply": -0.67 },
+          { "value": "FOOTSTEP_NOISE", "multiply": -0.66 },
           { "value": "MELEE_DAMAGE", "multiply": -0.5 },
-          { "value": "METABOLISM", "multiply": -0.5 }
+          { "value": "METABOLISM", "multiply": -0.5 },
+          { "value": "FALL_DAMAGE", "multiply": -0.66 }
         ]
       }
     ],
@@ -337,7 +367,7 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "armor": [ { "parts": "ALL", "bash": -1 } ],
+    "armor": [ { "parts": "ALL", "bash": -2 } ],
     "stamina_regen_modifier": 0.25,
     "movecost_modifier": 0.8,
     "ugliness": -2,
@@ -345,7 +375,10 @@
     "enchantments": [
       {
         "condition": "ALWAYS",
-        "values": [ { "value": "DEXTERITY", "add": 2 }, { "value": "INTELLIGENCE", "add": 1 } ],
+        "values": [ 
+          { "value": "DEXTERITY", "add": 2 }, 
+          { "value": "INTELLIGENCE", "add": 1 } 
+        ],
         "mutations": [ "TOLERANCE" ]
       }
     ],
@@ -363,15 +396,13 @@
     "starting_trait": false,
     "valid": false,
     "active": true,
-    "armor": [ { "parts": "ALL", "acid": 6 } ],
     "enchantments": [ 
       { 
         "condition": "ALWAYS", 
-        "mutations": [ "WEB_WALKER" ] 
+        "mutations": [ "WEB_WALKER" ]
       } 
     ],
     "transform": { "target": "TSUCHIGUMO_SPECIES_active", "active": false, "moves": 100 },
-    "flags": [ "BIO_IMMUNE", "NO_DISEASE", "PARAIMMUNE" ],
     "//": "Also, add some kind of social bonus for enemies with the YOUKAI trait or plus ARACHNID. In fact I should probably check all social interactions of Youkai in general at some point",
     "//2": "This needs some sort of small bonus over the active form below, so she has a reason to switch forms at all"
   },
@@ -391,7 +422,9 @@
       { 
         "condition": "ALWAYS", 
         "mutations": [ "WEB_WALKER" ], 
-        "values": [ { "value": "METABOLISM", "multiply": 0.2 } ] 
+        "values": [ 
+          { "value": "METABOLISM", "multiply": 0.2 }
+        ] 
       } 
     ],
     "transform": { "target": "TSUCHIGUMO_SPECIES", "active": false, "moves": 100 },
@@ -422,7 +455,8 @@
           { "value": "DEXTERITY", "add": 2 },
           { "value": "INTELLIGENCE", "add": 2 },
           { "value": "PERCEPTION", "add": 2 },
-          { "value": "STRENGTH", "add": 2 }
+          { "value": "STRENGTH", "add": 2 },
+          { "value": "ARMOR_STAB", "multiply": 1 }
         ],
         "mutations": [ "CANNIBAL", "SUNBURN" ]
       }
@@ -660,7 +694,10 @@
     "enchantments": [ 
       { 
       "condition": "ALWAYS", 
-      "values": [ { "value": "STRENGTH", "add": 2 } ] 
+      "values": [ 
+        { "value": "STRENGTH", "add": 2 },
+        { "value": "OVERKILL_DAMAGE", "MULTIPLY": -4 }
+      ] 
       } 
     ]
   },
@@ -719,7 +756,8 @@
     "enchantments": [ 
       { 
       "condition": "ALWAYS", 
-      "values": [ { "value": "SLEEPY", "add": 25 } ]
+      "values": [ { "value": "SLEEPY", "add": 25 } ],
+      "mutations": [ "KI_STRIKE" ]
       } 
     ],
     "cancels": [ "EASYSLEEPER", "EASYSLEEPER2", "HEAVYSLEEPER2", "INSOMNIA", "SLEEPY", "SLEEPY2" ],
@@ -820,7 +858,16 @@
     "profession": true,
     "purifiable": false,
     "starting_trait": false,
-    "valid": false
+    "valid": false,
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "ARMOR_BIO", "multiply": -0.33 }
+        ] 
+      } 
+    ],
+    "flags": [ "INFECTION_IMMUNE", "PARAIMMUNE" ]
   },
   {
     "id": "PROF_YOUMU",

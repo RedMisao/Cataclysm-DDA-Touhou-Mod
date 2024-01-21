@@ -70,7 +70,8 @@
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
     "//": "Based on Poison Water: Unsanitary Rain",
-    "//2": "min field intensity 1"
+    "//2": "min field intensity 1",
+    "//3": "WIP. Change field !!!"
   },
   {
     "id": "yamame_scarletplague",

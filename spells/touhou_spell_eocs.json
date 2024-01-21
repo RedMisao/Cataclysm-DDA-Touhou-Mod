@@ -1,5 +1,75 @@
 [
   {
+    "id": "dash_kokoro_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_cast_spell": { "id": "dash_kokoro2" }, "targeted": true },
+      { "run_eocs": [ "dash_kokoro_aoe_eoc" ] }
+    ]
+  },
+  {
+    "id": "dash_kokoro_aoe_eoc",
+    "type": "effect_on_condition",
+    "effect": [ 
+      { "u_cast_spell": { "id": "dash_kokoro3" }, "targeted": false }
+    ]
+  },
+  {
+    "id": "dash_mokou_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "run_eocs": [ "dash_mokou_dash_eoc" ] }
+    ]
+  },
+  {
+    "id": "dash_mokou_dash_eoc",
+    "type": "effect_on_condition",
+    "effect": [ 
+      { "u_cast_spell": { "id": "dash_mokou3" }, "targeted": true }
+    ]
+  },
+  {
+    "id": "meiling_mountainbreak_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_mountainbreakcasted", "=", "1" ] },
+      { "run_eocs": [ "meiling_mountainbreak_check" ] },
+      { "queue_eocs": [ "meiling_mountainbreak_timer" ], "time_in_future": "2 s" }
+    ],
+    "//": "When the spell is cast this sets the var to 1, runs the check and prepares the var to reset after 2 s"
+  },
+  {
+    "id": "meiling_mountainbreak_check",
+    "type": "effect_on_condition",
+    "recurrence": "1 s",
+    "condition": {
+      "and": [
+        { "math": [ "var_mountainbreakcasted", "==", "1" ] },
+        { "math": [ "var_meilingblock", "==", "1" ] }
+      ]
+    },
+    "effect": [ 
+      { "u_cast_spell": { "id": "meiling_mountainbreak2" }, "targeted": true }
+    ],
+    "deactivate_condition": { "math": [ "var_mountainbreakcasted", "==", "0" ] },
+    "//": "The check is active only if: Meiling has cast the spell, and she has blocked in the last 2 seconds (onblock_eocs), if so she will cast the damage component of the spell. The recurrence deactivates if the var is zero, so it doesn't run all the time"
+  },
+  {
+    "id": "meiling_mountainbreak_timer",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_mountainbreakcasted", "=", "0" ] }
+    ],
+    "//": "This and the timer below, are triggered 2 s after Meiling gains the 'spell casted' and 'blocked' vars, respectively"
+  },
+  {
+    "id": "meiling_mountainbreak_timer2",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_meilingblock", "=", "0" ] }
+    ]
+  },
+  {
     "id": "sakuya_maidsecret_eoc",
     "type": "effect_on_condition",
     "effect": [

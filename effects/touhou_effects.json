@@ -79,7 +79,8 @@
     "desc": [ " " ],
     "rating": "good",
     "show_in_info": false,
-    "flags": [ "LEVITATION" ]
+    "flags": [ "LEVITATION" ],
+    "//": "This effect is used in dashes, so the caster can 'jump' between z-level falls without dropping, breaking some bones, and moving to the end position"
   },
   {
     "id": "icy_pyrexia",
@@ -166,7 +167,17 @@
     "name": [ "Hannya mask (anger)" ],
     "desc": [ "You are ANGRY." ],
     "apply_message": "You wear the Hannya mask.  Anger.",
-    "rating": "mixed"
+    "rating": "mixed",
+    "enchantments": [ 
+      { "values": [ { "value": "STRENGTH", "add": 2 } ] }, 
+      { "values": [ { "value": "ATTACK_NOISE", "multiply": 0.1 } ] },
+      { "values": [ { "value": "OVERKILL_DAMAGE", "multiply": -2 } ] },
+      { "value": "SOCIAL_INTIMIDATE", "add": 4 },
+      { "value": "SOCIAL_PERSUADE", "add": -4 },
+      { "value": "WEAPON_DISPERSION", "multiply": 1.16 }
+      
+      
+    ]
   },
   {
     "id": "kokoro_anger_effect_boost",
@@ -174,7 +185,17 @@
     "name": [ "Hannya mask (anger) (boost)" ],
     "desc": [ "You are VERY ANGRY." ],
     "apply_message": "The Hannya mask is overflowing with fury!",
-    "rating": "mixed"
+    "rating": "mixed",
+    "enchantments": [ 
+      { "values": [ { "value": "STRENGTH", "add": 4 } ] }, 
+      { "values": [ { "value": "INTELLIGENCE", "add": -2 } ] }, 
+      { "values": [ { "value": "ATTACK_NOISE", "multiply": 0.33 } ] }, 
+      { "values": [ { "value": "OVERKILL_DAMAGE", "multiply": -3 } ] },
+      { "value": "SOCIAL_INTIMIDATE", "add": 8 },
+      { "value": "SOCIAL_PERSUADE", "add": -8 },
+      { "value": "WEAPON_DISPERSION", "multiply": 0.33 }
+      
+    ]
   },
   {
     "id": "kokoro_determination_effect",
@@ -182,7 +203,17 @@
     "name": [ "Inari mask (determination)" ],
     "desc": [ "You are motivated." ],
     "apply_message": "You wear the Inari mask.  Motivated!",
-    "rating": "mixed"
+    "rating": "mixed",
+    "enchantments": [ 
+      { "values": [ { "value": "INTELLIGENCE", "add": 2 } ] },
+      
+      { "value": "SOCIAL_LIE", "add": 4 },
+      { "value": "SOCIAL_PERSUADE", "add": 4 }
+      
+
+      
+      
+    ]
   },
   {
     "id": "kokoro_determination_effect_boost",
@@ -190,7 +221,15 @@
     "name": [ "Inari mask (determination) (boost)" ],
     "desc": [ "You are very motivated!" ],
     "apply_message": "The Inari mask is overflowing with resolve!",
-    "rating": "mixed"
+    "rating": "mixed",
+    "enchantments": [ 
+      { "values": [ { "value": "INTELLIGENCE", "add": 4 } ] }, 
+      { "values": [ { "value": "STRENGTH", "add": -2 } ] }, 
+      
+      { "value": "SOCIAL_LIE", "add": 8 },
+      { "value": "SOCIAL_PERSUADE", "add": 4 }
+      
+    ]
   },
   {
     "id": "kokoro_happiness_effect",
@@ -198,7 +237,16 @@
     "name": [ "Hyottoko mask (happiness)" ],
     "desc": [ "You are happy :)" ],
     "apply_message": "You wear the Hyottoko mask.  Ha ha!",
-    "rating": "mixed"
+    "rating": "mixed",
+    "enchantments": [ 
+      { "values": [ { "value": "DEXTERITY", "add": 2 } ] }, 
+      { "values": [ { "value": "PAIN_REMOVE", "add": 1 } ] }, 
+      
+      { "value": "SOCIAL_INTIMIDATE", "add": -4 },
+      { "value": "SOCIAL_PERSUADE", "add": 4 }
+      
+      
+    ]
   },
   {
     "id": "kokoro_happiness_effect_boost",
@@ -206,7 +254,17 @@
     "name": [ "Hyottoko mask (happiness) (boost)" ],
     "desc": [ "You are ecstatic 😂😂😂" ],
     "apply_message": "The Hyottoko mask is overflowing with elation!",
-    "rating": "mixed"
+    "rating": "mixed",
+    "enchantments": [ 
+      { "values": [ { "value": "DEXTERITY", "add": 4 } ] }, 
+      { "values": [ { "value": "PERCEPTION", "add": -2 } ] }, 
+      { "values": [ { "value": "PAIN_REMOVE", "add": 2 } ] }, 
+      
+      { "value": "SOCIAL_INTIMIDATE", "add": -8 },
+      { "value": "SOCIAL_PERSUADE", "add": 8 }
+      
+      
+    ]
   },
   {
     "id": "kokoro_melancholy_effect",
@@ -214,7 +272,20 @@
     "name": [ "Uba mask (melancholy)" ],
     "desc": [ "You are sad…" ],
     "apply_message": "You wear the Uba mask.  Sadness.",
-    "rating": "mixed"
+    "rating": "mixed",
+    "enchantments": [ 
+      { "values": [ { "value": "PERCEPTION", "add": 2 } ] }, 
+      { "values": [ { "value": "PAIN", "multiply": 0.05 } ] },
+      { "values": [ { "value": "ATTACK_SPEED", "multiply": -0.1 } ] },
+      
+      
+      
+      
+      { "value": "SOCIAL_LIE", "add": 4 },
+      { "value": "SOCIAL_PERSUADE", "add": 4 }
+      
+      
+    ]
   },
   {
     "id": "kokoro_melancholy_effect_boost",
@@ -223,7 +294,17 @@
     "desc": [ "…" ],
     "apply_message": "The Uba mask is overflowing with melancholy!",
     "rating": "mixed",
-    "base_mods": { "speed_mod": [ -15 ] }
+    "enchantments": [ 
+      { "values": [ { "value": "PERCEPTION", "add": 4 } ] }, 
+      { "values": [ { "value": "DEXTERITY", "add": -2 } ] }, 
+      { "values": [ { "value": "PAIN", "multiply": 0.1 } ] }, 
+      { "values": [ { "value": "ATTACK_SPEED", "multiply": -0.16 } ] },
+      
+      { "value": "SOCIAL_LIE", "add": 4 },
+      { "value": "SOCIAL_PERSUADE", "add": 8 }
+      
+      
+    ]
   },
   {
     "id": "kokoro_neutral_effect",

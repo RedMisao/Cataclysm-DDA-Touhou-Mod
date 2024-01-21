@@ -29,7 +29,7 @@
         "melee_allowed": true,
         "unarmed_weapons_allowed": false,
         "weapon_categories_allowed": [ "WHIPS" ],
-        "buff_duration": 2,
+        "buff_duration": 3,
         "max_stacks": 1
       }
     ],
@@ -78,8 +78,8 @@
         "unarmed_allowed": true,
         "melee_allowed": true,
         "buff_duration": 2,
-        "max_stacks": 5,
-        "flat_bonuses": [ { "stat": "crit_chance", "scale": 7 } ]
+        "max_stacks": 6,
+        "flat_bonuses": [ { "stat": "crit_chance", "scale": 4 } ]
       },
       {
         "id": "buff_celestial_brawling_iku_onmove2",
@@ -111,6 +111,15 @@
           { "stat": "damage", "type": "cut", "scale": 1.33 },
           { "stat": "damage", "type": "stab", "scale": 1.33 }
         ]
+      },
+      {
+        "id": "buff_celestial_brawling_iku_onpause2",
+        "name": "Grounded",
+        "description": "Allows using Ionic whip after grounding.",
+        "unarmed_allowed": true,
+        "melee_allowed": true,
+        "buff_duration": 3,
+        "max_stacks": 1
       }
     ],
     "techniques": [
@@ -119,8 +128,6 @@
       "tec_celestial_brawling_disarm_melee",
       "tec_celestial_brawling_disarm_unarmed",
       "tec_iku_earthen_crescent",
-      "tec_iku_palm",
-      "tec_iku_palm2",
       "tec_iku_poke",
       "tec_iku_poke2",
       "tec_iku_rising",
@@ -145,13 +152,22 @@
       {
         "id": "buff_celestial_brawling_tenko_static",
         "name": "Celestial stance (Fallen)",
-        "description": "You're used to do as much damage as possible without care for your safety.  Solid as a keystone, your chance to land hits is increased and evasive actions are reduced.",
+        "description": "You're used to do as much damage as possible without care for your safety.  Solid as a keystone, your chance to land hits is increased, you're immune to throws, and evasive actions are reduced.",
         "unarmed_allowed": true,
         "melee_allowed": true,
         "bonus_dodges": -1,
-        "flat_bonuses": [ { "stat": "hit", "scale": 2 } ]
+        "flat_bonuses": [ { "stat": "hit", "scale": 1 } ]
       }
     ],
+    "static_eocs": [
+      {
+        "id": "celestial_brawling_tenko_static_eoc",
+        "effect": [
+          { "u_add_trait": "CELESTIAL_STANCE_KNOCKS" }
+        ]
+      }
+    ],
+    "//": "WIP. Confirm the mutation is removed when switching stances",
     "onhit_buffs": [
       {
         "id": "buff_celestial_brawling_tenko_onhit",
@@ -182,7 +198,7 @@
     "oncrit_buffs": [
       {
         "id": "buff_celestial_brawling_tenko_oncrit",
-        "name": "Sphere of non-perception",
+        "name": "Sphere of non-perception (debuff)",
         "description": "…Which interfers with your own focus.  Landing critical attacks prevents your next attack from being as effective.",
         "unarmed_allowed": true,
         "melee_allowed": true,
@@ -227,12 +243,14 @@
     "initiate": [ "You relax yourself and adopt a staging pose.", "%s relaxes and adopts a staging pose." ],
     "primary_skill": "melee",
     "teachable": false,
+    "weapon_category": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS", "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
+    "//weapon": "Kokoro can use any of those, but she has different techniques and spells if using 1h vs 2h weapons",
     "allow_all_weapons": true,
     "static_buffs": [
       {
         "id": "buff_kokoro_static",
         "name": "One-mask-party",
-        "description": "Yourself, basically.  You get different effects according to your currently equipped mask.  You're always slightly more evasive, at the very least.",
+        "description": "Yourself, basically.  You get different effects according to your currently equipped mask.  Always increases the number of evades you can perform.",
         "unarmed_allowed": true,
         "melee_allowed": true,
         "bonus_dodges": 1
@@ -258,9 +276,9 @@
         "description": "Evading attacks grants you increased chance to land effective attacks.",
         "unarmed_allowed": true,
         "melee_allowed": true,
-        "buff_duration": 2,
+        "buff_duration": 3,
         "max_stacks": 9,
-        "flat_bonuses": [ { "stat": "crit_chance", "scale": 11 } ]
+        "flat_bonuses": [ { "stat": "crit_chance", "scale": 9 } ]
       }
     ],
     "onmove_buffs": [
@@ -298,22 +316,13 @@
     ],
     "//2": "WIP. Also enable a technique by doing this",
     "techniques": [
-      "tec_celestial_brawling_break_melee",
-      "tec_celestial_brawling_break_unarmed",
-      "tec_celestial_brawling_disarm_melee",
-      "tec_celestial_brawling_disarm_unarmed",
-      "tec_iku_earthen_crescent",
-      "tec_iku_palm",
-      "tec_iku_palm2",
-      "tec_iku_poke",
-      "tec_iku_poke2",
-      "tec_iku_rising",
-      "tec_iku_rising2",
-      "tec_iku_rising_drill",
-      "tec_iku_slap",
-      "tec_iku_slap_reverse",
-      "tec_iku_slap_elec",
-      "tec_iku_step"
+      "tec_kokoro_grab_break",
+      "tec_kokoro_grab_break2",
+      "tec_kokoro_spin",
+      "tec_kokoro_sweep",
+      "tec_kokoro_swing_fast",
+      "tec_kokoro_swing",
+      "tec_kokoro_switch"
     ]
   },
   {
@@ -325,6 +334,8 @@
     "primary_skill": "unarmed",
     "teachable": false,
     "weapon_category": [ "CLAWS", "SPEARS", "POLEARMS", "QUARTERSTAVES" ],
+    "arm_block": 1,
+    "leg_block": 2,
     "static_buffs": [
       {
         "id": "buff_meiling_static",
@@ -333,11 +344,11 @@
         "unarmed_allowed": true,
         "bonus_blocks": 2,
         "flat_bonuses": [
-          { "stat": "block_effectiveness", "scale": 1.33 },
+          { "stat": "block_effectiveness", "scale": 2 },
           { "stat": "block", "scaling-stat": "dex", "scale": 0.5 },
           { "stat": "block", "scaling-stat": "int", "scale": 0.5 },
           { "stat": "block", "scaling-stat": "str", "scale": 0.5 },
-          { "stat": "dodge", "scale": -1 }
+          { "stat": "dodge", "scale": -2 }
         ]
       }
     ],
@@ -368,6 +379,15 @@
         "max_stacks": 1
       }
     ],
+    "onblock_eocs": [
+      {
+        "id": "buff_meiling_onblock_eoc",
+        "effect": [
+          { "math": [ "var_meilingblock", "=", "1" ] },
+          { "queue_eocs": [ "meiling_mountainbreak_timer2" ], "time_in_future": "2 s" }
+        ]
+      }
+    ],
     "onpause_buffs": [
       {
         "id": "buff_meiling_onpause",
@@ -382,6 +402,14 @@
           { "stat": "arpen", "type": "cut", "scaling-stat": "int", "scale": 0.75 },
           { "stat": "arpen", "type": "stab", "scaling-stat": "int", "scale": 0.75 }
         ]
+      },
+      {
+        "id": "buff_meiling_onpause2",
+        "name": "Redirected qi",
+        "description": "Allows using Qi burst after pausing.",
+        "unarmed_allowed": true,
+        "buff_duration": 2,
+        "max_stacks": 1
       }
     ],
     "techniques": [
@@ -405,6 +433,9 @@
     "primary_skill": "unarmed",
     "teachable": false,
     "force_unarmed": true,
+    "arm_block": 3,
+    "leg_block": 2,
+    "//block": "I feel the blocking formula relies on those two fields plus the character's physical skills to block attacks. If that's not the case, ALL arm_block and leg_block fields in this file should be removed",
     "static_buffs": [
       {
         "id": "buff_mokou_static",
@@ -447,7 +478,7 @@
         "max_stacks": 4,
         "flat_bonuses": [ 
           { "stat": "hit", "scale": 1 }, 
-          { "stat": "block_effectiveness", "scale": 0.67 }
+          { "stat": "block_effectiveness", "scale": 1 }
         ]
       }
     ],
@@ -496,7 +527,7 @@
       }
     ],
     "techniques": [
-      "tec_brawl_disarm_melee",
+      "tec_brawl_disarm_unarmed",
       "tec_taekwondo_strong",
       "tec_mokou_fire_burst",
       "tec_mokou_front_kick",
@@ -509,8 +540,7 @@
       "tec_mokou_tackle",
       "tec_mokou_talons",
       "tec_mokou_talons2"
-    ],
-    "//": "ADD basic brawling techniques, RECHECK her techs with braling, do brawling -> mokou_ma "
+    ]
   },
   {
     "id": "style_youmu",
@@ -520,8 +550,8 @@
     "initiate": [ "You take a firm grasp of your weapon.", "%s firmly grasps their weapon." ],
     "primary_skill": "cutting",
     "teachable": false,
-    "strictly_melee": true,
     "weapon_category": [ "JAPANESE_SWORDS", "SHORT_SWORDS", "MEDIUM_SWORDS", "LONG_SWORDS", "FENCING_WEAPONRY", "LONG_THRUSTING_SWORDS", "GREAT_SWORDS", "BIONIC_SWORDS" ],
+    "strictly_melee": true,
     "static_buffs": [
       {
         "id": "buff_youmu_static",
