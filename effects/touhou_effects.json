@@ -168,15 +168,17 @@
     "desc": [ "You are ANGRY." ],
     "apply_message": "You wear the Hannya mask.  Anger.",
     "rating": "mixed",
-    "enchantments": [ 
-      { "values": [ { "value": "STRENGTH", "add": 2 } ] }, 
-      { "values": [ { "value": "ATTACK_NOISE", "multiply": 0.1 } ] },
-      { "values": [ { "value": "OVERKILL_DAMAGE", "multiply": -2 } ] },
-      { "value": "SOCIAL_INTIMIDATE", "add": 4 },
-      { "value": "SOCIAL_PERSUADE", "add": -4 },
-      { "value": "WEAPON_DISPERSION", "multiply": 1.16 }
-      
-      
+    "enchantments": [
+      {
+        "values": [
+          { "value": "STRENGTH", "add": 2 },
+          { "value": "ATTACK_NOISE", "multiply": 0.1 },
+          { "value": "OVERKILL_DAMAGE", "multiply": -2 },
+          { "value": "SOCIAL_INTIMIDATE", "add": 4 },
+          { "value": "SOCIAL_PERSUADE", "add": -4 },
+          { "value": "WEAPON_DISPERSION", "multiply": 1.16 }
+        ] 
+      }
     ]
   },
   {
@@ -187,14 +189,17 @@
     "apply_message": "The Hannya mask is overflowing with fury!",
     "rating": "mixed",
     "enchantments": [ 
-      { "values": [ { "value": "STRENGTH", "add": 4 } ] }, 
-      { "values": [ { "value": "INTELLIGENCE", "add": -2 } ] }, 
-      { "values": [ { "value": "ATTACK_NOISE", "multiply": 0.33 } ] }, 
-      { "values": [ { "value": "OVERKILL_DAMAGE", "multiply": -3 } ] },
-      { "value": "SOCIAL_INTIMIDATE", "add": 8 },
-      { "value": "SOCIAL_PERSUADE", "add": -8 },
-      { "value": "WEAPON_DISPERSION", "multiply": 0.33 }
-      
+      { 
+        "values": [
+          { "value": "STRENGTH", "add": 4 }, 
+          { "value": "INTELLIGENCE", "add": -2 }, 
+          { "value": "ATTACK_NOISE", "multiply": 0.33 }, 
+          { "value": "OVERKILL_DAMAGE", "multiply": -3 },
+          { "value": "SOCIAL_INTIMIDATE", "add": 8 },
+          { "value": "SOCIAL_PERSUADE", "add": -8 },
+          { "value": "WEAPON_DISPERSION", "multiply": 0.33 }
+        ]
+      }
     ]
   },
   {
@@ -205,14 +210,13 @@
     "apply_message": "You wear the Inari mask.  Motivated!",
     "rating": "mixed",
     "enchantments": [ 
-      { "values": [ { "value": "INTELLIGENCE", "add": 2 } ] },
-      
-      { "value": "SOCIAL_LIE", "add": 4 },
-      { "value": "SOCIAL_PERSUADE", "add": 4 }
-      
-
-      
-      
+      { 
+        "values": [ 
+          { "value": "INTELLIGENCE", "add": 2 },
+          { "value": "SOCIAL_LIE", "add": 4 },
+          { "value": "SOCIAL_PERSUADE", "add": 4 }
+        ]
+      }
     ]
   },
   {
@@ -223,12 +227,14 @@
     "apply_message": "The Inari mask is overflowing with resolve!",
     "rating": "mixed",
     "enchantments": [ 
-      { "values": [ { "value": "INTELLIGENCE", "add": 4 } ] }, 
-      { "values": [ { "value": "STRENGTH", "add": -2 } ] }, 
-      
-      { "value": "SOCIAL_LIE", "add": 8 },
-      { "value": "SOCIAL_PERSUADE", "add": 4 }
-      
+      { 
+        "values": [
+          { "value": "INTELLIGENCE", "add": 4 }, 
+          { "value": "STRENGTH", "add": -2 }, 
+          { "value": "SOCIAL_LIE", "add": 8 },
+          { "value": "SOCIAL_PERSUADE", "add": 4 }
+        ]
+      }
     ]
   },
   {
@@ -239,13 +245,14 @@
     "apply_message": "You wear the Hyottoko mask.  Ha ha!",
     "rating": "mixed",
     "enchantments": [ 
-      { "values": [ { "value": "DEXTERITY", "add": 2 } ] }, 
-      { "values": [ { "value": "PAIN_REMOVE", "add": 1 } ] }, 
-      
-      { "value": "SOCIAL_INTIMIDATE", "add": -4 },
-      { "value": "SOCIAL_PERSUADE", "add": 4 }
-      
-      
+      {
+        "values": [ 
+          { "value": "DEXTERITY", "add": 2 }, 
+          { "value": "PAIN_REMOVE", "add": 1 }, 
+          { "value": "SOCIAL_INTIMIDATE", "add": -4 },
+          { "value": "SOCIAL_PERSUADE", "add": 4 }
+        ]
+      }
     ]
   },
   {
@@ -256,14 +263,15 @@
     "apply_message": "The Hyottoko mask is overflowing with elation!",
     "rating": "mixed",
     "enchantments": [ 
-      { "values": [ { "value": "DEXTERITY", "add": 4 } ] }, 
-      { "values": [ { "value": "PERCEPTION", "add": -2 } ] }, 
-      { "values": [ { "value": "PAIN_REMOVE", "add": 2 } ] }, 
-      
-      { "value": "SOCIAL_INTIMIDATE", "add": -8 },
-      { "value": "SOCIAL_PERSUADE", "add": 8 }
-      
-      
+      { 
+        "values": [ 
+          { "value": "DEXTERITY", "add": 4 } ] }, 
+          { "values": [ { "value": "PERCEPTION", "add": -2 }, 
+          { "values": [ { "value": "PAIN_REMOVE", "add": 2 }, 
+          { "value": "SOCIAL_INTIMIDATE", "add": -8 },
+          { "value": "SOCIAL_PERSUADE", "add": 8 }
+        ]
+      }
     ]
   },
   {
@@ -274,17 +282,15 @@
     "apply_message": "You wear the Uba mask.  Sadness.",
     "rating": "mixed",
     "enchantments": [ 
-      { "values": [ { "value": "PERCEPTION", "add": 2 } ] }, 
-      { "values": [ { "value": "PAIN", "multiply": 0.05 } ] },
-      { "values": [ { "value": "ATTACK_SPEED", "multiply": -0.1 } ] },
-      
-      
-      
-      
-      { "value": "SOCIAL_LIE", "add": 4 },
-      { "value": "SOCIAL_PERSUADE", "add": 4 }
-      
-      
+      { 
+        "values": [ 
+          { "value": "PERCEPTION", "add": 2 }, 
+          { "value": "PAIN", "multiply": 0.05 },
+          { "value": "ATTACK_SPEED", "multiply": -0.1 },
+          { "value": "SOCIAL_LIE", "add": 4 },
+          { "value": "SOCIAL_PERSUADE", "add": 4 }
+        ]
+      }
     ]
   },
   {
@@ -295,15 +301,16 @@
     "apply_message": "The Uba mask is overflowing with melancholy!",
     "rating": "mixed",
     "enchantments": [ 
-      { "values": [ { "value": "PERCEPTION", "add": 4 } ] }, 
-      { "values": [ { "value": "DEXTERITY", "add": -2 } ] }, 
-      { "values": [ { "value": "PAIN", "multiply": 0.1 } ] }, 
-      { "values": [ { "value": "ATTACK_SPEED", "multiply": -0.16 } ] },
-      
-      { "value": "SOCIAL_LIE", "add": 4 },
-      { "value": "SOCIAL_PERSUADE", "add": 8 }
-      
-      
+      { 
+        "values": [ 
+          { "value": "PERCEPTION", "add": 4 }, 
+          { "value": "DEXTERITY", "add": -2 }, 
+          { "value": "PAIN", "multiply": 0.1 }, 
+          { "value": "ATTACK_SPEED", "multiply": -0.16 },
+          { "value": "SOCIAL_LIE", "add": 4 },
+          { "value": "SOCIAL_PERSUADE", "add": 8 }
+        ]
+      }   
     ]
   },
   {
