@@ -1,13 +1,13 @@
 # Cataclysm-DDA-Touhou-Mod
 This is a fork of Taberone's [Touhou Professions](https://github.com/Taberone/Cataclysm-DDA-Touhou-Mod) mod.
 
-**The mod's folder goes in /data/mods/**.  Last updated for game version: 2024-01-04-2303 experimental.
+**The mod's folder goes in /data/mods/**.  Last updated for game version: 2024-01-22-2056 experimental.
 
 Also check the [Expansion](https://github.com/RedMisao/Cataclysm-DDA-Touhou-Expansion) mod!
 
 
 ## About the mod
-This mod adds Touhou Project characters as professions.  Each character (2hu) has custom spells, abilities, clothing, martial arts, traits (mutations), and more.  To pick any of the 2hus, you have to select the **Touhou Mod** scenario when creating a new character.
+This mod adds Touhou Project characters as professions.  Characters (2hus) have custom spells, abilities, clothing, martial arts, traits (mutations), and more.  To pick any of the 2hus, you have to select the **Touhou Mod** scenario when creating a new character.
 
 
 ## 2hus
@@ -27,7 +27,7 @@ This mod adds Touhou Project characters as professions.  Each character (2hu) ha
 
 
 ## New mechanics
-* Auras.  Sakuya and Udongein have "aura" type abilities, each granting different passive effects as long as they're active, and can be toggled ON or OFF by casting specific spells.
+* Auras.  Various characters have toggle-able "aura" style abilities, each granting different effects as long as they're active.  Can be turned ON or OFF by casting specific spells.
 * Spell growth.  All character spells and spell effects now scale proportionally to their main skills, instead of spell level.
 * Blood thirst.  Remi now has to consume blood (or human flesh, with less effectiveness) in any shape or form, in order to keep the thirst at bay.
 * Immortality.  Mokou resurrects after dying, immediately restoring her body.  She can die as many times as she wants, but there's a soft cap relative to how many times she has died in a period of time, plus a small-ish pain debuff that stacks, to discourage savescumming.
@@ -41,7 +41,7 @@ Every 2hu has their own custom set of clothing.  Not all are just cosmetics chan
 
 ## Minor milestones
 Relatively easy things to add, not in order:
-* More 2hus: Nitori and Yamame are still not playable.  I want to add Kasen and Kokoro, maybe Flandre and Joon too.
+* More 2hus: Nitori, Yamame and Kokoro are still not playable.  I want to add Kasen, maybe Flandre and Joon too.
 * Visual effects: Can it be done with fields? For example, when Youmu dashes, cherry petals appear on the path.
 * Vehicles: Make an engine that can use corpses as fuel.
 * Balance: CDDA is a roguelike, but the mod feels RPG-ish at times.
