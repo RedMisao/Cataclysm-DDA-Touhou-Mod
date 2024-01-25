@@ -171,13 +171,13 @@
         "name": "cobwebs",
         "sym": "}",
         "effects": [
-          { "effect_id": "webbed", "intensity": 1, "min_duration": "12 s", "immune_in_vehicle": true, "is_environmental": false }
+          { "effect_id": "webbed", "intensity": 1, "min_duration": "4 s", "immune_in_vehicle": true, "is_environmental": false }
         ]
       },
       {
         "name": "webs",
         "effects": [
-          { "effect_id": "webbed", "intensity": 2, "min_duration": "12 s", "immune_in_vehicle": true, "is_environmental": false }
+          { "effect_id": "webbed", "intensity": 2, "min_duration": "4 s", "immune_in_vehicle": true, "is_environmental": false }
         ]
       }
     ],
@@ -185,7 +185,7 @@
     "immunity_data": { "flags": [ "WEBWALK", "PROF_KOKORO" ] },
     "decrease_intensity_on_contact": false,
     "priority": 2,
-    "half_life": "12 seconds",
+    "half_life": "6 seconds",
     "phase": "gas",
     "display_items": true,
     "bash": {

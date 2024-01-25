@@ -29,6 +29,68 @@
     ]
   },
   {
+    "id": "kokoro_backsweep_eoc",
+    "type": "effect_on_condition",
+    "condition": {
+      "or": [
+        { "u_has_wielded_with_weapon_category": "LONG_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "GREAT_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "QUARTERSTAVES" },
+        { "u_has_wielded_with_weapon_category": "SPEARS" },
+        { "u_has_wielded_with_weapon_category": "POLEARMS" },
+        { "u_has_wielded_with_weapon_category": "GREAT_AXES" }
+      ]
+    },
+    "effect": [
+      { "run_eocs": [ "kokoro_backsweep_sweep" ] }
+    ],
+    "false_effect": [ 
+      { "u_message": "You don't have any 2h weapons equipped.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "75" ] }
+    ],
+    "//": "Simple EOC just checks if Kokoro is wielding any 2h, if she isn't the cast fails"
+  },
+  {
+    "id": "kokoro_backsweep_sweep",
+    "type": "effect_on_condition",
+    "effect": [ 
+      { "u_cast_spell": { "id": "kokoro_backsweep2" }, "targeted": true }
+    ]
+  },
+  {
+    "id": "kokoro_quick_attack_eoc",
+    "type": "effect_on_condition",
+    "condition": {
+      "or": [
+        { "u_has_wielded_with_weapon_category": "BATONS" },
+        { "u_has_wielded_with_weapon_category": "HAND_AXES" },
+        { "u_has_wielded_with_weapon_category": "SHORT_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "MEDIUM_SWORDS" },  
+        { "u_has_wielded_with_weapon_category": "LONG_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "GREAT_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "QUARTERSTAVES" },
+        { "u_has_wielded_with_weapon_category": "SPEARS" },
+        { "u_has_wielded_with_weapon_category": "POLEARMS" },
+        { "u_has_wielded_with_weapon_category": "GREAT_AXES" }
+      ]
+    },
+    "effect": [
+      { "run_eocs": [ "kokoro_quick_attack_attack" ] }
+    ],
+    "false_effect": [ 
+      { "u_message": "You're not using any compatible weapons.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "75" ] }
+    ],
+    "//": "Simple EOC just checks if Kokoro is wielding any weapon allowed by her MA, if she isn't the cast fails"
+  },
+  {
+    "id": "kokoro_quick_attack_attack",
+    "type": "effect_on_condition",
+    "effect": [ 
+      { "u_cast_spell": { "id": "kokoro_quick_attack2" }, "targeted": true }
+    ]
+  },
+  {
     "id": "meiling_mountainbreak_eoc",
     "type": "effect_on_condition",
     "effect": [
@@ -48,10 +110,10 @@
         { "math": [ "var_meilingblock", "==", "1" ] }
       ]
     },
+    "deactivate_condition": { "math": [ "var_mountainbreakcasted", "==", "0" ] },
     "effect": [ 
       { "u_cast_spell": { "id": "meiling_mountainbreak2" }, "targeted": true }
     ],
-    "deactivate_condition": { "math": [ "var_mountainbreakcasted", "==", "0" ] },
     "//": "The check is active only if: Meiling has cast the spell, and she has blocked in the last 2 seconds (onblock_eocs), if so she will cast the damage component of the spell. The recurrence deactivates if the var is zero, so it doesn't run all the time"
   },
   {
@@ -67,6 +129,40 @@
     "type": "effect_on_condition",
     "effect": [
       { "math": [ "var_meilingblock", "=", "0" ] }
+    ]
+  },
+  {
+    "id": "mokou_combustion_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "run_eocs": [ "mokou_combustion_cycle1" ] }
+    ],
+    "//": "This EOC is a simplified version of utsuho_fissionaura_eoc "
+  },
+  {
+    "id": "mokou_combustion_cycle1",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_mokou_combustion", "<", "4" ] },
+    "effect": [ 
+      { "u_cast_spell": { "id": "mokou_combustion2" }, "targeted": false },
+      { "run_eocs": [ "mokou_combustion_cycle2" ] }
+    ],
+    "false_effect": { "run_eocs": "mokou_combustion_end" }
+  },
+  {
+    "id": "mokou_combustion_cycle2",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_mokou_combustion", "+=", "1" ] },
+      { "queue_eocs": [ "mokou_combustion_cycle1" ], "time_in_future": "3 s" }
+    ]
+  },
+  {
+    "id": "mokou_combustion_end",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_mokou_combustion", ">=", "4" ] },
+    "effect": [
+      { "math": [ "var_mokou_combustion", "=", "0" ] }
     ]
   },
   {
@@ -121,6 +217,41 @@
       { "u_message": "You lose your concentration.", "type": "mixed" },
       { "math": [ "var_sakuyafocus", "=", "0" ] },
       { "u_lose_effect": "sakuya_maidsecret_effect" }
+    ]
+  },
+  {
+    "id": "udonge_disbeliefaspect_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_monsters_nearby('mon_zombie', 'radius': 16)", "==", "0" ] },
+    "effect": [
+      { "u_message": "AAA", "type": "mixed" },
+      { "math": [ "u_val('mana')", "-=", "100" ] },
+      { "u_cast_spell": { "id": "udonge_disbeliefaspect_spawn" }, "targeted": false }
+    ],
+    "false_effect": [ 
+      { "u_message": "BBB", "type": "mixed" },
+      { "u_cast_spell": { "id": "udonge_disbeliefaspect_tp" }, "targeted": false }
+    ],
+    "//": "Simple EOC just checks if there is any Udonge firing squad around. If there isn't then she spawns some and consumes some mana, otherwise she casts the random tp"
+  },
+  {
+    "id": "udonge_gunwaveBLAST_eoc",
+    "type": "effect_on_condition",
+    "condition": { "u_has_wielded_with_weapon_category": "AUTOMATIC_PISTOLS" },
+    "effect": [
+      { "run_eocs": [ "udonge_gunwaveBLAST_BLAST" ] }
+    ],
+    "false_effect": [ 
+      { "u_message": "You don't have any pistols equipped.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "75" ] }
+    ],
+    "//": "Simple EOC just checks if Udonge is wielding any pistols, if she isn't the cast fails"
+  },
+  {
+    "id": "udonge_gunwaveBLAST_BLAST",
+    "type": "effect_on_condition",
+    "effect": [ 
+      { "u_cast_spell": { "id": "udonge_gunwaveBLAST2" }, "targeted": true }
     ]
   },
   {
@@ -325,17 +456,133 @@
       { "math": [ "var_wavestealth", "=", "0" ] },
       { "u_lose_effect": "udonge_stealth" }
     ]
+  },  
+  {
+    "id": "utsuho_fissionaura_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_utsuho_fissionaura", "+=", "1" ] },
+      { "run_eocs": [ "utsuho_fissionaura_cycle1" ] }
+    ],
+    "//": "This EOC is a simplified version of udonge_waveinsight_start "
   },
   {
-    "id": "yamame_damnedrope_start",
+    "id": "utsuho_fissionaura_cycle1",
     "type": "effect_on_condition",
-    "condition": { "u_has_trait": "TSUCHIGUMO_SPECIES" },
-    "effect": [ { "u_add_trait": "damnedrope_str_mut" }, { "queue_eocs": [ "yamame_damnedrope_end" ], "time_in_future": "5 s" } ]
+    "condition": { "math": [ "var_utsuho_fissionaura", "<", "2" ] },
+    "effect": [ 
+      { "u_cast_spell": { "id": "utsuho_fissionaura2" }, "targeted": false },
+      { "run_eocs": [ "utsuho_fissionaura_cycle2" ] }
+    ],
+    "false_effect": { "run_eocs": "utsuho_fissionaura_toggle" }
+  },
+  {
+    "id": "utsuho_fissionaura_cycle2",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_val('mana')", ">=", "66" ] },
+        { "math": [ "var_utsuho_fissionaura", ">", "0" ] }
+      ]
+    },
+    "effect": [
+      { "math": [ "u_val('mana')", "-=", "11" ] },
+      { "queue_eocs": [ "utsuho_fissionaura_cycle1" ], "time_in_future": "3 s" }
+    ],
+    "false_effect": { "run_eocs": "utsuho_fissionaura_oom" }
+  },
+  {
+    "id": "utsuho_fissionaura_toggle",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_utsuho_fissionaura", ">=", "2" ] },
+    "effect": [
+      { "math": [ "var_utsuho_fissionaura", "=", "0" ] }
+    ]
+  },
+  {
+    "id": "utsuho_fissionaura_oom",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_val('mana')", "<", "66" ] },
+    "effect": [
+      { "u_message": "You ran out of energy!  The fission controllers return to base operation levels.", "type": "mixed" },
+      { "math": [ "var_utsuho_fissionaura", "=", "0" ] }
+    ]
+  },
+  {
+    "id": "utsuho_fusionblade_eoc",
+    "type": "effect_on_condition",
+    "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
+    "effect": [
+      { "math": [ "var_utsuho_fusionblade", "+=", "1" ] },
+      { "math": [ "u_val('mana')", "-=", "50" ] },
+      { "u_add_effect": "aura_fusionblade", "duration": "80 s" },
+      { "run_eocs": [ "utsuho_fusionblade_cycle1" ] }
+    ],
+    "false_effect": [ { "u_message": "Your third leg is not equipped.", "type": "mixed" } ]
+  },
+  {
+    "id": "utsuho_fusionblade_cycle1",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_utsuho_fusionblade", "<", "2" ] },
+    "effect": [ 
+      { "run_eocs": [ "utsuho_fusionblade_cycle2" ] }
+    ],
+    "false_effect": { "run_eocs": "utsuho_fusionblade_toggle" }
+  },
+  {
+    "id": "utsuho_fusionblade_cycle2",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "var_utsuho_fusionblade", ">", "0" ] },
+        { "math": [ "var_utsuho_fusionblade_timer", "<", "( (u_skill('dodge') * 3 ) + 39 )" ] },
+        { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" }
+      ]
+    },
+    "effect": [
+      { "math": [ "var_utsuho_fusionblade_timer", "+=", "1" ] },
+      { "queue_eocs": [ "utsuho_fusionblade_cycle1" ], "time_in_future": "1 s" }
+    ],
+    "false_effect": [ { "run_eocs": "utsuho_fusionblade_end" } ],
+    "//": "dur 45 - 75 s",
+    "//2": "This adds +1 to the timer, if it's bigger than the duration at the skill level it ends. It also ends if Utsuho unequips her rod"
+  },
+  {
+    "id": "utsuho_fusionblade_toggle",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_utsuho_fusionblade", ">=", "2" ] },
+    "effect": [
+      { "math": [ "var_utsuho_fusionblade", "=", "0" ] },
+      { "math": [ "var_utsuho_fusionblade_timer", "=", "0" ] },
+      { "u_lose_effect": "aura_fusionblade" },
+      { "u_message": "You deactivate the fusion blade.", "type": "mixed" }
+    ]
+  },
+  {
+    "id": "utsuho_fusionblade_end",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_utsuho_fusionblade", "=", "0" ] },
+      { "math": [ "var_utsuho_fusionblade_timer", "=", "0" ] },
+      { "u_lose_effect": "aura_fusionblade" },
+      { "u_message": "The fusion blade is extinguished.", "type": "mixed" }
+    ],
+    "//": "WIP. This works but the message is being printed twice by manually deactivating it"
+  },
+  {
+    "id": "yamame_damnedrope_eoc",
+    "type": "effect_on_condition",
+    "effect": [ 
+      { "u_add_trait": "damnedrope_strength_mut" },
+      { "queue_eocs": [ "yamame_damnedrope_end" ], "time_in_future": "1 s" }
+    ]
   },
   {
     "id": "yamame_damnedrope_end",
     "type": "effect_on_condition",
-    "condition": { "u_has_trait": "damnedrope_str_mut" },
-    "effect": [ { "u_lose_trait": "damnedrope_str_mut" } ]
+    "effect": [ 
+      { "u_cast_spell": { "id": "yamame_damnedrope2" }, "targeted": true },
+      { "u_lose_trait": "damnedrope_strength_mut" }
+    ]
   }
 ]

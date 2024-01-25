@@ -10,5 +10,9 @@
   {
     "id": "SOULDMG_IMMUNE",
     "type": "json_flag"
+  },
+  {
+    "id": "UTSUHO_ROD_FLAG",
+    "type": "json_flag"
   }
 ]

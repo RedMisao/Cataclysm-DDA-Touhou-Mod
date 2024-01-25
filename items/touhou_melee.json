@@ -95,7 +95,7 @@
     "//2": "I assume the blade of the sword looks like a flame so it has a dynamic volume, but that one should be the average for a static 50 cm long, 5 cm wide blade + the hilt",
     "price_postapoc": 8000,
     "to_hit": { "balance": "good", "grip": "weapon", "length": "short", "surface": "any" },
-    "melee_damage": { "heat": 23, "soul": 11 },
+    "melee_damage": { "heat": 22, "soul": 12 },
     "material": [ "steel" ],
     "symbol": "/",
     "color": "yellow",

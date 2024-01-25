@@ -148,6 +148,69 @@
     "//": "min dot 0, min range 8, min dur 1500"
   },
   {
+    "id": "yamame_damnedrope",
+    "type": "SPELL",
+    "name": "Damned's rope",
+    "description": "Gather your strength to entangle and pull a target towards your position, stunning it for a short time.",
+    "spell_class": "NONE",
+    "valid_targets": [ "self" ],
+    "effect": "effect_on_condition",
+    "effect_str": "yamame_damnedrope_eoc",
+    "shape": "blast",
+    "max_level": 1,
+    "difficulty": -10,
+    "base_casting_time": 0,
+    "base_energy_cost": 100,
+    "energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_PROJECTILE", "SILENT" ],
+    "//": "Adapted from dash_kokoro. This works marginally better than the no warm-up version, see yamame_damnedrope_UPDATED at touhou_wip_spells.json for the explanation",
+    "//2": "The reason why a STR buff is required for this to work is because pull_target is hardcoded to use the formula y = (10/3)*x - (20/3) (#52155), where y is the weight in kg of the target and x is the STR of the caster",
+    "//3": "WIP try directed_push with negative dmg !!!"
+  },
+  {
+    "id": "yamame_damnedrope2",
+    "type": "SPELL",
+    "name": "Damned's rope (pull)",
+    "description": "Entangle a target and pull it towards your position, stunning it for a short time.",
+    "spell_class": "NONE",
+    "valid_targets": [ "ally", "hostile" ],
+    "effect": "pull_target",
+    "extra_effects": [ { "id": "yamame_damnedrope3" } ],
+    "shape": "line",
+    "min_range": { "math": [ "( (u_skill('speech') * 0.7 ) + (u_skill('dodge') * 0.7 ) + 3.4 )" ] },
+    "max_range": 23,
+    "field_id": "fd_web2",
+    "field_chance": 1,
+    "min_field_intensity": 2,
+    "max_field_intensity": 3,
+    "max_level": 1,
+    "difficulty": -10,
+    "base_casting_time": 33,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "EXTRA_EFFECTS_FIRST", "NO_LEGS", "SOMATIC" ],
+    "//": "min range 9"
+  },
+  {
+    "id": "yamame_damnedrope3",
+    "type": "SPELL",
+    "name": "Damned's rope (stun)",
+    "description": "Stun component of yamame_damnedrope ",
+    "spell_class": "NONE",
+    "valid_targets": [ "ally", "hostile" ],
+    "effect": "mod_moves",
+    "shape": "blast",
+    "damage_type": "pure",
+    "min_damage": -100,
+    "max_damage": -300,
+    "max_level": 1,
+    "difficulty": -10,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_HANDS", "NO_LEGS", "RANDOM_DAMAGE", "SILENT" ]
+  },
+  {
     "id": "yamame_webbridge",
     "type": "SPELL",
     "name": "Web bridge",
@@ -196,7 +259,7 @@
     "base_energy_cost": 133,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "Shouldn't hit flying targets or be activated without ground",
+    "//": "Shouldn't be activated without ground",
     "//2": "min aoe 4, min dur 1500"
   },
   {
@@ -221,6 +284,6 @@
     "base_energy_cost": 100,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "Should always be the same as yamame_webbridge "
+    "//": "Duration should always be the same as yamame_webbridge "
   }
 ]

@@ -117,7 +117,7 @@
       { "stat": "damage", "type": "electric", "scaling-stat": "per", "scale": 0.75 }
     ],
     "attack_vectors": [ "HAND", "WEAPON" ],
-    "//": "Tried to set a linear EOC spell but I feel it would be too clunky, having the drill as a directional spell too, so this stays as it is. Change for automatic spellshot scaling from skills (15 - 45) when possible"
+    "//": "Tried to set a linear EOC spell but I feel it would be too clunky, having the drill as a directional spell too, so this stays as it is. Change for automatic spellshot to whatever she was attacking before, scaling from skills (15 - 45) when possible"
   },
   {
     "id": "tec_iku_poke",
@@ -223,9 +223,9 @@
     "melee_allowed": true,
     "mult_bonuses": [
       { "stat": "movecost", "scale": 0.8 },
-      { "stat": "damage", "type": "bash", "scale": 1 },
-      { "stat": "damage", "type": "cut", "scale": 1 },
-      { "stat": "damage", "type": "stab", "scale": 1 }
+      { "stat": "damage", "type": "bash", "scale": 0.9 },
+      { "stat": "damage", "type": "cut", "scale": 0.9 },
+      { "stat": "damage", "type": "stab", "scale": 0.9 }
     ],
     "attack_vectors": [ "WEAPON" ]
   },
@@ -256,13 +256,13 @@
     "melee_allowed": true,
     "attack_override": true,
     "flat_bonuses": [
-      { "stat": "damage", "type": "electric", "scaling-stat": "str", "scale": 1.1 },
-      { "stat": "damage", "type": "electric", "scaling-stat": "dex", "scale": 1.1 },
-      { "stat": "damage", "type": "electric", "scaling-stat": "int", "scale": 1.1 }
+      { "stat": "damage", "type": "electric", "scaling-stat": "str", "scale": 1 },
+      { "stat": "damage", "type": "electric", "scaling-stat": "dex", "scale": 1 },
+      { "stat": "damage", "type": "electric", "scaling-stat": "int", "scale": 1 }
     ],
     "attack_vectors": [ "WEAPON" ],
     "//": "Name needs to be more chuu2",
-    "//2": "Should do 1.2 weapon dmg as electric instead"
+    "//2": "Should do 1.2 weapon dmg as electric instead, current dmg based on iku_long_scarf "
   },
   {
     "id": "tec_iku_step",
@@ -299,28 +299,12 @@
       "<npcname> was almost grabbed by %s, but they break its grab!"
     ],
     "skill_requirements": [ { "name": "melee", "level": 4 } ],
-    "weapon_categories_allowed": [ "BATONS", "HAND_AXES", "KNIVES", "SHORT_SWORDS", "MEDIUM_SWORDS" ],
+    "weapon_categories_allowed": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS", "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
     "melee_allowed": true,
     "defensive": true,
     "grab_break": true,
     "attack_vectors": [ "WEAPON" ],
     "//": "Based on tec_break "
-  },
-  {
-    "id": "tec_kokoro_grab_break2",
-    "type": "technique",
-    "name": "Grab Break",
-    "messages": [
-      "You were almost grabbed by %s, but you break its grab!",
-      "<npcname> was almost grabbed by %s, but they break its grab!"
-    ],
-    "skill_requirements": [ { "name": "melee", "level": 4 } ],
-    "weapon_categories_allowed": [ "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
-    "melee_allowed": true,
-    "defensive": true,
-    "grab_break": true,
-    "knockback_dist": 1,
-    "attack_vectors": [ "WEAPON" ]
   },
   {
     "id": "tec_kokoro_spin",
@@ -348,12 +332,30 @@
     "//": "This is inspired in her 'jump, fall upside down while spinning' attack, but that would be too long to perform by itself, implement as combo ending if possible. Also make it scale to 1.1 of her weapon attack"
   },
   {
+    "id": "tec_kokoro_rapid",
+    "type": "technique",
+    "name": "Rapid attack",
+    "messages": [ "You rapidly attack %s!", "<npcname> rapidly attacks %s!" ],
+    "skill_requirements": [ { "name": "melee", "level": 4 } ],
+    "weapon_categories_allowed": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS" ],
+    "melee_allowed": true,
+    "repeat_min": 3,
+    "repeat_max": 5,
+    "mult_bonuses": [ 
+      { "stat": "movecost", "scale": 0.25 },
+      { "stat": "damage", "type": "bash", "scale": 0.33 },
+      { "stat": "damage", "type": "cut", "scale": 0.33 },
+      { "stat": "damage", "type": "stab", "scale": 0.33 }
+    ],
+    "attack_vectors": [ "WEAPON" ]
+  },
+  {
     "id": "tec_kokoro_sweep",
     "type": "technique",
     "name": "Sweep",
     "messages": [ "You sweep %s!", "<npcname> sweeps %s!" ],
     "skill_requirements": [ { "name": "melee", "level": 4 } ],
-    "weapon_categories_allowed": [ "LONG_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
+    "weapon_categories_allowed": [ "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
     "melee_allowed": true,
     "reach_ok": true,
     "mult_bonuses": [ 
@@ -366,31 +368,31 @@
     "//": "Similar to all other 'wide arc' techs here, this should hit on a cone in front of her, but the 'aoe' field applies only with more than a single enemy"
   },
   {
-    "id": "tec_kokoro_swing_fast",
+    "id": "tec_kokoro_swing_1h",
     "type": "technique",
     "name": "Weapon swing (fast)",
-    "messages": [ "You swing quickly at %s!", "<npcname> swings quickly at %s!" ],
+    "messages": [ "You quickly swing at %s!", "<npcname> swings quickly at %s!" ],
     "skill_requirements": [ { "name": "melee", "level": 2 } ],
+    "weapon_categories_allowed": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS" ],
     "melee_allowed": true,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 0.9 } ],
+    "mult_bonuses": [ { "stat": "movecost", "scale": 0.85 } ],
     "attack_vectors": [ "WEAPON" ]
   },
   {
-    "id": "tec_kokoro_swing",
+    "id": "tec_kokoro_swing_2h",
     "type": "technique",
     "name": "Weapon swing",
-    "messages": [ "You swing at %s!", "<npcname> swings at %s!" ],
+    "messages": [ "You swing your weapon at %s!", "<npcname> swings their weapon at %s!" ],
     "skill_requirements": [ { "name": "melee", "level": 3 } ],
+    "weapon_categories_allowed": [ "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
     "melee_allowed": true,
     "reach_ok": true,
     "mult_bonuses": [ 
-      { "stat": "movecost", "scale": 1.16 },
-      { "stat": "damage", "type": "bash", "scale": 1.2 },
-      { "stat": "damage", "type": "cut", "scale": 1.2 },
-      { "stat": "damage", "type": "stab", "scale": 1.2 }
+      { "stat": "damage", "type": "bash", "scale": 1.1 },
+      { "stat": "damage", "type": "cut", "scale": 1.1 },
+      { "stat": "damage", "type": "stab", "scale": 1.1 }
     ],
-    "attack_vectors": [ "WEAPON" ],
-    "//": "The bonus dmg should be soul"
+    "attack_vectors": [ "WEAPON" ]
   },
   {
     "id": "tec_kokoro_switch",
@@ -410,7 +412,7 @@
       { "stat": "damage", "type": "stab", "scale": 1.1 }
     ],
     "attack_vectors": [ "WEAPON" ],
-    "//": "This is inspired in her 'stab while looking away' attack. Thus, obviously should transform her dmg into stab"
+    "//": "This is inspired in her 'stab while looking away' attack. Thus, obviously should transform her dmg into stab. Yes including blunt weapons"
   },
   
   {
@@ -431,9 +433,9 @@
     },
     "mult_bonuses": [
       { "stat": "movecost", "scale": 0.8 },
-      { "stat": "damage", "type": "bash", "scale": 0.9 },
-      { "stat": "damage", "type": "cut", "scale": 0.9 },
-      { "stat": "damage", "type": "stab", "scale": 0.9 }
+      { "stat": "damage", "type": "bash", "scale": 0.85 },
+      { "stat": "damage", "type": "cut", "scale": 0.85 },
+      { "stat": "damage", "type": "stab", "scale": 0.85 }
     ],
     "attack_vectors": [ "FOOT" ],
     "//": "Original tec_taichi_counter "
@@ -478,6 +480,7 @@
     "required_buffs_all": [ "buff_meiling_onblock2" ],
     "unarmed_allowed": true,
     "unarmed_weapons_allowed": false,
+    "crit_tec": false,
     "knockback_dist": 1,
     "condition": {
       "or": [
@@ -502,9 +505,9 @@
       ]
     },
     "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 1.5 },
-      { "stat": "damage", "type": "cut", "scale": 1.5 },
-      { "stat": "damage", "type": "stab", "scale": 1.5 }
+      { "stat": "damage", "type": "bash", "scale": 1.33 },
+      { "stat": "damage", "type": "cut", "scale": 1.33 },
+      { "stat": "damage", "type": "stab", "scale": 1.33 }
     ],
     "attack_vectors": [ "PALM" ],
     "//": "Original tec_taichi_palm "
@@ -547,11 +550,11 @@
       ]
     },
     "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 2 },
-      { "stat": "damage", "type": "cut", "scale": 2 },
-      { "stat": "damage", "type": "stab", "scale": 2 }
+      { "stat": "damage", "type": "bash", "scale": 1.83 },
+      { "stat": "damage", "type": "cut", "scale": 1.83 },
+      { "stat": "damage", "type": "stab", "scale": 1.83 }
     ],
-    "attack_vectors": [ "SHOULDER" ],
+    "attack_vectors": [ "SHOULDER", "ELBOW", "PALM" ],
     "//": "Original tec_taichi_precise "
   },
   {
@@ -568,9 +571,9 @@
     "unarmed_weapons_allowed": false,
     "crit_tec": true,
     "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 3 },
-      { "stat": "damage", "type": "cut", "scale": 3 },
-      { "stat": "damage", "type": "stab", "scale": 3 }
+      { "stat": "damage", "type": "bash", "scale": 2 },
+      { "stat": "damage", "type": "cut", "scale": 2 },
+      { "stat": "damage", "type": "stab", "scale": 2 }
     ],
     "attack_vectors": [ "PALM" ],
     "//": "This is one of those techniques, like tec_mokou_talons , that would look better if they could display a small aoe when procced"
@@ -635,12 +638,12 @@
       { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 0.66 } 
     ],
     "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 1.33 },
-      { "stat": "damage", "type": "cut", "scale": 1.33 },
-      { "stat": "damage", "type": "stab", "scale": 1.33 }
+      { "stat": "damage", "type": "bash", "scale": 1.2 },
+      { "stat": "damage", "type": "cut", "scale": 1.2 },
+      { "stat": "damage", "type": "stab", "scale": 1.2 }
     ],
     "attack_vectors": [ "FOOT" ],
-    "//": "Should do 1 dmg as bash and 0.33 as heat instead"
+    "//": "Bonus dmg should be heat instead"
   },
   {
     "id": "tec_mokou_front_kick2",
@@ -656,9 +659,9 @@
       { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 1.33 } 
     ],
     "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 1.66 },
-      { "stat": "damage", "type": "cut", "scale": 1.66 },
-      { "stat": "damage", "type": "stab", "scale": 1.66 }
+      { "stat": "damage", "type": "bash", "scale": 1.4 },
+      { "stat": "damage", "type": "cut", "scale": 1.4 },
+      { "stat": "damage", "type": "stab", "scale": 1.4 }
     ],
     "attack_vectors": [ "FOOT" ]
   },
@@ -675,9 +678,9 @@
       { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 0.66 } 
     ],
     "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 1.2 },
-      { "stat": "damage", "type": "cut", "scale": 1.2 },
-      { "stat": "damage", "type": "stab", "scale": 1.2 }
+      { "stat": "damage", "type": "bash", "scale": 1.16 },
+      { "stat": "damage", "type": "cut", "scale": 1.16 },
+      { "stat": "damage", "type": "stab", "scale": 1.16 }
     ],
     "attack_vectors": [ "KNEE" ]
   },
@@ -695,9 +698,9 @@
       { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 1.33 } 
     ],
     "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 2 },
-      { "stat": "damage", "type": "cut", "scale": 2 },
-      { "stat": "damage", "type": "stab", "scale": 2 }
+      { "stat": "damage", "type": "bash", "scale": 1.33 },
+      { "stat": "damage", "type": "cut", "scale": 1.33 },
+      { "stat": "damage", "type": "stab", "scale": 1.33 }
     ],
     "attack_vectors": [ "KNEE" ]
   },
@@ -715,10 +718,7 @@
       { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 0.66 } 
     ],
     "mult_bonuses": [
-      { "stat": "movecost", "scale": 0.95 },
-      { "stat": "damage", "type": "bash", "scale": 1 },
-      { "stat": "damage", "type": "cut", "scale": 1 },
-      { "stat": "damage", "type": "stab", "scale": 1 }
+      { "stat": "movecost", "scale": 0.95 }
     ],
     "attack_vectors": [ "HAND" ]
   },
@@ -735,11 +735,6 @@
     "flat_bonuses": [ 
       { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 0.66 } 
     ],
-    "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 1.1 },
-      { "stat": "damage", "type": "cut", "scale": 1.1 },
-      { "stat": "damage", "type": "stab", "scale": 1.1 }
-    ],
     "attack_vectors": [ "HAND" ],
     "//": "Should ignite the target"
   },
@@ -752,7 +747,7 @@
     "unarmed_allowed": true,
     "unarmed_weapons_allowed": false,
     "crit_ok": true,
-    "down_dur": 2,
+    "down_dur": 1,
     "flat_bonuses": [ 
       { "stat": "damage", "type": "heat", "scaling-stat": "dex", "scale": 0.66 },
       { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 0.66 }
@@ -775,8 +770,8 @@
     "unarmed_weapons_allowed": false,
     "crit_ok": false,
     "flat_bonuses": [
-      { "stat": "damage", "type": "heat", "scaling-stat": "dex", "scale": 0.75 },
-      { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 0.75 }
+      { "stat": "damage", "type": "heat", "scaling-stat": "dex", "scale": 0.66 },
+      { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 0.66 }
     ],
     "attack_vectors": [ "HAND" ],
     "//": "Should instead transform the dmg into heat"
@@ -791,8 +786,8 @@
     "unarmed_weapons_allowed": false,
     "crit_tec": true,
     "mult_bonuses": [
-      { "stat": "damage", "type": "heat", "scaling-stat": "dex", "scale": 1.66 },
-      { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 1.66 }
+      { "stat": "damage", "type": "heat", "scaling-stat": "dex", "scale": 1.33 },
+      { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 1.33 }
     ],
     "attack_vectors": [ "HAND" ],
     "//": "Should instead transform the dmg into heat"
@@ -813,7 +808,7 @@
     ],
     "mult_bonuses": [
       { "stat": "movecost", "scale": 1.33 },
-      { "stat": "damage", "type": "bash", "scale": 1.5 }
+      { "stat": "damage", "type": "bash", "scale": 1.1 }
     ],
     "attack_vectors": [ "TORSO" ],
     "//": "Lunge but called tackle"
@@ -826,9 +821,7 @@
     "skill_requirements": [ { "name": "melee", "level": 4 } ],
     "melee_allowed": true,
     "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 1.2 },
-      { "stat": "damage", "type": "cut", "scale": 1.2 },
-      { "stat": "damage", "type": "stab", "scale": 1.2 }
+      { "stat": "movecost", "scale": 0.9 }
     ],
     "attack_vectors": [ "FOOT" ]
   },
@@ -842,7 +835,7 @@
     "knockback_dist": 1,
     "stun_dur": 1,
     "mult_bonuses": [
-      { "stat": "movecost", "scale": 1.05 },
+      { "stat": "movecost", "scale": 1.1 },
       { "stat": "damage", "type": "bash", "scale": 1.1 },
       { "stat": "damage", "type": "cut", "scale": 1.1 },
       { "stat": "damage", "type": "stab", "scale": 1.1 }
@@ -859,11 +852,12 @@
     "unarmed_allowed": true,
     "unarmed_weapons_allowed": false,
     "crit_tec": false,
+    "attack_override": true,
     "mult_bonuses": [
       { "stat": "movecost", "scale": 0.95 },
-      { "stat": "damage", "type": "bash", "scale": 1.33 },
-      { "stat": "damage", "type": "cut", "scale": 1.33 },
-      { "stat": "damage", "type": "stab", "scale": 1.33 }
+      { "stat": "damage", "type": "bash", "scaling-stat": "dex", "scale": 1 },
+      { "stat": "damage", "type": "bash", "scaling-stat": "per", "scale": 1 },
+      { "stat": "damage", "type": "bash", "scaling-stat": "str", "scale": 1 }
     ],
     "attack_vectors": [ "FOOT" ]
   },
@@ -871,16 +865,17 @@
     "id": "tec_tenko_kick2",
     "type": "technique",
     "name": "Low kick (Crit)",
-    "messages": [ "You throw a low kick at %s", "<npcname> throws a low kick at %s" ],
-    "skill_requirements": [ { "name": "unarmed", "level": 3 } ],
+    "messages": [ "You throw a low kick at %s, knocking them back!", "<npcname> throws a low kick at %s, knocking them back!" ],
+    "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
     "unarmed_allowed": true,
     "unarmed_weapons_allowed": false,
     "crit_tec": true,
     "knockback_dist": 1,
+    "attack_override": true,
     "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 2.33 },
-      { "stat": "damage", "type": "cut", "scale": 2.33 },
-      { "stat": "damage", "type": "stab", "scale": 2.33 }
+      { "stat": "damage", "type": "bash", "scaling-stat": "dex", "scale": 1.33 },
+      { "stat": "damage", "type": "bash", "scaling-stat": "per", "scale": 1.33 },
+      { "stat": "damage", "type": "bash", "scaling-stat": "str", "scale": 1.33 }
     ],
     "attack_vectors": [ "FOOT" ]
   },
@@ -891,8 +886,8 @@
     "messages": [ "You stomp the ground, knocking nearby enemies!", "<npcname> stomps the ground, knocking nearby enemies!" ],
     "skill_requirements": [ { "name": "unarmed", "level": 3 } ],
     "unarmed_allowed": true,
-    "attack_override": true,
     "down_dur": 2,
+    "attack_override": true,
     "condition": { 
       "or": [ 
         { "not": { "npc_has_flag": "FLIES" } }, 

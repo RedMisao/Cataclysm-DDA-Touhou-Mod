@@ -12,6 +12,12 @@
     "default": "ammo_lunar_small_2"
   },
   {
+    "id": "ammo_lunar_small_illusionary",
+    "type": "ammunition_type",
+    "name": "lunar ammo (small) (illusionary)",
+    "default": "ammo_lunar_small_1_illusionary"
+  },
+  {
     "id": "alternate_knife",
     "type": "ammunition_type",
     "name": "silver knife",

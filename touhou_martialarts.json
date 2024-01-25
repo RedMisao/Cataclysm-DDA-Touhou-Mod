@@ -15,7 +15,7 @@
         "description": "Your poise allows you to easily evade incoming attacks.  Like a fish swimming through, your evasion is increased while your blocking chance is decreased.",
         "unarmed_allowed": true,
         "melee_allowed": true,
-        "bonus_dodges": 2,
+        "bonus_dodges": 1,
         "flat_bonuses": [ { "stat": "block_effectiveness", "scale": -1 } ]
       }
     ],
@@ -33,67 +33,44 @@
         "max_stacks": 1
       }
     ],
-    "ondodge_buffs": [
-      {
-        "id": "buff_celestial_brawling_iku_ondodge",
-        "name": "Celestial opportunity",
-        "description": "Evading attacks allows you to repositioning yourself and break through the opponent's defenses.  Physical attacks ignore defenses by a factor of your agility and perception.",
-        "unarmed_allowed": true,
-        "melee_allowed": true,
-        "buff_duration": 2,
-        "max_stacks": 1,
-        "flat_bonuses": [
-          { "stat": "arpen", "type": "bash", "scaling-stat": "dex", "scale": 0.66 },
-          { "stat": "arpen", "type": "cut", "scaling-stat": "dex", "scale": 0.66 },
-          { "stat": "arpen", "type": "stab", "scaling-stat": "dex", "scale": 0.66 },
-          { "stat": "arpen", "type": "bash", "scaling-stat": "per", "scale": 0.66 },
-          { "stat": "arpen", "type": "cut", "scaling-stat": "per", "scale": 0.66 },
-          { "stat": "arpen", "type": "stab", "scaling-stat": "per", "scale": 0.66 }
-        ]
-      }
-    ],
     "oncrit_buffs": [
       {
         "id": "buff_celestial_brawling_iku_oncrit",
-        "name": "Celestial elegance",
-        "description": "Landing critical hits on enemies is electrifying, it allows you to evade attacks more easily.",
+        "name": "Celestial elegance (evasion)",
+        "description": "Landing effective hits on enemies is electrifying, it allows you to evade attacks more easily.",
         "unarmed_allowed": true,
         "melee_allowed": true,
         "buff_duration": 3,
+        "max_stacks": 1,
+        "bonus_dodges": 1
+      },
+      {
+        "id": "buff_celestial_brawling_iku_oncrit2",
+        "name": "Celestial elegance (movement)",
+        "description": "Landing effective hits on enemies is electrifying, it increases your movement speed.",
+        "unarmed_allowed": true,
+        "melee_allowed": true,
+        "buff_duration": 4,
         "max_stacks": 2,
-        "bonus_dodges": 1,
-        "flat_bonuses": [ 
-          { "stat": "dodge", "scale": 1 },
-          { "stat": "arpen", "type": "electric", "scaling-stat": "dex", "scale": 0.33 },
-          { "stat": "arpen", "type": "electric", "scaling-stat": "per", "scale": 0.33 }
+        "mult_bonuses": [
+          { "stat": "movecost", "scale": 0.9 }
         ]
       }
     ],
-    "//2": "Changed the bonus electric damage for arpen, as Iku's spells scale from dodge now (and this stacks twice)",
     "onmove_buffs": [
       {
         "id": "buff_celestial_brawling_iku_onmove",
-        "name": "Celestial grace",
-        "description": "Moving around stimulates you, increasing your critical chance the more you move…",
-        "unarmed_allowed": true,
-        "melee_allowed": true,
-        "buff_duration": 2,
-        "max_stacks": 6,
-        "flat_bonuses": [ { "stat": "crit_chance", "scale": 4 } ]
-      },
-      {
-        "id": "buff_celestial_brawling_iku_onmove2",
         "name": "Celestial grace (debuff)",
-        "description": "…also decreasing your physical damage and evasion immediately after.  Dampening.",
+        "description": "Moving decreases damage done and evasion immediately after.  Dampening.",
         "unarmed_allowed": true,
         "melee_allowed": true,
         "buff_duration": 1,
         "max_stacks": 10,
         "flat_bonuses": [ { "stat": "dodge", "scale": -0.4 } ],
         "mult_bonuses": [
-          { "stat": "damage", "type": "bash", "scale": 0.95 },
-          { "stat": "damage", "type": "cut", "scale": 0.95 },
-          { "stat": "damage", "type": "stab", "scale": 0.95 }
+          { "stat": "damage", "type": "bash", "scale": 0.96 },
+          { "stat": "damage", "type": "cut", "scale": 0.96 },
+          { "stat": "damage", "type": "stab", "scale": 0.96 }
         ]
       }
     ],
@@ -101,21 +78,19 @@
       {
         "id": "buff_celestial_brawling_iku_onpause",
         "name": "Lighting step",
-        "description": "\"Grounding\" a portion of the stored charge on a target keeps the energy flowing.",
+        "description": "\"Grounding\" a portion of the stored charge keeps the energy flowing.",
         "unarmed_allowed": true,
         "melee_allowed": true,
         "buff_duration": 2,
-        "max_stacks": 1,
-        "mult_bonuses": [
-          { "stat": "damage", "type": "bash", "scale": 1.33 },
-          { "stat": "damage", "type": "cut", "scale": 1.33 },
-          { "stat": "damage", "type": "stab", "scale": 1.33 }
+        "max_stacks": 2,
+        "flat_bonuses": [
+          { "stat": "crit_chance", "scale": 9 }
         ]
       },
       {
         "id": "buff_celestial_brawling_iku_onpause2",
         "name": "Grounded",
-        "description": "Allows using Ionic whip after grounding.",
+        "description": "Allows using Ionic whip and Shock step after grounding.",
         "unarmed_allowed": true,
         "melee_allowed": true,
         "buff_duration": 3,
@@ -163,36 +138,20 @@
       {
         "id": "celestial_brawling_tenko_static_eoc",
         "effect": [
-          { "u_add_trait": "CELESTIAL_STANCE_KNOCKS" }
+          { "u_add_trait": "celestial_stance_mut" }
         ]
       }
     ],
-    "//": "WIP. Confirm the mutation is removed when switching stances",
     "onhit_buffs": [
       {
         "id": "buff_celestial_brawling_tenko_onhit",
-        "name": "Celestial devastation",
-        "description": "Successful attacks enable you to perceive the flow of the fight better, allowing you to break through, quite literally.",
-        "unarmed_allowed": true,
-        "melee_allowed": true,
-        "buff_duration": 3,
-        "max_stacks": 10,
-        "flat_bonuses": [
-          { "stat": "arpen", "type": "bash", "scale": 1.2 },
-          { "stat": "arpen", "type": "cut", "scale": 1.2 },
-          { "stat": "arpen", "type": "stab", "scale": 1.2 }
-        ],
-        "//": "Should tag a debuff on enemies"
-      },
-      {
-        "id": "buff_celestial_brawling_tenko_onhit2",
         "name": "Sphere of perception",
         "description": "Effective attacks allow you to briefly read the spirit of the target.  You're more aware of their actions…",
         "unarmed_allowed": true,
         "melee_allowed": true,
         "buff_duration": 2,
         "max_stacks": 10,
-        "flat_bonuses": [ { "stat": "crit_chance", "scale": 19 } ]
+        "flat_bonuses": [ { "stat": "crit_chance", "scale": 8.5 } ]
       }
     ],
     "oncrit_buffs": [
@@ -212,13 +171,17 @@
       {
         "id": "buff_celestial_brawling_tenko_onpause",
         "name": "Focus",
-        "description": "You take your time considering the best course of action.  For like 1 second, this isn't your thing.",
+        "description": "You take your time considering the best course of action in breaking through your opponent's defenses.",
         "unarmed_allowed": true,
         "melee_allowed": true,
-        "buff_duration": 1,
-        "max_stacks": 1,
-        "flat_bonuses": [ 
-          { "stat": "block_effectiveness", "scale": 1 } 
+        "buff_duration": 2,
+        "max_stacks": 2,
+        "flat_bonuses": [
+          { "stat": "arpen", "type": "bash", "scale": 1.2 },
+          { "stat": "arpen", "type": "cut", "scale": 1.2 },
+          { "stat": "arpen", "type": "stab", "scale": 1.2 },
+          { "stat": "arpen", "type": "heat", "scale": 1.2 },
+          { "stat": "arpen", "type": "soul", "scale": 1.2 }
         ]
       }
     ],
@@ -244,16 +207,24 @@
     "primary_skill": "melee",
     "teachable": false,
     "weapon_category": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS", "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
-    "//weapon": "Kokoro can use any of those, but she has different techniques and spells if using 1h vs 2h weapons",
     "allow_all_weapons": true,
     "static_buffs": [
       {
         "id": "buff_kokoro_static",
-        "name": "One-mask-party",
-        "description": "Yourself, basically.  You get different effects according to your currently equipped mask.  Always increases the number of evades you can perform.",
-        "unarmed_allowed": true,
+        "name": "One-mask-party (small weapon)",
+        "description": "Yourself, basically.  You get different buffs according to your currently equipped weapon.  Small (1h) weapons grant extra evasions per turn.",
         "melee_allowed": true,
-        "bonus_dodges": 1
+        "weapon_categories_allowed": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS" ],
+        "bonus_dodges": 1,
+        "//": "It would be AMAZING if she can set her weapon swap speed to zero too, so she can actually battle dance"
+      },
+      {
+        "id": "buff_kokoro_static2 (large weapon)",
+        "name": "One-mask-party",
+        "description": "Yourself, basically.  You get different buffs according to your currently equipped weapon.  Large (2h) weapons grant extra parries per turn.",
+        "melee_allowed": true,
+        "weapon_categories_allowed": [ "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
+        "bonus_blocks": 1
       }
     ],
     "onhit_buffs": [
@@ -265,46 +236,83 @@
         "buff_duration": 3,
         "max_stacks": 3,
         "mult_bonuses": [
-          { "stat": "movecost", "scale": 0.88 }
+          { "stat": "movecost", "scale": 0.89 }
         ]
+      }
+    ],
+    "onblock_buffs": [
+      {
+        "id": "buff_kokoro_onblock",
+        "name": "Parry (large weapon)",
+        "description": "By parrying incoming attacks, you get excited and increase your chances to land effective attacks.",
+        "melee_allowed": true,
+        "weapon_categories_allowed": [ "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ], 
+        "buff_duration": 4,
+        "max_stacks": 1,
+        "flat_bonuses": [ { "stat": "crit_chance", "scale": 8 } ],
+        "//": "This should remove the ondodge, and viceversa"
       }
     ],
     "ondodge_buffs": [
       {
         "id": "buff_kokoro_ondodge",
-        "name": "Reposition",
-        "description": "Evading attacks grants you increased chance to land effective attacks.",
-        "unarmed_allowed": true,
+        "name": "Reposition (small weapon)",
+        "description": "By evading incoming attacks, you reposition and increase your chances to land effective attacks.",
         "melee_allowed": true,
-        "buff_duration": 3,
-        "max_stacks": 9,
-        "flat_bonuses": [ { "stat": "crit_chance", "scale": 9 } ]
+        "weapon_categories_allowed": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS" ],
+        "buff_duration": 4,
+        "max_stacks": 1,
+        "flat_bonuses": [ { "stat": "crit_chance", "scale": 8 } ]
       }
     ],
     "onmove_buffs": [
       {
         "id": "buff_kokoro_onmove",
-        "name": "Tempo",
+        "name": "Tempo (small weapon)",
         "description": "Moving increases your damage done.",
-        "unarmed_allowed": true,
         "melee_allowed": true,
-        "buff_duration": 3,
-        "max_stacks": 5,
+        "weapon_categories_allowed": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS" ],
+        "buff_duration": 2,
+        "max_stacks": 1,
         "mult_bonuses": [
-          { "stat": "damage", "type": "bash", "scale": 1.05 },
-          { "stat": "damage", "type": "cut", "scale": 1.05 },
-          { "stat": "damage", "type": "stab", "scale": 1.05 }
+          { "stat": "damage", "type": "bash", "scale": 1.33 },
+          { "stat": "damage", "type": "cut", "scale": 1.33 },
+          { "stat": "damage", "type": "stab", "scale": 1.33 }
+        ]
+      },
+      {
+        "id": "buff_kokoro_onmove2",
+        "name": "Tempo (large weapon)",
+        "description": "Moving increases your damage done.",
+        "melee_allowed": true,
+        "weapon_categories_allowed": [ "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
+        "buff_duration": 2,
+        "max_stacks": 1,
+        "mult_bonuses": [
+          { "stat": "damage", "type": "bash", "scale": 1.1 },
+          { "stat": "damage", "type": "cut", "scale": 1.1 },
+          { "stat": "damage", "type": "stab", "scale": 1.1 }
         ]
       }
     ],
     "onpause_buffs": [
       {
         "id": "buff_kokoro_onpause",
-        "name": "Emphasize",
+        "name": "Emphasize (small weapon)",
         "description": "Proper stops highlight the message.  Stopping increases your parry value and number for an instant.",
-        "unarmed_allowed": true,
         "melee_allowed": true,
-        "buff_duration": 1,
+        "weapon_categories_allowed": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS" ],
+        "buff_duration": 2,
+        "max_stacks": 1,
+        "bonus_dodges": 1
+      },
+      {
+        "id": "buff_kokoro_onpause2",
+        "name": "Emphasize (large weapon)",
+        "description": "Proper stops highlight the message.  Stopping increases your parry value and number for an instant.",
+        "melee_allowed": true,
+        "weapon_categories_allowed": [ "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
+        "buff_duration": 2,
         "max_stacks": 1,
         "bonus_blocks": 1,
         "flat_bonuses": [
@@ -314,14 +322,14 @@
         ]
       }
     ],
-    "//2": "WIP. Also enable a technique by doing this",
+    "//2": "WIP. Also enable techniques-by-buffs",
     "techniques": [
       "tec_kokoro_grab_break",
-      "tec_kokoro_grab_break2",
+      "tec_kokoro_rapid",
       "tec_kokoro_spin",
       "tec_kokoro_sweep",
-      "tec_kokoro_swing_fast",
-      "tec_kokoro_swing",
+      "tec_kokoro_swing_1h",
+      "tec_kokoro_swing_2h",
       "tec_kokoro_switch"
     ]
   },
@@ -342,13 +350,13 @@
         "name": "Tai Chi Stance (Youkai)",
         "description": "You are focused on defending a position and predicting your opponents attacks.  This enables extra blocks that scale from your agility, intelligence and strength, at the cost of reducing your evasion.",
         "unarmed_allowed": true,
-        "bonus_blocks": 2,
+        "bonus_blocks": 1,
+        "bonus_dodges": -1,
         "flat_bonuses": [
-          { "stat": "block_effectiveness", "scale": 2 },
+          { "stat": "dodge", "scale": -1 },
           { "stat": "block", "scaling-stat": "dex", "scale": 0.5 },
           { "stat": "block", "scaling-stat": "int", "scale": 0.5 },
-          { "stat": "block", "scaling-stat": "str", "scale": 0.5 },
-          { "stat": "dodge", "scale": -2 }
+          { "stat": "block", "scaling-stat": "str", "scale": 0.5 }
         ]
       }
     ],
@@ -358,22 +366,23 @@
         "name": "Opening found",
         "description": "Your no-nonsense positioning allows you to quickly deal double damage immediately after blocking attacks.  Also, you gain extra accuracy, virtue of recognizing and reacting to movement patterns.",
         "unarmed_allowed": true,
+        "melee_allowed": false,
         "buff_duration": 2,
         "max_stacks": 1,
         "mult_bonuses": [
-          { "stat": "damage", "type": "bash", "scale": 1.66 },
-          { "stat": "damage", "type": "cut", "scale": 1.66 },
-          { "stat": "damage", "type": "stab", "scale": 1.66 }
+          { "stat": "damage", "type": "bash", "scale": 1.2 },
+          { "stat": "damage", "type": "cut", "scale": 1.2 },
+          { "stat": "damage", "type": "stab", "scale": 1.2 }
         ],
         "flat_bonuses": [ 
-          { "stat": "hit", "scaling-stat": "dex", "scale": 0.17 }, 
-          { "stat": "hit", "scaling-stat": "str", "scale": 0.17 } 
+          { "stat": "hit", "scaling-stat": "dex", "scale": 0.13 }, 
+          { "stat": "hit", "scaling-stat": "str", "scale": 0.13 } 
         ]
       },
       {
         "id": "buff_meiling_onblock2",
         "name": "Counter block",
-        "description": "Allows using Repulse the intruder and Stay out after blocking attacks.",
+        "description": "Allows using \"Repulse the intruder\", \"Stay out\" and \"Mountain breaking cannon\" after blocking attacks.",
         "unarmed_allowed": true,
         "buff_duration": 2,
         "max_stacks": 1
@@ -392,12 +401,13 @@
       {
         "id": "buff_meiling_onpause",
         "name": "Great Wall",
-        "description": "By taking a second to enter a guarding stance, you prepare yourself to redirect the qi of the next enemy attack through enemy defenses.",
+        "description": "By taking a second to enter a guarding stance, you prepare yourself to redirect the qi of the next enemy attack through their own defenses.",
         "unarmed_allowed": true,
         "buff_duration": 2,
         "max_stacks": 1,
         "bonus_blocks": 1,
         "flat_bonuses": [
+          { "stat": "block_effectiveness", "scale": 2 },
           { "stat": "arpen", "type": "bash", "scaling-stat": "int", "scale": 0.75 },
           { "stat": "arpen", "type": "cut", "scaling-stat": "int", "scale": 0.75 },
           { "stat": "arpen", "type": "stab", "scaling-stat": "int", "scale": 0.75 }
@@ -408,6 +418,7 @@
         "name": "Redirected qi",
         "description": "Allows using Qi burst after pausing.",
         "unarmed_allowed": true,
+        "melee_allowed": false,
         "buff_duration": 2,
         "max_stacks": 1
       }
@@ -447,11 +458,11 @@
           { "stat": "block", "scaling-stat": "dex", "scale": 0.5 }
         ],
         "mult_bonuses": [
-          { "stat": "damage", "type": "bash", "scale": 1.5 },
-          { "stat": "damage", "type": "cut", "scale": 1.5 },
-          { "stat": "damage", "type": "stab", "scale": 1.5 }
+          { "stat": "damage", "type": "bash", "scale": 1.1 },
+          { "stat": "damage", "type": "cut", "scale": 1.1 },
+          { "stat": "damage", "type": "stab", "scale": 1.1 }
         ],
-        "//": "Change the mult_bonuses for a 1 + rand(1.00) when possible",
+        "//": "Change the mult_bonuses for a 0.85 + rand(0.5) when possible",
         "//2": "Do note she also has the KI_STRIKE mutation, so her unarmed dmg is already scaling from skills"
       }
     ],
@@ -461,10 +472,10 @@
         "name": "Hourai's high",
         "description": "Attacks have an increased chance to be effective.",
         "unarmed_allowed": true,
-        "buff_duration": 7,
-        "max_stacks": 7,
+        "buff_duration": 6,
+        "max_stacks": 6,
         "flat_bonuses": [ 
-          { "stat": "crit_chance", "scale": 6 }
+          { "stat": "crit_chance", "scale": 5 }
         ]
       }
     ],
@@ -507,22 +518,22 @@
       {
         "id": "buff_mokou_onkill",
         "name": "That which is unattainable",
-        "description": "Life is something curious: you can easily take it from others, except for the actual targets of your grudge.  Once you get going it's easier for you to do it.",
+        "description": "Life is something curious: you can easily take it from everyone, except for the targets of your grudge.  Once you get going it's easier for you to do it.",
         "unarmed_allowed": true,
         "buff_duration": 5,
         "max_stacks": 4,
         "flat_bonuses": [
-          { "stat": "arpen", "type": "bash", "scale": 4 },
-          { "stat": "arpen", "type": "cut", "scale": 4 },
-          { "stat": "arpen", "type": "stab", "scale": 4 },
-          { "stat": "arpen", "type": "heat", "scale": 4 },
-          { "stat": "crit_chance", "scale": 6 }
+          { "stat": "arpen", "type": "bash", "scale": 2 },
+          { "stat": "arpen", "type": "cut", "scale": 2 },
+          { "stat": "arpen", "type": "stab", "scale": 2 },
+          { "stat": "arpen", "type": "heat", "scale": 2 },
+          { "stat": "crit_chance", "scale": 5 }
         ],
         "mult_bonuses": [
-          { "stat": "damage", "type": "bash", "scale": 1.33 },
-          { "stat": "damage", "type": "cut", "scale": 1.33 },
-          { "stat": "damage", "type": "stab", "scale": 1.33 },
-          { "stat": "damage", "type": "heat", "scale": 1.33 }
+          { "stat": "damage", "type": "bash", "scale": 1.05 },
+          { "stat": "damage", "type": "cut", "scale": 1.05 },
+          { "stat": "damage", "type": "stab", "scale": 1.05 },
+          { "stat": "damage", "type": "heat", "scale": 1.1 }
         ]
       }
     ],
@@ -556,33 +567,32 @@
       {
         "id": "buff_youmu_static",
         "name": "Kenjutsu (incomplete)",
-        "description": "You were trained in the art of the sword.  Although you didn't reach completion, you're still very skilled at it.  Grants improved block and increased damage when using eastern swords.",
+        "description": "You were trained in the art of the sword.  Although you didn't reach completion, you're still very skilled at it.  Grants improved block, increased damage and reduced crit chance when using eastern swords.",
         "melee_allowed": true,
         "weapon_categories_allowed": [ "JAPANESE_SWORDS" ],
-        "bonus_blocks": 2,
+        "bonus_blocks": 1,
         "flat_bonuses": [ 
           { "stat": "block_effectiveness", "scale": 1 },
-          { "stat": "crit_chance", "scale": -1 },
-          { "stat": "crit_chance", "scale": -1 }
+          { "stat": "crit_chance", "scale": -14 }
         ],
         "mult_bonuses": [
           { "stat": "damage", "type": "cut", "scale": 1.1 }
-        ]
+        ],
+        "//4": "Removed the stat dodge bonus as her spells scale from dodge now",
+        "//crit": "Youmu has reduced crit to rely on her martial art procs"
       }
     ],
-    "//4": "Removed the stat dodge bonus as her spells scale from dodge now",
     "onattack_buffs": [
       {
         "id": "buff_youmu_onattack",
         "name": "Training results",
-        "description": "Direct your attacks towards maximizing the effectiveness of your attacks.  Muscle memory with swords reduces the efficacy of blunt and piercing weapons.",
+        "description": "Direct your attacks towards maximizing the effectiveness of your attacks.  Muscle memory with swords that can cut anything reduces the efficacy of blunt and piercing damage.",
         "melee_allowed": true,
         "buff_duration": 2,
         "max_stacks": 4,
         "mult_bonuses": [
-          { "stat": "damage", "type": "bash", "scale": 0.84 },
-          { "stat": "damage", "type": "cut", "scale": 1.17 },
-          { "stat": "damage", "type": "stab", "scale": 0.84 }
+          { "stat": "damage", "type": "bash", "scale": 0.83 },
+          { "stat": "damage", "type": "stab", "scale": 0.83 }
         ]
       }
     ],
@@ -590,7 +600,7 @@
       {
         "id": "buff_youmu_oncrit",
         "name": "Phantasmal strike",
-        "description": "Landing attacks is more and more easy once you get going.",
+        "description": "Landing effective attacks is more and more easy once you get going.  Additionally, increases your parries per turn.",
         "melee_allowed": true,
         "buff_duration": 2,
         "max_stacks": 4,
@@ -624,7 +634,7 @@
         "buff_duration": 2,
         "max_stacks": 1,
         "flat_bonuses": [ 
-          { "stat": "crit_chance", "scale": 51 },
+          { "stat": "crit_chance", "scale": 50 },
           { "stat": "hit", "scale": 2 },
           { "stat": "dodge", "scale": -2 }
         ]
@@ -639,6 +649,6 @@
       "tec_youmu_sweep"
     ],
     "//": "Based on the pre-rework style_niten, inverting most stuff",
-    "//2": "(50, 67, 33, 50, 67) crit chance for (pause, pause+crit, crit x2, crit x3, crit x4). Youmu has -1 crit to rely more on her martial art procs"
+    "//2": "(50, 67, 34, 51, 68) crit chance for (pause, pause+crit, crit x2, crit x3, crit x4)"
   }
 ]

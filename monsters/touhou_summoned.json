@@ -59,7 +59,7 @@
       {
         "gun_type": "alternate_knife_gun",
         "type": "gun",
-        "description": "Sakuya throws a knife!",
+        "description": "The maid throws a knife!",
         "ammo_type": "alternate_knife_knife",
         "cooldown": 2,
         "fake_dex": 11,
@@ -80,6 +80,7 @@
       "FLIES",
       "HIT_AND_RUN",
       "NO_BREATHE",
+      "NOT_HALLUCINATION",
       "PACIFIST",
       "PATH_AVOID_DANGER_2",
       "PET_WONT_FOLLOW",
@@ -87,6 +88,60 @@
       "SEES",
       "WARM"
     ]
+  },
+  {
+    "id": "mon_udonge_firing_squad",
+    "type": "MONSTER",
+    "name": { "str": "Moon Rabbit Recruit" },
+    "description": "Yourself?",
+    "volume": "62500 ml",
+    "weight": "81500 g",
+    "default_faction": "touhou_summon",
+    "bodytype": "human",
+    "species": [ "UNKNOWN" ],
+    "harvest": "exempt",
+    "hp": 100,
+    "speed": 150,
+    "symbol": "@",
+    "color": "light_blue",
+    "aggression": 66,
+    "morale": 99,
+    "luminance": 1,
+    "dodge": 8,
+    "starting_ammo": { "ammo_lunar_small_1_illusionary": 1 },
+    "special_attacks": [
+      {
+        "gun_type": "lunatic_pistol2_illusionary",
+        "type": "gun",
+        "description": "",
+        "ammo_type": "ammo_lunar_small_1_illusionary",
+        "cooldown": 0,
+        "fake_per": 11,
+        "fake_skills": [ [ "gun", 6 ] ],
+        "max_ammo": 1,
+        "move_cost": 45,
+        "targeting_cost": 0,
+        "require_targeting_monster": true,
+        "ranges": [ [ 1, 16, "DEFAULT" ] ]
+      }
+    ],
+    "anger_triggers": [ "FRIEND_ATTACKED", "HURT" ],
+    "death_function": { "corpse_type": "NO_CORPSE" },
+    "flags": [
+      "FLIES",
+      "IMMOBILE",
+      "NO_BREATHE",
+      "NOT_HALLUCINATION",
+      "PACIFIST",
+      "PATH_AVOID_DANGER_2",
+      "PET_WONT_FOLLOW",
+      "RANGED_ATTACKER",
+      "SEES",
+      "SILENT_DISAPPEAR",
+      "STUN_IMMUNE",
+      "WARM"
+    ],
+    "//": "In AoCF they shoot with their fingers, not the gun. May change in the future idk"
   },
   {
     "id": "mon_vengeful_spirit_kaenbyou",
@@ -131,6 +186,7 @@
       "GRABS",
       "GROUP_MORALE",
       "HEARS",
+      "NOT_HALLUCINATION",
       "PATH_AVOID_DANGER_2",
       "SEES",
       "STUN_IMMUNE",
@@ -169,7 +225,7 @@
     "special_attacks": [ [ "grab", 16 ], { "type": "spell", "spell_data": { "id": "yoshika_nails" }, "cooldown": 6 } ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
     "death_function": { "corpse_type": "NORMAL", "message": "%s has received enough damage, she falls down and becomes unconscious." },
-    "flags": [ "GRABS", "HEARS", "PATH_AVOID_DANGER_1", "SEES" ]
+    "flags": [ "GRABS", "HEARS", "NOT_HALLUCINATION", "PATH_AVOID_DANGER_1", "SEES" ]
   },
   {
     "id": "mon_youmumyon",
@@ -195,7 +251,7 @@
     "anger_triggers": [ "FRIEND_ATTACKED", "HURT" ],
     "fear_triggers": [ "PLAYER_CLOSE" ],
     "death_function": { "corpse_type": "NO_CORPSE" },
-    "flags": [ "BASHES", "CAN_OPEN_DOORS", "CLIMBS", "FLIES", "NO_BREATHE", "PATH_AVOID_DANGER_2", "PET_WONT_FOLLOW", "SEES" ]
+    "flags": [ "BASHES", "CAN_OPEN_DOORS", "CLIMBS", "FLIES", "NO_BREATHE", "NOT_HALLUCINATION", "PATH_AVOID_DANGER_2", "PET_WONT_FOLLOW", "SEES" ]
   },
   {
     "id": "mon_youmumyon2",
@@ -244,6 +300,7 @@
       "HARDTOSHOOT",
       "NO_BREATHE",
       "NOHEAD",
+      "NOT_HALLUCINATION",
       "PACIFIST",
       "PATH_AVOID_DANGER_2",
       "PET_WONT_FOLLOW",

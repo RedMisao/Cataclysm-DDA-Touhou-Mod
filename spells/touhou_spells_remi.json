@@ -237,8 +237,9 @@
     "valid_targets": [ "ground", "hostile" ],
     "effect": "mod_moves",
     "shape": "blast",
-    "min_damage": { "math": [ "( (u_skill('stabbing') * 30 ) + (u_skill('melee') * 30 ) + 60 )" ] },
-    "max_damage": 900,
+    "damage_type": "pure",
+    "min_damage": { "math": [ "( - (u_skill('stabbing') * 30 ) - (u_skill('melee') * 30 ) - 60 )" ] },
+    "max_damage": -900,
     "min_aoe": 3,
     "max_aoe": 3,
     "max_level": 1,
@@ -246,7 +247,8 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS" ]
+    "flags": [ "NO_LEGS" ],
+    "//": "min dmg -300"
   },
   {
     "id": "remilia_vampiricaura",

@@ -268,9 +268,9 @@
     "id": "tenko_unletting_soil",
     "type": "SPELL",
     "name": "Unletting soil",
-    "description": "Stab the Sword of Hisou into the ground, injecting some temperament and causing the earth to retaliate, dealing damage on the direction of the release, and knocking back enemies.",
+    "description": "Stab the Sword of Hisou into the ground, injecting some temperament and causing the earth to retaliate, dealing damage on the direction of the release, knocking back enemies.",
     "spell_class": "NONE",
-    "valid_targets": [ "ground", "hostile" ],
+    "valid_targets": [ "ally", "ground", "hostile" ],
     "components": "spell_components_tenkojian",
     "effect": "attack",
     "extra_effects": [ { "id": "tenko_unletting_soil2" } ],
@@ -292,15 +292,41 @@
     "base_energy_cost": 200,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "Shouldn't hit flying targets or be activated without ground. Should also be a line centered on Tenko, instead of starting from her position"
+    "//": "Shouldn't hit flying targets or be activated without ground. Should also be a line centered on Tenko, instead of starting from her position",
+    "//2": "min dmg 31, min range 5"
   },
   {
     "id": "tenko_unletting_soil2",
     "type": "SPELL",
+    "name": "Unletting soil (cc)",
+    "description": "Stun component for tenko_unletting_soil . This is a qol buff so the targets don't immediately move again after the knockback",
+    "spell_class": "NONE",
+    "valid_targets": [ "ally", "ground", "hostile" ],
+    "components": "spell_components_tenkojian",
+    "effect": "mod_moves",
+    "extra_effects": [ { "id": "tenko_unletting_soil3" } ],
+    "shape": "cone",
+    "damage_type": "pure",
+    "min_damage": -100,
+    "max_damage": -100,
+    "min_range": { "math": [ "( (u_skill('melee') * 0.5 ) + 2 )" ] },
+    "max_range": 10,
+    "min_aoe": 50,
+    "max_aoe": 50,
+    "max_level": 1,
+    "difficulty": -10,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS", "SILENT" ]
+  },
+  {
+    "id": "tenko_unletting_soil3",
+    "type": "SPELL",
     "name": "Unletting soil (push)",
     "description": "Push effect for tenko_unletting_soil ",
     "spell_class": "NONE",
-    "valid_targets": [ "ground", "hostile" ],
+    "valid_targets": [ "ally", "ground", "hostile" ],
     "components": "spell_components_tenkojian",
     "effect": "directed_push",
     "shape": "cone",
@@ -316,6 +342,6 @@
     "base_casting_time": 150,
     "base_energy_cost": 200,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_LEGS" ]
+    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS", "SILENT" ]
   }
 ]

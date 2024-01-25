@@ -37,7 +37,8 @@
     "base_energy_cost": 0,
     "energy_source": "STAMINA",
     "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ],
-    "//": "Note: range is set at 20 else dash_levitation fails to trigger sometimes. Dunno why this is"
+    "//": "Solution adapted from Aftershock mod's spell_rocket_jump ",
+    "//2": "Note: range is set at 20 else dash_levitation fails to trigger sometimes. Dunno why this is"
   },
   {
     "id": "dash_aya",
@@ -160,7 +161,7 @@
     "extra_effects": [ { "id": "dash_mokou2" } ],
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( (u_skill('melee') * 1.4 ) + (u_skill('unarmed') * 1.4 ) + (u_pain() * 0.33 ) + 8.8 )" ] },
+    "min_damage": { "math": [ "( (u_skill('melee') * 1.4 ) + (u_skill('unarmed') * 1.4 ) + (u_pain() * 0.2 ) + 8.8 )" ] },
     "max_damage": 64,
     "min_aoe": 1,
     "max_aoe": 1,
@@ -200,7 +201,7 @@
     "extra_effects": [ { "id": "dash_basic_levitate" } ],
     "shape": "line",
     "damage_type": "bash",
-    "min_damage": { "math": [ "( (u_skill('melee') * 0.4 ) + (u_skill('unarmed') * 0.4 ) + (u_pain() * 0.25 ) + 4.8 )" ] },
+    "min_damage": { "math": [ "( (u_skill('melee') * 0.4 ) + (u_skill('unarmed') * 0.4 ) + (u_pain() * 0.11 ) + 4.8 )" ] },
     "max_damage": 24,
     "min_range": 5,
     "max_range": 5,

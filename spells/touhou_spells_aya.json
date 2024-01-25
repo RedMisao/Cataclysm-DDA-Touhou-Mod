@@ -47,6 +47,30 @@
   {
     "id": "aya_draftblast2",
     "type": "SPELL",
+    "name": "Draft blast (cc)",
+    "description": "Stun component for aya_draftblast . This is a qol buff so the targets don't immediately move again after the knockback",
+    "spell_class": "NONE",
+    "valid_targets": [ "ground", "hostile" ],
+    "effect": "mod_moves",
+    "extra_effects": [ { "id": "aya_draftblast3" } ],
+    "shape": "blast",
+    "damage_type": "pure",
+    "min_damage": -100,
+    "max_damage": -100,
+    "min_range": 12,
+    "max_range": 12,
+    "min_aoe": 2,
+    "max_aoe": 2,
+    "max_level": 1,
+    "difficulty": -10,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS", "SILENT" ]
+  },
+  {
+    "id": "aya_draftblast3",
+    "type": "SPELL",
     "name": "Draft blast (push)",
     "description": "Pushing component for aya_maplefan ",
     "spell_class": "NONE",
@@ -64,7 +88,8 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "SILENT" ]
+    "flags": [ "NO_EXPLOSION_SFX", "SILENT" ],
+    "//": "min dmg 4"
   },
   {
     "id": "aya_fanwind",
@@ -92,7 +117,8 @@
     "base_casting_time": 80,
     "base_energy_cost": 100,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "SOMATIC" ]
+    "flags": [ "NO_LEGS", "SOMATIC" ],
+    "//": "min dmg 11, min dur 600"
   },
   {
     "id": "aya_fanwind2",
@@ -103,9 +129,9 @@
     "valid_targets": [ "ground", "hostile" ],
     "effect": "mod_moves",
     "shape": "blast",
-    "damage_type": "bash",
-    "min_damage": { "math": [ "( - (u_skill('dodge') * 1 ) - 2 )" ] },
-    "max_damage": -16,
+    "damage_type": "pure",
+    "min_damage": { "math": [ "( - (u_skill('dodge') * 100 ) - 200 )" ] },
+    "max_damage": -1600,
     "min_range": 8,
     "max_range": 8,
     "min_aoe": 1,
@@ -115,7 +141,8 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "SILENT" ]
+    "flags": [ "NO_EXPLOSION_SFX", "SILENT" ],
+    "//": "min dmg -600"
   },
   {
     "id": "aya_stormgust",
@@ -144,6 +171,30 @@
   },
   {
     "id": "aya_stormgust2",
+    "type": "SPELL",
+    "name": "Rainstorm gust (cc)",
+    "description": "Stun component for aya_stormgust . This is a qol buff so the targets don't immediately move again after the knockback",
+    "spell_class": "NONE",
+    "valid_targets": [ "ground", "hostile" ],
+    "effect": "mod_moves",
+    "extra_effects": [ { "id": "aya_stormgust3" } ],
+    "shape": "line",
+    "damage_type": "pure",
+    "min_damage": -100,
+    "max_damage": -100,
+    "min_range": { "math": [ "( (u_skill('dodge') * 1.2 ) + 3.2 )" ] },
+    "max_range": 20,
+    "min_aoe": 5,
+    "max_aoe": 5,
+    "max_level": 1,
+    "difficulty": -10,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS", "SILENT" ]
+  },
+  {
+    "id": "aya_stormgust3",
     "type": "SPELL",
     "name": "Rainstorm gust (push)",
     "description": "Push component for for aya_stormgust ",

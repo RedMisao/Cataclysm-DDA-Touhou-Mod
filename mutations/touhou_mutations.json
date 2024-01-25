@@ -28,7 +28,7 @@
     "//": "Maybe replace the passive pain resist for pain resist/reduction while fighting"
   },
   {
-    "id": "CELESTIAL_STANCE_KNOCKS",
+    "id": "celestial_stance_mut",
     "type": "mutation",
     "name": { "str": "Celestial stance (cc resist)" },
     "description": "Knockback and knockdown resistance for Tenko's martial art.",
@@ -42,6 +42,24 @@
         "values": [ 
           { "value": "KNOCKBACK_RESIST", "add": 100 },
           { "value": "KNOCKDOWN_RESIST", "add": 100 } 
+        ] 
+      } 
+    ]
+  },
+  {
+    "id": "damnedrope_strength_mut",
+    "type": "mutation",
+    "name": { "str": "Spider strength (mutation)" },
+    "description": " ",
+    "points": 0,
+    "player_display": false,
+    "purifiable": false,
+    "valid": false,
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "STRENGTH", "add": 72 }
         ] 
       } 
     ]
@@ -211,6 +229,7 @@
         "condition": "ALWAYS", 
         "values": [ 
           { "value": "ARMOR_HEAT", "multiply": -0.33 },
+          { "value": "ARMOR_COLD", "multiply": 0.33 },
           { "value": "FALL_DAMAGE", "multiply": -0.33 }
         ] 
       } 

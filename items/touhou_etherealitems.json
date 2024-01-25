@@ -144,55 +144,6 @@
     "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SILENT" ]
   },
   {
-    "id": "fusion_blade",
-    "type": "ARMOR",
-    "name": { "str": "Fusion blade (aura)", "str_pl": "Fusion blades (aura)" },
-    "description": "A plume of white-hot plasma.",
-    "volume": "0 ml",
-    "weight": "0 g",
-    "price_postapoc": 0,
-    "symbol": "w",
-    "color": "yellow",
-    "material": [ "magic_fire" ],
-    "material_thickness": 1,
-    "use_action": [ { "type": "firestarter", "moves": 100 } ],
-    "armor": [ { "covers": [ "hand_r" ], "coverage": 0, "encumbrance": [ 0, 0 ] } ],
-    "relic_data": {
-      "passive_effects": [
-        {
-          "condition": "ALWAYS",
-          "hit_you_effect": [ { "id": "fusion_bonk" } ],
-          "values": [ { "value": "LUMINATION", "add": 20 } ]
-        }
-      ]
-    },
-    "flags": [ "AURA", "NO_TAKEOFF", "NONCONDUCTIVE", "ONLY_ONE", "OVERSIZE", "SEMITANGIBLE", "TRADER_AVOID", "ZERO_WEIGHT" ]
-  },
-  {
-    "id": "fusion_bonk",
-    "type": "SPELL",
-    "name": "Fusion blade (damage)",
-    "description": "dmg component for utsuho_fusionblade ",
-    "spell_class": "NONE",
-    "effect": "attack",
-    "valid_targets": [ "hostile" ],
-    "components": "spell_components_utsuhorod",
-    "shape": "blast",
-    "damage_type": "heat",
-    "min_damage": { "math": [ "( (u_skill('dodge') * 0.7 ) + 3.9 )" ] },
-    "max_damage": { "math": [ "( (u_skill('dodge') * 1.4 ) + 7.8 )" ] },
-    "min_pierce": 6,
-    "max_pierce": 6,
-    "min_range": 1,
-    "max_range": 1,
-    "max_level": 1,
-    "difficulty": -10,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "IGNITE_FLAMMABLE", "NO_LEGS", "NO_PROJECTILE", "RANDOM_DAMAGE", "SILENT" ]
-  },
-  {
     "id": "kokoro_naginata",
     "type": "GENERIC",
     "category": "weapons",

@@ -892,6 +892,12 @@
     "symbol": "☢",
     "color": "brown",
     "techniques": [ "WBLOCK_1" ],
+    "use_action": 
+    {
+      "type": "effect_on_conditions",
+      "description": "Activate fusion blade.  It costs some energy to activate.",
+      "effect_on_conditions": [ "utsuho_fusionblade_eoc" ]
+    },
     "armor": [
       { "covers": [ "arm_r" ], "specifically_covers": [ "arm_lower_l" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
       { "covers": [ "arm_r" ], "specifically_covers": [ "arm_elbow_l" ], "coverage": 20, "encumbrance": [ 2, 4 ] },
@@ -899,7 +905,7 @@
     ],
     "valid_mods": [ "rod_strap" ],
     "//3": "Should check how to add a strap so the player doesn't have to drop the rod every time Utsuho crafts something",
-    "flags": [ "ONLY_ONE", "OUTER", "PADDED", "RAINPROOF", "RESTRICT_HANDS", "STURDY", "TRADER_AVOID", "UNBREAKABLE_MELEE", "WATERPROOF" ]
+    "flags": [ "ONLY_ONE", "OUTER", "PADDED", "RAINPROOF", "RESTRICT_HANDS", "STURDY", "TRADER_AVOID", "UNBREAKABLE_MELEE", "WATERPROOF", "UTSUHO_ROD_FLAG" ]
   },
   {
     "id": "utsuho_shirt",

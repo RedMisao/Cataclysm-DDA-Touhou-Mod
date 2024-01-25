@@ -26,6 +26,28 @@
     "flags": [ "DURABLE_MELEE" ]
   },
   {
+    "id": "ammo_lunar_small_1_illusionary",
+    "type": "AMMO",
+    "name": { "str_sp": "lunar ammo (small) (illusionary)" },
+    "description": "Small-sized Lunar ammo, crafted from mana.",
+    "weight": "10 g",
+    "volume": "112 ml",
+    "price_postapoc": 0,
+    "material": [ "powder", "steel" ],
+    "symbol": "=",
+    "color": "light_gray",
+    "ammo_type": "ammo_lunar_small_illusionary",
+    "count": 13,
+    "stack_size": 13,
+    "damage": { "damage_type": "bullet", "amount": 5, "armor_penetration": 5 },
+    "loudness": 105,
+    "dispersion": 35,
+    "range": 20,
+    "recoil": 0,
+    "effects": [ "CASELESS_ROUNDS", "NEVER_MISFIRES", "NOGIB" ],
+    "//": "dmg is ~ ammo_lunar_small_1 / 5 copies"
+  },
+  {
     "id": "myon_bullet_bullet",
     "type": "AMMO",
     "name": "Myon bullet (ammo)",

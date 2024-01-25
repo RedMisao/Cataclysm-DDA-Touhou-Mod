@@ -136,6 +136,7 @@
     "targeted_monster_species": [ "ROBOT", "CYBORG" ],
     "effect": "mod_moves",
     "shape": "cone",
+    "damage_type": "pure",
     "min_damage": { "math": [ "( - (u_skill('speech') * 150 ) - (u_skill('dodge') * 150 ) - 1800 )" ] },
     "max_damage": -6000,
     "min_range": { "math": [ "( (u_skill('speech') * 0.85 ) + (u_skill('dodge') * 0.85 ) + 0.2 )" ] },
@@ -148,7 +149,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS" ],
-    "//": "Any electric, magnetic, robotic or similar creature should go here"
+    "//": "Any electric, magnetic, robotic or similar creature should go here",
+    "//2": "min dmg 3000, min range 7"
   },
   {
     "id": "iku_step",
