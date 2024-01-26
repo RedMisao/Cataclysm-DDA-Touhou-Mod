@@ -279,7 +279,7 @@
     "enchantments": [ 
       { 
         "values": [ 
-          { "value": "DEXTERITY", "add": 4 } ] },
+          { "value": "DEXTERITY", "add": 4 },
           { "value": "PERCEPTION", "add": -2 },
           { "value": "PAIN_REMOVE", "add": 2 },
           { "value": "SOCIAL_INTIMIDATE", "add": -8 },

@@ -715,7 +715,7 @@
       "condition": "ALWAYS", 
       "values": [ 
         { "value": "STRENGTH", "add": 2 },
-        { "value": "OVERKILL_DAMAGE", "MULTIPLY": -4 }
+        { "value": "OVERKILL_DAMAGE", "multiply": -4 }
       ] 
       } 
     ]
