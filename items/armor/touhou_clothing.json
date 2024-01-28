@@ -1025,7 +1025,7 @@
     "name": { "str": "Roukanken's scabbard" },
     "copy-from": "bscabbard",
     "description": "A wooden scabbard, designed to hold Roukanken.  It's painted black and it's otherwise plain, except for two paper seals and a Netherworld flower tied at it's ending. It's prepared to be drawn from while it's strapped on the back.  Activate to sheath/draw.",
-    "volume": "2200 ml",
+    "volume": "3400 ml",
     "weight": "1000 g",
     "price": 18000,
     "price_postapoc": 900,
@@ -1037,9 +1037,9 @@
     "color": "black",
     "pocket_data": [
       {
-        "max_contains_volume": "2050 ml",
-        "max_contains_weight": "1400 g",
-        "max_item_length": "115 cm",
+        "max_contains_volume": "3300 ml",
+        "max_contains_weight": "3100 g",
+        "max_item_length": "120 cm",
         "holster": true,
         "moves": 30,
         "rigid": true,
@@ -1068,9 +1068,9 @@
     "color": "black",
     "pocket_data": [
       {
-        "max_contains_volume": "1550 ml",
-        "max_contains_weight": "850 g",
-        "max_item_length": "65 cm",
+        "max_contains_volume": "1600 ml",
+        "max_contains_weight": "1000 g",
+        "max_item_length": "70 cm",
         "holster": true,
         "moves": 30,
         "rigid": true,

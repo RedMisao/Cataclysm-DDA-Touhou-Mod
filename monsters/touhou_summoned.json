@@ -115,14 +115,14 @@
         "type": "gun",
         "description": "",
         "ammo_type": "ammo_lunar_small_1_illusionary",
-        "cooldown": 0,
+        "cooldown": 1,
         "fake_per": 11,
         "fake_skills": [ [ "gun", 6 ] ],
         "max_ammo": 1,
-        "move_cost": 45,
+        "move_cost": 100,
         "targeting_cost": 0,
         "require_targeting_monster": true,
-        "ranges": [ [ 1, 16, "DEFAULT" ] ]
+        "ranges": [ [ 1, 20, "DEFAULT" ] ]
       }
     ],
     "anger_triggers": [ "FRIEND_ATTACKED", "HURT" ],
@@ -142,6 +142,48 @@
       "WARM"
     ],
     "//": "In AoCF they shoot with their fingers, not the gun. May change in the future idk"
+  },
+  {
+    "id": "mon_utsuho_minisun",
+    "type": "MONSTER",
+    "name": { "str": "Black sun" },
+    "description": "A small eclipsed sun, hovering around you.",
+    "volume": "1 ml",
+    "weight": "1 kg",
+    "default_faction": "touhou_summon",
+    "bodytype": "blob",
+    "species": [ "UNKNOWN" ],
+    "harvest": "exempt",
+    "hp": 100,
+    "speed": 150,
+    "symbol": "🔅",
+    "color": "black",
+    "aggression": 99,
+    "morale": 99,
+    "luminance": 16,
+    "dodge": 8,
+    "path_settings": { 
+      "allow_climb_stairs": true,
+      "allow_open_doors": false,
+      "avoid_traps": true,
+      "max_dist": 5
+    },
+    "fear_triggers": [ "PLAYER_CLOSE" ],
+    "death_function": { "corpse_type": "NO_CORPSE" },
+    "flags": [
+      "ALWAYS_VISIBLE",
+      "CLIMBS",
+      "FLIES",
+      "KEEP_DISTANCE",
+      "NO_BREATHE",
+      "NOT_HALLUCINATION",
+      "PACIFIST",
+      "PLASTIC",
+      "SEES",
+      "SILENT_DISAPPEAR",
+      "STUN_IMMUNE",
+      "WARM"
+    ]
   },
   {
     "id": "mon_vengeful_spirit_kaenbyou",

@@ -163,8 +163,15 @@
         "melee_allowed": true,
         "buff_duration": 1,
         "max_stacks": 1,
-        "flat_bonuses": [ { "stat": "crit_chance", "scale": -100 } ],
-        "//": "Ideally, this should reset buff_celestial_brawling_tenko_onhit2 when procced"
+        "flat_bonuses": [ { "stat": "crit_chance", "scale": -100 } ]
+      }
+    ],
+    "oncrit_eocs": [
+      {
+        "id": "buff_celestial_brawling_tenko_oncrit_eoc",
+        "effect": [
+          { "u_lose_effect": "mabuff:buff_celestial_brawling_tenko_onhit" }
+        ]
       }
     ],
     "onpause_buffs": [
@@ -249,8 +256,15 @@
         "weapon_categories_allowed": [ "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ], 
         "buff_duration": 4,
         "max_stacks": 1,
-        "flat_bonuses": [ { "stat": "crit_chance", "scale": 8 } ],
-        "//": "This should remove the ondodge, and viceversa"
+        "flat_bonuses": [ { "stat": "crit_chance", "scale": 8 } ]
+      }
+    ],
+    "onblock_eocs": [
+      {
+        "id": "buff_kokoro_onblock_eoc",
+        "effect": [
+          { "u_lose_effect": "mabuff:buff_kokoro_ondodge" }
+        ]
       }
     ],
     "ondodge_buffs": [
@@ -263,6 +277,14 @@
         "buff_duration": 4,
         "max_stacks": 1,
         "flat_bonuses": [ { "stat": "crit_chance", "scale": 8 } ]
+      }
+    ],
+    "ondodge_eocs": [
+      {
+        "id": "buff_kokoro_ondodge_eoc",
+        "effect": [
+          { "u_lose_effect": "mabuff:buff_kokoro_onblock" }
+        ]
       }
     ],
     "onmove_buffs": [

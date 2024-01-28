@@ -10,17 +10,18 @@
     "effect_str": "dazed",
     "shape": "blast",
     "damage_type": "stab",
-    "min_damage": { "math": [ "( (u_skill('stabbing') * 4.66 ) + (u_skill('melee') * 4.66 ) + (u_skill('dodge') * 4.66 ) - 21 )" ] },
+    "min_damage": { "math": [ "( (u_skill('stabbing') * 4.66 ) + (u_skill('melee') * 4.66 ) + (u_skill('dodge') * 4.66 ) - 20.92 )" ] },
     "max_damage": 175,
-    "min_aoe": { "math": [ "( (u_skill('stabbing') * 0.2 ) + (u_skill('melee') * 0.2 ) + (u_skill('dodge') * 0.2 ) + 0.6 )" ] },
-    "max_aoe": 9,
+    "min_aoe": { "math": [ "( (u_skill('stabbing') * 0.133 ) + (u_skill('melee') * 0.133 ) + (u_skill('dodge') * 0.133 ) + 0.404 )" ] },
+    "max_aoe": 6,
     "max_level": 1,
     "difficulty": -10,
     "base_casting_time": 166,
     "base_energy_cost": 100,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "Evidently, this should only target things with internal fluids, which include the living, unliving and robots"
+    "//": "Evidently, this should only target things with internal fluids, which include the living, unliving and robots",
+    "//2": "min dmg 35, min aoe 2"
   },
   {
     "id": "remilia_consumeblood",
@@ -43,7 +44,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "Would be nice to have a field effect for this"
+    "//": "Would be nice to have a field effect for this",
+    "//2": "min dmg 15"
   },
   {
     "id": "remilia_consumeblood2",
@@ -63,23 +65,24 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_LEGS" ]
+    "flags": [ "NO_EXPLOSION_SFX", "NO_LEGS" ],
+    "//2": "min dmg 200"
   },
   {
     "id": "remilia_demonfork",
     "type": "SPELL",
     "name": "Demons' dinner fork",
-    "description": "Summon several spears of red magic and throw them in front of you.",
+    "description": "Summon several spears of red magic to stab in front of you.",
     "spell_class": "NONE",
     "valid_targets": [ "ground", "hostile" ],
     "effect": "attack",
     "extra_effects": [ { "id": "remilia_demonfork2" }, { "id": "remilia_demonfork3" } ],
     "shape": "cone",
     "damage_type": "stab",
-    "min_damage": { "math": [ "( (u_skill('stabbing') * 0.133 ) + (u_skill('melee') * 0.133 ) + (u_skill('dodge') * 0.133 ) + 2.4 )" ] },
+    "min_damage": { "math": [ "( (u_skill('stabbing') * 0.133 ) + (u_skill('melee') * 0.133 ) + (u_skill('dodge') * 0.133 ) + 2.404 )" ] },
     "max_damage": 8,
-    "min_range": { "math": [ "( (u_skill('throw') + 2 ) )" ] },
-    "max_range": 16,
+    "min_range": { "math": [ "( (u_skill('throw') * 0.4 + 1.4 ) )" ] },
+    "max_range": 7,
     "min_aoe": 60,
     "max_aoe": 60,
     "max_level": 1,
@@ -89,7 +92,7 @@
     "energy_source": "MANA",
     "flags": [ "NO_EXPLOSION_SFX", "NO_LEGS", "SOMATIC", "WONDER" ],
     "//": "This works by repeatedly casting the cone, ideally it should cast several diverging lines instead",
-    "//2": "Damage should go from 27.9 at min lvl to 96 at max lvl, not counting the bleeding effect"
+    "//2": "min dmg 4, min range 3"
   },
   {
     "id": "remilia_demonfork2",
@@ -100,11 +103,9 @@
     "valid_targets": [ "ground", "hostile" ],
     "effect": "attack",
     "shape": "cone",
-    "damage_type": "bash",
-    "min_damage": 0,
-    "max_damage": 0,
-    "min_range": { "math": [ "( (u_skill('throw') + 2 ) )" ] },
-    "max_range": 16,
+    "damage_type": "pure",
+    "min_range": { "math": [ "( (u_skill('throw') * 0.4 + 1.4 ) )" ] },
+    "max_range": 7,
     "min_aoe": 60,
     "max_aoe": 60,
     "max_level": 1,
@@ -127,8 +128,8 @@
     "damage_type": "stab",
     "min_damage": { "math": [ "( (u_skill('stabbing') * 0.1 ) + (u_skill('melee') * 0.1 ) + (u_skill('dodge') * 0.1 ) + 7.8 )" ] },
     "max_damage": 12,
-    "min_range": { "math": [ "( (u_skill('throw') + 2 ) )" ] },
-    "max_range": 16,
+    "min_range": { "math": [ "( (u_skill('throw') * 0.4 + 1.4 ) )" ] },
+    "max_range": 7,
     "min_aoe": 60,
     "max_aoe": 60,
     "max_level": 1,
@@ -136,7 +137,8 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_LEGS", "SOMATIC" ]
+    "flags": [ "NO_EXPLOSION_SFX", "NO_LEGS", "SOMATIC" ],
+    "//": "min dmg 9"
   },
   {
     "id": "remilia_gungnir",
@@ -155,7 +157,8 @@
     "base_casting_time": 100,
     "base_energy_cost": 133,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "SOMATIC" ]
+    "flags": [ "NO_LEGS", "SOMATIC" ],
+    "//": "min dur 18000"
   },
   {
     "id": "remilia_gungnir_throw",
@@ -178,7 +181,8 @@
     "base_casting_time": 200,
     "base_energy_cost": 66,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "SOMATIC" ]
+    "flags": [ "NO_LEGS", "SOMATIC" ],
+    "//": "min dmg 40, min range 16"
   },
   {
     "id": "remilia_gungnir_throw2",
@@ -203,7 +207,8 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "LOUD", "NO_LEGS" ]
+    "flags": [ "LOUD", "NO_LEGS" ],
+    "//": "min dmg 20, min aoe 1"
   },
   {
     "id": "remilia_miserablefate",
@@ -216,17 +221,18 @@
     "extra_effects": [ { "id": "remilia_miserablefate2" } ],
     "shape": "blast",
     "damage_type": "stab",
-    "min_damage": { "math": [ "( (u_skill('stabbing') * 0.75 ) + (u_skill('melee') * 0.75 ) + 9 )" ] },
-    "max_damage": 60,
-    "min_range": 7,
-    "max_range": 7,
+    "min_damage": { "math": [ "( (u_skill('stabbing') * 1.5 ) + (u_skill('melee') * 1.5 ) + 3 )" ] },
+    "max_damage": 45,
+    "min_range": 6,
+    "max_range": 6,
     "max_level": 1,
     "difficulty": -10,
     "base_casting_time": 66,
     "base_energy_cost": 200,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "Reduced dmg increment per lvl to rely on the stun component"
+    "//": "Overall dmg to rely on the stun component",
+    "//2": "min dmg 15"
   },
   {
     "id": "remilia_miserablefate2",
@@ -270,6 +276,7 @@
     "base_energy_cost": 100,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "Mix between Vampire Claw and Millennium Vampire"
+    "//": "Mix between Vampire Claw and Millennium Vampire",
+    "//2": "min dur 6000"
   }
 ]

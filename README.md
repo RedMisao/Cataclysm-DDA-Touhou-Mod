@@ -28,9 +28,10 @@ This mod adds Touhou Project characters as professions.  Characters (2hus) have 
 
 ## New mechanics
 * Auras.  Various characters have toggle-able "aura" style abilities, each granting different effects as long as they're active.  Can be turned ON or OFF by casting specific spells.
-* Spell growth.  All character spells and spell effects now scale proportionally to their main skills, instead of spell level.
 * Blood thirst.  Remi now has to consume blood (or human flesh, with less effectiveness) in any shape or form, in order to keep the thirst at bay.
 * Immortality.  Mokou resurrects after dying, immediately restoring her body.  She can die as many times as she wants, but there's a soft cap relative to how many times she has died in a period of time, plus a small-ish pain debuff that stacks, to discourage savescumming.
+* Spell growth.  All character spells and spell effects now scale proportionally to their main skills, instead of spell level.
+* Weapon scaling.  Some spells now also scale from the equipped weapon's damage.
 * Wings.  Aya, Remi and Utsuho can now "fly" (read: hover) over over ledges and open spaces, consuming stamina until they're tired enough.  This is done by activating a mutation (View/active mutations key).
 * Youkai form toggle.  Kaenbyou and Remi can now switch between their human and youkai forms, each having different effects.  This is done by activating a mutation (View/active mutations key).
 

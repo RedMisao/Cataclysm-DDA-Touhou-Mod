@@ -1,5 +1,32 @@
 [
   {
+    "id": "wield_weapon_dmg_eoc",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "character_wields_item", 
+    "effect": [ 
+      {
+        "u_run_inv_eocs": "all",
+        "search_data": [ { "wielded_only": true } ],
+        "true_eocs": [
+          {
+            "id": "wield_weapon_dmg_eoc2",
+            "effect": [
+              { "math": [ "var_melee_bash_dmg", "=", "n_melee_damage('bash')" ] },
+              { "math": [ "var_melee_cut_dmg", "=", "n_melee_damage('cut')" ] },
+              { "math": [ "var_melee_stab_dmg", "=", "n_melee_damage('stab')" ] },
+              { "math": [ "var_melee_all_dmg", "=", "n_melee_damage('ALL')" ] },
+              { "math": [ "var_melee_phys_dmg", "=", "var_melee_bash_dmg + var_melee_cut_dmg + var_melee_stab_dmg" ] },
+              { "math": [ "var_gun_dmg", "=", "n_gun_damage('ALL')" ] }
+            ]
+          }
+        ]
+      }
+    ],
+    "//": "Thank you so much andrei8l for #71234 !!!",
+    "//2": "Note: this is automatic but only detects wielding/unwielding actions, things like 'type: transform' from use_action don't update the values. If this becomes a problem update the value check every time the spell is cast"
+  },
+  {
     "id": "dash_kokoro_eoc",
     "type": "effect_on_condition",
     "effect": [
@@ -42,7 +69,7 @@
       ]
     },
     "effect": [
-      { "run_eocs": [ "kokoro_backsweep_sweep" ] }
+      { "run_eocs": [ "kokoro_backsweep_check" ] }
     ],
     "false_effect": [ 
       { "u_message": "You don't have any 2h weapons equipped.", "type": "mixed" },
@@ -51,10 +78,44 @@
     "//": "Simple EOC just checks if Kokoro is wielding any 2h, if she isn't the cast fails"
   },
   {
-    "id": "kokoro_backsweep_sweep",
+    "id": "kokoro_backsweep_check",
     "type": "effect_on_condition",
-    "effect": [ 
-      { "u_cast_spell": { "id": "kokoro_backsweep2" }, "targeted": true }
+    "condition": {
+      "and": [
+        { "math": [ "var_melee_bash_dmg", ">=", "var_melee_cut_dmg" ] },
+        { "math": [ "var_melee_bash_dmg", ">=", "var_melee_stab_dmg" ] }
+      ]
+    },
+    "effect": [
+      { "u_cast_spell": { "id": "kokoro_backsweep2_bash" }, "targeted": true }
+    ],
+    "false_effect": [ { "run_eocs": [ "kokoro_backsweep_check2" ] } ]
+  },
+  {
+    "id": "kokoro_backsweep_check2",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "var_melee_cut_dmg", ">=", "var_melee_bash_dmg" ] },
+        { "math": [ "var_melee_cut_dmg", ">=", "var_melee_stab_dmg" ] }
+      ]
+    },
+    "effect": [
+      { "u_cast_spell": { "id": "kokoro_backsweep2_cut" }, "targeted": true }
+    ],
+    "false_effect": [ { "run_eocs": [ "kokoro_backsweep_check3" ] } ]
+  },
+  {
+    "id": "kokoro_backsweep_check3",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "var_melee_stab_dmg", ">=", "var_melee_bash_dmg" ] },
+        { "math": [ "var_melee_stab_dmg", ">=", "var_melee_cut_dmg" ] }
+      ]
+    },
+    "effect": [
+      { "u_cast_spell": { "id": "kokoro_backsweep2_stab" }, "targeted": true }
     ]
   },
   {
@@ -75,7 +136,7 @@
       ]
     },
     "effect": [
-      { "run_eocs": [ "kokoro_quick_attack_attack" ] }
+      { "run_eocs": [ "kokoro_quick_attack_check" ] }
     ],
     "false_effect": [ 
       { "u_message": "You're not using any compatible weapons.", "type": "mixed" },
@@ -84,10 +145,44 @@
     "//": "Simple EOC just checks if Kokoro is wielding any weapon allowed by her MA, if she isn't the cast fails"
   },
   {
-    "id": "kokoro_quick_attack_attack",
+    "id": "kokoro_quick_attack_check",
     "type": "effect_on_condition",
-    "effect": [ 
-      { "u_cast_spell": { "id": "kokoro_quick_attack2" }, "targeted": true }
+    "condition": {
+      "and": [
+        { "math": [ "var_melee_bash_dmg", ">=", "var_melee_cut_dmg" ] },
+        { "math": [ "var_melee_bash_dmg", ">=", "var_melee_stab_dmg" ] }
+      ]
+    },
+    "effect": [
+      { "u_cast_spell": { "id": "kokoro_quick_attack2_bash" }, "targeted": true }
+    ],
+    "false_effect": [ { "run_eocs": [ "kokoro_quick_attack_check2" ] } ]
+  },
+  {
+    "id": "kokoro_quick_attack_check2",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "var_melee_cut_dmg", ">=", "var_melee_bash_dmg" ] },
+        { "math": [ "var_melee_cut_dmg", ">=", "var_melee_stab_dmg" ] }
+      ]
+    },
+    "effect": [
+      { "u_cast_spell": { "id": "kokoro_quick_attack2_cut" }, "targeted": true }
+    ],
+    "false_effect": [ { "run_eocs": [ "kokoro_quick_attack_check3" ] } ]
+  },
+  {
+    "id": "kokoro_quick_attack_check3",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "var_melee_stab_dmg", ">=", "var_melee_bash_dmg" ] },
+        { "math": [ "var_melee_stab_dmg", ">=", "var_melee_cut_dmg" ] }
+      ]
+    },
+    "effect": [
+      { "u_cast_spell": { "id": "kokoro_quick_attack2_stab" }, "targeted": true }
     ]
   },
   {
@@ -220,19 +315,30 @@
     ]
   },
   {
+    "id": "tenko_keystonecrash_eoc",
+    "type": "effect_on_condition",
+    "condition": "u_is_outside",
+    "effect": [
+      { "u_cast_spell": { "id": "tenko_keystonecrash2" }, "targeted": true }
+    ],
+    "false_effect": [ 
+      { "u_message": "You need a direct connection to the Heavens to summon a crashing keystone.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "75" ] }
+    ]
+  },
+  {
     "id": "udonge_disbeliefaspect_eoc",
     "type": "effect_on_condition",
-    "condition": { "math": [ "u_monsters_nearby('mon_zombie', 'radius': 16)", "==", "0" ] },
+    "condition": { "math": [ "u_monsters_nearby('mon_udonge_firing_squad', 'radius': 16, 'attitude': 'friendly')", "==", "0" ] },
     "effect": [
-      { "u_message": "AAA", "type": "mixed" },
-      { "math": [ "u_val('mana')", "-=", "100" ] },
       { "u_cast_spell": { "id": "udonge_disbeliefaspect_spawn" }, "targeted": false }
     ],
     "false_effect": [ 
-      { "u_message": "BBB", "type": "mixed" },
-      { "u_cast_spell": { "id": "udonge_disbeliefaspect_tp" }, "targeted": false }
+      { "math": [ "u_val('mana')", "+=", "100" ] },
+      { "u_cast_spell": { "id": "udonge_disbeliefaspect_tp" }, "targeted": true }
     ],
-    "//": "Simple EOC just checks if there is any Udonge firing squad around. If there isn't then she spawns some and consumes some mana, otherwise she casts the random tp"
+    "//": "Simple EOC just checks if there is any Udonge firing squad around. If there isn't then she spawns some and consumes some mana, otherwise she casts the random tp",
+    "//2": "Thank you so much andrei8l for #71222"
   },
   {
     "id": "udonge_gunwaveBLAST_eoc",
@@ -456,15 +562,69 @@
       { "math": [ "var_wavestealth", "=", "0" ] },
       { "u_lose_effect": "udonge_stealth" }
     ]
-  },  
+  },
+  {
+    "id": "utsuho_blacksun_eoc",
+    "type": "effect_on_condition",
+    "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
+    "effect": [
+      { "u_cast_spell": { "id": "utsuho_hellcannon2" }, "targeted": true }
+    ],
+    "false_effect": [ 
+      { "math": [ "u_val('mana')", "-=", "50" ] },
+      { "u_cast_spell": { "id": "utsuho_hellcannon2_unc" }, "targeted": true } 
+    ]
+  },
+  {
+    "id": "utsuho_detectrad_eoc",
+    "type": "effect_on_condition",
+    "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
+    "effect": [
+      { "u_cast_spell": { "id": "utsuho_detectrad2" }, "targeted": true }
+    ],
+    "false_effect": [ 
+      { "u_message": "Something's wrong… you cannot detect anything.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "rand(50)" ] }
+    ]
+  },
+  {
+    "id": "utsuho_minisun_follow",
+    "type": "effect_on_condition",
+    "//recurrence": "1 s",
+    "condition": {
+      "and": [
+        { "math": [ "u_monsters_nearby('mon_utsuho_minisun', 'radius': 99, 'attitude': 'friendly')", ">", "0" ] },
+        { "math": [ "u_monsters_nearby('mon_utsuho_minisun', 'radius': 5, 'attitude': 'friendly')", "==", "0" ] }
+      ]
+    },
+    "deactivate_condition": {
+      "or": [
+        { "not": { "u_has_trait": "PROF_OKUU" } },
+        { "math": [ "u_monsters_nearby('mon_utsuho_minisun', 'radius': 99, 'attitude': 'friendly')", "==", "0" ] }
+      ]
+    },
+    "effect": [ 
+      { "u_cast_spell": { "id": "utsuho_blacksun2" }, "targeted": false }
+    ],
+    "//": "WIP"
+  },
   {
     "id": "utsuho_fissionaura_eoc",
     "type": "effect_on_condition",
     "effect": [
       { "math": [ "var_utsuho_fissionaura", "+=", "1" ] },
+      { "run_eocs": [ "utsuho_fissionaura_check" ] }
+    ],
+    "//": "This EOC is a modified version of udonge_waveinsight_start . It has an extra step that checks if Utsuho is wearing her rod, if she isn't it runs a sub-cycle with different values"
+  },
+  {
+    "id": "utsuho_fissionaura_check",
+    "type": "effect_on_condition",
+    "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
+    "effect": [
       { "run_eocs": [ "utsuho_fissionaura_cycle1" ] }
     ],
-    "//": "This EOC is a simplified version of udonge_waveinsight_start "
+    "false_effect": [ { "run_eocs": [ "utsuho_fissionaura_cycle1_unc" ] } ]
   },
   {
     "id": "utsuho_fissionaura_cycle1",
@@ -487,7 +647,32 @@
     },
     "effect": [
       { "math": [ "u_val('mana')", "-=", "11" ] },
-      { "queue_eocs": [ "utsuho_fissionaura_cycle1" ], "time_in_future": "3 s" }
+      { "queue_eocs": [ "utsuho_fissionaura_check" ], "time_in_future": "3 s" }
+    ],
+    "false_effect": { "run_eocs": "utsuho_fissionaura_oom" }
+  },
+  {
+    "id": "utsuho_fissionaura_cycle1_unc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_utsuho_fissionaura", "<", "2" ] },
+    "effect": [ 
+      { "u_cast_spell": { "id": "utsuho_fissionaura2_unc" }, "targeted": false },
+      { "run_eocs": [ "utsuho_fissionaura_cycle2_unc" ] }
+    ],
+    "false_effect": { "run_eocs": "utsuho_fissionaura_toggle" }
+  },
+  {
+    "id": "utsuho_fissionaura_cycle2_unc",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_val('mana')", ">=", "66" ] },
+        { "math": [ "var_utsuho_fissionaura", ">", "0" ] }
+      ]
+    },
+    "effect": [
+      { "math": [ "u_val('mana')", "-=", "11 + rand(6)" ] },
+      { "queue_eocs": [ "utsuho_fissionaura_check" ], "time_in_future": [ "2 s", "4 s" ] }
     ],
     "false_effect": { "run_eocs": "utsuho_fissionaura_oom" }
   },
@@ -570,6 +755,88 @@
     "//": "WIP. This works but the message is being printed twice by manually deactivating it"
   },
   {
+    "id": "utsuho_groundmelt_eoc",
+    "type": "effect_on_condition",
+    "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
+    "effect": [
+      { "u_cast_spell": { "id": "utsuho_groundmelt2" }, "targeted": true }
+    ],
+    "false_effect": [ 
+      { "u_message": "You need to equip your third rod to cast this.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "266" ] }
+    ]
+  },
+  {
+    "id": "utsuho_hellcannon_eoc",
+    "type": "effect_on_condition",
+    "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
+    "effect": [
+      { "u_cast_spell": { "id": "utsuho_hellcannon2" }, "targeted": true }
+    ],
+    "false_effect": [ 
+      { "math": [ "u_val('mana')", "-=", "50" ] },
+      { "u_cast_spell": { "id": "utsuho_hellcannon2_unc" }, "targeted": true } 
+    ]
+  },
+  {
+    "id": "utsuho_hellcannon_eoc_DUPLICATE",
+    "type": "effect_on_condition",
+    "//eoc_type": "EVENT",
+    "//required_event": "character_casts_spell", 
+    "condition": {
+      "and": [
+        { "compare_string": [ "utsuho_hellcannon", { "context_val": "spell" } ] },
+        { "math": [ "u_monsters_nearby('mon_utsuho_minisun', 'radius': 99, 'attitude': 'friendly')", ">", "0" ] }
+      ]
+    },
+    "effect": [ 
+      { "u_message": "AAA", "type": "mixed" },
+      { "math": [ "hellcannon_casted", "+=", "1" ] },
+      { "run_eocs": [ "utsuho_hellcannon_eoc2_DUPLICATE" ] }
+    ],
+    "//": "WIP"
+  },
+  {
+    "id": "utsuho_hellcannon_eoc2_DUPLICATE",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_monsters_nearby('mon_utsuho_minisun', 'radius': 99, 'attitude': 'friendly')", ">", "0" ] }
+      ]
+    },
+    "effect": [
+      { "u_message": "BBB", "type": "mixed" },
+      { "math": [ "hellcannon_casted", "-=", "1" ] },
+      { "npc_cast_spell": { "id": "utsuho_hellcannon_mon" }, "targeted": true }
+    ],
+    "//": "WIP"
+  },
+  {
+    "id": "utsuho_nuke_eoc",
+    "type": "effect_on_condition",
+    "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
+    "effect": [
+      { "u_cast_spell": { "id": "utsuho_nuke2" }, "targeted": true }
+    ],
+    "false_effect": [ 
+      { "u_message": "You *definitely* need your rod to cast this.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "800" ] }
+    ],
+    "//": "She does? :^)"
+  },
+  {
+    "id": "utsuho_ugeyser_eoc",
+    "type": "effect_on_condition",
+    "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
+    "effect": [
+      { "u_cast_spell": { "id": "utsuho_ugeyser2" }, "targeted": true }
+    ],
+    "false_effect": [ 
+      { "math": [ "u_val('mana')", "-=", "50" ] },
+      { "u_cast_spell": { "id": "utsuho_ugeyser2_unc" }, "targeted": true }
+    ]
+  },
+  {
     "id": "yamame_damnedrope_eoc",
     "type": "effect_on_condition",
     "effect": [ 
@@ -584,5 +851,67 @@
       { "u_cast_spell": { "id": "yamame_damnedrope2" }, "targeted": true },
       { "u_lose_trait": "damnedrope_strength_mut" }
     ]
+  },
+  {
+    "id": "youmu_slasheternal_eoc",
+    "type": "effect_on_condition",
+    "condition": {
+      "or": [
+        { "u_has_wielded_with_weapon_category": "JAPANESE_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "SHORT_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "MEDIUM_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "LONG_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "FENCING_WEAPONRY" },
+        { "u_has_wielded_with_weapon_category": "LONG_THRUSTING_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "GREAT_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "BIONIC_SWORDS" }
+      ]
+    },
+    "effect": [
+      { "run_eocs": [ "youmu_slasheternal_check" ] }
+    ],
+    "false_effect": [ 
+      { "u_message": "You need a sword to cast this.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "100" ] }
+    ],
+    "//": "This EOC is a simplified version of kokoro_backsweep_eoc "
+  },
+  {
+    "id": "youmu_slasheternal_check",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "var_melee_cut_dmg", ">=", "var_melee_bash_dmg" ] },
+        { "math": [ "var_melee_cut_dmg", ">=", "var_melee_stab_dmg" ] }
+      ]
+    },
+    "effect": [
+      { "u_cast_spell": { "id": "youmu_slasheternal2_cut" }, "targeted": true }
+    ],
+    "false_effect": [ { "u_cast_spell": { "id": "youmu_slasheternal2_bash" }, "targeted": true } ]
+  },
+  {
+    "id": "youmu_slashnether_eoc",
+    "type": "effect_on_condition",
+    "condition": {
+      "or": [
+        { "u_has_wielded_with_weapon_category": "JAPANESE_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "SHORT_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "MEDIUM_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "LONG_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "FENCING_WEAPONRY" },
+        { "u_has_wielded_with_weapon_category": "LONG_THRUSTING_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "GREAT_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "BIONIC_SWORDS" }
+      ]
+    },
+    "effect": [
+      { "u_cast_spell": { "id": "youmu_slashnether2" }, "targeted": true }
+    ],
+    "false_effect": [ 
+      { "u_message": "You need a sword to cast this.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "100" ] }
+    ],
+    "//": "This EOC is a simplified version of kokoro_backsweep_eoc "
   }
 ]

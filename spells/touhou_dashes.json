@@ -37,7 +37,7 @@
     "base_energy_cost": 0,
     "energy_source": "STAMINA",
     "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ],
-    "//": "Solution adapted from Aftershock mod's spell_rocket_jump ",
+    "//": "Solution adapted from Aftershock mod's spell_rocket_jump to address #53532",
     "//2": "Note: range is set at 20 else dash_levitation fails to trigger sometimes. Dunno why this is"
   },
   {

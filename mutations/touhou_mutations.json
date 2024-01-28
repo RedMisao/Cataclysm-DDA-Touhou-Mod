@@ -180,6 +180,7 @@
         "condition": "ALWAYS", 
         "values": [ 
           { "value": "INTELLIGENCE", "add": -2 },
+          { "value": "MAX_MANA", "add": 200 },
           { "value": "ARMOR_HEAT", "multiply": -0.66 }
         ] 
       } 
@@ -422,8 +423,7 @@
       } 
     ],
     "transform": { "target": "TSUCHIGUMO_SPECIES_active", "active": false, "moves": 100 },
-    "//": "Also, add some kind of social bonus for enemies with the YOUKAI trait or plus ARACHNID. In fact I should probably check all social interactions of Youkai in general at some point",
-    "//2": "This needs some sort of small bonus over the active form below, so she has a reason to switch forms at all"
+    "//": "This needs some sort of small bonus over the active form below, so she has a reason to switch forms at all"
   },
   {
     "id": "TSUCHIGUMO_SPECIES_active",
@@ -814,8 +814,11 @@
     "valid": false,
     "enchantments": [ 
       { 
-      "condition": "ALWAYS", 
-      "values": [ { "value": "INTELLIGENCE", "add": -1 } ] 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "INTELLIGENCE", "add": -1 } ,
+          { "value": "MAX_MANA", "add": 100 }
+        ] 
       } 
     ]
   },

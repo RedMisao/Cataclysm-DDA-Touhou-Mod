@@ -253,7 +253,6 @@
     "base_energy_cost": 150,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "Her martial arts stuff should very probably be rechecked and rebalanced after this",
-    "//2": "min dur 3000"
+    "//": "min dur 3000"
   }
 ]

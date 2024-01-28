@@ -86,8 +86,8 @@
     "base_casting_time": 100,
     "base_energy_cost": 50,
     "energy_source": "MANA",
-    "flags": [ "EXTRA_EFFECTS_FIRST", "IGNORE_WALLS", "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],
-    "//": "aoe is 14 - 6, scaling down with skills",
+    "flags": [ "EXTRA_EFFECTS_FIRST", "IGNORE_WALLS", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],
+    "//": "aoe is 14 - 6, scaling down with skills (see below for the formula)",
     "//2": "This should also break after attacking or being attacked, but currently there seems no way to check either"
   },
   {
@@ -96,10 +96,10 @@
     "name": "Maid's secret (visual effect)",
     "description": "Visual effect for the aoe, so the player is aware of the effect boundary",
     "spell_class": "NONE",
-    "valid_targets": [ "self" ],
+    "valid_targets": [ "ground", "self" ],
     "effect": "attack",
     "shape": "blast",
-    "damage_type": "bash",
+    "damage_type": "pure",
     "min_aoe": { "math": [ "( - (u_skill('stabbing') * 0.4 ) - (u_skill('dodge') * 0.4 ) + 17.2 )" ] },
     "max_aoe": 14,
     "max_level": 1,
