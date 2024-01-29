@@ -160,7 +160,7 @@
     },
     "display_field": true,
     "looks_like": "fd_web",
-    "//": "Fire field for Yamame spell effects, main change is phase gas and reduced duration"
+    "//": "Web field for Yamame spell effects, main change is phase gas and reduced duration"
   },
   {
     "id": "fd_web3",

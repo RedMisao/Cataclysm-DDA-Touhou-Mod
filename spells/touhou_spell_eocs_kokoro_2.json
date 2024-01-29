@@ -3,7 +3,6 @@
     "id": "kokoro_mask_eocs",
     "type": "effect_on_condition",
     "effect": [
-      { "u_message": "MASKS_EOC", "type": "mixed" },
       { "run_eocs": [ "kokoro_mask_eoc_happiness" ] },
       { "run_eocs": [ "kokoro_mask_eoc_determination" ] },
       { "run_eocs": [ "kokoro_mask_eoc_melancholy" ] },
@@ -56,7 +55,6 @@
               ]
             },
             "effect": [
-              { "u_message": "HAPPINESS_BASE", "type": "mixed" },
               { "u_add_effect": "kokoro_happiness_effect", "duration": "20 m" },
               { "math": [ "var_kokoro_happiness", "=", "1" ] },
               { "math": [ "var_kokoro_timer", "=", "900" ] }
@@ -76,7 +74,6 @@
               ]
             },
             "effect": [
-              { "u_message": "HAPPINESS_BOOST", "type": "mixed" },
               { "u_add_effect": "kokoro_happiness_effect_boost", "duration": "20 m" },
               { "math": [ "var_kokoro_happiness_boost", "=", "1" ] },
               { "math": [ "var_kokoro_timer", "=", "900" ] }
@@ -132,7 +129,6 @@
               ]
             },
             "effect": [
-              { "u_message": "DETER_BASE", "type": "mixed" },
               { "u_add_effect": "kokoro_determination_effect", "duration": "20 m" },
               { "math": [ "var_kokoro_determination", "=", "1" ] },
               { "math": [ "var_kokoro_timer", "=", "900" ] }
@@ -152,7 +148,6 @@
               ]
             },
             "effect": [
-              { "u_message": "DETER_BOOST", "type": "mixed" },
               { "u_add_effect": "kokoro_determination_effect_boost", "duration": "20 m" },
               { "math": [ "var_kokoro_determination_boost", "=", "1" ] },
               { "math": [ "var_kokoro_timer", "=", "900" ] }
@@ -206,7 +201,6 @@
               ]
             },
             "effect": [
-              { "u_message": "MELAN_BASE", "type": "mixed" },
               { "u_add_effect": "kokoro_melancholy_effect", "duration": "20 m" },
               { "math": [ "var_kokoro_melancholy", "=", "1" ] },
               { "math": [ "var_kokoro_timer", "=", "900" ] }
@@ -226,7 +220,6 @@
               ]
             },
             "effect": [
-              { "u_message": "MELAN_BOOST", "type": "mixed" },
               { "u_add_effect": "kokoro_melancholy_effect_boost", "duration": "20 m" },
               { "math": [ "var_kokoro_melancholy_boost", "=", "1" ] },
               { "math": [ "var_kokoro_timer", "=", "900" ] }
@@ -280,7 +273,6 @@
               ]
             },
             "effect": [
-              { "u_message": "ANGER_BASE", "type": "mixed" },
               { "u_add_effect": "kokoro_anger_effect", "duration": "20 m" },
               { "math": [ "var_kokoro_anger", "=", "1" ] },
               { "math": [ "var_kokoro_timer", "=", "900" ] }
@@ -300,7 +292,6 @@
               ]
             },
             "effect": [
-              { "u_message": "ANGER_BOOST", "type": "mixed" },
               { "u_add_effect": "kokoro_anger_effect_boost", "duration": "20 m" },
               { "math": [ "var_kokoro_anger_boost", "=", "1" ] },
               { "math": [ "var_kokoro_timer", "=", "900" ] }

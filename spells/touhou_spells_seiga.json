@@ -20,10 +20,10 @@
     "effect": "charm_monster",
     "shape": "blast",
     "damage_type": "pure",
-    "min_damage": { "math": [ "( - (u_skill('speech') * 14 ) - (u_skill('firstaid') * 14 ) - 72 )" ] },
+    "min_damage": { "math": [ "( (u_skill('speech') * 14 ) + (u_skill('firstaid') * 14 ) - 72 )" ] },
     "max_damage": 320,
-    "min_range": 6,
-    "max_range": 6,
+    "min_range": 5,
+    "max_range": 5,
     "min_aoe": 0,
     "max_aoe": 0,
     "min_duration": { "math": [ "( (u_skill('speech') * 700 ) + (u_skill('firstaid') * 700 ) - 2100 )" ] },
@@ -35,12 +35,13 @@
     "energy_source": "MANA",
     "flags": [ "NO_LEGS" ],
     "//": "Name is 'charm humanoid' in Chinese",
-    "//2": "I thought about splitting the spell into a guaranteed charm if the target is/was human, and a chance to fail with different effects if it's closer-but-not-quite-human (like explode, heal it, etc), but it was too complex for relatively little return, at least for now"
+    "//2": "I thought about splitting the spell into a guaranteed charm if the target is/was human, and a chance to fail with different effects if it's closer-but-not-quite-human (like explode, heal it, etc), but it was too complex for relatively little return, at least for now",
+    "//3": "min dmg 40, min dur 3500"
   },
   {
     "id": "seiga_chidrain",
     "type": "SPELL",
-    "name": "Xie qi",
+    "name": "Xiè qì",
     "description": "Focus on the qi of the target, applying a curse to drain it and transform into healing for yourself.",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "hostile" ],
@@ -60,13 +61,14 @@
     "base_energy_cost": 133,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS" ],
-    "//": "Name is 'qi drain' in Chinese"
+    "//": "Name is 'qi drain' in Chinese",
+    "//2": "min dot 2, min range 4"
   },
   {
     "id": "seiga_chidrain2",
     "type": "SPELL",
-    "name": "Xie qi (heal component)",
-    "description": "Healing component of seiga_chidrain ",
+    "name": "Xiè qì (heal)",
+    "description": "Heal component of seiga_chidrain ",
     "spell_class": "NONE",
     "valid_targets": [ "self" ],
     "effect": "attack",
@@ -81,12 +83,13 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "SILENT" ]
+    "flags": [ "NO_HANDS", "NO_LEGS", "SILENT" ],
+    "//": "min dot 1"
   },
   {
     "id": "seiga_chireversal",
     "type": "SPELL",
-    "name": "Qi nizhuan",
+    "name": "Nìzhuǎn qì",
     "description": "Tamper with the leylines of the target, pressing key pressure points to reverse the flow of qi, dealing instant damage and crippling them for a short time.  This deals more damage if the target is (or was) alive.",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "hostile" ],
@@ -105,12 +108,12 @@
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
     "//": "Name is 'qi reversal' in Chinese",
-    "//2": "Note: there's +2 base dmg in the subspells ! "
+    "//2": "min dmg 13"
   },
   {
     "id": "seiga_chireversal2",
     "type": "SPELL",
-    "name": "Qi nizhuan (cripple component)",
+    "name": "Nìzhuǎn qì (cripple)",
     "description": "First cripple component for seiga_chireversal ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "hostile" ],
@@ -127,12 +130,13 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "RANDOM_DURATION", "SILENT" ]
+    "flags": [ "NO_EXPLOSION_SFX", "RANDOM_DURATION", "SILENT" ],
+    "//": "dur 2 - 4"
   },
   {
     "id": "seiga_chireversal3",
     "type": "SPELL",
-    "name": "Qi nizhuan (cripple component 2)",
+    "name": "Nìzhuǎn qì (cripple 2)",
     "description": "Second cripple component for seiga_chireversal ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "hostile" ],
@@ -149,12 +153,13 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "RANDOM_DURATION", "SILENT" ]
+    "flags": [ "NO_EXPLOSION_SFX", "RANDOM_DURATION", "SILENT" ],
+    "//": "dur 2 - 4"
   },
   {
     "id": "seiga_chireversal4",
     "type": "SPELL",
-    "name": "Qi reversal (bio dmg)",
+    "name": "Nìzhuǎn qì (bio dmg)",
     "description": "Extra biological damage for seiga_chireversal ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "hostile" ],
@@ -170,7 +175,8 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "SOMATIC" ]
+    "flags": [ "NO_LEGS", "SOMATIC" ],
+    "//": "min dmg 15"
   },
   {
     "id": "seiga_darksplash",
@@ -194,7 +200,8 @@
     "base_energy_cost": 133,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS" ],
-    "//": "Name is 'dark splash' in Chinese. Based on her first nonspell, should have a 'splash' field effect or something cute like that"
+    "//": "Name is 'dark splash' in Chinese. Based on her first nonspell, should have a 'splash' field effect or something cute like that",
+    "//2": "min dmg 42, min range 3"
   },
   {
     "id": "seiga_foetusshot",
@@ -219,13 +226,41 @@
     "base_energy_cost": 66,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "Not based on spellcards, just another more straightforward use for the egg cells. Visually it should look like those dark electric spheres, oh well"
+    "//": "Not based on spellcards, just another more straightforward use for the egg cells. Visually it should look like those dark electric spheres, oh well",
+    "//2": "min dmg 60, min range 10"
+  },
+  {
+    "id": "seiga_frenzy",
+    "type": "SPELL",
+    "name": "Zǒuhuǒ rùmó",
+    "description": "Place a curse on the friendly target, increasing its movement speed and physical abilities, at cost of slowly eating their self away.",
+    "spell_class": "NONE",
+    "valid_targets": [ "ally" ],
+    "targeted_monster_species": [ "FERAL", "HUMAN", "ZOMBIE" ],
+    "effect": "attack",
+    "effect_str": "seiga_frenzy",
+    "shape": "blast",
+    "damage_type": "pure",
+    "min_dot": 2,
+    "max_dot": 2,
+    "min_range": 5,
+    "max_range": 5,
+    "min_duration": 30000,
+    "max_duration": 30000,
+    "max_level": 1,
+    "difficulty": -10,
+    "base_casting_time": 100,
+    "base_energy_cost": 100,
+    "energy_source": "MANA",
+    "flags": [ "NO_LEGS", "SOMATIC" ],
+    "//": "Name is 'obsession' in Chinese. Based on the spellcard of the same name, but turned into a curse",
+    "//2": "Duration is 5 min, deals a total of 600 dmg"
   },
   {
     "id": "seiga_hermitwalk",
     "type": "SPELL",
-    "name": "Xianren zhou",
-    "description": "Attune yourself with nature, slightly increased movement speed for a short time.",
+    "name": "Xiānrén zǒu",
+    "description": "Attune yourself with nature, allowing yourself to float while increased movement speed for a short time.",
     "spell_class": "NONE",
     "valid_targets": [ "self" ],
     "effect": "attack",
@@ -241,34 +276,12 @@
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "SOMATIC" ],
     "//": "Name is 'hermit walk' in Chinese",
-    "//2": " extra_effects seiga_hermitwalk2 does NOT grant the LEVITATION mutation because the trait ID is not recognized as such"
-  },
-  {
-    "id": "seiga_hermitwalk2",
-    "type": "SPELL",
-    "name": "Xianren zhou (flags)",
-    "description": "Grants levitate mutation for seiga_hermitwalk ",
-    "spell_class": "NONE",
-    "valid_targets": [ "self" ],
-    "effect": "mutate",
-    "effect_str": "LEVITATION",
-    "shape": "blast",
-    "damage_type": "pure",
-    "min_damage": 10000,
-    "max_damage": 10000,
-    "min_duration": { "math": [ "( (u_skill('speech') * 1200 ) + (u_skill('firstaid') * 1200 ) + 2400 )" ] },
-    "max_duration": 36000,
-    "max_level": 1,
-    "difficulty": -10,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "MUTATE_TRAIT", "NO_LEGS", "NO_HANDS", "SILENT" ]
+    "//2": "min dur 12000"
   },
   {
     "id": "seiga_raisechild",
     "type": "SPELL",
-    "name": "Yang Xiaogui",
+    "name": "Yǎng xiǎoguǐ",
     "description": "Force \"children\" to \"grow up\" rapidly, by making use of nearby dead spirits as catalyst.  They will serve you as best as they can, you being her mother figure and all that.",
     "spell_class": "NONE",
     "valid_targets": [ "ground", "self" ],
@@ -290,7 +303,8 @@
     "base_casting_time": 100,
     "base_energy_cost": 200,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "SOMATIC" ]
+    "flags": [ "NO_LEGS", "SOMATIC" ],
+    "//2": "min dmg 2, min range 4"
   },
   {
     "id": "seiga_wallwalk",
@@ -306,11 +320,11 @@
     "max_range": 2,
     "max_level": 1,
     "difficulty": -20,
-    "base_casting_time": { "math": [ "( - (u_skill('speech') * 3.35 ) - (u_skill('firstaid') * 3.35 ) + 126 )" ] },
-    "base_energy_cost": { "math": [ "( - (u_skill('speech') * 3.35 ) - (u_skill('firstaid') * 3.35 ) + 126 )" ] },
-    "//": "Formula starts at 100 (4) and goes down to ~33 at maxed skills (14)",
+    "base_casting_time": { "math": [ "( - (u_skill('speech') * 3.35 ) - (u_skill('firstaid') * 3.35 ) + 126.8 )" ] },
+    "base_energy_cost": { "math": [ "( - (u_skill('speech') * 3.35 ) - (u_skill('firstaid') * 3.35 ) + 126.8 )" ] },
     "energy_source": "MANA",
-    "flags": [ "IGNORE_WALLS", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SOMATIC", "TARGET_TELEPORT" ]
+    "flags": [ "IGNORE_WALLS", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SOMATIC", "TARGET_TELEPORT" ],
+    "//2": "cast time and mana cost 100 - 33, scales down with higher skill"
   },
   {
     "id": "seiga_yoshikasumm",
@@ -336,6 +350,7 @@
     "base_energy_cost": 333,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "Implement base Yoshika and the most common possible targets"
+    "//": "Implement base Yoshika and the most common possible targets",
+    "//2": "min dur 12000"
   }
 ]

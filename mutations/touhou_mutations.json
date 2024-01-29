@@ -442,7 +442,7 @@
         "condition": "ALWAYS", 
         "mutations": [ "WEB_WALKER" ], 
         "values": [ 
-          { "value": "METABOLISM", "multiply": 0.2 }
+          { "value": "METABOLISM", "multiply": 0.33 }
         ] 
       } 
     ],

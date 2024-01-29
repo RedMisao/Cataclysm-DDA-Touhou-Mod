@@ -1,9 +1,24 @@
 [
   {
+    "id": "dismiss_fire_ter",
+    "type": "ter_furn_transform",
+    "field": [
+      { 
+        "valid_field": [ "fd_fire", "fd_incendiary", "fd_flame_burst" ], 
+        "result": "fd_null", 
+        "message": "The fires goes away."
+      }
+    ]
+  },
+  {
     "id": "groundmelt_ter",
     "type": "ter_furn_transform",
     "terrain": [
-      { "result": "t_lava", "message": "The ground heats up and turns into lava!", "valid_flags": [ "DIGGABLE", "MINEABLE" ] }
+      { 
+        "valid_flags": [ "DIGGABLE", "MINEABLE" ], 
+        "result": "t_lava", 
+        "message": "The ground heats up and turns into lava!" 
+      }
     ]
   },
   {
@@ -11,9 +26,9 @@
     "type": "ter_furn_transform",
     "furniture": [
       {
-        "result": "f_keystone",
-        "message": "A keystone materializes and crashes down!",
-        "valid_flags": [ "EASY_DECONSTRUCT", "FLAMMABLE", "FLAMMABLE_ASH", "FLAMMABLE_HARD", "MINEABLE", "TRANSPARENT" ]
+        "valid_flags": [ "EASY_DECONSTRUCT", "FLAMMABLE", "FLAMMABLE_ASH", "FLAMMABLE_HARD", "MINEABLE", "TRANSPARENT" ], 
+        "result": "f_keystone", 
+        "message": "A keystone materializes and crashes down!" 
       }
     ]
   },
@@ -22,9 +37,9 @@
     "type": "ter_furn_transform",
     "furniture": [
       {
-        "result": "f_null",
-        "message": "A keystone is dismissed.",
-        "valid_furniture": [ "f_keystone", "f_keystone_pillar", "f_rubble" ]
+        "valid_furniture": [ "f_keystone", "f_keystone_pillar", "f_rubble" ], 
+        "result": "f_null", 
+        "message": "The earth obeys your command." 
       }
     ]
   },
@@ -33,46 +48,53 @@
     "type": "ter_furn_transform",
     "furniture": [
       {
-        "result": "f_keystone_pillar",
-        "message": "A pillar keystone materializes and crashes down!",
-        "valid_flags": [ "EASY_DECONSTRUCT", "FLAMMABLE", "FLAMMABLE_ASH", "FLAMMABLE_HARD", "MINEABLE", "TRANSPARENT" ]
+        "valid_flags": [ "DIGGABLE", "EASY_DECONSTRUCT", "FLAMMABLE", "FLAMMABLE_ASH", "FLAMMABLE_HARD", "MINEABLE", "TRANSPARENT" ], 
+        "result": "f_keystone_pillar", 
+        "message": "A pillar keystone materializes and comes from the ground!" 
       }
     ]
   },
   {
     "id": "nukeglassing_ter",
     "type": "ter_furn_transform",
-    "terrain": [ { "result": "t_glassed_sand", "valid_flags": [ "DIGGABLE" ] } ]
-  },
-  {
-    "id": "prankster_pit_ter",
-    "type": "ter_furn_transform",
-    "terrain": [ { "result": "t_hole", "valid_flags": [ "DIGGABLE", "PLOWABLE" ] } ]
-  },
-  {
-    "id": "sunflower_spam_fur",
-    "type": "ter_furn_transform",
-    "furniture": [
-      {
-        "result": [ [ "f_sunflower", 2 ], [ "f_null", 3 ] ],
-        "message": "Sunflowers sprout around you!",
-        "valid_flags": [ "DIGGABLE" ]
-      }
+    "terrain": [ 
+      { 
+        "valid_flags": [ "DIGGABLE" ], 
+        "result": "t_glassed_sand" 
+      } 
     ]
   },
   {
     "id": "web_bridge_fur",
     "type": "ter_furn_transform",
-    "furniture": [ { "result": "f_web_bridge", "valid_flags": [ "NO_FLOOR", "TRANSPARENT" ] } ]
+    "furniture": [ 
+      { 
+        "valid_flags": [ "NO_FLOOR", "TRANSPARENT" ], 
+        "result": "f_web_bridge"
+      } 
+    ]
   },
   {
-    "id": "web_dismiss_fur",
+    "id": "web_dismiss_terfur",
     "type": "ter_furn_transform",
-    "furniture": [ { "result": "f_null", "message": "Webs around you quickly disintegrate.", "valid_furniture": [ "f_web_up" ] } ]
+    "field": [
+      { 
+        "valid_field": [ "fd_web", "fd_web2", "fd_web3" ], 
+        "result": "fd_null", 
+        "message": "Webs around you disintegrate.", 
+        "message_good": true 
+      }
+    ],
+    "furniture": [ { "result": "f_null", "message": "Webs around you disintegrate.", "valid_furniture": [ "f_web_up" ] } ]
   },
   {
     "id": "web_rappel_fur",
     "type": "ter_furn_transform",
-    "furniture": [ { "result": "f_web_rappel", "valid_flags": [ "NO_FLOOR" ] } ]
+    "furniture": [ 
+      { 
+        "valid_flags": [ "NO_FLOOR" ], 
+        "result": "f_web_rappel"
+      } 
+    ]
   }
 ]

@@ -1,5 +1,28 @@
 [
   {
+    "id": "kaenbyou_dismissfire",
+    "type": "SPELL",
+    "name": "Dismiss fire",
+    "description": "Extinguish the targeted fire.",
+    "spell_class": "NONE",
+    "valid_targets": [ "field", "ground" ],
+    "effect": "ter_transform",
+    "effect_str": "dismiss_fire_ter",
+    "shape": "blast",
+    "min_range": { "math": [ "( (u_skill('speech') * 0.2 ) + (u_skill('dodge') * 0.2 ) + 2.4 )" ] },
+    "max_range": 8,
+    "min_aoe": { "math": [ "( (u_skill('speech') * 0.2 ) + (u_skill('dodge') * 0.2 ) - 0.6 )" ] },
+    "max_aoe": 5,
+    "max_level": 1,
+    "difficulty": -10,
+    "base_casting_time": 133,
+    "base_energy_cost": 100,
+    "energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_LEGS", "NO_PROJECTILE", "SOMATIC" ],
+    "//": "A different approach by Standing-Storm #71310 made this and yamame_webdismiss work",
+    "//2": "min range 4, min aoe 1"
+  },
+  {
     "id": "kaenbyou_immolate",
     "type": "SPELL",
     "name": "Immolate",
@@ -27,7 +50,7 @@
   {
     "id": "kaenbyou_immolate2",
     "type": "SPELL",
-    "name": "Immolate (fire dot)",
+    "name": "Immolate (dot)",
     "description": "Fire dot component of kaenbyou_immolate ",
     "spell_class": "NONE",
     "valid_targets": [ "hostile" ],
@@ -78,7 +101,7 @@
   {
     "id": "kaenbyou_blazingwheel2",
     "type": "SPELL",
-    "name": "Blazing wheel (fire dot)",
+    "name": "Blazing wheel (dot)",
     "description": "Fire dot component of kaenbyou_blazingwheel ",
     "spell_class": "NONE",
     "valid_targets": [ "hostile" ],
@@ -101,7 +124,7 @@
   {
     "id": "kaenbyou_soulfire",
     "type": "SPELL",
-    "name": "Soulfire (Kaenbyou)",
+    "name": "Soulfire",
     "description": "Hurl a mass of unholy fire towards a target, which explodes burning their soul, and damaging any enemy nearby.",
     "spell_class": "NONE",
     "effect": "attack",
@@ -177,8 +200,8 @@
   {
     "id": "kaenbyou_vsrelease2",
     "type": "SPELL",
-    "name": { "str": "Vengeful spirit actual explosion" },
-    "description": "Explosion for kaenbyou_vsrelease",
+    "name": { "str": "Vengeful spirit (explosion)" },
+    "description": "Explosion for kaenbyou_vsrelease ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
     "effect": "attack",

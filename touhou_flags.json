@@ -1,11 +1,7 @@
 [
   {
-    "id": "NO_SOUL",
-    "type": "monster_flag"
-  },
-  {
-    "id": "SOULDMG_EXTRA",
-    "type": "monster_flag"
+    "id": "REMI_GUNGNIR_FLAG",
+    "type": "json_flag"
   },
   {
     "id": "SOULDMG_IMMUNE",
@@ -14,5 +10,17 @@
   {
     "id": "UTSUHO_ROD_FLAG",
     "type": "json_flag"
+  },
+  {
+    "id": "NO_SOUL",
+    "type": "monster_flag"
+  },
+  {
+    "id": "SOULDMG_EXTRA",
+    "type": "monster_flag"
+  },
+  {
+    "id": "SOUL_XDIMEN",
+    "type": "monster_flag"
   }
 ]

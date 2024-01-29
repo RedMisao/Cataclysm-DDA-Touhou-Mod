@@ -1,32 +1,5 @@
 [
   {
-    "id": "wield_weapon_dmg_eoc",
-    "type": "effect_on_condition",
-    "eoc_type": "EVENT",
-    "required_event": "character_wields_item", 
-    "effect": [ 
-      {
-        "u_run_inv_eocs": "all",
-        "search_data": [ { "wielded_only": true } ],
-        "true_eocs": [
-          {
-            "id": "wield_weapon_dmg_eoc2",
-            "effect": [
-              { "math": [ "var_melee_bash_dmg", "=", "n_melee_damage('bash')" ] },
-              { "math": [ "var_melee_cut_dmg", "=", "n_melee_damage('cut')" ] },
-              { "math": [ "var_melee_stab_dmg", "=", "n_melee_damage('stab')" ] },
-              { "math": [ "var_melee_all_dmg", "=", "n_melee_damage('ALL')" ] },
-              { "math": [ "var_melee_phys_dmg", "=", "var_melee_bash_dmg + var_melee_cut_dmg + var_melee_stab_dmg" ] },
-              { "math": [ "var_gun_dmg", "=", "n_gun_damage('ALL')" ] }
-            ]
-          }
-        ]
-      }
-    ],
-    "//": "Thank you so much andrei8l for #71234 !!!",
-    "//2": "Note: this is automatic but only detects wielding/unwielding actions, things like 'type: transform' from use_action don't update the values. If this becomes a problem update the value check every time the spell is cast"
-  },
-  {
     "id": "dash_kokoro_eoc",
     "type": "effect_on_condition",
     "effect": [
@@ -186,6 +159,48 @@
     ]
   },
   {
+    "id": "kokoro_unleash_emotion_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "run_eocs": [
+          {
+            "id": "kokoro_unleash_emotion_happiness",
+            "condition": { "math": [ "var_kokoro_mask", "==", "0" ] },
+            "effect": [
+              { "math": [ "var_kokoro_instability", "-=", "60 + rand(60)" ] },
+              { "u_cast_spell": { "id": "kokoro_unleash_emotion0" }, "targeted": false }
+            ]
+          },
+          {
+            "id": "kokoro_unleash_emotion_determination",
+            "condition": { "math": [ "var_kokoro_mask", "==", "1" ] },
+            "effect": [
+              { "math": [ "var_kokoro_instability", "-=", "60 + rand(60)" ] },
+              { "u_cast_spell": { "id": "kokoro_unleash_emotion1" }, "targeted": false }
+            ]
+          },
+          {
+            "id": "kokoro_unleash_emotion_melancholy",
+            "condition": { "math": [ "var_kokoro_mask", "==", "2" ] },
+            "effect": [
+              { "math": [ "var_kokoro_instability", "-=", "60 + rand(60)" ] },
+              { "u_cast_spell": { "id": "kokoro_unleash_emotion2" }, "targeted": false }
+            ]
+          },
+          {
+            "id": "kokoro_unleash_emotion_anger",
+            "condition": { "math": [ "var_kokoro_mask", "==", "3" ] },
+            "effect": [
+              { "math": [ "var_kokoro_instability", "-=", "60 + rand(60)" ] },
+              { "u_cast_spell": { "id": "kokoro_unleash_emotion3" }, "targeted": false }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "meiling_mountainbreak_eoc",
     "type": "effect_on_condition",
     "effect": [
@@ -258,6 +273,18 @@
     "condition": { "math": [ "var_mokou_combustion", ">=", "4" ] },
     "effect": [
       { "math": [ "var_mokou_combustion", "=", "0" ] }
+    ]
+  },
+  {
+    "id": "remilia_gungnir_dismiss_eoc",
+    "type": "effect_on_condition",
+    "condition": { "u_has_worn_with_flag": "REMI_GUNGNIR_FLAG" },
+    "effect": [
+      { "math": [ "u_val('mana')", "+=", "100" ] },
+      { "u_message": "You dismiss your Gungnir.", "type": "good" }
+    ],
+    "false_effect": [ 
+      { "u_message": "You can't dismiss your Gungnir if you don't have it in your hand.", "type": "mixed" }
     ]
   },
   {

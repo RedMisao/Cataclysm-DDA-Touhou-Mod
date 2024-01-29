@@ -33,6 +33,26 @@
     "//2": "min dmg 15, min aoe 4"
   },
   {
+    "id": "tenko_keystonedismiss",
+    "type": "SPELL",
+    "name": "Dismiss keystones",
+    "description": "Dismiss all summoned keystones and rubble.",
+    "spell_class": "NONE",
+    "valid_targets": [ "ground", "item", "self" ],
+    "effect": "ter_transform",
+    "effect_str": "keystone_dismiss_fur",
+    "shape": "blast",
+    "min_aoe": 3,
+    "max_aoe": 3,
+    "max_level": 1,
+    "difficulty": -10,
+    "base_casting_time": 150,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "IGNORE_WALLS", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],
+    "//": "This can be replaced by EOCs automatically disabling the summoned terrain... eventually"
+  },
+  {
     "id": "tenko_keystonecrash",
     "type": "SPELL",
     "name": "Keystone crash",
@@ -168,26 +188,6 @@
     "flags": [ "NO_HANDS", "NO_LEGS" ],
     "//": "Inspired by summon_floating_disk from Magyclism. I'm not dealing with vehicles from scratch again",
     "//2": "Goes from 1 - 5 hours"
-  },
-  {
-    "id": "tenko_keystonedismiss",
-    "type": "SPELL",
-    "name": "Dismiss keystones",
-    "description": "Dismiss all summoned keystones and rubble.",
-    "spell_class": "NONE",
-    "valid_targets": [ "ground", "item", "self" ],
-    "effect": "ter_transform",
-    "effect_str": "keystone_dismiss_fur",
-    "shape": "blast",
-    "min_aoe": 3,
-    "max_aoe": 3,
-    "max_level": 1,
-    "difficulty": -10,
-    "base_casting_time": 150,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "IGNORE_WALLS", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],
-    "//": "This can be replaced by EOCs automatically disabling the summoned terrain... eventually"
   },
   {
     "id": "tenko_keystonepillar",

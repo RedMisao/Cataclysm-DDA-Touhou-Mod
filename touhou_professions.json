@@ -87,7 +87,8 @@
       { "level": 1, "id": "kokoro_backsweep" },
       { "level": 1, "id": "kokoro_quick_attack" },
       { "level": 1, "id": "kokoro_shouting_gspider" },
-      { "level": 1, "id": "kokoro_spirit_naginata" }
+      { "level": 1, "id": "kokoro_spirit_naginata" },
+      { "level": 1, "id": "kokoro_unleash_emotion" }
     ],
     "traits": [ "MENREIKI_SPECIES", "PROF_KOKORO", "SPIRIT_USER", "eye_pink_touhou", "FACIAL_HAIR_NONE", "hair_kokoro" ],
     "items": {
@@ -179,11 +180,11 @@
     "description": "WIP.",
     "points": 4,
     "skills": [
-      { "level": 6, "name": "dodge" },
-      { "level": 8, "name": "electronics" },
-      { "level": 8, "name": "fabrication" },
-      { "level": 8, "name": "mechanics" },
-      { "level": 8, "name": "swimming" }
+      { "level": 3, "name": "dodge" },
+      { "level": 4, "name": "electronics" },
+      { "level": 4, "name": "fabrication" },
+      { "level": 4, "name": "mechanics" },
+      { "level": 4, "name": "swimming" }
     ],
     "traits": [ "YOUKAI_SPECIES", "SPIRIT_USER" ],
     "items": {
@@ -301,6 +302,7 @@
       { "level": 1, "id": "remilia_consumeblood" },
       { "level": 1, "id": "remilia_demonfork" },
       { "level": 1, "id": "remilia_gungnir" },
+      { "level": 1, "id": "remilia_gungnir_dismiss" },
       { "level": 1, "id": "remilia_gungnir_throw" },
       { "level": 1, "id": "remilia_miserablefate" },
       { "level": 1, "id": "remilia_vampiricaura" }
@@ -327,6 +329,7 @@
     ],
     "spells": [
       { "level": 1, "id": "dash_basic" },
+      { "level": 1, "id": "kaenbyou_dismissfire" },
       { "level": 1, "id": "kaenbyou_immolate" },
       { "level": 1, "id": "kaenbyou_soulfire" },
       { "level": 1, "id": "kaenbyou_vssummon" },
@@ -413,6 +416,7 @@
       { "level": 1, "id": "seiga_chireversal" },
       { "level": 1, "id": "seiga_darksplash" },
       { "level": 1, "id": "seiga_foetusshot" },
+      { "level": 1, "id": "seiga_frenzy" },
       { "level": 1, "id": "seiga_hermitwalk" },
       { "level": 1, "id": "seiga_raisechild" },
       { "level": 1, "id": "seiga_wallwalk" }
@@ -505,6 +509,7 @@
       { "level": 1, "id": "yamame_unconstrainedrot" },
       { "level": 1, "id": "yamame_damnedrope" },
       { "level": 1, "id": "yamame_miasmashot" },
+      { "level": 1, "id": "yamame_webdismiss" },
       { "level": 1, "id": "yamame_webbridge" },
       { "level": 1, "id": "yamame_webcapture" },
       { "level": 1, "id": "yamame_webrappel" }

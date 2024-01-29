@@ -256,6 +256,11 @@
     "color": "red",
     "techniques": [ "BRUTAL", "IMPALE", "PRECISE", "SWEEP", "WBLOCK_1" ],
     "weapon_category": [ "POLEARMS" ],
+    "use_action": {
+      "type": "effect_on_conditions",
+      "description": "Dismiss the Gungnir",
+      "effect_on_conditions": [ "remilia_gungnir_dismiss_eoc" ]
+    },
     "flags": [
       "MAGIC_FOCUS",
       "NO_REPAIR",

@@ -161,6 +161,24 @@
     "//": "min dur 18000"
   },
   {
+    "id": "remilia_gungnir_dismiss",
+    "type": "SPELL",
+    "name": { "str": "Dismiss the Gungnir" },
+    "description": "Dismiss your spear, refunding some spiritual energy.",
+    "spell_class": "NONE",
+    "valid_targets": [ "self" ],
+    "components": "spell_components_gungnir",
+    "effect": "effect_on_condition",
+    "effect_str": "remilia_gungnir_dismiss_eoc",
+    "shape": "blast",
+    "max_level": 1,
+    "difficulty": -10,
+    "base_casting_time": 33,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ]
+  },
+  {
     "id": "remilia_gungnir_throw",
     "type": "SPELL",
     "name": "Throw Gungnir",

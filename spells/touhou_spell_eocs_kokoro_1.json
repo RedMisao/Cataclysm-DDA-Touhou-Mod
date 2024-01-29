@@ -3,7 +3,6 @@
     "id": "kokoro_mask_default",
     "type": "effect_on_condition",
     "effect": [
-      { "u_message": "DEFAULT", "type": "mixed" },
       { "math": [ "var_kokoro_stance", "=", "1" ] },
       { "math": [ "var_kokoro_mask", "=", "rand(3)" ] },
       { "math": [ "var_kokoro_unstable_rnd", "=", "rand(1)" ] },
@@ -48,7 +47,6 @@
               ]
             },
             "effect": [
-              { "u_message": "INSTABILITY_ADD", "type": "mixed" },
               { "math": [ "var_kokoro_instability", "+=", "15" ] }
             ]
           },
@@ -62,7 +60,6 @@
             },
             "deactivate_condition": { "math": [ "var_kokoro_instability", "<=", "0" ] },
             "effect": [
-              { "u_message": "INSTABILITY_DRAIN_1", "type": "mixed" },
               { "math": [ "var_kokoro_instability", "-=", "15" ] }
             ]
           },
@@ -75,7 +72,6 @@
               ]
             },
             "effect": [
-              { "u_message": "INSTABILITY_DRAIN_2", "type": "mixed" },
               { "math": [ "var_kokoro_instability", "-=", "15 + rand(90)" ] },
               { "math": [ "var_kokoro_mask", "=", "rand(3)" ] },
               { "math": [ "var_kokoro_unstable_rnd", "=", "rand(1)" ] },
@@ -91,7 +87,6 @@
               ]
             },
             "effect": [
-              { "u_message": "INSTABILITY_DRAIN_ZERO", "type": "mixed" },
               { "math": [ "var_kokoro_instability", "=", "0" ] },
               { "run_eocs": [ "kokoro_mask_default" ] }
             ]

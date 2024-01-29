@@ -14,6 +14,7 @@ This mod adds Touhou Project characters as professions.  Characters (2hus) have 
 * **Aya Shameimaru:** Uses wind spells.  The earnest, most pure, fastest Tengu reporter is always on the look of interesting news.
 * **Fujiwara no Mokou:** Uses fire spells.  Fights using a custom brawling style.  Her attacks do increased damage with more pain.  Death has no meaning to her.
 * **Hong Meiling:** Uses qi.  Fights using a special form of Tai Chi focused on defense, with windows of opportunity after blocking attacks.  Nap time can't come soon enough.
+* **Hata no Kokoro:** Uses emotion.  Constantly swaps between four masks representing emotions, each grants her different effects (affects spells too!).
 * **Iku Nagae:** Uses electric spells.  Fights by whipping and shocking enemies to death, while dancing on the battlefield.
 * **Reisen:** Uses a mysterious ability.  Recently conscripted into the Lunarian Defence Corps, fights aided by her service Lunarian rifle and basic military training.  She's trying her best!
 * **Reisen Udongein Inaba:** Uses wavelength manipulation.  Former member of the Elite Lunarian Defence Corps, proficient with firearms and skilled in special operations.  Starts with a Lunarian tech pistol.

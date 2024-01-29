@@ -186,11 +186,17 @@
       {
         "values": [
           { "value": "STRENGTH", "add": 2 },
-          { "value": "ATTACK_NOISE", "multiply": 0.1 },
-          { "value": "OVERKILL_DAMAGE", "multiply": -2 },
+          { "value": "INTELLIGENCE", "add": -2 }, 
           { "value": "SOCIAL_INTIMIDATE", "add": 4 },
           { "value": "SOCIAL_PERSUADE", "add": -4 },
-          { "value": "WEAPON_DISPERSION", "multiply": 1.16 }
+          { "value": "ATTACK_NOISE", "multiply": 0.16 },
+          { "value": "OVERKILL_DAMAGE", "multiply": -2 },
+          { "value": "WEAPON_DISPERSION", "multiply": 0.16 },
+          { "value": "MELEE_DAMAGE", "multiply": 0.11 },
+          { "value": "ARMOR_BASH", "multiply": 0.1 },
+          { "value": "ARMOR_CUT", "multiply": 0.1 },
+          { "value": "ARMOR_STAB", "multiply": 0.1 },
+          { "value": "ARMOR_BULLET", "multiply": 0.1 }
         ] 
       }
     ]
@@ -207,11 +213,16 @@
         "values": [
           { "value": "STRENGTH", "add": 4 }, 
           { "value": "INTELLIGENCE", "add": -2 }, 
-          { "value": "ATTACK_NOISE", "multiply": 0.33 }, 
-          { "value": "OVERKILL_DAMAGE", "multiply": -3 },
           { "value": "SOCIAL_INTIMIDATE", "add": 8 },
           { "value": "SOCIAL_PERSUADE", "add": -8 },
-          { "value": "WEAPON_DISPERSION", "multiply": 0.33 }
+          { "value": "ATTACK_NOISE", "multiply": 0.33 }, 
+          { "value": "OVERKILL_DAMAGE", "multiply": -4 },
+          { "value": "WEAPON_DISPERSION", "multiply": 0.33 },
+          { "value": "MELEE_DAMAGE", "multiply": 0.22 },
+          { "value": "ARMOR_BASH", "multiply": 0.2 },
+          { "value": "ARMOR_CUT", "multiply": 0.2 },
+          { "value": "ARMOR_STAB", "multiply": 0.2 },
+          { "value": "ARMOR_BULLET", "multiply": 0.2 }
         ]
       }
     ]
@@ -227,8 +238,12 @@
       { 
         "values": [ 
           { "value": "INTELLIGENCE", "add": 2 },
+          { "value": "STRENGTH", "add": -2 }, 
           { "value": "SOCIAL_LIE", "add": 4 },
-          { "value": "SOCIAL_PERSUADE", "add": 4 }
+          { "value": "SOCIAL_PERSUADE", "add": 4 },
+          { "value": "MOVE_COST", "multiply": -0.05 },
+          { "value": "RANGED_DAMAGE", "multiply": 0.1 },
+          { "value": "FOOTSTEP_NOISE", "multiply": -0.2 }
         ]
       }
     ]
@@ -246,7 +261,10 @@
           { "value": "INTELLIGENCE", "add": 4 }, 
           { "value": "STRENGTH", "add": -2 }, 
           { "value": "SOCIAL_LIE", "add": 8 },
-          { "value": "SOCIAL_PERSUADE", "add": 4 }
+          { "value": "SOCIAL_PERSUADE", "add": 4 },
+          { "value": "MOVE_COST", "multiply": -0.1 },
+          { "value": "RANGED_DAMAGE", "multiply": 0.2 },
+          { "value": "FOOTSTEP_NOISE", "multiply": -0.33 }
         ]
       }
     ]
@@ -262,9 +280,12 @@
       {
         "values": [ 
           { "value": "DEXTERITY", "add": 2 }, 
-          { "value": "PAIN_REMOVE", "add": 1 }, 
+          { "value": "PERCEPTION", "add": -2 },
           { "value": "SOCIAL_INTIMIDATE", "add": -4 },
-          { "value": "SOCIAL_PERSUADE", "add": 4 }
+          { "value": "SOCIAL_PERSUADE", "add": 4 },
+          { "value": "PAIN_REMOVE", "add": 1 },
+          { "value": "EVASION", "add": 0.05 },
+          { "value": "REGEN_HP", "multiply": 0.33 }
         ]
       }
     ]
@@ -281,9 +302,11 @@
         "values": [ 
           { "value": "DEXTERITY", "add": 4 },
           { "value": "PERCEPTION", "add": -2 },
-          { "value": "PAIN_REMOVE", "add": 2 },
           { "value": "SOCIAL_INTIMIDATE", "add": -8 },
-          { "value": "SOCIAL_PERSUADE", "add": 8 }
+          { "value": "SOCIAL_PERSUADE", "add": 8 },
+          { "value": "PAIN_REMOVE", "add": 2 },
+          { "value": "EVASION", "add": 0.1 },
+          { "value": "REGEN_HP", "multiply": 1 }
         ]
       }
     ]
@@ -299,10 +322,15 @@
       { 
         "values": [ 
           { "value": "PERCEPTION", "add": 2 }, 
+          { "value": "DEXTERITY", "add": -2 }, 
+          { "value": "SOCIAL_LIE", "add": 4 },
+          { "value": "SOCIAL_PERSUADE", "add": 4 },
           { "value": "PAIN", "multiply": 0.05 },
           { "value": "ATTACK_SPEED", "multiply": -0.1 },
-          { "value": "SOCIAL_LIE", "add": 4 },
-          { "value": "SOCIAL_PERSUADE", "add": 4 }
+          { "value": "ARMOR_BASH", "multiply": -0.11 },
+          { "value": "ARMOR_CUT", "multiply": -0.11 },
+          { "value": "ARMOR_STAB", "multiply": -0.11 },
+          { "value": "ARMOR_BULLET", "multiply": -0.11 }
         ]
       }
     ]
@@ -319,10 +347,14 @@
         "values": [ 
           { "value": "PERCEPTION", "add": 4 }, 
           { "value": "DEXTERITY", "add": -2 }, 
+          { "value": "SOCIAL_LIE", "add": 4 },
+          { "value": "SOCIAL_PERSUADE", "add": 8 },
           { "value": "PAIN", "multiply": 0.1 }, 
           { "value": "ATTACK_SPEED", "multiply": -0.16 },
-          { "value": "SOCIAL_LIE", "add": 4 },
-          { "value": "SOCIAL_PERSUADE", "add": 8 }
+          { "value": "ARMOR_BASH", "multiply": -0.22 },
+          { "value": "ARMOR_CUT", "multiply": -0.22 },
+          { "value": "ARMOR_STAB", "multiply": -0.22 },
+          { "value": "ARMOR_BULLET", "multiply": -0.22 }
         ]
       }   
     ]
@@ -334,6 +366,43 @@
     "desc": [ "Lost emotion." ],
     "apply_message": "You feel nothing.",
     "rating": "mixed"
+  },
+  {
+    "id": "kokoro_unleash_anger_effect",
+    "type": "effect_type",
+    "name": [ "Melancholy (effect)" ],
+    "desc": [ "You feel sad." ],
+    "base_mods": { "bash_mod": [ 2 ], "cut_mod": [ 2 ], "speed_mod": [ 20 ] },
+    "max_intensity": 1,
+    "max_effective_intensity": 1
+  },
+  {
+    "id": "kokoro_unleash_determination_effect",
+    "type": "effect_type",
+    "name": [ "Determination (effect)" ],
+    "desc": [ "You feel unmotivated." ],
+    "max_intensity": 1,
+    "max_effective_intensity": 1,
+    "flags": [ "DISABLE_FLIGHT" ]
+  },
+  {
+    "id": "kokoro_unleash_happiness_effect",
+    "type": "effect_type",
+    "name": [ "Happiness (buff)" ],
+    "desc": [ "You feel energetic!" ],
+    "base_mods": { "stamina_amount": [ 833 ], "stamina_min": [ 833 ], "stamina_tick": [ 1 ] },
+    "max_intensity": 1,
+    "max_effective_intensity": 1,
+    "//": "This refreshes 0.5 - 1 of the total stamina pool over the duration of the buff, as granted by the spell"
+  },
+  {
+    "id": "kokoro_unleash_melancholy_effect",
+    "type": "effect_type",
+    "name": [ "Melancholy (effect)" ],
+    "desc": [ "You feel sad." ],
+    "base_mods": { "bash_mod": [ -2 ], "cut_mod": [ -2 ], "dodge_mod": [ -1 ], "speed_mod": [ -20 ] },
+    "max_intensity": 1,
+    "max_effective_intensity": 1
   },
   {
     "id": "mokou_resurrectcleanse",
@@ -588,7 +657,7 @@
     "apply_message": "You see yourself turn translucent!",
     "remove_message": "You return to normality.",
     "rating": "good",
-    "base_mods": { "dodge_mod": [ 4 ], "bash_mod": [ 2 ], "cut_mod": [ 2 ] },
+    "base_mods": { "dodge_mod": [ 4 ] },
     "removes_effects": [
       "beartrap",
       "downed",
@@ -671,6 +740,26 @@
     "base_mods": { "speed_mod": [ 35 ] }
   },
   {
+    "id": "seiga_frenzy",
+    "type": "effect_type",
+    "name": [ "Frenzied (curse)" ],
+    "desc": [ "Frenzied (curse)" ],
+    "max_duration": "60 m",
+    "base_mods": { 
+      "str_mod": [ 4 ],
+      "per_mod": [ 1 ],
+      "dex_mod": [ 1 ],
+      "int_mod": [ -4 ],
+      "speed_mod": [ 35 ], 
+      "hit_mod": [ 3 ], 
+      "dodge_mod": [ 3 ],
+      "bash_mod": [ 4, 8 ],
+      "cut_mod": [ 4, 8 ]
+    },
+    "max_intensity": 1,
+    "max_effective_intensity": 1
+  },
+  {
     "id": "seiga_mspeed",
     "type": "effect_type",
     "name": [ "Hermit walk (speed)" ],
@@ -678,7 +767,8 @@
     "apply_message": "Your movement speed is slightly increased.",
     "remove_message": "You move normally again.",
     "rating": "good",
-    "base_mods": { "speed_mod": [ 35 ] }
+    "base_mods": { "speed_mod": [ 25 ] },
+    "flags": [ "LEVITATION" ]
   },
   {
     "id": "udonge_insight",

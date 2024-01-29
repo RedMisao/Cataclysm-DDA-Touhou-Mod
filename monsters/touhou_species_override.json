@@ -11,7 +11,7 @@
     "type": "SPECIES",
     "description": "a fungus",
     "fear_triggers": [ "HURT", "FIRE" ],
-    "flags": [ "NO_SOUL" ]
+    "flags": [ "SOUL_XDIMEN" ]
   },
   {
     "id": "HALLUCINATION",
@@ -43,13 +43,21 @@
     "id": "NETHER",
     "type": "SPECIES",
     "description": "a nether creature",
-    "flags": [ "NO_SOUL" ]
+    "flags": [ "SOUL_XDIMEN" ]
   },
   {
     "id": "NETHER_EMANATION",
     "type": "SPECIES",
     "description": "a reflection of another dimension",
     "fear_triggers": [ "HURT" ],
+    "flags": [ "NO_SOUL" ]
+  },
+  {
+    "id": "PLANT",
+    "type": "SPECIES",
+    "description": "a plant",
+    "fear_triggers": [ "HURT", "FIRE" ],
+    "bleeds": "fd_blood_veggy",
     "flags": [ "NO_SOUL" ]
   },
   {
@@ -74,7 +82,9 @@
     "description": "a zombie",
     "footsteps": "shuffling.",
     "bleeds": "fd_blood",
-    "flags": [ "NO_SOUL" ],
-    "//": "cdda zombies are not proper undead (i.e. corpses reanimated with either magic or a soul), they're corpses parasited by another (extradimensional) entity, and this entity lacks a soul"
+    "flags": [ "SOUL_XDIMEN" ],
+    "//": "cdda zombies are not proper undead (i.e. corpses reanimated with either magic or a soul), they're corpses parasited by another (extradimensional) entity, and this entity lacks a soul",
+    "//2": "However and for balancing purposes, they should drop soul shards, otherwise Kaenbyou is forced to go murderhobo to fuel spells and such",
+    "//3": "An alternative is to make them take a flat 50% soul dmg reduction. A more spicy alternative is to make extradimensional entities take a rand( 0, 1 ) amount of soul dmg"
   }
 ]

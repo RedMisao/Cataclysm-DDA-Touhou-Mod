@@ -4,16 +4,16 @@
     "type": "material",
     "name": "Human Blood",
     "copy-from": "blood",
-    "vitamins": [ [ "calcium", 0.1 ], [ "iron", 1.3 ], [ "hblood_vitamin", 5.2 ] ],
-    "//": "Only adds hblood_vitamin as x3 of iron"
+    "vitamins": [ [ "calcium", 0.1 ], [ "iron", 1.3 ], [ "hblood_vitamin", 26 ] ],
+    "//": "Only adds hblood_vitamin as x20 of iron"
   },
   {
     "id": "hflesh",
     "type": "material",
     "name": "Human Flesh",
     "copy-from": "hflesh",
-    "vitamins": [ [ "calcium", 0.1 ], [ "iron", 1.3 ], [ "hblood_vitamin", 2.6 ] ],
-    "//": "Only adds hblood_vitamin as x3 of iron"
+    "vitamins": [ [ "calcium", 0.1 ], [ "iron", 1.3 ], [ "hblood_vitamin", 13 ] ],
+    "//": "Only adds hblood_vitamin as x10 of iron"
   },
   {
     "id": "hcorpse",
