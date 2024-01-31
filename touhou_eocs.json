@@ -59,7 +59,7 @@
     "//2": "Note: this is automatic but only detects wielding/unwielding actions, things like 'type: transform' from use_action don't update the values. If this becomes a problem update the value check every time the spell is cast"
   },
   {
-    "id": "kaenbyou_soulshard",
+    "id": "soulshard_eoc",
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
     "required_event": "character_kills_monster",
@@ -83,7 +83,40 @@
       ]
     },
     "effect": [ 
-      { "u_message": "WIP !!!", "type": "mixed" }
+      { "u_message": "soulshard_eoc 1" },
+      { "u_spawn_item": "soul_shard_item", "count": 1, "suppress_message": true },
+      { "u_cast_spell": { "id": "soulshard_spell" }, "targeted": false }
+    ],
+    "//": "Simple EOC checks when a Kasha kills anything, if it's humanoid or close enough it casts the subspell, which runs a centered-EOC to grant the item",
+    "//2": "The u_spawn_item requires the target (victim) to be next to the caster else it doesn't proc, so a subspell is required to 'center' the EOC on the caster",
+    "//3": "WIP. Cap this at 16",
+    "//4": "WIP. This randomly does not proc, figure out why"
+  },
+  {
+    "id": "soulshard_spell",
+    "type": "SPELL",
+    "name": { "str": "Soulshard (spell)" },
+    "description": "Spell casted automatically when gaining a soulshard",
+    "spell_class": "NONE",
+    "valid_targets": [ "self" ],
+    "effect": "effect_on_condition",
+    "effect_str": "soulshard_spell_eoc",
+    "shape": "blast",
+    "min_aoe": 20,
+    "max_aoe": 20,
+    "max_level": 1,
+    "difficulty": -10,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL" ]
+  },
+  {
+    "id": "soulshard_spell_eoc",
+    "type": "effect_on_condition",
+    "effect": [ 
+        { "u_message": "soulshard_spell_eoc 2" },
+        { "u_spawn_item": "soul_shard_item", "count": 1, "suppress_message": true }
     ]
   },
   {

@@ -29,6 +29,23 @@
     ]
   },
   {
+    "id": "kaenbyou_conflagrate_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_immolate", ">=", "1" ] },
+    "effect": [
+      { "math": [ "u_var_immolate", "=", "0" ] },
+      { "u_cast_spell": { "id": "kaenbyou_conflagrate3" } }
+    ],
+    "//": "WIP. It works as it is, but the effects and stuff don't show for the player"
+  },
+  {
+    "id": "kaenbyou_immolate_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "u_var_immolate", "+=", "1" ] }
+    ]
+  },
+  {
     "id": "kokoro_backsweep_eoc",
     "type": "effect_on_condition",
     "condition": {
@@ -224,7 +241,7 @@
     "effect": [ 
       { "u_cast_spell": { "id": "meiling_mountainbreak2" }, "targeted": true }
     ],
-    "//": "The check is active only if: Meiling has cast the spell, and she has blocked in the last 2 seconds (onblock_eocs), if so she will cast the damage component of the spell. The recurrence deactivates if the var is zero, so it doesn't run all the time"
+    "//": "The check is active only if: Meiling has cast the spell + she has blocked in the last 2 seconds, if so she will cast the damage component of the spell. The recurrence deactivates if the var is zero, so it doesn't run all the time"
   },
   {
     "id": "meiling_mountainbreak_timer",
@@ -232,14 +249,15 @@
     "effect": [
       { "math": [ "var_mountainbreakcasted", "=", "0" ] }
     ],
-    "//": "This and the timer below, are triggered 2 s after Meiling gains the 'spell casted' and 'blocked' vars, respectively"
+    "//": "This is activated 2 s after Meiling gains the 'spell casted' var, window of opportunity"
   },
   {
     "id": "meiling_mountainbreak_timer2",
     "type": "effect_on_condition",
     "effect": [
       { "math": [ "var_meilingblock", "=", "0" ] }
-    ]
+    ],
+    "//": "This is activated 2 s after Meiling gains the 'blocked' var, window of opportunity"
   },
   {
     "id": "mokou_combustion_eoc",
@@ -257,7 +275,7 @@
       { "u_cast_spell": { "id": "mokou_combustion2" }, "targeted": false },
       { "run_eocs": [ "mokou_combustion_cycle2" ] }
     ],
-    "false_effect": { "run_eocs": "mokou_combustion_end" }
+    "false_effect": [ { "math": [ "var_mokou_combustion", "=", "0" ] } ]
   },
   {
     "id": "mokou_combustion_cycle2",
@@ -265,14 +283,6 @@
     "effect": [
       { "math": [ "var_mokou_combustion", "+=", "1" ] },
       { "queue_eocs": [ "mokou_combustion_cycle1" ], "time_in_future": "3 s" }
-    ]
-  },
-  {
-    "id": "mokou_combustion_end",
-    "type": "effect_on_condition",
-    "condition": { "math": [ "var_mokou_combustion", ">=", "4" ] },
-    "effect": [
-      { "math": [ "var_mokou_combustion", "=", "0" ] }
     ]
   },
   {
@@ -296,14 +306,17 @@
       { "run_eocs": [ "sakuya_maidsecret_cycle1" ] }
     ],
     "//": "This EOC is a simplified version of udonge_waveinsight_start ",
-    "//2": "var_sakuyaradius sets the detection radius to that formula, 16 - 6 tiles scaling down with higher (stabbing + dodge)"
+    "//2": "var_sakuyaradius sets the detection radius to that formula, 14 - 6 tiles scaling down with higher (stabbing + dodge)"
   },
   {
     "id": "sakuya_maidsecret_cycle1",
     "type": "effect_on_condition",
     "condition": { "math": [ "var_sakuyafocus", "<", "2" ] },
     "effect": [ { "run_eocs": [ "sakuya_maidsecret_cycle2" ] } ],
-    "false_effect": { "run_eocs": "sakuya_maidsecret_toggle" }
+    "false_effect": [
+      { "math": [ "var_sakuyafocus", "=", "0" ] },
+      { "u_lose_effect": "sakuya_maidsecret_effect" }
+    ]
   },
   {
     "id": "sakuya_maidsecret_cycle2",
@@ -321,21 +334,7 @@
       { "u_add_effect": "sakuya_maidsecret_effect", "duration": "3 s" },
       { "queue_eocs": [ "sakuya_maidsecret_cycle1" ], "time_in_future": "2 s" }
     ],
-    "false_effect": { "run_eocs": "sakuya_maidsecret_broken" }
-  },
-  {
-    "id": "sakuya_maidsecret_toggle",
-    "type": "effect_on_condition",
-    "condition": { "math": [ "var_sakuyafocus", ">=", "2" ] },
-    "effect": [
-      { "math": [ "var_sakuyafocus", "=", "0" ] },
-      { "u_lose_effect": "sakuya_maidsecret_effect" }
-    ]
-  },
-  {
-    "id": "sakuya_maidsecret_broken",
-    "type": "effect_on_condition",
-    "effect": [
+    "false_effect": [
       { "u_message": "You lose your concentration.", "type": "mixed" },
       { "math": [ "var_sakuyafocus", "=", "0" ] },
       { "u_lose_effect": "sakuya_maidsecret_effect" }
@@ -372,20 +371,13 @@
     "type": "effect_on_condition",
     "condition": { "u_has_wielded_with_weapon_category": "AUTOMATIC_PISTOLS" },
     "effect": [
-      { "run_eocs": [ "udonge_gunwaveBLAST_BLAST" ] }
+      { "u_cast_spell": { "id": "udonge_gunwaveBLAST2" }, "targeted": true }
     ],
     "false_effect": [ 
       { "u_message": "You don't have any pistols equipped.", "type": "mixed" },
       { "math": [ "u_val('mana')", "+=", "75" ] }
     ],
     "//": "Simple EOC just checks if Udonge is wielding any pistols, if she isn't the cast fails"
-  },
-  {
-    "id": "udonge_gunwaveBLAST_BLAST",
-    "type": "effect_on_condition",
-    "effect": [ 
-      { "u_cast_spell": { "id": "udonge_gunwaveBLAST2" }, "targeted": true }
-    ]
   },
   {
     "id": "udonge_waveinsight_start",
@@ -400,8 +392,8 @@
       { "u_lose_effect": "udonge_stealth" },
       { "run_eocs": [ "udonge_waveinsight_cycle1" ] }
     ],
-    "//": "Always activates every time the spell udonge_waveinsight is cast. It sets var_waveinsight > 0 to signal that aura is ON. It also sets the other auras OFF",
-    "//2": "This is the 'base aura', the others are modeled after this"
+    "//": "Adds aura-specific var to signal it is ON, also sets the other auras + bonuses OFF",
+    "//2": "Original 'aura', the others are modeled after this"
   },
   {
     "id": "udonge_waveinsight_cycle1",
@@ -409,14 +401,14 @@
     "condition": { "math": [ "var_waveinsight", "<", "2" ] },
     "effect": [ { "run_eocs": [ "udonge_waveinsight_cycle2" ] } ],
     "false_effect": { "run_eocs": "udonge_waveinsight_toggle" },
-    "//": "This is immediately checked after the previous eoc: if the player has casted the spell just once then var_waveinsight < 2, so cycle2 is run. However, if the player has casted the spell twice then var_waveinsight >= 2, so it runs the toggle EOC instead"
+    "//": "If Udonge has casted the spell just once the next step is run. However, if the player has casted the spell twice it runs the toggle EOC instead"
   },
   {
     "id": "udonge_waveinsight_cycle2",
     "type": "effect_on_condition",
     "condition": {
       "and": [
-        { "math": [ "u_val('mana')", ">=", "50" ] },
+        { "math": [ "u_val('mana')", ">=", "33" ] },
         { "math": [ "var_waveinsight", ">", "0" ] }
       ]
     },
@@ -426,7 +418,7 @@
       { "queue_eocs": [ "udonge_waveinsight_cycle1" ], "time_in_future": "2 s" }
     ],
     "false_effect": { "run_eocs": "udonge_wave_oom" },
-    "//": "This keeps the aura active as long as the player has enough mana, plus reduces it a bit. Otherwise the udonge_wave_oom stop triggers"
+    "//": "Checks if Udonge has enough mana to keep the aura bonus, and reduces mana. If she runs out of mana it runs the oom EOC instead"
   },
   {
     "id": "udonge_waveinsight_toggle",
@@ -436,21 +428,24 @@
       { "math": [ "var_waveinsight", "=", "0" ] },
       { "u_lose_effect": "udonge_insight" }
     ],
-    "//": "If the player has cast udonge_waveinsight twice, this runs and deactivates the aura"
+    "//": "Toggle EOC, deactivates the auras when the spell is casted more than once"
   },
   {
     "id": "udonge_wave_oom",
     "type": "effect_on_condition",
-    "condition": { "math": [ "u_val('mana')", "<", "50" ] },
+    "condition": { "math": [ "u_val('mana')", "<", "33" ] },
     "effect": [
       { "u_message": "You are too mentally exhausted!  You lose focus of the wavelengths.", "type": "bad" },
       { "math": [ "var_waveinsight", "=", "0" ] },
+      { "math": [ "var_wavemfortitude", "=", "0" ] },
+      { "math": [ "var_waveperception", "=", "0" ] },
+      { "math": [ "var_wavestealth", "=", "0" ] },
       { "u_lose_effect": "udonge_insight" },
       { "u_lose_effect": "udonge_mfortitude" },
       { "u_lose_effect": "udonge_perception" },
       { "u_lose_effect": "udonge_stealth" }
     ],
-    "//": "If the player runs reaches the amount of mana specified above, the aura(s) deactivate"
+    "//": "oom EOC, resets all aura vars, removes all buffs"
   },
   {
     "id": "udonge_wavemfortitude_start",
@@ -478,7 +473,7 @@
     "type": "effect_on_condition",
     "condition": {
       "and": [
-        { "math": [ "u_val('mana')", ">=", "50" ] },
+        { "math": [ "u_val('mana')", ">=", "33" ] },
         { "math": [ "var_wavemfortitude", ">", "0" ] }
       ]
     },
@@ -524,7 +519,7 @@
     "type": "effect_on_condition",
     "condition": {
       "and": [
-        { "math": [ "u_val('mana')", ">=", "50" ] },
+        { "math": [ "u_val('mana')", ">=", "33" ] },
         { "math": [ "var_waveperception", ">", "0" ] }
       ]
     },
@@ -570,7 +565,7 @@
     "type": "effect_on_condition",
     "condition": {
       "and": [
-        { "math": [ "u_val('mana')", ">=", "50" ] },
+        { "math": [ "u_val('mana')", ">=", "33" ] },
         { "math": [ "var_wavestealth", ">", "0" ] }
       ]
     },
@@ -595,11 +590,11 @@
     "type": "effect_on_condition",
     "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
     "effect": [
-      { "u_cast_spell": { "id": "utsuho_hellcannon2" }, "targeted": true }
+      { "u_cast_spell": { "id": "utsuho_blacksun2" }, "targeted": true }
     ],
     "false_effect": [ 
       { "math": [ "u_val('mana')", "-=", "50" ] },
-      { "u_cast_spell": { "id": "utsuho_hellcannon2_unc" }, "targeted": true } 
+      { "u_cast_spell": { "id": "utsuho_blacksun2_unc" }, "targeted": true } 
     ]
   },
   {
@@ -640,66 +635,66 @@
     "type": "effect_on_condition",
     "effect": [
       { "math": [ "var_utsuho_fissionaura", "+=", "1" ] },
-      { "run_eocs": [ "utsuho_fissionaura_check" ] }
+      { "run_eocs": [ "utsuho_fissionaura_cycle1" ] }
     ],
     "//": "This EOC is a modified version of udonge_waveinsight_start . It has an extra step that checks if Utsuho is wearing her rod, if she isn't it runs a sub-cycle with different values"
   },
   {
-    "id": "utsuho_fissionaura_check",
+    "id": "utsuho_fissionaura_cycle1",
     "type": "effect_on_condition",
     "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
     "effect": [
-      { "run_eocs": [ "utsuho_fissionaura_cycle1" ] }
-    ],
-    "false_effect": [ { "run_eocs": [ "utsuho_fissionaura_cycle1_unc" ] } ]
-  },
-  {
-    "id": "utsuho_fissionaura_cycle1",
-    "type": "effect_on_condition",
-    "condition": { "math": [ "var_utsuho_fissionaura", "<", "2" ] },
-    "effect": [ 
-      { "u_cast_spell": { "id": "utsuho_fissionaura2" }, "targeted": false },
       { "run_eocs": [ "utsuho_fissionaura_cycle2" ] }
     ],
-    "false_effect": { "run_eocs": "utsuho_fissionaura_toggle" }
+    "false_effect": [ { "run_eocs": [ "utsuho_fissionaura_cycle2_unc" ] } ]
   },
   {
     "id": "utsuho_fissionaura_cycle2",
     "type": "effect_on_condition",
+    "condition": { "math": [ "var_utsuho_fissionaura", "<", "2" ] },
+    "effect": [ 
+      { "u_cast_spell": { "id": "utsuho_fissionaura2" }, "targeted": false },
+      { "run_eocs": [ "utsuho_fissionaura_cycle3" ] }
+    ],
+    "false_effect": { "run_eocs": "utsuho_fissionaura_toggle" }
+  },
+  {
+    "id": "utsuho_fissionaura_cycle3",
+    "type": "effect_on_condition",
     "condition": {
       "and": [
-        { "math": [ "u_val('mana')", ">=", "66" ] },
+        { "math": [ "u_val('mana')", ">=", "11" ] },
         { "math": [ "var_utsuho_fissionaura", ">", "0" ] }
       ]
     },
     "effect": [
       { "math": [ "u_val('mana')", "-=", "11" ] },
-      { "queue_eocs": [ "utsuho_fissionaura_check" ], "time_in_future": "3 s" }
+      { "queue_eocs": [ "utsuho_fissionaura_cycle1" ], "time_in_future": "3 s" }
     ],
     "false_effect": { "run_eocs": "utsuho_fissionaura_oom" }
   },
   {
-    "id": "utsuho_fissionaura_cycle1_unc",
+    "id": "utsuho_fissionaura_cycle2_unc",
     "type": "effect_on_condition",
     "condition": { "math": [ "var_utsuho_fissionaura", "<", "2" ] },
     "effect": [ 
       { "u_cast_spell": { "id": "utsuho_fissionaura2_unc" }, "targeted": false },
-      { "run_eocs": [ "utsuho_fissionaura_cycle2_unc" ] }
+      { "run_eocs": [ "utsuho_fissionaura_cycle3_unc" ] }
     ],
     "false_effect": { "run_eocs": "utsuho_fissionaura_toggle" }
   },
   {
-    "id": "utsuho_fissionaura_cycle2_unc",
+    "id": "utsuho_fissionaura_cycle3_unc",
     "type": "effect_on_condition",
     "condition": {
       "and": [
-        { "math": [ "u_val('mana')", ">=", "66" ] },
+        { "math": [ "u_val('mana')", ">=", "11" ] },
         { "math": [ "var_utsuho_fissionaura", ">", "0" ] }
       ]
     },
     "effect": [
       { "math": [ "u_val('mana')", "-=", "11 + rand(6)" ] },
-      { "queue_eocs": [ "utsuho_fissionaura_check" ], "time_in_future": [ "2 s", "4 s" ] }
+      { "queue_eocs": [ "utsuho_fissionaura_cycle1" ], "time_in_future": [ "2 s", "4 s" ] }
     ],
     "false_effect": { "run_eocs": "utsuho_fissionaura_oom" }
   },
@@ -708,78 +703,91 @@
     "type": "effect_on_condition",
     "condition": { "math": [ "var_utsuho_fissionaura", ">=", "2" ] },
     "effect": [
+      { "u_message": "You return the fission controllers to base operational levels.", "type": "mixed" },
       { "math": [ "var_utsuho_fissionaura", "=", "0" ] }
     ]
   },
   {
     "id": "utsuho_fissionaura_oom",
     "type": "effect_on_condition",
-    "condition": { "math": [ "u_val('mana')", "<", "66" ] },
+    "condition": { "math": [ "u_val('mana')", "<", "11" ] },
     "effect": [
-      { "u_message": "You ran out of energy!  The fission controllers return to base operation levels.", "type": "mixed" },
+      { "u_message": "You ran out of energy!  The fission controllers default to base operational levels.", "type": "mixed" },
       { "math": [ "var_utsuho_fissionaura", "=", "0" ] }
     ]
   },
   {
     "id": "utsuho_fusionblade_eoc",
     "type": "effect_on_condition",
-    "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
     "effect": [
       { "math": [ "var_utsuho_fusionblade", "+=", "1" ] },
-      { "math": [ "u_val('mana')", "-=", "50" ] },
-      { "u_add_effect": "aura_fusionblade", "duration": "80 s" },
       { "run_eocs": [ "utsuho_fusionblade_cycle1" ] }
     ],
-    "false_effect": [ { "u_message": "Your third leg is not equipped.", "type": "mixed" } ]
+    "//": "This EOC is a modified version of udonge_waveinsight_start . It has an extra step to check if Utsuho is wearing her rod"
   },
   {
     "id": "utsuho_fusionblade_cycle1",
     "type": "effect_on_condition",
-    "condition": { "math": [ "var_utsuho_fusionblade", "<", "2" ] },
-    "effect": [ 
-      { "run_eocs": [ "utsuho_fusionblade_cycle2" ] }
-    ],
-    "false_effect": { "run_eocs": "utsuho_fusionblade_toggle" }
+    "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
+    "effect": [ { "run_eocs": [ "utsuho_fusionblade_cycle2" ] } ],
+    "false_effect": [ { "run_eocs": [ "utsuho_fusionblade_unequipped" ] } ]
   },
   {
     "id": "utsuho_fusionblade_cycle2",
     "type": "effect_on_condition",
+    "condition": { "math": [ "var_utsuho_fusionblade", "<", "2" ] },
+    "effect": [ { "run_eocs": [ "utsuho_fusionblade_cycle3" ] } ],
+    "false_effect": { "run_eocs": "utsuho_fusionblade_toggle" },
+    "//IMPORTANT": "The toggle doesn't stop here, it runs cycle1 and cycle2 one more time before stopping",
+    "//IMPORTANT2": "I think this happens with all 'auras' set up the same way. Udonge's 'wave' auras have the same problem",
+    "//IMPORTANT3": "My guess is that happens due the queue'd EOC running one more time. The > 0 check in the next EOC is what actually stops the momentum. DO NOT REMOVE BEFORE FINDING A SOLUTION",
+    "//IMPORTANT4": "I tried my best in trying to simplify all the cycle1 - cycle2 based EOCs but couldn't find a solution. Maybe in the future, idk these work as they are"
+  },
+  {
+    "id": "utsuho_fusionblade_cycle3",
+    "type": "effect_on_condition",
     "condition": {
       "and": [
-        { "math": [ "var_utsuho_fusionblade", ">", "0" ] },
-        { "math": [ "var_utsuho_fusionblade_timer", "<", "( (u_skill('dodge') * 3 ) + 39 )" ] },
-        { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" }
+        { "math": [ "u_val('mana')", ">=", "2" ] },
+        { "math": [ "var_utsuho_fusionblade", ">", "0" ] }
       ]
     },
     "effect": [
-      { "math": [ "var_utsuho_fusionblade_timer", "+=", "1" ] },
+      { "math": [ "u_val('mana')", "-=", "2" ] },
+      { "u_add_effect": "aura_fusionblade", "duration": "2 s" },
       { "queue_eocs": [ "utsuho_fusionblade_cycle1" ], "time_in_future": "1 s" }
     ],
-    "false_effect": [ { "run_eocs": "utsuho_fusionblade_end" } ],
-    "//": "dur 45 - 75 s",
-    "//2": "This adds +1 to the timer, if it's bigger than the duration at the skill level it ends. It also ends if Utsuho unequips her rod"
+    "false_effect": { "run_eocs": "utsuho_fusionblade_oom" },
+    "//": "-2 mana/s equals +8 min of keeping this active"
+  },
+  {
+    "id": "utsuho_fusionblade_unequipped",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_message": "You unequip your rod, extinguishing the blade.", "type": "mixed" },
+      { "math": [ "var_utsuho_fusionblade", "=", "0" ] },
+      { "u_lose_effect": "aura_fusionblade" }
+    ]
   },
   {
     "id": "utsuho_fusionblade_toggle",
     "type": "effect_on_condition",
     "condition": { "math": [ "var_utsuho_fusionblade", ">=", "2" ] },
     "effect": [
+      { "u_message": "You deactivate the fusion blade.", "type": "mixed" },
       { "math": [ "var_utsuho_fusionblade", "=", "0" ] },
-      { "math": [ "var_utsuho_fusionblade_timer", "=", "0" ] },
-      { "u_lose_effect": "aura_fusionblade" },
-      { "u_message": "You deactivate the fusion blade.", "type": "mixed" }
+      { "u_lose_effect": "aura_fusionblade" }
     ]
   },
   {
-    "id": "utsuho_fusionblade_end",
+    "id": "utsuho_fusionblade_oom",
     "type": "effect_on_condition",
+    "condition": { "math": [ "u_val('mana')", "<", "2" ] },
     "effect": [
+      { "u_message": "You ran out of energy! The fusion blade is extinguished.", "type": "bad" },
       { "math": [ "var_utsuho_fusionblade", "=", "0" ] },
-      { "math": [ "var_utsuho_fusionblade_timer", "=", "0" ] },
-      { "u_lose_effect": "aura_fusionblade" },
-      { "u_message": "The fusion blade is extinguished.", "type": "mixed" }
-    ],
-    "//": "WIP. This works but the message is being printed twice by manually deactivating it"
+      { "u_lose_effect": "aura_fusionblade" }
+    ]
   },
   {
     "id": "utsuho_groundmelt_eoc",
@@ -849,7 +857,7 @@
       { "u_message": "You *definitely* need your rod to cast this.", "type": "mixed" },
       { "math": [ "u_val('mana')", "+=", "800" ] }
     ],
-    "//": "She does? :^)"
+    "//": "Does she? :^)"
   },
   {
     "id": "utsuho_ugeyser_eoc",

@@ -330,7 +330,9 @@
     "spells": [
       { "level": 1, "id": "dash_basic" },
       { "level": 1, "id": "kaenbyou_dismissfire" },
+      { "level": 1, "id": "kaenbyou_conflagrate" },
       { "level": 1, "id": "kaenbyou_immolate" },
+      { "level": 1, "id": "kaenbyou_blazingwheel" },
       { "level": 1, "id": "kaenbyou_soulfire" },
       { "level": 1, "id": "kaenbyou_vssummon" },
       { "level": 1, "id": "kaenbyou_vsrelease" }
@@ -342,11 +344,11 @@
         "items": [
           "kasha_book",
           "kaenbyou_dress",
-          "kaenbyou_leg_lace",
           "kaenbyou_shoes",
           "kaenbyou_vest",
           "ribbon_black"
-        ]
+        ],
+        "entries": [ { "item": "soul_shard_item", "charges": 5, "container-item": "kaenbyou_leg_lace" } ]
       },
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "panties" ]

@@ -36,6 +36,12 @@
     "default": "myon_bullet_bullet"
   },
   {
+    "id": "soul_shard",
+    "type": "ammunition_type",
+    "name": "soul shards",
+    "default": "soul_shard_item"
+  },
+  {
     "id": "touhou_corpse_ammo",
     "type": "ammunition_type",
     "name": "corpse",

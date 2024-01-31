@@ -1,5 +1,11 @@
 [
   {
+    "id": "GHOST_TOUHOU",
+    "type": "SPECIES",
+    "description": "a ghost",
+    "flags": [ "SOULDMG_EXTRA" ]
+  },
+  {
     "id": "JIANGSHI_TOUHOU",
     "type": "SPECIES",
     "description": "a jiang shi",
@@ -7,10 +13,55 @@
     "flags": [ "SOULDMG_EXTRA" ]
   },
   {
+    "id": "ONI_TOUHOU",
+    "type": "SPECIES",
+    "description": "an oni",
+    "anger_triggers": [ "HURT", "PLAYER_CLOSE" ],
+    "bleeds": "fd_blood"
+  },
+  {
     "id": "PHANTOM_TOUHOU",
     "type": "SPECIES",
     "description": "a phantom",
     "anger_triggers": [ "HURT", "STALK" ],
     "flags": [ "SOULDMG_EXTRA" ]
+  },
+  {
+    "id": "YOUKAI_FEMALE_TOUHOU",
+    "type": "SPECIES",
+    "description": "a female apparition",
+    "anger_triggers": [ "HURT", "PLAYER_CLOSE", "PLAYER_NEAR_BABY", "PLAYER_WEAK" ],
+    "flags": [ "SOULDMG_EXTRA" ],
+    "//": "Just YOUKAI_HOSTILE_TOUHOU with a different description"
+  },
+  {
+    "id": "YOUKAI_HOSTILE_TOUHOU",
+    "type": "SPECIES",
+    "description": "a youkai",
+    "anger_triggers": [ "HURT", "PLAYER_CLOSE", "PLAYER_NEAR_BABY", "PLAYER_WEAK" ],
+    "flags": [ "SOULDMG_EXTRA" ]
+  },
+  {
+    "id": "YOUKAI_NEUTRAL_TOUHOU",
+    "type": "SPECIES",
+    "description": "a youkai",
+    "anger_triggers": [ "HURT", "PLAYER_NEAR_BABY" ],
+    "flags": [ "SOULDMG_EXTRA" ]
+  },
+  {
+    "id": "YOUKAI_SKINWALKER_TOUHOU",
+    "type": "SPECIES",
+    "description": "a skinwalker",
+    "anger_triggers": [ "HURT", "PLAYER_CLOSE", "PLAYER_NEAR_BABY", "PLAYER_WEAK" ],
+    "flags": [ "SOULDMG_EXTRA" ],
+    "//": "Just YOUKAI_HOSTILE_TOUHOU with a different description"
+  },
+  {
+    "id": "YOUKAI_PSEUDO",
+    "type": "SPECIES",
+    "description": "Unknown",
+    "anger_triggers": [ "FRIEND_ATTACKED", "HURT" ],
+    "fear_triggers": [ "FRIEND_DIED" ],
+    "//": "For human-looking things (not merely humanoids) belonging to urban legends. Deliberately kept vague btw"
   }
 ]

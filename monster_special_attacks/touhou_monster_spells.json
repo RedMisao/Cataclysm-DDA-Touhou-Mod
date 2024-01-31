@@ -1,5 +1,23 @@
 [
   {
+    "id": "death_blood2",
+    "type": "SPELL",
+    "name": { "str": "Blood Death (chasm)" },
+    "description": "Modified death_blood for mon_chasm_kaenbyou ",
+    "spell_class": "NONE",
+    "valid_targets": [ "ground", "self" ],
+    "effect": "attack",
+    "shape": "blast",
+    "min_aoe": 1,
+    "max_aoe": 2,
+    "max_level": 1,
+    "field_id": "fd_blood2",
+    "field_chance": 1,
+    "min_field_intensity": 1,
+    "max_field_intensity": 3,
+    "flags": [ "NO_EXPLOSION_SFX", "RANDOM_AOE" ]
+  },
+  {
     "id": "yoshika_nails",
     "type": "SPELL",
     "name": "Nail slash",
@@ -20,6 +38,6 @@
     "base_casting_time": 85,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "SOMATIC", "NO_LEGS" ]
+    "flags": [ "NO_LEGS", "SOMATIC" ]
   }
 ]

@@ -8,7 +8,7 @@
     "underwater_age_speedup": "2 turns",
     "decay_amount_factor": 2,
     "is_splattering": true,
-    "half_life": "12 turns",
+    "half_life": "4 turns",
     "phase": "liquid",
     "accelerated_decay": true,
     "display_field": true,

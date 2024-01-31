@@ -155,7 +155,6 @@
     "description": "Damage component for mokou_combustion ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
-    "components": "spell_components_utsuhorod",
     "effect": "attack",
     "shape": "blast",
     "damage_type": "heat",

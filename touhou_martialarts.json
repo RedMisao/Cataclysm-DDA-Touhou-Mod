@@ -344,7 +344,6 @@
         ]
       }
     ],
-    "//2": "WIP. Also enable techniques-by-buffs",
     "techniques": [
       "tec_kokoro_grab_break",
       "tec_kokoro_rapid",
@@ -419,6 +418,7 @@
         ]
       }
     ],
+    "//var": "The var is used by meiling_mountainbreak_check and set to 0 by the queue'd EOC (both at touhou_spells_eocs.json)",
     "onpause_buffs": [
       {
         "id": "buff_meiling_onpause",

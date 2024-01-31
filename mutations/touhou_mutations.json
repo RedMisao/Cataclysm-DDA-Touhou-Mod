@@ -742,7 +742,12 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "armor": [ { "parts": "ALL", "soul": 2 } ]
+    "armor": [ { "parts": "ALL", "soul": 2 } ],
+    "anger_relations": [ 
+      [ "GHOST_TOUHOU", -20 ], 
+      [ "JIANGSHI_TOUHOU", -20 ], 
+      [ "PHANTOM_TOUHOU", -20 ] 
+    ]
   },
   {
     "id": "PROF_KOKORO",
@@ -816,7 +821,7 @@
       { 
         "condition": "ALWAYS", 
         "values": [ 
-          { "value": "INTELLIGENCE", "add": -1 } ,
+          { "value": "INTELLIGENCE", "add": -1 },
           { "value": "MAX_MANA", "add": 100 }
         ] 
       } 
@@ -888,6 +893,14 @@
           { "value": "ARMOR_BIO", "multiply": -0.33 }
         ] 
       } 
+    ],
+    "anger_relations": [
+      [ "ONI_TOUHOU", -25 ],
+      [ "YOUKAI_FEMALE_TOUHOU", -25 ],
+      [ "YOUKAI_HOSTILE_TOUHOU", -25 ],
+      [ "YOUKAI_NEUTRAL_TOUHOU", -25 ],
+      [ "YOUKAI_PSEUDO", -25 ],
+      [ "YOUKAI_SKINWALKER_TOUHOU", -25 ]
     ],
     "flags": [ "INFECTION_IMMUNE", "PARAIMMUNE" ]
   },

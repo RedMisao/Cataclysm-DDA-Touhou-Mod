@@ -245,7 +245,7 @@
     "base_energy_cost": 66,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],
-    "//": "I'm pretty sure I had already added this... maybe I forgot to actually push it idk. The old version was an aoe that dealt dmg X times every 3, 2, 1 s"
+    "//": "I'm pretty sure I had already added this... maybe I forgot to actually push it idk. The old version was an aoe that dealt dmg X times every 3, 2, 1 s. I think it was named 'abyss nova'"
   },
   {
     "id": "utsuho_fissionaura2",

@@ -163,7 +163,7 @@
     "type": "ARMOR",
     "category": "armor",
     "name": { "str": "leg lace", "str_pl": "leg laces" },
-    "description": "A small ",
+    "description": "A small lace you use as accessory.  You can store soul shards in it.",
     "repairs_like": "panties",
     "//": "Smallest related thing I could find, will need to check later when I figure out how materials work",
     "volume": "50 ml",
@@ -171,15 +171,25 @@
     "price": 4000,
     "price_postapoc": 800,
     "material": [ "cotton" ],
-    "material_thickness": 0.5,
+    "material_thickness": 1,
     "symbol": "[",
     "looks_like": "leg_warmers",
     "//2": "synonymous: leggings, so",
     "color": "black",
-    "warmth": 1,
-    "armor": [ { "covers": [ "leg_l" ], "specifically_covers": [ "leg_lower_l" ], "coverage": 5, "encumbrance": [ 1, 1 ] } ],
-    "flags": [ "FANCY", "NO_WEAR_EFFECT", "SKINTIGHT", "VARSIZE" ],
-    "//3": "This item maybe needs something else to it"
+    "sided": true,
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "330 ml",
+        "max_contains_weight": "200 g",
+        "max_item_length": "20 cm",
+        "moves": 50,
+        "fire_protection": true,
+        "ammo_restriction": { "soul_shard": 32 }
+      }
+    ],
+    "armor": [ { "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_lower_l", "leg_lower_r" ], "coverage": 1, "encumbrance": [ 0, 0 ] } ],
+    "flags": [ "FANCY", "NO_WEAR_EFFECT", "SKINTIGHT", "TARDIS", "UNBREAKABLE", "VARSIZE" ]
   },
   {
     "id": "kaenbyou_shoes",
@@ -895,7 +905,7 @@
     "use_action": 
     {
       "type": "effect_on_conditions",
-      "description": "Activate fusion blade.  It costs some energy to activate.",
+      "description": "Activate fusion blade.  It drains energy while active.",
       "effect_on_conditions": [ "utsuho_fusionblade_eoc" ]
     },
     "armor": [
