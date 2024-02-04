@@ -1,7 +1,7 @@
 # Cataclysm-DDA-Touhou-Mod
 This is a fork of Taberone's [Touhou Professions](https://github.com/Taberone/Cataclysm-DDA-Touhou-Mod) mod.
 
-**The mod's folder goes in /data/mods/**.  Last updated for game version: 2024-01-22-2056 experimental.
+**The mod's folder goes in /data/mods/**.  Last updated for game version: 2024-01-26-0650 experimental.
 
 Also check the [Expansion](https://github.com/RedMisao/Cataclysm-DDA-Touhou-Expansion) mod!
 
@@ -32,6 +32,7 @@ This mod adds Touhou Project characters as professions.  Characters (2hus) have 
 * Blood thirst.  Remi now has to consume blood (or human flesh, with less effectiveness) in any shape or form, in order to keep the thirst at bay.
 * Immortality.  Mokou resurrects after dying, immediately restoring her body.  She can die as many times as she wants, but there's a soft cap relative to how many times she has died in a period of time, plus a small-ish pain debuff that stacks, to discourage savescumming.
 * Spell growth.  All character spells and spell effects now scale proportionally to their main skills, instead of spell level.
+* Spell tags.  Some spells can now "tag" monsters, which enables FUN stuff like spreading diseases between monsters, monster copying spellcasts by the player, spell interactions, conditional spell effects, and more.
 * Weapon scaling.  Some spells now also scale from the equipped weapon's damage.
 * Wings.  Aya, Remi and Utsuho can now "fly" (read: hover) over over ledges and open spaces, consuming stamina until they're tired enough.  This is done by activating a mutation (View/active mutations key).
 * Youkai form toggle.  Kaenbyou and Remi can now switch between their human and youkai forms, each having different effects.  This is done by activating a mutation (View/active mutations key).
@@ -45,7 +46,7 @@ Every 2hu has their own custom set of clothing.  Not all are just cosmetics chan
 Relatively easy things to add, not in order:
 * More 2hus: Nitori, Yamame and Kokoro are still not playable.  I want to add Kasen, maybe Flandre and Joon too.
 * Visual effects: Can it be done with fields? For example, when Youmu dashes, cherry petals appear on the path.
-* Vehicles: Make an engine that can use corpses as fuel.
+* Vehicles: Make an engine that can use corpses as fuel.  Partially done by killing enemies which drop a resource that can be crafted into fuel.  Almost as metal as using blood as fuel.
 * Balance: CDDA is a roguelike, but the mod feels RPG-ish at times.
 
 
@@ -57,4 +58,8 @@ Relatively hard or complex things to add, not in order:
 
 
 ## Known bugs
-* Mokou's resurrection moves her 3 tiles to the right, every time she revives. I have no idea how or why this happens; this is potentially very very bad for the player.
+* Kokoro's morale-to-mana passive doesn't remove "physical" morale statuses like being wet, it grants her mana as long as she's upset about it
+* Mokou's resurrection moves her 3 tiles to the right, every time she revives.  I have no idea how or why this happens; this is potentially very very bad for the player.
+* Utsuho's minisuns can sometimes cast the hellcannon beam twice instead of once.  This is a limitation due how the spell duplication system is done.
+* (minor) The auras cycle weird, they don't stop when they should.  This has no effect for the player but it's something to take in consideration when using the backbone, as they require lots of debugging to guarantee nothing will break.  For more information see the //IMPORTANT comments at utsuho_fusionblade_cycle2 .
+

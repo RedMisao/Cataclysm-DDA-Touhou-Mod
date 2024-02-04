@@ -831,7 +831,7 @@
     "condition": { "math": [ "var_utsuho_fusionblade", "<", "2" ] },
     "effect": [ { "run_eocs": [ "utsuho_fusionblade_cycle3" ] } ],
     "false_effect": { "run_eocs": "utsuho_fusionblade_toggle" },
-    "//IMPORTANT": "The toggle doesn't stop here, it runs cycle1 and cycle2 one more time before stopping",
+    "//IMPORTANT": "The toggle doesn't stop here, it runs cycle1 and cycle2 one more time before stopping (set debug u_message to each effect and run it ingame to understand)",
     "//IMPORTANT2": "I think this happens with all 'auras' set up the same way. Udonge's 'wave' auras have the same problem",
     "//IMPORTANT3": "My guess is that happens due the queue'd EOC running one more time. The > 0 check in the next EOC is what actually stops the momentum. DO NOT REMOVE BEFORE FINDING A SOLUTION",
     "//IMPORTANT4": "I tried my best in trying to simplify all the cycle1 - cycle2 based EOCs but couldn't find a solution. Maybe in the future, idk these work as they are"
