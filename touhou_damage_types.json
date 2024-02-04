@@ -74,11 +74,11 @@
     "min_pierce": 999,
     "max_pierce": 999,
     "max_level": 1,
-    "difficulty": -10,
+    "difficulty": -50,
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_FAIL" ],
+    "flags": [ "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SILENT" ],
     "//": "WIP, for debugging only"
   }
 ]

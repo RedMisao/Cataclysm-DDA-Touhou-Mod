@@ -24,9 +24,15 @@
     "default": "alternate_knife_knife"
   },
   {
-    "id": "magic_fuel_ammo",
-    "name": "magic fuel",
+    "id": "chasm_ammo",
     "type": "ammunition_type",
+    "name": "chasm ammo",
+    "default": "chasm_ammo_ammo"
+  },
+  {
+    "id": "magic_fuel_ammo",
+    "type": "ammunition_type",
+    "name": "magic fuel",
     "default": "mana_fuel"
   },
   {
@@ -36,10 +42,10 @@
     "default": "myon_bullet_bullet"
   },
   {
-    "id": "soul_shard",
+    "id": "soulshard_fuel_type",
     "type": "ammunition_type",
-    "name": "soul shards",
-    "default": "soul_shard_item"
+    "name": "soul (fuel) (type)",
+    "default": "soulshard_fuel"
   },
   {
     "id": "touhou_corpse_ammo",

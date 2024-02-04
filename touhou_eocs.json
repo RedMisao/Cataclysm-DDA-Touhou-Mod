@@ -7,12 +7,15 @@
       {
         "run_eocs": [
           {
-            "id": "vampire_bloodthirst_start",
-            "condition": { "u_has_trait": "VAMPIRE_SPECIES" },
-            "effect": [
-              { "math": [ "u_vitamin('hblood_vitamin')", "=", "648 + rand(144)" ] }
-            ],
-            "//": "Adds hblood_vitamin if the player is a VAMPIRE_SPECIES plus a smaller random amount, see vampire_bloodthirst_eoc below"
+            "id": "kaenbyou_starting_soulshards",
+            "condition": { 
+              "or": [ 
+                { "u_has_trait": "KASHA_SPECIES" }, 
+                { "u_has_trait": "KASHA_SPECIES_active" }
+              ]
+            },
+            "effect": [ { "math": [ "u_var_soulshard", "+=", "2 + rand(2)" ] } ],
+            "//2": "Adds 2 - 4 soulshards"
           },
           {
             "id": "kokoro_stance_set",
@@ -26,6 +29,14 @@
             ],
             "//2": "The first EOC runs the default condition for Kokoro: 'base' stance plus random mask",
             "//3": "The second EOC runs the timer for the mask duration and automatic rotation"
+          },
+          {
+            "id": "vampire_bloodthirst_start",
+            "condition": { "u_has_trait": "VAMPIRE_SPECIES" },
+            "effect": [
+              { "math": [ "u_vitamin('hblood_vitamin')", "=", "648 + rand(144)" ] }
+            ],
+            "//": "Adds hblood_vitamin for VAMPIRE_SPECIES plus a smaller random amount, see vampire_bloodthirst_eoc below"
           }
         ]
       }
@@ -59,6 +70,35 @@
     "//2": "Note: this is automatic but only detects wielding/unwielding actions, things like 'type: transform' from use_action don't update the values. If this becomes a problem update the value check every time the spell is cast"
   },
   {
+    "id": "utsuho_opens_spellbook_eoc",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "opens_spellbook",
+    "condition": { "u_has_trait": "PROF_OKUU" },
+    "effect": [
+        { "math": [ "var_hellcannon_dmg", "=", "( (u_skill('dodge') * 26.4 ) - 19.8 )" ] },
+        { "math": [ "var_hellcannon_range", "=", "( (u_skill('dodge') * 1.5 ) + 6 )" ] },
+        { "math": [ "var_hellcannon_unc_dmg", "=", "( ( (u_skill('dodge') * 26.4 ) - 19.8 ) * 2 )" ] },
+        { "math": [ "var_hellcannon_unc_range", "=", "( (u_skill('dodge') * 1.5 ) + 6 )" ] }
+    ],
+    "//": "This automatically sets the vars each time Utsuho opens the 'cast spell' window"
+  },
+  {
+    "id": "yamame_opens_spellbook_eoc",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "opens_spellbook",
+    "condition": { "u_has_trait": "PROF_YAMAME" },
+    "effect": [
+        { "math": [ "var_icypyrexia_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.8 )" ] },
+        { "math": [ "var_scarletplague_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.8 )" ] },
+        { "math": [ "var_unconstrainedrot_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.8 )" ] },
+        { "math": [ "var_unconstrainedrot2_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) - 1.2 )" ] },
+        { "math": [ "var_disease_duration", "=", "( (u_skill('speech') * 30 ) + (u_skill('dodge') * 30 ) + 1260 )" ] }
+    ],
+    "//": "This automatically sets the vars each time Yamame opens the 'cast spell' window. Tried chaining a subpsell for yamame_disease_epidemic_eoc with 'self' EOC but it didn't trigger (for her)"
+  },
+  {
     "id": "soulshard_eoc",
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
@@ -79,45 +119,15 @@
             { "npc_has_species": "NETHER" }, 
             { "npc_has_species": "ZOMBIE" } 
           ] 
-        } 
+        },
+        { "math": [ "u_var_soulshard", "<", "16" ] }
       ]
     },
     "effect": [ 
-      { "u_message": "soulshard_eoc 1" },
-      { "u_spawn_item": "soul_shard_item", "count": 1, "suppress_message": true },
-      { "u_cast_spell": { "id": "soulshard_spell" }, "targeted": false }
+      { "math": [ "u_var_soulshard", "+=", "1" ] },
+      { "u_message": "You gained a soulshard", "type": "mixed" }
     ],
-    "//": "Simple EOC checks when a Kasha kills anything, if it's humanoid or close enough it casts the subspell, which runs a centered-EOC to grant the item",
-    "//2": "The u_spawn_item requires the target (victim) to be next to the caster else it doesn't proc, so a subspell is required to 'center' the EOC on the caster",
-    "//3": "WIP. Cap this at 16",
-    "//4": "WIP. This randomly does not proc, figure out why"
-  },
-  {
-    "id": "soulshard_spell",
-    "type": "SPELL",
-    "name": { "str": "Soulshard (spell)" },
-    "description": "Spell casted automatically when gaining a soulshard",
-    "spell_class": "NONE",
-    "valid_targets": [ "self" ],
-    "effect": "effect_on_condition",
-    "effect_str": "soulshard_spell_eoc",
-    "shape": "blast",
-    "min_aoe": 20,
-    "max_aoe": 20,
-    "max_level": 1,
-    "difficulty": -10,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL" ]
-  },
-  {
-    "id": "soulshard_spell_eoc",
-    "type": "effect_on_condition",
-    "effect": [ 
-        { "u_message": "soulshard_spell_eoc 2" },
-        { "u_spawn_item": "soul_shard_item", "count": 1, "suppress_message": true }
-    ]
+    "//": "Simple EOC checks when a Kasha kills anything, if it's humanoid or close enough it adds the u_var "
   },
   {
     "id": "kokoro_morale_eoc",
@@ -152,9 +162,95 @@
             ]
           }
         ]
-      }
+      },
+      { "u_lose_morale": "morale_food_good" },
+      { "u_lose_morale": "morale_food_hot" },
+      { "u_lose_morale": "morale_chat" },
+      { "u_lose_morale": "morale_ate_with_table" },
+      { "u_lose_morale": "morale_ate_without_table" },
+      { "u_lose_morale": "morale_music" },
+      { "u_lose_morale": "morale_honey" },
+      { "u_lose_morale": "morale_game" },
+      { "u_lose_morale": "morale_marloss" },
+      { "u_lose_morale": "morale_mutagen" },
+      { "u_lose_morale": "morale_feeling_good" },
+      { "u_lose_morale": "morale_support" },
+      { "u_lose_morale": "morale_photos" },
+      { "u_lose_morale": "morale_craving_nicotine" },
+      { "u_lose_morale": "morale_craving_caffeine" },
+      { "u_lose_morale": "morale_craving_alcohol" },
+      { "u_lose_morale": "morale_craving_opiate" },
+      { "u_lose_morale": "morale_craving_speed" },
+      { "u_lose_morale": "morale_craving_cocaine" },
+      { "u_lose_morale": "morale_craving_crack" },
+      { "u_lose_morale": "morale_craving_mutagen" },
+      { "u_lose_morale": "morale_craving_diazepam" },
+      { "u_lose_morale": "morale_craving_marloss" },
+      { "u_lose_morale": "morale_food_bad" },
+      { "u_lose_morale": "morale_cannibal" },
+      { "u_lose_morale": "morale_demicannibal" },
+      { "u_lose_morale": "morale_vegetarian" },
+      { "u_lose_morale": "morale_antiveggy" },
+      { "u_lose_morale": "morale_meatarian" },
+      { "u_lose_morale": "morale_antimeat" },
+      { "u_lose_morale": "morale_antifruit" },
+      { "u_lose_morale": "morale_lactose" },
+      { "u_lose_morale": "morale_antijunk" },
+      { "u_lose_morale": "morale_antiwheat" },
+      { "u_lose_morale": "morale_sweettooth" },
+      { "u_lose_morale": "morale_no_digest" },
+      { "u_lose_morale": "morale_wet" },
+      { "u_lose_morale": "morale_dried_off" },
+      { "u_lose_morale": "morale_cold" },
+      { "u_lose_morale": "morale_hot" },
+      { "u_lose_morale": "morale_feeling_bad" },
+      { "u_lose_morale": "morale_bad_protein_bar" },
+      { "u_lose_morale": "morale_killed_innocent" },
+      { "u_lose_morale": "morale_killed_friend" },
+      { "u_lose_morale": "morale_killed_monster" },
+      { "u_lose_morale": "morale_mutilate_corpse" },
+      { "u_lose_morale": "morale_mutagen_elf" },
+      { "u_lose_morale": "morale_mutagen_chimera" },
+      { "u_lose_morale": "morale_mutagen_mutation" },
+      { "u_lose_morale": "morale_moodswing" },
+      { "u_lose_morale": "morale_book" },
+      { "u_lose_morale": "morale_comfy" },
+      { "u_lose_morale": "morale_scream" },
+      { "u_lose_morale": "morale_perm_masochist" },
+      { "u_lose_morale": "morale_perm_radiophile" },
+      { "u_lose_morale": "morale_perm_noface" },
+      { "u_lose_morale": "morale_perm_fpmode_on" },
+      { "u_lose_morale": "morale_perm_hoarder" },
+      { "u_lose_morale": "morale_perm_fancy" },
+      { "u_lose_morale": "morale_perm_optimist" },
+      { "u_lose_morale": "morale_perm_badtemper" },
+      { "u_lose_morale": "morale_perm_numb" },
+      { "u_lose_morale": "morale_perm_constrained" },
+      { "u_lose_morale": "morale_perm_nomad" },
+      { "u_lose_morale": "morale_game_found_kitten" },
+      { "u_lose_morale": "morale_haircut" },
+      { "u_lose_morale": "morale_shave" },
+      { "u_lose_morale": "morale_vomited" },
+      { "u_lose_morale": "morale_play_with_pet" },
+      { "u_lose_morale": "morale_pyromania_startfire" },
+      { "u_lose_morale": "morale_pyromania_nearfire" },
+      { "u_lose_morale": "morale_pyromania_nofire" },
+      { "u_lose_morale": "morale_killer_has_killed" },
+      { "u_lose_morale": "morale_killer_need_to_kill" },
+      { "u_lose_morale": "morale_perm_filthy" },
+      { "u_lose_morale": "morale_butcher" },
+      { "u_lose_morale": "morale_gravedigger" },
+      { "u_lose_morale": "morale_funeral" },
+      { "u_lose_morale": "morale_tree_communion" },
+      { "u_lose_morale": "morale_accomplishment" },
+      { "u_lose_morale": "morale_failure" },
+      { "u_lose_morale": "morale_nightmare" },
+      { "u_lose_morale": "morale_migo_bio_tech" },
+      { "u_lose_morale": "morale_impossible_shape" },
+      { "u_lose_morale": "morale_afs_drugs" }
     ],
-    "//": "Turns morale into mana, only for Kokoro, deactivates if her morale is zero"
+    "//": "Turns morale into mana, only for Kokoro, deactivates if her morale is zero, also removes ALL morale_type , except for morale_perm_debug ",
+    "//2": "Works good enough to remove endpoint morale like 'protein rations', but for continous stuff like 'wet' it keeps removing as long as she's wet"
   },
   {
     "id": "kokoro_timer_eoc",

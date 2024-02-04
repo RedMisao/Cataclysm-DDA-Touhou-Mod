@@ -57,24 +57,9 @@
     "tools": [ [ [ "seiga_hairstick", -1 ] ] ]
   },
   {
-    "id": "spell_components_soulshard_1",
-    "type": "requirement",
-    "components": [ [ [ "soul_shard_item", 1 ] ] ]
-  },
-  {
-    "id": "spell_components_soulshard_2",
-    "type": "requirement",
-    "components": [ [ [ "soul_shard_item", 2 ] ] ]
-  },
-  {
     "id": "spell_components_utsuhorod",
     "type": "requirement",
     "tools": [ [ [ "utsuho_rod", -1 ] ] ]
-  },
-  {
-    "id": "spell_components_utsuhosun",
-    "type": "requirement",
-    "components": [ [ [ "utsuho_minisun", 1 ] ] ]
   },
   {
     "id": "spell_components_youmuhaku",

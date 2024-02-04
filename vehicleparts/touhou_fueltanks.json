@@ -3,8 +3,8 @@
     "id": "tank_corpsecart",
     "type": "vehicle_part",
     "categories": [ "energy", "movement" ],
-    "name": { "str": "corpse reactor tank" },
-    "description": "Test corpse reactor tank for kaenbyou_wheelbarrow ",
+    "name": { "str": "soul engine \"tank\"" },
+    "description": "The \"tank\" of the soul engine.  It's a small box made of metal and a strange Former Hell wood.",
     "variants": [ { "symbols": "X", "symbols_broken": "#" } ],
     "color": "brown",
     "broken_color": "red",
@@ -18,7 +18,6 @@
       "install": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_nail_install", 1 ] ] },
       "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "15 m", "using": [ [ "vehicle_nail_removal", 1 ] ] },
       "repair": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "adhesive", 2 ] ] }
-    },
-    "flags": [ "FLUIDTANK" ]
+    }
   }
 ]

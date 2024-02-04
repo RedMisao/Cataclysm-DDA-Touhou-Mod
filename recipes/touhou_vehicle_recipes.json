@@ -47,38 +47,6 @@
     "components": [ [ [ "2x4", 6 ] ], [ [ "nail", 24 ] ] ]
   },
   {
-    "result": "front_corpsecart",
-    "type": "recipe",
-    "activity_level": "LIGHT_EXERCISE",
-    "category": "CC_OTHER",
-    "subcategory": "CSC_OTHER_PARTS",
-    "copy-from": "wood_plate",
-    "skill_used": "fabrication",
-    "difficulty": 2,
-    "time": "12 m",
-    "reversible": true,
-    "autolearn": false,
-    "book_learn": { "kasha_book": { "skill_level": 1 } },
-    "using": [ [ "rope_natural_short", 2 ] ],
-    "components": [ [ [ "2x4", 6 ] ] ]
-  },
-  {
-    "result": "handle_corpsecart",
-    "type": "recipe",
-    "activity_level": "LIGHT_EXERCISE",
-    "category": "CC_OTHER",
-    "subcategory": "CSC_OTHER_VEHICLE",
-    "copy-from": "yoke_harness",
-    "skill_used": "fabrication",
-    "difficulty": 3,
-    "time": "20 m",
-    "reversible": true,
-    "autolearn": false,
-    "book_learn": { "kasha_book": { "skill_level": 1 } },
-    "qualities": [ { "id": "HAMMER", "level": 1 } ],
-    "components": [ [ [ "2x4", 2 ] ] ]
-  },
-  {
     "result": "reactor_corpsecart",
     "type": "recipe",
     "activity_level": "MODERATE_EXERCISE",
@@ -145,22 +113,6 @@
     "components": [ [ [ "2x4", 6 ] ], [ [ "nail", 24 ] ] ]
   },
   {
-    "result": "support_corpsecart",
-    "type": "recipe",
-    "activity_level": "MODERATE_EXERCISE",
-    "category": "CC_OTHER",
-    "subcategory": "CSC_OTHER_PARTS",
-    "copy-from": "frame_corpsecart",
-    "skill_used": "fabrication",
-    "difficulty": 2,
-    "time": "20 m",
-    "reversible": true,
-    "autolearn": false,
-    "book_learn": { "kasha_book": { "skill_level": 1 } },
-    "qualities": [ { "id": "DRILL", "level": 2 }, { "id": "HAMMER", "level": 2 }, { "id": "WRENCH", "level": 2 } ],
-    "components": [ [ [ "2x4", 4 ] ], [ [ "nail", 12 ] ], [ [ "spring", 2 ] ], [ [ "steel_chunk", 6 ] ] ]
-  },
-  {
     "result": "tank_corpsecart",
     "type": "recipe",
     "activity_level": "MODERATE_EXERCISE",
@@ -191,30 +143,5 @@
     "book_learn": { "kasha_book": { "skill_level": 1 } },
     "qualities": [ { "id": "HAMMER", "level": 2 }, { "id": "SAW_W", "level": 1 } ],
     "components": [ [ [ "2x4", 4 ] ], [ [ "nail", 24 ] ] ]
-  },
-  {
-    "result": "wheelmount_corpsecart",
-    "type": "recipe",
-    "activity_level": "MODERATE_EXERCISE",
-    "category": "CC_OTHER",
-    "subcategory": "CSC_OTHER_VEHICLE",
-    "copy-from": "wheel_mount_wood",
-    "skill_used": "mechanics",
-    "skills_required": [ "fabrication", 4 ],
-    "difficulty": 2,
-    "time": "40 m",
-    "autolearn": false,
-    "book_learn": { "kasha_book": { "skill_level": 1 } },
-    "qualities": [
-      { "id": "DRILL", "level": 2 },
-      { "id": "HAMMER", "level": 2 },
-      { "id": "SAW_W", "level": 2 },
-      { "id": "WRENCH", "level": 2 }
-    ],
-    "components": [ [ [ "nail", 35 ] ], [ [ "2x4", 4 ] ], [ [ "scrap", 4 ], [ "steel_chunk", 6 ] ] ],
-    "tools": [
-      [ [ "crucible", -1 ], [ "crucible_clay", -1 ] ],
-      [ [ "welder", 30 ], [ "welder_crude", 40 ], [ "toolset", 40 ], [ "forge", 20 ], [ "oxy_torch", 5 ] ]
-    ]
   }
 ]

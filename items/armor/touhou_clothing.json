@@ -176,20 +176,10 @@
     "looks_like": "leg_warmers",
     "//2": "synonymous: leggings, so",
     "color": "black",
+    "warmth": 1,
     "sided": true,
-    "pocket_data": [
-      {
-        "pocket_type": "CONTAINER",
-        "max_contains_volume": "330 ml",
-        "max_contains_weight": "200 g",
-        "max_item_length": "20 cm",
-        "moves": 50,
-        "fire_protection": true,
-        "ammo_restriction": { "soul_shard": 32 }
-      }
-    ],
     "armor": [ { "covers": [ "leg_l", "leg_r" ], "specifically_covers": [ "leg_lower_l", "leg_lower_r" ], "coverage": 1, "encumbrance": [ 0, 0 ] } ],
-    "flags": [ "FANCY", "NO_WEAR_EFFECT", "SKINTIGHT", "TARDIS", "UNBREAKABLE", "VARSIZE" ]
+    "flags": [ "FANCY", "NO_WEAR_EFFECT", "SKINTIGHT", "VARSIZE" ]
   },
   {
     "id": "kaenbyou_shoes",

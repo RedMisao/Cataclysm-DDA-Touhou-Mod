@@ -299,7 +299,7 @@
     "spells": [
       { "level": 1, "id": "dash_remi" },
       { "level": 1, "id": "remilia_bloodboil" },
-      { "level": 1, "id": "remilia_consumeblood" },
+      { "level": 1, "id": "remilia_darkdrain" },
       { "level": 1, "id": "remilia_demonfork" },
       { "level": 1, "id": "remilia_gungnir" },
       { "level": 1, "id": "remilia_gungnir_dismiss" },
@@ -333,9 +333,11 @@
       { "level": 1, "id": "kaenbyou_conflagrate" },
       { "level": 1, "id": "kaenbyou_immolate" },
       { "level": 1, "id": "kaenbyou_blazingwheel" },
-      { "level": 1, "id": "kaenbyou_soulfire" },
+      { "level": 1, "id": "kaenbyou_soulshard_fuel" },
+      { "level": 1, "id": "kaenbyou_soulshatter" },
       { "level": 1, "id": "kaenbyou_vssummon" },
-      { "level": 1, "id": "kaenbyou_vsrelease" }
+      { "level": 1, "id": "kaenbyou_vsrelease" },
+      { "level": 1, "id": "kaenbyou_zz_soulshard" }
     ],
     "vehicle": "kaenbyou_wheelbarrow",
     "traits": [ "KASHA_EARS", "KASHA_SPECIES", "KASHA_TAILS", "PROF_KAENBYOU", "YOUKAI_SPECIES", "SPIRIT_USER", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_kaenbyou" ],
@@ -344,17 +346,16 @@
         "items": [
           "kasha_book",
           "kaenbyou_dress",
+          "kaenbyou_leg_lace",
           "kaenbyou_shoes",
           "kaenbyou_vest",
           "ribbon_black"
-        ],
-        "entries": [ { "item": "soul_shard_item", "charges": 5, "container-item": "kaenbyou_leg_lace" } ]
+        ]
       },
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "panties" ]
     },
-    "flags": [ "SCEN_ONLY" ],
-    "//2": "Investigate about the Necromancy: Communication stuff for her profession !!!"
+    "flags": [ "SCEN_ONLY" ]
   },
   {
     "ident": "sakuya_izayoi",
@@ -416,6 +417,7 @@
       { "level": 1, "id": "seiga_charm" },
       { "level": 1, "id": "seiga_chidrain" },
       { "level": 1, "id": "seiga_chireversal" },
+      { "level": 1, "id": "seiga_cripple" },
       { "level": 1, "id": "seiga_darksplash" },
       { "level": 1, "id": "seiga_foetusshot" },
       { "level": 1, "id": "seiga_frenzy" },
@@ -506,9 +508,10 @@
     "spells": [
       { "level": 1, "id": "dash_basic" },
       { "level": 1, "id": "yamame_curedisease" },
-      { "level": 1, "id": "yamame_icypyrexia" },
-      { "level": 1, "id": "yamame_scarletplague" },
-      { "level": 1, "id": "yamame_unconstrainedrot" },
+      { "level": 1, "id": "yamame_disease_epidemic" },
+      { "level": 1, "id": "yamame_disease_icypyrexia" },
+      { "level": 1, "id": "yamame_disease_scarletplague" },
+      { "level": 1, "id": "yamame_disease_unconstrainedrot" },
       { "level": 1, "id": "yamame_damnedrope" },
       { "level": 1, "id": "yamame_miasmashot" },
       { "level": 1, "id": "yamame_webdismiss" },
@@ -523,11 +526,7 @@
       "female": [ "bra", "bloomers" ]
     },
     "flags": [ "SCEN_ONLY" ],
-    "//2": "WIP!!! There's a lot of fun stuff that can't be implemented, or I don't know how to. Plus she's missing at least two more spells",
-    "//3": "There's no way to check for monsters having effects, so the idea of a base dot disease + applying different effects on top of that can't be used. Worse, this also affects other effects that rely on dot spells, like kaenbyou_immolate ",
-    "//4": "Enchantments don't work on monsters either, so things like reduced attack speed can't be set at all",
-    "//5": "EOCs don't work with monsters, so a disease that causes outburst to spread to nearby enemies currently can't exist",
-    "//6": "There's an issue with the remove_field spell effect that causes it to remove 1 field in the entire aoe, so Yamame can't aoe dismiss webs from yamame_webcapture"
+    "//": "WIP. Missing one non-disease spell, and bugtest her furniture spawn spells"
   },
   {
     "ident": "youmu_konpaku",

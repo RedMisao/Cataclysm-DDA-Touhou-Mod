@@ -4,7 +4,7 @@
     "type": "vehicle_part",
     "categories": [ "operations", "passengers" ],
     "name": { "str": "corpse cart seat" },
-    "description": "Test seat for kaenbyou_wheelbarrow ",
+    "description": "A seat, for the corpse cart.  It's not only made from a strange Former Hell wood, but also leather from an unidentified species.",
     "variants": [ { "symbols": "]", "symbols_broken": "#" } ],
     "looks_like": "reclining_seat",
     "color": "brown",

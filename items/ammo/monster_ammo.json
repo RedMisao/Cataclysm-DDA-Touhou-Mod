@@ -48,6 +48,27 @@
     "//": "dmg is ~ ammo_lunar_small_1 / 5 copies"
   },
   {
+    "id": "chasm_ammo_ammo",
+    "type": "AMMO",
+    "name": { "str_sp": "chasm ammo" },
+    "description": "Ammo for chasm_gun ",
+    "volume": "113 ml",
+    "weight": "16 g",
+    "price_postapoc": 0,
+    "material": [ "powder", "steel" ],
+    "symbol": "=",
+    "color": "red",
+    "ammo_type": "chasm_ammo",
+    "count": 99,
+    "stack_size": 99,
+    "damage": { "damage_type": "bash", "amount": 44, "armor_penetration": 8 },
+    "dispersion": 35,
+    "range": 20,
+    "recoil": 2036,
+    "effects": [ "CASELESS_ROUNDS", "NEVER_MISFIRES", "NOGIB" ],
+    "//": "Based on 7.62x39mm"
+  },
+  {
     "id": "myon_bullet_bullet",
     "type": "AMMO",
     "name": "Myon bullet (ammo)",

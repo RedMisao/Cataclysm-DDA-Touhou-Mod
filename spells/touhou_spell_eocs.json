@@ -29,6 +29,19 @@
     ]
   },
   {
+    "id": "kaenbyou_blazingwheel_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_soulshard", ">=", "2" ] },
+    "effect": [
+      { "u_cast_spell": { "id": "kaenbyou_blazingwheel2" }, "targeted": true }
+    ],
+    "false_effect": [ 
+      { "u_message": "You don't have enough soulshards to cast this.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "150" ] }
+    ],
+    "//": "Self-explanatory. The soulshards are consumed after (automatically) chaining a spell EOC that runs kaenbyou_consume_soulshard_eoc or kaenbyou_consume_soulshard_2_eoc"
+  },
+  {
     "id": "kaenbyou_conflagrate_eoc",
     "type": "effect_on_condition",
     "condition": { "math": [ "u_var_immolate", ">=", "1" ] },
@@ -39,10 +52,64 @@
     "//": "WIP. It works as it is, but the effects and stuff don't show for the player"
   },
   {
+    "id": "kaenbyou_consume_soulshard_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_soulshard", ">=", "1" ] },
+    "effect": [ { "math": [ "u_var_soulshard", "-=", "1" ] } ]
+  },
+  {
+    "id": "kaenbyou_consume_soulshard_2_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_soulshard", ">=", "2" ] },
+    "effect": [ { "math": [ "u_var_soulshard", "-=", "2" ] } ]
+  },
+  {
+    "id": "kaenbyou_consume_soulshard_4_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_soulshard", ">=", "4" ] },
+    "effect": [ { "math": [ "u_var_soulshard", "-=", "4" ] } ]
+  },
+  {
     "id": "kaenbyou_immolate_eoc",
     "type": "effect_on_condition",
     "effect": [
       { "math": [ "u_var_immolate", "+=", "1" ] }
+    ]
+  },
+  {
+    "id": "kaenbyou_soulfire_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_soulshard", ">=", "1" ] },
+    "effect": [
+      { "u_cast_spell": { "id": "kaenbyou_soulfire2" }, "targeted": true }
+    ],
+    "false_effect": [ 
+      { "u_message": "You don't have enough soulshards to cast this.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "133" ] }
+    ]
+  },
+  {
+    "id": "kaenbyou_soulshard_fuel_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_soulshard", ">=", "4" ] },
+    "effect": [
+      { "u_cast_spell": { "id": "kaenbyou_soulshard_fuel2" }, "targeted": true }
+    ],
+    "false_effect": [ 
+      { "u_message": "You don't have enough soulshards to cast this.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "50" ] }
+    ]
+  },
+  {
+    "id": "kaenbyou_soulshatter_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_soulshard", ">=", "1" ] },
+    "effect": [
+      { "u_cast_spell": { "id": "kaenbyou_soulshatter2" }, "targeted": true }
+    ],
+    "false_effect": [ 
+      { "u_message": "You don't have enough soulshards to cast this.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "50" ] }
     ]
   },
   {
@@ -283,6 +350,53 @@
     "effect": [
       { "math": [ "var_mokou_combustion", "+=", "1" ] },
       { "queue_eocs": [ "mokou_combustion_cycle1" ], "time_in_future": "3 s" }
+    ]
+  },
+  {
+    "id": "remilia_darkdrain2_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_remidrain", "=", "0" ] },
+      {
+        "run_eocs": [
+          {
+            "id": "remilia_darkdrain_human",
+            "condition": {
+              "or": [
+                { "u_has_species": "FERAL" },
+                { "u_has_species": "HUMAN" }
+              ]
+            },
+            "effect": [ { "math": [ "var_remidrain", "=", "( (u_skill('stabbing') * 0.133 ) + (u_skill('melee') * 0.133 ) + (u_skill('dodge') * 0.133 ) + 2.404 )" ] } ]
+          },
+          {
+            "id": "remilia_darkdrain_humanoid",
+            "condition": {
+              "or": [
+                { "u_has_species": "CYBORG" },
+                { "u_has_species": "NETHER" },
+                { "u_has_species": "ZOMBIE" }
+              ]
+            },
+            "effect": [ { "math": [ "var_remidrain", "=", "( ( (u_skill('stabbing') * 0.133 ) + (u_skill('melee') * 0.133 ) + (u_skill('dodge') * 0.133 ) + 2.404 ) * rng( 0.17, 0.66 ) )" ] } ]
+          }
+        ]
+      }
+    ],
+    "//": "Sets the heal var to 0 and checks for the species of the monster that's being targeted. If it's human or humanoid the var increases to a certain value"
+  },
+  {
+    "id": "remilia_darkdrain3_eoc",
+    "type": "effect_on_condition",
+    "effect": [ { "queue_eocs": [ "remilia_darkdrain_heal" ], "time_in_future": "3 s" } ],
+    "//": "This runs at the same time (shortly after) the previous EOC. It just delays the self-heal spell by 3 s"
+  },
+  {
+    "id": "remilia_darkdrain_heal",
+    "type": "effect_on_condition",
+    "effect": [ 
+      { "u_cast_spell": { "id": "remilia_darkdrain4" }, "targeted": false },
+      { "math": [ "u_vitamin('hblood_vitamin')", "+=", "var_remidrain" ] }
     ]
   },
   {
@@ -590,11 +704,11 @@
     "type": "effect_on_condition",
     "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
     "effect": [
-      { "u_cast_spell": { "id": "utsuho_blacksun2" }, "targeted": true }
+      { "u_cast_spell": { "id": "utsuho_blacksun2" } }
     ],
     "false_effect": [ 
-      { "math": [ "u_val('mana')", "-=", "50" ] },
-      { "u_cast_spell": { "id": "utsuho_blacksun2_unc" }, "targeted": true } 
+      { "u_cast_spell": { "id": "utsuho_blacksun2_unc" } },
+      { "math": [ "u_val('mana')", "-=", "50" ] }
     ]
   },
   {
@@ -608,27 +722,6 @@
       { "u_message": "Something's wrong… you cannot detect anything.", "type": "mixed" },
       { "math": [ "u_val('mana')", "+=", "rand(50)" ] }
     ]
-  },
-  {
-    "id": "utsuho_minisun_follow",
-    "type": "effect_on_condition",
-    "//recurrence": "1 s",
-    "condition": {
-      "and": [
-        { "math": [ "u_monsters_nearby('mon_utsuho_minisun', 'radius': 99, 'attitude': 'friendly')", ">", "0" ] },
-        { "math": [ "u_monsters_nearby('mon_utsuho_minisun', 'radius': 5, 'attitude': 'friendly')", "==", "0" ] }
-      ]
-    },
-    "deactivate_condition": {
-      "or": [
-        { "not": { "u_has_trait": "PROF_OKUU" } },
-        { "math": [ "u_monsters_nearby('mon_utsuho_minisun', 'radius': 99, 'attitude': 'friendly')", "==", "0" ] }
-      ]
-    },
-    "effect": [ 
-      { "u_cast_spell": { "id": "utsuho_blacksun2" }, "targeted": false }
-    ],
-    "//": "WIP"
   },
   {
     "id": "utsuho_fissionaura_eoc",
@@ -802,47 +895,23 @@
     ]
   },
   {
-    "id": "utsuho_hellcannon_eoc",
+    "id": "utsuho_minisun_follow",
     "type": "effect_on_condition",
-    "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
-    "effect": [
-      { "u_cast_spell": { "id": "utsuho_hellcannon2" }, "targeted": true }
-    ],
-    "false_effect": [ 
-      { "math": [ "u_val('mana')", "-=", "50" ] },
-      { "u_cast_spell": { "id": "utsuho_hellcannon2_unc" }, "targeted": true } 
-    ]
-  },
-  {
-    "id": "utsuho_hellcannon_eoc_DUPLICATE",
-    "type": "effect_on_condition",
-    "//eoc_type": "EVENT",
-    "//required_event": "character_casts_spell", 
+    "//recurrence": "1 s",
     "condition": {
       "and": [
-        { "compare_string": [ "utsuho_hellcannon", { "context_val": "spell" } ] },
-        { "math": [ "u_monsters_nearby('mon_utsuho_minisun', 'radius': 99, 'attitude': 'friendly')", ">", "0" ] }
+        { "math": [ "u_monsters_nearby('mon_utsuho_minisun', 'radius': 99, 'attitude': 'friendly')", ">", "0" ] },
+        { "math": [ "u_monsters_nearby('mon_utsuho_minisun', 'radius': 5, 'attitude': 'friendly')", "==", "0" ] }
+      ]
+    },
+    "deactivate_condition": {
+      "or": [
+        { "not": { "u_has_trait": "PROF_OKUU" } },
+        { "math": [ "u_monsters_nearby('mon_utsuho_minisun', 'radius': 99, 'attitude': 'friendly')", "==", "0" ] }
       ]
     },
     "effect": [ 
-      { "u_message": "AAA", "type": "mixed" },
-      { "math": [ "hellcannon_casted", "+=", "1" ] },
-      { "run_eocs": [ "utsuho_hellcannon_eoc2_DUPLICATE" ] }
-    ],
-    "//": "WIP"
-  },
-  {
-    "id": "utsuho_hellcannon_eoc2_DUPLICATE",
-    "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "u_monsters_nearby('mon_utsuho_minisun', 'radius': 99, 'attitude': 'friendly')", ">", "0" ] }
-      ]
-    },
-    "effect": [
-      { "u_message": "BBB", "type": "mixed" },
-      { "math": [ "hellcannon_casted", "-=", "1" ] },
-      { "npc_cast_spell": { "id": "utsuho_hellcannon_mon" }, "targeted": true }
+      { "u_cast_spell": { "id": "utsuho_blacksun2" }, "targeted": false }
     ],
     "//": "WIP"
   },
@@ -867,8 +936,66 @@
       { "u_cast_spell": { "id": "utsuho_ugeyser2" }, "targeted": true }
     ],
     "false_effect": [ 
-      { "math": [ "u_val('mana')", "-=", "50" ] },
-      { "u_cast_spell": { "id": "utsuho_ugeyser2_unc" }, "targeted": true }
+      { "u_cast_spell": { "id": "utsuho_ugeyser2_unc" }, "targeted": true },
+      { "math": [ "u_val('mana')", "-=", "50" ] }
+    ]
+  },
+  {
+    "id": "yamame_disease_epidemic_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "run_eocs": [ "yamame_disease_epidemic_1" ] },
+      { "run_eocs": [ "yamame_disease_epidemic_2" ] },
+      { "run_eocs": [ "yamame_disease_epidemic_3" ] }
+    ],
+    "//": "Subspell that act as a repeater for each of her spells, by separate. The u_var_whatever are set at yamame_opens_spellbook_eoc "
+  },
+  {
+    "id": "yamame_disease_epidemic_1",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_icypyrexia", ">=", "1" ] },
+    "effect": [
+      { "math": [ "u_var_icypyrexia", "=", "0" ] },
+      { "u_cast_spell": { "id": "yamame_disease_icypyrexia3" } }
+    ]
+  },
+  {
+    "id": "yamame_disease_epidemic_2",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_scarletplague", ">=", "1" ] },
+    "effect": [
+      { "math": [ "u_var_scarletplague", "=", "0" ] },
+      { "u_cast_spell": { "id": "yamame_disease_scarletplague3" } }
+    ]
+  },
+  {
+    "id": "yamame_disease_epidemic_3",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_unconstrainedrot", ">=", "1" ] },
+    "effect": [
+      { "math": [ "u_var_unconstrainedrot", "=", "0" ] },
+      { "u_cast_spell": { "id": "yamame_disease_unconstrainedrot4" } }
+    ]
+  },
+  {
+    "id": "yamame_disease_icypyrexia_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "u_var_icypyrexia", "+=", "1" ] }
+    ]
+  },
+  {
+    "id": "yamame_disease_scarletplague_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "u_var_scarletplague", "+=", "1" ] }
+    ]
+  },
+  {
+    "id": "yamame_disease_unconstrainedrot_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "u_var_unconstrainedrot", "+=", "1" ] }
     ]
   },
   {

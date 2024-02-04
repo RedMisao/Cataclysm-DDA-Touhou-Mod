@@ -176,6 +176,17 @@
     "base_mods": { "speed_mod": [ 200 ] }
   },
   {
+    "id": "kaenbyou_soulshatter",
+    "type": "effect_type",
+    "name": [ "Soulshatter (effect)" ],
+    "desc": [ "Nearby creatures can't perceive you" ],
+    "max_duration": "8 s",
+    "apply_message": "The soulshard shatters, nearby enemies stop sensing you!",
+    "remove_message": "You can feel eyes upon you again.",
+    "rating": "good",
+    "flags": [ "INVISIBLE", "NO_SCENT" ]
+  },
+  {
     "id": "kokoro_anger_effect",
     "type": "effect_type",
     "name": [ "Hannya mask (anger)" ],
@@ -738,6 +749,26 @@
     "remove_message": "Thus, time is flowing again.",
     "rating": "good",
     "base_mods": { "speed_mod": [ 35 ] }
+  },
+  {
+    "id": "seiga_cripple_effect_short",
+    "type": "effect_type",
+    "name": [ "Cripple (curse)" ],
+    "desc": [ "Cripple (curse)" ],
+    "max_duration": "10 s",
+    "base_mods": { "speed_mod": [ -60 ] },
+    "max_intensity": 1,
+    "max_effective_intensity": 1
+  },
+  {
+    "id": "seiga_cripple_effect_long",
+    "type": "effect_type",
+    "name": [ "Cripple (curse)" ],
+    "desc": [ "Cripple (curse)" ],
+    "max_duration": "60 s",
+    "base_mods": { "speed_mod": [ -20 ] },
+    "max_intensity": 1,
+    "max_effective_intensity": 1
   },
   {
     "id": "seiga_frenzy",

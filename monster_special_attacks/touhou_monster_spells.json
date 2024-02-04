@@ -18,6 +18,23 @@
     "flags": [ "NO_EXPLOSION_SFX", "RANDOM_AOE" ]
   },
   {
+    "id": "death_vs",
+    "type": "SPELL",
+    "name": { "str": "vengeful spirit death (dummy)" },
+    "description": "Dummy aoe death",
+    "spell_class": "NONE",
+    "valid_targets": [ "self" ],
+    "effect": "attack",
+    "shape": "blast",
+    "damage_type": "pure",
+    "min_damage": 999,
+    "max_damage": 999,
+    "min_aoe": 2,
+    "max_aoe": 2,
+    "max_level": 1,
+    "flags": [ "SILENT" ]
+  },
+  {
     "id": "yoshika_nails",
     "type": "SPELL",
     "name": "Nail slash",
@@ -33,7 +50,7 @@
     "max_range": 3,
     "min_aoe": 65,
     "max_aoe": 65,
-    "difficulty": -10,
+    "difficulty": -11,
     "max_level": 1,
     "base_casting_time": 85,
     "base_energy_cost": 0,
