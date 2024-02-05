@@ -217,7 +217,7 @@
   {
     "id": "meiling_stomp_effect",
     "type": "SPELL",
-    "name": "Qi stomp (visual effect)",
+    "name": "Qi stomp (vfx)",
     "description": "Visual effect for tec_meiling_stomp ",
     "spell_class": "NONE",
     "valid_targets": [ "ground", "hostile" ],

@@ -4,22 +4,23 @@
     "type": "TOOL",
     "category": "weapons",
     "name": { "str": "Sakuya's knife", "str_pl": "Sakuya's knives" },
-    "description": "A seemingly plain knife compared to her silver ones.  This one has a single edge, no hilt, and a drop point.  It's much sharper and made from a different material though.",
+    "description": "A seemingly plain knife compared to her silver ones.  This one has a single edge, no hilt, and a drop point.  It's sharper and made from a different material though.",
     "volume": "350 ml",
     "weight": "450 g",
     "longest_side": "30 cm",
     "price_postapoc": 12500,
     "to_hit": { "balance": "good", "grip": "weapon", "length": "hand", "surface": "line" },
-    "melee_damage": { "bash": 8, "cut": 25 },
-    "material": [ { "type": "wood" }, { "type": "silver" }, { "type": "steel", "portion": 9 } ],
+    "melee_damage": { "cut": 6, "stab": 12, "soul": 6 },
+    "thrown_damage": [ { "damage_type": "stab", "amount": 9 }, { "damage_type": "soul", "amount": 9 } ],
+    "material": [ { "type": "wood", "portion": 1 }, { "type": "silver" }, { "type": "steel", "portion": 7 } ],
     "symbol": ";",
+    "looks_like": "knife_combat",
     "color": "dark_gray",
     "min_skills": [ [ "weapon", 2 ], [ "melee", 1 ] ],
     "techniques": [ "RAPID", "WBLOCK_2" ],
     "qualities": [ [ "CUT", 2 ], [ "CUT_FINE", 1 ], [ "BUTCHER", 20 ] ],
-    "thrown_damage": [ { "damage_type": "bash", "amount": 8 }, { "damage_type": "stab", "amount": 8 } ],
     "weapon_category": [ "KNIVES" ],
-    "flags": [ "DURABLE_MELEE", "SHEATH_KNIFE" ]
+    "flags": [ "ALLOWS_BODY_BLOCK", "DURABLE_MELEE", "MAGIC_FOCUS", "SHEATH_KNIFE" ]
   },
   {
     "id": "tengu_fan",
@@ -100,7 +101,7 @@
     "techniques": [ "VORPAL", "WBLOCK_2" ],
     "qualities": [ [ "CUT", 1 ], [ "BUTCHER", 4 ] ],
     "weapon_category": [ "JAPANESE_SWORDS", "SHORT_SWORDS" ],
-    "flags": [ "DURABLE_MELEE", "SHEATH_SWORD" ]
+    "flags": [ "DURABLE_MELEE", "MAGIC_FOCUS", "SHEATH_SWORD" ]
   },
   {
     "id": "youmu_roukanken",
@@ -122,6 +123,6 @@
     "techniques": [ "VORPAL", "WBLOCK_1", "WIDE" ],
     "qualities": [ [ "CUT", 1 ] ],
     "weapon_category": [ "GREAT_SWORDS", "JAPANESE_SWORDS", "LONG_SWORDS" ],
-    "flags": [ "DURABLE_MELEE", "SHEATH_SWORD" ]
+    "flags": [ "DURABLE_MELEE", "MAGIC_FOCUS", "SHEATH_SWORD" ]
   }
 ]

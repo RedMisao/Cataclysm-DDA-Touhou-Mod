@@ -7,7 +7,7 @@
     "material_required": false,
     "magic_color": "white",
     "mon_difficulty": true,
-    "//ondamage_eocs": "[ 'soul_dmg_check_eoc' ],",
+    "ondamage_eocs": [ "soul_dmg_check_eoc" ],
     "immune_flags": { "character": [ "SOULDMG_IMMUNE" ], "monster": [ "NO_SOUL" ] },
     "//2": "soul/spiritual damage, should do no dmg to things that are not alive or lack a 'soul' component, normal dmg to the average living thing, and double (more?) to youkai & purely spiritual entities like ghosts & spiritual amalgamations (soul forced into something)",
     "//3": " 'yeah but what is a soul' lol but not lmao"
@@ -38,8 +38,7 @@
             },
             "effect": [ 
                 { "math": [ "var_souldmg", "=", "( _damage_taken * 2 )" ] },
-                { "npc_cast_spell": { "id": "souldmg_spell" } },
-                { "u_message": "SOULDMG_EXTRA", "type": "mixed" }
+                { "npc_cast_spell": { "id": "souldmg_spell" } }
             ]
           },
           {
@@ -52,8 +51,7 @@
             },
             "effect": [ 
                 { "math": [ "var_souldmg", "=", "( _damage_taken * rng( 0.1, 0.9 ) )" ] },
-                { "npc_cast_spell": { "id": "souldmg_spell" } },
-                { "u_message": "SOUL_RAND", "type": "mixed" }
+                { "npc_cast_spell": { "id": "souldmg_spell" } }
             ]
           }
         ]
@@ -69,8 +67,8 @@
     "shape": "blast",
     "effect": "attack",
     "damage_type": "pure",
-    "min_damage": { "math": [ "( var_souldmg + 1 )" ] },
-    "max_damage": { "math": [ "( var_souldmg + 1 )" ] },
+    "min_damage": { "math": [ "( var_souldmg )" ] },
+    "max_damage": { "math": [ "( var_souldmg )" ] },
     "min_pierce": 999,
     "max_pierce": 999,
     "max_level": 1,
@@ -78,7 +76,6 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SILENT" ],
-    "//": "WIP, for debugging only"
+    "flags": [ "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SILENT" ]
   }
 ]

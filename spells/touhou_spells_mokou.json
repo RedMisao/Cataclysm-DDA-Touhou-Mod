@@ -138,7 +138,7 @@
     "valid_targets": [ "self" ],
     "effect": "effect_on_condition",
     "effect_str": "mokou_combustion_eoc",
-    "extra_effects": [ { "id": "mokou_combustion3" }, { "id": "mokou_combustion4" }, { "id": "mokou_combustion5" } ],
+    "extra_effects": [ { "id": "mokou_combustion3" }, { "id": "mokou_combustion4" } ],
     "shape": "blast",
     "max_level": 1,
     "difficulty": -11,
@@ -146,7 +146,8 @@
     "base_energy_cost": 100,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],
-    "//": "I'm pretty sure I had already replaced the old combustion by something like this... maybe I forgot to actually push it idk. The old version was an aoe that dealt dmg X times every Y s"
+    "//": "I'm pretty sure I had already replaced the old combustion by something like this... maybe I forgot to actually push it idk",
+    "//2": "Yup, I forgot to push it. The version I didn't push dealt 5 waves of damage every 2 s, (3 + 4) - 43 dmg per wave, aoe 4. It also reduced 2 pain per wave via EOC, which has been updated to this version"
   },
   {
     "id": "mokou_combustion2",
@@ -158,8 +159,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( (u_skill('melee') * 1.1 ) + (u_skill('unarmed') * 1.1 ) + (u_pain() * 0.55 ) + 2.2 )" ] },
-    "max_damage": 44,
+    "min_damage": { "math": [ "( (u_skill('melee') * 1.35 ) + (u_skill('unarmed') * 1.35 ) + (u_pain() * 0.15 ) - 1.8 )" ] },
+    "max_damage": 45,
     "min_aoe": 3,
     "max_aoe": 3,
     "max_level": 1,
@@ -168,7 +169,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "min dmg 11 x4, max dmg with skills 33 x4, the gap is reached with the pain modifier"
+    "//": "min dmg 9 x5, max dmg with skills 36 x5, the gap is reached with the pain modifier"
   },
   {
     "id": "mokou_combustion3",
@@ -180,8 +181,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "pure",
-    "min_damage": 11,
-    "max_damage": 11,
+    "min_damage": 10,
+    "max_damage": 10,
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 0,
@@ -211,27 +212,6 @@
     "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS", "SILENT" ],
     "//": "min dur 600 = min healing 12; max healing 22",
     "//2": "The granularity of this is awful, dots cannot have decimals"
-  },
-  {
-    "id": "mokou_combustion5",
-    "type": "SPELL",
-    "name": "Spontaneous combustion (pain removal)",
-    "description": "Pain removal effect for mokou_combustion . This negates the pain induced by mokou_combustion3 ",
-    "spell_class": "NONE",
-    "valid_targets": [ "self" ],
-    "effect": "recover_energy",
-    "effect_str": "PAIN",
-    "shape": "blast",
-    "damage_type": "pure",
-    "min_damage": 11,
-    "max_damage": 11,
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS", "SILENT" ],
-    "//": "Sadly effect_str: PAIN can't be a dot"
   },
   {
     "id": "mokou_fingeflame",
@@ -280,8 +260,9 @@
     "base_energy_cost": 200,
     "energy_source": "MANA",
     "flags": [ "IGNITE_FLAMMABLE", "NO_LEGS" ],
-    "//": "Inspired on Hourai 'South Wind, Clear Sky -Fujiyama Volcano' ",
-    "//2": "Using fd_fire instead of the modified harmless field basically instakills normal zombies that walk into it, which is not good"
+    "//": "min dmg 25",
+    "//2": "Inspired on Hourai 'South Wind, Clear Sky -Fujiyama Volcano' ",
+    "//3": "Using fd_fire instead of the modified harmless field basically instakills normal zombies that walk into it, which is not good"
   },
   {
     "id": "mokou_resurrectionphoenix",
@@ -368,6 +349,7 @@
     "base_energy_cost": 150,
     "energy_source": "MANA",
     "flags": [ "IGNITE_FLAMMABLE", "NO_LEGS", "SOMATIC" ],
-    "//": "Should be replaced by tec_mokou_talons , showing a visual effect when proccing and hitting 1*3 or something like that"
+    "//": "min dmg 35",
+    "//2": "Should be replaced by tec_mokou_talons , showing a visual effect when proccing and hitting 1*3 or something like that"
   }
 ]

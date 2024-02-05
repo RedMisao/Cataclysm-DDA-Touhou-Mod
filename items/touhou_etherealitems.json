@@ -70,7 +70,7 @@
           "values": [
             { "value": "ARMOR_BASH", "add": 2 },
             { "value": "ARMOR_CUT", "add": 2 },
-            { "value": "ARMOR_STAB", "add": 4 },
+            { "value": "ARMOR_STAB", "add": 2 },
             { "value": "ARMOR_BULLET", "add": 2 }
           ],
           "//": "ARMOR_X add +n REDUCES armor for n value, this is intended here as the aura increases melee dmg while reducing defense"
@@ -97,6 +97,7 @@
     "effect": "attack",
     "extra_effects": [ { "id": "vampiric_drain" } ],
     "valid_targets": [ "hostile" ],
+    "ignored_monster_species": [ "HALLUCINATION", "HORROR", "NETHER_EMANATION", "ROBOT" ],
     "shape": "blast",
     "damage_type": "cut",
     "min_damage": { "math": [ "( (u_skill('stabbing') * 0.375 ) + (u_skill('melee') * 0.375 ) )" ] },

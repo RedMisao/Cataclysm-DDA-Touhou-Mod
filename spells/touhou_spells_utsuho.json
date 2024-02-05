@@ -242,6 +242,7 @@
     "type": "SPELL",
     "name": "Fission aura",
     "description": "Partially reduce fission controllers, greatly increasing the thermal energy you emit.  Drains energy when active.  Cast again to toggle OFF.",
+    "//description": "OLD: Increase the flux of energy inside you.  After some time, critical mass will be reached, and the energy will be released in several waves, dealing Fire damage to anything creature in the aoe.",
     "spell_class": "NONE",
     "valid_targets": [ "self" ],
     "effect": "effect_on_condition",
@@ -251,9 +252,11 @@
     "difficulty": -12,
     "base_casting_time": 100,
     "base_energy_cost": 66,
+    "//costs": "OLD: 200 and 166",
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],
-    "//": "I'm pretty sure I had already added this... maybe I forgot to actually push it idk. The old version was an aoe that dealt dmg X times every 3, 2, 1 s. I think it was named 'abyss nova'"
+    "//": "I'm pretty sure I had already added this... maybe I forgot to actually push it idk",
+    "//2": "Yup, forgot to push it. Abyss nova had a queue'd ramp up of 5 s, then dealt 8 waves of damage every 1 s, (7 + 1.8) - 25 dmg per wave, (2 + 1) - 12 pierce, aoe 5. It also added a ms slow (effect -> ench SPEED mutiply -0.5)"
   },
   {
     "id": "utsuho_fissionaura2",
@@ -267,6 +270,8 @@
     "damage_type": "heat",
     "min_duration": { "math": [ "( (u_skill('dodge') * 1.4 ) + 4.2 )" ] },
     "max_damage": 21,
+    "min_pierce": { "math": [ "( (u_skill('dodge') * 0.5 ) - 1 )" ] },
+    "max_pierce": 6,
     "min_aoe": 4,
     "max_aoe": 4,
     "max_level": 1,
@@ -275,7 +280,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "min dmg 7; dmg every 3 s"
+    "//": "min dmg 7, min pierce 1; dmg every 3 s"
   },
   {
     "id": "utsuho_fissionaura2_unc",
@@ -323,7 +328,7 @@
     "name": "Ground melt",
     "description": "Scorch the targeted location with your control rod, infusing it with nuclear power and causing it to rapidly melt into lava.",
     "spell_class": "NONE",
-    "valid_targets": [ "ground" ],
+    "valid_targets": [ "ground", "hostile" ],
     "effect": "ter_transform",
     "effect_str": "groundmelt_ter",
     "shape": "blast",
@@ -422,7 +427,7 @@
     "shape": "blast",
     "max_level": 1,
     "difficulty": -12,
-    "base_casting_time": 500,
+    "base_casting_time": 666,
     "base_energy_cost": 800,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],
@@ -569,7 +574,7 @@
     "base_casting_time": 150,
     "base_energy_cost": 100,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ]
+    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC", "NO_PROJECTILE" ]
   },
   {
     "id": "utsuho_ugeyser2",
@@ -599,7 +604,7 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "SOMATIC" ],
+    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
     "//2": "min dmg 30, min pierce 7. The pierce exists to emulate steam and rock dmg. No friendly fire because"
   },
   {

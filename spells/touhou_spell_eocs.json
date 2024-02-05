@@ -337,7 +337,7 @@
   {
     "id": "mokou_combustion_cycle1",
     "type": "effect_on_condition",
-    "condition": { "math": [ "var_mokou_combustion", "<", "4" ] },
+    "condition": { "math": [ "var_mokou_combustion", "<", "5" ] },
     "effect": [ 
       { "u_cast_spell": { "id": "mokou_combustion2" }, "targeted": false },
       { "run_eocs": [ "mokou_combustion_cycle2" ] }
@@ -349,6 +349,7 @@
     "type": "effect_on_condition",
     "effect": [
       { "math": [ "var_mokou_combustion", "+=", "1" ] },
+      { "math": [ "u_pain()", "-=", "2" ] },
       { "queue_eocs": [ "mokou_combustion_cycle1" ], "time_in_future": "3 s" }
     ]
   },
@@ -370,20 +371,64 @@
             "effect": [ { "math": [ "var_remidrain", "=", "( (u_skill('stabbing') * 0.133 ) + (u_skill('melee') * 0.133 ) + (u_skill('dodge') * 0.133 ) + 2.404 )" ] } ]
           },
           {
-            "id": "remilia_darkdrain_humanoid",
+            "id": "remilia_darkdrain_reduced",
             "condition": {
               "or": [
+                { "u_has_flag": "ARTHROPOD_BLOOD" },
+                { "u_has_species": "AMPHIBIAN" },
+                { "u_has_species": "BIRD" },
+                { "u_has_species": "CENTIPEDE" },
                 { "u_has_species": "CYBORG" },
-                { "u_has_species": "NETHER" },
-                { "u_has_species": "ZOMBIE" }
+                { "u_has_species": "FISH" },
+                { "u_has_species": "INSECT" },
+                { "u_has_species": "INSECT_FLYING" },
+                { "u_has_species": "KRAKEN" },
+                { "u_has_species": "LEECH_PLANT" },
+                { "u_has_species": "MAMMAL" },
+                { "u_has_species": "MOLLUSK" },
+                { "u_has_species": "MUTANT" },
+                { "u_has_species": "PLANT" },
+                { "u_has_species": "REPTILE" },
+                { "u_has_species": "SPIDER" },
+                { "u_has_species": "WORM" },
+                { "u_has_species": "ZOMBIE" },
+                { "u_has_trait": "BLEEDSLOW2" },
+                { "u_has_trait": "INSECTBLOOD" },
+                { "u_has_trait": "INVERTEBRATEBLOOD" },
+                { "u_has_trait": "PLANTBLOOD" }
               ]
             },
             "effect": [ { "math": [ "var_remidrain", "=", "( ( (u_skill('stabbing') * 0.133 ) + (u_skill('melee') * 0.133 ) + (u_skill('dodge') * 0.133 ) + 2.404 ) * rng( 0.17, 0.66 ) )" ] } ]
+          },
+          {
+            "id": "remilia_darkdrain_hazard",
+            "condition": {
+              "or": [
+                { "u_has_flag": "ACID_BLOOD" },
+                { "u_has_flag": "BILE_BLOOD" },
+                { "u_has_flag": "DEADLY_VIRUS" },
+                { "u_has_species": "FUNGUS" },
+                { "u_has_species": "MIGO" },
+                { "u_has_species": "NETHER" },
+                { "u_has_trait": "ACIDBLOOD" }
+              ]
+            },
+            "effect": [ { "math": [ "var_remidrain", "=", "( ( - (u_skill('stabbing') * 0.133 ) - (u_skill('melee') * 0.133 ) - (u_skill('dodge') * 0.133 ) - 2.404 ) * rng( 0.33, 0.5 ) )" ] } ]
+          },
+          {
+            "id": "remilia_darkdrain_noblood",
+            "condition": {
+              "or": [
+                { "u_has_species": "SLIME" },
+                { "u_has_trait": "BLEED_IMMUNE" }
+              ]
+            },
+            "effect": [ { "math": [ "var_remidrain", "=", "0" ] } ]
           }
         ]
       }
     ],
-    "//": "Sets the heal var to 0 and checks for the species of the monster that's being targeted. If it's human or humanoid the var increases to a certain value"
+    "//": "Resets the var to 0 and checks for the species/traits of the target she's draining, and sets var -> sets less var -> sets negative var -> sets no var, accordingly to the blood they have"
   },
   {
     "id": "remilia_darkdrain3_eoc",
@@ -416,7 +461,7 @@
     "type": "effect_on_condition",
     "effect": [
       { "math": [ "var_sakuyafocus", "+=", "1" ] },
-      { "math": [ "var_sakuyaradius", "=", "( - (u_skill('stabbing') * 0.4 ) - (u_skill('dodge') * 0.4 ) + 17.2 )" ] },
+      { "math": [ "var_sakuyaradius", "=", "( - (u_skill('stabbing') * 0.4 ) - (u_skill('dodge') * 0.4 ) + 16.8 )" ] },
       { "run_eocs": [ "sakuya_maidsecret_cycle1" ] }
     ],
     "//": "This EOC is a simplified version of udonge_waveinsight_start ",

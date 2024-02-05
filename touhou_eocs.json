@@ -90,11 +90,11 @@
     "required_event": "opens_spellbook",
     "condition": { "u_has_trait": "PROF_YAMAME" },
     "effect": [
-        { "math": [ "var_icypyrexia_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.8 )" ] },
-        { "math": [ "var_scarletplague_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.8 )" ] },
-        { "math": [ "var_unconstrainedrot_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.8 )" ] },
-        { "math": [ "var_unconstrainedrot2_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) - 1.2 )" ] },
-        { "math": [ "var_disease_duration", "=", "( (u_skill('speech') * 30 ) + (u_skill('dodge') * 30 ) + 1260 )" ] }
+        { "math": [ "var_icypyrexia_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.95 )" ] },
+        { "math": [ "var_scarletplague_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.95 )" ] },
+        { "math": [ "var_unconstrainedrot_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.95 )" ] },
+        { "math": [ "var_unconstrainedrot2_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) - 1.05 )" ] },
+        { "math": [ "var_disease_duration", "=", "( (u_skill('speech') * 30 ) + (u_skill('dodge') * 30 ) + 1290 )" ] }
     ],
     "//": "This automatically sets the vars each time Yamame opens the 'cast spell' window. Tried chaining a subpsell for yamame_disease_epidemic_eoc with 'self' EOC but it didn't trigger (for her)"
   },
@@ -114,7 +114,6 @@
         { 
           "or": [ 
             { "npc_has_species": "FERAL" }, 
-            { "npc_has_species": "FUNGUS" }, 
             { "npc_has_species": "HUMAN" }, 
             { "npc_has_species": "NETHER" }, 
             { "npc_has_species": "ZOMBIE" } 

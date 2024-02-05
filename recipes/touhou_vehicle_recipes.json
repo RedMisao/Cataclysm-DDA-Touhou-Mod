@@ -94,7 +94,7 @@
       { "id": "SEW", "level": 2 }
     ],
     "using": [ [ "sewing_standard", 24 ], [ "tailoring_leather", 16 ] ],
-    "components": [ [ [ "2x4", 6 ] ], [ [ "nail", 20 ] ], [ [ "rag", 16 ] ], [ [ "sheet", 2 ] ], [ [ "spring", 4 ] ] ]
+    "components": [ [ [ "2x4", 6 ] ], [ [ "nail", 20 ] ], [ [ "sheet_cotton", 16 ] ], [ [ "sheet", 2 ] ], [ [ "spring", 4 ] ] ]
   },
   {
     "result": "storage_corpsecart",

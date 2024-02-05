@@ -19,7 +19,7 @@
       { "level": 1, "id": "aya_stormgust" },
       { "level": 1, "id": "aya_windsickle" }
     ],
-    "traits": [ "TENGUCROW_SPECIES", "WINGS_TENGUCROW", "PROF_AYA", "YOUKAI_SPECIES", "SPIRIT_USER", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_aya" ],
+    "traits": [ "TENGUCROW_SPECIES", "WINGS_TENGUCROW", "PROF_AYA", "YOUKAI_SPECIES", "SPIRIT_USER", "ear_tengu", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_aya" ],
     "items": {
       "both": {
         "items": [ "aya_shirt", "aya_skirt", "ribbon_neck", "socks_ankle", "tengu_fan", "tengu_geta", "tengu_hat" ],
@@ -110,7 +110,7 @@
     "proficiencies": [ "prof_food_prep" ],
     "skills": [
       { "level": 2, "name": "cooking" },
-      { "level": 3, "name": "dodge" },
+      { "level": 2, "name": "dodge" },
       { "level": 4, "name": "melee" },
       { "level": 4, "name": "unarmed" }
     ],
@@ -202,7 +202,7 @@
     "points": 4,
     "proficiencies": [ "prof_intro_biology", "prof_intro_chemistry", "prof_inorganic_chemistry", "prof_pharmaceutical" ],
     "skills": [
-      { "level": 4, "name": "dodge" },
+      { "level": 3, "name": "dodge" },
       { "level": 3, "name": "firstaid" },
       { "level": 4, "name": "gun" },
       { "level": 2, "name": "launcher" },
@@ -221,7 +221,7 @@
       { "level": 1, "id": "udonge_waveperception" },
       { "level": 1, "id": "udonge_wavestealth" }
     ],
-    "traits": [ "GYOKUTO_SPECIES", "GYOKUTO_EARS", "SPIRIT_UNTRAINED", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_udongein" ],
+    "traits": [ "GYOKUTO_SPECIES", "SPIRIT_UNTRAINED", "ear_gyokuto_rumpled", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_udongein" ],
     "items": {
       "both": {
         "items": [
@@ -252,9 +252,9 @@
     "skills": [
       { "level": 2, "name": "dodge" },
       { "level": 3, "name": "gun" },
-      { "level": 2, "name": "melee" },
+      { "level": 1, "name": "melee" },
       { "level": 3, "name": "rifle" },
-      { "level": 2, "name": "stabbing" }
+      { "level": 1, "name": "stabbing" }
     ],
     "spells": [
       { "level": 1, "id": "dash_reisen" },
@@ -263,7 +263,7 @@
       { "level": 1, "id": "reisen_probabilitynoise" },
       { "level": 1, "id": "reisen_uncertaintybox" }
     ],
-    "traits": [ "GYOKUTO_SPECIES", "GYOKUTO_EARS", "LUNARDIET", "SPIRIT_UNTRAINED", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_reisen" ],
+    "traits": [ "GYOKUTO_SPECIES", "LUNARDIET", "SPIRIT_UNTRAINED", "ear_gyokuto_floppy", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_reisen" ],
     "items": {
       "both": {
         "items": [
@@ -322,7 +322,7 @@
     "description": "It was yet another uneventful day down there helping Okuu with the reactor: corpses burning, spirits floating, fusion fuel being distilled, eating lunch with your master… You craved a nap at the Shrine, so you snuck to reach your goal… and somehow got lost.  You smell death *everywhere*, which would be amazing if it wasn't that these dead are moving, they're angry, and they're not listening to what you have to say.",
     "points": 4,
     "skills": [
-      { "level": 4, "name": "dodge" },
+      { "level": 3, "name": "dodge" },
       { "level": 3, "name": "driving" },
       { "level": 2, "name": "mechanics" },
       { "level": 4, "name": "speech" }
@@ -340,11 +340,10 @@
       { "level": 1, "id": "kaenbyou_zz_soulshard" }
     ],
     "vehicle": "kaenbyou_wheelbarrow",
-    "traits": [ "KASHA_EARS", "KASHA_SPECIES", "KASHA_TAILS", "PROF_KAENBYOU", "YOUKAI_SPECIES", "SPIRIT_USER", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_kaenbyou" ],
+    "traits": [ "KASHA_SPECIES", "KASHA_TAILS", "PROF_KAENBYOU", "YOUKAI_SPECIES", "SPIRIT_USER", "ear_kasha", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_kaenbyou" ],
     "items": {
       "both": {
         "items": [
-          "kasha_book",
           "kaenbyou_dress",
           "kaenbyou_leg_lace",
           "kaenbyou_shoes",
@@ -367,7 +366,7 @@
     "skills": [
       { "level": 6, "name": "cooking" },
       { "level": 4, "name": "cutting" },
-      { "level": 4, "name": "dodge" },
+      { "level": 3, "name": "dodge" },
       { "level": 3, "name": "melee" },
       { "level": 4, "name": "stabbing" },
       { "level": 4, "name": "throw" }
@@ -406,8 +405,8 @@
     "points": 4,
     "proficiencies": [ "prof_intro_biology", "prof_intro_chemistry", "prof_lockpicking", "prof_pharmaceutical", "prof_physiology" ],
     "skills": [
-      { "level": 4, "name": "chemistry" },
-      { "level": 4, "name": "dodge" },
+      { "level": 3, "name": "chemistry" },
+      { "level": 2, "name": "dodge" },
       { "level": 4, "name": "firstaid" },
       { "level": 4, "name": "speech" },
       { "level": 2, "name": "survival" }
@@ -442,7 +441,7 @@
     "skills": [
       { "level": 4, "name": "bashing" },
       { "level": 4, "name": "cutting" },
-      { "level": 4, "name": "dodge" },
+      { "level": 3, "name": "dodge" },
       { "level": 6, "name": "melee" },
       { "level": 2, "name": "swimming" }
     ],
@@ -468,12 +467,12 @@
     "ident": "utsuho_reiuji",
     "type": "profession",
     "name": "Subterranean sun",
-    "description": "Resuming your duties after lunch, you master asked you to go look for Orin, and she was indeed missing again.  You went to the surface, noticing the friendly cave spider wasn't at her usual spot, maybe both went together!  You know she likes to go nap at the Shrine, so you went… to the wrong one, and noticing this was no mountain, nothing close, you looked back, you saw no \"back\".  You're aware you can get lost sometimes, but this is too much even for yourself.  Now you have to find Orin, find the Tsuchigumo, and return.",
+    "description": "Resuming your duties after lunch, you master asked you to go look for Orin, and she was indeed missing again.  You went to the surface, noticing the friendly cave spider wasn't at her usual spot, maybe both went together!  You know she likes to go nap at the Shrine, so you went… to the wrong one, and noticing this was no mountain, nothing close.  Looking back, you saw no \"back\".  You're aware you can get lost sometimes, but this is too much even for yourself.  Now you have to find Orin, find the Tsuchigumo, and return.",
     "points": 4,
     "skills": [ 
       { "level": 3, "name": "bashing" }, 
       { "level": 2, "name": "dodge" }, 
-      { "level": 3, "name": "melee" } 
+      { "level": 2, "name": "melee" } 
     ],
     "spells": [
       { "level": 1, "id": "dash_utsuho" },
@@ -500,10 +499,10 @@
     "description": "It was sales day at the nearby market, so you left home at the entrance to try that new \"coffee\" product, perhaps share it at the weekly danmaku exhibitions, or at the hotsprings.  However, seems you somehow lost yourself on the way back, not recognizing landmarks, and not meeting anyone to ask about it.",
     "points": 4,
     "skills": [
-      { "level": 4, "name": "dodge" },
+      { "level": 3, "name": "dodge" },
       { "level": 4, "name": "fabrication" },
       { "level": 4, "name": "speech" },
-      { "level": 4, "name": "tailor" }
+      { "level": 3, "name": "tailor" }
     ],
     "spells": [
       { "level": 1, "id": "dash_basic" },
@@ -526,7 +525,8 @@
       "female": [ "bra", "bloomers" ]
     },
     "flags": [ "SCEN_ONLY" ],
-    "//": "WIP. Missing one non-disease spell, and bugtest her furniture spawn spells"
+    "//": "WIP. Missing one non-disease spell, and bugtest her furniture spawn spells",
+    "//2": "Replace dash with self-pull? Or add self-pull alongside dash, difference is it costs mana to cast?"
   },
   {
     "ident": "youmu_konpaku",

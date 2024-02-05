@@ -1,6 +1,6 @@
 [
   {
-    "id": "dismiss_fire_ter",
+    "id": "dismiss_fire_field",
     "type": "ter_furn_transform",
     "field": [
       { 
@@ -62,6 +62,48 @@
         "valid_flags": [ "DIGGABLE" ], 
         "result": "t_glassed_sand" 
       } 
+    ]
+  },
+  {
+    "id": "youmugardening_ter",
+    "type": "ter_furn_transform",
+    "terrain": [
+      { 
+        "valid_terrain": [ 
+          "t_grass_long", 
+          "t_grass_tall", 
+          "t_shrub", 
+          "t_shrub_peanut", 
+          "t_shrub_peanut_harvested", 
+          "t_shrub_blueberry", 
+          "t_shrub_blueberry_harvested", 
+          "t_shrub_strawberry", 
+          "t_shrub_strawberry_harvested", 
+          "t_shrub_blackberry", 
+          "t_shrub_blackberry_harvested", 
+          "t_shrub_huckleberry", 
+          "t_shrub_huckleberry_harvested", 
+          "t_shrub_raspberry", 
+          "t_shrub_raspberry_harvested", 
+          "t_shrub_grape", 
+          "t_shrub_grape_harvested", 
+          "t_shrub_rose", 
+          "t_shrub_rose_harvested", 
+          "t_shrub_hydrangea", 
+          "t_shrub_hydrangea_harvested", 
+          "t_shrub_lilac", 
+          "t_shrub_lilac_harvested"
+        ], 
+        "result": "t_grass"
+      },
+      { 
+        "valid_terrain": [ "t_grass_dead", "t_grass_alien", "t_bamboo_dead" ], 
+        "result": "t_dirt"
+      },
+      { 
+        "valid_terrain": [ "t_bamboo_tall" ], 
+        "result": "t_bamboo_long"
+      }
     ]
   },
   {

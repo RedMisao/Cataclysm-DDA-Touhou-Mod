@@ -2,12 +2,25 @@
   {
     "id": "kaenbyou_wheelbarrow",
     "type": "vehicle",
-    "name": "Corpse wheelbarrow",
+    "name": "Corpse cart",
     "blueprint": [ ">#" ],
     "parts": [ 
       { "x": 0, "y": 0, "parts": [ "frame_corpsecart", "wheel_corpsecart", "storage_corpsecart" ] },
       { "x": 0, "y": 0, "parts": [ "tank_corpsecart" ] },
       { "x": 0, "y": 0, "parts": [ "reactor_corpsecart" ] },
+      { "x": -1, "y": 0, "parts": [ "frame_corpsecart", "seat_corpsecart", "controls_corpsecart" ] }
+    ],
+    "items": [ { "x": 0, "y": 0, "chance": 50, "items": [ "ash" ] } ]
+  },
+  {
+    "id": "kaenbyou_wheelbarrow2",
+    "type": "vehicle",
+    "name": "Corpse cart (TEST)",
+    "blueprint": [ ">#" ],
+    "parts": [ 
+      { "x": 0, "y": 0, "parts": [ "frame_corpsecart", "wheel_corpsecart", "storage_corpsecart" ] },
+      { "x": 0, "y": 0, "parts": [ "tank_corpsecart2" ] },
+      { "x": 0, "y": 0, "parts": [ "reactor_corpsecart3" ] },
       { "x": -1, "y": 0, "parts": [ "frame_corpsecart", "seat_corpsecart", "controls_corpsecart" ] }
     ],
     "items": [ { "x": 0, "y": 0, "chance": 50, "items": [ "ash" ] } ]

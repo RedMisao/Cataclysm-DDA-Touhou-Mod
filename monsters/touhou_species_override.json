@@ -4,7 +4,7 @@
     "type": "SPECIES",
     "description": "an alien cyborg",
     "footsteps": "heavy thuds.",
-    "flags": [ "NO_SOUL" ]
+    "flags": [ "SOUL_XDIMEN" ]
   },
   {
     "id": "FUNGUS",

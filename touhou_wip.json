@@ -32,7 +32,6 @@
         { 
           "or": [ 
             { "npc_has_species": "FERAL" }, 
-            { "npc_has_species": "FUNGUS" }, 
             { "npc_has_species": "HUMAN" }, 
             { "npc_has_species": "NETHER" }, 
             { "npc_has_species": "ZOMBIE" } 

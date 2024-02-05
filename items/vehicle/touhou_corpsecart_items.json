@@ -63,6 +63,20 @@
     "flags": [ "TARDIS" ]
   },
   {
+    "id": "reactor_corpsecart3",
+    "type": "ENGINE",
+    "category": "veh_parts",
+    "name": { "str": "corpse reactor (disassembled)", "str_pl": "corpse reactors (disassembled)" },
+    "copy-from": "v8_diesel",
+    "description": "A corpse reactor.  It uses corses as fuel when assembled.",
+    "volume": "256 L",
+    "weight": "242 kg",
+    "price": 0,
+    "price_postapoc": 0,
+    "material": [ "steel", "wood" ],
+    "flags": [ "TARDIS" ]
+  },
+  {
     "id": "seat_corpsecart",
     "type": "GENERIC",
     "name": { "str": "corpse cart seat (disassembled)", "str_pl": "corpse cart seats (disassembled)" },
@@ -114,6 +128,32 @@
         "max_item_volume": "200 ml",
         "max_contains_weight": "160 mg",
         "ammo_restriction": { "soulshard_fuel_type": 8 }
+      }
+    ],
+    "flags": [ "TARDIS" ]
+  },
+   {
+    "id": "tank_corpsecart2",
+    "type": "GENERIC",
+    "category": "veh_parts",
+    "name": { "str": "corpse reactor \"tank\" (disassembled)", "str_pl": "corpse reactor \"tank\" (disassembled)" },
+    "description": "The \"tank\" of the soul engine.  It's a small box made of metal and wood.",
+    "volume": "75 L",
+    "weight": "20 kg",
+    "price": 0,
+    "price_postapoc": 0,
+    "material": [ "steel", "wood" ],
+    "symbol": "]",
+    "looks_like": "cargo_rack",
+    "color": "light_gray",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "rigid": true,
+        "watertight": true,
+        "max_contains_volume": "130 L",
+        "max_item_volume": "130 L",
+        "max_contains_weight": "165 kg"
       }
     ],
     "flags": [ "TARDIS" ]

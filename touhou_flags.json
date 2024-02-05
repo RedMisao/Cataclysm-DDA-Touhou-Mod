@@ -13,14 +13,17 @@
   },
   {
     "id": "NO_SOUL",
-    "type": "monster_flag"
+    "type": "monster_flag",
+    "//": "Monsters with this receive no soul dmg"
   },
   {
     "id": "SOULDMG_EXTRA",
-    "type": "monster_flag"
+    "type": "monster_flag",
+    "//": "Monsters with this receive double soul dmg"
   },
   {
     "id": "SOUL_XDIMEN",
-    "type": "monster_flag"
+    "type": "monster_flag",
+    "//": "Monsters with this receive reduced, random soul dmg"
   }
 ]
