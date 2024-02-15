@@ -124,10 +124,10 @@
         "pocket_type": "MAGAZINE",
         "rigid": true,
         "watertight": true,
-        "max_contains_volume": "320 ml",
+        "max_contains_volume": "240 ml",
         "max_item_volume": "200 ml",
-        "max_contains_weight": "160 mg",
-        "ammo_restriction": { "soulshard_fuel_type": 8 }
+        "max_contains_weight": "120 mg",
+        "ammo_restriction": { "soulshard_fuel_type": 3 }
       }
     ],
     "flags": [ "TARDIS" ]

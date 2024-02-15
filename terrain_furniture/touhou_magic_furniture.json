@@ -39,35 +39,5 @@
     "move_cost_mod": -1,
     "required_str": 20,
     "flags": [ "BLOCK_WIND", "CLIMBABLE", "FLAT_SURF", "NOITEM", "WALL" ]
-  },
-  {
-    "id": "f_web_bridge",
-    "type": "furniture",
-    "name": "web bridge",
-    "description": "A long, silver, thick rope of web.  It can be used to cross gaps.",
-    "symbol": "<",
-    "looks_like": "fd_web",
-    "color": "white",
-    "bash": { "str_min": 10, "str_max": 20, "sound": "rrrrip!", "sound_fail": "twang." },
-    "move_cost_mod": 0,
-    "required_str": -1,
-    "flags": [ "ALLOW_ON_OPEN_AIR", "TRANSPARENT", "SEEN_FROM_ABOVE" ],
-    "//": "Modified f_web_up "
-  },
-  {
-    "id": "f_web_rappel",
-    "type": "furniture",
-    "name": "web rappel",
-    "description": "A long, silver, thin strand of web.  It can be used to climb up or down.",
-    "symbol": "<",
-    "looks_like": "f_web_up",
-    "color": "white",
-    "bash": { "str_min": 10, "str_max": 20, "sound": "rrrrip!", "sound_fail": "twang." },
-    "deployed_item": "rope_30",
-    "examine_action": "deployed_furniture",
-    "move_cost_mod": 0,
-    "required_str": -1,
-    "flags": [ "ALLOW_ON_OPEN_AIR", "CLIMBABLE", "GOES_DOWN", "GOES_UP", "SEEN_FROM_ABOVE", "TRANSPARENT" ],
-    "//": "Modified f_web_up "
   }
 ]

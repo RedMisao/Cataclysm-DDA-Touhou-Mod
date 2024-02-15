@@ -21,15 +21,15 @@
         "covers": [ "arm_l", "arm_r" ],
         "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ],
         "coverage": 100,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 2 ]
       },
       {
         "covers": [ "arm_l", "arm_r" ],
         "specifically_covers": [ "arm_upper_l", "arm_upper_r" ],
         "coverage": 10,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 2 ]
       },
-      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] }
+      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 0, 2 ] }
     ],
     "flags": [ "FANCY", "VARSIZE" ]
   },
@@ -55,13 +55,13 @@
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_hip_l", "leg_hip_r" ],
         "coverage": 100,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 2 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_upper_l", "leg_upper_r" ],
         "coverage": 85,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 2 ]
       }
     ],
     "flags": [ "VARSIZE" ]
@@ -100,19 +100,19 @@
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_hip_l", "leg_hip_r" ],
         "coverage": 100,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 2 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_upper_l", "leg_upper_r" ],
         "coverage": 95,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 2 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_knee_l", "leg_knee_r" ],
         "coverage": 45,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 2 ]
       }
     ]
   },
@@ -135,26 +135,26 @@
     "warmth": 20,
     "pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "450 ml", "max_contains_weight": "900 g", "moves": 120 } ],
     "armor": [
-      { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 4, 8 ] },
+      { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 0, 4 ] },
+      { "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 0, 2 ] },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_hip_l", "leg_hip_r" ],
         "coverage": 100,
-        "encumbrance": [ 4, 8 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_upper_l", "leg_upper_r" ],
         "coverage": 100,
-        "encumbrance": [ 4, 8 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_knee_l", "leg_knee_r" ],
         "coverage": 50,
-        "encumbrance": [ 2, 4 ]
-      },
-      { "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 4, 8 ] }
+        "encumbrance": [ 0, 4 ]
+      }
     ],
     "flags": [ "STURDY", "VARSIZE" ]
   },
@@ -219,7 +219,7 @@
     "color": "black",
     "weight_capacity_bonus": "1 kg",
     "warmth": 15,
-    "armor": [ { "covers": [ "torso" ], "coverage": 40, "encumbrance": [ 8, 12 ] } ],
+    "armor": [ { "covers": [ "torso" ], "coverage": 40, "encumbrance": [ 2, 8 ] } ],
     "flags": [ "VARSIZE" ]
   },
   {
@@ -270,8 +270,99 @@
     "color": "blue",
     "weight_capacity_bonus": "1 kg",
     "warmth": 15,
-    "armor": [ { "covers": [ "torso" ], "coverage": 85, "encumbrance": [ 2, 8 ] } ],
+    "armor": [ { "covers": [ "torso" ], "coverage": 85, "encumbrance": [ 0, 4 ] } ],
     "flags": [ "VARSIZE" ]
+  },
+  {
+    "id": "nitori_backpack",
+    "type": "ARMOR",
+    "name": { "str": "kappa backpack", "str_pl": "kappa backpacks" },
+    "copy-from": "backpack_tactical_large",
+    "description": "WIP",
+    "repairs_like": "backpack_tactical_large",
+    "volume": "35 L",
+    "weight": "3000 g",
+    "price": 9000,
+    "price_postapoc": 1250,
+    "material": [ "denim" ],
+    "material_thickness": 2,
+    "symbol": "[",
+    "looks_like": "backpack_tactical_large",
+    "color": "blue",
+    "warmth": 10,
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "50 L",
+        "max_contains_weight": "50 kg",
+        "max_item_length": "300 cm",
+        "rigid": false,
+        "magazine_well": "40 L",
+        "moves": 200
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "10 L",
+        "max_contains_weight": "15 kg",
+        "max_item_length": "100 cm",
+        "rigid": false,
+        "magazine_well": "8 L",
+        "moves": 300
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "10 L",
+        "max_contains_weight": "15 kg",
+        "max_item_length": "100 cm",
+        "rigid": false,
+        "magazine_well": "8 L",
+        "moves": 300
+      },
+      {
+        "//": "water/liquid pocket",
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "30 L",
+        "max_contains_weight": "30 kg",
+        "max_item_length": "100 cm",
+        "volume_multiplier": 0.05,
+        "weight_multiplier": 0.05,
+        "watertight": true,
+        "moves": 300,
+        "material_restriction": [ "water" ]
+      },
+      {
+        "//": "carabiner pocket",
+        "pocket_type": "CONTAINER",
+        "description": "Attached with a carabiner or strap.",
+        "holster": true,
+        "max_contains_volume": "10 L",
+        "max_contains_weight": "15 kg",
+        "max_item_length": "200 cm",
+        "min_item_length": "20 cm",
+        "moves": 200,
+        "extra_encumbrance": 1,
+        "activity_noise": { "volume": 8, "chance": 10 },
+        "transparent": true
+      },
+      {
+        "//": "carabiner pocket",
+        "pocket_type": "CONTAINER",
+        "description": "Attached with a carabiner or strap.",
+        "holster": true,
+        "max_contains_volume": "10 L",
+        "max_contains_weight": "15 kg",
+        "max_item_length": "200 cm",
+        "min_item_length": "20 cm",
+        "moves": 200,
+        "extra_encumbrance": 1,
+        "activity_noise": { "volume": 8, "chance": 10 },
+        "transparent": true
+      }
+    ],
+    "armor": [
+      { "encumbrance": [ 0, 35 ], "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ] }
+    ],
+    "flags": [ "BELTED", "ONLY_ONE", "OVERSIZE", "TARDIS", "WATERPROOF" ]
   },
   {
     "id": "meiling_cheongsam_upper",
@@ -290,8 +381,8 @@
     "color": "green",
     "warmth": 6,
     "pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "300 ml", "max_contains_weight": "500 g", "moves": 150 } ],
-    "armor": [ { "covers": [ "torso" ], "coverage": 80, "encumbrance": [ 4, 10 ] } ],
-    "flags": [ "FANCY", "POCKETS", "VARSIZE" ]
+    "armor": [ { "covers": [ "torso" ], "coverage": 80, "encumbrance": [ 2, 6 ] } ],
+    "flags": [ "FANCY", "VARSIZE" ]
   },
   {
     "id": "meiling_cheongsam_lower",
@@ -326,13 +417,13 @@
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_knee_l", "leg_knee_r" ],
         "coverage": 85,
-        "encumbrance": [ 0, 2 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_lower_l", "leg_lower_r" ],
         "coverage": 35,
-        "encumbrance": [ 0, 2 ]
+        "encumbrance": [ 0, 4 ]
       }
     ],
     "flags": [ "FANCY", "VARSIZE" ]
@@ -379,15 +470,15 @@
         "covers": [ "arm_l", "arm_r" ],
         "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ],
         "coverage": 100,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "arm_l", "arm_r" ],
         "specifically_covers": [ "arm_upper_l", "arm_upper_r" ],
         "coverage": 15,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       },
-      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] }
+      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 0, 8 ] }
     ],
     "flags": [ "FANCY", "VARSIZE" ]
   },
@@ -402,14 +493,15 @@
     "price_postapoc": 3750,
     "material": [ "fireresist_leather" ],
     "material_thickness": 3,
+    "looks_like": "boots_larmor",
     "warmth": 25,
     "armor": [
-      { "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 16, 20 ] },
+      { "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 6, 18 ] },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_lower_l", "leg_lower_r" ],
         "coverage": 10,
-        "encumbrance": [ 8, 12 ]
+        "encumbrance": [ 2, 18 ]
       }
     ],
     "flags": [ "STURDY", "VARSIZE", "RAINPROOF" ]
@@ -428,14 +520,14 @@
     "material": [ "fireproof_cotton" ],
     "material_thickness": 3,
     "symbol": "[",
-    "looks_like": "pants",
+    "looks_like": "pants_cargo",
     "color": "red",
     "warmth": 20,
     "pocket_data": [
       { "pocket_type": "CONTAINER", "max_contains_volume": "500 ml", "max_contains_weight": "2 kg", "moves": 100 },
       { "pocket_type": "CONTAINER", "max_contains_volume": "500 ml", "max_contains_weight": "2 kg", "moves": 100 }
     ],
-    "armor": [ { "covers": [ "leg_l", "leg_r" ], "coverage": 90, "encumbrance": [ 8, 16 ] } ],
+    "armor": [ { "covers": [ "leg_l", "leg_r" ], "coverage": 90, "encumbrance": [ 2, 4 ] } ],
     "flags": [ "FANCY", "POCKETS", "STURDY", "VARSIZE" ]
   },
   {
@@ -477,9 +569,9 @@
         "covers": [ "arm_l", "arm_r" ],
         "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ],
         "coverage": 90,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       },
-      { "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 4, 6 ] }
+      { "covers": [ "torso" ], "coverage": 100, "encumbrance": [ 0, 4 ] }
     ],
     "flags": [ "STURDY", "VARSIZE" ]
   },
@@ -524,7 +616,7 @@
     "material_thickness": 1,
     "symbol": "[",
     "color": "light_blue",
-    "armor": [ { "covers": [ "torso" ], "specifically_covers": [ "torso_lower" ], "coverage": 10, "encumbrance": [ 2, 4 ] } ],
+    "armor": [ { "covers": [ "torso" ], "specifically_covers": [ "torso_lower" ], "coverage": 10, "encumbrance": [ 0, 4 ] } ],
     "flags": [ "BELTED", "FANCY", "OUTER", "VARSIZE" ]
   },
   {
@@ -546,36 +638,36 @@
     "color": "light_red",
     "warmth": 10,
     "armor": [
-      { "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 4, 8 ] },
       {
         "covers": [ "arm_l", "arm_r" ],
         "specifically_covers": [ "arm_elbow_l", "arm_elbow_r" ],
         "coverage": 100,
-        "encumbrance": [ 2, 6 ]
+        "encumbrance": [ 2, 4 ]
       },
       {
         "covers": [ "arm_l", "arm_r" ],
         "specifically_covers": [ "arm_upper_l", "arm_upper_r" ],
         "coverage": 10,
-        "encumbrance": [ 2, 6 ]
+        "encumbrance": [ 0, 4 ]
       },
+      { "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 0, 4 ] },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_hip_l", "leg_hip_r" ],
         "coverage": 100,
-        "encumbrance": [ 2, 6 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_upper_l", "leg_upper_r" ],
         "coverage": 85,
-        "encumbrance": [ 2, 6 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_knee_l", "leg_knee_r" ],
         "coverage": 20,
-        "encumbrance": [ 4, 8 ]
+        "encumbrance": [ 0, 4 ]
       }
     ],
     "flags": [ "STURDY", "SUPER_FANCY", "VARSIZE" ]
@@ -594,7 +686,7 @@
     "symbol": "[",
     "color": "light_red",
     "warmth": 5,
-    "armor": [ { "covers": [ "head" ], "specifically_covers": [ "head_crown" ], "coverage": 80, "encumbrance": [ 2, 6 ] } ],
+    "armor": [ { "covers": [ "head" ], "specifically_covers": [ "head_crown" ], "coverage": 80, "encumbrance": [ 0, 5 ] } ],
     "flags": [ "FANCY", "OUTER", "STURDY" ]
   },
   {
@@ -633,7 +725,7 @@
     "looks_like": "socks",
     "color": "light_red",
     "warmth": 10,
-    "armor": [ { "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 0, 2 ] } ],
+    "armor": [ { "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 0, 4 ] } ],
     "flags": [ "SKINTIGHT", "SUPER_FANCY", "VARSIZE" ]
   },
   {
@@ -652,7 +744,7 @@
     "color": "white",
     "covers": [ "torso" ],
     "warmth": 1,
-    "armor": [ { "covers": [ "torso" ], "specifically_covers": [ "torso_upper" ], "coverage": 15, "encumbrance": [ 0, 2 ] } ],
+    "armor": [ { "covers": [ "torso" ], "specifically_covers": [ "torso_upper" ], "coverage": 15, "encumbrance": [ 0, 4 ] } ],
     "flags": [ "VARSIZE" ]
   },
   {
@@ -700,7 +792,7 @@
     "material_thickness": 1,
     "symbol": "[",
     "color": "light_blue",
-    "armor": [ { "covers": [ "torso" ], "coverage": 10, "specifically_covers": [ "torso_lower" ], "encumbrance": [ 2, 4 ] } ],
+    "armor": [ { "covers": [ "torso" ], "coverage": 10, "specifically_covers": [ "torso_lower" ], "encumbrance": [ 0, 4 ] } ],
     "flags": [ "BELTED", "FANCY", "OUTER", "VARSIZE" ]
   },
   {
@@ -736,24 +828,24 @@
     "material_thickness": 3,
     "color": "white",
     "armor": [
-      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 8, 12 ] },
+      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 8 ] },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_hip_l", "leg_hip_r" ],
         "coverage": 100,
-        "encumbrance": [ 4, 8 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_upper_l", "leg_upper_r" ],
         "coverage": 95,
-        "encumbrance": [ 4, 8 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_knee_l", "leg_knee_r" ],
         "coverage": 15,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       }
     ],
     "flags": [ "SUPER_FANCY", "VARSIZE" ]
@@ -782,15 +874,15 @@
         "covers": [ "arm_l", "arm_r" ],
         "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ],
         "coverage": 100,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "arm_l", "arm_r" ],
         "specifically_covers": [ "arm_upper_l", "arm_upper_r" ],
         "coverage": 15,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       },
-      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 4, 6 ] }
+      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 0, 4 ] }
     ]
   },
   {
@@ -820,13 +912,13 @@
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_hip_l", "leg_hip_r" ],
         "coverage": 100,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_upper_l", "leg_upper_r" ],
         "coverage": 85,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       }
     ]
   },
@@ -853,7 +945,7 @@
     "looks_like": "blanket",
     "color": "white",
     "warmth": 10,
-    "armor": [ { "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ], "coverage": 100, "encumbrance": [ 2, 4 ] } ],
+    "armor": [ { "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ], "coverage": 100, "encumbrance": [ 0, 4 ] } ],
     "flags": [ "BELTED", "ONLY_ONE", "OUTER", "OVERSIZE", "SLEEP_AID", "SUPER_FANCY" ]
   },
   {
@@ -899,9 +991,9 @@
       "effect_on_conditions": [ "utsuho_fusionblade_eoc" ]
     },
     "armor": [
-      { "covers": [ "arm_r" ], "specifically_covers": [ "arm_lower_l" ], "coverage": 100, "encumbrance": [ 2, 4 ] },
-      { "covers": [ "arm_r" ], "specifically_covers": [ "arm_elbow_l" ], "coverage": 20, "encumbrance": [ 2, 4 ] },
-      { "covers": [ "hand_r" ], "coverage": 100, "encumbrance": [ 2, 4 ] }
+      { "covers": [ "arm_r" ], "specifically_covers": [ "arm_lower_l" ], "coverage": 100, "encumbrance": [ 0, 6 ] },
+      { "covers": [ "arm_r" ], "specifically_covers": [ "arm_elbow_l" ], "coverage": 20, "encumbrance": [ 0, 6 ] },
+      { "covers": [ "hand_r" ], "coverage": 100, "encumbrance": [ 0, 6 ] }
     ],
     "valid_mods": [ "rod_strap" ],
     "//3": "Should check how to add a strap so the player doesn't have to drop the rod every time Utsuho crafts something",
@@ -941,17 +1033,17 @@
     "color": "brown",
     "pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "2000 ml", "max_contains_weight": "2000 g", "moves": 500 } ],
     "armor": [
-      { "covers": [ "torso" ], "coverage": 80, "encumbrance": 7 },
+      { "covers": [ "torso" ], "coverage": 80, "encumbrance": [ 0, 4 ] },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_hip_l", "leg_upper_l", "leg_hip_r", "leg_upper_r" ],
-        "encumbrance": 2,
+        "encumbrance": [ 0, 4 ],
         "coverage": 95
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_knee_l", "leg_knee_r" ],
-        "encumbrance": 2,
+        "encumbrance": [ 0, 4 ],
         "coverage": 50
       }
     ],
@@ -991,14 +1083,14 @@
     "color": "black",
     "warmth": 10,
     "armor": [
-      { "covers": [ "arm_l", "arm_r" ], "coverage": 85, "encumbrance": [ 2, 4 ] },
+      { "covers": [ "arm_l", "arm_r" ], "coverage": 85, "encumbrance": [ 0, 4 ] },
+      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 0, 4 ] },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_hip_l", "leg_upper_l", "leg_hip_r", "leg_upper_r" ],
-        "encumbrance": [ 2, 4 ],
+        "encumbrance": [ 0, 4 ],
         "coverage": 80
-      },
-      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 2, 4 ] }
+      }
     ],
     "flags": [ "VARSIZE" ]
   },
@@ -1047,7 +1139,7 @@
       }
     ],
     "use_action": { "type": "holster", "holster_prompt": "Sheath sword", "holster_msg": "You sheath your %s" },
-    "armor": [ { "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ], "coverage": 10, "encumbrance": [ 4, 5 ] } ],
+    "armor": [ { "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ], "coverage": 10, "encumbrance": [ 0, 2 ] } ],
     "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY" ]
   },
   {
@@ -1078,7 +1170,7 @@
       }
     ],
     "use_action": { "type": "holster", "holster_prompt": "Sheath sword", "holster_msg": "You sheath your %s" },
-    "armor": [ { "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ], "coverage": 10, "encumbrance": [ 4, 5 ] } ],
+    "armor": [ { "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ], "coverage": 10, "encumbrance": [ 0, 2 ] } ],
     "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY" ]
   },
   {
@@ -1096,7 +1188,7 @@
     "type": "ARMOR",
     "category": "armor",
     "name": { "str": "phantom vest", "str_pl": "phantom vests" },
-    "description": "A dark green and white vest with some pockets.  Ghost insignias are present underneath the pockets.",
+    "description": "A dark green and white vest, decorated with ghost motiffs.",
     "repairs_like": "jeans",
     "volume": "2500 ml",
     "weight": "680 g",
@@ -1109,7 +1201,7 @@
     "color": "green",
     "weight_capacity_bonus": "1 kg",
     "warmth": 15,
-    "armor": [ { "covers": [ "torso" ], "coverage": 85, "encumbrance": [ 4, 8 ] } ],
+    "armor": [ { "covers": [ "torso" ], "coverage": 85, "encumbrance": [ 0, 4 ] } ],
     "flags": [ "VARSIZE" ]
   }
 ]

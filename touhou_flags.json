@@ -1,5 +1,9 @@
 [
   {
+    "id": "MOKOU_FIREBALL_FLAG",
+    "type": "json_flag"
+  },
+  {
     "id": "REMI_GUNGNIR_FLAG",
     "type": "json_flag"
   },
@@ -25,5 +29,9 @@
     "id": "SOUL_XDIMEN",
     "type": "monster_flag",
     "//": "Monsters with this receive reduced, random soul dmg"
+  },
+  {
+    "id": "VS_FLAG",
+    "type": "monster_flag"
   }
 ]

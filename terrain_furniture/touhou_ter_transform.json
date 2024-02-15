@@ -107,16 +107,6 @@
     ]
   },
   {
-    "id": "web_bridge_fur",
-    "type": "ter_furn_transform",
-    "furniture": [ 
-      { 
-        "valid_flags": [ "NO_FLOOR", "TRANSPARENT" ], 
-        "result": "f_web_bridge"
-      } 
-    ]
-  },
-  {
     "id": "web_dismiss_terfur",
     "type": "ter_furn_transform",
     "field": [
@@ -127,15 +117,40 @@
         "message_good": true 
       }
     ],
-    "furniture": [ { "result": "f_null", "message": "Webs around you disintegrate.", "valid_furniture": [ "f_web_up" ] } ]
-  },
-  {
-    "id": "web_rappel_fur",
-    "type": "ter_furn_transform",
     "furniture": [ 
       { 
-        "valid_flags": [ "NO_FLOOR" ], 
-        "result": "f_web_rappel"
+        "valid_furniture": [ "f_web_up" ],
+        "result": "f_null",
+        "message": "Webs around you disintegrate.", 
+        "message_good": true 
+      } 
+    ],
+    "terrain": [
+      { 
+        "valid_terrain": [ "t_web_bridge", "t_web_rappel" ], 
+        "result": "t_open_air", 
+        "message": "Webs around you disintegrate.", 
+        "message_good": true 
+      }
+    ]
+  },
+  {
+    "id": "web_bridge_ter",
+    "type": "ter_furn_transform",
+    "terrain": [ 
+      { 
+        "valid_flags": [ "NO_FLOOR", "TRANSPARENT" ], 
+        "result": "t_web_bridge"
+      } 
+    ]
+  },
+  {
+    "id": "web_rappel_ter",
+    "type": "ter_furn_transform",
+    "terrain": [ 
+      { 
+        "valid_flags": [ "NO_FLOOR", "TRANSPARENT" ], 
+        "result": "t_web_rappel"
       } 
     ]
   }

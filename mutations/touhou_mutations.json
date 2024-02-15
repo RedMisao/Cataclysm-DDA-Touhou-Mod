@@ -780,6 +780,17 @@
     "flags": [ "HEAT_IMMUNE" ]
   },
   {
+    "id": "PROF_NITORI",
+    "type": "mutation",
+    "name": "WIP",
+    "description": "WIP",
+    "points": 0,
+    "profession": true,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": false
+  },
+  {
     "id": "PROF_OKUU",
     "type": "mutation",
     "name": "Vessel of Yatagarasu",

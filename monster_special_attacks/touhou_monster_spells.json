@@ -50,11 +50,7 @@
     "max_range": 3,
     "min_aoe": 65,
     "max_aoe": 65,
-    "difficulty": -11,
     "max_level": 1,
-    "base_casting_time": 85,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ]
   }
 ]

@@ -67,7 +67,34 @@
       }
     ],
     "//": "Thank you so much andrei8l for #71234 !!!",
-    "//2": "Note: this is automatic but only detects wielding/unwielding actions, things like 'type: transform' from use_action don't update the values. If this becomes a problem update the value check every time the spell is cast"
+    "//2": "Note: this is automatic but only detects wielding/unwielding actions, things like 'type: transform' from use_action don't update the values. If this becomes a problem update the value check every time the spell is cast by using the opens_spellbook event EOC instead"
+  },
+  {
+    "id": "kaenbyou_opens_spellbook_eoc",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "opens_spellbook",
+    "condition": { "u_has_trait": "PROF_KAENBYOU" },
+    "effect": [
+        { "math": [ "var_immolate_duration", "=", "( (u_skill('speech') * 120 ) + 720 )" ] }
+    ],
+    "//": "This automatically sets the vars each time Kaenbyou opens the 'cast spell' window"
+  },
+  {
+    "id": "kokoro_opens_spellbook_eoc",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "opens_spellbook",
+    "condition": { "u_has_trait": "PROF_KAENBYOU" },
+    "effect": [
+        { "math": [ "var_kokoro_anger_mod", "=", "( 1 + var_kokoro_anger * rng( -0.2, 0.4 ) + var_kokoro_anger_boost * rng( -0.1, 0.8 ) )" ] },
+        { "math": [ "var_kokoro_deter_aoe_mod", "=", "( 1 + ( var_kokoro_melancholy * ( 1/5 ) ) + ( var_kokoro_melancholy_boost * ( 1/3 ) ) )" ] },
+        { "math": [ "var_kokoro_melancholy_mod", "=", "( 1 + ( var_kokoro_melancholy * ( 1/3 ) ) + ( var_kokoro_melancholy_boost * ( 2/3 ) ) )" ] }
+    ],
+    "//": "This automatically sets the vars each time Kokoro opens the 'cast spell' window. The vars are set here because they're awful to work with manually",
+    "//2": "The anger mod is thus ~1.2 for the base anger stance and ~1.35 for the boosted anger stance (used for dmg)",
+    "//3": "The deter mod (for aoe) is thus +20% or +33%",
+    "//4": "The melancholy mod is thus +33% or +66% (used for duration)"
   },
   {
     "id": "utsuho_opens_spellbook_eoc",
@@ -92,11 +119,28 @@
     "effect": [
         { "math": [ "var_icypyrexia_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.95 )" ] },
         { "math": [ "var_scarletplague_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.95 )" ] },
-        { "math": [ "var_unconstrainedrot_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.95 )" ] },
-        { "math": [ "var_unconstrainedrot2_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) - 1.05 )" ] },
-        { "math": [ "var_disease_duration", "=", "( (u_skill('speech') * 30 ) + (u_skill('dodge') * 30 ) + 1290 )" ] }
+        { "math": [ "var_volatilerot_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.95 )" ] },
+        { "math": [ "var_disease_dur", "=", "( (u_skill('speech') * 30 ) + (u_skill('dodge') * 30 ) + 1290 )" ] },
+        { "math": [ "var_miasmar_bonus", "=", "( (u_skill('speech') * 1.3 ) + (u_skill('dodge') * 1.3 ) + 7.9 )" ] }
     ],
-    "//": "This automatically sets the vars each time Yamame opens the 'cast spell' window. Tried chaining a subpsell for yamame_disease_epidemic_eoc with 'self' EOC but it didn't trigger (for her)"
+    "//": "This automatically sets the vars each time Yamame opens the 'cast spell' window",
+    "//2": "Note: also tried chaining a subpsell for yamame_miasmaepidemic with 'self' EOC but it didn't trigger (for her)"
+  },
+  {
+    "id": "celestial_stance_check",
+    "type": "effect_on_condition",
+    "recurrence": "1 s",
+    "condition": {
+      "and": [
+        { "u_has_trait": "celestial_stance_mut" },
+        { "not": { "u_using_martial_art": "style_celestial_brawling_tenko" } }
+      ]
+    },
+    "deactivate_condition": { "not": { "u_has_trait": "celestial_stance_mut" } },
+    "effect": [ 
+      { "u_lose_trait": "celestial_stance_mut" }
+    ],
+    "//": "This removes the knockback and knockdown immunity of Tenko's MA if she's not using it"
   },
   {
     "id": "soulshard_eoc",
@@ -146,18 +190,18 @@
             "id": "kokoro_morale_add",
             "condition": { "math": [ "u_val('morale')", "<", "0" ] },
             "effect": [ 
-                { "math": [ "u_val('morale')", "+=", "1" ] },
-                { "math": [ "var_kokoro_instability", "+=", "1" ] },
-                { "math": [ "u_val('mana')", "+=", "2" ] }
+              { "math": [ "u_val('morale')", "+=", "1" ] },
+              { "math": [ "var_kokoro_instability", "+=", "1" ] },
+              { "math": [ "u_val('mana')", "+=", "2" ] }
             ]
           },
           {
             "id": "kokoro_morale_remove",
             "condition": { "math": [ "u_val('morale')", ">", "0" ] },
             "effect": [ 
-                { "math": [ "u_val('morale')", "-=", "1" ] },
-                { "math": [ "var_kokoro_instability", "+=", "1" ] },
-                { "math": [ "u_val('mana')", "+=", "2" ] }
+              { "math": [ "u_val('morale')", "-=", "1" ] },
+              { "math": [ "var_kokoro_instability", "+=", "1" ] },
+              { "math": [ "u_val('mana')", "+=", "2" ] }
             ]
           }
         ]
@@ -256,28 +300,12 @@
     "type": "effect_on_condition",
     "recurrence": "15 s",
     "condition": { "u_has_trait": "PROF_KOKORO" },
-    "effect": [ 
-        { "math": [ "var_kokoro_timer", "-=", "15" ] },
-        { "run_eocs": [ "kokoro_instability_check_eoc" ] }
-    ],
     "deactivate_condition": { "not": { "u_has_trait": "PROF_KOKORO" } },
-    "//": "Reduces var_kokoro_timer every 15 s and checks if she has enough instability"
-  },
-  {
-    "id": "celestial_stance_check",
-    "type": "effect_on_condition",
-    "recurrence": "1 s",
-    "condition": {
-      "and": [
-        { "u_has_trait": "celestial_stance_mut" },
-        { "not": { "u_using_martial_art": "style_celestial_brawling_tenko" } }
-      ]
-    },
-    "deactivate_condition": { "not": { "u_has_trait": "celestial_stance_mut" } },
     "effect": [ 
-      { "u_lose_trait": "celestial_stance_mut" }
+      { "math": [ "var_kokoro_timer", "-=", "15" ] },
+      { "run_eocs": [ "kokoro_instability_check_eoc" ] }
     ],
-    "//": "This removes the knockback and knockdown immunity of Tenko's MA if she's not using it"
+    "//": "Reduces var_kokoro_timer every 15 s and checks if she has enough instability"
   },
   {
     "id": "mokou_death_eoc",
@@ -291,15 +319,17 @@
     },
     "effect": [
       { "u_message": "Too bad you can't actually die for good.", "popup": true },
+      "u_prevent_death",
       { "u_lose_trait": "PORTAL_RESURRECTION" },
       { "u_add_effect": "mokou_resurrectcleanse", "duration": "6 s" },
-      { "u_add_effect": "mokou_resurrectpain", "duration": "168 hours" },
-      { "math": [ "u_hp('ALL')", "=", "100" ] },
-      { "u_cast_spell": { "id": "mokou_resurrectionphoenix" }, "targeted": false },
       { "math": [ "var_mokoudeath", "+=", "168" ] },
+      { "math": [ "u_hp('ALL')", "=", "100" ] },
       { "math": [ "u_val('fatigue')", "=", "0" ] },
       { "math": [ "u_val('mana')", "=", "800" ] },
-      { "math": [ "u_pain()", "=", "0" ] }
+      { "math": [ "u_val('stamina')", "=", "8500" ] },
+      { "math": [ "u_pain()", "=", "0" ] },
+      { "u_add_effect": "mokou_resurrectpain", "duration": "168 hours" },
+      { "u_cast_spell": { "id": "mokou_resurrectionphoenix" }, "targeted": false }
     ],
     "//": "This eoc enables PROF_MOKOU to resurrect/revive. Every time Mokou dies she gets var_mokoudeath, which lasts for 7 days and decreases slowly over time. Every time she revives, the value is checked vs a random number, so the more she dies in a short time the harder it is for her to not give up for real",
     "//2": "ANY trait that revives the character should be lost every time Mokou dies. So far, it's just PORTAL_RESURRECTION "
@@ -316,9 +346,31 @@
     },
     "deactivate_condition": { "math": [ "var_mokoudeath", "<=", "0" ] },
     "effect": [ 
-        { "math": [ "var_mokoudeath", "-=", "1" ] } 
+      { "math": [ "var_mokoudeath", "-=", "1" ] } 
     ],
     "//": "Reduces var_mokoudeath over time"
+  },
+  {
+    "id": "nitori_melee_attack_eoc",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "character_melee_attacks_monster",
+    "condition": { "u_has_trait": "PROF_NITORI" },
+    "effect": [
+      { "set_string_var": { "context_val": "victim_type" }, "target_var": { "global_val": "victim_type" } },
+      {
+        "run_eocs": [
+          {
+            "id": "nitori_melee_attack_turret_eoc",
+            "condition": { "compare_string": [ "mon_kappa_turret", { "context_val": "victim_type" } ] },
+            "effect": [ 
+              { "math": [ "var_nitori_repair", "=", "( var_melee_phys_dmg )" ] },
+              { "npc_cast_spell": { "id": "nitori_repair_spell" } }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "vampire_bloodthirst_eoc",
@@ -413,5 +465,16 @@
     "//": "hblood_vitamin decays 1 point every 20 min, so 72 points equals 24 hours of not consuming human blood/flesh",
     "//2": "Boundaries for each blood thirst tier are: 0 (including excess) - 24 h (no thirst), 1 - 3 days (low), 3 - 5 days (medium), 5 - 7 days (high), >7 days (veryhigh)",
     "//3": "This means that, assuming the little vampires start at the lower boundary of day 0 (648), they can go up to 24 hours with no thirst (reach 576), and then get increased thirst every two days, peaking at one week (144) without consumption"
+  },
+  {
+    "id": "yamame_miasmaburst_stored_eoc",
+    "type": "effect_on_condition",
+    "recurrence": "7 s",
+    "condition": { "math": [ "var_miasmaburst_dmg", ">", "0" ] },
+    "deactivate_condition": { "not": { "u_has_trait": "PROF_YAMAME" } },
+    "effect": [ 
+      { "math": [ "var_miasmaburst_dmg", "-=", "2" ] }
+    ],
+    "//": "Reduces var_miasmaburst_dmg every 11 s"
   }
 ]

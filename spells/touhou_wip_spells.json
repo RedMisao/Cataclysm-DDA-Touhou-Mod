@@ -136,68 +136,252 @@
     "effect": "effect_on_condition",
     "effect_str": "kaenbyou_vspossess_eoc",
     "shape": "blast",
-    "min_range": { "math": [ "( (u_skill('speech') * 0.8 ) + 4.8 )" ] },
-    "max_range": 16,
+    "min_range": 4,
+    "max_range": 4,
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 66,
     "base_energy_cost": 66,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "NO_PROJECTILE", "SOMATIC" ],
-    "//": "min range 8",
-    "//2": "This doesn't work: the vengeful spirit doesn't actually target a zombie, it ignores that step and runs death_vs "
+    "flags": [ "NO_LEGS", "VERBAL" ]
   },
   {
-    "id": "kaenbyou_vspossess_eoc",
-    "type": "effect_on_condition",
-    "effect": [
-      { "u_cast_spell": { "id": "kaenbyou_vspossess2" }, "targeted": true }
-    ]
-  },
-  {
-    "id": "kaenbyou_vspossess2",
+    "id": "vs_possess_tag_spell",
     "type": "SPELL",
-    "name": { "str": "Possession: Vengeful spirit (polymorph)" },
-    "description": "Polymorph component for the vengeful spirit targeted by kaenbyou_vspossess ",
+    "name": { "str": "Possession: Vengeful spirit (spell tag)" },
+    "description": "This is casted by mon_vengeful_spirit and forces those under the aoe to run the EOC, which adds var_ for each enemy under the aoe",
     "spell_class": "NONE",
-    "valid_targets": [ "hostile" ],
-    "targeted_monster_species": [ "ZOMBIE" ],
-    "effect": "targeted_polymorph",
-    "effect_str": "mon_vengeful_posessed",
-    "extra_effects": [ { "id": "death_vs" } ],
+    "valid_targets": [ "ally", "hostile", "self" ],
+    "effect": "effect_on_condition",
+    "effect_str": "vs_possess_tag_eoc",
     "shape": "blast",
-    "damage_type": "pure",
-    "min_damage": 100,
-    "max_damage": 100,
-    "min_range": 4,
-    "max_range": 4,
+    "min_aoe": 20,
+    "max_aoe": 20,
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "NO_PROJECTILE", "SOMATIC" ]
+    "flags": [ "NO_FAIL", "NO_HANDS", "NO_LEGS", "SILENT" ]
   },
   {
-    "id": "mokou_fireball",
+    "id": "vs_possess_possessed",
     "type": "SPELL",
-    "name": "Create fire ball",
-    "description": "Create a fiery ball on your hand.  The sphere is metastable, meaning you can trigger it into a fiery explosion, or focus the flames on a target so it works as a fire source.",
+    "name": { "str": "Possession: Vengeful spirit (summoning mon_vengeful_posessed )" },
+    "description": " ",
+    "spell_class": "NONE",
+    "valid_targets": [ "ally", "hostile", "self" ],
+    "effect": "attack",
+    "shape": "blast",
+    "damage_type": "pure",
+    "min_damage": 999,
+    "max_damage": 999,
+    "min_aoe": 16,
+    "max_aoe": 16,
+    "max_level": 1,
+    "difficulty": -11,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_HANDS", "NO_LEGS", "SILENT" ]
+  },
+  {
+    "id": "vs_possess_chasm",
+    "type": "SPELL",
+    "name": { "str": "Possession: Vengeful spirit (summoning mon_vengeful_chasm )" },
+    "description": " ",
+    "spell_class": "NONE",
+    "valid_targets": [ "ally", "hostile", "self" ],
+    "effect": "attack",
+    "shape": "blast",
+    "damage_type": "pure",
+    "min_damage": 999,
+    "max_damage": 999,
+    "min_aoe": 16,
+    "max_aoe": 16,
+    "max_level": 1,
+    "difficulty": -11,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_HANDS", "NO_LEGS", "SILENT" ]
+  },
+  {
+    "id": "kaenbyou_vspossess_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "u_var_vspossess_selected", "+=", "1" ] },
+      { "u_cast_spell": { "id": "vs_possess_tag_spell" }, "targeted": false }
+    ],
+    "//": "_selected identifies that specific mon_vengeful_spirit as the 'source' of everything else downstream",
+    "//2": "The chain below is broken btw, I was testing for the vs to cast the 999 pure dmg spells in aoe above, but they don't do it"
+  },
+  {
+    "id": "vs_possess_tag_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_vspossess_counter_vs", "+=", "1" ] },
+      {
+        "run_eocs": [
+          {
+            "id": "vs_possess_tag_1",
+            "condition": { "math": [ "u_monsters_nearby('mon_zombie', 'radius': 3)", ">", "0" ] },
+            "effect": [
+              { "math": [ "var_vspossess_counter_zombie", "+=", "1" ] }
+            ]
+          },
+          {
+            "id": "vs_possess_tag_2",
+            "condition": { "math": [ "u_monsters_nearby('mon_vengeful_spirit', 'radius': 3)", ">", "0" ] },
+            "effect": [
+              { "math": [ "var_vspossess_counter_vs", "+=", "1" ] }
+            ]
+          },
+          {
+            "id": "vs_possess_tag_3",
+            "condition": {
+              "and": [
+                { "math": [ "u_var_vspossess_selected", ">=", "1" ] },
+                { "math": [ "var_vspossess_counter_zombie", ">=", "1" ] },
+                { "math": [ "var_vspossess_counter_vs", "==", "1" ] }
+              ]
+            },
+            "effect": [
+              { "math": [ "var_vspossess_counter_zombie", "=", "0" ] },
+              { "math": [ "var_vspossess_counter_vs", "=", "0" ] },
+              { "u_cast_spell": { "id": "vs_possess_possessed" }, "targeted": false }
+            ]
+          },
+          {
+            "id": "vs_possess_tag_4",
+            "condition": {
+              "and": [
+                { "math": [ "u_var_vspossess_selected", ">=", "1" ] },
+                { "math": [ "var_vspossess_counter_zombie", ">=", "1" ] },
+                { "math": [ "var_vspossess_counter_vs", ">=", "1" ] }
+              ]
+            },
+            "effect": [
+              { "math": [ "var_vspossess_counter_zombie", "=", "0" ] },
+              { "math": [ "var_vspossess_counter_vs", "=", "0" ] },
+              { "u_cast_spell": { "id": "vs_possess_chasm" }, "targeted": false }
+            ]
+          },
+          {
+            "id": "vs_possess_tag_5",
+            "effect": [
+              { "queue_eocs": [ "vs_possess_end" ], "time_in_future": "2 s" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vs_possess_possessed_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "run_eocs": [
+          {
+            "id": "vs_possess_possessed_1",
+            "condition": {
+              "or": [
+                { "math": [ "u_var_vspossess_zombie", ">=", "1" ] },
+                {
+                  "and": [
+                    { "math": [ "u_var_vspossess_vs", ">=", "1" ] },
+                    { "math": [ "u_var_vspossess_selected", "==", "0" ] }
+                  ]
+                }
+              ]
+            },
+            "effect": [ "u_die" ]
+          },
+          {
+            "id": "vs_possess_possessed_2",
+            "condition": { "math": [ "u_var_vspossess_selected", ">=", "1" ] },
+            "effect": [ { "u_spawn_monster": "mon_vengeful_posessed", "real_count": 1, "min_radius": 1, "max_radius": 2 } ]
+          },
+          {
+            "id": "vs_possess_possessed_3",
+            "effect": [ "u_die" ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vs_possess_end",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_vspossess_counter_zombie", "=", "0" ] },
+      { "math": [ "var_vspossess_counter_vs", "=", "0" ] }
+    ]
+  },
+  {
+    "id": "nitori_mortar",
+    "type": "SPELL",
+    "name": { "str": "Mortar (TEST)" },
+    "description": "Test for a mortar-type spell",
     "spell_class": "NONE",
     "valid_targets": [ "self" ],
-    "effect": "spawn_item",
-    "effect_str": "mokou_fireball2",
+    "effect": "effect_on_condition",
+    "effect_str": "nitori_mortar_eoc",
     "shape": "blast",
-    "min_duration": 0,
-    "max_duration": 0,
-    "difficulty": -11,
     "max_level": 1,
-    "base_casting_time": 66,
-    "base_energy_cost": 366,
+    "difficulty": -11,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "SILENT", "PERMANENT" ],
-    "//": "Barely based on Indiscriminate Ignition Cards",
-    "//2": "This spell doesn't work because: adding duration without the PERMANENT flag allows using the fireball as firestarter but when activated doesn't explode, just disappears; if the duration is set as zero with the PERMANENT flag, the item can just be continuously spammed, which is not good"
+    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
+    "//": "This spell doesn't work: The 'loc' below from the u_cast_spell seems to be inactive regardless of the hit_self and targeted combinations: it is always centered on Nitori"
+  },
+  {
+    "id": "nitori_mortarBLAST",
+    "type": "SPELL",
+    "name": { "str": "Mortar (TEST) (BLAST)" },
+    "description": "The BLAST of nitori_mortar ",
+    "spell_class": "NONE",
+    "valid_targets": [ "ally", "field", "ground", "hostile", "item", "self" ],
+    "effect": "attack",
+    "shape": "blast",
+    "damage_type": "bash",
+    "min_damage": 20,
+    "max_damage": 20,
+    "min_range": 99,
+    "max_range": 99,
+    "min_aoe": 6,
+    "max_aoe": 6,
+    "max_level": 1,
+    "difficulty": -11,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ]
+  },
+  {
+    "id": "nitori_mortar_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "if": {
+          "message": "Select target", 
+          "range": 10,
+          "u_query_tile": "anywhere",
+          "target_var": { "context_val": "var_nitori_mortar_loc" }
+        },
+        "then": { "queue_eocs": [ "nitori_mortar_BLAST" ], "time_in_future": "1 s" },
+        "else": { "u_message": "Canceled" }
+      }
+    ]
+  },
+  {
+    "id": "nitori_mortar_BLAST",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_cast_spell": { "id": "nitori_mortarBLAST" }, "loc": { "global_val": "var_nitori_mortar_loc" } }
+    ]
   },
   {
     "id": "sakuya_knifepull",

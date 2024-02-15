@@ -48,6 +48,12 @@
     "default": "soulshard_fuel"
   },
   {
+    "id": "watershot_ammo",
+    "type": "ammunition_type",
+    "name": "water (ammo)",
+    "default": "watershot_ammo_1"
+  },
+  {
     "id": "touhou_corpse_ammo",
     "type": "ammunition_type",
     "name": "corpse",

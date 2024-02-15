@@ -42,14 +42,15 @@
     "//": "Self-explanatory. The soulshards are consumed after (automatically) chaining a spell EOC that runs kaenbyou_consume_soulshard_eoc or kaenbyou_consume_soulshard_2_eoc"
   },
   {
-    "id": "kaenbyou_conflagrate_eoc",
+    "id": "kaenbyou_infernoburst_eoc",
     "type": "effect_on_condition",
     "condition": { "math": [ "u_var_immolate", ">=", "1" ] },
     "effect": [
       { "math": [ "u_var_immolate", "=", "0" ] },
-      { "u_cast_spell": { "id": "kaenbyou_conflagrate3" } }
+      { "u_cast_spell": { "id": "kaenbyou_infernoburst3" } }
     ],
-    "//": "WIP. It works as it is, but the effects and stuff don't show for the player"
+    "//": "This just checks if the target was tagged with immolate, if so it applies the self-spell for bonus dmg",
+    "//note": "It works as it is, but the effects and stuff don't show for the player"
   },
   {
     "id": "kaenbyou_consume_soulshard_eoc",
@@ -64,17 +65,59 @@
     "effect": [ { "math": [ "u_var_soulshard", "-=", "2" ] } ]
   },
   {
-    "id": "kaenbyou_consume_soulshard_4_eoc",
+    "id": "kaenbyou_consume_soulshard_8_eoc",
     "type": "effect_on_condition",
-    "condition": { "math": [ "u_var_soulshard", ">=", "4" ] },
-    "effect": [ { "math": [ "u_var_soulshard", "-=", "4" ] } ]
+    "condition": { "math": [ "u_var_soulshard", ">=", "8" ] },
+    "effect": [ { "math": [ "u_var_soulshard", "-=", "8" ] } ]
   },
   {
     "id": "kaenbyou_immolate_eoc",
     "type": "effect_on_condition",
     "effect": [
-      { "math": [ "u_var_immolate", "+=", "1" ] }
-    ]
+      { "math": [ "u_var_immolate", "+=", "1" ] },
+      { "run_eocs": [ "kaenbyou_immolate_timer_1" ] }
+    ],
+    "//": "This applies the immolate 'tag' to the target, and runs the timer for its duration"
+  },
+  {
+    "id": "kaenbyou_immolate_timer_1",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_var_immolate", ">", "0" ] },
+        { "math": [ "u_var_immolate_timer", "<", "var_immolate_duration" ] }
+      ]
+    },
+    "effect": [
+      { "math": [ "u_var_immolate_timer", "+=", "100" ] },
+      { "queue_eocs": [ "kaenbyou_immolate_timer_2" ], "time_in_future": "1 s" }
+    ],
+    "false_effect": [ 
+      { "math": [ "u_var_immolate", "=", "0" ] },
+      { "math": [ "u_var_immolate_timer", "=", "0" ] }
+    ],
+    "//": "This checks if the target was tagged with immolate, and if the duration isn't bigger than the current immolate duration at that skill level (set at kaenbyou_opens_spellbook_eoc )",
+    "//2": "If that's the case, it adds 1 s and queues the next step in 1 s",
+    "//3": "If the immolate tag is zero (due having cast kaenbyou_infernoburst on the target), or if the timer is larger than the intended duration, it resets both vars to 0",
+    "//note": "I guess this may be re-queue'd to itself as a self-contained timer, but idk"
+  },
+  {
+    "id": "kaenbyou_immolate_timer_2",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_var_immolate", ">", "0" ] },
+        { "math": [ "u_var_immolate_timer", "<", "var_immolate_duration" ] }
+      ]
+    },
+    "effect": [
+      { "run_eocs": [ "kaenbyou_immolate_timer_1" ] }
+    ],
+    "false_effect": [ 
+      { "math": [ "u_var_immolate", "=", "0" ] },
+      { "math": [ "u_var_immolate_timer", "=", "0" ] }
+    ],
+    "//": "This just cycles the previous EOC. Same conditions and false_effects "
   },
   {
     "id": "kaenbyou_soulfire_eoc",
@@ -91,7 +134,7 @@
   {
     "id": "kaenbyou_soulshard_fuel_eoc",
     "type": "effect_on_condition",
-    "condition": { "math": [ "u_var_soulshard", ">=", "4" ] },
+    "condition": { "math": [ "u_var_soulshard", ">=", "8" ] },
     "effect": [
       { "u_cast_spell": { "id": "kaenbyou_soulshard_fuel2" }, "targeted": true }
     ],
@@ -245,6 +288,12 @@
   {
     "id": "kokoro_unleash_emotion_eoc",
     "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "not": { "math": [ "var_kokoro_stance", "==", "0" ] } },
+        { "not": { "math": [ "var_kokoro_stance", "==", "3" ] } }
+      ]
+    },
     "effect": [
       {
         "run_eocs": [
@@ -282,7 +331,101 @@
           }
         ]
       }
-    ]
+    ],
+    "false_effect": [ { "run_eocs": [ "kokoro_unleash_emotion_check" ] } ],
+    "//": "EOC just checks if Kokoro isn't in her neutral or unstable stances, checks which mask she's wearing and casts the appropiate spell. Otherwise..."
+  },
+  {
+    "id": "kokoro_unleash_emotion_check",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "run_eocs": [
+          {
+            "id": "kokoro_unleash_emotion_neutral",
+            "condition": { "math": [ "var_kokoro_stance", "==", "0" ] },
+            "effect": [
+              { "u_message": "You have no mask equipped.", "type": "mixed" },
+              { "math": [ "u_val('mana')", "+=", "100" ] }
+            ]
+          },
+          {
+            "id": "kokoro_unleash_emotion_unstable",
+            "condition": { "math": [ "var_kokoro_stance", "==", "3" ] },
+            "effect": [
+              { 
+                "run_eocs": [
+                  {
+                    "id": "kokoro_unleash_emotion_unstable_rand",
+                    "effect": [
+                      { "math": [ "var_kokoro_happiness_rand", "=", "rand(1)" ] },
+                      { "math": [ "var_kokoro_determination_rand", "=", "rand(1)" ] },
+                      { "math": [ "var_kokoro_melancholy_rand", "=", "rand(1)" ] },
+                      { "math": [ "var_kokoro_anger_rand", "=", "rand(1)" ] },
+                      { "math": [ "var_kokoro_unleash_emotion", "=", "rand(3)" ] },
+                      { 
+                        "run_eocs": [ 
+                          {
+                            "id": "kokoro_unleash_emotion_unstable_0",
+                            "condition": { "math": [ "var_kokoro_happiness_rand", "==", "0" ] },
+                            "effect": [ 
+                              { "math": [ "var_kokoro_happiness", "=", "1" ] } 
+                            ],
+                            "false_effect": [ { "math": [ "var_kokoro_happiness_boost", "=", "1" ] }  ]
+                          },
+                          {
+                            "id": "kokoro_unleash_emotion_unstable_1",
+                            "condition": { "math": [ "var_kokoro_determination_rand", "==", "0" ] },
+                            "effect": [ 
+                              { "math": [ "var_kokoro_determination", "=", "1" ] } 
+                            ],
+                            "false_effect": [ { "math": [ "var_kokoro_determination_boost", "=", "1" ] }  ]
+                          },
+                          {
+                            "id": "kokoro_unleash_emotion_unstable_2",
+                            "condition": { "math": [ "var_kokoro_melancholy_rand", "==", "0" ] },
+                            "effect": [ 
+                              { "math": [ "var_kokoro_melancholy", "=", "1" ] } 
+                            ],
+                            "false_effect": [ { "math": [ "var_kokoro_melancholy_boost", "=", "1" ] }  ]
+                          },
+                          {
+                            "id": "kokoro_unleash_emotion_unstable_3",
+                            "condition": { "math": [ "var_kokoro_anger_rand", "==", "0" ] },
+                            "effect": [ 
+                              { "math": [ "var_kokoro_anger", "=", "1" ] } 
+                            ],
+                            "false_effect": [ { "math": [ "var_kokoro_anger_boost", "=", "1" ] }  ]
+                          }
+                        ] 
+                      }
+                    ]
+                  },
+                  {
+                    "id": "kokoro_unleash_emotion_unstable_cast",
+                    "effect": [ 
+                      {
+                        "switch": { "math": [ "var_kokoro_unleash_emotion" ] },
+                        "cases": [
+                          { "case": 0, "effect": { "u_cast_spell": { "id": "kokoro_unleash_emotion0" } } },
+                          { "case": 1, "effect": { "u_cast_spell": { "id": "kokoro_unleash_emotion1" } } },
+                          { "case": 2, "effect": { "u_cast_spell": { "id": "kokoro_unleash_emotion2" } } },
+                          { "case": 3, "effect": { "u_cast_spell": { "id": "kokoro_unleash_emotion3" } } }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "//": "This monstrosity runs. If Kokoro is in her neutral stance it refunds some mana",
+    "//2": "However, if she's at her unstable stance it randomizes vars for each mask (to select the base or boost effect), then randomizes the unleash_emotion",
+    "//3": "This causes her unleash_emotion spells while unstable to not just be random, but also have random mask mod effects, independent of the current mask she's wearing",
+    "//4": "Also, also this has the side effect of randomizing the mask mods until the next mask refresh, or until she recasts this"
   },
   {
     "id": "meiling_mountainbreak_eoc",
@@ -351,6 +494,114 @@
       { "math": [ "var_mokou_combustion", "+=", "1" ] },
       { "math": [ "u_pain()", "-=", "2" ] },
       { "queue_eocs": [ "mokou_combustion_cycle1" ], "time_in_future": "3 s" }
+    ]
+  },
+  {
+    "id": "nitori_toolswing_eoc",
+    "type": "effect_on_condition",
+    "condition": {
+      "or": [
+        { "u_has_wielded_with_weapon_category": "BATONS" },
+        { "u_has_wielded_with_weapon_category": "HAND_AXES" }
+      ]
+    },
+    "effect": [
+      { "math": [ "var_toolswing", "=", "rand(1)" ] },
+      { "run_eocs": [ "nitori_toolswing_check" ] }
+    ],
+    "false_effect": [ 
+      { "u_message": "You're not using any compatible weapons.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "33" ] }
+    ],
+    "//": "This EOC is a simplified version of kokoro_quick_attack_eoc . There is no damage_type check as most tools are not sharp, not even the pickaxe",
+    "//2": "The rand() number is used to decide if the spell will knock the enemy or not"
+  },
+  {
+    "id": "nitori_toolswing_check",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_toolswing", "==", "0" ] },
+    "effect": [ { "u_cast_spell": { "id": "nitori_toolswing_eoc2" }, "targeted": true } ],
+    "false_effect": { "u_cast_spell": { "id": "nitori_toolswing_eoc3" }, "targeted": true }
+  },
+  {
+    "id": "nitori_weathermissile_eoc",
+    "type": "effect_on_condition",
+    "condition": "u_is_outside",
+    "effect": [
+      { "run_eocs": [ "nitori_weathermissile_1" ] }
+    ],
+    "false_effect": [ 
+      { "u_message": "You need to be outside to launch the weather missile.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "66" ] }
+    ]
+  },
+  {
+    "id": "nitori_weathermissile_1",
+    "type": "effect_on_condition",
+    "condition": { 
+      "or": [
+        { "not": { "is_weather": "early_portal_storm" } },
+        { "not": { "is_weather": "distant_portal_storm" } },
+        { "not": { "is_weather": "close_portal_storm" } },
+        { "not": { "is_weather": "portal_storm" } }
+      ]
+    },
+    "effect": [
+      { "math": [ "var_nitoriweather_h", "=", "weather('humidity')" ] },
+      { "math": [ "var_nitoriweather_p", "=", "weather('pressure')" ] },
+      { "math": [ "var_nitoriweather_t", "=", "weather('temperature')" ] },
+      { "math": [ "var_nitoriweather_w", "=", "weather('windpower')" ] },
+      { "queue_eocs": [ "nitori_weathermissile_2" ], "time_in_future": "2 s" }
+    ],
+    "false_effect": [ 
+      { "queue_eocs": [ "nitori_weathermissile_portal" ], "time_in_future": "2 s" }
+    ]
+  },
+  {
+    "id": "nitori_weathermissile_2",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_cast_spell": { "id": "nitori_weathermissile_vfx" }, "targeted": false },
+      { "queue_eocs": [ "nitori_weathermissile_3" ], "time_in_future": [ "180 s", "300 s" ] }
+    ]
+  },
+  {
+    "id": "nitori_weathermissile_3",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "weather('humidity')", "=", "( 98 + rand(2) )" ] },
+      { "math": [ "weather('pressure')", "=", "( 993 - rand(30) )" ] },
+      { "math": [ "weather('windpower')", "=", "( 1 + rand(30) )" ] },
+      "next_weather",
+      { "u_message": "The weather is changing now.  The launch was a success!", "type": "mixed" },
+      { "queue_eocs": [ "nitori_weathermissile_4" ], "time_in_future": [ "15 m", "30 m" ] }
+    ]
+  },
+  {
+    "id": "nitori_weathermissile_4",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "weather('humidity')", "=", "var_nitoriweather_h" ] },
+      { "math": [ "weather('pressure')", "=", "var_nitoriweather_p" ] },
+      { "math": [ "weather('temperature')", "=", "var_nitoriweather_t" ] },
+      { "math": [ "weather('windpower')", "=", "var_nitoriweather_w" ] },
+      "next_weather",
+      { "u_message": "The weather is now returning to its previous state.", "type": "mixed" }
+    ]
+  },
+  {
+    "id": "nitori_weathermissile_portal",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_cast_spell": { "id": "nitori_weathermissile_vfx" }, "targeted": false },
+      { "queue_eocs": [ "nitori_weathermissile_portal_2" ], "time_in_future": [ "25 s", "55 s" ] }
+    ]
+  },
+  {
+    "id": "nitori_weathermissile_portal_2",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_message": "Something went wrong with the weather missile.  The signal… stopped.", "type": "mixed" }
     ]
   },
   {
@@ -441,13 +692,14 @@
     "type": "effect_on_condition",
     "effect": [ 
       { "u_cast_spell": { "id": "remilia_darkdrain4" }, "targeted": false },
+      { "math": [ "u_vitamin('blood')", "+=", "var_remidrain" ] },
       { "math": [ "u_vitamin('hblood_vitamin')", "+=", "var_remidrain" ] }
     ]
   },
   {
     "id": "remilia_gungnir_dismiss_eoc",
     "type": "effect_on_condition",
-    "condition": { "u_has_worn_with_flag": "REMI_GUNGNIR_FLAG" },
+    "condition": { "u_has_wielded_with_flag": "REMI_GUNGNIR_FLAG" },
     "effect": [
       { "math": [ "u_val('mana')", "+=", "100" ] },
       { "u_message": "You dismiss your Gungnir.", "type": "good" }
@@ -498,6 +750,85 @@
       { "math": [ "var_sakuyafocus", "=", "0" ] },
       { "u_lose_effect": "sakuya_maidsecret_effect" }
     ]
+  },
+  {
+    "id": "sakuya_timestop_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_timestop_active", "+=", "1" ] },
+      { "math": [ "var_timestop_duration", "=", "( (u_skill('throw') * 35 ) + (u_skill('stabbing') * 35 ) + (u_skill('dodge') * 70 ) + 210 )" ] },
+      { "u_lose_effect": "sakuya_timestop_effect" },
+      { "run_eocs": [ "sakuya_timestop_vfx", "sakuya_timestop_cycle1" ] }
+    ],
+    "//": "This EOC is a modified version of udonge_waveinsight_start . It runs for n times, set by the var above",
+    "//2": "dur 700 - 2100"
+  },
+  {
+    "id": "sakuya_timestop_vfx",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_timestop_active", "<", "2" ] },
+    "effect": [ { "u_cast_spell": { "id": "sakuya_timestop3" }, "targeted": false } ]
+  },
+  {
+    "id": "sakuya_timestop_cycle1",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "var_timestop_timer", "<", "var_timestop_duration" ] },
+        { "math": [ "var_timestop_active", "<", "2" ] }
+      ]
+    },
+    "effect": [ { "run_eocs": [ "sakuya_timestop_cycle2" ] } ],
+    "false_effect": [ { "run_eocs": [ "sakuya_timestop_end" ] } ]
+  },
+  {
+    "id": "sakuya_timestop_cycle2",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_val('mana')", ">=", "( 133 / ( var_timestop_duration / 100 ) )" ] },
+        { "math": [ "var_timestop_timer", "<", "var_timestop_duration" ] },
+        { "math": [ "var_timestop_active", ">", "0" ] }
+      ]
+    },
+    "effect": [
+      { "math": [ "var_timestop_timer", "+=", "100" ] },
+      { "math": [ "u_val('mana')", "-=", "( 133 / ( var_timestop_duration / 100 ) )" ] },
+      { "u_add_effect": "sakuya_timestop_effect", "duration": "2 s" },
+      { "u_cast_spell": { "id": "sakuya_timestop2" }, "targeted": false },
+      { "queue_eocs": [ "sakuya_timestop_cycle1" ], "time_in_future": "1 s" }
+    ],
+    "false_effect": [ { "run_eocs": [ "sakuya_timestop_end" ] } ]
+  },
+  {
+    "id": "sakuya_timestop_end",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_timestop_active", "=", "0" ] },
+      { "math": [ "var_timestop_timer", "=", "0" ] },
+      { "u_lose_effect": "sakuya_timestop_effect" }
+    ],
+    "//": "Messages can be handled by EOCs once I fix the double-stop requirement of the base aura..."
+  },
+  {
+    "id": "sakuya_vanishingeverything_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_sakuya_ve_casted", "==", "0" ] },
+    "effect": [
+      { "math": [ "var_sakuya_ve_casted", "+=", "1" ] },
+      { "u_location_variable": { "global_val": "var_sakuya_ve_loc" } },
+      { "u_cast_spell": { "id": "sakuya_vanishingeverything2" }, "targeted": true },
+      { "queue_eocs": [ "sakuya_vanishingeverything_off" ], "time_in_future": "3 s" }
+    ],
+    "false_effect": [ 
+      { "math": [ "var_sakuya_ve_casted", "=", "0" ] },
+      { "u_teleport": { "global_val": "var_sakuya_ve_loc" } }
+    ]
+  },
+  {
+    "id": "sakuya_vanishingeverything_off",
+    "type": "effect_on_condition",
+    "effect": [ { "math": [ "var_sakuya_ve_casted", "=", "0" ] } ]
   },
   {
     "id": "tenko_keystonecrash_eoc",
@@ -958,7 +1289,7 @@
     "effect": [ 
       { "u_cast_spell": { "id": "utsuho_blacksun2" }, "targeted": false }
     ],
-    "//": "WIP"
+    "//WIP": " "
   },
   {
     "id": "utsuho_nuke_eoc",
@@ -986,61 +1317,162 @@
     ]
   },
   {
-    "id": "yamame_disease_epidemic_eoc",
-    "type": "effect_on_condition",
-    "effect": [
-      { "run_eocs": [ "yamame_disease_epidemic_1" ] },
-      { "run_eocs": [ "yamame_disease_epidemic_2" ] },
-      { "run_eocs": [ "yamame_disease_epidemic_3" ] }
-    ],
-    "//": "Subspell that act as a repeater for each of her spells, by separate. The u_var_whatever are set at yamame_opens_spellbook_eoc "
-  },
-  {
-    "id": "yamame_disease_epidemic_1",
-    "type": "effect_on_condition",
-    "condition": { "math": [ "u_var_icypyrexia", ">=", "1" ] },
-    "effect": [
-      { "math": [ "u_var_icypyrexia", "=", "0" ] },
-      { "u_cast_spell": { "id": "yamame_disease_icypyrexia3" } }
-    ]
-  },
-  {
-    "id": "yamame_disease_epidemic_2",
-    "type": "effect_on_condition",
-    "condition": { "math": [ "u_var_scarletplague", ">=", "1" ] },
-    "effect": [
-      { "math": [ "u_var_scarletplague", "=", "0" ] },
-      { "u_cast_spell": { "id": "yamame_disease_scarletplague3" } }
-    ]
-  },
-  {
-    "id": "yamame_disease_epidemic_3",
-    "type": "effect_on_condition",
-    "condition": { "math": [ "u_var_unconstrainedrot", ">=", "1" ] },
-    "effect": [
-      { "math": [ "u_var_unconstrainedrot", "=", "0" ] },
-      { "u_cast_spell": { "id": "yamame_disease_unconstrainedrot4" } }
-    ]
-  },
-  {
     "id": "yamame_disease_icypyrexia_eoc",
     "type": "effect_on_condition",
     "effect": [
-      { "math": [ "u_var_icypyrexia", "+=", "1" ] }
+      { "math": [ "u_var_icypyrexia", "+=", "1" ] },
+      { "run_eocs": [ "yamame_disease_timer_1" ] }
+    ],
+    "//": "This is forced on the target. It adds the u_DISEASE tag and runs the u_DISEASE_timer "
+  },
+  {
+    "id": "yamame_disease_timer_1",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_var_icypyrexia", ">", "0" ] },
+        { "math": [ "u_var_disease_timer_1", "<", "var_disease_dur" ] }
+      ]
+    },
+    "effect": [
+      { "math": [ "u_var_disease_timer_1", "+=", "100" ] },
+      { "queue_eocs": [ "yamame_disease_timer_1_2" ], "time_in_future": "1 s" }
+    ],
+    "false_effect": [ 
+      { "math": [ "u_var_icypyrexia", "=", "0" ] },
+      { "math": [ "u_var_disease_timer_1", "=", "0" ] }
+    ],
+    "//": "This is the base disease timer. It checks if the target has u_DISEASE and the u_DISEASE_timer is less than the intended duration at that skill level (set at yamame_opens_spellbook_eoc )",
+    "//2": "It adds 1 s to u_DISEASE_timer and queues the second step, which adds u_MIASMA (equivalent of var_DISEASE dmg) and stores it, it also cycles back to this step",
+    "//3": "The u_DISEASE var is removed when the u_DISEASE_timer ends, or when consumed by Yamame's spells"
+  },
+  {
+    "id": "yamame_disease_timer_1_2",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_var_icypyrexia", ">", "0" ] },
+        { "math": [ "u_var_disease_timer_1", "<", "var_disease_dur" ] }
+      ]
+    },
+    "effect": [
+      { "math": [ "var_miasmaburst_dmg", "+=", "var_icypyrexia_dmg" ] },
+      { "run_eocs": [ "yamame_disease_timer_1" ] }
+    ],
+    "false_effect": [ 
+      { "math": [ "u_var_icypyrexia", "=", "0" ] },
+      { "math": [ "u_var_disease_timer_1", "=", "0" ] }
     ]
   },
   {
     "id": "yamame_disease_scarletplague_eoc",
     "type": "effect_on_condition",
     "effect": [
-      { "math": [ "u_var_scarletplague", "+=", "1" ] }
+      { "math": [ "u_var_scarletplague", "+=", "1" ] },
+      { "run_eocs": [ "yamame_disease_timer_2" ] }
     ]
   },
   {
-    "id": "yamame_disease_unconstrainedrot_eoc",
+    "id": "yamame_disease_timer_2",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_var_scarletplague", ">", "0" ] },
+        { "math": [ "u_var_disease_timer_2", "<", "var_disease_dur" ] }
+      ]
+    },
+    "effect": [
+      { "math": [ "u_var_disease_timer_2", "+=", "100" ] },
+      { "queue_eocs": [ "yamame_disease_timer_2_2" ], "time_in_future": "1 s" }
+    ],
+    "false_effect": [ 
+      { "math": [ "u_var_scarletplague", "=", "0" ] },
+      { "math": [ "u_var_disease_timer_2", "=", "0" ] }
+    ]
+  },
+  {
+    "id": "yamame_disease_timer_2_2",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_var_scarletplague", ">", "0" ] },
+        { "math": [ "u_var_disease_timer_2", "<", "var_disease_dur" ] }
+      ]
+    },
+    "effect": [
+      { "math": [ "var_miasmaburst_dmg", "+=", "var_scarletplague_dmg" ] },
+      { "run_eocs": [ "yamame_disease_timer_2" ] }
+    ],
+    "false_effect": [ 
+      { "math": [ "u_var_scarletplague", "=", "0" ] },
+      { "math": [ "u_var_disease_timer_2", "=", "0" ] }
+    ]
+  },
+  {
+    "id": "yamame_disease_volatilerot_eoc",
     "type": "effect_on_condition",
     "effect": [
-      { "math": [ "u_var_unconstrainedrot", "+=", "1" ] }
+      { "math": [ "u_var_volatilerot", "+=", "1" ] },
+      { "run_eocs": [ "yamame_disease_timer_3" ] },
+      { "run_eocs": [ "yamame_disease_volatilerot_flare_1" ] }
+    ]
+  },
+  {
+    "id": "yamame_disease_timer_3",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_var_volatilerot", ">", "0" ] },
+        { "math": [ "u_var_disease_timer_3", "<", "var_disease_dur" ] }
+      ]
+    },
+    "effect": [
+      { "math": [ "u_var_disease_timer_3", "+=", "100" ] },
+      { "queue_eocs": [ "yamame_disease_timer_3_2" ], "time_in_future": "1 s" }
+    ],
+    "false_effect": [ 
+      { "math": [ "u_var_volatilerot", "=", "0" ] },
+      { "math": [ "u_var_disease_timer_3", "=", "0" ] }
+    ]
+  },
+  {
+    "id": "yamame_disease_timer_3_2",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_var_volatilerot", ">", "0" ] },
+        { "math": [ "u_var_disease_timer_3", "<", "var_disease_dur" ] }
+      ]
+    },
+    "effect": [
+      { "math": [ "var_miasmaburst_dmg", "+=", "var_volatilerot_dmg" ] },
+      { "run_eocs": [ "yamame_disease_timer_3" ] }
+    ],
+    "false_effect": [ 
+      { "math": [ "u_var_volatilerot", "=", "0" ] },
+      { "math": [ "u_var_disease_timer_3", "=", "0" ] }
+    ]
+  },
+  {
+    "id": "yamame_disease_volatilerot_flare_1",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_volatilerot", ">", "0" ] },
+    "effect": [
+      { "queue_eocs": [ "yamame_disease_volatilerot_flare_2" ], "time_in_future": [ "3 s", "4 s" ] }
+    ],
+    "//": "Casting yamame_disease_volatilerot runs yamame_disease_volatilerot_eoc on the target, which tags it with the u_DISEASE tag + u_DISEASE_timer ",
+    "//2": "It also runs this cycle, which queues the next step between 3 - 4 s",
+    "//3": "The next step forces the target to cast the self-spell for dmg (the aoe 'flare'), and re-queues this",
+    "//4": "It stops if the target no longer has the specific u_DISEASE (which is removed when u_DISEASE_timer ends, or after u_DISEASE is consumed by Yamame's spells)",
+    "//5": "This is separated from the actual DISEASE_timer EOC so the target can flare up randomly instead of every 1 s"
+  },
+  {
+    "id": "yamame_disease_volatilerot_flare_2",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_volatilerot", ">", "0" ] },
+    "effect": [
+      { "u_cast_spell": { "id": "yamame_disease_volatilerot_flare" }, "targeted": false },
+      { "run_eocs": [ "yamame_disease_volatilerot_flare_1" ] }
     ]
   },
   {
@@ -1058,6 +1490,70 @@
       { "u_cast_spell": { "id": "yamame_damnedrope2" }, "targeted": true },
       { "u_lose_trait": "damnedrope_strength_mut" }
     ]
+  },
+  {
+    "id": "yamame_miasmaburst_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_miasmaburst_dmg", "=", "0" ] }
+    ]
+  },
+  {
+    "id": "yamame_miasmaepidemic_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "run_eocs": [ "yamame_miasmaepidemic_1" ] },
+      { "run_eocs": [ "yamame_miasmaepidemic_2" ] },
+      { "run_eocs": [ "yamame_miasmaepidemic_3" ] }
+    ],
+    "//": "Subspell that act as a repeater for each of her spells, by separate",
+    "//2": "As yamame_miasmaepidemic is run on ally + hostile, this EOC is forced upon them, so u_ is ally, hostile; NOT Yamame",
+    "//3": "If the target is affected by epidemic, it consumes the u_DISEASE and forces them to cast the spell (which propagates the disease in aoe)"
+  },
+  {
+    "id": "yamame_miasmaepidemic_1",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_icypyrexia", ">=", "1" ] },
+    "effect": [
+      { "math": [ "u_var_icypyrexia", "=", "0" ] },
+      { "u_cast_spell": { "id": "yamame_disease_icypyrexia3" } }
+    ]
+  },
+  {
+    "id": "yamame_miasmaepidemic_2",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_scarletplague", ">=", "1" ] },
+    "effect": [
+      { "math": [ "u_var_scarletplague", "=", "0" ] },
+      { "u_cast_spell": { "id": "yamame_disease_scarletplague3" } }
+    ]
+  },
+  {
+    "id": "yamame_miasmaepidemic_3",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_volatilerot", ">=", "1" ] },
+    "effect": [
+      { "math": [ "u_var_volatilerot", "=", "0" ] },
+      { "u_cast_spell": { "id": "yamame_disease_volatilerot3" } }
+    ]
+  },
+  {
+    "id": "yamame_miasmarelease_eoc",
+    "type": "effect_on_condition",
+    "condition": {
+      "or": [
+        { "math": [ "u_var_icypyrexia", ">", "0" ] },
+        { "math": [ "u_var_scarletplague", ">", "0" ] },
+        { "math": [ "u_var_volatilerot", ">", "0" ] }
+      ]
+    },
+    "effect": [
+        { "math": [ "u_var_icypyrexia", "=", "0" ] },
+        { "math": [ "u_var_scarletplague", "=", "0" ] },
+        { "math": [ "u_var_volatilerot", "=", "0" ] },
+      { "u_cast_spell": { "id": "yamame_miasmarelease3" }, "targeted": false }
+    ],
+    "//": "Checks if the target has the u_DISEASE that was applied by each DISEASE_eoc above, if true it forces the target to cast the bonus dmg spell and consumes the var"
   },
   {
     "id": "youmu_slasheternal_eoc",

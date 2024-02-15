@@ -147,10 +147,10 @@
     "//": "Exactly the same flag, only adds immunity for Mokou"
   },
   {
-    "id": "unscontrained_rot",
+    "id": "volatile_rot",
     "type": "effect_type",
-    "name": [ "Unconstrained rot (effect)" ],
-    "desc": [ "Your guts are decomposing rapidly!" ],
+    "name": [ "Volatile rot (effect)" ],
+    "desc": [ "Your skin feels as if bursting out!" ],
     "max_intensity": 1,
     "max_effective_intensity": 1
   },
@@ -184,7 +184,8 @@
     "apply_message": "The soulshard shatters, nearby enemies stop sensing you!",
     "remove_message": "You can feel eyes upon you again.",
     "rating": "good",
-    "flags": [ "INVISIBLE", "NO_SCENT" ]
+    "flags": [ "INVISIBLE", "NO_SCENT" ],
+    "//note": "This could be a debuff on nearby enemies instead, by removing *you* from their sight, including your smell and reducing your sound to zero. Hmm..."
   },
   {
     "id": "kokoro_anger_effect",
@@ -748,7 +749,7 @@
     "apply_message": "Time is frozen.  Is it as if the entire world has stopped.",
     "remove_message": "Thus, time is flowing again.",
     "rating": "good",
-    "base_mods": { "speed_mod": [ 35 ] }
+    "base_mods": { "speed_mod": [ 20 ] }
   },
   {
     "id": "seiga_cripple_effect_short",

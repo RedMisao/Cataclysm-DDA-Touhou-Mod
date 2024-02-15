@@ -13,58 +13,6 @@
     "//": "Starting hair for Aya"
   },
   {
-    "id": "hair_mokou",
-    "type": "mutation",
-    "name": { "str": "Hair: white, very long" },
-    "description": "You have very long, straight hair, bleached white due continuous heat exposure.",
-    "points": 0,
-    "starting_trait": false,
-    "valid": false,
-    "player_display": true,
-    "vanity": true,
-    "types": [ "hair_style" ],
-    "//": "Starting hair for Mokou"
-  },
-  {
-    "id": "hair_kokoro",
-    "type": "mutation",
-    "name": { "str": "Hair: pink, long" },
-    "description": "You have long, puffy pink hair.",
-    "points": 0,
-    "starting_trait": false,
-    "valid": false,
-    "player_display": true,
-    "vanity": true,
-    "types": [ "hair_style" ],
-    "//": "Starting hair for Kokoro"
-  },
-  {
-    "id": "hair_tenko",
-    "type": "mutation",
-    "name": { "str": "Hair: blue, long" },
-    "description": "You have long, blue hair.",
-    "points": 0,
-    "starting_trait": false,
-    "valid": false,
-    "player_display": true,
-    "vanity": true,
-    "types": [ "hair_style" ],
-    "//": "Starting hair for Tenko"
-  },
-  {
-    "id": "hair_meiling",
-    "type": "mutation",
-    "name": { "str": "Hair: red, long" },
-    "description": "You have long, straight red hair.",
-    "points": 0,
-    "starting_trait": false,
-    "valid": false,
-    "player_display": true,
-    "vanity": true,
-    "types": [ "hair_style" ],
-    "//": "Starting hair for Meiling"
-  },
-  {
     "id": "hair_iku",
     "type": "mutation",
     "name": { "str": "Hair: indigo, short" },
@@ -91,17 +39,56 @@
     "//": "Starting hair for Kaenbyou"
   },
   {
-    "id": "hair_udongein",
+    "id": "hair_kokoro",
     "type": "mutation",
-    "name": { "str": "Hair: jacaranda, very long" },
-    "description": "You have very long, straight jacaranda hair.",
+    "name": { "str": "Hair: pink, long" },
+    "description": "You have long, puffy pink hair.",
     "points": 0,
     "starting_trait": false,
     "valid": false,
     "player_display": true,
     "vanity": true,
     "types": [ "hair_style" ],
-    "//": "Starting hair for Udonge"
+    "//": "Starting hair for Kokoro"
+  },
+  {
+    "id": "hair_meiling",
+    "type": "mutation",
+    "name": { "str": "Hair: red, long" },
+    "description": "You have long, straight red hair.",
+    "points": 0,
+    "starting_trait": false,
+    "valid": false,
+    "player_display": true,
+    "vanity": true,
+    "types": [ "hair_style" ],
+    "//": "Starting hair for Meiling"
+  },
+  {
+    "id": "hair_mokou",
+    "type": "mutation",
+    "name": { "str": "Hair: white, very long" },
+    "description": "You have very long, straight hair, bleached white due continuous heat exposure.",
+    "points": 0,
+    "starting_trait": false,
+    "valid": false,
+    "player_display": true,
+    "vanity": true,
+    "types": [ "hair_style" ],
+    "//": "Starting hair for Mokou"
+  },
+  {
+    "id": "hair_nitori",
+    "type": "mutation",
+    "name": { "str": "Hair: blue, twintails" },
+    "description": "You have medium-length, blue hair, twintails style.",
+    "points": 0,
+    "starting_trait": false,
+    "valid": false,
+    "player_display": true,
+    "vanity": true,
+    "types": [ "hair_style" ],
+    "//": "Starting hair for Nitori"
   },
   {
     "id": "hair_reisen",
@@ -154,6 +141,32 @@
     "vanity": true,
     "types": [ "hair_style" ],
     "//": "Starting hair for Seiga"
+  },
+  {
+    "id": "hair_tenko",
+    "type": "mutation",
+    "name": { "str": "Hair: blue, long" },
+    "description": "You have long, blue hair.",
+    "points": 0,
+    "starting_trait": false,
+    "valid": false,
+    "player_display": true,
+    "vanity": true,
+    "types": [ "hair_style" ],
+    "//": "Starting hair for Tenko"
+  },
+  {
+    "id": "hair_udongein",
+    "type": "mutation",
+    "name": { "str": "Hair: jacaranda, very long" },
+    "description": "You have very long, straight jacaranda hair.",
+    "points": 0,
+    "starting_trait": false,
+    "valid": false,
+    "player_display": true,
+    "vanity": true,
+    "types": [ "hair_style" ],
+    "//": "Starting hair for Udonge"
   },
   {
     "id": "hair_utsuho",

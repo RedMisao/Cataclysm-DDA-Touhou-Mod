@@ -17,7 +17,7 @@
     "max_aoe": 1,
     "max_level": 1,
     "difficulty": -11,
-    "base_casting_time": 65,
+    "base_casting_time": 66,
     "base_energy_cost": 200,
     "energy_source": "MANA",
     "flags": [ "LOUD", "NO_HANDS", "NO_LEGS", "SOMATIC" ]

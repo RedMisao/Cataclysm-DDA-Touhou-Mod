@@ -1,5 +1,47 @@
 [
   {
+    "id": "mon_kappa_turret",
+    "type": "MONSTER",
+    "name": { "str": "kappa turret" },
+    "description": "WIP",
+    "volume": "30000 ml",
+    "weight": "40750 g",
+    "default_faction": "touhou_summon",
+    "species": [ "ROBOT" ],
+    "harvest": "exempt",
+    "hp": 30,
+    "speed": 100,
+    "material": [ "steel" ],
+    "symbol": "2",
+    "looks_like": "mon_turret",
+    "color": "light_blue",
+    "aggression": 99,
+    "morale": 99,
+    "armor": { "bash": 12, "cut": 12, "bullet": 16, "stab": 12, "cold": 12 },
+    "vision_night": 6,
+    "weakpoint_sets": [ "wps_turret" ],
+    "starting_ammo": { "watershot_ammo_1": 99 },
+    "special_attacks": [
+      {
+        "gun_type": "water_mp5",
+        "type": "gun",
+        "ammo_type": "watershot_ammo_1",
+        "cooldown": 2,
+        "fake_dex": 10,
+        "fake_skills": [ [ "gun", 4 ], [ "smg", 4 ] ],
+        "move_cost": 150,
+        "targeting_cost": 300,
+        "require_targeting_monster": true,
+        "require_targeting_npc": true,
+        "no_ammo_sound": "",
+        "ranges": [ [ 0, 15, "BURST" ] ]
+      }
+    ],
+    "death_function": { "corpse_type": "NO_CORPSE", "message": "" },
+    "flags": [ "BIOLOGICALPROOF", "COLDPROOF", "ELECTRONIC", "IMMOBILE", "NO_BREATHE", "NOHEAD", "NOT_HALLUCINATION", "SEES" ],
+    "//WIP": "Add 'spark and smoke on death' death_function "
+  },
+  {
     "id": "mon_risen_child_seiga",
     "type": "MONSTER",
     "name": { "str": "risen child", "str_pl": "risen children" },
@@ -12,6 +54,7 @@
     "harvest": "exempt",
     "hp": 40,
     "speed": 85,
+    "material": [ "flesh" ],
     "symbol": "ž",
     "color": "white",
     "aggression": 66,
@@ -32,7 +75,7 @@
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
     "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s dissipates." },
     "flags": [ "GRABS", "GROUP_MORALE", "HEARS", "NO_BREATHE", "PATH_AVOID_DANGER_1", "SEES", "SOULDMG_EXTRA" ],
-    "//": "WIP. These should escalate towards the late game? Or summon something else, yet what's more wicked than children in undeath"
+    "//WIP": "These should escalate towards the late game? Or summon something else, yet what's more wicked than children in undeath"
   },
   {
     "id": "mon_sakuya_alternate",
@@ -47,6 +90,7 @@
     "harvest": "exempt",
     "hp": 100,
     "speed": 150,
+    "material": [ "flesh" ],
     "symbol": "@",
     "color": "light_gray",
     "aggression": 66,
@@ -74,7 +118,7 @@
     ],
     "anger_triggers": [ "FRIEND_ATTACKED", "HURT" ],
     "fear_triggers": [ "PLAYER_CLOSE" ],
-    "death_function": { "corpse_type": "NO_CORPSE" },
+    "death_function": { "corpse_type": "NO_CORPSE", "message": "" },
     "flags": [
       "CLIMBS",
       "FLIES",
@@ -126,7 +170,7 @@
       }
     ],
     "anger_triggers": [ "FRIEND_ATTACKED", "HURT" ],
-    "death_function": { "corpse_type": "NO_CORPSE" },
+    "death_function": { "corpse_type": "NO_CORPSE", "message": "" },
     "flags": [
       "FLIES",
       "IMMOBILE",
@@ -155,7 +199,7 @@
     "species": [ "UNKNOWN" ],
     "harvest": "exempt",
     "hp": 100,
-    "speed": 150,
+    "speed": 100,
     "symbol": "🔅",
     "color": "black",
     "aggression": 99,
@@ -185,7 +229,7 @@
         "cooldown": 2
       }
     ],
-    "death_function": { "corpse_type": "NO_CORPSE" },
+    "death_function": { "corpse_type": "NO_CORPSE", "message": "" },
     "flags": [
       "ALWAYS_VISIBLE",
       "CLIMBS",
@@ -215,6 +259,7 @@
     "harvest": "exempt",
     "hp": 120,
     "speed": 85,
+    "material": [ "flesh" ],
     "symbol": "💀",
     "color": "dark_gray",
     "aggression": 66,
@@ -279,7 +324,7 @@
     "volume": "14000 ml",
     "weight": "100 g",
     "default_faction": "touhou_summon",
-    "//2": "WIP. Change faction when the related spells are finished",
+    "//WIP": "Change faction when the related spells are finished",
     "bodytype": "blob",
     "species": [ "PHANTOM_TOUHOU" ],
     "harvest": "exempt",
@@ -300,7 +345,11 @@
     "vision_day": 20,
     "vision_night": 20,
     "path_settings": { "max_dist": 20 },
-    "special_attacks": [ [ "grab", 11 ], [ "PARROT_AT_DANGER", 16 ], [ "vs_stab2d2", 5 ] ],
+    "special_attacks": [ 
+      [ "grab", 11 ], 
+      [ "PARROT_AT_DANGER", 16 ], 
+      [ "vs_stab2d2", 5 ]
+    ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
     "death_function": {
       "corpse_type": "NO_CORPSE",
@@ -321,7 +370,8 @@
       "SEES", 
       "SOULDMG_EXTRA",
       "STUN_IMMUNE",
-      "WARM"
+      "WARM",
+      "VS_FLAG"
     ],
     "//": "Onryou on their own are basically trash mobs that keep enemies ocuppied. These should drain the moral of the target more than be an active threat, even in swarms"
   },
@@ -435,7 +485,7 @@
     "special_attacks": [ [ "youmumyon_slash", 2 ] ],
     "anger_triggers": [ "FRIEND_ATTACKED", "HURT" ],
     "fear_triggers": [ "PLAYER_CLOSE" ],
-    "death_function": { "corpse_type": "NO_CORPSE" },
+    "death_function": { "corpse_type": "NO_CORPSE", "message": "Your phantom half returns to your side." },
     "flags": [ "BASHES", "CAN_OPEN_DOORS", "CLIMBS", "FLIES", "NO_BREATHE", "NOT_HALLUCINATION", "PATH_AVOID_DANGER_2", "PET_WONT_FOLLOW", "SEES" ]
   },
   {
@@ -478,7 +528,7 @@
     ],
     "anger_triggers": [ "FRIEND_ATTACKED", "HURT" ],
     "fear_triggers": [ "PLAYER_CLOSE" ],
-    "death_function": { "corpse_type": "NO_CORPSE" },
+    "death_function": { "corpse_type": "NO_CORPSE", "message": "Your phantom half returns to your side." },
     "flags": [
       "CLIMBS",
       "FLIES",

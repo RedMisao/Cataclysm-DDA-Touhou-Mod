@@ -129,7 +129,7 @@
     "max_field_intensity": 1,
     "max_level": 1,
     "difficulty": -50,
-    "base_casting_time": 0,
+    "base_casting_time": 100,
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS" ],
@@ -180,7 +180,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],
-    "//": "WIP. The last step to make this work is to reduce u_var_hellcannon_cast by one each time this is cast, but the EOC is not being run/recognized by mon_utsuho_minisun ",
+    "//WIP": "The last step to make this work is to reduce u_var_hellcannon_cast by one each time this is cast, but the EOC is not being run/recognized by mon_utsuho_minisun ",
     "//2": "Note: if ground is added to valid_targets it may throw a 'Tried to use an invalid alpha talker' error"
   },
   {
@@ -190,6 +190,6 @@
       { "math": [ "u_var_hellcannon_cast", "-=", "1" ] },
       { "math": [ "u_var_hellcannon_unc_cast", "-=", "1" ] }
     ],
-    "//": "WIP. This is NOT reducing their u_var . A workaround is queueing queue_hellcannon_to_mon_eoc "
+    "//WIP": "This is NOT reducing their u_var . A workaround is queueing queue_hellcannon_to_mon_eoc "
   }
 ]

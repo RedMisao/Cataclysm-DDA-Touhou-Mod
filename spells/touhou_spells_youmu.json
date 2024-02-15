@@ -18,7 +18,7 @@
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 100,
-    "base_energy_cost": 133,
+    "base_energy_cost": 100,
     "energy_source": "MANA",
     "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ],
     "//": "min dur 1800"
@@ -42,7 +42,7 @@
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 100,
-    "base_energy_cost": 133,
+    "base_energy_cost": 100,
     "energy_source": "MANA",
     "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ],
     "//": "min dur 1800"
@@ -82,7 +82,7 @@
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 100,
-    "base_energy_cost": 166,
+    "base_energy_cost": 133,
     "energy_source": "MANA",
     "flags": [ "EXTRA_EFFECTS_FIRST", "NO_HANDS", "NO_LEGS", "SOMATIC" ]
   },
@@ -218,7 +218,7 @@
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 200,
-    "base_energy_cost": 200,
+    "base_energy_cost": 166,
     "energy_source": "MANA",
     "flags": [ "EXTRA_EFFECTS_FIRST", "NO_HANDS", "NO_LEGS", "SOMATIC" ]
   },

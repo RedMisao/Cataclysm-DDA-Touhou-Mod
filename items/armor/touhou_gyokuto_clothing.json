@@ -191,7 +191,7 @@
       { "covers": [ "arm_l", "arm_r" ], "coverage": 95, "encumbrance": [ 8, 12 ] },
       { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 8, 12 ] }
     ],
-    "flags": [ "FANCY", "POCKETS", "STURDY", "VARSIZE", "RAINPROOF" ]
+    "flags": [ "FANCY", "STURDY", "VARSIZE", "RAINPROOF" ]
   },
   {
     "id": "ldc_tie",

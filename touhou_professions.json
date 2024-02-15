@@ -51,7 +51,7 @@
       { "level": 1, "id": "mokou_blazekick" },
       { "level": 1, "id": "mokou_cauterize" },
       { "level": 1, "id": "mokou_combustion" },
-      { "level": 1, "id": "mokou_fingeflame" },
+      { "level": 1, "id": "mokou_fireball" },
       { "level": 1, "id": "mokou_fujiyamakazan" },
       { "level": 1, "id": "mokou_phoenixtalons" }
     ],
@@ -186,9 +186,26 @@
       { "level": 4, "name": "mechanics" },
       { "level": 4, "name": "swimming" }
     ],
-    "traits": [ "YOUKAI_SPECIES", "SPIRIT_USER" ],
+    "spells": [
+      { "level": 1, "id": "dash_basic" },
+      { "level": 1, "id": "nitori_mortar" },
+      { "level": 1, "id": "nitori_toolswing" },
+      { "level": 1, "id": "nitori_turretdeploy" },
+      { "level": 1, "id": "nitori_weathermissile" }
+    ],
+    "traits": [ "PROF_NITORI", "YOUKAI_SPECIES", "SPIRIT_USER", "eye_blue_touhou", "FACIAL_HAIR_NONE", "hair_nitori" ],
     "items": {
-      "both": { "items": [ "hose" ], "entries": [ { "item": "rm451_flamethrower", "contents-item": "shoulder_strap" } ] },
+      "both": {
+        "items": [
+          "dress_shirt",
+          "kappa_boots",
+          "kappa_dress",
+          "kappa_hat",
+          "kappa_vest",
+          "socks"
+        ],
+        "entries": [ { "item": "nitori_backpack", "contents-group": "nested_nitori_tools" } ]
+      },
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "panties" ]
     },
@@ -228,7 +245,6 @@
           "udonge_clip",
           "udonge_dress_shoes",
           "ldc_ear_accessory",
-          "lunar_guide1",
           "udonge_skirt",
           "udonge_shirt",
           "socks",
@@ -237,11 +253,11 @@
         "entries": [ { "item": "lunatic_pistol2", "ammo-item": "ammo_lunar_small_2", "charges": 13, "container-item": "lunatic_holster" } ]
       },
       "male": [ "boxer_shorts" ],
-      "female": [ "bra", "panties" ],
-      "//3": "if possible, implement a shot spread effect with 2-3 bullets on a cone and 8-7 illusionary bullets that deal no damage, and change the sprite because I don't like the current * ",
-      "//4": "Finally, see if I can implement her LoLK bomb, or not if that would be outright broken alongside her stealth passive that should have priority"
+      "female": [ "bra", "panties" ]
     },
-    "flags": [ "SCEN_ONLY" ]
+    "flags": [ "SCEN_ONLY" ],
+    "//": "if possible, implement a shot spread effect with 2-3 bullets on a cone and 8-7 illusionary bullets that deal no damage, and change the sprite because I don't like the current * ",
+    "//2": "Finally, see if I can implement her LoLK bomb, or not if that would be outright broken alongside her stealth passive that should have priority" 
   },
   {
     "ident": "reisen_II",
@@ -274,8 +290,7 @@
           "ldc_skirt",
           "ldc_suit",
           "ldc_tie",
-          "ldc_veil_deactivated",
-          "lunar_guide1"
+          "ldc_veil_deactivated"
         ],
         "entries": [ { "item": "lunar_rifle2", "ammo-item": "ammo_lunar_medium_1", "charges": 11, "contents-item": "shoulder_strap" } ]
       },
@@ -330,8 +345,8 @@
     "spells": [
       { "level": 1, "id": "dash_basic" },
       { "level": 1, "id": "kaenbyou_dismissfire" },
-      { "level": 1, "id": "kaenbyou_conflagrate" },
       { "level": 1, "id": "kaenbyou_immolate" },
+      { "level": 1, "id": "kaenbyou_infernoburst" },
       { "level": 1, "id": "kaenbyou_blazingwheel" },
       { "level": 1, "id": "kaenbyou_soulshard_fuel" },
       { "level": 1, "id": "kaenbyou_soulshatter" },
@@ -379,7 +394,8 @@
       { "level": 1, "id": "sakuya_maidsecret" },
       { "level": 1, "id": "sakuya_quickrest" },
       { "level": 1, "id": "sakuya_timeparadox" },
-      { "level": 1, "id": "sakuya_timestop" }
+      { "level": 1, "id": "sakuya_timestop" },
+      { "level": 1, "id": "sakuya_vanishingeverything" }
     ],
     "traits": [ "MYSTERIOUS", "PSYCHOPATH", "PROF_SAKUYA", "SPIRIT_USER", "eye_silver_touhou", "FACIAL_HAIR_NONE", "hair_sakuya" ],
     "//": "Change PSYCHOPATH for something like CALLOUS instead: no bonuses like PSYCHOPATH but no demerits for killing and butchering humans and children specifically",
@@ -507,15 +523,16 @@
     "spells": [
       { "level": 1, "id": "dash_basic" },
       { "level": 1, "id": "yamame_curedisease" },
-      { "level": 1, "id": "yamame_disease_epidemic" },
       { "level": 1, "id": "yamame_disease_icypyrexia" },
       { "level": 1, "id": "yamame_disease_scarletplague" },
-      { "level": 1, "id": "yamame_disease_unconstrainedrot" },
+      { "level": 1, "id": "yamame_disease_volatilerot" },
       { "level": 1, "id": "yamame_damnedrope" },
-      { "level": 1, "id": "yamame_miasmashot" },
+      { "level": 1, "id": "yamame_miasmaburst" },
+      { "level": 1, "id": "yamame_miasmaepidemic" },
+      { "level": 1, "id": "yamame_miasmarelease" },
       { "level": 1, "id": "yamame_webdismiss" },
-      { "level": 1, "id": "yamame_webbridge" },
       { "level": 1, "id": "yamame_webcapture" },
+      { "level": 1, "id": "yamame_webbridge" },
       { "level": 1, "id": "yamame_webrappel" }
     ],
     "traits": [ "TSUCHIGUMO_SPECIES", "PROF_YAMAME", "YOUKAI_SPECIES", "SPIRIT_USER", "eye_brown_touhou", "FACIAL_HAIR_NONE", "hair_yamame" ],
@@ -525,8 +542,7 @@
       "female": [ "bra", "bloomers" ]
     },
     "flags": [ "SCEN_ONLY" ],
-    "//": "WIP. Missing one non-disease spell, and bugtest her furniture spawn spells",
-    "//2": "Replace dash with self-pull? Or add self-pull alongside dash, difference is it costs mana to cast?"
+    "//": "Replace dash with self-pull? Or add self-pull alongside dash, difference is it costs mana to cast?"
   },
   {
     "ident": "youmu_konpaku",

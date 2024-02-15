@@ -5,8 +5,8 @@
     "category": "fuel",
     "name": { "str": "soulshard (fuel)", "str_pl": "soulshards (fuel)" },
     "description": "The crystallized fragment of a humanoid soul, ready to be used as an energy source.  Renewable?",
-    "volume": "40 ml",
-    "weight": "20 mg",
+    "volume": "80 ml",
+    "weight": "40 mg",
     "phase": "solid",
     "material": [ "soulshard_fuel_mat" ],
     "symbol": "💀",
@@ -18,7 +18,7 @@
     "range": 1,
     "effects": [ "FLAME", "INCENDIARY", "MAGIC_FOCUS", "NEVER_MISFIRES", "STREAM", "TRADER_AVOID", "UNBREAKABLE_MELEE" ],
     "//": "Based on diesel ",
-    "//2": "1 soulshard = 10 mL and 5 g. Combining 4 = 40 mL and 20 g, which is arbitrarily as good as 1 L of diesel, energy-wise"
+    "//2": "1 soulshard = 10 mL and 5 g. Combining 8 = 80 mL and 40 g, which is arbitrarily as good as 1 L of diesel, energy-wise"
   },
   {
     "id": "touhou_corpse_medium",

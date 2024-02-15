@@ -24,6 +24,7 @@ This mod adds Touhou Project characters as professions.  Characters (2hus) have 
 * **Seiga Kaku:** Uses wicked spells and can pass through walls.  Fights without care for human life or norms, all while forcing "collateral damage" victims back to life to fight for her.
 * **Tenshi Hinanawi:** Uses earth spells.  Very resistant to physical damage, very susceptible to boredom, she wields the Sword of Hisou and fights with a martial art focused on critical attacks over anything else.
 * **Utsuho Reiuji:** Uses nuclear spells.  She's half Hell Raven, half sun god, half pet, wholly awesome.
+* **Yamame Kurodani:** Uses arachnid techniques.  Inflicts illnesses upon her enemies, which she can manipulate further.  Good thing she's a friendly spider!
 * **Youmu Konpaku:** Uses sword techniques.  Also trained in gardening, she wields Roukanken and Hakurouken, two Youkai katana capable of cutting anything!
 
 
@@ -44,7 +45,7 @@ Every 2hu has their own custom set of clothing.  Not all are just cosmetics chan
 
 ## Minor milestones
 Relatively easy things to add, not in order:
-* More 2hus: Nitori, Yamame and Kokoro are still not playable.  I want to add Kasen, maybe Flandre and Joon too.
+* More 2hus: Nitori (WIP).  I want to add Kasen, maybe Flandre and Joon too.
 * Visual effects: Can it be done with fields? For example, when Youmu dashes, cherry petals appear on the path.
 * Vehicles: Make an engine that can use corpses as fuel.  Partially done by killing enemies which drop a resource that can be crafted into fuel.  Almost as metal as using blood as fuel.
 * Balance: CDDA is a roguelike, but the mod feels RPG-ish at times.

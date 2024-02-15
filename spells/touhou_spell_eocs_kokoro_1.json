@@ -5,7 +5,7 @@
     "effect": [
       { "math": [ "var_kokoro_stance", "=", "1" ] },
       { "math": [ "var_kokoro_mask", "=", "rand(3)" ] },
-      { "math": [ "var_kokoro_unstable_rnd", "=", "rand(1)" ] },
+      { "math": [ "var_kokoro_unstable_rand", "=", "rand(1)" ] },
       { "run_eocs": [ "kokoro_mask_eocs" ] }
     ],
     "//": "This sets the stance as 'base' and adds a random mask, then runs the mask check EOC",
@@ -29,7 +29,8 @@
     "false_effect": [ 
       { "run_eocs": [ "kokoro_instability_eoc" ] }
     ],
-    "//": "This checks if Kokoro has enough instability, if so it sets the 'unstable' stance"
+    "//": "This is run every 15 s (after kokoro_timer_eoc reduces some var_timer ). It checks if Kokoro has enough instability, if so it sets the 'unstable' stance",
+    "//2": "The next EOC is always run, it adds or removes instability"
   },
   {
     "id": "kokoro_instability_eoc",
@@ -74,7 +75,7 @@
             "effect": [
               { "math": [ "var_kokoro_instability", "-=", "15 + rand(90)" ] },
               { "math": [ "var_kokoro_mask", "=", "rand(3)" ] },
-              { "math": [ "var_kokoro_unstable_rnd", "=", "rand(1)" ] },
+              { "math": [ "var_kokoro_unstable_rand", "=", "rand(1)" ] },
               { "run_eocs": [ "kokoro_mask_eocs" ] }
             ]
           },
@@ -95,10 +96,12 @@
       }
     ],
     "false_effect": [ { "run_eocs": [ "kokoro_mask_default" ] } ],
-    "//": "This EOC determines where Kokoro will add or drain instability. If she's at the 'neutral' or 'boost' stances, she will add; if she's at the 'base' or 'unstable', she will drain",
-    "//2": "The first three states will add/drain 15 instability every 15 s, until it reaches zero and it defaults",
-    "//3": "The 'unstable' stance will drain ~60 instability (15 + average(90)) and randomize her mask every 15 s, until the instability reaches zero and it defaults",
-    "//4": "Additionally, there 'base' state can only drain instability to zero, no negatives so she can't stack 'stability' "
+    "//": "This is run every 15 s (after kokoro_timer_eoc reduces some var_timer and kokoro_instability_check_eoc checks for the instability threshold)",
+    "//2": "It determines whether Kokoro will add or drain instability. If she's at the 'neutral' or 'boost' stances, she will add (+15 instability/s)",
+    "//3": "If she's at the 'base' stances, she will drain (-15 instability/s)",
+    "//4": "If she's at the 'unstable' stance, she will drain ~60 instability/s instead ( 15 + average(90) ), and randomize masks",
+    "//5": "If the timer reaches zero, this will cause her to default instead",
+    "//6": "Additionally, the instability drain at the 'base' stance cannot reach negatives, so she can't stack 'stability' "
   },
   {
     "id": "kokoro_mask_boost_eoc_1",
@@ -137,7 +140,7 @@
       { "run_eocs": [ "kokoro_mask_eocs" ] }
     ],
     "false_effect": [ 
-      { "u_message": "You can't control your emotions.", "type": "mixed" },
+      { "u_message": "You can't control your emotions!", "type": "mixed" },
       { "math": [ "u_val('mana')", "+=", "75" ] }
     ],
     "//": "3rd check. If she is NOT at the 'unstable' stance it sets 'boost' stance and rechecks the active mask"
@@ -165,7 +168,7 @@
       { "run_eocs": [ "kokoro_mask_eocs" ] }
     ],
     "false_effect": [ 
-      { "u_message": "You can't control your emotions.", "type": "mixed" },
+      { "u_message": "You can't control your emotions!", "type": "mixed" },
       { "math": [ "u_val('mana')", "+=", "75" ] }
     ],
     "//": "2nd check. If she is NOT at the 'unstable' stance it randomizes mask + adds flat instability (based on the full 900 s of running 'neutral' or 'boost') + rechecks which mask is active"
@@ -192,7 +195,7 @@
       { "run_eocs": [ "kokoro_mask_neutral_eoc_3" ] }
     ],
     "false_effect": [ 
-      { "u_message": "You can't control your emotions.", "type": "mixed" },
+      { "u_message": "You can't control your emotions!", "type": "mixed" },
       { "math": [ "u_val('mana')", "+=", "75" ] }
     ],
     "//": "2nd check. If she is NOT at the 'unstable' stance it checks the next EOC. Do note that the 'neutral' stance doesn't check for the 'boost' stance, so it can override the latter"
@@ -224,8 +227,7 @@
       { "u_lose_effect": "kokoro_melancholy_effect" },
       { "u_lose_effect": "kokoro_melancholy_effect_boost" },
       { "u_add_effect": "kokoro_neutral_effect", "duration": "30 m" },
-      { "math": [ "var_kokoro_timer", "=", "900" ] },
-      { "run_eocs": [ "kokoro_instability_check_eoc" ] }
+      { "math": [ "var_kokoro_timer", "=", "900" ] }
     ],
     "//": "Removes all mask variables (used in spells) and mask effects, and adds the 'neutral' effect as dummy for the duration"
   }

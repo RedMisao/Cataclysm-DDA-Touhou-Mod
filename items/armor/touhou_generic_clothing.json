@@ -20,13 +20,13 @@
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_hip_l", "leg_hip_r" ],
         "coverage": 100,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_upper_l", "leg_upper_r" ],
         "coverage": 35,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       }
     ]
   },
@@ -52,7 +52,7 @@
         "covers": [ "arm_l", "arm_r" ],
         "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ],
         "coverage": 8,
-        "encumbrance": [ 0, 2 ]
+        "encumbrance": [ 2, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
@@ -64,21 +64,21 @@
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_upper_l", "leg_upper_r" ],
         "coverage": 95,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_knee_l", "leg_knee_r" ],
         "coverage": 95,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_lower_l", "leg_lower_r" ],
         "coverage": 20,
-        "encumbrance": [ 0, 2 ]
+        "encumbrance": [ 0, 4 ]
       },
-      { "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 8, 16 ] }
+      { "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 2, 12 ] }
     ],
     "flags": [ "FANCY", "VARSIZE" ],
     "//": "Generic below the knee version, no silk material so it's made of cotton instead"
@@ -105,7 +105,7 @@
         "covers": [ "arm_l", "arm_r" ],
         "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ],
         "coverage": 8,
-        "encumbrance": [ 0, 2 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
@@ -117,15 +117,15 @@
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_upper_l", "leg_upper_r" ],
         "coverage": 95,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_knee_l", "leg_knee_r" ],
         "coverage": 45,
-        "encumbrance": [ 0, 2 ]
+        "encumbrance": [ 0, 4 ]
       },
-      { "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 8, 16 ] }
+      { "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 2, 16 ] }
     ],
     "flags": [ "FANCY", "VARSIZE" ],
     "//": "Ends around 4-6 cm below the knee"
@@ -152,7 +152,7 @@
         "covers": [ "arm_l", "arm_r" ],
         "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ],
         "coverage": 8,
-        "encumbrance": [ 0, 2 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
@@ -166,7 +166,7 @@
         "coverage": 30,
         "encumbrance": [ 2, 4 ]
       },
-      { "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 8, 16 ] }
+      { "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 2, 16 ] }
     ],
     "flags": [ "FANCY", "VARSIZE" ],
     "//": "Covers one third of the thigh at best"
@@ -186,7 +186,7 @@
     "looks_like": "pants",
     "color": "white",
     "warmth": 4,
-    "armor": [ { "covers": [ "leg_l", "leg_r" ], "coverage": 85, "encumbrance": [ 1, 3 ] } ],
+    "armor": [ { "covers": [ "leg_l", "leg_r" ], "coverage": 85, "encumbrance": [ 0, 2 ] } ],
     "flags": [ "VARSIZE" ]
   },
   {
@@ -208,8 +208,8 @@
     "color": "light_gray",
     "warmth": 6,
     "armor": [
-      { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 2, 4 ] },
-      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 2, 5 ] }
+      { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 0, 4 ] },
+      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 0, 4 ] }
     ],
     "flags": [ "VARSIZE" ]
   },
@@ -248,10 +248,10 @@
       }
     ],
     "armor": [
-      { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 6, 10 ] },
-      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 6, 12 ] }
+      { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 4, 8 ] },
+      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 2, 8 ] }
     ],
-    "flags": [ "OUTER", "POCKETS", "VARSIZE" ]
+    "flags": [ "OUTER", "VARSIZE" ]
   },
   {
     "id": "ribbon_black",
@@ -304,12 +304,12 @@
     "color": "black",
     "warmth": 8,
     "armor": [
-      { "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 1, 2 ] },
+      { "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 0, 2 ] },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_lower_l", "leg_lower_r" ],
         "coverage": 25,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 2 ]
       }
     ],
     "flags": [ "SKINTIGHT", "VARSIZE" ]

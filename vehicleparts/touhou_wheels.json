@@ -3,7 +3,7 @@
     "id": "wheel_corpsecart",
     "type": "vehicle_part",
     "categories": [ "movement" ],
-    "name": { "str": "pair of corpse cart wheels (disassembled)" },
+    "name": { "str": "pair of corpse cart wheels" },
     "description": "A pair of spoken wooden wheels, made from a strange Former Hell wood.",
     "folded_volume": "1000 ml",
     "variants": [ { "symbols": "|", "symbols_broken": "#" } ],
