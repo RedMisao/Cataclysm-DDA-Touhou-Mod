@@ -61,7 +61,7 @@
     "flags": [ "INEDIBLE", "NO_AUTO_CONSUME", "NO_INGEST", "TRADER_AVOID" ]
   },
   {
-    "ident": "wip_rin_kaenbyou",
+    "id": "wip_rin_kaenbyou",
     "type": "profession",
     "name": " ",
     "description": " ",

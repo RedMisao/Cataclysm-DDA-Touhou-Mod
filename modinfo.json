@@ -1,6 +1,6 @@
 [
   {
-    "ident": "Touhou",
+    "id": "Touhou",
     "type": "MOD_INFO",
     "category": "touhou",
     "name": "Touhou Professions",
