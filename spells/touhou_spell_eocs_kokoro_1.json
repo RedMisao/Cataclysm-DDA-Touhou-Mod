@@ -10,7 +10,7 @@
     ],
     "//": "This sets the stance as 'base' and adds a random mask, then runs the mask check EOC",
     "//2": "The unstable_rnd var is used for the mask check EOC when Kokoro is 'unstable' to decide if she gets the buffs of the 'base' or 'boost' mask",
-    "//NOTE": "All the EOCs in this file are checks that set the conditions for the mask selection (at touhou_spell_eocs_kokoro_2)"
+    "//3": "All the EOCs in this file are checks that set the conditions for the mask selection (at touhou_spell_eocs_kokoro_2)"
   },
   {
     "id": "kokoro_instability_check_eoc",

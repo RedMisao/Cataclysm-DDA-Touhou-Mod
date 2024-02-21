@@ -29,6 +29,153 @@
     ]
   },
   {
+    "id": "iku_batteryrestore_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "u_run_inv_eocs": "all",
+        "search_data": [ 
+          { "id": "light_minus_battery_cell", "wielded_only": true },
+          { "id": "light_battery_cell", "wielded_only": true },
+          { "id": "light_plus_battery_cell", "wielded_only": true },
+          { "id": "medium_battery_cell", "wielded_only": true },
+          { "id": "medium_plus_battery_cell", "wielded_only": true },
+          { "id": "heavy_battery_cell", "wielded_only": true },
+          { "id": "heavy_plus_battery_cell", "wielded_only": true }
+        ],
+        "true_eocs": [ "iku_batteryrestore_check" ],
+        "false_eocs": [ 
+          {
+            "id": "batteryrestore_no",
+            "effect": [ { "u_message": "You don't have a battery at hand.", "type": "mixed" } ]
+          }
+        ]
+      }
+    ],
+    "//": "This checks if Iku is wielding a battery, and if so runs the EOCs below, which detect which kind of battery she has and 'recharges' it, draining proportional mana",
+    "//2": "As u_consume_item with a negative charge value just destroys the item, the trick is to destroy + create a new battery, which thankfully spawns with full charge, else the spell wouldn't work",
+    "//3": "Current issue at base cdda #70651 causes the false_eocs to be run more than once",
+    "//4": "Other than repeating the fail message, this has no effect on the player, but forces me to split the EOC into above and below, instead of just running all of them sequentially above"
+  },
+  {
+    "id": "iku_batteryrestore_check",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "u_run_inv_eocs": "all",
+        "search_data": [ { "id": "light_minus_battery_cell", "wielded_only": true } ],
+        "true_eocs": [
+          {
+            "id": "batteryrestore1_eoc",
+            "condition": { "math": [ "u_val('mana')", ">=", "25" ] },
+            "effect": [
+              { "math": [ "u_val('mana')", "-=", "25" ] },
+              { "u_consume_item": "light_minus_battery_cell", "count": 1 },
+              { "u_spawn_item": "light_minus_battery_cell", "force_equip": true, "suppress_message": true }
+            ],
+            "false_effect": [ { "u_message": "You don't have enough energy.", "type": "mixed" } ]
+          }
+        ]
+      },
+      {
+        "u_run_inv_eocs": "all",
+        "search_data": [ { "id": "light_battery_cell", "wielded_only": true } ],
+        "true_eocs": [
+          {
+            "id": "batteryrestore2_eoc",
+            "condition": { "math": [ "u_val('mana')", ">=", "50" ] },
+            "effect": [
+              { "math": [ "u_val('mana')", "-=", "50" ] },
+              { "u_consume_item": "light_battery_cell", "count": 1 },
+              { "u_spawn_item": "light_battery_cell", "force_equip": true, "suppress_message": true }
+            ],
+            "false_effect": [ { "u_message": "You don't have enough energy.", "type": "mixed" } ]
+          }
+        ]
+      },
+      {
+        "u_run_inv_eocs": "all",
+        "search_data": [ { "id": "light_plus_battery_cell", "wielded_only": true } ],
+        "true_eocs": [
+          {
+            "id": "batteryrestore3_eoc",
+            "condition": { "math": [ "u_val('mana')", ">=", "75" ] },
+            "effect": [
+              { "math": [ "u_val('mana')", "-=", "75" ] },
+              { "u_consume_item": "light_plus_battery_cell", "count": 1 },
+              { "u_spawn_item": "light_plus_battery_cell", "force_equip": true, "suppress_message": true }
+            ],
+            "false_effect": [ { "u_message": "You don't have enough energy.", "type": "mixed" } ]
+          }
+        ]
+      },
+      {
+        "u_run_inv_eocs": "all",
+        "search_data": [ { "id": "medium_battery_cell", "wielded_only": true } ],
+        "true_eocs": [
+          {
+            "id": "batteryrestore4_eoc",
+            "condition": { "math": [ "u_val('mana')", ">=", "250" ] }, 
+            "effect": [
+              { "math": [ "u_val('mana')", "-=", "250" ] },
+              { "u_consume_item": "medium_battery_cell", "count": 1 },
+              { "u_spawn_item": "medium_battery_cell", "force_equip": true, "suppress_message": true }
+            ],
+            "false_effect": [ { "u_message": "You don't have enough energy.", "type": "mixed" } ]
+          }
+        ]
+      },
+      {
+        "u_run_inv_eocs": "all",
+        "search_data": [ { "id": "medium_plus_battery_cell", "wielded_only": true } ],
+        "true_eocs": [
+          {
+            "id": "batteryrestore5_eoc",
+            "condition": { "math": [ "u_val('mana')", ">=", "300" ] }, 
+            "effect": [
+              { "math": [ "u_val('mana')", "-=", "300" ] },
+              { "u_consume_item": "medium_plus_battery_cell", "count": 1 },
+              { "u_spawn_item": "medium_plus_battery_cell", "force_equip": true, "suppress_message": true }
+            ],
+            "false_effect": [ { "u_message": "You don't have enough energy.", "type": "mixed" } ]
+          }
+        ]
+      },
+      {
+        "u_run_inv_eocs": "all",
+        "search_data": [ { "id": "heavy_battery_cell", "wielded_only": true } ],
+        "true_eocs": [
+          {
+            "id": "batteryrestore6_eoc",
+            "condition": { "math": [ "u_val('mana')", ">=", "500" ] }, 
+            "effect": [
+              { "math": [ "u_val('mana')", "-=", "500" ] },
+              { "u_consume_item": "heavy_battery_cell", "count": 1 },
+              { "u_spawn_item": "heavy_battery_cell", "force_equip": true, "suppress_message": true }
+            ],
+            "false_effect": [ { "u_message": "You don't have enough energy.", "type": "mixed" } ]
+          }
+        ]
+      },
+      {
+        "u_run_inv_eocs": "all",
+        "search_data": [ { "id": "heavy_plus_battery_cell", "wielded_only": true } ],
+        "true_eocs": [
+          {
+            "id": "batteryrestore7_eoc",
+            "condition": { "math": [ "u_val('mana')", ">=", "625" ] }, 
+            "effect": [
+              { "math": [ "u_val('mana')", "-=", "625" ] },
+              { "u_consume_item": "heavy_plus_battery_cell", "count": 1 },
+              { "u_spawn_item": "heavy_plus_battery_cell", "force_equip": true, "suppress_message": true }
+            ],
+            "false_effect": [ { "u_message": "You don't have enough energy.", "type": "mixed" } ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "kaenbyou_blazingwheel_eoc",
     "type": "effect_on_condition",
     "condition": { "math": [ "u_var_soulshard", ">=", "2" ] },
@@ -470,6 +617,56 @@
     "//": "This is activated 2 s after Meiling gains the 'blocked' var, window of opportunity"
   },
   {
+    "id": "meiling_tigerrelease_eoc",
+    "type": "effect_on_condition",
+    "condition": { "not": "u_has_weapon" },
+    "effect": [
+      { "run_eocs": [ "meiling_tigerrelease_togglecheck" ] }
+    ],
+    "false_effect": [ 
+      { "u_message": "You cannot use this skill while wielding items.", "type": "mixed" }
+    ],
+    "//": "This EOC is a simplified version of utsuho_fusionblade_eoc ",
+    "//2": "Different approach for effect-only aura-like effects",
+    "//3": "First, it checks if the Meiling is wielding a weapon or already has the aura, if so it deactivates it",
+    "//4": "Then, it casts the self spell that grants the effect for the duration, and runs the cycle to continuously check wielded items or re-activations of the EOC",
+    "//5": "No timer as the effect has a fixed duration by the spell, also no toggle or oom EOCs as those don't apply"
+  },
+  {
+    "id": "meiling_tigerrelease_togglecheck",
+    "type": "effect_on_condition",
+    "condition": { "not": { "u_has_effect": "aura_tigerrelease" } },
+    "effect": [ 
+      { "u_cast_spell": { "id": "meiling_tigerrelease2" }, "targeted": false },
+      { "run_eocs": [ "meiling_tigerrelease_cycle1" ] } 
+    ],
+    "false_effect": [ 
+      { "u_lose_effect": "aura_tigerrelease" }
+    ]
+  },
+  {
+    "id": "meiling_tigerrelease_cycle1",
+    "type": "effect_on_condition",
+    "condition": { "not": "u_has_weapon" },
+    "effect": [ 
+      { "run_eocs": [ "meiling_tigerrelease_cycle2" ] } 
+    ],
+    "false_effect": [ 
+      { "u_lose_effect": "aura_tigerrelease" }
+    ]
+  },
+  {
+    "id": "meiling_tigerrelease_cycle2",
+    "type": "effect_on_condition",
+    "condition": { "u_has_effect": "aura_tigerrelease" },
+    "effect": [ 
+      { "queue_eocs": [ "meiling_tigerrelease_cycle1" ], "time_in_future": "1 s" }
+    ],
+    "false_effect": [ 
+      { "u_lose_effect": "aura_tigerrelease" }
+    ]
+  },
+  {
     "id": "mokou_combustion_eoc",
     "type": "effect_on_condition",
     "effect": [
@@ -494,6 +691,183 @@
       { "math": [ "var_mokou_combustion", "+=", "1" ] },
       { "math": [ "u_pain()", "-=", "2" ] },
       { "queue_eocs": [ "mokou_combustion_cycle1" ], "time_in_future": "3 s" }
+    ]
+  },
+  {
+    "id": "nitori_aerialtorpedoes_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "if": {
+          "message": "Select target", 
+          "range": 20,
+          "u_query_tile": "anywhere",
+          "target_var": { "global_val": "var_nitori_atorpedo_loc" }
+        },
+        "then": { 
+          "queue_eoc_with": "nitori_aerialtorpedoes_impact", 
+          "variables": { "atorpedo_loc": "var_nitori_atorpedo_loc" }, 
+          "time_in_future": "3 s" 
+        },
+        "else": { "u_message": "Canceled" }
+      }
+    ],
+    "//": "Basic spell-at-location, queue'd in 2 s. It asks the position (saves coordinates) -> queues the actual spell as '_eoc_with' (below)",
+    "//2": "While run_eoc_with detects (*) both global_val and context_val , queue_eoc_with doesn't detect (*) context_val and casts it centered on Nitori",
+    "//3": "(*) if debugging with u_message it shows the coordinates, which are missing for the queue_eoc_with + context_val combination . Maybe they're lost due the delay?"
+  },
+  {
+    "id": "nitori_aerialtorpedoes_impact",
+    "type": "effect_on_condition",
+    "condition": { "expects_vars": [ "atorpedo_loc" ] },
+    "effect": [
+      { "u_cast_spell": { "id": "nitori_aerialtorpedoes2" }, "loc": { "global_val": "var_nitori_atorpedo_loc" } }
+    ]
+  },
+  {
+    "id": "nitori_opticalcamouflage_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_nitoricamouflage", "+=", "1" ] },
+      { "math": [ "var_nitoricamouflage_STOP", "=", "0" ] },
+      { "run_eocs": [ "nitori_opticalcamouflage_cycle1" ] }
+    ],
+    "//": "This EOC is a modified version of utsuho_fissionaura_eoc . It adds a 'randomly fail' chance as extra step to make it more FUN",
+    "//2": "Partially fixes the leak from the base aura",
+    "//note": "And introduces a double stop issue. Has no effect other than printing the u_message twice"
+  },
+  {
+    "id": "nitori_opticalcamouflage_cycle1",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_nitoricamouflage_fail", "<", "5250" ] },
+    "effect": [
+      { "run_eocs": [ "nitori_opticalcamouflage_cycle2" ] }
+    ],
+    "false_effect": [ { "run_eocs": [ "nitori_opticalcamouflage_failcheck" ] } ],
+    "//": "A random amount of the var_fail is added every time the stealth effect is granted. On average, this value equals ~12.5% to fail over the full duration (I think)"
+  },
+  {
+    "id": "nitori_opticalcamouflage_cycle2",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "var_nitoricamouflage", "<", "2" ] },
+        { "math": [ "var_nitoricamouflage_STOP", "==", "0" ] }
+      ]
+    },
+    "effect": [ { "run_eocs": [ "nitori_opticalcamouflage_cycle3" ] } ],
+    "false_effect": [
+      { "math": [ "var_nitoricamouflage", "=", "0" ] },
+      { "math": [ "var_nitoricamouflage_fail", "=", "0" ] },
+      { "math": [ "var_nitoricamouflage_STOP", "+=", "1" ] },
+      { "u_lose_effect": "nitori_camouflage" },
+      { "u_message": "You turn the optical camouflage OFF.", "type": "mixed" }
+    ]
+  },
+  {
+    "id": "nitori_opticalcamouflage_cycle3",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_val('mana')", ">=", "2" ] },
+        { "math": [ "var_nitoricamouflage", ">", "0" ] },
+        { "math": [ "var_nitoricamouflage_STOP", "==", "0" ] }
+      ]
+    },
+    "effect": [
+      { "math": [ "var_nitoricamouflage_fail", "+=", "1 + rand(9)" ] },
+      { "math": [ "u_val('mana')", "-=", "1.5" ] },
+      { "u_add_effect": "nitori_camouflage", "duration": "2 s" },
+      { "queue_eocs": [ "nitori_opticalcamouflage_cycle1" ], "time_in_future": "1 s" }
+    ],
+    "false_effect": [
+      { "math": [ "var_nitoricamouflage", "=", "0" ] },
+      { "math": [ "var_nitoricamouflage_fail", "=", "0" ] },
+      { "u_lose_effect": "nitori_camouflage" },
+      { "u_message": "You're too exhausted and the optical camouflage deactivates!", "type": "mixed" }
+    ]
+  },
+  {
+    "id": "nitori_opticalcamouflage_failcheck",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_nitoricamouflage", ">", "0" ] },
+    "effect": [
+      { "math": [ "var_nitoricamouflage_rand", "=", "rand(3)" ] },
+      { "run_eocs": [ "nitori_opticalcamouflage_failcheck2" ] }
+    ],
+    "false_effect": [
+      { "math": [ "var_nitoricamouflage", "=", "0" ] },
+      { "math": [ "var_nitoricamouflage_fail", "=", "0" ] },
+      { "u_lose_effect": "nitori_camouflage" }
+    ],
+    "//": "If the var_fail is higher than the number, it runs this which checks if the player has already toggled the aura, if not it runs the check to decide further effects"
+  },
+  {
+    "id": "nitori_opticalcamouflage_failcheck2",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_nitoricamouflage_rand", "<", "3" ] },
+    "effect": [
+      { "u_lose_effect": "nitori_camouflage" },
+      { "run_eocs": [ "nitori_opticalcamouflage_fail_1" ] }
+    ],
+    "false_effect": [
+      { "math": [ "var_nitoricamouflage", "=", "0" ] },
+      { "math": [ "var_nitoricamouflage_fail", "=", "0" ] },
+      { "u_lose_effect": "nitori_camouflage" }
+    ],
+    "//": "3/4 for it to run a dummy effect, 1/4 for it to fail and deactivate without warning"
+  },
+  {
+    "id": "nitori_opticalcamouflage_fail_1",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_nitoricamouflage_fail_timer", "<", "30" ] },
+    "effect": [
+      { "run_eocs": [ "nitori_opticalcamouflage_fail_2" ] }
+    ],
+    "false_effect": [ 
+      { "math": [ "var_nitoricamouflage_fail", "=", "0" ] },
+      { "u_lose_effect": "nitori_camouflage_fake" },
+      { "run_eocs": [ "nitori_opticalcamouflage_cycle1" ] } 
+    ],
+    "//": "This limits the dummy cycle to 30 s, and returns it to the normal one, resetting the var_fail in the process"
+  },
+  {
+    "id": "nitori_opticalcamouflage_fail_2",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_nitoricamouflage", "<", "2" ] },
+    "effect": [ { "run_eocs": [ "nitori_opticalcamouflage_fail_3" ] } ],
+    "false_effect": [
+      { "math": [ "var_nitoricamouflage", "=", "0" ] },
+      { "math": [ "var_nitoricamouflage_fail", "=", "0" ] },
+      { "math": [ "var_nitoricamouflage_STOP", "-=", "3" ] },
+      { "u_lose_effect": "nitori_camouflage" },
+      { "u_lose_effect": "nitori_camouflage_fake" },
+      { "u_message": "You turn the optical camouflage OFF.", "type": "mixed" }
+    ]
+  },
+  {
+    "id": "nitori_opticalcamouflage_fail_3",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_val('mana')", ">=", "2" ] },
+        { "math": [ "var_nitoricamouflage", ">", "0" ] },
+        { "math": [ "var_nitoricamouflage_STOP", ">", "3" ] }
+      ]
+    },
+    "effect": [
+      { "math": [ "var_nitoricamouflage_fail_timer", "+=", "1" ] },
+      { "math": [ "u_val('mana')", "-=", "1.5" ] },
+      { "u_add_effect": "nitori_camouflage_fake", "duration": "2 s" },
+      { "queue_eocs": [ "nitori_opticalcamouflage_fail_1" ], "time_in_future": "1 s" }
+    ],
+    "false_effect": [
+      { "math": [ "var_nitoricamouflage", "=", "0" ] },
+      { "math": [ "var_nitoricamouflage_fail", "=", "0" ] },
+      { "math": [ "var_nitoricamouflage_fail_timer", "=", "0" ] },
+      { "u_lose_effect": "nitori_camouflage" },
+      { "u_lose_effect": "nitori_camouflage_fake" },
+      { "u_message": "You're too exhausted and the optical camouflage deactivates!", "type": "mixed" }
     ]
   },
   {
@@ -523,6 +897,92 @@
     "effect": [ { "u_cast_spell": { "id": "nitori_toolswing_eoc2" }, "targeted": true } ],
     "false_effect": { "u_cast_spell": { "id": "nitori_toolswing_eoc3" }, "targeted": true }
   },
+  
+  
+  
+  {
+    "id": "nitori_transformate_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "queue_eoc_with": "nitori_transformate_2", "variables": { "WIP1": "WIP2" }, "time_in_future": "3 s" }
+    ]
+  },
+  {
+    "id": "nitori_transformate_2",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "u_run_inv_eocs": "all",
+        "search_data": [ { "flags": [ "NITORI_RESOURCE_FLAG" ] } ],
+        "true_eocs": [
+          {
+            "id": "nitori_transformate_dialog",
+            "effect": [
+              { "open_dialogue": { "topic": "TALK_TRANSFORMATE" } }
+            ]
+          }
+        ],
+        "false_eocs": [ 
+          {
+            "id": "transformate_no",
+            "effect": [ { "u_message": "You don't have human scrap with you.", "type": "mixed" } ]
+          }
+        ]
+      }
+    ],
+    "//": "This is a modified version of iku_batteryrestore_eoc ",
+    "//note": " "
+  },
+  {
+    "id": "TALK_TRANSFORMATE",
+    "type": "talk_topic",
+    "dynamic_line": "Transformate how much human scrap?",
+    "responses": [
+      { 
+        "text": "1 piece (default)", 
+        "effect": [ 
+          { "math": [ "u_var_kappascrap_transform", "=", "0" ] },
+          { "math": [ "u_var_kappascrap_transform", "=", "1" ] },
+          { "run_eocs": "nitori_transformate_kappascrap" }
+        ], 
+        "topic": "TALK_DONE" 
+      },
+      { 
+        "text": "More...", 
+        "effect": [ 
+          { "math": [ "u_var_kappascrap_transform", "=", "0" ] },
+          { "math": [ "u_var_kappascrap_transform", "=", "num_input( 1, 'How much human scrap?')" ] },
+          { "run_eoc_with": "nitori_transformate_kappascrap", "variables": { "scrap_id": "var_TEST" } } 
+        ], 
+        "topic": "TALK_DONE" 
+      }
+    ],
+    "//note": "WIP. Missing a way to detect the scrap_id "
+  },
+  {
+    "id": "nitori_transformate_kappascrap",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "u_run_inv_eocs": "manual",
+        "search_data": [ { "flags": [ "NITORI_RESOURCE_FLAG" ] } ],
+        "true_eocs": [
+          {
+            "id": "nitori_transformate_kappascrap2",
+            "effect": [
+              { "u_consume_item": "scrap_id", "count": { "math": [ "u_var_kappascrap_transform" ] } },
+              { "math": [ "u_var_kappascrap", "+=", "u_var_kappascrap_transform" ] },
+              { "u_message": "Transformed <u_val:u_var_kappascrap_transform> scrap into kappascrap", "type": "mixed" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+
+
+
   {
     "id": "nitori_weathermissile_eoc",
     "type": "effect_on_condition",
@@ -709,6 +1169,52 @@
     ]
   },
   {
+    "id": "remilia_vampiricaura_eoc",
+    "type": "effect_on_condition",
+    "condition": { "not": "u_has_weapon" },
+    "effect": [
+      { "run_eocs": [ "remilia_vampiricaura_togglecheck" ] }
+    ],
+    "false_effect": [ 
+      { "u_message": "You cannot use this skill while wielding items.", "type": "mixed" }
+    ],
+    "//": "Same as meiling_tigerrelease_eoc "
+  },
+  {
+    "id": "remilia_vampiricaura_togglecheck",
+    "type": "effect_on_condition",
+    "condition": { "not": { "u_has_effect": "aura_vampiric" } },
+    "effect": [ 
+      { "u_cast_spell": { "id": "remilia_vampiricaura2" }, "targeted": false },
+      { "run_eocs": [ "remilia_vampiricaura_cycle1" ] } 
+    ],
+    "false_effect": [ 
+      { "u_lose_effect": "aura_vampiric" }
+    ]
+  },
+  {
+    "id": "remilia_vampiricaura_cycle1",
+    "type": "effect_on_condition",
+    "condition": { "not": "u_has_weapon" },
+    "effect": [ 
+      { "run_eocs": [ "remilia_vampiricaura_cycle2" ] } 
+    ],
+    "false_effect": [ 
+      { "u_lose_effect": "aura_vampiric" }
+    ]
+  },
+  {
+    "id": "remilia_vampiricaura_cycle2",
+    "type": "effect_on_condition",
+    "condition": { "u_has_effect": "aura_vampiric" },
+    "effect": [ 
+      { "queue_eocs": [ "remilia_vampiricaura_cycle1" ], "time_in_future": "1 s" }
+    ],
+    "false_effect": [ 
+      { "u_lose_effect": "aura_vampiric" }
+    ]
+  },
+  {
     "id": "sakuya_maidsecret_eoc",
     "type": "effect_on_condition",
     "effect": [
@@ -750,65 +1256,6 @@
       { "math": [ "var_sakuyafocus", "=", "0" ] },
       { "u_lose_effect": "sakuya_maidsecret_effect" }
     ]
-  },
-  {
-    "id": "sakuya_timestop_eoc",
-    "type": "effect_on_condition",
-    "effect": [
-      { "math": [ "var_timestop_active", "+=", "1" ] },
-      { "math": [ "var_timestop_duration", "=", "( (u_skill('throw') * 35 ) + (u_skill('stabbing') * 35 ) + (u_skill('dodge') * 70 ) + 210 )" ] },
-      { "u_lose_effect": "sakuya_timestop_effect" },
-      { "run_eocs": [ "sakuya_timestop_vfx", "sakuya_timestop_cycle1" ] }
-    ],
-    "//": "This EOC is a modified version of udonge_waveinsight_start . It runs for n times, set by the var above",
-    "//2": "dur 700 - 2100"
-  },
-  {
-    "id": "sakuya_timestop_vfx",
-    "type": "effect_on_condition",
-    "condition": { "math": [ "var_timestop_active", "<", "2" ] },
-    "effect": [ { "u_cast_spell": { "id": "sakuya_timestop3" }, "targeted": false } ]
-  },
-  {
-    "id": "sakuya_timestop_cycle1",
-    "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "var_timestop_timer", "<", "var_timestop_duration" ] },
-        { "math": [ "var_timestop_active", "<", "2" ] }
-      ]
-    },
-    "effect": [ { "run_eocs": [ "sakuya_timestop_cycle2" ] } ],
-    "false_effect": [ { "run_eocs": [ "sakuya_timestop_end" ] } ]
-  },
-  {
-    "id": "sakuya_timestop_cycle2",
-    "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "u_val('mana')", ">=", "( 133 / ( var_timestop_duration / 100 ) )" ] },
-        { "math": [ "var_timestop_timer", "<", "var_timestop_duration" ] },
-        { "math": [ "var_timestop_active", ">", "0" ] }
-      ]
-    },
-    "effect": [
-      { "math": [ "var_timestop_timer", "+=", "100" ] },
-      { "math": [ "u_val('mana')", "-=", "( 133 / ( var_timestop_duration / 100 ) )" ] },
-      { "u_add_effect": "sakuya_timestop_effect", "duration": "2 s" },
-      { "u_cast_spell": { "id": "sakuya_timestop2" }, "targeted": false },
-      { "queue_eocs": [ "sakuya_timestop_cycle1" ], "time_in_future": "1 s" }
-    ],
-    "false_effect": [ { "run_eocs": [ "sakuya_timestop_end" ] } ]
-  },
-  {
-    "id": "sakuya_timestop_end",
-    "type": "effect_on_condition",
-    "effect": [
-      { "math": [ "var_timestop_active", "=", "0" ] },
-      { "math": [ "var_timestop_timer", "=", "0" ] },
-      { "u_lose_effect": "sakuya_timestop_effect" }
-    ],
-    "//": "Messages can be handled by EOCs once I fix the double-stop requirement of the base aura..."
   },
   {
     "id": "sakuya_vanishingeverything_eoc",

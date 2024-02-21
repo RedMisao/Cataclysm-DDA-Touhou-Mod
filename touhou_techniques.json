@@ -109,15 +109,16 @@
     "melee_allowed": true,
     "crit_tec": false,
     "attack_override": true,
-    "flat_bonuses": [
-      { "stat": "movecost", "scale": 0.95 },
-      { "stat": "damage", "type": "electric", "scaling-stat": "str", "scale": 0.75 },
-      { "stat": "damage", "type": "electric", "scaling-stat": "dex", "scale": 1 },
-      { "stat": "damage", "type": "electric", "scaling-stat": "int", "scale": 1 },
-      { "stat": "damage", "type": "electric", "scaling-stat": "per", "scale": 0.75 }
+    "eocs": [
+      {
+        "id": "tec_iku_palm_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "iku_palm" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
+      }
     ],
     "attack_vectors": [ "HAND", "WEAPON" ],
-    "//": "Tried to set a linear EOC spell but I feel it would be too clunky, having the drill as a directional spell too, so this stays as it is. Change for automatic spellshot to whatever she was attacking before, scaling from skills (15 - 45) when possible"
+    "//2": "Spell to allow line with single target, also it deals electric dmg"
   },
   {
     "id": "tec_iku_poke",
@@ -199,19 +200,19 @@
     "knockback_dist": 1,
     "stun_dur": 1,
     "attack_override": true,
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.1 }
+    ],
     "eocs": [
       {
         "id": "tec_iku_rising_drill_eoc",
         "effect": [ 
-          { "u_cast_spell": { "id": "iku_rising_drill" }, "targeted": true }
+          { "u_cast_spell": { "id": "iku_rising_drill" }, "loc": { "global_val": "var_target_monster_loc" } }
         ]
       }
     ],
-    "mult_bonuses": [
-      { "stat": "movecost", "scale": 1.1 }
-    ],
     "attack_vectors": [ "WEAPON" ],
-    "//": "Should transform bash and cutting dmg into into stab instead, keep the secondary effects"
+    "//": "Turned into a spell to transform weapon dmg -> stab"
   },
   {
     "id": "tec_iku_slap",
@@ -255,14 +256,16 @@
     "weapon_categories_allowed": [ "WHIPS" ],
     "melee_allowed": true,
     "attack_override": true,
-    "flat_bonuses": [
-      { "stat": "damage", "type": "electric", "scaling-stat": "str", "scale": 1 },
-      { "stat": "damage", "type": "electric", "scaling-stat": "dex", "scale": 1 },
-      { "stat": "damage", "type": "electric", "scaling-stat": "int", "scale": 1 }
+    "eocs": [
+      {
+        "id": "tec_iku_slap_elec_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "iku_slap_elec" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
+      }
     ],
     "attack_vectors": [ "WEAPON" ],
-    "//": "Name needs to be more chuu2",
-    "//2": "Should do 1.2 weapon dmg as electric instead, current dmg based on iku_long_scarf "
+    "//": "Name needs to be more chuu2"
   },
   {
     "id": "tec_iku_step",
@@ -288,7 +291,8 @@
       }
     ],
     "attack_vectors": [ "HAND", "WEAPON" ],
-    "//": "WEAPON so it can be used with the weapon equipped"
+    "//": "WEAPON so it can be used with the weapon equipped",
+    "//2": "Spell to allow aoe with single target, also it deals electric dmg"
   },
   {
     "id": "tec_kokoro_grab_break",
@@ -329,7 +333,8 @@
       }
     ],
     "attack_vectors": [ "WEAPON" ],
-    "//": "This is inspired in her 'jump, fall upside down while spinning' attack, but that would be too long to perform by itself, implement as combo ending if possible. Also make it scale to 1.1 of her weapon attack"
+    "//": "This is inspired in her 'jump, fall upside down while spinning' attack, but that would be too long to perform by itself, implement as combo ending if possible",
+    "//2": "Turned into a spell to allow aoe with single target"
   },
   {
     "id": "tec_kokoro_rapid",
@@ -358,14 +363,20 @@
     "weapon_categories_allowed": [ "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
     "melee_allowed": true,
     "reach_ok": true,
+    "attack_override": true,
     "mult_bonuses": [ 
-      { "stat": "movecost", "scale": 1.1 },
-      { "stat": "damage", "type": "bash", "scale": 1.2 },
-      { "stat": "damage", "type": "cut", "scale": 1.2 },
-      { "stat": "damage", "type": "stab", "scale": 1.2 }
+      { "stat": "movecost", "scale": 1.1 }
+    ],
+    "eocs": [
+      {
+        "id": "tec_kokoro_sweep_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "kokoro_sweep" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
+      }
     ],
     "attack_vectors": [ "WEAPON" ],
-    "//": "Similar to all other 'wide arc' techs here, this should hit on a cone in front of her, but the 'aoe' field applies only with more than a single enemy"
+    "//2": "Turned into a spell to allow cone with single target"
   },
   {
     "id": "tec_kokoro_swing_1h",
@@ -406,24 +417,27 @@
     "melee_allowed": true,
     "reach_ok": true,
     "side_switch": true,
-    "mult_bonuses": [ 
-      { "stat": "damage", "type": "bash", "scale": 1.1 },
-      { "stat": "damage", "type": "cut", "scale": 1.1 },
-      { "stat": "damage", "type": "stab", "scale": 1.1 }
+    "attack_override": true,
+    "eocs": [
+      {
+        "id": "tec_kokoro_switch_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "kokoro_switch" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
+      }
     ],
     "attack_vectors": [ "WEAPON" ],
-    "//": "This is inspired in her 'stab while looking away' attack. Thus, obviously should transform her dmg into stab. Yes including blunt weapons"
+    "//": "This is inspired in her 'stab while looking away' attack. Thus, obviously transforms her dmg into stab. Yes, including blunt weapons"
   },
-  
   {
     "id": "tec_meiling_down",
     "type": "technique",
     "name": "Sweeping kick",
     "messages": [ "You sweep at %s", "<npcname> sweeps at %s" ],
     "skill_requirements": [ { "name": "melee", "level": 2 } ],
-    "crit_ok": true,
     "unarmed_allowed": true,
     "unarmed_weapons_allowed": true,
+    "crit_ok": true,
     "down_dur": 1,
     "condition": { 
       "or": [ 
@@ -558,9 +572,9 @@
     "//": "Original tec_taichi_precise "
   },
   {
-    "id": "tec_meiling_qi_burst",
+    "id": "tec_meiling_qi_blast",
     "type": "technique",
-    "name": "Qi burst",
+    "name": "Qi blast",
     "messages": [
       "You thrust your palms forward, and release qi through %s!",
       "<npcname> thrusts their hands forward, and release qi through %s!"
@@ -569,14 +583,17 @@
     "required_buffs_all": [ "buff_meiling_onpause2" ],
     "unarmed_allowed": true,
     "unarmed_weapons_allowed": false,
-    "crit_tec": true,
-    "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 2 },
-      { "stat": "damage", "type": "cut", "scale": 2 },
-      { "stat": "damage", "type": "stab", "scale": 2 }
+    "attack_override": true,
+    "eocs": [
+      {
+        "id": "tec_meiling_qiblast_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "meiling_qiblast2" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
+      }
     ],
     "attack_vectors": [ "PALM" ],
-    "//": "This is one of those techniques, like tec_mokou_talons , that would look better if they could display a small aoe when procced"
+    "//": "Turned into a spell as it's a cone"
   },
   {
     "id": "tec_meiling_stomp",
@@ -597,6 +614,11 @@
         { "npc_has_flag": "DISABLE_FLIGHT" } 
       ] 
     },
+    "mult_bonuses": [
+      { "stat": "damage", "type": "bash", "scale": 1.667 },
+      { "stat": "damage", "type": "cut", "scale": 1.667 },
+      { "stat": "damage", "type": "stab", "scale": 1.667 }
+    ],
     "eocs": [
       {
         "id": "tec_meiling_stomp_eoc",
@@ -605,13 +627,8 @@
         ]
       }
     ],
-    "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 1.667 },
-      { "stat": "damage", "type": "cut", "scale": 1.667 },
-      { "stat": "damage", "type": "stab", "scale": 1.667 }
-    ],
     "attack_vectors": [ "FOOT" ],
-    "//": "Given this is a technique + eoc that procs the visual effect, it can be replaced by a minimum that procs the spell that scales with skills. Hmm"
+    "//": "Do not replace with the spell doing dmg, as this is already scaling off her unarmed melee dmg. That is, unless it's dealing 5 dmg or something"
   },
   {
     "id": "tec_mokou_fire_burst",
@@ -626,7 +643,7 @@
     "//": "Based on tec_brawl_break_unarmed "
   },
   {
-    "id": "tec_mokou_front_kick",
+    "id": "tec_mokou_kick",
     "type": "technique",
     "name": "Front kick",
     "messages": [ "You front kick %s", "<npcname> front kicks %s" ],
@@ -634,75 +651,38 @@
     "unarmed_allowed": true,
     "unarmed_weapons_allowed": false,
     "crit_ok": false,
-    "flat_bonuses": [ 
-      { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 0.66 } 
-    ],
-    "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 1.2 },
-      { "stat": "damage", "type": "cut", "scale": 1.2 },
-      { "stat": "damage", "type": "stab", "scale": 1.2 }
+    "eocs": [
+      {
+        "id": "tec_mokou_kick_bonus_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "mokou_kick_bonus" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
+      }
     ],
     "attack_vectors": [ "FOOT" ],
-    "//": "Bonus dmg should be heat instead"
-  },
-  {
-    "id": "tec_mokou_front_kick2",
-    "type": "technique",
-    "name": "Front kick",
-    "messages": [ "You front kick %s, stunning them!", "<npcname> front kicks %s, stunning them!" ],
-    "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
-    "unarmed_allowed": true,
-    "unarmed_weapons_allowed": false,
-    "crit_tec": true,
-    "stun_dur": 1,
-    "flat_bonuses": [ 
-      { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 1.33 } 
-    ],
-    "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 1.4 },
-      { "stat": "damage", "type": "cut", "scale": 1.4 },
-      { "stat": "damage", "type": "stab", "scale": 1.4 }
-    ],
-    "attack_vectors": [ "FOOT" ]
-  },
-  {
-    "id": "tec_mokou_kick",
-    "type": "technique",
-    "name": "Simple kick",
-    "messages": [ "You kick %s", "<npcname> kicks %s" ],
-    "skill_requirements": [ { "name": "unarmed", "level": 2 } ],
-    "unarmed_allowed": true,
-    "unarmed_weapons_allowed": false,
-    "crit_ok": false,
-    "flat_bonuses": [ 
-      { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 0.66 } 
-    ],
-    "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 1.16 },
-      { "stat": "damage", "type": "cut", "scale": 1.16 },
-      { "stat": "damage", "type": "stab", "scale": 1.16 }
-    ],
-    "attack_vectors": [ "KNEE" ]
+    "//": "The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats"
   },
   {
     "id": "tec_mokou_kick2",
     "type": "technique",
-    "name": "Knee-kick",
+    "name": "Front kick (crit)",
     "messages": [ "You quickly knee and then immediately kick %s back", "<npcname> knees and immediately kicks %s back" ],
     "skill_requirements": [ { "name": "unarmed", "level": 5 } ],
     "unarmed_allowed": true,
     "unarmed_weapons_allowed": false,
     "crit_tec": true,
     "knockback_dist": 1,
-    "flat_bonuses": [ 
-      { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 1.33 } 
+    "stun_dur": 1,
+    "eocs": [
+      {
+        "id": "tec_mokou_kick_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "mokou_kick_bonus2" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
+      }
     ],
-    "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 1.33 },
-      { "stat": "damage", "type": "cut", "scale": 1.33 },
-      { "stat": "damage", "type": "stab", "scale": 1.33 }
-    ],
-    "attack_vectors": [ "KNEE" ]
+    "attack_vectors": [ "KNEE" ],
+    "//": "The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats"
   },
   {
     "id": "tec_mokou_liver_punch",
@@ -714,13 +694,19 @@
     "unarmed_weapons_allowed": true,
     "crit_ok": true,
     "stun_dur": 2,
-    "flat_bonuses": [ 
-      { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 0.66 } 
-    ],
     "mult_bonuses": [
       { "stat": "movecost", "scale": 0.95 }
     ],
-    "attack_vectors": [ "HAND" ]
+    "eocs": [
+      {
+        "id": "tec_mokou_liver_punch_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "mokou_liver_punch_bonus" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
+      }
+    ],
+    "attack_vectors": [ "HAND" ],
+    "//": "The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats"
   },
   {
     "id": "tec_mokou_punch_down",
@@ -730,13 +716,18 @@
     "skill_requirements": [ { "name": "unarmed", "level": 3 } ],
     "unarmed_allowed": true,
     "unarmed_weapons_allowed": true,
-    "crit_ok": false,
+    "crit_ok": true,
     "down_dur": 2,
-    "flat_bonuses": [ 
-      { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 0.66 } 
+    "eocs": [
+      {
+        "id": "tec_mokou_punch_down_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "mokou_punch_down_bonus" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
+      }
     ],
     "attack_vectors": [ "HAND" ],
-    "//": "Should ignite the target"
+    "//": "The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats, also to allow igniting the target"
   },
   {
     "id": "tec_mokou_sommersault_kick",
@@ -748,49 +739,16 @@
     "unarmed_weapons_allowed": false,
     "crit_ok": true,
     "down_dur": 1,
-    "flat_bonuses": [ 
-      { "stat": "damage", "type": "heat", "scaling-stat": "dex", "scale": 0.66 },
-      { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 0.66 }
-    ],
-    "mult_bonuses": [
-      { "stat": "damage", "type": "bash", "scale": 1.5 },
-      { "stat": "damage", "type": "cut", "scale": 1.5 },
-      { "stat": "damage", "type": "stab", "scale": 1.5 }
+    "eocs": [
+      {
+        "id": "tec_mokou_sommersault_kick_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "mokou_sommersault_kick_bonus" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
+      }
     ],
     "attack_vectors": [ "FOOT" ],
-    "//": "Should ignite the target"
-  },
-  {
-    "id": "tec_mokou_talons",
-    "type": "technique",
-    "name": "Fire talons",
-    "messages": [ "You claw fire at %s", "<npcname> claws fire at %s" ],
-    "skill_requirements": [ { "name": "unarmed", "level": 2 } ],
-    "unarmed_allowed": true,
-    "unarmed_weapons_allowed": false,
-    "crit_ok": false,
-    "flat_bonuses": [
-      { "stat": "damage", "type": "heat", "scaling-stat": "dex", "scale": 0.66 },
-      { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 0.66 }
-    ],
-    "attack_vectors": [ "HAND" ],
-    "//": "Should instead transform the dmg into heat"
-  },
-  {
-    "id": "tec_mokou_talons2",
-    "type": "technique",
-    "name": "Blazing talons",
-    "messages": [ "You claw fire at %s", "<npcname> claws fire at %s" ],
-    "skill_requirements": [ { "name": "unarmed", "level": 3 } ],
-    "unarmed_allowed": true,
-    "unarmed_weapons_allowed": false,
-    "crit_tec": true,
-    "mult_bonuses": [
-      { "stat": "damage", "type": "heat", "scaling-stat": "dex", "scale": 1.33 },
-      { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 1.33 }
-    ],
-    "attack_vectors": [ "HAND" ],
-    "//": "Should instead transform the dmg into heat"
+    "//": "The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats, also to allow igniting the target"
   },
   {
     "id": "tec_mokou_tackle",
@@ -812,6 +770,27 @@
     ],
     "attack_vectors": [ "TORSO" ],
     "//": "Lunge but called tackle"
+  },
+  {
+    "id": "tec_mokou_talons",
+    "type": "technique",
+    "name": "Fire talons",
+    "messages": [ "You claw fire at %s", "<npcname> claws fire at %s" ],
+    "skill_requirements": [ { "name": "unarmed", "level": 2 } ],
+    "unarmed_allowed": true,
+    "unarmed_weapons_allowed": false,
+    "crit_ok": false,
+    "attack_override": true,
+    "eocs": [
+      {
+        "id": "tec_mokou_talons_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "mokou_talons2" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
+      }
+    ],
+    "attack_vectors": [ "HAND" ],
+    "//": "Turned into a spell so the heat dmg can scale, also to allow igniting the target"
   },
   {
     "id": "tec_tenko_backflip",
@@ -894,6 +873,9 @@
         { "npc_has_flag": "DISABLE_FLIGHT" } 
       ] 
     },
+    "mult_bonuses": [ 
+      { "stat": "movecost", "scale": 1.1 } 
+    ],
     "eocs": [
       {
         "id": "tec_tenko_stomp_eoc",
@@ -901,9 +883,6 @@
           { "u_cast_spell": { "id": "tenko_stomp" }, "targeted": false }
         ]
       }
-    ],
-    "mult_bonuses": [ 
-      { "stat": "movecost", "scale": 1.1 } 
     ],
     "attack_vectors": [ "FOOT" ]
   },
@@ -944,18 +923,19 @@
     "messages": [ "You strike %s with the hilt of your weapon", "<npcname> strikes %s with the hilt of their weapon" ],
     "skill_requirements": [ { "name": "melee", "level": 4 } ],
     "melee_allowed": true,
-    "attack_override": true,
-    "flat_bonuses": [ 
-      { "stat": "arpen", "type": "bash", "scaling-stat": "dex", "scale": 0.33 },
-      { "stat": "arpen", "type": "bash", "scaling-stat": "str", "scale": 0.66 },
-      { "stat": "damage", "type": "bash", "scaling-stat": "dex", "scale": 0.66 },
-      { "stat": "damage", "type": "bash", "scaling-stat": "str", "scale": 1.33 }
-    ],
     "mult_bonuses": [ 
       { "stat": "movecost", "scale": 0.9 } 
     ],
+    "eocs": [
+      {
+        "id": "tec_youmu_hilt_nudge_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "youmu_hilt_nudge" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
+      }
+    ],
     "attack_vectors": [ "WEAPON" ],
-    "//": "Should transform the weapon damage into like 0.75 bash with arpen instead"
+    "//": "Turned into a spell to transform weapon dmg -> bash"
   },
   {
     "id": "tec_youmu_rising_fang",
@@ -981,17 +961,19 @@
     "skill_requirements": [ { "name": "melee", "level": 5 } ],
     "melee_allowed": true,
     "attack_override": true,
-    "flat_bonuses": [
-      { "stat": "arpen", "type": "stab", "scaling-stat": "str", "scale": 1 }
-    ],
     "mult_bonuses": [ 
-      { "stat": "movecost", "scale": 1.25 },
-      { "stat": "damage", "type": "bash", "scale": 1.16 },
-      { "stat": "damage", "type": "cut", "scale": 1.16 },
-      { "stat": "damage", "type": "stab", "scale": 1.5 }
+      { "stat": "movecost", "scale": 1.25 }
+    ],
+    "eocs": [
+      {
+        "id": "tec_youmu_stinger_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "youmu_stinger" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
+      }
     ],
     "attack_vectors": [ "WEAPON" ],
-    "//": "Should transform weapon damage to stab, with 2 times str as arpen instead"
+    "//": "Turned into a spell to transform weapon dmg -> stab"
   },
   {
     "id": "tec_youmu_sweep",

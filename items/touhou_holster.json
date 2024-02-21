@@ -31,7 +31,7 @@
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_hip_r", "leg_hip_l" ],
         "coverage": 5,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 2 ]
       }
     ],
     "flags": [ "BELTED", "OVERSIZE", "PALS_MEDIUM" ]
@@ -60,28 +60,16 @@
         "holster": true,
         "moves": 25,
         "item_restriction": [
-          "knife_combat",
-          "knife_hunting",
+          "sakuya_knife", "silver_knife",
+          "art_dagger",
+          "knife_butter", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_bread", "knife_vegetable_cleaver", "knife_meat_cleaver",
+          "knife_folding", "knife_combat_marine", "knife_combat_army", "knife_combat", "knife_hunting", "knife_KABAR", "knife_rambo", "ch_knife_rambo",
+          "hc_knife_rambo", "lc_knife_rambo", "mc_knife_rambo", "qt_knife_rambo", "knife_rm42", "knife_swissarmy", "knife_trench", "ch_knife_trench", "hc_knife_trench", "lc_knife_trench", "mc_knife_trench", "qt_knife_trench", "makeshift_knife",  "knife_baselard", "kris", "kris_fake", "kukri", "ch_kukri", "hc_kukri", "lc_kukri", "mc_kukri", "qt_kukri", "tanto", "tanto_inferior", "tanto_fake", "karambit", "kirpan", "enfield_bayonet",
           "throwing_knife",
-          "knife_trench",
-          "switchblade",
-          "tanto",
-          "tanto_fake",
-          "tanto_inferior",
-          "knife_butcher",
-          "knife_steak",
-          "knife_paring",
-          "knife_chef",
-          "knife_carving",
-          "knife_vegetable_cleaver",
-          "knife_meat_cleaver",
-          "lawn_dart",
-          "hand_axe",
-          "makeshift_axe",
-          "stone_chisel",
-          "glass_shiv"
+          "copper_knife", "bronze_knife", "diveknife", "primitive_knife",
+          "switchblade", "knife_swissarmy", "bone_knife", "knife_butter", "blade", "scalpel", "office_letter_opener", "multitool", "xacto", "pockknife", "boxcutter"
         ],
-        "//": "Basically whatever that has the size or shape of a knife, has an edge, is small enough to fit, and would cause a grievous wound if hit with"
+        "//": "Any knives, either as KNIVES or because they're knives plain and simple"
       },
       {
         "pocket_type": "CONTAINER",
@@ -91,27 +79,14 @@
         "holster": true,
         "moves": 25,
         "item_restriction": [
-          "knife_combat",
-          "knife_hunting",
+          "sakuya_knife", "silver_knife",
+          "art_dagger",
+          "knife_butter", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_bread", "knife_vegetable_cleaver", "knife_meat_cleaver",
+          "knife_folding", "knife_combat_marine", "knife_combat_army", "knife_combat", "knife_hunting", "knife_KABAR", "knife_rambo", "ch_knife_rambo",
+          "hc_knife_rambo", "lc_knife_rambo", "mc_knife_rambo", "qt_knife_rambo", "knife_rm42", "knife_swissarmy", "knife_trench", "ch_knife_trench", "hc_knife_trench", "lc_knife_trench", "mc_knife_trench", "qt_knife_trench", "makeshift_knife",  "knife_baselard", "kris", "kris_fake", "kukri", "ch_kukri", "hc_kukri", "lc_kukri", "mc_kukri", "qt_kukri", "tanto", "tanto_inferior", "tanto_fake", "karambit", "kirpan", "enfield_bayonet",
           "throwing_knife",
-          "knife_trench",
-          "switchblade",
-          "tanto",
-          "tanto_fake",
-          "tanto_inferior",
-          "knife_butcher",
-          "knife_steak",
-          "knife_paring",
-          "knife_chef",
-          "knife_carving",
-          "knife_vegetable_cleaver",
-          "knife_meat_cleaver",
-          "lawn_dart",
-          "hand_axe",
-          "makeshift_axe",
-          "stone_chisel",
-          "glass_shiv",
-          "silver_knife"
+          "copper_knife", "bronze_knife", "diveknife", "primitive_knife",
+          "switchblade", "knife_swissarmy", "bone_knife", "knife_butter", "blade", "scalpel", "office_letter_opener", "multitool", "xacto", "pockknife", "boxcutter"
         ]
       },
       {
@@ -122,27 +97,14 @@
         "holster": true,
         "moves": 25,
         "item_restriction": [
-          "knife_combat",
-          "knife_hunting",
+          "sakuya_knife", "silver_knife",
+          "art_dagger",
+          "knife_butter", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_bread", "knife_vegetable_cleaver", "knife_meat_cleaver",
+          "knife_folding", "knife_combat_marine", "knife_combat_army", "knife_combat", "knife_hunting", "knife_KABAR", "knife_rambo", "ch_knife_rambo",
+          "hc_knife_rambo", "lc_knife_rambo", "mc_knife_rambo", "qt_knife_rambo", "knife_rm42", "knife_swissarmy", "knife_trench", "ch_knife_trench", "hc_knife_trench", "lc_knife_trench", "mc_knife_trench", "qt_knife_trench", "makeshift_knife",  "knife_baselard", "kris", "kris_fake", "kukri", "ch_kukri", "hc_kukri", "lc_kukri", "mc_kukri", "qt_kukri", "tanto", "tanto_inferior", "tanto_fake", "karambit", "kirpan", "enfield_bayonet",
           "throwing_knife",
-          "knife_trench",
-          "switchblade",
-          "tanto",
-          "tanto_fake",
-          "tanto_inferior",
-          "knife_butcher",
-          "knife_steak",
-          "knife_paring",
-          "knife_chef",
-          "knife_carving",
-          "knife_vegetable_cleaver",
-          "knife_meat_cleaver",
-          "lawn_dart",
-          "hand_axe",
-          "makeshift_axe",
-          "stone_chisel",
-          "glass_shiv",
-          "silver_knife"
+          "copper_knife", "bronze_knife", "diveknife", "primitive_knife",
+          "switchblade", "knife_swissarmy", "bone_knife", "knife_butter", "blade", "scalpel", "office_letter_opener", "multitool", "xacto", "pockknife", "boxcutter"
         ]
       },
       {
@@ -153,27 +115,14 @@
         "holster": true,
         "moves": 25,
         "item_restriction": [
-          "knife_combat",
-          "knife_hunting",
+          "sakuya_knife", "silver_knife",
+          "art_dagger",
+          "knife_butter", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_bread", "knife_vegetable_cleaver", "knife_meat_cleaver",
+          "knife_folding", "knife_combat_marine", "knife_combat_army", "knife_combat", "knife_hunting", "knife_KABAR", "knife_rambo", "ch_knife_rambo",
+          "hc_knife_rambo", "lc_knife_rambo", "mc_knife_rambo", "qt_knife_rambo", "knife_rm42", "knife_swissarmy", "knife_trench", "ch_knife_trench", "hc_knife_trench", "lc_knife_trench", "mc_knife_trench", "qt_knife_trench", "makeshift_knife",  "knife_baselard", "kris", "kris_fake", "kukri", "ch_kukri", "hc_kukri", "lc_kukri", "mc_kukri", "qt_kukri", "tanto", "tanto_inferior", "tanto_fake", "karambit", "kirpan", "enfield_bayonet",
           "throwing_knife",
-          "knife_trench",
-          "switchblade",
-          "tanto",
-          "tanto_fake",
-          "tanto_inferior",
-          "knife_butcher",
-          "knife_steak",
-          "knife_paring",
-          "knife_chef",
-          "knife_carving",
-          "knife_vegetable_cleaver",
-          "knife_meat_cleaver",
-          "lawn_dart",
-          "hand_axe",
-          "makeshift_axe",
-          "stone_chisel",
-          "glass_shiv",
-          "silver_knife"
+          "copper_knife", "bronze_knife", "diveknife", "primitive_knife",
+          "switchblade", "knife_swissarmy", "bone_knife", "knife_butter", "blade", "scalpel", "office_letter_opener", "multitool", "xacto", "pockknife", "boxcutter"
         ]
       },
       {
@@ -184,27 +133,14 @@
         "holster": true,
         "moves": 25,
         "item_restriction": [
-          "knife_combat",
-          "knife_hunting",
+          "sakuya_knife", "silver_knife",
+          "art_dagger",
+          "knife_butter", "knife_butcher", "knife_steak", "knife_paring", "knife_chef", "knife_carving", "knife_bread", "knife_vegetable_cleaver", "knife_meat_cleaver",
+          "knife_folding", "knife_combat_marine", "knife_combat_army", "knife_combat", "knife_hunting", "knife_KABAR", "knife_rambo", "ch_knife_rambo",
+          "hc_knife_rambo", "lc_knife_rambo", "mc_knife_rambo", "qt_knife_rambo", "knife_rm42", "knife_swissarmy", "knife_trench", "ch_knife_trench", "hc_knife_trench", "lc_knife_trench", "mc_knife_trench", "qt_knife_trench", "makeshift_knife",  "knife_baselard", "kris", "kris_fake", "kukri", "ch_kukri", "hc_kukri", "lc_kukri", "mc_kukri", "qt_kukri", "tanto", "tanto_inferior", "tanto_fake", "karambit", "kirpan", "enfield_bayonet",
           "throwing_knife",
-          "knife_trench",
-          "switchblade",
-          "tanto",
-          "tanto_fake",
-          "tanto_inferior",
-          "knife_butcher",
-          "knife_steak",
-          "knife_paring",
-          "knife_chef",
-          "knife_carving",
-          "knife_vegetable_cleaver",
-          "knife_meat_cleaver",
-          "lawn_dart",
-          "hand_axe",
-          "makeshift_axe",
-          "stone_chisel",
-          "glass_shiv",
-          "silver_knife"
+          "copper_knife", "bronze_knife", "diveknife", "primitive_knife",
+          "switchblade", "knife_swissarmy", "bone_knife", "knife_butter", "blade", "scalpel", "office_letter_opener", "multitool", "xacto", "pockknife", "boxcutter"
         ]
       }
     ],
@@ -214,7 +150,7 @@
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_upper_l", "leg_upper_r" ],
         "coverage": 5,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 0 ]
       }
     ],
     "flags": [ "BELTED", "OVERSIZE" ]

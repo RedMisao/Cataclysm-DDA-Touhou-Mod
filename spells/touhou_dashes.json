@@ -147,7 +147,7 @@
     "base_energy_cost": 2333,
     "energy_source": "STAMINA",
     "flags": [ "EXTRA_EFFECTS_FIRST", "NO_PROJECTILE" ],
-    "//": "This should move her + the target along the way. Should stay as spell instead of martial arts technique to cast at will",
+    "//": "This should move her + the target along the way. Do not make MA technique version as this is her custom dash",
     "//2": "min dmg 24"
   },
   {

@@ -360,9 +360,10 @@
       }
     ],
     "armor": [
-      { "encumbrance": [ 0, 35 ], "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ] }
+      { "encumbrance": [ 0, 20 ], "coverage": 100, "covers": [ "torso" ], "specifically_covers": [ "torso_hanging_back" ] }
     ],
-    "flags": [ "BELTED", "ONLY_ONE", "OVERSIZE", "TARDIS", "WATERPROOF" ]
+    "flags": [ "BELTED", "ONLY_ONE", "OVERSIZE", "TARDIS", "WATERPROOF" ],
+    "//": "This is not kappa_backpack as eventually kappa are going to show up wearing those, and this one is a tool for Nitori spells and abilities"
   },
   {
     "id": "meiling_cheongsam_upper",
@@ -935,6 +936,7 @@
     "type": "ARMOR",
     "name": { "str": "starry cape", "str_pl": "starry capes" },
     "description": "A large cape worn over your back.  It's blank on the outside, but has a mesmerizing star pattern on the inside.",
+    "repairs_like": "trenchcoat",
     "volume": "4000 ml",
     "weight": "1500 g",
     "price": 20000,
@@ -995,9 +997,8 @@
       { "covers": [ "arm_r" ], "specifically_covers": [ "arm_elbow_l" ], "coverage": 20, "encumbrance": [ 0, 6 ] },
       { "covers": [ "hand_r" ], "coverage": 100, "encumbrance": [ 0, 6 ] }
     ],
-    "valid_mods": [ "rod_strap" ],
-    "//3": "Should check how to add a strap so the player doesn't have to drop the rod every time Utsuho crafts something",
-    "flags": [ "ONLY_ONE", "OUTER", "PADDED", "RAINPROOF", "RESTRICT_HANDS", "STURDY", "TRADER_AVOID", "UNBREAKABLE_MELEE", "WATERPROOF", "UTSUHO_ROD_FLAG" ]
+    "flags": [ "ONLY_ONE", "OUTER", "PADDED", "RAINPROOF", "RESTRICT_HANDS", "STURDY", "TRADER_AVOID", "UNBREAKABLE_MELEE", "WATERPROOF", "UTSUHO_ROD_FLAG" ],
+    "//3": "Should use slings so the player doesn't have to drop the rod every time Utsuho crafts something"
   },
   {
     "id": "utsuho_shirt",

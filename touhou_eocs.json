@@ -15,7 +15,7 @@
               ]
             },
             "effect": [ { "math": [ "u_var_soulshard", "+=", "2 + rand(2)" ] } ],
-            "//2": "Adds 2 - 4 soulshards"
+            "//": "Adds 2 - 4 soulshards"
           },
           {
             "id": "kokoro_stance_set",
@@ -27,8 +27,14 @@
               { "run_eocs": [ "kokoro_mask_eocs" ] },
               { "run_eocs": [ "kokoro_timer_eoc" ] }
             ],
-            "//2": "The first EOC runs the default condition for Kokoro: 'base' stance plus random mask",
-            "//3": "The second EOC runs the timer for the mask duration and automatic rotation"
+            "//": "The first EOC runs the default condition for Kokoro: 'base' stance plus random mask",
+            "//2": "The second EOC runs the timer for the mask duration and automatic rotation"
+          },
+          {
+            "id": "nitori_starting_kappascrap",
+            "condition": { "u_has_trait": "PROF_NITORI" },
+            "effect": [ { "math": [ "u_var_kappascrap", "+=", "20" ] } ],
+            "//": "Adds 20 kappascrap"
           },
           {
             "id": "vampire_bloodthirst_start",
@@ -40,6 +46,24 @@
           }
         ]
       }
+    ]
+  },
+  {
+    "id": "monster_coordinates_melee",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "character_melee_attacks_monster",
+    "condition": {
+      "or": [
+        { "u_has_trait": "PROF_IKU" },
+        { "u_has_trait": "PROF_KOKORO" },
+        { "u_has_trait": "PROF_MEILING" },
+        { "u_has_trait": "PROF_MOKOU" },
+        { "u_has_trait": "PROF_YOUMU" }
+      ]
+    },
+    "effect": [
+      { "npc_location_variable": { "global_val": "var_target_monster_loc" } }
     ]
   },
   {

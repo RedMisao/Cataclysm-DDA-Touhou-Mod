@@ -42,7 +42,8 @@
     "effect": [ { "u_spawn_item": "soul_shard_item", "count": 1, "suppress_message": true } ],
     "//": "Simple EOC checks when a Kasha kills anything, if it's humanoid or close enough it grants the item",
     "//2": "Seems dots from spells are not proccing character_kills_monster events (#71408)",
-    "//3": "This doesn't work as there's no proper way to limit how many shards can Kaenbyou accumulate. The optimal way would be to just remove any number of soulshards past the limit, but currently there's no EOC that can do that. I tried adding a spoils_in timer but seems the minimum time for the item to disappear is ~5 min, and also she has to drop the items from her inventory for them to actually despawn. That's clunky and leads to inventory flood and micromanagement tedium"
+    "//3": "This doesn't work as there's no proper way to limit how many shards can Kaenbyou accumulate. The optimal way would be to just remove any number of soulshards past the limit, but currently there's no EOC that can do that. I tried adding a spoils_in timer but seems the minimum time for the item to disappear is ~5 min, and also she has to drop the items from her inventory for them to actually despawn. That's clunky and leads to inventory flood and micromanagement tedium",
+    "//note": " try u_consume_item to delete items/charges"
   },
   {
     "id": "soul_shard_item",

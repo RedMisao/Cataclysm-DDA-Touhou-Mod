@@ -19,11 +19,19 @@
       { "level": 1, "id": "aya_stormgust" },
       { "level": 1, "id": "aya_windsickle" }
     ],
-    "traits": [ "TENGUCROW_SPECIES", "WINGS_TENGUCROW", "PROF_AYA", "YOUKAI_SPECIES", "SPIRIT_USER", "ear_tengu", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_aya" ],
+    "traits": [ "YOUKAI_SPECIES", "TENGUCROW_SPECIES", "WINGS_TENGUCROW", "PROF_AYA", "SPIRIT_USER", "ear_tengu", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_aya" ],
     "items": {
       "both": {
-        "items": [ "aya_shirt", "aya_skirt", "ribbon_neck", "socks_ankle", "tengu_fan", "tengu_geta", "tengu_hat" ],
-        "entries": [ { "item": "tengu_reporter_holster", "contents-group": "nested_tengu_reporter" } ]
+        "entries": [
+          { "item": "aya_shirt" },
+          { "item": "aya_skirt" },
+          { "item": "ribbon_neck" },
+          { "item": "socks_ankle" },
+          { "item": "tengu_fan" },
+          { "item": "tengu_geta" },
+          { "item": "tengu_hat" },
+          { "item": "tengu_reporter_holster", "contents-group": "nested_tengu_reporter" }
+        ]
       },
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "panties" ]
@@ -53,16 +61,18 @@
       { "level": 1, "id": "mokou_combustion" },
       { "level": 1, "id": "mokou_fireball" },
       { "level": 1, "id": "mokou_fujiyamakazan" },
-      { "level": 1, "id": "mokou_phoenixtalons" }
+      { "level": 1, "id": "mokou_talons" }
     ],
     "traits": [ "HOURAI_SPECIES", "PROF_MOKOU", "SPIRIT_USER", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_mokou" ],
     "items": {
-      "both": [
-        "mokou_boots",
-        "mokou_hakama",
-        "mokou_ribbon",
-        "mokou_shirt"
-      ],
+      "both": {
+        "entries": [
+          { "item": "mokou_boots" },
+          { "item": "mokou_hakama" },
+          { "item": "mokou_ribbon" },
+          { "item": "mokou_shirt" }
+        ]
+      },
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "panties" ]
     },
@@ -93,7 +103,12 @@
     "traits": [ "MENREIKI_SPECIES", "PROF_KOKORO", "SPIRIT_USER", "eye_pink_touhou", "FACIAL_HAIR_NONE", "hair_kokoro" ],
     "items": {
       "both": {
-        "items": [ "dress_shirt", "kokoro_skirt", "kokoro_socks", "kokoro_vest" ]
+        "entries": [
+          { "item": "dress_shirt" },
+          { "item": "kokoro_skirt" },
+          { "item": "kokoro_socks" },
+          { "item": "kokoro_vest" }
+        ]
       },
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "bloomers" ]
@@ -124,18 +139,19 @@
       { "level": 1, "id": "meiling_redrelease" },
       { "level": 1, "id": "meiling_tigerrelease" }
     ],
-    "//": "A barrier/counter spell would be nice, something like a hit_me_effect trigger to grant a buff_meiling_onblock (her martial arts technique)",
-    "traits": [ "PROF_MEILING", "YOUKAI_SPECIES", "SPIRIT_USER", "eye_blue_touhou", "FACIAL_HAIR_NONE", "hair_meiling" ],
+    "traits": [ "YOUKAI_SPECIES", "PROF_MEILING", "SPIRIT_USER", "eye_blue_touhou", "FACIAL_HAIR_NONE", "hair_meiling" ],
     "items": {
-      "both": [
-        "dress_shoes",
-        "meiling_cheongsam_upper",
-        "meiling_cheongsam_lower",
-        "meiling_hat",
-        "meiling_shirt",
-        "socks",
-        "tai_chi_pants"
-      ],
+      "both": {
+        "entries": [
+          { "item": "dress_shoes" },
+          { "item": "meiling_cheongsam_upper" },
+          { "item": "meiling_cheongsam_lower" },
+          { "item": "meiling_hat" },
+          { "item": "meiling_shirt" },
+          { "item": "socks" },
+          { "item": "tai_chi_pants" }
+        ]
+      },
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "panties" ]
     },
@@ -158,6 +174,7 @@
     ],
     "spells": [
       { "level": 1, "id": "dash_basic" },
+      { "level": 1, "id": "iku_batteryrestore" },
       { "level": 1, "id": "iku_dragonstrike" },
       { "level": 1, "id": "iku_elekiter" },
       { "level": 1, "id": "iku_staticfield" },
@@ -167,17 +184,27 @@
     ],
     "traits": [ "OARFISH_SPECIES", "PROF_IKU", "SPIRIT_USER", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_iku" ],
     "items": {
-      "both": [ "dress_shoes", "iku_dress_shirt", "iku_fedora", "iku_long_scarf", "iku_skirt", "stockings" ],
+      "both": {
+        "entries": [
+          { "item": "dress_shoes" },
+          { "item": "iku_dress_shirt" },
+          { "item": "iku_fedora" },
+          { "item": "iku_long_scarf" },
+          { "item": "iku_skirt" },
+          { "item": "stockings", "variant": "stockings_black" }
+        ]
+      },
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "panties" ]
     },
-    "flags": [ "SCEN_ONLY" ]
+    "flags": [ "SCEN_ONLY" ],
+    "//": "She lacks YOUKAI_SPECIES as I'm assuming Oarfish youkai have diverged enough they don't need to consume humans, given they live in Heaven and all that"
   },
   {
     "id": "nitori_kawashiro",
     "type": "profession",
     "name": "Lateral-Thinking Kappa",
-    "description": "WIP.",
+    "description": "WIP.  This could be a good opportunity to see firsthand what Outside world humans are capable of.",
     "points": 4,
     "skills": [
       { "level": 3, "name": "dodge" },
@@ -188,28 +215,34 @@
     ],
     "spells": [
       { "level": 1, "id": "dash_basic" },
-      { "level": 1, "id": "nitori_mortar" },
+      { "level": 1, "id": "nitori_aerialtorpedoes" },
+      { "level": 1, "id": "nitori_opticalcamouflage" },
       { "level": 1, "id": "nitori_toolswing" },
       { "level": 1, "id": "nitori_turretdeploy" },
-      { "level": 1, "id": "nitori_weathermissile" }
+      { "level": 1, "id": "nitori_weathermissile" },
+      { "level": 1, "id": "nitori_transformate" },
+      { "level": 1, "id": "nitori_zz_kappascrap" }
     ],
-    "traits": [ "PROF_NITORI", "YOUKAI_SPECIES", "SPIRIT_USER", "eye_blue_touhou", "FACIAL_HAIR_NONE", "hair_nitori" ],
+    "traits": [ "YOUKAI_SPECIES", "KAPPA_SPECIES", "PROF_NITORI", "SPIRIT_USER", "eye_blue_touhou", "FACIAL_HAIR_NONE", "hair_nitori" ],
     "items": {
       "both": {
-        "items": [
-          "dress_shirt",
-          "kappa_boots",
-          "kappa_dress",
-          "kappa_hat",
-          "kappa_vest",
-          "socks"
-        ],
-        "entries": [ { "item": "nitori_backpack", "contents-group": "nested_nitori_tools" } ]
+        "entries": [
+          { "item": "dress_shirt" },
+          { "item": "kappa_boots" },
+          { "item": "kappa_dress" },
+          { "item": "kappa_hat" },
+          { "item": "kappa_vest" },
+          { "item": "nitori_backpack", "contents-group": "nested_nitori_tools" },
+          { "item": "scrap" },
+          { "item": "e_scrap" },
+          { "item": "socks" }
+        ]
       },
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "panties" ]
     },
-    "flags": [ "SCEN_ONLY" ]
+    "flags": [ "SCEN_ONLY" ],
+    "//note": " "
   },
   {
     "id": "reisen_udongein_inaba",
@@ -241,16 +274,16 @@
     "traits": [ "GYOKUTO_SPECIES", "SPIRIT_UNTRAINED", "ear_gyokuto_rumpled", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_udongein" ],
     "items": {
       "both": {
-        "items": [
-          "udonge_clip",
-          "udonge_dress_shoes",
-          "ldc_ear_accessory",
-          "udonge_skirt",
-          "udonge_shirt",
-          "socks",
-          "udonge_tie"
-        ],
-        "entries": [ { "item": "lunatic_pistol2", "ammo-item": "ammo_lunar_small_2", "charges": 13, "container-item": "lunatic_holster" } ]
+        "entries": [
+          { "item": "ldc_ear_accessory" },
+          { "item": "lunatic_pistol2", "ammo-item": "ammo_lunar_small_2", "charges": 13, "container-item": "lunatic_holster" },
+          { "item": "socks" },
+          { "item": "udonge_clip" },
+          { "item": "udonge_dress_shoes" },
+          { "item": "udonge_skirt" },
+          { "item": "udonge_shirt" },
+          { "item": "udonge_tie" }
+        ]
       },
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "panties" ]
@@ -282,17 +315,17 @@
     "traits": [ "GYOKUTO_SPECIES", "LUNARDIET", "SPIRIT_UNTRAINED", "ear_gyokuto_floppy", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_reisen" ],
     "items": {
       "both": {
-        "items": [
-          "ldc_dress_shirt",
-          "ldc_dress_shoes",
-          "ldc_helmet",
-          "ldc_kneesocks",
-          "ldc_skirt",
-          "ldc_suit",
-          "ldc_tie",
-          "ldc_veil_deactivated"
-        ],
-        "entries": [ { "item": "lunar_rifle2", "ammo-item": "ammo_lunar_medium_1", "charges": 11, "contents-item": "shoulder_strap" } ]
+        "entries": [
+          { "item": "ldc_dress_shirt" },
+          { "item": "ldc_dress_shoes" },
+          { "item": "ldc_helmet" },
+          { "item": "ldc_kneesocks" },
+          { "item": "ldc_skirt" },
+          { "item": "ldc_suit" },
+          { "item": "ldc_tie" },
+          { "item": "ldc_veil_deactivated" },
+          { "item": "lunar_rifle2", "ammo-item": "ammo_lunar_medium_1", "charges": 11, "contents-item": "shoulder_strap" }
+        ]
       },
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "panties" ]
@@ -324,11 +357,20 @@
     ],
     "traits": [ "VAMPIRE_SPECIES", "VAMPIRE_BAT_REMI", "PROF_REMI", "SPIRIT_USER", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_remilia" ],
     "items": {
-      "both": [ "remi_bowbelt", "remi_dress", "remi_hat", "remi_shoes", "remi_socks" ],
+      "both": {
+        "entries": [
+          { "item": "remi_bowbelt" },
+          { "item": "remi_dress" },
+          { "item": "remi_hat" },
+          { "item": "remi_shoes" },
+          { "item": "remi_socks" }
+        ]
+      },
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "bloomers" ]
     },
-    "flags": [ "SCEN_ONLY" ]
+    "flags": [ "SCEN_ONLY" ],
+    "//": "She lacks YOUKAI_SPECIES as being a vampire overrides (most) of it"
   },
   {
     "id": "rin_kaenbyou",
@@ -355,15 +397,15 @@
       { "level": 1, "id": "kaenbyou_zz_soulshard" }
     ],
     "vehicle": "kaenbyou_wheelbarrow",
-    "traits": [ "KASHA_SPECIES", "KASHA_TAILS", "PROF_KAENBYOU", "YOUKAI_SPECIES", "SPIRIT_USER", "ear_kasha", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_kaenbyou" ],
+    "traits": [ "YOUKAI_SPECIES", "KASHA_SPECIES", "KASHA_TAILS", "PROF_KAENBYOU", "SPIRIT_USER", "ear_kasha", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_kaenbyou" ],
     "items": {
       "both": {
-        "items": [
-          "kaenbyou_dress",
-          "kaenbyou_leg_lace",
-          "kaenbyou_shoes",
-          "kaenbyou_vest",
-          "ribbon_black"
+        "entries": [
+          { "item": "kaenbyou_dress" },
+          { "item": "kaenbyou_leg_lace" },
+          { "item": "kaenbyou_shoes" },
+          { "item": "kaenbyou_vest" },
+          { "item": "ribbon_black" }
         ]
       },
       "male": [ "boxer_shorts" ],
@@ -390,6 +432,8 @@
       { "level": 1, "id": "dash_sakuya" },
       { "level": 1, "id": "sakuya_contraction" },
       { "level": 1, "id": "sakuya_dilation" },
+      { "level": 1, "id": "sakuya_dismiss_knives" },
+      { "level": 1, "id": "sakuya_freezeknife" },
       { "level": 1, "id": "sakuya_jackknife" },
       { "level": 1, "id": "sakuya_maidsecret" },
       { "level": 1, "id": "sakuya_quickrest" },
@@ -398,14 +442,20 @@
       { "level": 1, "id": "sakuya_vanishingeverything" }
     ],
     "traits": [ "MYSTERIOUS", "PSYCHOPATH", "PROF_SAKUYA", "SPIRIT_USER", "eye_silver_touhou", "FACIAL_HAIR_NONE", "hair_sakuya" ],
-    "//": "Change PSYCHOPATH for something like CALLOUS instead: no bonuses like PSYCHOPATH but no demerits for killing and butchering humans and children specifically",
+    "//note": "Change PSYCHOPATH for something like CALLOUS instead: no bonuses like PSYCHOPATH but no demerits for killing and butchering humans and children specifically",
     "items": {
       "both": {
-        "items": [ "dress_shoes", "knit_scarf", "maid_dress", "maid_hat", "pocketwatch", "sakuya_pads", "stockings" ],
         "entries": [
-          { "item": "sakuya_knife", "container-item": "sheath" },
+          { "item": "dress_shoes" },
           { "item": "knife_holster_leg", "contents-group": "nested_silver_knife" },
-          { "item": "knife_holster_leg", "contents-group": "nested_silver_knife" }
+          { "item": "knife_holster_leg", "contents-group": "nested_silver_knife" },
+          { "item": "knit_scarf" },
+          { "item": "maid_dress_short" },
+          { "item": "maid_hat" },
+          { "item": "pocketwatch" },
+          { "item": "sakuya_knife", "container-item": "sheath" },
+          { "item": "sakuya_pads" },
+          { "item": "stockings", "variant": "stockings_black" }
         ]
       },
       "male": [ "boxer_shorts" ],
@@ -440,19 +490,30 @@
       { "level": 1, "id": "seiga_raisechild" },
       { "level": 1, "id": "seiga_wallwalk" }
     ],
-    "traits": [ "LIAR", "PSYCHOPATH", "SPIRITUAL", "PROF_SEIGA", "SPIRIT_HERMIT", "eye_blue_touhou", "FACIAL_HAIR_NONE", "hair_seiga" ],
+    "traits": [ "PSYCHOPATH", "LIAR", "PROF_SEIGA", "SPIRITUAL", "SPIRIT_HERMIT", "eye_blue_touhou", "FACIAL_HAIR_NONE", "hair_seiga" ],
     "items": {
-      "both": [ "dress_shoes", "knit_scarf", "runner_bag", "scalpel", "seiga_dress", "seiga_hairstick", "socks_long" ],
+      "both": {
+        "entries": [
+          { "item": "dress_shoes" },
+          { "item": "knit_scarf" },
+          { "item": "runner_bag" },
+          { "item": "scalpel" },
+          { "item": "seiga_dress" },
+          { "item": "seiga_hairstick" },
+          { "item": "socks_long" }
+        ]
+      },
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "panties" ]
     },
-    "flags": [ "SCEN_ONLY" ]
+    "flags": [ "SCEN_ONLY" ],
+    "//note": "PSYCHOPATH + LIAR + SPIRITUAL -> WICKED_HERMIT "
   },
   {
     "id": "tenshi_hinanawi",
     "type": "profession",
     "name": "Celestial Delinquent",
-    "description": "Feeling bored doing basically noting in Heaven, you came down to visit the Shrine and your friends.  Something happened in the meantime though.  At first you were amused, then became slightly worried, then very, very curious.  The outside world looks… different now.",
+    "description": "Feeling bored doing basically noting in Heaven, you came down to visit the Shrine and your friends.  Something happened in the meantime though.  At first you were amused, then became slightly worried, then very, very curious.  The Outside world looks… different now.",
     "points": 4,
     "skills": [
       { "level": 4, "name": "bashing" },
@@ -473,7 +534,18 @@
     ],
     "traits": [ "CELESTIAL_SPECIES", "PROF_TENKO", "SPIRIT_USER", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_tenko" ],
     "items": {
-      "both": [ "boots", "knit_scarf", "socks", "tenshi_bowbelt", "tenshi_bowhat", "tenshi_jian", "tenshi_shirt", "tenshi_skirt" ],
+      "both": {
+        "entries": [
+          { "item": "boots" },
+          { "item": "knit_scarf" },
+          { "item": "socks" },
+          { "item": "tenshi_bowbelt" },
+          { "item": "tenshi_bowhat" },
+          { "item": "tenshi_jian" },
+          { "item": "tenshi_shirt" },
+          { "item": "tenshi_skirt" }
+        ]
+      },
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "panties" ]
     },
@@ -500,9 +572,19 @@
       { "level": 1, "id": "utsuho_nuke" },
       { "level": 1, "id": "utsuho_ugeyser" }
     ],
-    "traits": [ "HELLRAVEN_SPECIES", "WINGS_HELLRAVEN", "YATAGARASU_VESSEL", "PROF_OKUU", "YOUKAI_SPECIES", "SPIRIT_USER", "eye_black_touhou", "FACIAL_HAIR_NONE", "hair_utsuho" ],
+    "traits": [ "YATAGARASU_VESSEL", "YOUKAI_SPECIES", "HELLRAVEN_SPECIES", "WINGS_HELLRAVEN", "PROF_OKUU", "SPIRIT_USER", "eye_black_touhou", "FACIAL_HAIR_NONE", "hair_utsuho" ],
     "items": {
-      "both": [ "dress_shoes", "socks_long", "utsuho_cape", "utsuho_ribbon", "utsuho_rod", "utsuho_shirt", "utsuho_skirt" ],
+      "both": {
+        "entries": [
+          { "item": "dress_shoes" },
+          { "item": "socks_long" },
+          { "item": "utsuho_cape" },
+          { "item": "utsuho_ribbon" },
+          { "item": "utsuho_rod" },
+          { "item": "utsuho_shirt" },
+          { "item": "utsuho_skirt" }
+        ]
+      },
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "panties" ]
     },
@@ -535,14 +617,22 @@
       { "level": 1, "id": "yamame_webbridge" },
       { "level": 1, "id": "yamame_webrappel" }
     ],
-    "traits": [ "TSUCHIGUMO_SPECIES", "PROF_YAMAME", "YOUKAI_SPECIES", "SPIRIT_USER", "eye_brown_touhou", "FACIAL_HAIR_NONE", "hair_yamame" ],
+    "traits": [ "YOUKAI_SPECIES", "TSUCHIGUMO_SPECIES", "PROF_YAMAME", "SPIRIT_USER", "eye_brown_touhou", "FACIAL_HAIR_NONE", "hair_yamame" ],
     "items": {
-      "both": { "items": [ "dress_shoes", "socks", "yamame_dress", "yamame_ribbon", "yamame_shirt" ] },
+      "both": {
+        "entries": [
+          { "item": "dress_shoes" },
+          { "item": "socks" },
+          { "item": "yamame_dress" },
+          { "item": "yamame_ribbon" },
+          { "item": "yamame_shirt" }
+        ]
+      },
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "bloomers" ]
     },
     "flags": [ "SCEN_ONLY" ],
-    "//": "Replace dash with self-pull? Or add self-pull alongside dash, difference is it costs mana to cast?"
+    "//note": "Add self-pull alongside dash. But what would be the gameplay difference?"
   },
   {
     "id": "youmu_konpaku",
@@ -564,14 +654,20 @@
       { "level": 1, "id": "youmu_slasheternal" },
       { "level": 1, "id": "youmu_slashnether" }
     ],
-    "traits": [ "HALF_PHANTOM_SPECIES", "TRUTHTELLER", "PROF_YOUMU", "SPIRIT_UNTRAINED", "eye_silver_touhou", "FACIAL_HAIR_NONE", "hair_youmu" ],
+    "traits": [ "HALF_PHANTOM_SPECIES", "PROF_YOUMU", "TRUTHTELLER", "SPIRIT_UNTRAINED", "eye_silver_touhou", "FACIAL_HAIR_NONE", "hair_youmu" ],
     "//": "Add parry and dual wield somewhere",
     "items": {
       "both": {
-        "items": [ "dress_shirt", "dress_shoes", "knit_scarf", "stockings", "youmu_ribbon", "youmu_skirt", "youmu_vest" ],
         "entries": [
+          { "item": "dress_shirt" },
+          { "item": "dress_shoes" },
+          { "item": "knit_scarf" },
+          { "item": "socks" },
+          { "item": "youmu_hakurouken", "container-item": "youmu_scabbard_haku" },
+          { "item": "youmu_ribbon" },
           { "item": "youmu_roukanken", "container-item": "youmu_scabbard_rouka" },
-          { "item": "youmu_hakurouken", "container-item": "youmu_scabbard_haku" }
+          { "item": "youmu_skirt" },
+          { "item": "youmu_vest" }
         ]
       },
       "male": [ "boxer_shorts" ],

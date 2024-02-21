@@ -50,7 +50,7 @@
     "id": "damnedrope_strength_mut",
     "type": "mutation",
     "name": { "str": "Spider strength (mutation)" },
-    "description": " ",
+    "description": "Grants bonus str for the pull_target spell effect of yamame_damnedrope . Used at yamame_damnedrope_eoc ",
     "points": 0,
     "player_display": false,
     "purifiable": false,
@@ -198,9 +198,50 @@
     ]
   },
   {
+    "id": "KAPPA_SPECIES",
+    "type": "mutation",
+    "name": "Kappa",
+    "description": "You're an aquatic youkai, known for your engineering prowess.  While you believe you're on good term with humans, things may be a bit different from their perspective, given your youkai frame of reference.",
+    "points": 0,
+    "profession": true,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": false,
+    "active": true,
+    "ugliness": 4,
+    "visibility": 4,
+    "crafting_speed_multiplier": 0.8,
+    "movecost_swim_modifier": 0.66,
+    "social_modifiers": { "intimidate": -4, "persuade": 2 },
+    "thirst_modifier": 0.2,
+    "wet_protection": [
+      { "part": "head", "ignored": 12 },
+      { "part": "leg_l", "ignored": 12 },
+      { "part": "leg_r", "ignored": 12 },
+      { "part": "foot_l", "ignored": 12 },
+      { "part": "foot_r", "ignored": 12 },
+      { "part": "arm_l", "ignored": 12 },
+      { "part": "arm_r", "ignored": 12 },
+      { "part": "hand_l", "ignored": 12 },
+      { "part": "hand_r", "ignored": 12 },
+      { "part": "torso", "ignored": 12 }
+    ],
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "ARMOR_COLD", "multiply": -0.33 },
+          { "value": "ARMOR_HEAT", "multiply": 0.33 }
+        ] 
+      } 
+    ],
+    "cancels": [ "FRESHWATEROSMOSIS", "GILLS", "MEMBRANE", "SCALES", "SLEEK_SCALES", "SLIMY", "WATERSLEEPER", "WEBBED", "WEBBED_FEET" ],
+    "//": "add salt deficiency "
+  },
+  {
     "id": "KASHA_SPECIES",
     "type": "mutation",
-    "name": "Kasha",
+    "name": "Kasha (human form)",
     "description": "You're a feline-looking youkai originating from (Former) Hell.  Currently, you're posing as a human.  Activate the mutation to switch to youkai form.",
     "points": 0,
     "profession": true,
@@ -215,8 +256,8 @@
       { 
         "condition": "ALWAYS", 
         "values": [ 
-          { "value": "ARMOR_HEAT", "multiply": -0.33 },
           { "value": "ARMOR_COLD", "multiply": 0.33 },
+          { "value": "ARMOR_HEAT", "multiply": -0.33 },
           { "value": "FALL_DAMAGE", "multiply": -0.33 }
         ] 
       } 
@@ -435,6 +476,7 @@
     "mending_modifier": 2,
     "//": "Should be double or triple that by 'digesting' human blood",
     "movecost_modifier": 0.8,
+    "social_modifiers": { "intimidate": 4, "persuade": 4 },
     "ugliness": -4,
     "visibility": 1,
     "vitamins_absorb_multi": [ [ "veggy", [ [ "vitA", 0.33 ], [ "vitB", 0.33 ], [ "vitC", 0.33 ], [ "calcium", 0.33 ], [ "iron", 0.33 ] ] ] ],
@@ -640,7 +682,7 @@
   {
     "id": "YATAGARASU_VESSEL",
     "type": "mutation",
-    "name": "Vessel of Yatagarasu",
+    "name": "Scorching divine flame",
     "description": "You're the living vessel of the Yatagarasu, an incarnation of the Sun.",
     "points": 0,
     "profession": true,
@@ -782,8 +824,8 @@
   {
     "id": "PROF_NITORI",
     "type": "mutation",
-    "name": "WIP",
-    "description": "WIP",
+    "name": "Underwater Engineer",
+    "description": "WIP. You're a kappa, somewhat shy around humans, but you don't really mind them very much.",
     "points": 0,
     "profession": true,
     "purifiable": false,
@@ -897,7 +939,7 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "social_modifiers": { "lie": -2 },
+    "social_modifiers": { "lie": -4 },
     "initial_ma_styles": [ "style_youmu" ]
   }
 ]

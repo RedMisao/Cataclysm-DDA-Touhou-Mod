@@ -4,6 +4,10 @@
     "type": "json_flag"
   },
   {
+    "id": "NITORI_RESOURCE_FLAG",
+    "type": "json_flag"
+  },
+  {
     "id": "REMI_GUNGNIR_FLAG",
     "type": "json_flag"
   },

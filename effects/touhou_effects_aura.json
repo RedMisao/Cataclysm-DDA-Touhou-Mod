@@ -1,5 +1,47 @@
 [
   {
+    "id": "aura_fusionblade",
+    "type": "effect_type",
+    "name": [ "Fusion blade (aura)" ],
+    "desc": [ "A plume of white-hot plasma, emerging from the tip of your control rod." ],
+    "max_intensity": 1,
+    "max_effective_intensity": 1,
+    "rating": "good",
+    "apply_message": "A jet of plasma emerges from the end of your control rod.",
+    "enchantments": [ 
+      {
+        "hit_you_effect": [ { "id": "fusion_bonk" } ],
+        "values": [ { "value": "LUMINATION", "add": 20 } ]
+      }
+    ]
+  },
+  {
+    "id": "fusion_bonk",
+    "type": "SPELL",
+    "name": "Fusion blade (dmg)",
+    "description": "dmg component for utsuho_fusionblade ",
+    "spell_class": "NONE",
+    "effect": "attack",
+    "valid_targets": [ "ally", "hostile" ],
+    "components": "spell_components_utsuhorod",
+    "shape": "blast",
+    "damage_type": "heat",
+    "min_damage": { "math": [ "( (u_skill('dodge') * 1.3 ) + 8.4 )" ] },
+    "max_damage": { "math": [ "( (u_skill('dodge') * 2.6 ) + 16.8 )" ] },
+    "min_pierce": 3,
+    "max_pierce": 3,
+    "min_range": 1,
+    "max_range": 1,
+    "max_level": 1,
+    "difficulty": -11,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "IGNITE_FLAMMABLE", "NO_LEGS", "NO_PROJECTILE", "RANDOM_DAMAGE", "SILENT" ],
+    "//": "max dmg 24 - 48",
+    "//2": "Should do half bash (due replacing melee attacks for Utsuho) half heat, but implementing a subspell for bash will flood the P window"
+  },
+  {
     "id": "aura_reflectionslash",
     "type": "effect_type",
     "name": [ "Reflection slash (aura)" ],
@@ -33,7 +75,7 @@
     "name": "Thundercloud Stickleback (shock)",
     "description": "Dmg component for iku_thundercloud ",
     "spell_class": "NONE",
-    "valid_targets": [ "hostile" ],
+    "valid_targets": [ "ally", "hostile" ],
     "effect": "attack",
     "shape": "blast",
     "damage_type": "electric",
@@ -47,7 +89,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_PROJECTILE", "RANDOM_DAMAGE" ],
-    "//": "min dmg 5 - 7, max dmg 10 - 14"
+    "//": "max dmg 7 - 14"
   },
   {
     "id": "stickleback_knockback",
@@ -55,7 +97,7 @@
     "name": "Thundercloud Stickleback (knockback)",
     "description": "Knockback component for iku_thundercloud ",
     "spell_class": "NONE",
-    "valid_targets": [ "hostile" ],
+    "valid_targets": [ "ally", "hostile" ],
     "effect": "directed_push",
     "shape": "blast",
     "damage_type": "electric",
@@ -69,7 +111,115 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_EXPLOSION_SFX", "NO_PROJECTILE", "RANDOM_DAMAGE" ],
-    "//": "min knockback 1 - 1, max knockback 1 - 4"
+    "//": "max knockback 1 - 4"
+  },
+  {
+    "id": "aura_tigerrelease",
+    "type": "effect_type",
+    "name": [ "Tiger qi release (aura)" ],
+    "desc": [ "The physical manifestation of your Tiger qi." ],
+    "max_intensity": 1,
+    "max_effective_intensity": 1,
+    "rating": "good",
+    "apply_message": "You release your qi, a bright, flame-like energy covers your hands.",
+    "remove_message": "The Tiger qi goes away.",
+    "enchantments": [ 
+      {
+        "hit_you_effect": [ { "id": "tiger_bonk" } ],
+        "values": [ { "value": "LUMINATION", "add": 2 } ]
+      }
+    ]
+  },
+  {
+    "id": "tiger_bonk",
+    "type": "SPELL",
+    "name": "Tiger qi release (damage)",
+    "description": "dmg component for meiling_tigerrelease ",
+    "spell_class": "NONE",
+    "effect": "attack",
+    "valid_targets": [ "ally", "hostile" ],
+    "shape": "blast",
+    "damage_type": "bash",
+    "min_damage": { "math": [ "( (u_skill('swimming') * 0.25 ) + (u_skill('melee') * 0.25 ) + (u_skill('unarmed') * 0.25 ) + 1.75 )" ] },
+    "max_damage": { "math": [ "( (u_skill('swimming') * 0.4 ) + (u_skill('melee') * 0.4 ) + (u_skill('unarmed') * 0.4 ) + 2.8 )" ] },
+    "min_range": 1,
+    "max_range": 1,
+    "max_level": 1,
+    "difficulty": -11,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_LEGS", "NO_PROJECTILE", "RANDOM_DAMAGE" ],
+    "//": "max dmg 6 - 18, relatively low as she has KI_STRIKE "
+  },
+  {
+    "id": "aura_vampiric",
+    "type": "effect_type",
+    "name": [ "Vampiric aura (aura)" ],
+    "desc": [ "Your unleashed vampiric essence." ],
+    "max_intensity": 1,
+    "max_effective_intensity": 1,
+    "rating": "good",
+    "apply_message": "You release a portion of your true essence, a red presence covers your hands.",
+    "enchantments": [ 
+      {
+        "condition": "ALWAYS",
+        "hit_you_effect": [ { "id": "vampiric_claw" } ],
+        "values": [
+          { "value": "ARMOR_BASH", "add": 2 },
+          { "value": "ARMOR_CUT", "add": 2 },
+          { "value": "ARMOR_STAB", "add": 2 },
+          { "value": "ARMOR_BULLET", "add": 2 }
+        ],
+        "//": "ARMOR_X add +n REDUCES armor for n value, this is intended here as the aura increases melee dmg while reducing defense"
+      }
+    ]
+  },
+  {
+    "id": "vampiric_claw",
+    "type": "SPELL",
+    "name": "Vampiric claw",
+    "description": "dmg component for remilia_vampiricaura ",
+    "spell_class": "NONE",
+    "effect": "attack",
+    "extra_effects": [ { "id": "vampiric_drain" } ],
+    "valid_targets": [ "hostile" ],
+    "ignored_monster_species": [ "HALLUCINATION", "HORROR", "NETHER_EMANATION", "ROBOT" ],
+    "shape": "blast",
+    "damage_type": "cut",
+    "min_damage": { "math": [ "( (u_skill('stabbing') * 0.53 ) + (u_skill('melee') * 0.53 ) + 0.8 )" ] },
+    "max_damage": { "math": [ "( (u_skill('stabbing') * 1.05 ) + (u_skill('melee') * 1.05 ) + 1.6 )" ] },
+    "min_range": 1,
+    "max_range": 1,
+    "max_level": 1,
+    "difficulty": -11,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_LEGS", "RANDOM_DAMAGE", "SILENT" ],
+    "//": "max dmg 10 - 31, based on a portion of Gungnir's total dmg"
+  },
+  {
+    "id": "vampiric_drain",
+    "type": "SPELL",
+    "name": "Vampiric DRAIN",
+    "description": "heal component for remilia_vampiricaura ",
+    "spell_class": "NONE",
+    "effect": "attack",
+    "valid_targets": [ "self" ],
+    "shape": "blast",
+    "damage_type": "pure",
+    "min_damage": { "math": [ "( - (u_skill('stabbing') * 0.27 ) - (u_skill('melee') * 0.27 ) + 0.3 )" ] },
+    "max_damage": { "math": [ "( - (u_skill('stabbing') * 0.55 ) - (u_skill('melee') * 0.55 ) + 0.6 )" ] },
+    "min_aoe": 2,
+    "max_aoe": 2,
+    "max_level": 1,
+    "difficulty": -11,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_LEGS", "RANDOM_DAMAGE", "SILENT" ],
+    "//": "max dmg (heal) 5 - 16, based on a portion of above's dmg"
   },
   {
     "id": "aura_windsickle",
@@ -89,7 +239,7 @@
     "name": "Wind sickle (dmg)",
     "description": "Dmg component for aya_windsickle ",
     "spell_class": "NONE",
-    "valid_targets": [ "hostile" ],
+    "valid_targets": [ "ally", "hostile" ],
     "effect": "attack",
     "shape": "blast",
     "damage_type": "cut",
@@ -103,48 +253,6 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_PROJECTILE", "RANDOM_DAMAGE" ],
-    "//": "min dmg 3.5 - 7, max dmg 7 - 14"
-  },
-  {
-    "id": "aura_fusionblade",
-    "type": "effect_type",
-    "name": [ "Fusion blade (aura)" ],
-    "desc": [ "A plume of white-hot plasma, emerging from the tip of your control rod." ],
-    "max_intensity": 1,
-    "max_effective_intensity": 1,
-    "rating": "good",
-    "apply_message": "A jet of plasma emerges from the end of your control rod.",
-    "enchantments": [ 
-      {
-        "hit_you_effect": [ { "id": "fusion_bonk" } ],
-        "values": [ { "value": "LUMINATION", "add": 20 } ]
-      }
-    ]
-  },
-  {
-    "id": "fusion_bonk",
-    "type": "SPELL",
-    "name": "Fusion blade (dmg)",
-    "description": "dmg component for utsuho_fusionblade ",
-    "spell_class": "NONE",
-    "effect": "attack",
-    "valid_targets": [ "hostile" ],
-    "components": "spell_components_utsuhorod",
-    "shape": "blast",
-    "damage_type": "heat",
-    "min_damage": { "math": [ "( (u_skill('dodge') * 1.3 ) + 8.4 )" ] },
-    "max_damage": { "math": [ "( (u_skill('dodge') * 2.6 ) + 16.8 )" ] },
-    "min_pierce": 3,
-    "max_pierce": 3,
-    "min_range": 1,
-    "max_range": 1,
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "IGNITE_FLAMMABLE", "NO_LEGS", "NO_PROJECTILE", "RANDOM_DAMAGE", "SILENT" ],
-    "//": "min dmg 11 - 24, max dmg 22 - 48",
-    "//2": "Should do half bash (due replacing melee attacks for Utsuho) half heat, but implementing a subspell for bash will flood the P window"
+    "//": "max dmg 7 - 14"
   }
 ]

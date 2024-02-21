@@ -452,7 +452,7 @@
       "tec_meiling_kick",
       "tec_meiling_palm",
       "tec_meiling_pshoulder_strike",
-      "tec_meiling_qi_burst",
+      "tec_meiling_qi_blast",
       "tec_meiling_stomp"
     ],
     "//": "Based on style_tai_chi "
@@ -563,16 +563,13 @@
       "tec_brawl_disarm_unarmed",
       "tec_taekwondo_strong",
       "tec_mokou_fire_burst",
-      "tec_mokou_front_kick",
-      "tec_mokou_front_kick2",
       "tec_mokou_kick",
       "tec_mokou_kick2",
       "tec_mokou_punch_down",
       "tec_mokou_sommersault_kick",
       "tec_mokou_liver_punch",
       "tec_mokou_tackle",
-      "tec_mokou_talons",
-      "tec_mokou_talons2"
+      "tec_mokou_talons"
     ]
   },
   {

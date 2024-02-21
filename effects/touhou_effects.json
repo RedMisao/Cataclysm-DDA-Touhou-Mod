@@ -662,6 +662,25 @@
     "scaling_mods": { "pain_amount": [ 11 ] }
   },
   {
+    "id": "nitori_camouflage",
+    "type": "effect_type",
+    "name": [ "Optical camouflage" ],
+    "desc": [ "You're invisible." ],
+    "apply_message": "Your optical camouflage is active.",
+    "rating": "good",
+    "flags": [ "INVISIBLE" ]
+  },
+  {
+    "id": "nitori_camouflage_fake",
+    "type": "effect_type",
+    "name": [ "Optical camouflage" ],
+    "desc": [ "You're invisible." ],
+    "apply_message": "Your optical camouflage is active.",
+    "rating": "good",
+    "removes_effects": [ "nitori_camouflage" ],
+    "//": "Fake camouflage effect so the player can't tell if it's active or not when the spell fails"
+  },
+  {
     "id": "reisen_pnoise",
     "type": "effect_type",
     "name": [ "Probability noise (effect)" ],
@@ -749,7 +768,8 @@
     "apply_message": "Time is frozen.  Is it as if the entire world has stopped.",
     "remove_message": "Thus, time is flowing again.",
     "rating": "good",
-    "base_mods": { "speed_mod": [ 20 ] }
+    "max_intensity": 1,
+    "max_effective_intensity": 1
   },
   {
     "id": "seiga_cripple_effect_short",

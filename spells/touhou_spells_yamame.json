@@ -517,7 +517,7 @@
     "valid_targets": [ "ground" ],
     "effect": "ter_transform",
     "effect_str": "web_bridge_ter",
-    "shape": "blast",
+    "shape": "line",
     "min_damage": 1,
     "max_damage": 1,
     "min_range": { "math": [ "( (u_skill('speech') * 0.75 ) + (u_skill('dodge') * 0.75 ) + 0.75 )" ] },

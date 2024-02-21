@@ -17,115 +17,6 @@
     "energy_source": "MANA"
   },
   {
-    "id": "iku_batteryrestore1",
-    "type": "SPELL",
-    "name": "Restore battery (ultra light)",
-    "description": "Use a small amount of electric power to restore ultra light batteries.",
-    "spell_class": "NONE",
-    "valid_targets": [ "none" ],
-    "components": "spell_components_battery_ultralight",
-    "effect": "spawn_item",
-    "effect_str": "light_minus_battery_cell",
-    "shape": "blast",
-    "min_duration": 100,
-    "max_duration": 100,
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 1000,
-    "base_energy_cost": 50,
-    "energy_source": "MANA",
-    "flags": [ "CONCENTRATE", "NO_LEGS", "PERMANENT" ],
-    "//": "These spells don't work because batteries are spawned with zero energy, instead of full"
-  },
-  {
-    "id": "iku_batteryrestore2",
-    "type": "SPELL",
-    "name": "Restore battery (light)",
-    "description": "Use a small amount of electric power to restore light batteries.",
-    "spell_class": "NONE",
-    "valid_targets": [ "none" ],
-    "components": "spell_components_battery_light",
-    "effect": "spawn_item",
-    "effect_str": "light_battery_cell",
-    "shape": "blast",
-    "min_duration": 100,
-    "max_duration": 100,
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 1000,
-    "base_energy_cost": 75,
-    "energy_source": "MANA",
-    "flags": [ "CONCENTRATE", "NO_LEGS", "PERMANENT" ]
-  },
-  {
-    "id": "iku_batteryrestore3",
-    "type": "SPELL",
-    "name": "Restore battery (medium)",
-    "description": "Use a small amount of electric power to restore medium batteries.",
-    "spell_class": "NONE",
-    "valid_targets": [ "none" ],
-    "components": "spell_components_battery_medium",
-    "effect": "spawn_item",
-    "effect_str": "medium_battery_cell",
-    "shape": "blast",
-    "min_duration": 100,
-    "max_duration": 100,
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 1000,
-    "base_energy_cost": 100,
-    "energy_source": "MANA",
-    "flags": [ "CONCENTRATE", "NO_LEGS", "PERMANENT" ]
-  },
-  {
-    "id": "iku_batteryrestore4",
-    "type": "SPELL",
-    "name": "Restore battery (heavy)",
-    "description": "Use your electric power to restore heavy batteries.",
-    "spell_class": "NONE",
-    "valid_targets": [ "none" ],
-    "components": "spell_components_battery_heavy",
-    "effect": "spawn_item",
-    "effect_str": "heavy_battery_cell",
-    "shape": "blast",
-    "min_duration": 100,
-    "max_duration": 100,
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 1000,
-    "base_energy_cost": 125,
-    "energy_source": "MANA",
-    "flags": [ "CONCENTRATE", "NO_LEGS", "PERMANENT" ]
-  },
-  {
-    "id": "iku_palm",
-    "type": "SPELL",
-    "name": "Double palm discharge (damage)",
-    "description": "Damage component for tec_iku_palm ",
-    "spell_class": "NONE",
-    "valid_targets": [ "ground", "hostile" ],
-    "effect": "attack",
-    "shape": "line",
-    "damage_type": "electric",
-    "min_damage": { "math": [ "( (u_skill('dodge') * 1.5 ) + (u_skill('unarmed') * 1.5 ) + 9 )" ] },
-    "max_damage": 45,
-    "min_range": 3,
-    "max_range": 3,
-    "field_id": "fd_electricity",
-    "field_chance": 2,
-    "min_field_intensity": 1,
-    "max_field_intensity": 1,
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "Modified iku_thunderfish_base as this is procced automatically by MA techniques",
-    "//2": "min dmg 15",
-    "//3": "This is working properly when using as MA technique 'eocs', but it's not implemented as I think it's too clunky to have two directional spells proccing from techniques"
-  },
-  {
     "id": "kaenbyou_vspossess",
     "type": "SPELL",
     "name": { "str": "Possession: Vengeful spirit" },
@@ -320,70 +211,6 @@
     ]
   },
   {
-    "id": "nitori_mortar",
-    "type": "SPELL",
-    "name": { "str": "Mortar (TEST)" },
-    "description": "Test for a mortar-type spell",
-    "spell_class": "NONE",
-    "valid_targets": [ "self" ],
-    "effect": "effect_on_condition",
-    "effect_str": "nitori_mortar_eoc",
-    "shape": "blast",
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
-    "//": "This spell doesn't work: The 'loc' below from the u_cast_spell seems to be inactive regardless of the hit_self and targeted combinations: it is always centered on Nitori"
-  },
-  {
-    "id": "nitori_mortarBLAST",
-    "type": "SPELL",
-    "name": { "str": "Mortar (TEST) (BLAST)" },
-    "description": "The BLAST of nitori_mortar ",
-    "spell_class": "NONE",
-    "valid_targets": [ "ally", "field", "ground", "hostile", "item", "self" ],
-    "effect": "attack",
-    "shape": "blast",
-    "damage_type": "bash",
-    "min_damage": 20,
-    "max_damage": 20,
-    "min_range": 99,
-    "max_range": 99,
-    "min_aoe": 6,
-    "max_aoe": 6,
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ]
-  },
-  {
-    "id": "nitori_mortar_eoc",
-    "type": "effect_on_condition",
-    "effect": [
-      {
-        "if": {
-          "message": "Select target", 
-          "range": 10,
-          "u_query_tile": "anywhere",
-          "target_var": { "context_val": "var_nitori_mortar_loc" }
-        },
-        "then": { "queue_eocs": [ "nitori_mortar_BLAST" ], "time_in_future": "1 s" },
-        "else": { "u_message": "Canceled" }
-      }
-    ]
-  },
-  {
-    "id": "nitori_mortar_BLAST",
-    "type": "effect_on_condition",
-    "effect": [
-      { "u_cast_spell": { "id": "nitori_mortarBLAST" }, "loc": { "global_val": "var_nitori_mortar_loc" } }
-    ]
-  },
-  {
     "id": "sakuya_knifepull",
     "type": "SPELL",
     "name": { "str": "Knife retrieval" },
@@ -406,6 +233,112 @@
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_PROJECTILE", "SILENT", "WONDER" ],
     "//": "This is deactivated: there's currently no way to pull *only* knives, any 'item' in the aoe is pulled, which is not good. Also, the WONDER + x50 spell repeats as area_pull seems hardcoded to 1 tile per action, which works good enough for this spell specially but it's something to keep in mind"
+  },
+  {
+    "id": "sakuya_timestop_wip",
+    "type": "SPELL",
+    "name": "Time manipulation (Time stop)",
+    "description": "Stop time around yourself.  Costs 33 mana to activate, and drains 166 mana while active, over the duration.  Cast again to toggle OFF.  \nMaximum duration is increased with higher skill levels.",
+    "spell_class": "NONE",
+    "valid_targets": [ "self" ],
+    "effect": "effect_on_condition",
+    "effect_str": "sakuya_timestop_eoc",
+    "shape": "blast",
+    "max_level": 1,
+    "difficulty": -11,
+    "base_casting_time": 33,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "LOUD", "NO_HANDS", "NO_LEGS", "SOMATIC", "VERBAL" ],
+    "//": "This works as intended, if the time stop effect is a debuff upon enemies",
+    "//2": "However, if the effect is a +mod_moves buff to Sakuya, it also blocks the EOCs from cycling, effectively duplicating the in-game time stop effect",
+    "//3": "The +mod_moves for Sakuya is better than the -mod_moves on enemies, as it blocks the in-game time, but I want that to be toggle-able at will too",
+    "//4": "This stays as WIP until I figure out how to combine both"
+  },
+  {
+    "id": "sakuya_timestop2",
+    "type": "SPELL",
+    "name": "Time manipulation (Time stop) (freeze component)",
+    "description": "Freeze component of sakuya_timestop ",
+    "spell_class": "NONE",
+    "valid_targets": [ "self" ],
+    "effect": "mod_moves",
+    "shape": "blast",
+    "extra_effects": [ { "id": "sakuya_timestop_vfx", "hit_self": true } ],
+    "min_damage": 1000,
+    "max_damage": 2500,
+    "damage_increment": 100,
+    "min_aoe": 1,
+    "max_aoe": 1,
+    "min_duration": 1000,
+    "max_duration": 1800,
+    "duration_increment": 100,
+    "max_level": 10,
+    "difficulty": 40,
+    "base_casting_time": 100,
+    "base_energy_cost": 233,
+    "energy_source": "MANA",
+    "flags": [ "IGNORE_WALLS", "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SILENT", "NO_FAIL" ]
+  },
+  {
+    "id": "sakuya_timestop_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_timestop_active", "<", "2" ] },
+    "effect": [
+      { "u_message": "AAA", "type": "mixed" },
+      { "math": [ "u_val('mana')", "-=", "33" ] },
+      { "math": [ "var_timestop_active", "+=", "1" ] },
+      { "math": [ "var_timestop_duration", "=", "( (u_skill('throw') * 35 ) + (u_skill('stabbing') * 35 ) + (u_skill('dodge') * 70 ) + 210 )" ] },
+      { "u_lose_effect": "sakuya_timestop_effect" },
+      { "u_cast_spell": { "id": "sakuya_timestop3" }, "targeted": false },
+      { "u_cast_spell": { "id": "sakuya_timestop_vfx" }, "targeted": false },
+      { "run_eocs": [ "sakuya_timestop_cycle1" ] }
+    ],
+    "//": "This EOC is a modified version of udonge_waveinsight_start . It runs for n times, set by the var above",
+    "//2": "dur 700 - 2100"
+  },
+  {
+    "id": "sakuya_timestop_cycle1",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "var_timestop_timer", "<", "var_timestop_duration" ] },
+        { "math": [ "var_timestop_active", "<", "2" ] }
+      ]
+    },
+    "effect": [ { "u_message": "BBB", "type": "mixed" }, { "run_eocs": [ "sakuya_timestop_cycle2" ] } ],
+    "false_effect": [ { "run_eocs": [ "sakuya_timestop_end" ] } ]
+  },
+  {
+    "id": "sakuya_timestop_cycle2",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_val('mana')", ">=", "( 133 / ( var_timestop_duration / 100 ) )" ] },
+        { "math": [ "var_timestop_timer", "<", "var_timestop_duration" ] },
+        { "math": [ "var_timestop_active", ">", "0" ] }
+      ]
+    },
+    "effect": [
+      { "u_message": "CCC", "type": "mixed" },
+      { "math": [ "var_timestop_timer", "+=", "100" ] },
+      { "math": [ "u_val('mana')", "-=", "( 133 / ( var_timestop_duration / 100 ) )" ] },
+      { "u_add_effect": "sakuya_timestop_effect", "duration": "2 s" },
+      { "u_cast_spell": { "id": "sakuya_timestop2" }, "targeted": false },
+      { "queue_eocs": [ "sakuya_timestop_cycle1" ], "time_in_future": "1 s" }
+    ],
+    "false_effect": [ { "run_eocs": [ "sakuya_timestop_end" ] } ]
+  },
+  {
+    "id": "sakuya_timestop_end",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_message": "DDD", "type": "mixed" },
+      { "math": [ "var_timestop_active", "=", "0" ] },
+      { "math": [ "var_timestop_timer", "=", "0" ] },
+      { "u_lose_effect": "sakuya_timestop_effect" }
+    ],
+    "//": "Messages can be handled by EOCs once I fix the double-stop requirement of the base aura..."
   },
   {
     "id": "sakuya_knifepull2",

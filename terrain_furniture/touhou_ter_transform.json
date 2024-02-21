@@ -11,6 +11,28 @@
     ]
   },
   {
+    "id": "freezeknife_dismiss_ter",
+    "type": "ter_furn_transform",
+    "terrain": [
+      { 
+        "valid_terrain": [ "t_frozen_knife" ], 
+        "result": "t_open_air", 
+        "message": "Frozen knives around you disappear!", 
+        "message_good": true 
+      }
+    ]
+  },
+  {
+    "id": "freezeknife_ter",
+    "type": "ter_furn_transform",
+    "terrain": [ 
+      { 
+        "valid_flags": [ "NO_FLOOR", "TRANSPARENT" ], 
+        "result": "t_frozen_knife"
+      } 
+    ]
+  },
+  {
     "id": "groundmelt_ter",
     "type": "ter_furn_transform",
     "terrain": [
@@ -22,17 +44,6 @@
     ]
   },
   {
-    "id": "keystone_crash_fur",
-    "type": "ter_furn_transform",
-    "furniture": [
-      {
-        "valid_flags": [ "EASY_DECONSTRUCT", "FLAMMABLE", "FLAMMABLE_ASH", "FLAMMABLE_HARD", "MINEABLE", "TRANSPARENT" ], 
-        "result": "f_keystone", 
-        "message": "A keystone materializes and crashes down!" 
-      }
-    ]
-  },
-  {
     "id": "keystone_dismiss_fur",
     "type": "ter_furn_transform",
     "furniture": [
@@ -40,6 +51,17 @@
         "valid_furniture": [ "f_keystone", "f_keystone_pillar", "f_rubble" ], 
         "result": "f_null", 
         "message": "The earth obeys your command." 
+      }
+    ]
+  },
+  {
+    "id": "keystone_crash_fur",
+    "type": "ter_furn_transform",
+    "furniture": [
+      {
+        "valid_flags": [ "EASY_DECONSTRUCT", "FLAMMABLE", "FLAMMABLE_ASH", "FLAMMABLE_HARD", "MINEABLE", "TRANSPARENT" ], 
+        "result": "f_keystone", 
+        "message": "A keystone materializes and crashes down!" 
       }
     ]
   },

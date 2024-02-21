@@ -1,5 +1,17 @@
 [
   {
+    "id": "t_frozen_knife",
+    "type": "terrain",
+    "name": "frozen knife",
+    "description": "A knife, frozen in time and space.  It can be used as platform.",
+    "symbol": "x",
+    "looks_like": "silver_knife",
+    "color": "light_gray",
+    "bash": { "str_min": 2, "str_max": 16, "sound": "", "sound_fail": "tink!", "ter_set": "t_open_air" },
+    "move_cost": 2,
+    "flags": [ "ALLOW_ON_OPEN_AIR", "TRANSPARENT", "SEEN_FROM_ABOVE", "Z_TRANSPARENT" ]
+  },
+  {
     "id": "t_web_bridge",
     "type": "terrain",
     "name": "web bridge",

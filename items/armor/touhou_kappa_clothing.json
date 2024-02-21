@@ -30,84 +30,69 @@
     "pocket_data": [       
       {
         "pocket_type": "CONTAINER",
-        "max_contains_volume": "1000 ml",
+        "max_contains_volume": "1200 ml",
         "max_contains_weight": "2 kg",
         "max_item_length": "20 cm",
         "moves": 100
       },
       {
         "pocket_type": "CONTAINER",
-        "max_contains_volume": "1000 ml",
+        "max_contains_volume": "1200 ml",
         "max_contains_weight": "2 kg",
         "max_item_length": "20 cm",
         "moves": 100
       },
       {
         "pocket_type": "CONTAINER",
-        "max_contains_volume": "1000 ml",
+        "max_contains_volume": "1200 ml",
         "max_contains_weight": "2 kg",
         "max_item_length": "20 cm",
         "moves": 100
       },
       {
         "pocket_type": "CONTAINER",
-        "max_contains_volume": "1000 ml",
+        "max_contains_volume": "1200 ml",
         "max_contains_weight": "2 kg",
         "max_item_length": "20 cm",
         "moves": 100
       },
       {
         "pocket_type": "CONTAINER",
-        "max_contains_volume": "1000 ml",
+        "max_contains_volume": "1200 ml",
         "max_contains_weight": "2 kg",
         "max_item_length": "20 cm",
         "moves": 100
       },
       {
         "pocket_type": "CONTAINER",
-        "max_contains_volume": "1000 ml",
-        "max_contains_weight": "2 kg",
-        "max_item_length": "20 cm",
-        "moves": 100
-      },
-      {
-        "pocket_type": "CONTAINER",
-        "max_contains_volume": "1000 ml",
-        "max_contains_weight": "2 kg",
-        "max_item_length": "20 cm",
-        "moves": 100
-      },
-      {
-        "pocket_type": "CONTAINER",
-        "max_contains_volume": "1000 ml",
+        "max_contains_volume": "1200 ml",
         "max_contains_weight": "2 kg",
         "max_item_length": "20 cm",
         "moves": 100
       }
     ],
     "armor": [
-      { "covers": [ "torso" ], "specifically_covers": [ "torso_lower" ], "coverage": 20, "encumbrance": [ 0, 8 ] },
+      { "covers": [ "torso" ], "specifically_covers": [ "torso_lower" ], "coverage": 20, "encumbrance": [ 0, 6 ] },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_hip_l", "leg_hip_r" ],
         "coverage": 100,
-        "encumbrance": [ 0, 8 ]
+        "encumbrance": [ 0, 6 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_upper_l", "leg_upper_r" ],
         "coverage": 95,
-        "encumbrance": [ 0, 8 ]
+        "encumbrance": [ 0, 6 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_knee_l", "leg_knee_r" ],
         "coverage": 10,
-        "encumbrance": [ 0, 8 ]
+        "encumbrance": [ 0, 6 ]
       }
     ],
-    "flags": [ "POCKETS", "VARSIZE", "WATERPROOF" ],
-    "//WIP": "Add recipe data for repair, no dress is made from rubber. See bunker_coat but change for cotton and nylon/rubber/plastic"
+    "flags": [ "POCKETS", "VARSIZE", "WATERPROOF" ]
   },
   {
     "id": "kappa_hat",
@@ -138,8 +123,7 @@
         "encumbrance_modifiers": [ "NONE" ]
       }
     ],
-    "flags": [ "PADDED", "SUN_GLASSES", "WATERPROOF" ],
-    "//WIP": "Add recipe for repair"
+    "flags": [ "PADDED", "SUN_GLASSES", "WATERPROOF" ]
   },
   {
     "id": "kappa_vest",
@@ -184,7 +168,6 @@
       },
       { "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 0, 2 ] }
     ],
-    "flags": [ "VARSIZE", "WATERPROOF" ],
-    "//WIP": "Add recipe data for repair, no dress is made from rubber. See bunker_coat but change for cotton and nylon/rubber/plastic"
+    "flags": [ "VARSIZE", "WATERPROOF" ]
   }
 ]
