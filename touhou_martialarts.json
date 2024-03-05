@@ -19,7 +19,7 @@
         "flat_bonuses": [ { "stat": "block_effectiveness", "scale": -1 } ]
       }
     ],
-    "//": "Not sure if block_effectiveness is actually block chance. block seems to be block value, so it makes sense block_effectiveness is related to chance",
+    "//": "Not sure if block_effectiveness is block chance. block seems to be block value, so it makes the other block stat is related to chance",
     "onhit_buffs": [
       {
         "id": "buff_iku_onhit",
@@ -50,7 +50,7 @@
         "description": "Landing effective hits on enemies is electrifying, it increases your movement speed.",
         "unarmed_allowed": true,
         "melee_allowed": true,
-        "buff_duration": 4,
+        "buff_duration": 3,
         "max_stacks": 2,
         "mult_bonuses": [
           { "stat": "movecost", "scale": 0.9 }
@@ -68,9 +68,9 @@
         "max_stacks": 10,
         "flat_bonuses": [ { "stat": "dodge", "scale": -0.4 } ],
         "mult_bonuses": [
-          { "stat": "damage", "type": "bash", "scale": 0.96 },
-          { "stat": "damage", "type": "cut", "scale": 0.96 },
-          { "stat": "damage", "type": "stab", "scale": 0.96 }
+          { "stat": "damage", "type": "bash", "scale": 0.95 },
+          { "stat": "damage", "type": "cut", "scale": 0.95 },
+          { "stat": "damage", "type": "stab", "scale": 0.95 }
         ]
       }
     ],
@@ -184,11 +184,11 @@
         "buff_duration": 2,
         "max_stacks": 2,
         "flat_bonuses": [
-          { "stat": "arpen", "type": "bash", "scale": 1.2 },
-          { "stat": "arpen", "type": "cut", "scale": 1.2 },
-          { "stat": "arpen", "type": "stab", "scale": 1.2 },
-          { "stat": "arpen", "type": "heat", "scale": 1.2 },
-          { "stat": "arpen", "type": "soul", "scale": 1.2 }
+          { "stat": "arpen", "type": "bash", "scaling-stat": "melee", "scale": 1 },
+          { "stat": "arpen", "type": "cut", "scaling-stat": "melee", "scale": 1 },
+          { "stat": "arpen", "type": "stab", "scaling-stat": "melee", "scale": 1 },
+          { "stat": "arpen", "type": "heat", "scaling-stat": "melee", "scale": 1 },
+          { "stat": "arpen", "type": "soul", "scaling-stat": "melee", "scale": 1 }
         ]
       }
     ],
@@ -203,6 +203,136 @@
       "tec_tenko_kick",
       "tec_tenko_kick2",
       "tec_tenko_stomp"
+    ]
+  },
+  {
+    "id": "style_kasen",
+    "type": "martial_art",
+    "name": { "str": "Wild brawling" },
+    "description": "Your good, old and reliable personal fighting style, now in the former of a proper martial art.  It focuses in weaving blows between your hard hitting arm, and the harder hitting one.",
+    "initiate": [ "You prepare yourself to fight.", "%s prepares to fight." ],
+    "primary_skill": "unarmed",
+    "teachable": false,
+    "static_buffs": [
+      {
+        "id": "buff_kasen_static",
+        "name": "Wild brawling",
+        "description": "Improves your parry while unarmed.  Also allows you to regenerate natural energy while in unarmed combat.",
+        "//": "The +mana on hit is granted by buff_kasen_onhit_eoc ",
+        "unarmed_allowed": true,
+        "bonus_blocks": 1,
+        "flat_bonuses": [
+          { "stat": "block_effectiveness", "scale": 1 }
+        ]
+      }
+    ],
+    "onhit_buffs": [
+      {
+        "id": "buff_kasen_onhit",
+        "name": "Natural attunement",
+        "description": "Regenerating spirit energy…",
+        "unarmed_allowed": true,
+        "buff_duration": 1,
+        "max_stacks": 1,
+        "//": "Dummy buff to tell the player Kasen is regenerating energy after hitting something"
+      }
+    ],
+    "onhit_eocs": [
+      {
+        "id": "buff_kasen_onhit_eoc",
+        "condition": { "u_has_effect": "mabuff:buff_kasen_static" },
+        "effect": [
+          { "math": [ "u_val('mana')", "+=", "1 + rand(2)" ] }
+        ]
+      },
+      {
+        "id": "buff_kasen_arm_eoc",
+        "condition": {
+          "and": [
+            { "u_has_effect": "mabuff:buff_kasen_static" },
+            { "math": [ "u_var_kasen_arm", "==", "0" ] }
+          ]
+        },
+        "effect": [
+          { "math": [ "u_var_kasen_arm", "+=", "rand(1)" ] }
+        ],
+        "false_effect": [ 
+          { "math": [ "u_var_kasen_arm", "=", "0" ] }
+        ],
+        "//": "0 represents her left hand, 1 represents her right hand",
+        "//2": "She should always hit harder with her left hand (brute force), but apply special effects with her right hand (soul dmg)",
+        "//3": "Every time she uses 0 it has a chance to swap her next attack (1), and every time she uses 1 she defaults to 0 again",
+        "//4": "This means that she will be attacking with her left hand more than with her right hand"
+      }
+    ],
+    "onblock_buffs": [
+      {
+        "id": "buff_kasen_onblock",
+        "name": "Natural action",
+        "description": "The more laws and orders are made prominent, the more thieves and bandits there will be.  Parrying with one hand prepares you to parry with the opposite.",
+        "unarmed_allowed": true,
+        "buff_duration": 3,
+        "max_stacks": 1,
+        "flat_bonuses": [ 
+          { "stat": "block_effectiveness", "scale": 1 },
+          { "stat": "block", "scaling-stat": "unarmed", "scale": 1 },
+          { "stat": "block", "scaling-stat": "dodge", "scale": 1 }
+        ],
+        "//": "10.1186/s13062-017-0202-5"
+      }
+    ],
+    "onblock_eocs": [
+      {
+        "id": "buff_kasen_onblock_eoc",
+        "condition": {
+          "and": [
+            { "u_has_effect": "mabuff:buff_kasen_static" },
+            { "math": [ "u_var_kasen_arm", "==", "0" ] }
+          ]
+        },
+        "effect": [
+          { "math": [ "u_var_kasen_arm", "=", "1" ] }
+        ],
+        "false_effect": [ 
+          { "math": [ "u_var_kasen_arm", "=", "0" ] }
+        ],
+        "//": "If she blocked with 0, it swaps to 1, else if she blocked with 1 it swaps to 0"
+      },
+      {
+        "id": "buff_kasen_onblock_remove_eoc",
+        "effect": [
+          { "u_lose_effect": "mabuff:buff_kasen_ondodge" }
+        ]
+      }
+    ],
+    "ondodge_buffs": [
+      {
+        "id": "buff_kasen_ondodge",
+        "name": "Flow",
+        "description": "The path that can be walked through is not the way.  Evading attacks increase your parry chance, but makes it more difficult to evade sucessive attacks.",
+        "unarmed_allowed": true,
+        "melee_allowed": true,
+        "buff_duration": 2,
+        "max_stacks": 3,
+        "bonus_dodges": -1,
+        "flat_bonuses": [
+          { "stat": "block_effectiveness", "scale": 1 }
+        ]
+      }
+    ],
+    "techniques": [
+      "tec_kasen_break_melee",
+      "tec_kasen_break_unarmed",
+      "tec_kasen_disarm_melee",
+      "tec_kasen_disarm_unarmed",
+      "tec_kasen_chop",
+      "tec_kasen_drillkick",
+      "tec_kasen_palm_left",
+      "tec_kasen_palm_right",
+      "tec_kasen_palmfly",
+      "tec_kasen_punch_left",
+      "tec_kasen_punch_right",
+      "tec_kasen_swipe"
     ]
   },
   {
@@ -321,7 +451,7 @@
       {
         "id": "buff_kokoro_onpause",
         "name": "Emphasize (small weapon)",
-        "description": "Proper stops highlight the message.  Stopping increases your parry value and number for an instant.",
+        "description": "Proper stops highlight the message.  Stopping increases your evasion for an instant.",
         "melee_allowed": true,
         "weapon_categories_allowed": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS" ],
         "buff_duration": 2,
@@ -331,16 +461,15 @@
       {
         "id": "buff_kokoro_onpause2",
         "name": "Emphasize (large weapon)",
-        "description": "Proper stops highlight the message.  Stopping increases your parry value and number for an instant.",
+        "description": "Proper stops highlight the message.  Stopping increases your parry value and attempts for an instant.",
         "melee_allowed": true,
         "weapon_categories_allowed": [ "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
         "buff_duration": 2,
         "max_stacks": 1,
         "bonus_blocks": 1,
         "flat_bonuses": [
-          { "stat": "block", "scaling-stat": "dex", "scale": 0.75 },
-          { "stat": "block", "scaling-stat": "per", "scale": 0.25 },
-          { "stat": "block", "scaling-stat": "str", "scale": 0.25 }
+          { "stat": "block", "scaling-stat": "melee", "scale": 0.5 },
+          { "stat": "block", "scaling-stat": "dodge", "scale": 0.5 }
         ]
       }
     ],
@@ -369,15 +498,15 @@
       {
         "id": "buff_meiling_static",
         "name": "Tai Chi Stance (Youkai)",
-        "description": "You are focused on defending a position and predicting your opponents attacks.  This enables extra blocks that scale from your agility, intelligence and strength, at the cost of reducing your evasion.",
+        "description": "You are focused on defending a position and predicting your opponents attacks.  This enables extra blocks that scale from your physical skills, at the cost of reducing your evasion.",
         "unarmed_allowed": true,
         "bonus_blocks": 1,
         "bonus_dodges": -1,
         "flat_bonuses": [
           { "stat": "dodge", "scale": -1 },
-          { "stat": "block", "scaling-stat": "dex", "scale": 0.5 },
-          { "stat": "block", "scaling-stat": "int", "scale": 0.5 },
-          { "stat": "block", "scaling-stat": "str", "scale": 0.5 }
+          { "stat": "block", "scaling-stat": "swimming", "scale": 0.5 },
+          { "stat": "block", "scaling-stat": "melee", "scale": 0.5 },
+          { "stat": "block", "scaling-stat": "unarmed", "scale": 0.5 }
         ]
       }
     ],
@@ -385,7 +514,7 @@
       {
         "id": "buff_meiling_onblock",
         "name": "Opening found",
-        "description": "Your no-nonsense positioning allows you to quickly deal double damage immediately after blocking attacks.  Also, you gain extra accuracy, virtue of recognizing and reacting to movement patterns.",
+        "description": "Your no-nonsense positioning allows you to deal double damage immediately after blocking attacks.  Also, you gain extra accuracy, virtue of recognizing and reacting to movement patterns.",
         "unarmed_allowed": true,
         "melee_allowed": false,
         "buff_duration": 2,
@@ -663,6 +792,7 @@
       "tec_youmu_downward_slash",
       "tec_youmu_high_slash",
       "tec_youmu_hilt_nudge",
+      "tec_youmu_knee_slasher",
       "tec_youmu_rising_fang",
       "tec_youmu_stinger",
       "tec_youmu_sweep"

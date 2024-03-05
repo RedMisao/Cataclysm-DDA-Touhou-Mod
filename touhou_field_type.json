@@ -43,6 +43,16 @@
     "//": "Fire field for mokou_fujiyamakazan , closest thing to the 6 - 9 turn fire field I wanted"
   },
   {
+    "id": "fd_fangshu",
+    "type": "field_type",
+    "legacy_enum_id": 26,
+    "intensity_levels": [ { "name": "point", "sym": "·", "light_emitted": 1 } ],
+    "priority": 9,
+    "phase": "solid",
+    "display_field": true,
+    "looks_like": "t_null"
+  },
+  {
     "id": "fd_poison",
     "type": "field_type",
     "legacy_enum_id": 7,

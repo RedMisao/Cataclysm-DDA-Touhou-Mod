@@ -37,9 +37,12 @@
         "ranges": [ [ 0, 15, "BURST" ] ]
       }
     ],
-    "death_function": { "corpse_type": "NO_CORPSE", "message": "" },
-    "flags": [ "BIOLOGICALPROOF", "COLDPROOF", "ELECTRONIC", "IMMOBILE", "NO_BREATHE", "NOHEAD", "NOT_HALLUCINATION", "SEES" ],
-    "//WIP": "Add 'spark and smoke on death' death_function "
+    "death_function": {
+      "corpse_type": "NO_CORPSE",
+      "effect": { "id": "death_smoke", "hit_self": true },
+      "message": ""
+    },
+    "flags": [ "BIOLOGICALPROOF", "COLDPROOF", "ELECTRONIC", "IMMOBILE", "NO_BREATHE", "NOHEAD", "NOT_HALLUCINATION", "SEES" ]
   },
   {
     "id": "mon_risen_child_seiga",

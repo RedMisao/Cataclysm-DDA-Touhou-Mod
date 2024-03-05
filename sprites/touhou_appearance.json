@@ -17,9 +17,19 @@
           { "id": "overlay_mutation_hair_mokou", "fg": 4 },
           { "id": "overlay_mutation_hair_udongein", "fg": 5 }
         ]
+      },
+      {
+        "file": "sprites/touhou_youkai_form.png",
+        "sprite_width": 32,
+        "sprite_height": 32,
+        "sprite_offset_x": 0,
+        "sprite_offset_y": 0,
+        "tiles": [
+          { "id": "kaenbyou_youkai_form", "fg": 1 }
+        ]
       }
     ],
-    "//": "Done by Sliperr34 and the PM_World team. Go check their mod ! ",
-    "//2": "Note: if you wish to make each custom hair available, go to touhou_appearance_hair_styles.json and set 'starting_trait' to 'true' "
+    "//": "The cat is edited from mon_cat_sphynx from MshockXottoplus",
+    "//2": "TEST"
   }
 ]

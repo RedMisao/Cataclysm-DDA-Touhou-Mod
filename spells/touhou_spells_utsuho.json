@@ -427,7 +427,7 @@
     "shape": "blast",
     "max_level": 1,
     "difficulty": -12,
-    "base_casting_time": 666,
+    "base_casting_time": 366,
     "base_energy_cost": 800,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],

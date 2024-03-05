@@ -57,6 +57,7 @@
       "or": [
         { "u_has_trait": "PROF_IKU" },
         { "u_has_trait": "PROF_KOKORO" },
+        { "u_has_trait": "PROF_KASEN" },
         { "u_has_trait": "PROF_MEILING" },
         { "u_has_trait": "PROF_MOKOU" },
         { "u_has_trait": "PROF_YOUMU" }
@@ -109,7 +110,7 @@
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
     "required_event": "opens_spellbook",
-    "condition": { "u_has_trait": "PROF_KAENBYOU" },
+    "condition": { "u_has_trait": "PROF_KOKORO" },
     "effect": [
         { "math": [ "var_kokoro_anger_mod", "=", "( 1 + var_kokoro_anger * rng( -0.2, 0.4 ) + var_kokoro_anger_boost * rng( -0.1, 0.8 ) )" ] },
         { "math": [ "var_kokoro_deter_aoe_mod", "=", "( 1 + ( var_kokoro_melancholy * ( 1/5 ) ) + ( var_kokoro_melancholy_boost * ( 1/3 ) ) )" ] },

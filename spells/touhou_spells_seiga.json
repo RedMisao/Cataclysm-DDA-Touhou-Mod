@@ -30,7 +30,7 @@
     "max_duration": 17500,
     "max_level": 1,
     "difficulty": -11,
-    "base_casting_time": 100,
+    "base_casting_time": 166,
     "base_energy_cost": 200,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],

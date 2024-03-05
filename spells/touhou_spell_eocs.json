@@ -303,6 +303,62 @@
     ]
   },
   {
+    "id": "kasen_fangshu_place_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_location_variable": { "global_val": "var_kasen_fangshu" } }
+    ]
+  },
+  {
+    "id": "kasen_fangshu_move_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_teleport": { "global_val": "var_kasen_fangshu" } },
+      { "u_message": "You pass through the entry point, and walk past the exit point.", "type": "mixed" }
+    ]
+  },
+  {
+    "id": "kasen_rainboworb_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_val('mana')", ">=", "100" ] },
+    "effect": [
+      {
+        "if": {
+          "message": "Set target", 
+          "range": 5,
+          "u_query_tile": "line_of_sight",
+          "target_var": { "global_val": "var_kasen_rainboworb_loc" }
+        },
+        "then": [
+          { "u_cast_spell": { "id": "kasen_rainboworb2" }, "loc": { "global_val": "var_kasen_rainboworb_loc" } },
+          { 
+            "queue_eoc_with": "kasen_rainboworb_delay", 
+            "variables": { "rainboworb_loc": "var_kasen_rainboworb_loc" }, 
+            "time_in_future": "2 s" 
+          },
+          { 
+            "queue_eoc_with": "kasen_rainboworb_delay", 
+            "variables": { "rainboworb_loc": "var_kasen_rainboworb_loc" }, 
+            "time_in_future": "3 s" 
+          },
+          { "math": [ "u_val('mana')", "-=", "100" ] }
+        ],
+        "else": { "u_message": "Canceled" }
+      }
+    ],
+    "false_effect": [ 
+      { "u_message": "You don't have enough mana.", "type": "mixed" }
+    ]
+  },
+  {
+    "id": "kasen_rainboworb_delay",
+    "type": "effect_on_condition",
+    "condition": { "expects_vars": [ "rainboworb_loc" ] },
+    "effect": [
+      { "u_cast_spell": { "id": "kasen_rainboworb3" }, "loc": { "global_val": "var_kasen_rainboworb_loc" } }
+    ]
+  },
+  {
     "id": "kokoro_backsweep_eoc",
     "type": "effect_on_condition",
     "condition": {
@@ -619,51 +675,48 @@
   {
     "id": "meiling_tigerrelease_eoc",
     "type": "effect_on_condition",
-    "condition": { "not": "u_has_weapon" },
-    "effect": [
-      { "run_eocs": [ "meiling_tigerrelease_togglecheck" ] }
-    ],
-    "false_effect": [ 
-      { "u_message": "You cannot use this skill while wielding items.", "type": "mixed" }
-    ],
-    "//": "This EOC is a simplified version of utsuho_fusionblade_eoc ",
-    "//2": "Different approach for effect-only aura-like effects",
-    "//3": "First, it checks if the Meiling is wielding a weapon or already has the aura, if so it deactivates it",
-    "//4": "Then, it casts the self spell that grants the effect for the duration, and runs the cycle to continuously check wielded items or re-activations of the EOC",
-    "//5": "No timer as the effect has a fixed duration by the spell, also no toggle or oom EOCs as those don't apply"
-  },
-  {
-    "id": "meiling_tigerrelease_togglecheck",
-    "type": "effect_on_condition",
     "condition": { "not": { "u_has_effect": "aura_tigerrelease" } },
     "effect": [ 
-      { "u_cast_spell": { "id": "meiling_tigerrelease2" }, "targeted": false },
+      { "math": [ "var_meiling_tigerrelease", "+=", "1" ] },
       { "run_eocs": [ "meiling_tigerrelease_cycle1" ] } 
     ],
     "false_effect": [ 
-      { "u_lose_effect": "aura_tigerrelease" }
-    ]
+      { "math": [ "var_meiling_tigerrelease", "=", "0" ] },
+      { "u_lose_effect": "aura_tigerrelease" },
+      { "u_lose_trait": "KI_STRIKE" }
+    ],
+    "//": "This EOC is a simplified version of utsuho_fusionblade_eoc "
   },
   {
     "id": "meiling_tigerrelease_cycle1",
     "type": "effect_on_condition",
-    "condition": { "not": "u_has_weapon" },
+    "condition": { 
+      "and": [
+        { "not": "u_has_weapon" },
+        { "math": [ "var_meiling_tigerrelease", "<", "2" ] }
+      ]
+    },
     "effect": [ 
       { "run_eocs": [ "meiling_tigerrelease_cycle2" ] } 
     ],
     "false_effect": [ 
-      { "u_lose_effect": "aura_tigerrelease" }
+      { "math": [ "var_meiling_tigerrelease", "=", "0" ] },
+      { "u_lose_effect": "aura_tigerrelease" },
+      { "u_lose_trait": "KI_STRIKE" }
     ]
   },
   {
     "id": "meiling_tigerrelease_cycle2",
     "type": "effect_on_condition",
-    "condition": { "u_has_effect": "aura_tigerrelease" },
+    "condition": { "math": [ "var_meiling_tigerrelease", ">", "0" ] },
     "effect": [ 
-      { "queue_eocs": [ "meiling_tigerrelease_cycle1" ], "time_in_future": "1 s" }
+      { "u_add_effect": "aura_tigerrelease", "duration": "2 s" },
+      { "queue_eocs": [ "meiling_tigerrelease_cycle1" ], "time_in_future": "1 s" } 
     ],
     "false_effect": [ 
-      { "u_lose_effect": "aura_tigerrelease" }
+      { "math": [ "var_meiling_tigerrelease", "=", "0" ] },
+      { "u_lose_effect": "aura_tigerrelease" },
+      { "u_lose_trait": "KI_STRIKE" }
     ]
   },
   {
@@ -696,21 +749,38 @@
   {
     "id": "nitori_aerialtorpedoes_eoc",
     "type": "effect_on_condition",
+    "condition": { "math": [ "u_val('mana')", ">=", "100" ] },
     "effect": [
       {
         "if": {
-          "message": "Select target", 
+          "message": "Set target", 
           "range": 20,
-          "u_query_tile": "anywhere",
+          "u_query_tile": "line_of_sight",
           "target_var": { "global_val": "var_nitori_atorpedo_loc" }
         },
-        "then": { 
-          "queue_eoc_with": "nitori_aerialtorpedoes_impact", 
-          "variables": { "atorpedo_loc": "var_nitori_atorpedo_loc" }, 
-          "time_in_future": "3 s" 
-        },
+        "then": [
+          { 
+            "queue_eoc_with": "nitori_aerialtorpedoes_impact", 
+            "variables": { "atorpedo_loc": "var_nitori_atorpedo_loc" }, 
+            "time_in_future": "3 s" 
+          },
+          { 
+            "queue_eoc_with": "nitori_aerialtorpedoes_impact2", 
+            "variables": { "atorpedo_loc": "var_nitori_atorpedo_loc" }, 
+            "time_in_future": "5 s" 
+          },
+          { 
+            "queue_eoc_with": "nitori_aerialtorpedoes_impact3", 
+            "variables": { "atorpedo_loc": "var_nitori_atorpedo_loc" }, 
+            "time_in_future": "7 s" 
+          },
+          { "math": [ "u_val('mana')", "-=", "100" ] }
+        ],
         "else": { "u_message": "Canceled" }
       }
+    ],
+    "false_effect": [ 
+      { "u_message": "You don't have enough mana.", "type": "mixed" }
     ],
     "//": "Basic spell-at-location, queue'd in 2 s. It asks the position (saves coordinates) -> queues the actual spell as '_eoc_with' (below)",
     "//2": "While run_eoc_with detects (*) both global_val and context_val , queue_eoc_with doesn't detect (*) context_val and casts it centered on Nitori",
@@ -776,16 +846,17 @@
     },
     "effect": [
       { "math": [ "var_nitoricamouflage_fail", "+=", "1 + rand(9)" ] },
-      { "math": [ "u_val('mana')", "-=", "1.5" ] },
-      { "u_add_effect": "nitori_camouflage", "duration": "2 s" },
-      { "queue_eocs": [ "nitori_opticalcamouflage_cycle1" ], "time_in_future": "1 s" }
+      { "math": [ "u_val('mana')", "-=", "3" ] },
+      { "u_add_effect": "nitori_camouflage", "duration": "3 s" },
+      { "queue_eocs": [ "nitori_opticalcamouflage_cycle1" ], "time_in_future": "2 s" }
     ],
     "false_effect": [
       { "math": [ "var_nitoricamouflage", "=", "0" ] },
       { "math": [ "var_nitoricamouflage_fail", "=", "0" ] },
       { "u_lose_effect": "nitori_camouflage" },
       { "u_message": "You're too exhausted and the optical camouflage deactivates!", "type": "mixed" }
-    ]
+    ],
+    "//": "This consumes 90 mana/min = ~11 min of invisibility"
   },
   {
     "id": "nitori_opticalcamouflage_failcheck",
@@ -1178,7 +1249,11 @@
     "false_effect": [ 
       { "u_message": "You cannot use this skill while wielding items.", "type": "mixed" }
     ],
-    "//": "Same as meiling_tigerrelease_eoc "
+    "//": "This EOC is a simplified version of utsuho_fusionblade_eoc ",
+    "//2": "Different approach for effect-only aura-like effects",
+    "//3": "First, it checks if the Meiling is wielding a weapon or already has the aura, if so it deactivates it",
+    "//4": "Then, it casts the self spell that grants the effect for the duration, and runs the cycle to continuously check wielded items or re-activations of the EOC",
+    "//5": "No timer as the effect has a fixed duration by the spell, also no toggle or oom EOCs as those don't apply"
   },
   {
     "id": "remilia_vampiricaura_togglecheck",
@@ -1743,13 +1818,39 @@
     "type": "effect_on_condition",
     "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
     "effect": [
-      { "u_cast_spell": { "id": "utsuho_nuke2" }, "targeted": true }
+      {
+        "if": {
+          "message": "Set target", 
+          "range": 32,
+          "u_query_tile": "line_of_sight",
+          "target_var": { "global_val": "var_utsuho_nuke_loc" }
+        },
+        "then": [
+          { 
+            "queue_eoc_with": "utsuho_nuke_delay_eoc", 
+            "variables": { "utsuho_nuke_loc": "var_utsuho_nuke_loc" }, 
+            "time_in_future": "3 s" 
+          }
+        ],
+        "else": [
+          { "math": [ "u_val('mana')", "+=", "750" ] },
+          { "u_message": "Canceled" }
+        ]
+      }
     ],
     "false_effect": [ 
       { "u_message": "You *definitely* need your rod to cast this.", "type": "mixed" },
       { "math": [ "u_val('mana')", "+=", "800" ] }
     ],
     "//": "Does she? :^)"
+  },
+  {
+    "id": "utsuho_nuke_delay_eoc",
+    "type": "effect_on_condition",
+    "condition": { "expects_vars": [ "utsuho_nuke_loc" ] },
+    "effect": [
+      { "u_cast_spell": { "id": "utsuho_nuke2" }, "loc": { "global_val": "var_utsuho_nuke_loc" } }
+    ]
   },
   {
     "id": "utsuho_ugeyser_eoc",

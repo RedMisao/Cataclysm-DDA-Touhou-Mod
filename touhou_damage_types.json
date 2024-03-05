@@ -37,7 +37,7 @@
               ]
             },
             "effect": [ 
-                { "math": [ "var_souldmg", "=", "( _damage_taken * 2 )" ] },
+                { "math": [ "var_souldmg", "=", "( _damage_taken * rng( 1.9, 2.1 ) )" ] },
                 { "npc_cast_spell": { "id": "souldmg_spell" } }
             ]
           },

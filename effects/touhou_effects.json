@@ -253,7 +253,7 @@
           { "value": "STRENGTH", "add": -2 }, 
           { "value": "SOCIAL_LIE", "add": 4 },
           { "value": "SOCIAL_PERSUADE", "add": 4 },
-          { "value": "MOVE_COST", "multiply": -0.05 },
+          { "value": "MOVE_COST", "multiply": -0.1 },
           { "value": "RANGED_DAMAGE", "multiply": 0.1 },
           { "value": "FOOTSTEP_NOISE", "multiply": -0.2 }
         ]
@@ -274,7 +274,7 @@
           { "value": "STRENGTH", "add": -2 }, 
           { "value": "SOCIAL_LIE", "add": 8 },
           { "value": "SOCIAL_PERSUADE", "add": 4 },
-          { "value": "MOVE_COST", "multiply": -0.1 },
+          { "value": "MOVE_COST", "multiply": -0.2 },
           { "value": "RANGED_DAMAGE", "multiply": 0.2 },
           { "value": "FOOTSTEP_NOISE", "multiply": -0.33 }
         ]
@@ -874,5 +874,14 @@
     "rating": "good",
     "show_in_info": false,
     "flags": [ "LEVITATION" ]
+  },
+  {
+    "id": "youmu_knee_slasher_slow",
+    "type": "effect_type",
+    "name": [ "Knee slasher (effect)" ],
+    "desc": [ "Movement speed is reduced." ],
+    "base_mods": { "speed_mod": [ -20 ] },
+    "max_intensity": 1,
+    "max_effective_intensity": 1
   }
 ]

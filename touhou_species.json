@@ -27,6 +27,12 @@
     "flags": [ "SOULDMG_EXTRA" ]
   },
   {
+    "id": "YOUKAI_BEAST_TOUHOU",
+    "type": "SPECIES",
+    "description": "a youkai",
+    "flags": [ "SOULDMG_EXTRA" ]
+  },
+  {
     "id": "YOUKAI_FEMALE_TOUHOU",
     "type": "SPECIES",
     "description": "a female apparition",
@@ -49,19 +55,19 @@
     "flags": [ "SOULDMG_EXTRA" ]
   },
   {
+    "id": "YOUKAI_PSEUDO_TOUHOU",
+    "type": "SPECIES",
+    "description": "Unknown",
+    "anger_triggers": [ "FRIEND_ATTACKED", "HURT" ],
+    "fear_triggers": [ "FRIEND_DIED" ],
+    "//": "For human-looking things (not merely humanoids) belonging to urban legends. Deliberately kept vague btw"
+  },
+  {
     "id": "YOUKAI_SKINWALKER_TOUHOU",
     "type": "SPECIES",
     "description": "a skinwalker",
     "anger_triggers": [ "HURT", "PLAYER_CLOSE", "PLAYER_NEAR_BABY", "PLAYER_WEAK" ],
     "flags": [ "SOULDMG_EXTRA" ],
     "//": "Just YOUKAI_HOSTILE_TOUHOU with a different description"
-  },
-  {
-    "id": "YOUKAI_PSEUDO",
-    "type": "SPECIES",
-    "description": "Unknown",
-    "anger_triggers": [ "FRIEND_ATTACKED", "HURT" ],
-    "fear_triggers": [ "FRIEND_DIED" ],
-    "//": "For human-looking things (not merely humanoids) belonging to urban legends. Deliberately kept vague btw"
   }
 ]

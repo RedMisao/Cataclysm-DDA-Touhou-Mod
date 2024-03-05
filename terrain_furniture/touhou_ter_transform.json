@@ -79,11 +79,25 @@
   {
     "id": "nukeglassing_ter",
     "type": "ter_furn_transform",
+    "furniture": [ 
+      { 
+        "valid_furniture": [ 
+          "f_boulder_small", 
+          "f_boulder_medium", 
+          "f_boulder_large" 
+        ], 
+        "result": [ [ "f_rubble_rock", 6 ], [ "f_dirt", 1 ] ]
+      }
+    ],
     "terrain": [ 
       { 
-        "valid_flags": [ "DIGGABLE" ], 
+        "valid_flags": [ "DIGGABLE" ],
         "result": "t_glassed_sand" 
-      } 
+      },
+      { 
+        "valid_flags": [ "MINEABLE" ],
+        "result": [ [ "t_rock_floor", 6 ], [ "t_rockyobstacle", 1 ] ]
+      }
     ]
   },
   {

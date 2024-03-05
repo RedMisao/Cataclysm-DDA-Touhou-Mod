@@ -45,7 +45,7 @@ Every 2hu has their own custom set of clothing.  Not all are just cosmetics chan
 
 ## Minor milestones
 Relatively easy things to add, not in order:
-* More 2hus: Nitori (WIP).  I want to add Kasen, maybe Flandre and Joon too.
+* More 2hus: Nitori and Kasen (WIP).  I want to add Flandre and Joon too.
 * Visual effects: Can it be done with fields? For example, when Youmu dashes, cherry petals appear on the path.
 * Vehicles: Make an engine that can use corpses as fuel.  Partially done by killing enemies which drop a resource that can be crafted into fuel.  Almost as metal as using blood as fuel.
 * Balance: CDDA is a roguelike, but the mod feels RPG-ish at times.

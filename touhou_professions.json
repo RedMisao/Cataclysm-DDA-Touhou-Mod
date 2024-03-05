@@ -201,6 +201,49 @@
     "//": "She lacks YOUKAI_SPECIES as I'm assuming Oarfish youkai have diverged enough they don't need to consume humans, given they live in Heaven and all that"
   },
   {
+    "id": "kasen_ibaraki",
+    "type": "profession",
+    "name": "One-Armed Horned Hermit",
+    "description": "WIP",
+    "points": 4,
+    "proficiencies": [ "prof_food_prep" ],
+    "skills": [
+      { "level": 2, "name": "dodge" },
+      { "level": 4, "name": "melee" },
+      { "level": 3, "name": "speech" },
+      { "level": 4, "name": "unarmed" }
+    ],
+    "spells": [
+      { "level": 1, "id": "dash_basic" },
+      { "level": 1, "id": "kasen_biting_strike" },
+      { "level": 1, "id": "kasen_charm" },
+      { "level": 1, "id": "kasen_fangshu_place" },
+      { "level": 1, "id": "kasen_fangshu_move" },
+      { "level": 1, "id": "kasen_palmfly" },
+      { "level": 1, "id": "kasen_punch_right" },
+      { "level": 1, "id": "kasen_rainboworb" },
+      { "level": 1, "id": "kasen_unravel" }
+    ],
+    "traits": [ "HERMIT_SPECIES", "PROF_KASEN", "SPIRIT_HERMIT", "eye_pink_touhou", "FACIAL_HAIR_NONE", { "trait": "hair_short", "variant": "pink" } ],
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "dress_shoes" },
+          { "item": "kasen_bandages" },
+          { "item": "kasen_buns" },
+          { "item": "kasen_dress" },
+          { "item": "kasen_shackle" },
+          { "item": "kasen_shirt" },
+          { "item": "kasen_tabard" },
+          { "item": "socks_ankle" }
+        ]
+      },
+      "male": [ "boxer_shorts" ],
+      "female": [ "bra", "panties" ]
+    },
+    "flags": [ "SCEN_ONLY" ]
+  },
+  {
     "id": "nitori_kawashiro",
     "type": "profession",
     "name": "Lateral-Thinking Kappa",
@@ -216,6 +259,7 @@
     "spells": [
       { "level": 1, "id": "dash_basic" },
       { "level": 1, "id": "nitori_aerialtorpedoes" },
+      { "level": 1, "id": "nitori_mechpunch" },
       { "level": 1, "id": "nitori_opticalcamouflage" },
       { "level": 1, "id": "nitori_toolswing" },
       { "level": 1, "id": "nitori_turretdeploy" },
@@ -490,7 +534,7 @@
       { "level": 1, "id": "seiga_raisechild" },
       { "level": 1, "id": "seiga_wallwalk" }
     ],
-    "traits": [ "PSYCHOPATH", "LIAR", "PROF_SEIGA", "SPIRITUAL", "SPIRIT_HERMIT", "eye_blue_touhou", "FACIAL_HAIR_NONE", "hair_seiga" ],
+    "traits": [ "HERMIT_SPECIES", "PSYCHOPATH", "LIAR", "PROF_SEIGA", "SPIRITUAL", "SPIRIT_HERMIT", "eye_blue_touhou", "FACIAL_HAIR_NONE", "hair_seiga" ],
     "items": {
       "both": {
         "entries": [

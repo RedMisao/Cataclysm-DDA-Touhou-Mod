@@ -126,7 +126,11 @@
     "enchantments": [ 
       {
         "hit_you_effect": [ { "id": "tiger_bonk" } ],
-        "values": [ { "value": "LUMINATION", "add": 2 } ]
+        "values": [ 
+          { "value": "LUMINATION", "add": 2 },
+          { "value": "REGEN_MANA", "multiply": -9 }
+        ],
+        "mutations": [ "KI_STRIKE" ]
       }
     ]
   },
@@ -150,7 +154,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "NO_PROJECTILE", "RANDOM_DAMAGE" ],
-    "//": "max dmg 6 - 18, relatively low as she has KI_STRIKE "
+    "//": "max dmg 6 - 18, relatively low as it gives KI_STRIKE too"
   },
   {
     "id": "aura_vampiric",

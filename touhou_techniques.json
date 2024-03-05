@@ -4,7 +4,7 @@
     "type": "technique",
     "name": "Grab Break",
     "messages": [ "The %s tries to grab you, but you break through!", "The %s tries to grab <npcname>, but <npcname> breaks through!" ],
-    "skill_requirements": [ { "name": "melee", "level": 2 } ],
+    "skill_requirements": [ { "name": "melee", "level": 4 } ],
     "melee_allowed": true,
     "defensive": true,
     "grab_break": true,
@@ -15,7 +15,7 @@
     "type": "technique",
     "name": "Grab Break",
     "messages": [ "The %s tries to grab you, but you break through!", "The %s tries to grab <npcname>, but <npcname> breaks through!" ],
-    "skill_requirements": [ { "name": "unarmed", "level": 3 } ],
+    "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
     "unarmed_allowed": true,
     "defensive": true,
     "grab_break": true,
@@ -26,7 +26,7 @@
     "type": "technique",
     "name": "Disarm",
     "messages": [ "You knock %s's weapon away", "<npcname> knock %s's weapon away" ],
-    "skill_requirements": [ { "name": "melee", "level": 3 } ],
+    "skill_requirements": [ { "name": "melee", "level": 4 } ],
     "melee_allowed": true,
     "disarms": true,
     "tech_effects": [
@@ -295,6 +295,285 @@
     "//2": "Spell to allow aoe with single target, also it deals electric dmg"
   },
   {
+    "id": "tec_kasen_break_melee",
+    "type": "technique",
+    "name": "Grab Break",
+    "messages": [ "The %s tries to grab you, but you break through!", "The %s tries to grab <npcname>, but <npcname> breaks through!" ],
+    "skill_requirements": [ { "name": "melee", "level": 4 } ],
+    "melee_allowed": true,
+    "defensive": true,
+    "grab_break": true,
+    "//": "Based on tec_brawl_break_melee "
+  },
+  {
+    "id": "tec_kasen_break_unarmed",
+    "type": "technique",
+    "name": "Grab Break",
+    "messages": [ "The %s tries to grab you, but you break through!", "The %s tries to grab <npcname>, but <npcname> breaks through!" ],
+    "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
+    "unarmed_allowed": true,
+    "defensive": true,
+    "grab_break": true,
+    "//": "Based on tec_brawl_break_unarmed "
+  },
+  {
+    "id": "tec_kasen_disarm_melee",
+    "type": "technique",
+    "name": "Disarm",
+    "messages": [ "You knock %s's weapon away", "<npcname> knock %s's weapon away" ],
+    "skill_requirements": [ { "name": "melee", "level": 4 } ],
+    "melee_allowed": true,
+    "disarms": true,
+    "tech_effects": [
+      {
+        "id": "disarmed",
+        "chance": 100,
+        "duration": 400,
+        "on_damage": true,
+        "message": "The weapon of %s has been forced out ot their hands!"
+      }
+    ],
+    "attack_vectors": [ "WEAPON" ],
+    "//": "Based on tec_brawl_disarm_melee "
+  },
+  {
+    "id": "tec_kasen_disarm_unarmed",
+    "type": "technique",
+    "name": "Disarm",
+    "messages": [ "You knock %s's weapon away", "<npcname> knock %s's weapon away" ],
+    "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
+    "unarmed_allowed": true,
+    "disarms": true,
+    "tech_effects": [
+      {
+        "id": "disarmed",
+        "chance": 100,
+        "duration": 400,
+        "on_damage": true,
+        "message": "The weapon of %s has been forced out ot their hands!"
+      }
+    ],
+    "attack_vectors": [ "HAND" ],
+    "//": "Based on tec_brawl_disarm_unarmed "
+  },
+  {
+    "id": "tec_kasen_chop",
+    "type": "technique",
+    "name": "Downward chop",
+    "messages": [ "You quickly chop at %s!", "<npcname> quickly chops at %s!" ],
+    "skill_requirements": [ { "name": "unarmed", "level": 2 } ],
+    "unarmed_allowed": true,
+    "condition": {
+      "and": [
+        { "u_has_effect": "mabuff:buff_kasen_static" },
+        { "math": [ "u_var_kasen_arm", "==", "0" ] }
+      ]
+    },
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 0.66 },
+      { "stat": "damage", "type": "bash", "scale": 0.75 },
+      { "stat": "damage", "type": "cut", "scale": 0.75 },
+      { "stat": "damage", "type": "stab", "scale": 0.75 },
+      { "stat": "damage", "type": "soul", "scale": 0.75 }
+    ],
+    "eocs": [
+      {
+        "id": "tec_kasen_chop_eoc",
+        "effect": [ 
+          { "math": [ "u_var_kasen_arm", "=", "1" ] }
+        ]
+      }
+    ],
+    "attack_vectors": [ "HAND" ],
+    "//": "Based on tec_boxing_rapid (and all other Jab techniques)"
+  },
+  {
+    "id": "tec_kasen_drillkick",
+    "type": "technique",
+    "name": "Drill strike (kick)",
+    "messages": [ "You shape your bandages as a drill and kick at %s with it!", "<npcname> shapes their wraps as a drill and kicks %s with it!" ],
+    "skill_requirements": [ { "name": "unarmed", "level": 2 } ],
+    "unarmed_allowed": true,
+    "attack_override": true,
+    "mult_bonuses": [ 
+      { "stat": "movecost", "scale": 1.17 }
+    ],
+    "eocs": [
+      {
+        "id": "tec_kasen_drillkick_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "kasen_drillkick" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
+      }
+    ],
+    "attack_vectors": [ "FOOT" ]
+  },
+  {
+    "id": "tec_kasen_palm_left",
+    "type": "technique",
+    "name": "Palm strike (left)",
+    "messages": [ "You palm strike %s with your left hand!", "<npcname> palm strikes %s with their left hand!" ],
+    "skill_requirements": [ { "name": "unarmed", "level": 2 } ],
+    "unarmed_allowed": true,
+    "attack_override": true,
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.1 }
+    ],
+    "condition": {
+      "and": [
+        { "u_has_effect": "mabuff:buff_kasen_static" },
+        { "math": [ "u_var_kasen_arm", "==", "1" ] }
+      ]
+    },
+    "eocs": [
+      {
+        "id": "tec_kasen_palm_left_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "kasen_palm_left" }, "loc": { "global_val": "var_target_monster_loc" } },
+          { "math": [ "u_var_kasen_arm", "=", "0" ] }
+        ]
+      }
+    ],
+    "attack_vectors": [ "PALM" ],
+    "//": "Partially based on tec_taichi_palm "
+  },
+  {
+    "id": "tec_kasen_palm_right",
+    "type": "technique",
+    "name": "Palm strike (right)",
+    "messages": [ "You palm strike %s with your right hand!", "<npcname> palm strikes %s with their right hand!" ],
+    "skill_requirements": [ { "name": "unarmed", "level": 2 } ],
+    "unarmed_allowed": true,
+    "attack_override": true,
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.1 }
+    ],
+    "condition": {
+      "and": [
+        { "u_has_effect": "mabuff:buff_kasen_static" },
+        { "math": [ "u_var_kasen_arm", "==", "0" ] }
+      ]
+    },
+    "eocs": [
+      {
+        "id": "tec_kasen_palm_right_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "kasen_palm_right" }, "loc": { "global_val": "var_target_monster_loc" } },
+          { "math": [ "u_var_kasen_arm", "=", "1" ] }
+        ]
+      }
+    ],
+    "attack_vectors": [ "PALM" ]
+  },
+  {
+    "id": "tec_kasen_palmfly",
+    "type": "technique",
+    "name": "Palm strike (Wrap)",
+    "messages": [ "You extend your wraps to hit %s, sending them flying!", "<npcname> extend their wraps to hit %s, sending them flying!" ],
+    "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
+    "unarmed_allowed": true,
+    "attack_override": true,
+    "condition": {
+      "and": [
+        { "u_has_effect": "mabuff:buff_kasen_static" },
+        { "math": [ "u_var_kasen_arm", "==", "1" ] }
+      ]
+    },
+    "mult_bonuses": [ 
+      { "stat": "movecost", "scale": 1.17 }
+    ],
+    "eocs": [
+      {
+        "id": "tec_kasen_palmfly_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "kasen_palmfly2" }, "loc": { "global_val": "var_target_monster_loc" } },
+          { "math": [ "u_var_kasen_arm", "=", "0" ] }
+        ]
+      }
+    ],
+    "attack_vectors": [ "PALM", "HAND" ],
+    "//": "This is the 'diagonal palm strike' attack that knocks enemies vertically"
+  },
+  {
+    "id": "tec_kasen_punch_left",
+    "type": "technique",
+    "name": "Punch (left)",
+    "messages": [ "You punch %s with your left hand!", "<npcname> punches %s with their left hand!" ],
+    "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
+    "unarmed_allowed": true,
+    "attack_override": true,
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.2 }
+    ],
+    "condition": {
+      "and": [
+        { "u_has_effect": "mabuff:buff_kasen_static" },
+        { "math": [ "u_var_kasen_arm", "==", "1" ] }
+      ]
+    },
+    "eocs": [
+      {
+        "id": "tec_kasen_punch_left_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "kasen_punch_left" }, "loc": { "global_val": "var_target_monster_loc" } },
+          { "math": [ "u_var_kasen_arm", "=", "0" ] }
+        ]
+      }
+    ],
+    "attack_vectors": [ "HAND" ],
+    "//": "Replaces the 'poke' attack to give her a proper punch attack",
+    "//2": "movecost should be added at the end of the attack, like a wind down, instead of a wind up"
+  },
+  {
+    "id": "tec_kasen_punch_right",
+    "type": "technique",
+    "name": "Punch (right)",
+    "messages": [ "You punch %s with your right hand!", "<npcname> punches %s with their right hand!" ],
+    "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
+    "unarmed_allowed": true,
+    "attack_override": true,
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.2 }
+    ],
+    "condition": {
+      "and": [
+        { "u_has_effect": "mabuff:buff_kasen_static" },
+        { "math": [ "u_var_kasen_arm", "==", "0" ] }
+      ]
+    },
+    "eocs": [
+      {
+        "id": "tec_kasen_punch_right_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "kasen_punch_right" }, "loc": { "global_val": "var_target_monster_loc" } },
+          { "math": [ "u_var_kasen_arm", "=", "1" ] }
+        ]
+      }
+    ],
+    "attack_vectors": [ "HAND" ]
+  },
+  {
+    "id": "tec_kasen_swipe",
+    "type": "technique",
+    "name": "Swipe (Wrap)",
+    "messages": [ "You unwrap your bandages and swipe towards %s!", "<npcname> unwraps their bandages and swipes towards %s!" ],
+    "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
+    "unarmed_allowed": true,
+    "attack_override": true,
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.1 }
+    ],
+    "eocs": [
+      {
+        "id": "tec_kasen_swipe_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "kasen_swipe" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
+      }
+    ],
+    "attack_vectors": [ "HAND" ]
+  },
+  {
     "id": "tec_kokoro_grab_break",
     "type": "technique",
     "name": "Grab Break",
@@ -319,6 +598,7 @@
       "<npcname> spins, hitting nearby enemies!"
     ],
     "skill_requirements": [ { "name": "melee", "level": 4 } ],
+    "weapon_categories_allowed": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS", "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
     "melee_allowed": true,
     "crit_tec": false,
     "reach_ok": true,
@@ -413,10 +693,10 @@
       "You turn around and attack %s while moving backwards!",
       "<npcname> turns around and attacks %s while moving backwards!"
     ],
-    "skill_requirements": [ { "name": "melee", "level": 4 } ],
+    "skill_requirements": [ { "name": "melee", "level": 6 } ],
+    "weapon_categories_allowed": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS", "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
     "melee_allowed": true,
     "reach_ok": true,
-    "side_switch": true,
     "attack_override": true,
     "eocs": [
       {
@@ -761,15 +1041,20 @@
     "knockback_dist": 2,
     "down_dur": 2,
     "stun_dur": 1,
-    "flat_bonuses": [
-      { "stat": "damage", "type": "heat", "scaling-stat": "str", "scale": 1 }
-    ],
     "mult_bonuses": [
       { "stat": "movecost", "scale": 1.33 },
       { "stat": "damage", "type": "bash", "scale": 1.1 }
     ],
+    "eocs": [
+      {
+        "id": "tec_mokou_tackle_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "mokou_tackle_bonus" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
+      }
+    ],
     "attack_vectors": [ "TORSO" ],
-    "//": "Lunge but called tackle"
+    "//": "Lunge but called tackle. The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats"
   },
   {
     "id": "tec_mokou_talons",
@@ -999,17 +1284,24 @@
   {
     "id": "tec_youmu_knee_slasher",
     "type": "technique",
-    "name": "WIP",
-    "messages": [ "WIP %s", "<npcname> WIP %s" ],
+    "name": "Knee slasher",
+    "messages": [ "You perform a low slash at %s", "<npcname> perform a low slash at %s" ],
     "skill_requirements": [ { "name": "melee", "level": 6 } ],
     "melee_allowed": true,
     "unarmed_allowed": false,
-    "down_dur": 1,
+    "down_dur": 2,
+    "attack_override": true,
     "mult_bonuses": [ 
-      { "stat": "movecost", "scale": 0.8 }, 
-      { "stat": "damage", "type": "cut", "scale": 0.95 } 
+      { "stat": "movecost", "scale": 0.66 }
     ],
-    "attack_vectors": [ "WEAPON" ],
-    "//": "CHANGE THIS"
+    "eocs": [
+      {
+        "id": "tec_youmu_knee_slasher_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "youmu_knee_slasher" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
+      }
+    ],
+    "attack_vectors": [ "WEAPON" ]
   }
 ]
