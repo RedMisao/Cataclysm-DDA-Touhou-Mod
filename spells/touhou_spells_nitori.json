@@ -306,7 +306,7 @@
     "min_aoe": 3,
     "max_aoe": 3,
     "max_level": 1,
-    "difficulty": -11,
+    "difficulty": -50,
     "base_casting_time": 200,
     "base_energy_cost": 100,
     "energy_source": "MANA",

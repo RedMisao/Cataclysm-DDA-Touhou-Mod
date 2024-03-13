@@ -237,7 +237,7 @@
     "max_damage": 140,
     "min_aoe": { "math": [ "( (u_skill('throw') * 0.3 ) - 0.2 )" ] },
     "max_aoe": 4,
-    "field_id": "fd_blood",
+    "field_id": "fd_blood2",
     "field_chance": 3,
     "min_field_intensity": 1,
     "max_field_intensity": 3,

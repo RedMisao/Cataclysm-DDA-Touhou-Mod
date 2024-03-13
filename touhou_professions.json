@@ -216,6 +216,7 @@
     "spells": [
       { "level": 1, "id": "dash_basic" },
       { "level": 1, "id": "kasen_biting_strike" },
+      { "level": 1, "id": "kasen_calorieburn" },
       { "level": 1, "id": "kasen_charm" },
       { "level": 1, "id": "kasen_fangshu_place" },
       { "level": 1, "id": "kasen_fangshu_move" },
@@ -307,6 +308,7 @@
     ],
     "spells": [
       { "level": 1, "id": "dash_basic" },
+      { "level": 1, "id": "udonge_barrierwave" },
       { "level": 1, "id": "udonge_disbeliefaspect" },
       { "level": 1, "id": "udonge_gunwaveBLAST" },
       { "level": 1, "id": "udonge_iblast" },
@@ -315,7 +317,7 @@
       { "level": 1, "id": "udonge_waveperception" },
       { "level": 1, "id": "udonge_wavestealth" }
     ],
-    "traits": [ "GYOKUTO_SPECIES", "SPIRIT_UNTRAINED", "ear_gyokuto_rumpled", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_udongein" ],
+    "traits": [ "GYOKUTO_SPECIES", "PROF_UDONGE", "SPIRIT_UNTRAINED", "ear_gyokuto_rumpled", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_udongein" ],
     "items": {
       "both": {
         "entries": [
@@ -356,7 +358,7 @@
       { "level": 1, "id": "reisen_probabilitynoise" },
       { "level": 1, "id": "reisen_uncertaintybox" }
     ],
-    "traits": [ "GYOKUTO_SPECIES", "LUNARDIET", "SPIRIT_UNTRAINED", "ear_gyokuto_floppy", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_reisen" ],
+    "traits": [ "GYOKUTO_SPECIES", "LUNARDIET", "PROF_REISEN", "SPIRIT_UNTRAINED", "ear_gyokuto_floppy", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_reisen" ],
     "items": {
       "both": {
         "entries": [
@@ -437,6 +439,7 @@
       { "level": 1, "id": "kaenbyou_soulshard_fuel" },
       { "level": 1, "id": "kaenbyou_soulshatter" },
       { "level": 1, "id": "kaenbyou_vssummon" },
+      { "level": 1, "id": "kaenbyou_vspossess" },
       { "level": 1, "id": "kaenbyou_vsrelease" },
       { "level": 1, "id": "kaenbyou_zz_soulshard" }
     ],
@@ -526,6 +529,7 @@
       { "level": 1, "id": "seiga_charm" },
       { "level": 1, "id": "seiga_chidrain" },
       { "level": 1, "id": "seiga_chireversal" },
+      { "level": 1, "id": "seiga_corpsecurse" },
       { "level": 1, "id": "seiga_cripple" },
       { "level": 1, "id": "seiga_darksplash" },
       { "level": 1, "id": "seiga_foetusshot" },

@@ -65,7 +65,7 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ]
+    "flags": [ "NO_FAIL", "NO_HANDS", "NO_LEGS" ]
   },
   {
     "id": "yamame_disease_icypyrexia3",
@@ -90,7 +90,7 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
+    "flags": [ "NO_FAIL", "NO_HANDS", "NO_LEGS" ],
     "//": "The vars are set at yamame_opens_spellbook_eoc ",
     "//note": "Can't add 'hostiles' to valid_targets , as it makes the spell affect Yamame too, and dots from spells can't be ignored/removed",
     "//note2": "An alternative is to add targeted_monster_species with every monster species except for ROBOT , but that would remove compatibility with any non-vanilla monster species"
@@ -139,7 +139,7 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ]
+    "flags": [ "NO_FAIL", "NO_HANDS", "NO_LEGS" ]
   },
   {
     "id": "yamame_disease_scarletplague3",
@@ -164,7 +164,7 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
+    "flags": [ "NO_FAIL", "NO_HANDS", "NO_LEGS" ],
     "//": "The vars are set at yamame_opens_spellbook_eoc "
   },
   {
@@ -212,7 +212,7 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ]
+    "flags": [ "NO_FAIL", "NO_HANDS", "NO_LEGS" ]
   },
   {
     "id": "yamame_disease_volatilerot3",
@@ -237,7 +237,7 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
+    "flags": [ "NO_FAIL", "NO_HANDS", "NO_LEGS" ],
     "//": "The vars are set at yamame_opens_spellbook_eoc "
   },
   {
@@ -254,13 +254,13 @@
     "min_damage": { "math": [ "( var_volatilerot_dmg * 1 )" ] },
     "max_damage": { "math": [ "( var_volatilerot_dmg * 2 )" ] },
     "min_aoe": 1,
-    "max_aoe": 2,
+    "max_aoe": 3,
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "RANDOM_AOE" ],
+    "flags": [ "NO_FAIL", "NO_HANDS", "NO_LEGS", "RANDOM_AOE" ],
     "//": "dmg ~ tick of yamame_disease_volatilerot , up to twice that amount. This is controlled by yamame_disease_volatilerot_flare_1 . The vars are set at yamame_opens_spellbook_eoc ",
     "//note": "Can't set 'hostile' too, see yamame_disease_icypyrexia3 "
   },
@@ -268,7 +268,7 @@
     "id": "yamame_miasmaburst",
     "type": "SPELL",
     "name": { "str": "Miasma burst" },
-    "description": "Release the damage accumulated by your diseases on the target.  Deals a very large amount of damage, but consumes the stored damage.  \nAffects the damage over time from Icy pyrexia, Scarlet plague and Volatile rot.  The stored damage is reduced slowly over time.",
+    "description": "Release the damage accumulated by your diseases on the target.  Deals damage upfront, but consumes the stored damage in the process.  \nAffected by the damage over time of Icy pyrexia, Scarlet plague and Volatile rot.  The stored damage is slowly reduced over time.",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "hostile" ],
     "ignored_monster_species": [ "ROBOT" ],
@@ -297,14 +297,14 @@
     "spell_class": "NONE",
     "valid_targets": [ "self" ],
     "effect": "effect_on_condition",
-    "effect_str": "yamame_miasmaburst_eoc",
+    "effect_str": "yamame_miasmaburst_reset_eoc",
     "shape": "blast",
     "max_level": 1,
-    "difficulty": -11,
+    "difficulty": -50,
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS", "SILENT" ]
+    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_HANDS", "NO_LEGS", "SILENT" ]
   },
   {
     "id": "yamame_miasmaepidemic",
@@ -323,7 +323,7 @@
     "base_casting_time": 100,
     "base_energy_cost": 100,
     "energy_source": "MANA",
-    "flags": [ "EXTRA_EFFECTS_FIRST", "NO_HANDS", "NO_LEGS", "SOMATIC" ],
+    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
     "//": "min range 8"
   },
   {

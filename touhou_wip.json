@@ -17,35 +17,6 @@
     "energy_source": "MANA"
   },
   {
-    "id": "wip_soulshard_eoc",
-    "type": "effect_on_condition",
-    "//eoc_type": "EVENT",
-    "//required_event": "character_kills_monster",
-    "condition": {
-      "and": [ 
-        { 
-          "or": [ 
-            { "u_has_trait": "KASHA_SPECIES" }, 
-            { "u_has_trait": "KASHA_SPECIES_active" }
-          ]
-        },
-        { 
-          "or": [ 
-            { "npc_has_species": "FERAL" }, 
-            { "npc_has_species": "HUMAN" }, 
-            { "npc_has_species": "NETHER" }, 
-            { "npc_has_species": "ZOMBIE" } 
-          ] 
-        }
-      ]
-    },
-    "effect": [ { "u_spawn_item": "soul_shard_item", "count": 1, "suppress_message": true } ],
-    "//": "Simple EOC checks when a Kasha kills anything, if it's humanoid or close enough it grants the item",
-    "//2": "Seems dots from spells are not proccing character_kills_monster events (#71408)",
-    "//3": "This doesn't work as there's no proper way to limit how many shards can Kaenbyou accumulate. The optimal way would be to just remove any number of soulshards past the limit, but currently there's no EOC that can do that. I tried adding a spoils_in timer but seems the minimum time for the item to disappear is ~5 min, and also she has to drop the items from her inventory for them to actually despawn. That's clunky and leads to inventory flood and micromanagement tedium",
-    "//note": " try u_consume_item to delete items/charges"
-  },
-  {
     "id": "arm_stub_r",
     "type": "body_part",
     "name": "right arm stub",
@@ -114,6 +85,35 @@
       }
     ],
     "//note": "This can be added without issues. However, it immediately breaks after starting (no actual effect). Also, it displays the un-handed right arm, and while kasen_bandages grants the proper arm + hand, smashing stuff proccs the stub smash_message instead of the restored limb"
+  },
+  {
+    "id": "wip_soulshard_eoc",
+    "type": "effect_on_condition",
+    "//eoc_type": "EVENT",
+    "//required_event": "character_kills_monster",
+    "condition": {
+      "and": [ 
+        { 
+          "or": [ 
+            { "u_has_trait": "KASHA_SPECIES" }, 
+            { "u_has_trait": "KASHA_SPECIES_active" }
+          ]
+        },
+        { 
+          "or": [ 
+            { "npc_has_species": "FERAL" }, 
+            { "npc_has_species": "HUMAN" }, 
+            { "npc_has_species": "NETHER" }, 
+            { "npc_has_species": "ZOMBIE" } 
+          ] 
+        }
+      ]
+    },
+    "effect": [ { "u_spawn_item": "soul_shard_item", "count": 1, "suppress_message": true } ],
+    "//": "Simple EOC checks when a Kasha kills anything, if it's humanoid or close enough it grants the item",
+    "//2": "Seems dots from spells are not proccing character_kills_monster events (#71408)",
+    "//3": "This doesn't work as there's no proper way to limit how many shards can Kaenbyou accumulate. The optimal way would be to just remove any number of soulshards past the limit, but currently there's no EOC that can do that. I tried adding a spoils_in timer but seems the minimum time for the item to disappear is ~5 min, and also she has to drop the items from her inventory for them to actually despawn. That's clunky and leads to inventory flood and micromanagement tedium",
+    "//note": " try u_consume_item to delete items/charges"
   },
   {
     "id": "soul_shard_item",

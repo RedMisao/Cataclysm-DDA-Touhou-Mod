@@ -180,24 +180,48 @@
     "type": "effect_on_condition",
     "condition": { "math": [ "u_var_soulshard", ">=", "2" ] },
     "effect": [
-      { "u_cast_spell": { "id": "kaenbyou_blazingwheel2" }, "targeted": true }
+      {
+        "if": {
+          "message": "Set target", 
+          "range": 12,
+          "u_query_tile": "line_of_sight",
+          "target_var": { "global_val": "var_kaenbyou_blazingwheel_loc" }
+        },
+        "then": [
+          { 
+            "queue_eoc_with": "kaenbyou_blazingwheel_delay_eoc", 
+            "variables": { "kaenbyou_blazingwheel_loc": "var_kaenbyou_blazingwheel_loc" }, 
+            "time_in_future": "1 s" 
+          }
+        ],
+        "else": [
+          { "math": [ "u_val('mana')", "+=", "150" ] },
+          { "u_message": "Canceled" }
+        ]
+      }
     ],
     "false_effect": [ 
       { "u_message": "You don't have enough soulshards to cast this.", "type": "mixed" },
       { "math": [ "u_val('mana')", "+=", "150" ] }
     ],
-    "//": "Self-explanatory. The soulshards are consumed after (automatically) chaining a spell EOC that runs kaenbyou_consume_soulshard_eoc or kaenbyou_consume_soulshard_2_eoc"
+    "//": "The soulshards are consumed after (automatically) chaining a spell EOC that runs kaenbyou_consume_soulshard_2_eoc "
+  },
+  {
+    "id": "kaenbyou_blazingwheel_delay_eoc",
+    "type": "effect_on_condition",
+    "condition": { "expects_vars": [ "kaenbyou_blazingwheel_loc" ] },
+    "effect": [
+      { "u_cast_spell": { "id": "kaenbyou_blazingwheel2" }, "loc": { "global_val": "var_kaenbyou_blazingwheel_loc" } }
+    ]
   },
   {
     "id": "kaenbyou_infernoburst_eoc",
     "type": "effect_on_condition",
-    "condition": { "math": [ "u_var_immolate", ">=", "1" ] },
+    "condition": { "u_has_effect": "immolate_light" },
     "effect": [
-      { "math": [ "u_var_immolate", "=", "0" ] },
       { "u_cast_spell": { "id": "kaenbyou_infernoburst3" } }
     ],
-    "//": "This just checks if the target was tagged with immolate, if so it applies the self-spell for bonus dmg",
-    "//note": "It works as it is, but the effects and stuff don't show for the player"
+    "//": "This just checks if the target has the immolate effect, if so it applies the self-spell for bonus dmg"
   },
   {
     "id": "kaenbyou_consume_soulshard_eoc",
@@ -216,55 +240,6 @@
     "type": "effect_on_condition",
     "condition": { "math": [ "u_var_soulshard", ">=", "8" ] },
     "effect": [ { "math": [ "u_var_soulshard", "-=", "8" ] } ]
-  },
-  {
-    "id": "kaenbyou_immolate_eoc",
-    "type": "effect_on_condition",
-    "effect": [
-      { "math": [ "u_var_immolate", "+=", "1" ] },
-      { "run_eocs": [ "kaenbyou_immolate_timer_1" ] }
-    ],
-    "//": "This applies the immolate 'tag' to the target, and runs the timer for its duration"
-  },
-  {
-    "id": "kaenbyou_immolate_timer_1",
-    "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "u_var_immolate", ">", "0" ] },
-        { "math": [ "u_var_immolate_timer", "<", "var_immolate_duration" ] }
-      ]
-    },
-    "effect": [
-      { "math": [ "u_var_immolate_timer", "+=", "100" ] },
-      { "queue_eocs": [ "kaenbyou_immolate_timer_2" ], "time_in_future": "1 s" }
-    ],
-    "false_effect": [ 
-      { "math": [ "u_var_immolate", "=", "0" ] },
-      { "math": [ "u_var_immolate_timer", "=", "0" ] }
-    ],
-    "//": "This checks if the target was tagged with immolate, and if the duration isn't bigger than the current immolate duration at that skill level (set at kaenbyou_opens_spellbook_eoc )",
-    "//2": "If that's the case, it adds 1 s and queues the next step in 1 s",
-    "//3": "If the immolate tag is zero (due having cast kaenbyou_infernoburst on the target), or if the timer is larger than the intended duration, it resets both vars to 0",
-    "//note": "I guess this may be re-queue'd to itself as a self-contained timer, but idk"
-  },
-  {
-    "id": "kaenbyou_immolate_timer_2",
-    "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "u_var_immolate", ">", "0" ] },
-        { "math": [ "u_var_immolate_timer", "<", "var_immolate_duration" ] }
-      ]
-    },
-    "effect": [
-      { "run_eocs": [ "kaenbyou_immolate_timer_1" ] }
-    ],
-    "false_effect": [ 
-      { "math": [ "u_var_immolate", "=", "0" ] },
-      { "math": [ "u_var_immolate_timer", "=", "0" ] }
-    ],
-    "//": "This just cycles the previous EOC. Same conditions and false_effects "
   },
   {
     "id": "kaenbyou_soulfire_eoc",
@@ -301,6 +276,57 @@
       { "u_message": "You don't have enough soulshards to cast this.", "type": "mixed" },
       { "math": [ "u_val('mana')", "+=", "50" ] }
     ]
+  },
+  {
+    "id": "kaenbyou_vspossess_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "u_var_vspossess", "+=", "1" ] }
+    ],
+    "//": "This just tags the target with the var",
+    "//2": "Downstream effects are triggered by kaenbyou_vspossess_kill when the target dies and there's at least a vengeful spirit nearby"
+  },
+  {
+    "id": "kasen_calorieburn_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_kasencalorieburn", "+=", "1" ] },
+      { "run_eocs": [ "kasen_calorieburn_cycle1" ] }
+    ],
+    "//": "This EOC is a simplified version of udonge_waveinsight_start "
+  },
+  {
+    "id": "kasen_calorieburn_cycle1",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_kasencalorieburn", "<", "2" ] },
+    "effect": [ { "run_eocs": [ "kasen_calorieburn_cycle2" ] } ],
+    "false_effect": [
+      { "math": [ "var_kasencalorieburn", "=", "0" ] },
+      { "u_lose_effect": "kasen_calorieburn" }
+    ]
+  },
+  {
+    "id": "kasen_calorieburn_cycle2",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_val('mana')", "<=", "u_val('mana_max')" ] },
+        { "math": [ "u_val('stored_kcal')", ">=", "5500" ] },
+        { "math": [ "var_kasencalorieburn", ">", "0" ] },
+        { "math": [ "var_kasencalorieburn", "<", "2" ] }
+      ]
+    },
+    "effect": [
+      { "math": [ "u_val('mana')", "+=", "6 + rand(8)" ] },
+      { "math": [ "u_val('stored_kcal')", "-=", "110 + rand(110)" ] },
+      { "u_add_effect": "kasen_calorieburn", "duration": "5 s" },
+      { "queue_eocs": [ "kasen_calorieburn_cycle1" ], "time_in_future": [ "2 s", "5 s" ] }
+    ],
+    "false_effect": [
+      { "math": [ "var_kasencalorieburn", "=", "0" ] },
+      { "u_lose_effect": "kasen_calorieburn" }
+    ],
+    "//": "Assuming a mana pool of 1000 and the default of 55000 cal, this burns 90% of the stored energy for ~3000 mana over (400 - 1000) s"
   },
   {
     "id": "kasen_fangshu_place_eoc",
@@ -971,6 +997,7 @@
   
   
   
+  
   {
     "id": "nitori_transformate_eoc",
     "type": "effect_on_condition",
@@ -1365,6 +1392,14 @@
     ]
   },
   {
+    "id": "udonge_barrierwave_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_barrierwave", "=", "3" ] },
+      { "u_add_effect": "udonge_barrierwave", "duration": "PERMANENT" }
+    ]
+  },
+  {
     "id": "udonge_disbeliefaspect_eoc",
     "type": "effect_on_condition",
     "condition": { "math": [ "u_monsters_nearby('mon_udonge_firing_squad', 'radius': 16, 'attitude': 'friendly')", "==", "0" ] },
@@ -1399,6 +1434,7 @@
       { "math": [ "var_wavemfortitude", "=", "0" ] },
       { "math": [ "var_waveperception", "=", "0" ] },
       { "math": [ "var_wavestealth", "=", "0" ] },
+      { "u_lose_effect": "udonge_barrierwave" },
       { "u_lose_effect": "udonge_mfortitude" },
       { "u_lose_effect": "udonge_perception" },
       { "u_lose_effect": "udonge_stealth" },
@@ -1467,6 +1503,7 @@
       { "math": [ "var_wavemfortitude", "+=", "1" ] },
       { "math": [ "var_waveperception", "=", "0" ] },
       { "math": [ "var_wavestealth", "=", "0" ] },
+      { "u_lose_effect": "udonge_barrierwave" },
       { "u_lose_effect": "udonge_insight" },
       { "u_lose_effect": "udonge_perception" },
       { "u_lose_effect": "udonge_stealth" },
@@ -1513,6 +1550,7 @@
       { "math": [ "var_wavemfortitude", "=", "0" ] },
       { "math": [ "var_waveperception", "+=", "1" ] },
       { "math": [ "var_wavestealth", "=", "0" ] },
+      { "u_lose_effect": "udonge_barrierwave" },
       { "u_lose_effect": "udonge_insight" },
       { "u_lose_effect": "udonge_mfortitude" },
       { "u_lose_effect": "udonge_stealth" },
@@ -1559,6 +1597,7 @@
       { "math": [ "var_wavemfortitude", "=", "0" ] },
       { "math": [ "var_waveperception", "=", "0" ] },
       { "math": [ "var_wavestealth", "+=", "1" ] },
+      { "u_lose_effect": "udonge_barrierwave" },
       { "u_lose_effect": "udonge_insight" },
       { "u_lose_effect": "udonge_mfortitude" },
       { "u_lose_effect": "udonge_perception" },
@@ -1793,25 +1832,20 @@
     ]
   },
   {
-    "id": "utsuho_minisun_follow",
+    "id": "utsuho_hellcannon_eoc",
     "type": "effect_on_condition",
-    "//recurrence": "1 s",
-    "condition": {
-      "and": [
-        { "math": [ "u_monsters_nearby('mon_utsuho_minisun', 'radius': 99, 'attitude': 'friendly')", ">", "0" ] },
-        { "math": [ "u_monsters_nearby('mon_utsuho_minisun', 'radius': 5, 'attitude': 'friendly')", "==", "0" ] }
-      ]
-    },
-    "deactivate_condition": {
-      "or": [
-        { "not": { "u_has_trait": "PROF_OKUU" } },
-        { "math": [ "u_monsters_nearby('mon_utsuho_minisun', 'radius': 99, 'attitude': 'friendly')", "==", "0" ] }
-      ]
-    },
-    "effect": [ 
-      { "u_cast_spell": { "id": "utsuho_blacksun2" }, "targeted": false }
+    "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
+    "effect": [
+      { "u_cast_spell": { "id": "utsuho_hellcannon2" }, "targeted": true },
+      { "u_cast_spell": { "id": "hellcannon_to_mon" }, "targeted": false }
     ],
-    "//WIP": " "
+    "false_effect": [ 
+      { "math": [ "u_val('mana')", "-=", "50" ] },
+      { "u_cast_spell": { "id": "utsuho_hellcannon2_unc" }, "targeted": true },
+      { "u_cast_spell": { "id": "hellcannon_to_mon_unc" }, "targeted": false }
+    ],
+    "//": "Every time Utsuho casts utsuho_hellcannon she checks if she's wearing her third leg and:",
+    "//2": "shoots hellcannon + runs the spell that tags *nearby* mon_utsuho_minisun with the EOC which adds the condition for their own hellcannon"
   },
   {
     "id": "utsuho_nuke_eoc",
@@ -1857,10 +1891,62 @@
     "type": "effect_on_condition",
     "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
     "effect": [
-      { "u_cast_spell": { "id": "utsuho_ugeyser2" }, "targeted": true }
+      {
+        "if": {
+          "message": "Set target", 
+          "range": 8,
+          "u_query_tile": "line_of_sight",
+          "target_var": { "global_val": "var_utsuho_ugeyser_loc" }
+        },
+        "then": [
+          { 
+            "queue_eoc_with": "utsuho_ugeyser_delay_1", 
+            "variables": { "utsuho_ugeyser_loc": "var_utsuho_ugeyser_loc" }, 
+            "time_in_future": "3 s" 
+          }
+        ],
+        "else": [
+          { "math": [ "u_val('mana')", "+=", "75" ] },
+          { "u_message": "Canceled" }
+        ]
+      }
     ],
-    "false_effect": [ 
-      { "u_cast_spell": { "id": "utsuho_ugeyser2_unc" }, "targeted": true },
+    "false_effect": [
+      {
+        "if": {
+          "message": "Set target", 
+          "range": 8,
+          "u_query_tile": "line_of_sight",
+          "target_var": { "global_val": "var_utsuho_ugeyser_loc" }
+        },
+        "then": [
+          { 
+            "queue_eoc_with": "utsuho_ugeyser_delay_2", 
+            "variables": { "utsuho_ugeyser_loc": "var_utsuho_ugeyser_loc" }, 
+            "time_in_future": [ "2 s", "5 s" ] 
+          }
+        ],
+        "else": [
+          { "math": [ "u_val('mana')", "+=", "75" ] },
+          { "u_message": "Canceled" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "utsuho_ugeyser_delay_1",
+    "type": "effect_on_condition",
+    "condition": { "expects_vars": [ "utsuho_ugeyser_loc" ] },
+    "effect": [
+      { "u_cast_spell": { "id": "utsuho_ugeyser2" }, "loc": { "global_val": "var_utsuho_ugeyser_loc" } }
+    ]
+  },
+  {
+    "id": "utsuho_ugeyser_delay_2",
+    "type": "effect_on_condition",
+    "condition": { "expects_vars": [ "utsuho_ugeyser_loc" ] },
+    "effect": [
+      { "u_cast_spell": { "id": "utsuho_ugeyser2_unc" }, "loc": { "global_val": "var_utsuho_ugeyser_loc" } },
       { "math": [ "u_val('mana')", "-=", "50" ] }
     ]
   },
@@ -1876,23 +1962,13 @@
   {
     "id": "yamame_disease_timer_1",
     "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "u_var_icypyrexia", ">", "0" ] },
-        { "math": [ "u_var_disease_timer_1", "<", "var_disease_dur" ] }
-      ]
-    },
     "effect": [
-      { "math": [ "u_var_disease_timer_1", "+=", "100" ] },
       { "queue_eocs": [ "yamame_disease_timer_1_2" ], "time_in_future": "1 s" }
-    ],
-    "false_effect": [ 
-      { "math": [ "u_var_icypyrexia", "=", "0" ] },
-      { "math": [ "u_var_disease_timer_1", "=", "0" ] }
     ],
     "//": "This is the base disease timer. It checks if the target has u_DISEASE and the u_DISEASE_timer is less than the intended duration at that skill level (set at yamame_opens_spellbook_eoc )",
     "//2": "It adds 1 s to u_DISEASE_timer and queues the second step, which adds u_MIASMA (equivalent of var_DISEASE dmg) and stores it, it also cycles back to this step",
-    "//3": "The u_DISEASE var is removed when the u_DISEASE_timer ends, or when consumed by Yamame's spells"
+    "//3": "The u_DISEASE var is removed when the u_DISEASE_timer ends, or when consumed by Yamame's spells",
+    "//note": "Currently non-functional, due queue_eocs not working when used by monsters. It was working around 2024-01-26, and right until the last version I updated from (2024-03-03-1927) for what I can tell"
   },
   {
     "id": "yamame_disease_timer_1_2",
@@ -1904,6 +1980,7 @@
       ]
     },
     "effect": [
+      { "math": [ "u_var_disease_timer_1", "+=", "100" ] },
       { "math": [ "var_miasmaburst_dmg", "+=", "var_icypyrexia_dmg" ] },
       { "run_eocs": [ "yamame_disease_timer_1" ] }
     ],
@@ -1923,19 +2000,8 @@
   {
     "id": "yamame_disease_timer_2",
     "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "u_var_scarletplague", ">", "0" ] },
-        { "math": [ "u_var_disease_timer_2", "<", "var_disease_dur" ] }
-      ]
-    },
     "effect": [
-      { "math": [ "u_var_disease_timer_2", "+=", "100" ] },
       { "queue_eocs": [ "yamame_disease_timer_2_2" ], "time_in_future": "1 s" }
-    ],
-    "false_effect": [ 
-      { "math": [ "u_var_scarletplague", "=", "0" ] },
-      { "math": [ "u_var_disease_timer_2", "=", "0" ] }
     ]
   },
   {
@@ -1948,6 +2014,7 @@
       ]
     },
     "effect": [
+      { "math": [ "u_var_disease_timer_2", "+=", "100" ] },
       { "math": [ "var_miasmaburst_dmg", "+=", "var_scarletplague_dmg" ] },
       { "run_eocs": [ "yamame_disease_timer_2" ] }
     ],
@@ -1968,14 +2035,7 @@
   {
     "id": "yamame_disease_timer_3",
     "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "u_var_volatilerot", ">", "0" ] },
-        { "math": [ "u_var_disease_timer_3", "<", "var_disease_dur" ] }
-      ]
-    },
     "effect": [
-      { "math": [ "u_var_disease_timer_3", "+=", "100" ] },
       { "queue_eocs": [ "yamame_disease_timer_3_2" ], "time_in_future": "1 s" }
     ],
     "false_effect": [ 
@@ -1993,6 +2053,7 @@
       ]
     },
     "effect": [
+      { "math": [ "u_var_disease_timer_3", "+=", "100" ] },
       { "math": [ "var_miasmaburst_dmg", "+=", "var_volatilerot_dmg" ] },
       { "run_eocs": [ "yamame_disease_timer_3" ] }
     ],
@@ -2004,12 +2065,11 @@
   {
     "id": "yamame_disease_volatilerot_flare_1",
     "type": "effect_on_condition",
-    "condition": { "math": [ "u_var_volatilerot", ">", "0" ] },
     "effect": [
-      { "queue_eocs": [ "yamame_disease_volatilerot_flare_2" ], "time_in_future": [ "3 s", "4 s" ] }
+      { "queue_eocs": [ "yamame_disease_volatilerot_flare_2" ], "time_in_future": [ "2 s", "4 s" ] }
     ],
     "//": "Casting yamame_disease_volatilerot runs yamame_disease_volatilerot_eoc on the target, which tags it with the u_DISEASE tag + u_DISEASE_timer ",
-    "//2": "It also runs this cycle, which queues the next step between 3 - 4 s",
+    "//2": "It also runs this cycle, which queues the next step between 2 - 4 s",
     "//3": "The next step forces the target to cast the self-spell for dmg (the aoe 'flare'), and re-queues this",
     "//4": "It stops if the target no longer has the specific u_DISEASE (which is removed when u_DISEASE_timer ends, or after u_DISEASE is consumed by Yamame's spells)",
     "//5": "This is separated from the actual DISEASE_timer EOC so the target can flare up randomly instead of every 1 s"
@@ -2040,7 +2100,7 @@
     ]
   },
   {
-    "id": "yamame_miasmaburst_eoc",
+    "id": "yamame_miasmaburst_reset_eoc",
     "type": "effect_on_condition",
     "effect": [
       { "math": [ "var_miasmaburst_dmg", "=", "0" ] }
@@ -2055,22 +2115,21 @@
       { "run_eocs": [ "yamame_miasmaepidemic_3" ] }
     ],
     "//": "Subspell that act as a repeater for each of her spells, by separate",
-    "//2": "As yamame_miasmaepidemic is run on ally + hostile, this EOC is forced upon them, so u_ is ally, hostile; NOT Yamame",
-    "//3": "If the target is affected by epidemic, it consumes the u_DISEASE and forces them to cast the spell (which propagates the disease in aoe)"
+    "//2": "As yamame_miasmaepidemic is run on ally + hostile, this EOC is forced upon them, so u_ is the victim's ally + hostile; NOT Yamame",
+    "//3": "If the target is affected by the epidemic spell, it forces them to cast each spell below (which propagates the disease in aoe)"
   },
   {
     "id": "yamame_miasmaepidemic_1",
     "type": "effect_on_condition",
-    "condition": { "math": [ "u_var_icypyrexia", ">=", "1" ] },
+    "condition": { "u_has_effect": "icy_pyrexia" },
     "effect": [
-      { "math": [ "u_var_icypyrexia", "=", "0" ] },
       { "u_cast_spell": { "id": "yamame_disease_icypyrexia3" } }
     ]
   },
   {
     "id": "yamame_miasmaepidemic_2",
     "type": "effect_on_condition",
-    "condition": { "math": [ "u_var_scarletplague", ">=", "1" ] },
+    "condition": { "u_has_effect": "scarlet_plague" },
     "effect": [
       { "math": [ "u_var_scarletplague", "=", "0" ] },
       { "u_cast_spell": { "id": "yamame_disease_scarletplague3" } }
@@ -2079,9 +2138,8 @@
   {
     "id": "yamame_miasmaepidemic_3",
     "type": "effect_on_condition",
-    "condition": { "math": [ "u_var_volatilerot", ">=", "1" ] },
+    "condition": { "u_has_effect": "volatile_rot" },
     "effect": [
-      { "math": [ "u_var_volatilerot", "=", "0" ] },
       { "u_cast_spell": { "id": "yamame_disease_volatilerot3" } }
     ]
   },
@@ -2090,18 +2148,15 @@
     "type": "effect_on_condition",
     "condition": {
       "or": [
-        { "math": [ "u_var_icypyrexia", ">", "0" ] },
-        { "math": [ "u_var_scarletplague", ">", "0" ] },
-        { "math": [ "u_var_volatilerot", ">", "0" ] }
+        { "u_has_effect": "icy_pyrexia" },
+        { "u_has_effect": "scarlet_plague" },
+        { "u_has_effect": "volatile_rot" }
       ]
     },
     "effect": [
-        { "math": [ "u_var_icypyrexia", "=", "0" ] },
-        { "math": [ "u_var_scarletplague", "=", "0" ] },
-        { "math": [ "u_var_volatilerot", "=", "0" ] },
       { "u_cast_spell": { "id": "yamame_miasmarelease3" }, "targeted": false }
     ],
-    "//": "Checks if the target has the u_DISEASE that was applied by each DISEASE_eoc above, if true it forces the target to cast the bonus dmg spell and consumes the var"
+    "//": "Checks if the target has the effects applied by each disease, if true it forces the target to cast the bonus dmg spell"
   },
   {
     "id": "youmu_slasheternal_eoc",
@@ -2137,9 +2192,13 @@
       ]
     },
     "effect": [
-      { "u_cast_spell": { "id": "youmu_slasheternal2_cut" }, "targeted": true }
+      { "u_cast_spell": { "id": "youmu_slasheternal2_cut" }, "targeted": true },
+      { "u_cast_spell": { "id": "slasheternal2_cut_to_mon" }, "targeted": false }
     ],
-    "false_effect": [ { "u_cast_spell": { "id": "youmu_slasheternal2_bash" }, "targeted": true } ]
+    "false_effect": [ 
+      { "u_cast_spell": { "id": "youmu_slasheternal2_bash" }, "targeted": true },
+      { "u_cast_spell": { "id": "slasheternal2_bash_to_mon" }, "targeted": false }
+    ]
   },
   {
     "id": "youmu_slashnether_eoc",
@@ -2157,7 +2216,8 @@
       ]
     },
     "effect": [
-      { "u_cast_spell": { "id": "youmu_slashnether2" }, "targeted": true }
+      { "u_cast_spell": { "id": "youmu_slashnether2" }, "targeted": true },
+      { "u_cast_spell": { "id": "slashnether2_to_mon" }, "targeted": false }
     ],
     "false_effect": [ 
       { "u_message": "You need a sword to cast this.", "type": "mixed" },

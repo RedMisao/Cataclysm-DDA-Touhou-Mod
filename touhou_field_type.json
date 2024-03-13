@@ -5,14 +5,29 @@
     "legacy_enum_id": 1,
     "intensity_levels": [ { "name": "blood splatter", "color": "red" }, { "name": "blood stain" }, { "name": "puddle of blood" } ],
     "description_affix": "covered_in",
-    "underwater_age_speedup": "2 turns",
+    "underwater_age_speedup": "3 turns",
     "decay_amount_factor": 2,
     "is_splattering": true,
     "half_life": "4 turns",
     "phase": "liquid",
     "accelerated_decay": true,
     "display_field": true,
-    "//": "faster decaying blood for effects"
+    "//": "Faster decaying blood for vfx"
+  },
+  {
+    "id": "fd_blood3",
+    "type": "field_type",
+    "legacy_enum_id": 1,
+    "intensity_levels": [ { "name": "blood splatter", "color": "red" }, { "name": "blood stain" }, { "name": "puddle of blood" }, { "name": "bloody chunks" }, { "name": "bloody gore" } ],
+    "description_affix": "covered_in",
+    "underwater_age_speedup": "25 minutes",
+    "decay_amount_factor": 2,
+    "is_splattering": true,
+    "half_life": "2 days",
+    "phase": "liquid",
+    "accelerated_decay": true,
+    "display_field": true,
+    "//": "Extra bloody blood"
   },
   {
     "id": "fd_incendiary2",

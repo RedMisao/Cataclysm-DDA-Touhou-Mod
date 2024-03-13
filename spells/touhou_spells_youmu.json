@@ -2,7 +2,7 @@
   {
     "id": "youmu_hilt_nudge",
     "type": "SPELL",
-    "name": "Hilt nudge (damage)",
+    "name": { "str": "Hilt nudge (damage) (tec)" },
     "description": "Damage component for tec_youmu_hilt_nudge ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -26,7 +26,7 @@
   {
     "id": "youmu_knee_slasher",
     "type": "SPELL",
-    "name": "Knee slasher (damage)",
+    "name": { "str": "Knee slasher (damage) (tec)" },
     "description": "Damage component for tec_youmu_knee_slasher ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -49,7 +49,7 @@
   {
     "id": "youmu_knee_slasher2",
     "type": "SPELL",
-    "name": "Knee slasher (cc)",
+    "name": { "str": "Knee slasher (cc) (tec)" },
     "description": "Slow component for youmu_knee_slasher ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -71,7 +71,7 @@
   {
     "id": "youmu_stinger",
     "type": "SPELL",
-    "name": "Stinger (damage)",
+    "name": { "str": "Stinger (damage) (tec)" },
     "description": "Damage component for tec_youmu_stinger ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -106,15 +106,15 @@
     "max_damage": 1,
     "min_aoe": 3,
     "max_aoe": 3,
-    "min_duration": { "math": [ "( (u_skill('cutting') * 90 ) + (u_skill('dodge') * 90 ) + 990 )" ] },
-    "max_duration": 3600,
+    "min_duration": { "math": [ "( (u_skill('cutting') * 320 ) + (u_skill('dodge') * 320 ) + 320 )" ] },
+    "max_duration": 9600,
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 100,
     "base_energy_cost": 100,
     "energy_source": "MANA",
     "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ],
-    "//": "min dur 1800"
+    "//": "min dur 3200"
   },
   {
     "id": "youmu_halfbody",
@@ -130,15 +130,15 @@
     "max_damage": 1,
     "min_aoe": 3,
     "max_aoe": 3,
-    "min_duration": { "math": [ "( (u_skill('cutting') * 90 ) + (u_skill('dodge') * 90 ) + 990 )" ] },
-    "max_duration": 3600,
+    "min_duration": { "math": [ "( (u_skill('cutting') * 320 ) + (u_skill('dodge') * 320 ) + 320 )" ] },
+    "max_duration": 9600,
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 100,
     "base_energy_cost": 100,
     "energy_source": "MANA",
     "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ],
-    "//": "min dur 1800"
+    "//": "min dur 3200"
   },
   {
     "id": "youmu_reflectionslash",
@@ -182,7 +182,7 @@
   {
     "id": "youmu_slasheternal2_cut",
     "type": "SPELL",
-    "name": { "str": "Slash of the eternal future" },
+    "name": { "str": "Slash of the eternal future (cut)" },
     "description": "Slash repeatedly and very quickly in front of you.",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -205,7 +205,7 @@
   {
     "id": "youmu_slasheternal3_cut",
     "type": "SPELL",
-    "name": { "str": "Slash of the eternal future (slashes) (cut)" },
+    "name": { "str": "Slash of the eternal future (cut) (slashes)" },
     "description": "Damage component for youmu_slasheternal ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -232,7 +232,7 @@
   {
     "id": "youmu_slasheternal2_bash",
     "type": "SPELL",
-    "name": { "str": "Slash of the eternal future" },
+    "name": { "str": "Slash of the eternal future (bash)" },
     "description": "Slash repeatedly and very quickly in front of you.",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -255,7 +255,7 @@
   {
     "id": "youmu_slasheternal3_bash",
     "type": "SPELL",
-    "name": { "str": "Slash of the eternal future (slashes) (bash)" },
+    "name": { "str": "Slash of the eternal future (bash) (slashes)" },
     "description": "Damage component for youmu_slasheternal ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],

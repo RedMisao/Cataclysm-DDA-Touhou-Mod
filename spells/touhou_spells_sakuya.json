@@ -118,7 +118,7 @@
     "id": "sakuya_maidsecret",
     "type": "SPELL",
     "name": "Maid's secret",
-    "description": "Employ your secret technique to keep the Mansion clean all the time, increasing your momentum and recovery rate.  Your concentration will be broken if you get tired, or by enemies getting close.  Cast again to toggle OFF.",
+    "description": "Employ your secret technique to keep the Mansion clean all the time, increasing your momentum and recovery rate.  Your concentration will be broken if you get tired, by enemies getting close, or if receiving damage.  Cast again to toggle OFF.",
     "spell_class": "NONE",
     "valid_targets": [ "self" ],
     "effect": "effect_on_condition",
@@ -131,8 +131,7 @@
     "base_energy_cost": 50,
     "energy_source": "MANA",
     "flags": [ "EXTRA_EFFECTS_FIRST", "IGNORE_WALLS", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],
-    "//": "aoe is 14 - 6, scaling down with skills (see below for the formula)",
-    "//2": "This should also break after attacking or being attacked, but currently there seems no way to check either"
+    "//": "aoe is 14 - 6, scaling down with skills (see below for the formula)"
   },
   {
     "id": "sakuya_maidsecret2",
@@ -234,7 +233,7 @@
     "min_aoe": 6,
     "max_aoe": 6,
     "max_level": 1,
-    "difficulty": -11,
+    "difficulty": -50,
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",

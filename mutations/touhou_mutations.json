@@ -10,7 +10,6 @@
     "starting_trait": false,
     "valid": false,
     "armor": [ { "parts": "ALL", "bash": 8, "cut": 8, "stab": 8, "bullet": 16, "acid": 8, "cold": 8, "electric": 8, "heat": 8 } ],
-    "stamina_regen_modifier": 0.25,
     "wet_protection": [
       { "part": "LEG_L", "neutral": 3 },
       { "part": "LEG_R", "neutral": 3 },
@@ -21,7 +20,10 @@
     "enchantments": [ 
       { 
         "condition": "ALWAYS", 
-        "values": [ { "value": "PAIN", "multiply": -0.16 } ] 
+        "values": [ 
+          { "value": "PAIN", "multiply": -0.16 }, 
+          { "value": "STAMINA_REGEN_MOD", "add": 0.25 }
+        ] 
       } 
     ],
     "cancels": [ "FLIMSY", "FLIMSY2", "FLIMSY3", "PAINRESIST", "THICKSKIN", "THINSKIN", "TOUGH", "TOUGH2", "TOUGH3" ],
@@ -145,8 +147,18 @@
     "valid": false,
     "ugliness": 2,
     "visibility": 8,
-    "bodytemp_modifiers": [ -1333, 0 ],
-    "//": "Recheck mutation after adding the ghosts and youkai enemies"
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "CLIMATE_CONTROL_HEAT", "add": 35 }
+        ] 
+      } 
+    ],
+    "anger_relations": [ 
+      [ "GHOST_TOUHOU", -20 ], 
+      [ "PHANTOM_TOUHOU", -20 ] 
+    ]
   },
   {
     "id": "HELLRAVEN_SPECIES",
@@ -159,7 +171,6 @@
     "starting_trait": false,
     "valid": false,
     "armor": [ { "parts": "ALL", "heat": 2 } ],
-    "weakness_to_water": 1,
     "enchantments": [ 
       { 
         "condition": "ALWAYS", 
@@ -167,7 +178,9 @@
           { "value": "INTELLIGENCE", "add": -2 },
           { "value": "MAX_MANA", "add": 200 },
           { "value": "ARMOR_HEAT", "multiply": -0.66 },
-          { "value": "MOVE_COST", "multiply": -0.2 }
+          { "value": "CLIMATE_CONTROL_CHILL", "add": 20 },
+          { "value": "MOVE_COST", "multiply": -0.2 },
+          { "value": "WEAKNESS_TO_WATER", "add": 0.0006 }
         ] 
       } 
     ]
@@ -185,6 +198,8 @@
       { 
         "condition": "ALWAYS", 
         "values": [ 
+          { "value": "CLIMATE_CONTROL_CHILL", "add": 50 },
+          { "value": "CLIMATE_CONTROL_HEAT", "add": 50 },
           { "value": "METABOLISM", "multiply": -0.66 }
         ] 
       } 
@@ -236,7 +251,6 @@
     "active": true,
     "ugliness": 4,
     "visibility": 4,
-    "crafting_speed_multiplier": 0.8,
     "social_modifiers": { "intimidate": -4, "persuade": 2 },
     "thirst_modifier": 0.2,
     "wet_protection": [
@@ -257,6 +271,7 @@
         "values": [ 
           { "value": "ARMOR_COLD", "multiply": -0.33 },
           { "value": "ARMOR_HEAT", "multiply": 0.33 },
+          { "value": "CRAFTING_SPEED_MULTIPLIER", "multiply": 1.2 },
           { "value": "MOVECOST_SWIM_MOD", "multiply": -0.33 }
         ] 
       } 
@@ -277,14 +292,15 @@
     "active": true,
     "ugliness": 4,
     "visibility": 4,
-    "weakness_to_water": 1,
     "enchantments": [ 
       { 
         "condition": "ALWAYS", 
         "values": [ 
           { "value": "ARMOR_COLD", "multiply": 0.33 },
           { "value": "ARMOR_HEAT", "multiply": -0.33 },
-          { "value": "FALL_DAMAGE", "multiply": -0.33 }
+          { "value": "CLIMATE_CONTROL_CHILL", "add": 20 },
+          { "value": "FALL_DAMAGE", "multiply": -0.33 },
+          { "value": "WEAKNESS_TO_WATER", "add": 0.0006 }
         ] 
       } 
     ],
@@ -300,22 +316,25 @@
     "description": "You're a feline-looking youkai originating from (Former) Hell.  Currently, you're transformed into your feline-like form.  Activate the mutation to switch to human form.",
     "active": true,
     "social_modifiers": { "persuade": -4 },
-    "stamina_regen_modifier": 0.2,
     "ugliness": 0,
     "visibility": 0,
-    "weakness_to_water": 2,
     "encumbrance_always": [ [ "hand_l", 30 ], [ "hand_r", 30 ] ],
     "override_look": { "id": "mon_cat_black", "tile_category": "monster" },
     "enchantments": [
       {
         "condition": "ALWAYS",
         "values": [
+          { "value": "ARMOR_COLD", "multiply": 0.33 },
+          { "value": "ARMOR_HEAT", "multiply": -0.33 },
           { "value": "CARRY_WEIGHT", "multiply": -0.66 },
+          { "value": "CLIMATE_CONTROL_CHILL", "add": 20 },
           { "value": "FALL_DAMAGE", "multiply": -0.66 },
           { "value": "FOOTSTEP_NOISE", "multiply": -0.66 },
           { "value": "MELEE_DAMAGE", "multiply": -0.5 },
           { "value": "METABOLISM", "multiply": -0.5 },
-          { "value": "MOVE_COST", "multiply": -0.1 }
+          { "value": "MOVE_COST", "multiply": -0.1 },
+          { "value": "STAMINA_REGEN_MOD", "add": 0.2 },
+          { "value": "WEAKNESS_TO_WATER", "add": 0.0012 }
         ]
       },
       { 
@@ -433,7 +452,6 @@
     "starting_trait": false,
     "valid": false,
     "armor": [ { "parts": "ALL", "bash": -2 } ],
-    "stamina_regen_modifier": 0.25,
     "ugliness": -1,
     "enchantments": [
       {
@@ -442,7 +460,8 @@
           { "value": "DEXTERITY", "add": 2 }, 
           { "value": "INTELLIGENCE", "add": 1 },
           { "value": "CARRY_WEIGHT", "multiply": -0.2 },
-          { "value": "MOVE_COST", "multiply": -0.2 }
+          { "value": "MOVE_COST", "multiply": -0.2 },
+          { "value": "STAMINA_REGEN_MOD", "add": 0.25 }
         ],
         "mutations": [ "TOLERANCE" ]
       }
@@ -511,7 +530,6 @@
     "ugliness": -4,
     "visibility": 1,
     "vitamins_absorb_multi": [ [ "veggy", [ [ "vitA", 0.33 ], [ "vitB", 0.33 ], [ "vitC", 0.33 ], [ "calcium", 0.33 ], [ "iron", 0.33 ] ] ] ],
-    "weakness_to_water": 2,
     "enchantments": [
       {
         "condition": "ALWAYS",
@@ -521,7 +539,8 @@
           { "value": "PERCEPTION", "add": 2 },
           { "value": "STRENGTH", "add": 2 },
           { "value": "ARMOR_STAB", "multiply": 1 },
-          { "value": "MOVE_COST", "multiply": -0.2 }
+          { "value": "MOVE_COST", "multiply": -0.2 },
+          { "value": "WEAKNESS_TO_WATER", "add": 0.0012 }
         ],
         "mutations": [ "CANNIBAL", "SUNBURN" ]
       }
@@ -743,6 +762,15 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "CLIMATE_CONTROL_CHILL", "add": 15 },
+          { "value": "CLIMATE_CONTROL_HEAT", "add": 20 }
+        ] 
+      } 
+    ],
     "flags": [ "GLARE_RESIST", "HEAT_IMMUNE", "NO_RADIATION", "PARAIMMUNE" ]
   },
   {
@@ -835,7 +863,6 @@
     "valid": false,
     "allowed_items": [ "KASEN_BANDAGES" ],
     "no_cbm_on_bp": [ "arm_upper_r", "arm_elbow_r", "arm_lower_r", "hand_r" ],
-    "restricts_gear": [ "arm_r", "hand_r" ],
     "social_modifiers": { "lie": -99 },
     "visibility": 2,
     "ugliness": -2,
@@ -864,7 +891,8 @@
     "cancels": [ "ARM_FEATHERS", "BARBS", "BENDY1", "BURROW", "BURROWLARGE", "CLAWS", "CLAWS_RAT", "CLAWS_RETRACT", "CLAWS_ST", "CLAWS_TENTACLE", "CRUSTACEAN_CLAW", "NAILS", "PAWS", "PAWS_LARGE", "PAWS_LITTLE", "SLIME_HANDS", "TALONS", "WEBBED",
     "CLUMSY", "LIGHT_BONES", "LIGHTWEIGHT", "NO_RIGHT_ARM", "PRETTY", "UGLY", "DEFORMED", "DEFORMED2", "DEFORMED3" ],
     "//2": "Overrides the current WIP mutation NO_RIGHT_ARM ",
-    "//3": "Currently, while arm_stub_r can be added, it immediately breaks after starting (no actual effect). Also, it displays the un-handed right arm, and while kasen_bandages grants the proper arm + hand, smashing stuff proccs the stub smash_message instead of the restored limb"
+    "//3": "The restricts_gear field is not set, as while it makes sense it cannot be removed by equipping kasen_bandages , or at least I don't know how to remove the field via enchantments",
+    "//4": "Currently, while arm_stub_r can be added, it immediately breaks after starting (no actual effect). Also, it displays the un-handed right arm, and while kasen_bandages grants the proper arm + hand, smashing stuff proccs the stub smash_message instead of the restored limb"
   },
   {
     "id": "PROF_KOKORO",
@@ -876,8 +904,15 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "cardio_multiplier": 1.25,
     "initial_ma_styles": [ "style_kokoro" ],
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "CARDIO_MULTIPLIER", "multiply": 0.25 }
+        ]
+      } 
+    ],
     "cancels": [ "JEKYLL", "SEASONAL_AFFECTIVE", "GOODCARDIO", "GOODCARDIO2", "OPTIMISTIC", "BADKNEES", "REALLYBADKNEES", "BADCARDIO", "BADTEMPER", "MOODSWINGS" ],
     "flags": [  ]
   },
@@ -891,13 +926,15 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "fatigue_modifier": 0.25,
-    "fatigue_regen_modifier": 0.25,
     "initial_ma_styles": [ "style_meiling" ],
     "enchantments": [ 
       { 
         "condition": "ALWAYS", 
-        "values": [ { "value": "SLEEPY", "add": 25 } ]
+        "values": [ 
+          { "value": "FATIGUE_REGEN", "multiply": 0.25 },
+          { "value": "FATIGUE", "multiply": 0.25 }, 
+          { "value": "SLEEPY", "add": 25 } 
+        ]
       } 
     ],
     "cancels": [ "EASYSLEEPER", "EASYSLEEPER2", "HEAVYSLEEPER2", "INSOMNIA", "SLEEPY", "SLEEPY2" ],
@@ -955,6 +992,16 @@
     ]
   },
   {
+    "id": "PROF_REISEN",
+    "type": "mutation",
+    "name": { "str": "Reisen" },
+    "description": "Reisen's specific profession flag",
+    "points": 0,
+    "player_display": false,
+    "purifiable": false,
+    "valid": false
+  },
+  {
     "id": "PROF_REMI",
     "type": "mutation",
     "name": { "str": "Eternal Young Scarlet Moon" },
@@ -972,23 +1019,23 @@
     "id": "PROF_SAKUYA",
     "type": "mutation",
     "name": { "str": "Sakuya" },
-    "description": "Sakuya's specific CHANGING flag.",
+    "description": "Sakuya's specific profession flag",
     "points": 0,
     "player_display": false,
     "purifiable": false,
     "valid": false,
-    "flags": [ "CHANGING", "SQUEAMISH", "TABLEMANNERS" ]
+    "flags": [ "SQUEAMISH", "TABLEMANNERS" ]
   },
   {
     "id": "PROF_SEIGA",
     "type": "mutation",
     "name": { "str": "Seiga" },
-    "description": "Seiga's specific CHANGING flag.",
+    "description": "Seiga's specific profession flag",
     "points": 0,
     "player_display": false,
     "purifiable": false,
     "valid": false,
-    "flags": [ "CHANGING" ]
+    "flags": [  ]
   },
   {
     "id": "PROF_TENKO",
@@ -1002,6 +1049,16 @@
     "valid": false,
     "initial_ma_styles": [ "style_celestial_brawling_tenko" ],
     "flags": [ "HATES_BOOKS", "SLOWLEARNER" ]
+  },
+  {
+    "id": "PROF_UDONGE",
+    "type": "mutation",
+    "name": { "str": "Udonge" },
+    "description": "Udonge's specific profession flag",
+    "points": 0,
+    "player_display": false,
+    "purifiable": false,
+    "valid": false
   },
   {
     "id": "PROF_YAMAME",

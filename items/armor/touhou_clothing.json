@@ -167,7 +167,6 @@
     "symbol": "[",
     "looks_like": "vest_leather",
     "color": "black",
-    "weight_capacity_bonus": "1 kg",
     "warmth": 15,
     "armor": [ { "covers": [ "torso" ], "coverage": 40, "encumbrance": [ 2, 8 ] } ],
     "flags": [ "VARSIZE" ]
@@ -296,7 +295,18 @@
     "warmth": 10,
     "armor": [
       { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 0, 4 ] },
-      { "covers": [ "arm_l", "arm_r" ], "coverage": 50, "encumbrance": [ 0, 4 ] }
+      {
+        "covers": [ "arm_l", "arm_r" ],
+        "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ],
+        "coverage": 100,
+        "encumbrance": [ 0, 4 ]
+      },
+      {
+        "covers": [ "arm_l", "arm_r" ],
+        "specifically_covers": [ "arm_upper_l", "arm_upper_r" ],
+        "coverage": 35,
+        "encumbrance": [ 0, 4 ]
+      }
     ],
     "flags": [ "VARSIZE", "FANCY" ]
   },
@@ -365,7 +375,6 @@
     "symbol": "[",
     "looks_like": "vest_leather",
     "color": "blue",
-    "weight_capacity_bonus": "1 kg",
     "warmth": 15,
     "armor": [ { "covers": [ "torso" ], "coverage": 85, "encumbrance": [ 0, 4 ] } ],
     "flags": [ "VARSIZE" ]
@@ -1298,7 +1307,6 @@
     "symbol": "[",
     "looks_like": "vest_leather",
     "color": "green",
-    "weight_capacity_bonus": "1 kg",
     "warmth": 15,
     "armor": [ { "covers": [ "torso" ], "coverage": 85, "encumbrance": [ 0, 4 ] } ],
     "flags": [ "VARSIZE" ]

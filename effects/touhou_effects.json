@@ -188,6 +188,17 @@
     "//note": "This could be a debuff on nearby enemies instead, by removing *you* from their sight, including your smell and reducing your sound to zero. Hmm..."
   },
   {
+    "id": "kasen_calorieburn",
+    "type": "effect_type",
+    "name": [ "Metabolic meditation (effect)" ],
+    "desc": [ "You're burning calories for spiritual energy." ],
+    "apply_message": "You're concentrated, turning your physical into spiritual energy…",
+    "remove_message": "You exit your meditative state.",
+    "max_intensity": 1,
+    "max_effective_intensity": 1,
+    "//": "Dummy effect, used just so it can print the messages in the P window"
+  },
+  {
     "id": "kokoro_anger_effect",
     "type": "effect_type",
     "name": [ "Hannya mask (anger)" ],
@@ -772,6 +783,14 @@
     "max_effective_intensity": 1
   },
   {
+    "id": "seiga_corpsecurse_effect",
+    "type": "effect_type",
+    "name": [ "Curse of corpses (effect)" ],
+    "desc": [ "You're cursed to something worse than eternal rest." ],
+    "max_intensity": 1,
+    "max_effective_intensity": 1
+  },
+  {
     "id": "seiga_cripple_effect_short",
     "type": "effect_type",
     "name": [ "Cripple (curse)" ],
@@ -823,6 +842,21 @@
     "flags": [ "LEVITATION" ]
   },
   {
+    "id": "udonge_barrierwave",
+    "type": "effect_type",
+    "name": [ "Barrier wave (effect)" ],
+    "desc": [ "Ignoring incoming attacks." ],
+    "rating": "good",
+    "enchantments": [ 
+      { "values": [ { "value": "FORCEFIELD", "add": 1 } ] },
+      {
+        "condition": "ALWAYS",
+        "hit_me_effect": [ { "id": "udonge_warrierwave_vfx", "hit_self": true } ]
+      }
+    ],
+    "removes_effects": [ "udonge_insight", "udonge_mfortitude", "udonge_perception", "udonge_stealth" ]
+  },
+  {
     "id": "udonge_insight",
     "type": "effect_type",
     "name": [ "Wavelength manipulation (Insight)" ],
@@ -831,7 +865,7 @@
     "remove_message": "You relax your thoughts.",
     "rating": "good",
     "base_mods": { "int_mod": [ 2 ], "pkill_amount": [ -1 ], "stim_amount": [ 2 ] },
-    "removes_effects": [ "udonge_mfortitude", "udonge_perception", "udonge_stealth" ]
+    "removes_effects": [ "udonge_barrierwave", "udonge_mfortitude", "udonge_perception", "udonge_stealth" ]
   },
   {
     "id": "udonge_mfortitude",
@@ -841,7 +875,7 @@
     "apply_message": "You enter a mindfulness-like state.",
     "remove_message": "You relax your thoughts.",
     "rating": "good",
-    "removes_effects": [ "fearparalyze", "taint", "tindrift", "visuals", "udonge_insight", "udonge_perception", "udonge_stealth" ]
+    "removes_effects": [ "fearparalyze", "taint", "tindrift", "visuals", "udonge_barrierwave", "udonge_insight", "udonge_perception", "udonge_stealth" ]
   },
   {
     "id": "udonge_perception",
@@ -852,7 +886,7 @@
     "remove_message": "Your vision becomes normal again.",
     "rating": "good",
     "base_mods": { "per_mod": [ 2 ] },
-    "removes_effects": [ "udonge_insight", "udonge_mfortitude", "udonge_stealth" ],
+    "removes_effects": [ "udonge_barrierwave", "udonge_insight", "udonge_mfortitude", "udonge_stealth" ],
     "flags": [ "INFRARED", "NIGHT_VISION", "SUPER_HEARING" ]
   },
   {
@@ -863,7 +897,7 @@
     "apply_message": "Your wavelength becomes minimal, turning you invisible.",
     "remove_message": "You become perceptible again.",
     "rating": "good",
-    "removes_effects": [ "udonge_insight", "udonge_mfortitude", "udonge_perception" ],
+    "removes_effects": [ "udonge_barrierwave", "udonge_insight", "udonge_mfortitude", "udonge_perception" ],
     "flags": [ "INVISIBLE", "NO_SCENT" ]
   },
   {
@@ -881,6 +915,15 @@
     "name": [ "Knee slasher (effect)" ],
     "desc": [ "Movement speed is reduced." ],
     "base_mods": { "speed_mod": [ -20 ] },
+    "max_intensity": 1,
+    "max_effective_intensity": 1
+  },
+  {
+    "id": "youmumyon2_slasheternal2_slow",
+    "type": "effect_type",
+    "name": [ "Phantom aura (effect)" ],
+    "desc": [ "Movement speed is reduced." ],
+    "base_mods": { "speed_mod": [ -25 ] },
     "max_intensity": 1,
     "max_effective_intensity": 1
   }

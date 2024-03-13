@@ -17,200 +17,6 @@
     "energy_source": "MANA"
   },
   {
-    "id": "kaenbyou_vspossess",
-    "type": "SPELL",
-    "name": { "str": "Possession: Vengeful spirit" },
-    "description": "Command the targeted vengeful spirit to possess a nearby zombie.",
-    "spell_class": "NONE",
-    "valid_targets": [ "ally" ],
-    "targeted_monster_ids": [ "mon_vengeful_spirit" ],
-    "effect": "effect_on_condition",
-    "effect_str": "kaenbyou_vspossess_eoc",
-    "shape": "blast",
-    "min_range": 4,
-    "max_range": 4,
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 66,
-    "base_energy_cost": 66,
-    "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "VERBAL" ]
-  },
-  {
-    "id": "vs_possess_tag_spell",
-    "type": "SPELL",
-    "name": { "str": "Possession: Vengeful spirit (spell tag)" },
-    "description": "This is casted by mon_vengeful_spirit and forces those under the aoe to run the EOC, which adds var_ for each enemy under the aoe",
-    "spell_class": "NONE",
-    "valid_targets": [ "ally", "hostile", "self" ],
-    "effect": "effect_on_condition",
-    "effect_str": "vs_possess_tag_eoc",
-    "shape": "blast",
-    "min_aoe": 20,
-    "max_aoe": 20,
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "NO_FAIL", "NO_HANDS", "NO_LEGS", "SILENT" ]
-  },
-  {
-    "id": "vs_possess_possessed",
-    "type": "SPELL",
-    "name": { "str": "Possession: Vengeful spirit (summoning mon_vengeful_posessed )" },
-    "description": " ",
-    "spell_class": "NONE",
-    "valid_targets": [ "ally", "hostile", "self" ],
-    "effect": "attack",
-    "shape": "blast",
-    "damage_type": "pure",
-    "min_damage": 999,
-    "max_damage": 999,
-    "min_aoe": 16,
-    "max_aoe": 16,
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_HANDS", "NO_LEGS", "SILENT" ]
-  },
-  {
-    "id": "vs_possess_chasm",
-    "type": "SPELL",
-    "name": { "str": "Possession: Vengeful spirit (summoning mon_vengeful_chasm )" },
-    "description": " ",
-    "spell_class": "NONE",
-    "valid_targets": [ "ally", "hostile", "self" ],
-    "effect": "attack",
-    "shape": "blast",
-    "damage_type": "pure",
-    "min_damage": 999,
-    "max_damage": 999,
-    "min_aoe": 16,
-    "max_aoe": 16,
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_HANDS", "NO_LEGS", "SILENT" ]
-  },
-  {
-    "id": "kaenbyou_vspossess_eoc",
-    "type": "effect_on_condition",
-    "effect": [
-      { "math": [ "u_var_vspossess_selected", "+=", "1" ] },
-      { "u_cast_spell": { "id": "vs_possess_tag_spell" }, "targeted": false }
-    ],
-    "//": "_selected identifies that specific mon_vengeful_spirit as the 'source' of everything else downstream",
-    "//2": "The chain below is broken btw, I was testing for the vs to cast the 999 pure dmg spells in aoe above, but they don't do it"
-  },
-  {
-    "id": "vs_possess_tag_eoc",
-    "type": "effect_on_condition",
-    "effect": [
-      { "math": [ "var_vspossess_counter_vs", "+=", "1" ] },
-      {
-        "run_eocs": [
-          {
-            "id": "vs_possess_tag_1",
-            "condition": { "math": [ "u_monsters_nearby('mon_zombie', 'radius': 3)", ">", "0" ] },
-            "effect": [
-              { "math": [ "var_vspossess_counter_zombie", "+=", "1" ] }
-            ]
-          },
-          {
-            "id": "vs_possess_tag_2",
-            "condition": { "math": [ "u_monsters_nearby('mon_vengeful_spirit', 'radius': 3)", ">", "0" ] },
-            "effect": [
-              { "math": [ "var_vspossess_counter_vs", "+=", "1" ] }
-            ]
-          },
-          {
-            "id": "vs_possess_tag_3",
-            "condition": {
-              "and": [
-                { "math": [ "u_var_vspossess_selected", ">=", "1" ] },
-                { "math": [ "var_vspossess_counter_zombie", ">=", "1" ] },
-                { "math": [ "var_vspossess_counter_vs", "==", "1" ] }
-              ]
-            },
-            "effect": [
-              { "math": [ "var_vspossess_counter_zombie", "=", "0" ] },
-              { "math": [ "var_vspossess_counter_vs", "=", "0" ] },
-              { "u_cast_spell": { "id": "vs_possess_possessed" }, "targeted": false }
-            ]
-          },
-          {
-            "id": "vs_possess_tag_4",
-            "condition": {
-              "and": [
-                { "math": [ "u_var_vspossess_selected", ">=", "1" ] },
-                { "math": [ "var_vspossess_counter_zombie", ">=", "1" ] },
-                { "math": [ "var_vspossess_counter_vs", ">=", "1" ] }
-              ]
-            },
-            "effect": [
-              { "math": [ "var_vspossess_counter_zombie", "=", "0" ] },
-              { "math": [ "var_vspossess_counter_vs", "=", "0" ] },
-              { "u_cast_spell": { "id": "vs_possess_chasm" }, "targeted": false }
-            ]
-          },
-          {
-            "id": "vs_possess_tag_5",
-            "effect": [
-              { "queue_eocs": [ "vs_possess_end" ], "time_in_future": "2 s" }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "vs_possess_possessed_eoc",
-    "type": "effect_on_condition",
-    "effect": [
-      {
-        "run_eocs": [
-          {
-            "id": "vs_possess_possessed_1",
-            "condition": {
-              "or": [
-                { "math": [ "u_var_vspossess_zombie", ">=", "1" ] },
-                {
-                  "and": [
-                    { "math": [ "u_var_vspossess_vs", ">=", "1" ] },
-                    { "math": [ "u_var_vspossess_selected", "==", "0" ] }
-                  ]
-                }
-              ]
-            },
-            "effect": [ "u_die" ]
-          },
-          {
-            "id": "vs_possess_possessed_2",
-            "condition": { "math": [ "u_var_vspossess_selected", ">=", "1" ] },
-            "effect": [ { "u_spawn_monster": "mon_vengeful_posessed", "real_count": 1, "min_radius": 1, "max_radius": 2 } ]
-          },
-          {
-            "id": "vs_possess_possessed_3",
-            "effect": [ "u_die" ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "vs_possess_end",
-    "type": "effect_on_condition",
-    "effect": [
-      { "math": [ "var_vspossess_counter_zombie", "=", "0" ] },
-      { "math": [ "var_vspossess_counter_vs", "=", "0" ] }
-    ]
-  },
-  {
     "id": "sakuya_knifepull",
     "type": "SPELL",
     "name": { "str": "Knife retrieval" },
@@ -361,6 +167,76 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_PROJECTILE", "SILENT" ]
+  },
+  {
+    "id": "seiga_corpsecurse3",
+    "type": "SPELL",
+    "name": { "str": "Curse of corpses (EOC) (2)" },
+    "description": "Subpsell that adds a random dot effect on the rezzed target",
+    "spell_class": "NONE",
+    "valid_targets": [ "ally", "hostile", "none" ],
+    "ignored_monster_species": [ "HALLUCINATION", "HORROR", "MIGO", "NETHER_EMANATION" ],
+    "effect": "effect_on_condition",
+    "effect_str": "seiga_corpsecurse_rezzed_eoc",
+    "shape": "blast",
+    "max_level": 1,
+    "difficulty": -11,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_HANDS", "NO_LEGS", "SILENT" ],
+    "//": "This doesn't work because I can't find a way to tag the monster rezzed by seiga_corpsecursed_check ",
+    "//2": "Tried to set the target's location with a npc_location but the rezzed monster can spawn very far away regardless, so the u_cast_spell for this (used upon the rezzed monster) fails as there's nothing in the location"
+  },
+  {
+    "id": "seiga_corpsecurse_rezzed_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "run_eocs": [ "seiga_corpsecurse_rezzed_timer_1" ] }
+    ],
+    "//": "This EOC is a simplified version of yamame_disease_icypyrexia_eoc ",
+    "//2": "It rolls a random var and runs every 1 s, if the random var is exactly 1 it casts the spell, which deals 1 unavoidable dmg",
+    "//3": "This doesn't stop, so it runs until the target is dead"
+  },
+  {
+    "id": "seiga_corpsecurse_rezzed_timer_1",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_corpsecurse", "=", "rand(9)" ] },
+      { "run_eocs": [ "seiga_corpsecurse_rezzed_timer_1_2" ] }
+    ]
+  },
+  {
+    "id": "seiga_corpsecurse_rezzed_timer_1_2",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_corpsecurse", "==", "1" ] },
+    "effect": [
+      { "u_cast_spell": { "id": "seiga_corpsecurse4" } },
+      { "queue_eocs": [ "seiga_corpsecurse_rezzed_timer_1" ], "time_in_future": "1 s" }
+    ],
+    "false_effect": [ 
+      { "queue_eocs": [ "seiga_corpsecurse_rezzed_timer_1" ], "time_in_future": "1 s" }
+    ]
+  },
+  {
+    "id": "seiga_corpsecurse4",
+    "type": "SPELL",
+    "name": { "str": "Curse of corpses (dmg)" },
+    "description": "Dmg for the rezz curse of seiga_corpsecurse ",
+    "valid_targets": [ "self" ],
+    "shape": "blast",
+    "effect": "attack",
+    "damage_type": "pure",
+    "min_damage": 1,
+    "max_damage": 1,
+    "min_pierce": 999,
+    "max_pierce": 999,
+    "max_level": 1,
+    "difficulty": -50,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SILENT" ]
   },
   {
     "id": "yamame_damnedrope_UPDATED",
