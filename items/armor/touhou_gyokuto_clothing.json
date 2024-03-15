@@ -196,7 +196,7 @@
     "id": "ldc_tie",
     "type": "ARMOR",
     "category": "armor",
-    "name": { "str": "red tie (LDC training uniform)", "str_pl": "red ties (training)" },
+    "name": { "str": "red tie (LDC training uniform)", "str_pl": "red ties (LDC training uniform)" },
     "description": "A red necktie.  This is worn by trainees of the Lunar Defense Corps.",
     "volume": "25 ml",
     "weight": "20 g",
