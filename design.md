@@ -1,4 +1,4 @@
-# Design (last updated 2024-01-05)
+# Design (last updated 2024-03-17)
 
 An attempt to explain how balance is done, or rather why is missing, from the mod and the Expansion.  I'm assuming the reader is acquainted with Touhou, so I'm skipping Touhou's setting and common jargon.  Check the (#-glossary) if you need to understand the terminology I use for convenience
 **WARNING**: contains spoilers
@@ -44,14 +44,14 @@ Regardless of what the ability is, it's better to make them actives (i.e. spells
 
 The fourth is more of a constraint: what I can't, or don't know how to do
 One example are Youkai, who naturally prey on humans, specifically their emotions (mostly by causing fear), but also their flesh (perhaps because that's scary).  Thus, applying the `PSYCHOPATH` and `CANNIBAL` mutations is the closest approximation, but not the correct one to make: Youkai should get no bonuses nor demerits from eating human flesh, while getting small demerits *when not* eating human flesh
-A second example is Youmu having her phantom half floating around all the time (or even to materialize it as a clone, for a short time), which would be interesting to manage, like duplicate her attacks, or enable new abilities
+A second example is Youmu having her phantom half floating around all the time (or even to materialize it as a clone, for a short time), which would be interesting to manage, like duplicate her attacks, or enable new abilities.  While monsters can now replicate spells, their AI is kind of... underwhelming to allow Youmu's phantom half as a "true pet"
 
-Some features, like those examples, are thus half-baked into the mod
+Some features, like those examples, are thus present but unfinished
 
 
 ## Combat
 
-The standard combat scenario is when the PC fights a group of enemies over a very short period of time (1 - 5 ingame min).  After that, the player reconsiders if they want to continue, or go away.  Yet in cdda it is the pain mechanic, not HP, what soft-locks players from reentering combat: pain slows the PC down and makes it prone to fail attacks and dodges, which quickly results in a spiral of avatar death.
+The standard combat scenario is when the PC fights a group of enemies over a very short period of time (1 - 5 ingame min).  After that, the player reconsiders if they want to continue, or go away.  Yet in cdda it is the pain mechanic, not HP, what soft-locks players from reentering combat: pain slows the PC down and makes it prone to fail attacks and dodges, which quickly results in a spiral of avatar death
     
 Pain is thus, the first element players have to deal with during and after combat.  The mod tries to be balanced around the idea of enabling the different roles/fantasies (2hus and some TH setting) without getting too far away from basic cdda combat.  In other words, the answer to the question of "How would your [insert your favorite Touhou] survive during the apocalypse?".  A major component of this are spells
 
@@ -65,28 +65,82 @@ Another difference is mana recovery time, which is increased x4 - x12.  This ena
 
 #### The XP system
 
-The XP system for spells is less than optimal (for me).  Basically, the PC has to cast spells, **repeatedly**, in order to level up and increase its numbers.  However, this process is **very** repetitive, boring, takes a long time, and can't be customized.  This result are three different outcomes for virtually all spells:
+For me, how the XP system for spells works is less than optimal.  Basically, the PC has to cast spells, **repeatedly**, in order to level up and increase its numbers.  However, this process is **very** repetitive, boring, takes a long time, and allows little customization.  This result are three different outcomes for virtually all spells:
 1. The spell starts weak, and becomes strong
 2. The spell starts strong, and becomes slightly stronger
 3. The spell is at a fixed level (no scaling)
 
 
-#### How to balance spells around the XP system, part 1
+#### Goodbye, XP system
 
-This is evidently a problem for the most common type of spell: the one that deals damage.  If it starts weak, then it feels weak (not fun) unless there's heavy investment from the player (not fun).  If the spell starts strong, then it is immediately better than any alternatives (unless heavy unfun restrictions apply) plus it removes some of the progression component (less reward).  If the spell is at a fixed level, then it's either case but without any progression at all (no reward)
+As of the last few experimental updates (and hopefully for 0.I), `math` can now be used in some fields that support number values.  This is a **huge** change regarding modding (you probably have felt it if you play Magiclysm or Xedra Evolved), as this allows not just pulling values from elsewhere, but also combine them in mathematical expressions and formulas.  I cannot put in words the amount of depth this enables
 
-Setting the initial dmg values of spells at 50 - 100% HP of the average zombie partially fixes spells not feeling powerful.  The damage cap goes from x2 to x3 the initial damage, depending if it's AoE or ST, so they're guaranteed to feel powerful in the late-game.  The PC is also able to cast 6 spells per fight, on average.  These two assumptions mean the PC is able to clear a group of 3 - 6 enemies then rest and continue, or dispatch that number from a larger group and take the rest with melee
+After realizing this could be done I immediately updated **all** character spells to scale with their skill instead of XP.  I believe this is a much more balanced **and** impactful way for the player to control their character's growth, given skills are mostly linked to character progression itself, instead of forcing them to grind for specific spells or schools (the latter doesn't really apply to this mod)
+
+I do realize a few shortcomings, which nonetheless are smaller in comparison to the drawbacks of normal spell leveling
+First, which skills to use for each character.  Given characters have different starting stats, a single skill cannot be used as standard for all characters (except `dodge`).  This is also a positive, as they're intended to have different playstyles (which wouldn't be the case by using `dodge` and forcing everyone to go melee everything)
+Second, how skill leveling is handled by cdda.  Very straightforward for combat-oriented skills: go fight something.  Others level by performing different activities, which yeah it's how cdda is played, no issues here.  You can also read to increase them, no objections here either.  The problem lies in how much one can train say, dodge to 10, vs computers to 10, if it's even possible under "normal" circumstances, which will result in say, Aya having it easier to max her power relative to Utsuho
+Third, it kinda railroads characters into specific playstyles.  In my defense, if you pick a guns-oriented 2hu you should expect to cast less spells than average
 
 
-#### How to balance spells around the XP system, part 2
+#### Spell "balance"
 
-A fundamental problem emerges from the previous scenario: damage powercreep.  Why bother casting a weak spell, when it's objectively inferior?  The keyword there is "objectively", enabling three different approaches to alleviate, or even nullify damage powercreep:
+The old system (pre 0.9.6.1) relied on slowly improving spells by leveling them up individually, starting around 50 - 100% HP of the average zombie for dmg-type spells, capping at x2 - x3 that amount, depending if it's AoE or ST, with the ability to cast ~6 or slightly more spells per fight.  These two assumptions translated into the ability to clear a group of 3 - 6 enemies then rest and continue, or dispatch that number of enemies from a larger group, and take the rest with melee
+The new system mostly ports the same numbers over, starting at base skill level (adjusted per character), and reaching the old cap at around +8 skill level.  This effectively means that if the player is able to reach skill +9 and +10, they will be rewarded with more numbers.  Ideally this should be more "stuff", but I plan to get there at some point...
+
+
+#### Enter: Effect on Condition
+
+A fundamental problem with any given system focused on a "flat", simplified view of things, based on only or mostly in numbers, is powercreep.  Why bother casting a weak spell, when it's objectively inferior?  The keyword there is "objectively", enabling three different approaches to alleviate, or even nullify powercreep:
 
 1. Add secondary utility/features to a damage spell.  This is the simplest but also the most boring way to do it
 2. Design spells with utility/features alongside damage.  Trickier to do but more rewarding, as each component is independent from the other, the spell doesn't have to be strong for the it to be useful
 3. Design spells that add an extra layer of interaction.  The hardest to do but the best one for the player, as these interactions can stack upon each other in unexpected ways
 
-Obviously this is much easier to say than to do.  There is a very limited amount of variation that can be done for 1., 2. and 3. are limited by what each 2hu is able to do, and the latter is also limited by how much stuff can be added via json (plus my own creativity)
+Obviously this is much easier to say than to do.  There is a very limited amount of variation that can be done for 1.; 2. and 3. are limited by what each 2hu is able to do; 3. is further limited by how much stuff can be added via json (plus my own creativity)...
+
+Like a war criminal once said, times change.  Thanks to the introduction of Effect on Conditions (EOCs), which is a framework similar to the old triggers I loved from StarCraft (which I also love), a pseudo-script can be used via json to **greatly** (º) modify how the game behaves.
+
+
+(º) greatly is an understatment.
+(rambling ON)
+The trigger system allowed stuff close to total conversions in the SC engine, which if you're not aware is *extremely* archaic to work with.  Some funny example is that there was this map, "The Thing", a very rudimentary yet equally hilarious predecesor to Amongus.  A more relevant case is when someone made the map "Aeon of Strife".  Someone else remade that, in the amazingly powerful Warcraft implementation of triggers, creating DotA.  This exploded with League of Legends, back in S2 - S3.  If you ever had fun in LoL, you can thank the maker(s?) of AoS, and the people implementing triggers in SC's map editor.  There are many, many other examples of custom maps made in either of those games, which ended up creating not just gamemodes, but entire games, and in some cases genres, started from just allowing the players to fuck around and find out.  I believe EOCs + cdda's modular framework has the potential to trigger (intended) another renaissance of creativity, and why making them as accesible as possible to the average player is a must to expand the game's influence and impact beyond it's (hypothetical) maximum potential as a roguelike alone
+(rambling OFF)
+
+
+#### EOCs and you (me) (who?): part 2
+
+Combining spells, `math` + EOCs is just a completely different paradigm. Before you had direct target dmg, spawn item, summon monster, change terrain, and move me there spells.  Now any of these can have different results according to certain pre-stablished parameters and/or contexts
+
+We're talking about stuff that seems obvious a given 2hu would be able to do, but was just couldn't be done, such as 
+1. Iku recharging batteries, 
+2. Tenko summoning a crashing keystone from the sky *only* when she's outdoors, 
+3. Mokou's melee combat style having actual fire attacks, 
+4. Utsuho requiring her third rod to control her abilities, 
+5. Sakuya freezing knifes in space to use them as platforms, 
+6. Seiga being a necromancer
+
+We're talking about stuff that I haven't seen anywhere else (in cdda), like 
+1. spells dealing different effects on different targets, or in the same target depending if it's *currently* debuffed, 
+2. delayed spells, delayed spells at a specific location external to the player, 
+3. dealing double damage if the target is undead or reduced damage if it's an extradimensional entity,
+4. monsters copying specific spells *you* use, *after* you use them, and *only* a specific number of times, 
+5. using monsters you summon as another resource for follow up spells,
+6. martial arts techniques using spells on the current target *without* the need to select it mid-combat,
+7. the same character having different abilities depending on their current stance, 
+8. ***parrying*** at will, 
+9. the same spell dealing two different types of damage according to your currently equipped weapon, 
+10. a health-draining ability instead hurting the player when using it on something with toxic constitution
+
+We're talking about having *corpse explosion* now, which is very simple in principle but yeah, try to mod that in your game of choice *without* the ability to program hardcode, and tell me how it goes
+
+
+#### EOCs: Revolutions
+
+Yeah they're pretty cool and stuff that wasn't possible now is
+If you mod you *really* should learn how to use them
+If you already do, then I'm eager to receive feedback in how to improve my stuff, how to implement stuff I want to but haven't yet, etc., 
+If you're a player or 2hu fan and think there's something that should be added or changed about your favorite character, tell me and I'll try to add it in some form
 
 
 ## Story (Updated 2024-01-05)
@@ -139,6 +193,7 @@ Their firearm tech can be categorized into tiers:
     * Several win conditions are possible: health reaching 0, race mode, gain X of certain item, not going OOM, time, etc.
     * There is a story reason why the spellcard rules are now applying outside Gensokyo (spoilers)
         * "We are definitely not in Gensokyo. Why are the rules still applying?"
+Currently possible by saving the character and NPC's conditions as variables before the combat, using the `PREVENT_DEATH` event, etc.  Danmaku is still probably not possible, or incredible clunky to implement
 
 * Reisen Alter (heavily based on KKHTA) shows up as hostile NPC when playing any SDM member or any Gyokuto:
     * She would be extremely difficult to fight because she's there to kill, not just fight, the PC.  Normally, she would win 90-95% of cases by using underhanded tactics over the course of the fight (not by granting her immediate victory but by giving her more and more advantage until the player can't keep up).  At some point she would try to deal the killing blow, but the spellcard rules would unexpectedly be active, so she exchanges some dialogue and runs away
@@ -154,6 +209,7 @@ Their firearm tech can be categorized into tiers:
     * Mi-go: tangible and intangible (looks, but isn't magic)
     * Elder Thing tech: organic/living but isn't disgusting/gory, more like bizarre (Geiger-like?)
     * Shoggoth tech: consists of their modified protoplasm, disgusting, possibly incompatible due physiology(mechanistic)/ergonomics
+
 
 ### Quest ideas
     
