@@ -1,6 +1,6 @@
 # Design (last updated 2024-03-17)
 
-An attempt to explain how balance is done, or rather why is missing, from the mod and the Expansion.  I'm assuming the reader is acquainted with Touhou, so I'm skipping Touhou's setting and common jargon.  Check the (#-glossary) if you need to understand the terminology I use for convenience
+An attempt to explain how balance is done, or rather why is missing, from the mod and the Expansion.  I'm assuming the reader is acquainted with Touhou, so I'm skipping Touhou's setting and common jargon.  Check the [glossary](#glossary) if you need to understand the terminology I use for convenience
 **WARNING**: contains spoilers
 
 
