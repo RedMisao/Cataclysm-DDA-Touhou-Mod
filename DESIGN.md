@@ -14,28 +14,30 @@ Thus, translating the characters into cdda is going to be a nerf more often than
 ### Species
 
 The initial component for a 2hu's power is her species.  In Touhou there is a large number of species, each 2hu being her own is a good estimate.  This would be the basis of a 2hu's raw stats, and may add extra abilities:
-    * Youkai: (more of a Genus, or even Family) would gain or lose no raw stats by itself, so this is more of a tag for gameplay purposes
-    * Human: the standard
-    * Gyokuto: -STR, +AGI +PER, MANA would cap lower than a human's
-    * Vampire: Youkai subspecies, increased stats, lots of weaknesses (passives), can do fun vampire stuff like turn into a bat and suck blood (actives), etc
+* Youkai: (more of a Genus, or even Family) would gain or lose no raw stats by itself, so this is more of a tag for gameplay purposes
+* Human: the standard
+* Gyokuto: -STR, +AGI +PER, MANA would cap lower than a human's
+* Vampire: Youkai subspecies, increased stats, lots of weaknesses (passives), can do fun vampire stuff like turn into a bat and suck blood (actives), etc
 
 
 ### Character background
 
-The second component is each character's background data.  This is mostly if not fully based on the canon (games + written works) for consistency.  This tweaks the previous layer:
-    * Kaenbyou (species Youkai, subspecies Kasha): +AGI due being a feline youkai cosplaying as a human by changing forms (active), and smells like corpses (^)
-    * Sakuya (human, mysterious): her ability passively grants +AGI.  She is also perfect and elegant (^), dislikes being around humans (^)
-    * Youmu (half-human half-ghost): -MANA because she's melee/sword oriented, -STR because she's small.  Fully centered around her ability (^).  She also should have below-average INT, but that's mean
-    * Mokou (former human, Person of Hourai): +MANA and plenty of experience in virtually every field of due living for so long; otherwise average stats due the elixir (^).  She literally cannot die, and has been tired of being alive for the last… 800 years or so (^)
-    * Udonge (Gyokuto): increased military-oriented skills due being an elite soldier of the Lunarian Defense Force
-    * Remi (Vampire): *very* strong, even by vampire standards (^), somewhat childish (^)
+The second component is each character's background data.  This is mostly if not fully based on the canon (games + written works) for consistency.  This tweaks the previous layer: 
+* Kaenbyou (species Youkai, subspecies Kasha): +AGI due being a feline youkai cosplaying as a human by changing forms (active), and smells like corpses (^)
+* Sakuya (human, mysterious): her ability passively grants +AGI.  She is also perfect and elegant (^), dislikes being around humans (^)
+* Youmu (half-human half-ghost): -MANA because she's melee/sword oriented, -STR because she's small.  Fully centered around her ability (^).  She also should have below-average INT, but that's mean
+* Mokou (former human, Person of Hourai): +MANA and plenty of experience in virtually every field of due living for so long; otherwise average stats due the elixir (^).  She literally cannot die, and has been tired of being alive for the last… 800 years or so (^)
+* Udonge (Gyokuto): increased military-oriented skills due being an elite soldier of the Lunarian Defense Force
+* Remi (Vampire): *very* strong, even by vampire standards (^), somewhat childish (^)
     
 This is the first place where decisions have to be made: every (^) indicates traits that cannot be directly translated into numbers, or that cannot be done in a "fun" way for the player (maxing stats isn't fun).  Some traits, like Youmu being the archetype swordswoman fighter, can be done under the normal cdda modding framework relatively easy.  Others like Mokou not dying or Remi being overpowered are complex to balance.  Added to this layer is the speculation component, which **is** encouraged by ZUN: can Remi just oneshot everything or she's bluffing because her personality?
 
 
 ### Abilities
 
-The third layer consists of what's basically *designed* to not be translated into numbers.  A JoJo reference, if you will, abilities are an independent dimension to a 2hu's total power.  See, Sakuya may be a strong human (capable of fighting against gods and other powerful enemies, helped by the spellcard rules), but now she can also stop time.  Thankfully, this is (relatively) easy to port to cdda, in the form of movement speed modifiers and stuns.  In the case of Remi however, how can fate manipulation be translated into anything?  Not only that, but each 2hu is able to use their ability as easy as they breathe, which requires to be toned down
+The third layer consists of what's basically *designed* to not be translated into numbers.  A JoJo reference, if you will, abilities are an independent dimension to a 2hu's total power.  See, Sakuya may be a strong human (capable of fighting against gods and other powerful enemies, helped by the spellcard rules), but now she can also stop time
+
+Thankfully, this is (relatively) easy to port to cdda, in the form of movement speed modifiers and stuns.  In the case of Remi however, how can fate manipulation be translated into anything?  Not only that, but each 2hu is able to use their ability as easy as they breathe, which requires to be toned down
     
 Regardless of what the ability is, it's better to make them actives (i.e. spells), so the player can *use* and feel the weight in-game
 
@@ -43,7 +45,9 @@ Regardless of what the ability is, it's better to make them actives (i.e. spells
 ### Limitations
 
 The fourth is more of a constraint: what I can't, or don't know how to do
+
 One example are Youkai, who naturally prey on humans, specifically their emotions (mostly by causing fear), but also their flesh (perhaps because that's scary).  Thus, applying the `PSYCHOPATH` and `CANNIBAL` mutations is the closest approximation, but not the correct one to make: Youkai should get no bonuses nor demerits from eating human flesh, while getting small demerits *when not* eating human flesh
+
 A second example is Youmu having her phantom half floating around all the time (or even to materialize it as a clone, for a short time), which would be interesting to manage, like duplicate her attacks, or enable new abilities.  While monsters can now replicate spells, their AI is kind of... underwhelming to allow Youmu's phantom half as a "true pet"
 
 Some features, like those examples, are thus present but unfinished
@@ -78,7 +82,9 @@ As of the last few experimental updates (and hopefully for 0.I), `math` can now 
 After realizing this could be done I immediately updated **all** character spells to scale with their skill instead of XP.  I believe this is a much more balanced **and** impactful way for the player to control their character's growth, given skills are mostly linked to character progression itself, instead of forcing them to grind for specific spells or schools (the latter doesn't really apply to this mod)
 
 I do realize a few shortcomings, which nonetheless are smaller in comparison to the drawbacks of normal spell leveling
+
 First, which skills to use for each character.  Given characters have different starting stats, a single skill cannot be used as standard for all characters (except `dodge`).  This is also a positive, as they're intended to have different playstyles (which wouldn't be the case by using `dodge` and forcing everyone to go melee everything)
+
 Second, how skill leveling is handled by cdda.  Very straightforward for combat-oriented skills: go fight something.  Others level by performing different activities, which yeah it's how cdda is played, no issues here.  You can also read to increase them, no objections here either.  The problem lies in how much one can train say, dodge to 10, vs computers to 10, if it's even possible under "normal" circumstances, which will result in say, Aya having it easier to max her power relative to Utsuho
 Third, it kinda railroads characters into specific playstyles.  In my defense, if you pick a guns-oriented 2hu you should expect to cast less spells than average
 
@@ -86,6 +92,7 @@ Third, it kinda railroads characters into specific playstyles.  In my defense, i
 #### Spell "balance"
 
 The old system (pre 0.9.6.1) relied on slowly improving spells by leveling them up individually, starting around 50 - 100% HP of the average zombie for dmg-type spells, capping at x2 - x3 that amount, depending if it's AoE or ST, with the ability to cast ~6 or slightly more spells per fight.  These two assumptions translated into the ability to clear a group of 3 - 6 enemies then rest and continue, or dispatch that number of enemies from a larger group, and take the rest with melee
+
 The new system mostly ports the same numbers over, starting at base skill level (adjusted per character), and reaching the old cap at around +8 skill level.  This effectively means that if the player is able to reach skill +9 and +10, they will be rewarded with more numbers.  Ideally this should be more "stuff", but I plan to get there at some point...
 
 
@@ -101,12 +108,22 @@ Obviously this is much easier to say than to do.  There is a very limited amount
 
 Like a war criminal once said, times change.  Thanks to the introduction of Effect on Conditions (EOCs), which is a framework similar to the old triggers I loved from StarCraft (which I also love), a pseudo-script can be used via json to **greatly** (º) modify how the game behaves.
 
+```md
+(º) greatly is an understatment
 
-(º) greatly is an understatment.
 (rambling ON)
-The trigger system allowed stuff close to total conversions in the SC engine, which if you're not aware is *extremely* archaic to work with.  Some funny example is that there was this map, "The Thing", a very rudimentary yet equally hilarious predecesor to Amongus.  A more relevant case is when someone made the map "Aeon of Strife".  Someone else remade that, in the amazingly powerful Warcraft implementation of triggers, creating DotA.  This exploded with League of Legends, back in S2 - S3.  If you ever had fun in LoL, you can thank the maker(s?) of AoS, and the people implementing triggers in SC's map editor.  There are many, many other examples of custom maps made in either of those games, which ended up creating not just gamemodes, but entire games, and in some cases genres, started from just allowing the players to fuck around and find out.  I believe EOCs + cdda's modular framework has the potential to trigger (intended) another renaissance of creativity, and why making them as accesible as possible to the average player is a must to expand the game's influence and impact beyond it's (hypothetical) maximum potential as a roguelike alone
+The trigger system allowed stuff close to total conversions in the SC engine, which if you're not aware is *extremely*
+archaic to work with. Some funny example is that there was this map, "The Thing", a very rudimentary yet equally hilarious
+predecesor to Amongus. A more relevant case is when someone made the map "Aeon of Strife".  Someone else remade that,
+in the amazingly powerful Warcraft implementation of triggers, creating DotA. This exploded with League of Legends, back
+in S2 - S3.  If you ever had fun in LoL, you can thank the maker(s?) of AoS, and the people implementing triggers in
+SC's map editor. There are many, many other examples of custom maps made in either of those games, which ended up creating
+not just gamemodes, but entire games, and in some cases genres, started from just allowing the players to fuck around and
+find out. I believe EOCs + cdda's modular framework has the potential to trigger (intended) another renaissance of
+creativity, and why making them as accesible as possible to the average player is a must to expand the game's influence
+and impact beyond it's (hypothetical) maximum potential as a roguelike alone
 (rambling OFF)
-
+```
 
 #### EOCs and you (me) (who?): part 2
 
@@ -138,8 +155,11 @@ We're talking about having *corpse explosion* now, which is very simple in princ
 #### EOCs: Revolutions
 
 Yeah they're pretty cool and stuff that wasn't possible now is
+
 If you mod you *really* should learn how to use them
-If you already do, then I'm eager to receive feedback in how to improve my stuff, how to implement stuff I want to but haven't yet, etc., 
+
+If you already do, then I'm eager to receive feedback in how to improve my stuff, how to implement stuff I want to but haven't yet, etc.
+
 If you're a player or 2hu fan and think there's something that should be added or changed about your favorite character, tell me and I'll try to add it in some form
 
 
