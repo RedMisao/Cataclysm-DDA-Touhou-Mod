@@ -37,9 +37,5 @@
     "id": "SOUL_XDIMEN",
     "type": "monster_flag",
     "//": "Monsters with this receive reduced, random soul dmg"
-  },
-  {
-    "id": "VS_FLAG",
-    "type": "monster_flag"
   }
 ]

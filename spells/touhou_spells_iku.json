@@ -333,7 +333,7 @@
     "base_energy_cost": 200,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "From Magiclism's shocking_lash "
+    "//": "From Magiclysm's shocking_lash "
   },
   {
     "id": "iku_thunderfish",

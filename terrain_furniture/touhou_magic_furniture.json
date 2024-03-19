@@ -1,5 +1,18 @@
 [
   {
+    "id": "f_bed_shikaisen",
+    "type": "furniture",
+    "name": "bed (ritual)",
+    "description": "A standard mattress on a sturdy wooden frame, ocuppied by a body.  This serves as return point in case you're fatally wounded.  It will also fool any shinigami into looking for you somewhere else.",
+    "symbol": "#",
+    "looks_like": "f_bed",
+    "color": "white",
+    "coverage": 40,
+    "move_cost_mod": 3,
+    "required_str": -1,
+    "flags": [ "CAN_SIT", "FLAT_SURF", "NOITEM", "TRANSPARENT" ]
+  },
+  {
     "id": "f_keystone",
     "type": "furniture",
     "name": "keystone",

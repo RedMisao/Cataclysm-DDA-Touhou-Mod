@@ -215,6 +215,65 @@
     ]
   },
   {
+    "id": "kaenbyou_corpseexplosion_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "if": {
+          "message": "Select target", 
+          "range": 8,
+          "u_query_tile": "line_of_sight",
+          "target_var": { "global_val": "var_corpseexplosion_loc" }
+        },
+        "then": [
+          {
+            "u_map_run_item_eocs": "all",
+            "search_data": [ 
+              { "id": "corpse" },
+              { "id": "corpse_generic_human" },
+              { "id": "corpse_generic_male" },
+              { "id": "corpse_generic_female" },
+              { "id": "corpse_generic_boy" },
+              { "id": "corpse_generic_girl" }
+            ],
+            "loc": { "global_val": "var_corpseexplosion_loc" },
+            "min_radius": 0,
+            "max_radius": 0,
+            "true_eocs": [ 
+              { 
+                "id": "kaenbyou_corpseexplosion_explode", 
+                "effect": [ 
+                  { "math": [ "var_corpseexplosion_dmg", "=", "( ( ( n_val('weight') / 1000000 ) / 2 ) * rng( 0.75, 1.25 ) )" ] },
+                  "npc_die",
+                  { "math": [ "var_corpseexplosion_aoe", "=", "1 + rand(1)" ] },
+                  { "u_cast_spell": { "id": "kaenbyou_corpseexplosion2" }, "loc": { "global_val": "var_corpseexplosion_loc" } },
+                  { "u_cast_spell": { "id": "kaenbyou_corpseexplosion3" }, "loc": { "global_val": "var_corpseexplosion_loc" } },
+                  { "u_cast_spell": { "id": "death_blood4" }, "loc": { "global_val": "var_corpseexplosion_loc" } }
+                ] 
+              } 
+            ],
+            "false_eocs": [ 
+              {
+                "id": "kaenbyou_corpseexplosion_nocorpse",
+                "effect": [ 
+                  { "math": [ "u_val('mana')", "+=", "75" ] },
+                  { "u_message": "There is no suitable corpse at the location.", "type": "mixed" } 
+                ]
+              }
+            ]
+          }
+        ],
+        "else": [ 
+          { "math": [ "u_val('mana')", "+=", "75" ] },
+          { "u_message": "Canceled" }
+        ]
+      }
+    ],
+    "//": "This asks for the player to select a location, checks if there's any corpse (fresh-ish)",
+    "//2": "If true, it saves the location, sets dmg as ( corpse_weight_kg * 0.5 * ( 75 - 125% ) ), divided by two as the spell deals two instances of dmg, heat + bash",
+    "//3": "It then removes the corpse item, sets a random aoe, and casts the spells plus the vfx at the location. If there's no corpse or Kaenbyou cancels the cast, some mana is refunded"
+  },
+  {
     "id": "kaenbyou_infernoburst_eoc",
     "type": "effect_on_condition",
     "condition": { "u_has_effect": "immolate_light" },
@@ -821,6 +880,22 @@
     ]
   },
   {
+    "id": "nitori_aerialtorpedoes_impact2",
+    "type": "effect_on_condition",
+    "condition": { "expects_vars": [ "atorpedo_loc" ] },
+    "effect": [
+      { "u_cast_spell": { "id": "nitori_aerialtorpedoes2" }, "loc": { "global_val": "var_nitori_atorpedo_loc" } }
+    ]
+  },
+  {
+    "id": "nitori_aerialtorpedoes_impact3",
+    "type": "effect_on_condition",
+    "condition": { "expects_vars": [ "atorpedo_loc" ] },
+    "effect": [
+      { "u_cast_spell": { "id": "nitori_aerialtorpedoes2" }, "loc": { "global_val": "var_nitori_atorpedo_loc" } }
+    ]
+  },
+  {
     "id": "nitori_opticalcamouflage_eoc",
     "type": "effect_on_condition",
     "effect": [
@@ -1317,6 +1392,84 @@
     ]
   },
   {
+    "id": "sakuya_knifepull_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_location_variable": { "global_val": "sakuya_knifepull_loc" } },
+      {
+        "u_map_run_item_eocs": "all",
+        "search_data": [ 
+          { "id": "silver_knife" },
+          { "id": "sakuya_knife" },
+          { "id": "knife_combat" },
+          { "id": "knife_butcher" },
+          { "id": "knife_steak" },
+          { "id": "knife_paring" },
+          { "id": "knife_chef" },
+          { "id": "knife_carving" },
+          { "id": "knife_bread" },
+          { "id": "knife_vegetable_cleaver" },
+          { "id": "knife_meat_cleaver" },
+          { "id": "knife_folding" },
+          { "id": "knife_combat_marine" },
+          { "id": "knife_combat_army" },
+          { "id": "knife_hunting" },
+          { "id": "knife_KABAR" },
+          { "id": "knife_rambo" },
+          { "id": "ch_knife_rambo" },
+          { "id": "hc_knife_rambo" },
+          { "id": "lc_knife_rambo" },
+          { "id": "mc_knife_rambo" },
+          { "id": "qt_knife_rambo" },
+          { "id": "knife_rm42" },
+          { "id": "knife_swissarmy" },
+          { "id": "knife_trench" },
+          { "id": "ch_knife_trench" },
+          { "id": "hc_knife_trench" },
+          { "id": "lc_knife_trench" },
+          { "id": "mc_knife_trench" },
+          { "id": "qt_knife_trench" },
+          { "id": "makeshift_knife" },
+          { "id": "knife_baselard" },
+          { "id": "kris" },
+          { "id": "kris_fake" },
+          { "id": "kukri" },
+          { "id": "ch_kukri" },
+          { "id": "hc_kukri" },
+          { "id": "lc_kukri" },
+          { "id": "mc_kukri" },
+          { "id": "qt_kukri" },
+          { "id": "tanto" },
+          { "id": "tanto_inferior" },
+          { "id": "tanto_fake" },
+          { "id": "karambit" },
+          { "id": "kirpan" },
+          { "id": "enfield_bayonet" },
+          { "id": "throwing_knife" },
+          { "id": "copper_knife" },
+          { "id": "bronze_knife" },
+          { "id": "diveknife" },
+          { "id": "primitive_knife" },
+          { "id": "knife_butter" },
+          { "id": "scalpel" },
+          { "id": "xacto" },
+          { "id": "boxcutter" }
+        ],
+        "loc": { "global_val": "sakuya_knifepull_loc" },
+        "min_radius": 1,
+        "max_radius": { "math": [ "( (u_skill('throw') * 0.8 ) + (u_skill('stabbing') * 0.8 ) + 1.6 )" ] },
+        "true_eocs": [ 
+          { 
+            "id": "sakuya_knifepull_pull", 
+            "effect": [ { "npc_teleport": { "global_val": "sakuya_knifepull_loc" } } ] 
+          } 
+        ]
+      },
+      { "u_message": "You elegantly retrieve nearby knives." }
+    ],
+    "//": "Adapted from EOC_map_item_test1 . The extremely long list *is* ugly"
+  },
+  {
     "id": "sakuya_maidsecret_eoc",
     "type": "effect_on_condition",
     "effect": [
@@ -1380,6 +1533,273 @@
     "effect": [ { "math": [ "var_sakuya_ve_casted", "=", "0" ] } ]
   },
   {
+    "id": "seiga_shikaisenritual_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { 
+        "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_bed", "target_min_radius": 0, "target_max_radius": 1, 
+        "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
+        "false_eocs": [
+          {
+            "id": "seiga_shikaisenritual_1",
+            "effect": [
+              { 
+                "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_bunkbed", "target_min_radius": 0, "target_max_radius": 1, 
+                "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
+                "false_eocs": [
+                  {
+                    "id": "seiga_shikaisenritual_2",
+                    "effect": [
+                      {
+                        "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_bed_down", "target_min_radius": 0, "target_max_radius": 1, 
+                        "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
+                        "false_eocs": [
+                          {
+                            "id": "seiga_shikaisenritual_3",
+                            "effect": [
+                              {
+                                "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_bunkbed_down", "target_min_radius": 0, "target_max_radius": 1, 
+                                "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
+                                "false_eocs": [
+                                  {
+                                    "id": "seiga_shikaisenritual_4",
+                                    "effect": [
+                                      {
+                                        "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_triple_bunkbed", "target_min_radius": 0, "target_max_radius": 1, 
+                                        "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
+                                        "false_eocs": [
+                                          {
+                                            "id": "seiga_shikaisenritual_5",
+                                            "effect": [
+                                              {
+                                                "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_floor_mattress", "target_min_radius": 0, "target_max_radius": 1, 
+                                                "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
+                                                "false_eocs": [
+                                                  {
+                                                    "id": "seiga_shikaisenritual_6",
+                                                    "effect": [
+                                                      {
+                                                        "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_down_mattress", "target_min_radius": 0, "target_max_radius": 1, 
+                                                        "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
+                                                        "false_eocs": [
+                                                          {
+                                                            "id": "seiga_shikaisenritual_7",
+                                                            "effect": [
+                                                              {
+                                                                "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_makeshift_bed", "target_min_radius": 0, "target_max_radius": 1, 
+                                                                "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
+                                                                "false_eocs": [
+                                                                  {
+                                                                    "id": "seiga_shikaisenritual_8",
+                                                                    "effect": [
+                                                                      {
+                                                                        "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_straw_bed", "target_min_radius": 0, "target_max_radius": 1, 
+                                                                        "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
+                                                                        "false_eocs": [ "seiga_shikaisenritual_bed_none" ]
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                ] 
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "//": "This iterates a check for a bed or something close enough at the location, then runs either EOC below",
+    "//note": "I'm sure there is another way... but I'm too exhausted as of lately"
+  },
+  {
+    "id": "seiga_shikaisenritual_bed_found",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "u_map_run_item_eocs": "all",
+        "search_data": [ 
+          { "id": "corpse_generic_human" },
+          { "id": "corpse_generic_male" },
+          { "id": "corpse_generic_female" }
+        ],
+        "loc": { "global_val": "var_shikaisenritual_loc" },
+        "min_radius": 0,
+        "max_radius": 0,
+        "true_eocs": [ "seiga_shikaisenritual_corpse_found" ],
+        "false_eocs": [ 
+          {
+            "id": "seiga_shikaisenritual_corpse_none",
+            "effect": [ 
+              { "u_message": "There is no replacement at the proper location to perform the ritual.", "type": "mixed" },
+              { "math": [ "u_val('mana')", "+=", "250" ] }
+            ]
+          }
+        ]
+      }
+    ],
+    "//": "All human bodies are viable as I remember reading that Taoists were able to change their phenotype at will. Also due gameplay reasons",
+    "//2": "While zombie corpses may be used, I don't know how to pull their ID. Also, by not adding those to the list, she's 'forced' to find a human to 'help' her with the ritual",
+    "//3": "The following EOCs check for sheets or equivalent at the same location as the bed. The last EOC performs the ritual",
+    "//4": "It removes the items, adds a dummy effect, and transforms the bed into a custom bed to serve as a visual checkpoint",
+    "//5": "(and also because I don't know how to copy coordinates directly, so I use the custom bed to set coordinates independent of the furniture check above, which can be refreshed every time she casts the ritual, regardless if it fails or not)"
+  },
+  {
+    "id": "seiga_shikaisenritual_corpse_found",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "u_map_run_item_eocs": "all",
+        "search_data": [ 
+          { "id": "sheet" },
+          { "id": "blanket" },
+          { "id": "down_blanket" },
+          { "id": "fur_blanket" },
+          { "id": "quilt" },
+          { "id": "quilt_patchwork" },
+          { "id": "emer_blanket" },
+          { "id": "grass_sheet" },
+          { "id": "grass_blanket" }
+        ],
+        "loc": { "global_val": "var_shikaisenritual_loc" },
+        "min_radius": 0,
+        "max_radius": 0,
+        "true_eocs": [ "seiga_shikaisenritual_sheet_found" ],
+        "false_eocs": [ 
+          {
+            "id": "seiga_shikaisenritual_sheet_none",
+            "effect": [ 
+              { "u_message": "There is no proper covering for your replacement at the proper location to perform the ritual.", "type": "mixed" },
+              { "math": [ "u_val('mana')", "+=", "250" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "seiga_shikaisenritual_sheet_found",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "u_map_run_item_eocs": "all",
+        "search_data": [ 
+          { "id": "corpse_generic_human" },
+          { "id": "corpse_generic_male" },
+          { "id": "corpse_generic_female" },
+          { "id": "sheet" },
+          { "id": "blanket" },
+          { "id": "down_blanket" },
+          { "id": "fur_blanket" },
+          { "id": "quilt" },
+          { "id": "quilt_patchwork" },
+          { "id": "emer_blanket" },
+          { "id": "grass_sheet" },
+          { "id": "grass_blanket" }
+        ],
+        "loc": { "global_val": "var_shikaisenritual_loc" },
+        "min_radius": 0,
+        "max_radius": 0,
+        "true_eocs": [ 
+          { 
+            "id": "seiga_shikaisenritual_success", 
+            "effect": [ 
+              { "u_message": "You begin performing the ritual…", "type": "mixed" },
+              "npc_die",
+              { "turn_cost": "5 m" },
+              { "u_cast_spell": { "id": "seiga_shikaisenritual2" }, "loc": { "global_val": "var_shikaisenritual_loc" } },
+              { "u_add_effect": "seiga_shikaisen_effect", "duration": "PERMANENT" },
+              { "u_message": "The ritual is completed.  Your replacement is ready, in case you need it.", "type": "good" },
+              { "u_location_variable": { "global_val": "var_seiga_revive_loc" }, "furniture": "f_bed_shikaisen", "target_min_radius": 0, "target_max_radius": 1 }
+            ] 
+          } 
+        ],
+        "false_eocs": [ 
+          {
+            "id": "seiga_shikaisenritual_fail",
+            "effect": [ 
+              { "u_message": "Some pieces to complete the ritual are missing.", "type": "mixed" },
+              { "math": [ "u_val('mana')", "+=", "250" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "seiga_shikaisenritual_bed_none",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_message": "There is no bed nearby to perform the ritual.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "250" ] }
+    ],
+    "//": "This is not run inline as the main EOC is already huge and ugly. Move this whenever the furniture detection is more elegant"
+  },
+  {
+    "id": "seiga_yoshika_summon_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_monsters_nearby('mon_yoshika', 'radius': 960, 'attitude': 'friendly')", "==", "0" ] },
+    "effect": [
+      {
+        "run_eocs": [
+          {
+            "id": "seiga_yoshika_summon_check",
+            "condition": { "math": [ "u_val('mana')", ">=", "200" ] },
+            "effect": [
+              { "math": [ "u_val('mana')", "-=", "200" ] },
+              { "u_message": "Opening a path to your Senkai, you call forth Yoshika to assist you.", "type": "good" },
+              { "u_cast_spell": { "id": "seiga_yoshika_summon2" }, "targeted": false }
+            ],
+            "false_effect": [ 
+              { "u_message": "You don't have enough mana.", "type": "mixed" }
+            ]
+          }
+        ]
+      }
+    ],
+    "false_effect": [ 
+      { "u_message": "You move Yoshika to your side.", "type": "good" },
+      { "u_cast_spell": { "id": "seiga_yoshika_summon3" }, "targeted": false }
+    ],
+    "//": "This EOC checks if there's not a Yoshika 'nearby', if that's the case it checks for mana and spawns a mon_yoshika ",
+    "//2": "Otherwise, if there's a Yoshika nearby, it casts the tp spell (targeted to Yoshika) to teleport her"
+  },
+  {
+    "id": "seiga_yoshika_tp_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_teleport": { "global_val": "var_seiga_loc" } }
+    ]
+  },
+  {
+    "id": "seiga_yoshika_var_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "u_var_yoshika_cast", "+=", "1" ] }
+    ]
+  },
+  {
     "id": "tenko_keystonecrash_eoc",
     "type": "effect_on_condition",
     "condition": "u_is_outside",
@@ -1388,7 +1808,7 @@
     ],
     "false_effect": [ 
       { "u_message": "You need a direct connection to the Heavens to summon a crashing keystone.", "type": "mixed" },
-      { "math": [ "u_val('mana')", "+=", "75" ] }
+      { "math": [ "u_val('mana')", "+=", "100" ] }
     ]
   },
   {

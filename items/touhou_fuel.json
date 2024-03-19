@@ -19,33 +19,5 @@
     "effects": [ "FLAME", "INCENDIARY", "MAGIC_FOCUS", "NEVER_MISFIRES", "STREAM", "TRADER_AVOID", "UNBREAKABLE_MELEE" ],
     "//": "Based on diesel ",
     "//2": "1 soulshard = 10 mL and 5 g. Combining 8 = 80 mL and 40 g, which is arbitrarily as good as 1 L of diesel, energy-wise"
-  },
-  {
-    "id": "touhou_corpse_medium",
-    "type": "AMMO",
-    "name": { "str_sp": "corpse (prepared)" },
-    "category": "fuel",
-    "description": "A corpse, prepared for use in special reactors",
-    "weight": "70000 g",
-    "volume": "65 L",
-    "material": [ "hcorpse" ],
-    "symbol": "💀",
-    "color": "dark_gray",
-    "ammo_type": "touhou_corpse_ammo",
-    "count": 1,
-    "stack_size": 1,
-    "phase": "solid",
-    "effects": [ "NEVER_MISFIRES", "SMOKE", "TRADER_AVOID" ],
-    "flags": [ "IRREPLACEABLE_CONSUMABLE" ]
-  },
-  {
-    "id": "touhou_corpse_small",
-    "type": "AMMO",
-    "name": { "str_sp": "corpse (prepared)" },
-    "category": "fuel",
-    "copy-from": "touhou_corpse_medium",
-    "description": "A small corpse, prepared for use in special reactors",
-    "weight": "35000 g",
-    "volume": "30 L"
   }
 ]

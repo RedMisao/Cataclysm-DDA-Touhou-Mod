@@ -12,7 +12,7 @@
     "max_aoe": 2,
     "max_level": 1,
     "field_id": "fd_blood3",
-    "field_chance": 1,
+    "field_chance": 3,
     "min_field_intensity": 1,
     "max_field_intensity": 4,
     "flags": [ "NO_EXPLOSION_SFX", "RANDOM_AOE" ]
@@ -30,9 +30,27 @@
     "max_aoe": 3,
     "max_level": 1,
     "field_id": "fd_blood3",
-    "field_chance": 1,
+    "field_chance": 3,
     "min_field_intensity": 2,
-    "max_field_intensity": 5,
+    "max_field_intensity": 4,
+    "flags": [ "NO_EXPLOSION_SFX", "RANDOM_AOE" ]
+  },
+  {
+    "id": "death_blood4",
+    "type": "SPELL",
+    "name": { "str": "Blood Death (vfx)" },
+    "description": "Modified death_blood for kaenbyou_corpseexplosion ",
+    "spell_class": "NONE",
+    "valid_targets": [ "ground" ],
+    "effect": "attack",
+    "shape": "blast",
+    "min_aoe": 1,
+    "max_aoe": 3,
+    "max_level": 1,
+    "field_id": "fd_blood3",
+    "field_chance": 5,
+    "min_field_intensity": 1,
+    "max_field_intensity": 4,
     "flags": [ "NO_EXPLOSION_SFX", "RANDOM_AOE" ]
   },
   {
@@ -88,24 +106,5 @@
     "max_aoe": 2,
     "max_level": 1,
     "flags": [ "SILENT" ]
-  },
-  {
-    "id": "yoshika_nails",
-    "type": "SPELL",
-    "name": "Nail slash",
-    "description": "Yoshika's nail slash attack",
-    "spell_class": "NONE",
-    "valid_targets": [ "ground", "hostile" ],
-    "effect": "attack",
-    "shape": "cone",
-    "damage_type": "cut",
-    "min_damage": { "math": [ "( (u_skill('speech') * 4.4 ) + (u_skill('firstaid') * 4.4 ) + 8.8 )" ] },
-    "max_damage": 132,
-    "min_range": 3,
-    "max_range": 3,
-    "min_aoe": 65,
-    "max_aoe": 65,
-    "max_level": 1,
-    "flags": [ "NO_LEGS", "SOMATIC" ]
   }
 ]

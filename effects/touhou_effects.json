@@ -669,8 +669,8 @@
     "desc": [ "Dying is painful and it goes beyond the replacement of the flesh.  You're going to feel it for some time." ],
     "remove_message": "Your resurrection pain has ceased, at least for the time being.",
     "rating": "bad",
-    "base_mods": { "pain_amount": [ 11 ] },
-    "scaling_mods": { "pain_amount": [ 11 ] }
+    "base_mods": { "pain_amount": [ 7 ] },
+    "scaling_mods": { "pain_amount": [ 7 ] }
   },
   {
     "id": "nitori_camouflage",
@@ -840,6 +840,15 @@
     "rating": "good",
     "base_mods": { "speed_mod": [ 25 ] },
     "flags": [ "LEVITATION" ]
+  },
+  {
+    "id": "seiga_shikaisen_effect",
+    "type": "effect_type",
+    "name": [ "Shikaisen ritual (effect)" ],
+    "desc": [ "You have placed a replacement for yourself somewhere, which will immediately activate to protect you from lethal harm." ],
+    "max_intensity": 1,
+    "max_effective_intensity": 1,
+    "//": "Dummy effect, used to detect she has a double somewhere"
   },
   {
     "id": "udonge_barrierwave",

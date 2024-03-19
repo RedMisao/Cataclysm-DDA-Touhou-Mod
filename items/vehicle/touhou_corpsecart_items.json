@@ -52,9 +52,9 @@
     "id": "reactor_corpsecart2",
     "type": "ENGINE",
     "category": "veh_parts",
-    "name": { "str": "soul engine MK2 (disassembled)", "str_pl": "soul engines MK2 (disassembled)" },
+    "name": { "str": "corpse reactor (disassembled)", "str_pl": "corpse reactors (disassembled)" },
     "copy-from": "v8_diesel",
-    "description": "A soul engine.  It uses crystallized souls as fuel when assembled.",
+    "description": "A corpse reactor.  It uses corses as fuel when assembled.",
     "volume": "256 L",
     "weight": "242 kg",
     "price": 0,
@@ -66,9 +66,9 @@
     "id": "reactor_corpsecart3",
     "type": "ENGINE",
     "category": "veh_parts",
-    "name": { "str": "corpse reactor (disassembled)", "str_pl": "corpse reactors (disassembled)" },
+    "name": { "str": "soul engine MK2 (disassembled)", "str_pl": "soul engines MK2 (disassembled)" },
     "copy-from": "v8_diesel",
-    "description": "A corpse reactor.  It uses corses as fuel when assembled.",
+    "description": "A soul engine.  It uses crystallized souls as fuel when assembled.",
     "volume": "256 L",
     "weight": "242 kg",
     "price": 0,
@@ -94,7 +94,7 @@
     "category": "veh_parts",
     "name": { "str": "corpse cart tray (disassembled)", "str_pl": "corpse cart trays (disassembled)" },
     "copy-from": "cargo_rack",
-    "description": "Storage for the corpse cart.  When assembled, you can store corpses here.",
+    "description": "Storage for the corpse cart.  When assembled, you can store stuff here.",
     "volume": "85000 ml",
     "weight": "15000 g",
     "price": 0,
@@ -132,12 +132,12 @@
     ],
     "flags": [ "TARDIS" ]
   },
-   {
+  {
     "id": "tank_corpsecart2",
     "type": "GENERIC",
     "category": "veh_parts",
     "name": { "str": "corpse reactor \"tank\" (disassembled)", "str_pl": "corpse reactor \"tank\" (disassembled)" },
-    "description": "The \"tank\" of the soul engine.  It's a small box made of metal and wood.",
+    "description": "The \"tank\" of the corpse reactor.  It's a small box made of metal and wood.",
     "volume": "75 L",
     "weight": "20 kg",
     "price": 0,
@@ -148,12 +148,13 @@
     "color": "light_gray",
     "pocket_data": [
       {
-        "pocket_type": "CONTAINER",
+        "pocket_type": "MAGAZINE",
         "rigid": true,
         "watertight": true,
-        "max_contains_volume": "130 L",
-        "max_item_volume": "130 L",
-        "max_contains_weight": "165 kg"
+        "max_contains_volume": "99 L",
+        "max_item_volume": "99 L",
+        "max_contains_weight": "99 kg",
+        "ammo_restriction": { "touhou_corpse_ammo": 1 }
       }
     ],
     "flags": [ "TARDIS" ]

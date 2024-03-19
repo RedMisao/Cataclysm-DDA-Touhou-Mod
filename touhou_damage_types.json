@@ -10,7 +10,7 @@
     "ondamage_eocs": [ "soul_dmg_check_eoc" ],
     "immune_flags": { "character": [ "SOULDMG_IMMUNE" ], "monster": [ "NO_SOUL" ] },
     "//2": "soul/spiritual damage, should do no dmg to things that are not alive or lack a 'soul' component, normal dmg to the average living thing, and double (more?) to youkai & purely spiritual entities like ghosts & spiritual amalgamations (soul forced into something)",
-    "//3": " 'yeah but what is a soul' lol but not lmao"
+    "//3": " 'yeah but what is a soul' lol"
   },
   {
     "id": "soul",
@@ -33,12 +33,12 @@
             "condition": {
               "and": [ 
                 { "npc_has_flag": "SOULDMG_EXTRA" },
-                { "math": [ "_damage_taken", ">", "0" ] }
+                { "math": [ "_total_damage", ">", "0" ] }
               ]
             },
             "effect": [ 
-                { "math": [ "var_souldmg", "=", "( _damage_taken * rng( 1.9, 2.1 ) )" ] },
-                { "npc_cast_spell": { "id": "souldmg_spell" } }
+              { "math": [ "var_soul_dmg", "=", "( _total_damage * rng( 1.9, 2.1 ) )" ] },
+              { "npc_cast_spell": { "id": "souldmg_spell" } }
             ]
           },
           {
@@ -46,17 +46,22 @@
             "condition": {
               "and": [ 
                 { "npc_has_flag": "SOUL_XDIMEN" },
-                { "math": [ "_damage_taken", ">", "0" ] }
+                { "math": [ "_total_damage", ">", "0" ] }
               ]
             },
             "effect": [ 
-                { "math": [ "var_souldmg", "=", "( _damage_taken * rng( 0.1, 0.9 ) )" ] },
-                { "npc_cast_spell": { "id": "souldmg_spell" } }
+              { "math": [ "var_soul_dmg", "=", "( - ( _total_damage * rng( 0.3, 0.7 ) ) )" ] },
+              { "npc_cast_spell": { "id": "souldmg_spell" } }
             ]
           }
         ]
       }
-    ]
+    ],
+    "//": "This EOC runs every time soul dmg is dealt. It checks if the target receives double dmg, or reduced dmg, depending on the flags",
+    "//2": "The target is forced to run the following spell on themselves, which deals dmg according to their flag, in pure dmg",
+    "//note": "The random dmg is not working like I supposed, as the _total_damage is already applied when the event_EOC is running",
+    "//note2": "A workaround for this is to instead turn the total soul dmg into a *negative* value, so the target heals for a random % of the received dmg",
+    "//note3": "Remove the spell component of this whenever possible"
   },
   {
     "id": "souldmg_spell",
@@ -67,12 +72,13 @@
     "shape": "blast",
     "effect": "attack",
     "damage_type": "pure",
-    "min_damage": { "math": [ "( var_souldmg )" ] },
-    "max_damage": { "math": [ "( var_souldmg )" ] },
+    "min_damage": { "math": [ "var_soul_dmg" ] },
+    "max_damage": { "math": [ "var_soul_dmg" ] },
     "min_pierce": 999,
     "max_pierce": 999,
     "max_level": 1,
     "difficulty": -50,
+    "message": "",
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",

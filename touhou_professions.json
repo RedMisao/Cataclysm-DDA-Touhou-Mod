@@ -432,10 +432,12 @@
     ],
     "spells": [
       { "level": 1, "id": "dash_basic" },
+      { "level": 1, "id": "kaenbyou_corpseexplosion" },
       { "level": 1, "id": "kaenbyou_dismissfire" },
       { "level": 1, "id": "kaenbyou_immolate" },
       { "level": 1, "id": "kaenbyou_infernoburst" },
       { "level": 1, "id": "kaenbyou_blazingwheel" },
+      { "level": 1, "id": "kaenbyou_soulfire" },
       { "level": 1, "id": "kaenbyou_soulshard_fuel" },
       { "level": 1, "id": "kaenbyou_soulshatter" },
       { "level": 1, "id": "kaenbyou_vssummon" },
@@ -482,6 +484,7 @@
       { "level": 1, "id": "sakuya_dismiss_knives" },
       { "level": 1, "id": "sakuya_freezeknife" },
       { "level": 1, "id": "sakuya_jackknife" },
+      { "level": 1, "id": "sakuya_knifepull" },
       { "level": 1, "id": "sakuya_maidsecret" },
       { "level": 1, "id": "sakuya_quickrest" },
       { "level": 1, "id": "sakuya_timeparadox" },
@@ -535,8 +538,10 @@
       { "level": 1, "id": "seiga_foetusshot" },
       { "level": 1, "id": "seiga_frenzy" },
       { "level": 1, "id": "seiga_hermitwalk" },
+      { "level": 1, "id": "seiga_shikaisenritual" },
       { "level": 1, "id": "seiga_raisechild" },
-      { "level": 1, "id": "seiga_wallwalk" }
+      { "level": 1, "id": "seiga_wallwalk" },
+      { "level": 1, "id": "seiga_yoshika_summon" }
     ],
     "traits": [ "HERMIT_SPECIES", "PSYCHOPATH", "LIAR", "PROF_SEIGA", "SPIRITUAL", "SPIRIT_HERMIT", "eye_blue_touhou", "FACIAL_HAIR_NONE", "hair_seiga" ],
     "items": {

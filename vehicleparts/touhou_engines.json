@@ -33,8 +33,8 @@
     "id": "reactor_corpsecart2",
     "type": "vehicle_part",
     "categories": [ "movement" ],
-    "name": { "str": "soul engine MK2" },
-    "description": "The soul engine of the corpse cart.  It uses crystallized souls as fuel.",
+    "name": { "str": "corpse reactor" },
+    "description": "The reactor of the corpse cart.  It uses corpses as fuel.",
     "item": "reactor_corpsecart2",
     "location": "engine_block",
     "variants": [ { "symbols": "*", "symbols_broken": "#" } ],
@@ -48,25 +48,23 @@
       "repair": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "adhesive", 2 ] ] }
     },
     "damage_reduction": { "all": 10 },
-    "fuel_type": "soulshard_fuel",
-    "fuel_options": [ "soulshard_fuel" ],
+    "fuel_type": "diesel",
+    "fuel_options": [ "corpse", "corpse_generic_human", "corpse_generic_male", "corpse_generic_female", "corpse_generic_boy", "corpse_generic_girl" ],
     "backfire_threshold": 0.33,
     "backfire_freq": 33,
     "noise_factor": 15,
     "damaged_power_factor": 0.25,
     "m2c": 50,
-    "power": "95000 W",
-    "//": "Can't find the exact amount of watts produced by burning an average adult human body, so this value equals 81500 Kcal burned in 1 hour",
-    "energy_consumption": "190000 W",
-    "flags": [ "ENGINE", "E_COMBUSTION", "E_HEATER" ],
-    "//2": "Old version, waaay too strong for the specs of the current corpsecart"
+    "power": "745 W",
+    "energy_consumption": "1490 W",
+    "flags": [ "ENGINE", "E_COMBUSTION", "E_HEATER" ]
   },
   {
     "id": "reactor_corpsecart3",
     "type": "vehicle_part",
     "categories": [ "movement" ],
-    "name": { "str": "corpse reactor" },
-    "description": "The reactor of the corpse cart.  It uses corpses as fuel.",
+    "name": { "str": "soul engine MK2" },
+    "description": "The soul engine of the corpse cart.  It uses crystallized souls as fuel.",
     "item": "reactor_corpsecart3",
     "location": "engine_block",
     "variants": [ { "symbols": "*", "symbols_broken": "#" } ],
@@ -90,6 +88,7 @@
     "power": "95000 W",
     "//": "Can't find the exact amount of watts produced by burning an average adult human body, so this value equals 81500 Kcal burned in 1 hour",
     "energy_consumption": "190000 W",
-    "flags": [ "ENGINE", "E_COMBUSTION", "E_HEATER" ]
+    "flags": [ "ENGINE", "E_COMBUSTION", "E_HEATER" ],
+    "//2": "Old specs, waaay too strong for the specs of the current corpsecart"
   }
 ]

@@ -101,6 +101,36 @@
     ]
   },
   {
+    "id": "seiga_shikaisenritual_fur",
+    "type": "ter_furn_transform",
+    "furniture": [
+      {
+        "valid_furniture": [ "f_bed", "f_bunkbed", "f_bed_down", "f_bunkbed_down", "f_triple_bunkbed", "f_floor_mattress", "f_down_mattress", "f_makeshift_bed", "f_straw_bed" ], 
+        "result": "f_bed_shikaisen"
+      }
+    ]
+  },
+  {
+    "id": "seiga_shikaisenritual_destroy_fur",
+    "type": "ter_furn_transform",
+    "furniture": [
+      {
+        "valid_furniture": [ "f_bed_shikaisen" ], 
+        "result": "f_null"
+      }
+    ]
+  },
+  {
+    "id": "seiga_wallwalk_ter",
+    "type": "ter_furn_transform",
+    "terrain": [
+      { 
+        "valid_flags": [ "WALL" ],
+        "result": "t_wall_hole"
+      }
+    ]
+  },
+  {
     "id": "youmugardening_ter",
     "type": "ter_furn_transform",
     "terrain": [

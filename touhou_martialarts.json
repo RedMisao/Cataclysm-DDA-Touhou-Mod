@@ -38,7 +38,7 @@
         "id": "buff_celestial_brawling_iku_oncrit",
         "name": "Celestial elegance (evasion)",
         "description": "Landing effective hits on enemies is electrifying, it allows you to evade attacks more easily.",
-        "unarmed_allowed": true,
+        "unarmed_allowed": false,
         "melee_allowed": true,
         "buff_duration": 3,
         "max_stacks": 1,
@@ -48,7 +48,7 @@
         "id": "buff_celestial_brawling_iku_oncrit2",
         "name": "Celestial elegance (movement)",
         "description": "Landing effective hits on enemies is electrifying, it increases your movement speed.",
-        "unarmed_allowed": true,
+        "unarmed_allowed": false,
         "melee_allowed": true,
         "buff_duration": 3,
         "max_stacks": 2,
@@ -91,7 +91,7 @@
         "id": "buff_celestial_brawling_iku_onpause2",
         "name": "Grounded",
         "description": "Allows using Ionic whip and Shock step after grounding.",
-        "unarmed_allowed": true,
+        "unarmed_allowed": false,
         "melee_allowed": true,
         "buff_duration": 3,
         "max_stacks": 1
@@ -147,7 +147,7 @@
         "id": "buff_celestial_brawling_tenko_onhit",
         "name": "Sphere of perception",
         "description": "Effective attacks allow you to briefly read the spirit of the target.  You're more aware of their actions…",
-        "unarmed_allowed": true,
+        "unarmed_allowed": false,
         "melee_allowed": true,
         "buff_duration": 2,
         "max_stacks": 10,
@@ -159,7 +159,7 @@
         "id": "buff_celestial_brawling_tenko_oncrit",
         "name": "Sphere of non-perception (debuff)",
         "description": "…Which interfers with your own focus.  Landing critical attacks prevents your next attack from being as effective.",
-        "unarmed_allowed": true,
+        "unarmed_allowed": false,
         "melee_allowed": true,
         "buff_duration": 1,
         "max_stacks": 1,
@@ -220,6 +220,7 @@
         "description": "Improves your parry while unarmed.  Also allows you to regenerate natural energy while in unarmed combat.",
         "//": "The +mana on hit is granted by buff_kasen_onhit_eoc ",
         "unarmed_allowed": true,
+        "melee_allowed": false,
         "bonus_blocks": 1,
         "flat_bonuses": [
           { "stat": "block_effectiveness", "scale": 1 }
@@ -232,6 +233,7 @@
         "name": "Natural attunement",
         "description": "Regenerating spirit energy…",
         "unarmed_allowed": true,
+        "melee_allowed": false,
         "buff_duration": 1,
         "max_stacks": 1,
         "//": "Dummy buff to tell the player Kasen is regenerating energy after hitting something"
@@ -271,6 +273,7 @@
         "name": "Natural action",
         "description": "The more laws and orders are made prominent, the more thieves and bandits there will be.  Parrying with one hand prepares you to parry with the opposite.",
         "unarmed_allowed": true,
+        "melee_allowed": false,
         "buff_duration": 3,
         "max_stacks": 1,
         "flat_bonuses": [ 
@@ -369,7 +372,7 @@
         "id": "buff_kokoro_onhit",
         "name": "Cadence",
         "description": "Successful attacks grant you increased movement speed.",
-        "unarmed_allowed": true,
+        "melee_allowed": true,
         "buff_duration": 3,
         "max_stacks": 3,
         "mult_bonuses": [
@@ -514,15 +517,15 @@
       {
         "id": "buff_meiling_onblock",
         "name": "Opening found",
-        "description": "Your no-nonsense positioning allows you to deal double damage immediately after blocking attacks.  Also, you gain extra accuracy, virtue of recognizing and reacting to movement patterns.",
+        "description": "Your no-nonsense positioning allows you to deal bonus damage immediately after blocking attacks.  Also, you gain extra accuracy, virtue of recognizing and reacting to movement patterns.",
         "unarmed_allowed": true,
-        "melee_allowed": false,
+        "strictly_unarmed": true,
         "buff_duration": 2,
         "max_stacks": 1,
         "mult_bonuses": [
-          { "stat": "damage", "type": "bash", "scale": 1.2 },
-          { "stat": "damage", "type": "cut", "scale": 1.2 },
-          { "stat": "damage", "type": "stab", "scale": 1.2 }
+          { "stat": "damage", "type": "bash", "scale": 1.5 },
+          { "stat": "damage", "type": "cut", "scale": 1.5 },
+          { "stat": "damage", "type": "stab", "scale": 1.5 }
         ],
         "flat_bonuses": [ 
           { "stat": "hit", "scaling-stat": "dex", "scale": 0.13 }, 
@@ -534,6 +537,7 @@
         "name": "Counter block",
         "description": "Allows using \"Repulse the intruder\", \"Stay out\" and \"Mountain breaking cannon\" after blocking attacks.",
         "unarmed_allowed": true,
+        "melee_allowed": true,
         "buff_duration": 2,
         "max_stacks": 1
       }
@@ -604,6 +608,7 @@
         "name": "Immortal experience",
         "description": "Your fighting skill allows you to block more damage, scaling from strength and dexterity.  Your physical damage is also above average.",
         "unarmed_allowed": true,
+        "strictly_unarmed": true,
         "flat_bonuses": [
           { "stat": "block", "scaling-stat": "str", "scale": 0.66 },
           { "stat": "block", "scaling-stat": "dex", "scale": 0.5 }
@@ -623,6 +628,7 @@
         "name": "Hourai's high",
         "description": "Attacks have an increased chance to be effective.",
         "unarmed_allowed": true,
+        "strictly_unarmed": true,
         "buff_duration": 6,
         "max_stacks": 6,
         "flat_bonuses": [ 
@@ -636,6 +642,7 @@
         "name": "Every hit counts",
         "description": "Repeatedly getting hit increases your accuracy and blocking chance for a short duration.",
         "unarmed_allowed": true,
+        "strictly_unarmed": true,
         "buff_duration": 2,
         "max_stacks": 4,
         "flat_bonuses": [ 
@@ -651,6 +658,7 @@
         "name": "One second against eternity",
         "description": "Not used to stop in the middle of a fight, your accuracy and physical damage is reduced.  At the same time, this slightly increases your dodge chance.",
         "unarmed_allowed": true,
+        "strictly_unarmed": true,
         "buff_duration": 2,
         "max_stacks": 1,
         "bonus_dodges": 1,
@@ -671,6 +679,7 @@
         "name": "That which is unattainable",
         "description": "Life is something curious: you can easily take it from everyone, except for the targets of your grudge.  Once you get going it's easier for you to do it.",
         "unarmed_allowed": true,
+        "strictly_unarmed": true,
         "buff_duration": 5,
         "max_stacks": 4,
         "flat_bonuses": [

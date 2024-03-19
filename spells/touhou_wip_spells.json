@@ -17,28 +17,82 @@
     "energy_source": "MANA"
   },
   {
-    "id": "sakuya_knifepull",
+    "id": "kaenbyou_corpseexplosion_chain",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "u_map_run_item_eocs": "all",
+        "search_data": [ 
+          { "id": "corpse" },
+          { "id": "corpse_generic_human" },
+          { "id": "corpse_generic_male" },
+          { "id": "corpse_generic_female" },
+          { "id": "corpse_generic_boy" },
+          { "id": "corpse_generic_girl" }
+        ],
+        "loc": { "global_val": "var_corpseexplosion_chain_loc" },
+        "min_radius": { "math": [ "var_corpseexplosion_aoe" ] },
+        "max_radius": { "math": [ "var_corpseexplosion_aoe" ] },
+        "true_eocs": [ 
+          { 
+            "id": "kaenbyou_corpseexplosion_chain_explode", 
+            "effect": [ 
+              { "u_message": "CHAINED", "type": "mixed" },
+              { "math": [ "var_corpseexplosion_dmg", "=", "( ( ( n_val('weight') / 1000000 ) / 2 ) * rng( 0.75, 1.25 ) )" ] },
+              "npc_die",
+              { "math": [ "var_corpseexplosion_chain_aoe", "=", "1 + rand(1)" ] },
+              { "u_cast_spell": { "id": "kaenbyou_corpseexplosion4" }, "loc": { "global_val": "var_corpseexplosion_chain_loc" } },
+              { "u_cast_spell": { "id": "kaenbyou_corpseexplosion5" }, "loc": { "global_val": "var_corpseexplosion_chain_loc" } },
+              { "u_cast_spell": { "id": "death_blood4" }, "loc": { "global_val": "var_corpseexplosion_chain_loc" } },
+              { "run_eocs": [ "kaenbyou_corpseexplosion_chain" ] }
+            ] 
+          } 
+        ]
+      }
+    ],
+    "//": "Not working atm. This should be chained from kaenbyou_corpseexplosion_eoc "
+  },
+  {
+    "id": "kaenbyou_corpseexplosion4",
     "type": "SPELL",
-    "name": { "str": "Knife retrieval" },
-    "description": "Stop time to retrieve nearby knives (without anyone noticing it).",
-    "valid_targets": [ "self", "item" ],
-    "effect": "area_pull",
-    "effect_str": "KNIVES",
-    "extra_effects": [ { "id": "sakuya_knifepull2" } ],
+    "name": { "str": "Corpse explosion (dmg) (heat) (chained)" },
+    "description": "Damage component of kaenbyou_corpseexplosion , chained",
+    "spell_class": "NONE",
+    "effect": "attack",
+    "valid_targets": [ "ally", "ground", "hostile" ],
     "shape": "blast",
-    "min_damage": 50,
-    "max_damage": 50,
-    "min_aoe": 6,
-    "max_aoe": 26,
-    "aoe_increment": 2,
+    "damage_type": "heat",
+    "min_damage": { "math": [ "var_corpseexplosion_dmg" ] },
+    "max_damage": { "math": [ "var_corpseexplosion_dmg" ] },
+    "min_aoe": { "math": [ "var_corpseexplosion_chain_aoe" ] },
+    "max_aoe": { "math": [ "var_corpseexplosion_chain_aoe" ] },
     "max_level": 1,
     "difficulty": -11,
-    "message": "You elegantly retrieve nearby knives.",
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_PROJECTILE", "SILENT", "WONDER" ],
-    "//": "This is deactivated: there's currently no way to pull *only* knives, any 'item' in the aoe is pulled, which is not good. Also, the WONDER + x50 spell repeats as area_pull seems hardcoded to 1 tile per action, which works good enough for this spell specially but it's something to keep in mind"
+    "flags": [ "NO_HANDS", "NO_LEGS" ]
+  },
+  {
+    "id": "kaenbyou_corpseexplosion5",
+    "type": "SPELL",
+    "name": { "str": "Corpse explosion (dmg) (bash) (chained)" },
+    "description": "Damage component of kaenbyou_corpseexplosion , chained",
+    "spell_class": "NONE",
+    "effect": "attack",
+    "valid_targets": [ "ally", "ground", "hostile" ],
+    "shape": "blast",
+    "damage_type": "bash",
+    "min_damage": { "math": [ "var_corpseexplosion_dmg" ] },
+    "max_damage": { "math": [ "var_corpseexplosion_dmg" ] },
+    "min_aoe": { "math": [ "var_corpseexplosion_chain_aoe" ] },
+    "max_aoe": { "math": [ "var_corpseexplosion_chain_aoe" ] },
+    "max_level": 1,
+    "difficulty": -11,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ]
   },
   {
     "id": "sakuya_timestop_wip",
@@ -91,7 +145,7 @@
     "type": "effect_on_condition",
     "condition": { "math": [ "var_timestop_active", "<", "2" ] },
     "effect": [
-      { "u_message": "AAA", "type": "mixed" },
+      { "u_message": "TIMESTOP_SUCCESSFUL", "type": "mixed" },
       { "math": [ "u_val('mana')", "-=", "33" ] },
       { "math": [ "var_timestop_active", "+=", "1" ] },
       { "math": [ "var_timestop_duration", "=", "( (u_skill('throw') * 35 ) + (u_skill('stabbing') * 35 ) + (u_skill('dodge') * 70 ) + 210 )" ] },
@@ -147,26 +201,99 @@
     "//": "Messages can be handled by EOCs once I fix the double-stop requirement of the base aura..."
   },
   {
-    "id": "sakuya_knifepull2",
+    "id": "seiga_wallwalk2",
     "type": "SPELL",
-    "name": { "str": "Knife retrieval" },
-    "description": "Stop time to retrieve nearby knives (without anyone noticing it).",
-    "valid_targets": [ "self", "item" ],
-    "effect": "area_pull",
-    "effect_str": "KNIVES",
+    "name": { "str": "TEST Pass through wall TEST" },
+    "description": "Use your ability to cut through walls.",
+    "spell_class": "NONE",
+    "valid_targets": [ "self" ],
+    "effect": "effect_on_condition",
+    "effect_str": "seiga_wallwalk_eoc",
     "shape": "blast",
-    "min_damage": 50,
-    "max_damage": 50,
-    "min_aoe": 6,
-    "max_aoe": 26,
-    "aoe_increment": 2,
     "max_level": 1,
     "difficulty": -11,
-    "message": "",
+    "base_casting_time": { "math": [ "( - (u_skill('speech') * 3.35 ) - (u_skill('dodge') * 3.35 ) + 120.1 )" ] },
+    "base_energy_cost": { "math": [ "( - (u_skill('speech') * 3.35 ) - (u_skill('dodge') * 3.35 ) + 120.1 )" ] },
+    "energy_source": "MANA",
+    "flags": [ "NO_LEGS", "SILENT", "SOMATIC" ],
+    "//": "cast time and mana cost 100 - 33, scales down with higher skill",
+    "//2": "This doesn't work. I need some way to pull the terrain's ID to restore it after casting the spell"
+  },
+  {
+    "id": "seiga_wallwalk3",
+    "type": "SPELL",
+    "name": { "str": "Pass through wall (effect)" },
+    "description": "Terrain transform component of seiga_wallwalk ",
+    "spell_class": "NONE",
+    "valid_targets": [ "ground" ],
+    "effect": "ter_transform",
+    "effect_str": "seiga_wallwalk_ter",
+    "shape": "blast",
+    "min_range": 1,
+    "max_range": 1,
+    "max_level": 1,
+    "difficulty": -11,
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_PROJECTILE", "SILENT" ]
+    "flags": [ "IGNORE_WALLS", "NO_LEGS", "NO_PROJECTILE", "SILENT", "SOMATIC" ]
+  },
+  {
+    "id": "seiga_wallwalk_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "if": {
+          "message": "Select wall", 
+          "u_query_tile": "around",
+          "target_var": { "global_val": "var_wallwalk_loc" }
+        },
+        "then": [
+          {
+            "if": { "map_terrain_with_flag": "WALL", "loc": { "global_val": "var_wallwalk_loc" } },
+            "then": [
+              {
+                "u_location_variable": { "global_val": "var_wallwalk_loc" }, "terrain": "<ter_id>", "target_min_radius": 0, "target_max_radius": 0, 
+                "true_eocs": [ 
+                  {
+                    "id": "seiga_wallwalk_linker",
+                    "effect": [
+                      { "run_eocs": "seiga_wallwalk_store" } 
+                    ]
+                  } 
+                ]
+              }
+            ],
+            "else": [ 
+              { "run_eocs": [ "seiga_wallwalk_fail" ] }
+            ]
+          }
+        ],
+        "else": [ 
+          { "math": [ "u_val('mana')", "+=", "( - (u_skill('speech') * 3.3 ) - (u_skill('dodge') * 3.3 ) + 85.8 ) + rand(33)" ] },
+          { "u_message": "Canceled" }
+        ]
+      }
+    ],
+    "//": "This asks for the player to select a location, checks if there's any wall",
+    "//2": "If true, it saves the location, XYZ",
+    "//3": "It then removes the corpse item, sets a random aoe, and casts the spells plus the vfx at the location"
+  },
+  {
+    "id": "seiga_wallwalk_store",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_message": "WALLWALK_SUCCESS", "type": "mixed" }
+    ]
+  },
+  {
+    "id": "seiga_wallwalk_fail",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "u_val('mana')", "+=", "( - (u_skill('speech') * 3.3 ) - (u_skill('dodge') * 3.3 ) + 85.8 ) + rand(33)" ] },
+      { "u_message": "There's no suitable wall at the location.", "type": "mixed" }
+    ],
+    "//": "If this runs, Seiga is refunded ( ( 66 to 0 ) + rand(33) ) amount of mana"
   },
   {
     "id": "seiga_corpsecurse3",
@@ -187,6 +314,26 @@
     "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_HANDS", "NO_LEGS", "SILENT" ],
     "//": "This doesn't work because I can't find a way to tag the monster rezzed by seiga_corpsecursed_check ",
     "//2": "Tried to set the target's location with a npc_location but the rezzed monster can spawn very far away regardless, so the u_cast_spell for this (used upon the rezzed monster) fails as there's nothing in the location"
+  },
+  {
+    "id": "seiga_corpsecurse4",
+    "type": "SPELL",
+    "name": { "str": "Curse of corpses (dmg)" },
+    "description": "Dmg for the rezz curse of seiga_corpsecurse ",
+    "valid_targets": [ "self" ],
+    "shape": "blast",
+    "effect": "attack",
+    "damage_type": "pure",
+    "min_damage": 1,
+    "max_damage": 1,
+    "min_pierce": 999,
+    "max_pierce": 999,
+    "max_level": 1,
+    "difficulty": -50,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SILENT" ]
   },
   {
     "id": "seiga_corpsecurse_rezzed_eoc",
@@ -217,26 +364,6 @@
     "false_effect": [ 
       { "queue_eocs": [ "seiga_corpsecurse_rezzed_timer_1" ], "time_in_future": "1 s" }
     ]
-  },
-  {
-    "id": "seiga_corpsecurse4",
-    "type": "SPELL",
-    "name": { "str": "Curse of corpses (dmg)" },
-    "description": "Dmg for the rezz curse of seiga_corpsecurse ",
-    "valid_targets": [ "self" ],
-    "shape": "blast",
-    "effect": "attack",
-    "damage_type": "pure",
-    "min_damage": 1,
-    "max_damage": 1,
-    "min_pierce": 999,
-    "max_pierce": 999,
-    "max_level": 1,
-    "difficulty": -50,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SILENT" ]
   },
   {
     "id": "yamame_damnedrope_UPDATED",

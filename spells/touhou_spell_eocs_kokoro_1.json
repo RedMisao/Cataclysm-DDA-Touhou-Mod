@@ -163,7 +163,43 @@
     "type": "effect_on_condition",
     "condition": { "not": { "math": [ "var_kokoro_stance", "==", "3" ] } },
     "effect": [
-      { "math": [ "var_kokoro_mask", "=", "rand(3)" ] },
+      {
+        "switch": { "math": [ "var_kokoro_mask" ] },
+        "cases": [
+          { "case": 0, "effect": [ { "math": [ "var_kokoro_mask", "=", "1 + rand(2)" ] } ] },
+          {
+            "case": 1,
+            "effect": {
+              "run_eocs": [
+                {
+                  "id": "kokoro_mask_swap_eoc_2_1",
+                  "condition": { "math": [ "var_kokoro_mask", "==", "1" ] },
+                  "effect": [ 
+                    { "math": [ "var_kokoro_mask", "=", "rand(3)" ] }, 
+                    { "run_eocs": [ "kokoro_mask_swap_eoc_2_1" ] } 
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "case": 2,
+            "effect": {
+              "run_eocs": [
+                {
+                  "id": "kokoro_mask_swap_eoc_2_2",
+                  "condition": { "math": [ "var_kokoro_mask", "==", "2" ] },
+                  "effect": [ 
+                    { "math": [ "var_kokoro_mask", "=", "rand(3)" ] }, 
+                    { "run_eocs": [ "kokoro_mask_swap_eoc_2_2" ] } 
+                  ]
+                }
+              ]
+            }
+          },
+          { "case": 3, "effect": [ { "math": [ "var_kokoro_mask", "=", "rand(2)" ] } ] }
+        ]
+      },
       { "math": [ "var_kokoro_instability", "+=", "600 + rand(600)" ] },
       { "run_eocs": [ "kokoro_mask_eocs" ] }
     ],
@@ -171,7 +207,8 @@
       { "u_message": "You can't control your emotions!", "type": "mixed" },
       { "math": [ "u_val('mana')", "+=", "75" ] }
     ],
-    "//": "2nd check. If she is NOT at the 'unstable' stance it randomizes mask + adds flat instability (based on the full 900 s of running 'neutral' or 'boost') + rechecks which mask is active"
+    "//": "2nd check. If she is NOT at the 'unstable' stance it randomizes mask + adds flat instability (based on the full 900 s of running 'neutral' or 'boost') + rechecks which mask is active",
+    "//2": "The switch is used instead of a simple rand() so she cannot randomize the same mask"
   },
   {
     "id": "kokoro_mask_neutral_eoc_1",

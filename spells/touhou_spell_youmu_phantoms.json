@@ -281,7 +281,7 @@
   {
     "id": "mon_youmumyon2_slashnether2",
     "type": "SPELL",
-    "name": { "str": "Hell wave cannon (minisun) (uncontrollable)" },
+    "name": { "str": "Slash of nether meditation (phantom)" },
     "description": "Equivalent of youmu_slashnether2 casted by mon_youmumyon2 ",
     "spell_class": "NONE",
     "valid_targets": [ "hostile" ],
@@ -305,7 +305,7 @@
   {
     "id": "mon_youmumyon2_slashnether2_reduce",
     "type": "SPELL",
-    "name": "Slash of the eternal future (reduce EOC)",
+    "name": "Slash of nether meditation (phantom) (reduce EOC)",
     "description": "Forces the target to run the EOC, which has a chance to reduce u_var_slashnether_cast to (their) self",
     "spell_class": "NONE",
     "valid_targets": [ "self" ],

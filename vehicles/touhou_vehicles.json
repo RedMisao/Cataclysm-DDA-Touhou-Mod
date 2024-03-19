@@ -10,7 +10,7 @@
       { "x": 0, "y": 0, "parts": [ "reactor_corpsecart" ] },
       { "x": -1, "y": 0, "parts": [ "frame_corpsecart", "wheel_corpsecart", "seat_corpsecart", "controls_corpsecart" ] }
     ],
-    "items": [ { "x": 0, "y": 0, "chance": 50, "items": [ "ash" ] } ]
+    "items": [ { "x": 0, "y": 0, "chance": 50, "items": [ "corpse_ash" ] } ]
   },
   {
     "id": "kaenbyou_wheelbarrow2",
@@ -20,10 +20,12 @@
     "parts": [ 
       { "x": 0, "y": 0, "parts": [ "frame_corpsecart", "wheel_corpsecart", "storage_corpsecart" ] },
       { "x": 0, "y": 0, "parts": [ "tank_corpsecart2" ] },
-      { "x": 0, "y": 0, "parts": [ "reactor_corpsecart3" ] },
+      { "x": 0, "y": 0, "parts": [ "reactor_corpsecart2" ] },
       { "x": -1, "y": 0, "parts": [ "frame_corpsecart", "wheel_corpsecart", "seat_corpsecart", "controls_corpsecart" ] }
     ],
-    "items": [ { "x": 0, "y": 0, "chance": 50, "items": [ "ash" ] } ]
+    "items": [ { "x": 0, "y": 0, "chance": 50, "items": [ "corpse_ash" ] } ],
+    "//": "This is working almost as intended. The engine consumes corpses, however I cannot limit it to be only human or human-derived corpses",
+    "//2": "The fun thing is that this works with no fuel_data set in either flesh or hflesh . Which is not supposed to happen"
   },
   {
     "id": "keystone_floating",

@@ -32,6 +32,7 @@ This mod adds Touhou Project characters as professions.  Characters (2hus) have 
 * Auras.  Various characters have toggle-able "aura" style abilities, each granting different effects as long as they're active.  Can be turned ON or OFF by casting specific spells.
 * Blood thirst.  Remi now has to consume blood (or human flesh, with less effectiveness) in any shape or form, in order to keep the thirst at bay.
 * Immortality.  Mokou resurrects after dying, immediately restoring her body.  She can die as many times as she wants, but there's a soft cap relative to how many times she has died in a period of time, plus a small-ish pain debuff that stacks, to discourage savescumming.
+* Martial arts (custom effects).  Some characters have martial arts with different effects, such as automatic spell casting at the target (with no cost), cosmetic effects, conditional effects depending on the equipped weapon, etc.
 * Spell growth.  All character spells and spell effects now scale proportionally to their main skills, instead of spell level.
 * Spell tags.  Some spells can now "tag" monsters, which enables FUN stuff like spreading diseases between monsters, monster copying spellcasts by the player, spell interactions, conditional spell effects, and more.
 * Weapon scaling.  Some spells now also scale from the equipped weapon's damage.
@@ -54,13 +55,13 @@ Relatively easy things to add, not in order:
 ## Major milestones
 Relatively hard or complex things to add, not in order:
 * Even MORE 2hus.
-* Things that are currently hardcoded, like new resources (plus a visual indicator), new kind of spells (like using proyectiles, different shape, being active at a location, etc.), more mechanics, etc.
+* Things that are currently hardcoded, like new resources (plus a visual indicator), new kind of spells (like using proyectiles, different shape, etc.), more mechanics, etc.
 * Spellcards?
 
 
 ## Known bugs
 * Kokoro's morale-to-mana passive doesn't remove "physical" morale statuses like being wet, it grants her mana as long as she's upset about it
 * Mokou's resurrection moves her 3 tiles to the right, every time she revives.  I have no idea how or why this happens; this is potentially very very bad for the player.
-* Utsuho's minisuns can sometimes cast the hellcannon beam twice instead of once.  This is a limitation due how the spell duplication system is done.
 * (minor) The auras cycle weird, they don't stop when they should.  This has no effect for the player but it's something to take in consideration when using the backbone, as they require lots of debugging to guarantee nothing will break.  For more information see the //IMPORTANT comments at utsuho_fusionblade_cycle2 .
+* Yamame's Miasma Burst is not storing damage when used on monsters.  I believe the queue_eocs EOCs broke for them at some point earlier this year (although I cannot prove it), which was a core component by allowing an hidden dmg counter on the affected targets to run as long as they were affected by her diseases
 

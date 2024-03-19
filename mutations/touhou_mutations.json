@@ -180,7 +180,7 @@
           { "value": "ARMOR_HEAT", "multiply": -0.66 },
           { "value": "CLIMATE_CONTROL_CHILL", "add": 20 },
           { "value": "MOVE_COST", "multiply": -0.2 },
-          { "value": "WEAKNESS_TO_WATER", "add": 0.0006 }
+          { "value": "WEAKNESS_TO_WATER", "add": 0.06 }
         ] 
       } 
     ]
@@ -223,8 +223,14 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "healing_awake": 2,
-    "mending_modifier": 2,
+    "enchantments": [
+      {
+        "values": [
+          { "value": "MENDING_MODIFIER", "multiply": 1 },
+          { "value": "REGEN_HP_AWAKE", "multiply": 2 }
+        ]
+      }
+    ],
     "cancels": [ 
       "ASTHMA", 
       "CHAOTIC_BAD", 
@@ -252,7 +258,6 @@
     "ugliness": 4,
     "visibility": 4,
     "social_modifiers": { "intimidate": -4, "persuade": 2 },
-    "thirst_modifier": 0.2,
     "wet_protection": [
       { "part": "head", "ignored": 12 },
       { "part": "leg_l", "ignored": 12 },
@@ -271,13 +276,14 @@
         "values": [ 
           { "value": "ARMOR_COLD", "multiply": -0.33 },
           { "value": "ARMOR_HEAT", "multiply": 0.33 },
-          { "value": "CRAFTING_SPEED_MULTIPLIER", "multiply": 1.2 },
+          { "value": "CRAFTING_SPEED_MULTIPLIER", "multiply": 0.2 },
           { "value": "MOVECOST_SWIM_MOD", "multiply": -0.33 }
         ] 
       } 
     ],
     "cancels": [ "FRESHWATEROSMOSIS", "GILLS", "MEMBRANE", "SCALES", "SLEEK_SCALES", "SLIMY", "WATERSLEEPER", "WEBBED", "WEBBED_FEET" ],
-    "//": "add salt deficiency "
+    "//": "add salt deficiency",
+    "//2": " thirst_modifier was removed :("
   },
   {
     "id": "KASHA_SPECIES",
@@ -300,7 +306,7 @@
           { "value": "ARMOR_HEAT", "multiply": -0.33 },
           { "value": "CLIMATE_CONTROL_CHILL", "add": 20 },
           { "value": "FALL_DAMAGE", "multiply": -0.33 },
-          { "value": "WEAKNESS_TO_WATER", "add": 0.0006 }
+          { "value": "WEAKNESS_TO_WATER", "add": 0.06 }
         ] 
       } 
     ],
@@ -334,7 +340,7 @@
           { "value": "METABOLISM", "multiply": -0.5 },
           { "value": "MOVE_COST", "multiply": -0.1 },
           { "value": "STAMINA_REGEN_MOD", "add": 0.2 },
-          { "value": "WEAKNESS_TO_WATER", "add": 0.0012 }
+          { "value": "WEAKNESS_TO_WATER", "add": 0.12 }
         ]
       },
       { 
@@ -523,8 +529,6 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "healing_awake": 2,
-    "mending_modifier": 2,
     "//": "Should be double or triple that by 'digesting' human blood",
     "social_modifiers": { "intimidate": 4, "persuade": 4 },
     "ugliness": -4,
@@ -539,8 +543,10 @@
           { "value": "PERCEPTION", "add": 2 },
           { "value": "STRENGTH", "add": 2 },
           { "value": "ARMOR_STAB", "multiply": 1 },
+          { "value": "MENDING_MODIFIER", "multiply": 1 },
           { "value": "MOVE_COST", "multiply": -0.2 },
-          { "value": "WEAKNESS_TO_WATER", "add": 0.0012 }
+          { "value": "REGEN_HP_AWAKE", "multiply": 2 },
+          { "value": "WEAKNESS_TO_WATER", "add": 0.12 }
         ],
         "mutations": [ "CANNIBAL", "SUNBURN" ]
       }

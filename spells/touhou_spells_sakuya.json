@@ -115,6 +115,24 @@
     "//2": "min dur 900"
   },
   {
+    "id": "sakuya_knifepull",
+    "type": "SPELL",
+    "name": { "str": "Knife retrieval" },
+    "description": "Stop time to retrieve nearby knives (without anyone noticing it).",
+    "spell_class": "NONE",
+    "valid_targets": [ "self" ],
+    "effect": "effect_on_condition",
+    "effect_str": "sakuya_knifepull_eoc",
+    "shape": "blast",
+    "max_level": 1,
+    "difficulty": -11,
+    "base_casting_time": 100,
+    "base_energy_cost": 66,
+    "energy_source": "MANA",
+    "flags": [ "NO_HANDS", "NO_PROJECTILE", "SILENT", "SOMATIC" ],
+    "//": "range 8 - 24, set at the EOC"
+  },
+  {
     "id": "sakuya_maidsecret",
     "type": "SPELL",
     "name": "Maid's secret",

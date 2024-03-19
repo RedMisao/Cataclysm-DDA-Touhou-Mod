@@ -25,6 +25,18 @@
     "//": "Modified f_web_up "
   },
   {
+    "id": "t_wall_hole",
+    "type": "terrain",
+    "name": "hole",
+    "description": "An open gap in space.",
+    "symbol": ".",
+    "looks_like": "t_null",
+    "color": "black",
+    "bash": { "str_min": 999, "str_max": 9999, "sound": "", "sound_fail": "", "ter_set": "t_null" },
+    "move_cost": 2,
+    "flags": [ "INDOORS", "NOITEM", "SUPPORTS_ROOF", "TRANSPARENT" ]
+  },
+  {
     "id": "t_web_rappel",
     "type": "terrain",
     "name": "web rappel",
