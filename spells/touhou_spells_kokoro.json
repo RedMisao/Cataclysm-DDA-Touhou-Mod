@@ -2,7 +2,7 @@
   {
     "id": "kokoro_spin",
     "type": "SPELL",
-    "name": "Spin attack (tec)",
+    "name": { "str": "Spin attack (tec)" },
     "description": "Damage component for tec_kokoro_spin ",
     "spell_class": "NONE",
     "valid_targets": [ "ground", "hostile" ],
@@ -25,7 +25,7 @@
   {
     "id": "kokoro_sweep",
     "type": "SPELL",
-    "name": "Sweep (tec)",
+    "name": { "str": "Sweep (tec)" },
     "description": "Damage component for tec_kokoro_sweep ",
     "spell_class": "NONE",
     "valid_targets": [ "ground", "hostile" ],
@@ -50,7 +50,7 @@
   {
     "id": "kokoro_switch",
     "type": "SPELL",
-    "name": "Switch attack (tec)",
+    "name": { "str": "Switch attack (tec)" },
     "description": "Damage component for tec_kokoro_switch ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "hostile" ],
@@ -74,7 +74,7 @@
   {
     "id": "kokoro_switch2",
     "type": "SPELL",
-    "name": "Switch attack (tec) (swap)",
+    "name": { "str": "Switch attack (tec) (swap)" },
     "description": "Swap position component for tec_kokoro_switch ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "hostile" ],
@@ -94,7 +94,7 @@
   {
     "id": "kokoro_mask_boost",
     "type": "SPELL",
-    "name": "Mask: boost",
+    "name": { "str": "Mask: boost" },
     "description": "Boost the effects granted by the current mask, and resets its duration (adds instability).  Cast again to return the mask to its normal state.",
     "spell_class": "NONE",
     "valid_targets": [ "self" ],
@@ -111,7 +111,7 @@
   {
     "id": "kokoro_mask_swap",
     "type": "SPELL",
-    "name": "Mask: Swap",
+    "name": { "str": "Mask: Swap" },
     "description": "Swap the current mask for a random one, and resets the duration (adds instability).",
     "spell_class": "NONE",
     "valid_targets": [ "self" ],
@@ -128,7 +128,7 @@
   {
     "id": "kokoro_mask_neutral",
     "type": "SPELL",
-    "name": "Mask: Unequip",
+    "name": { "str": "Mask: Unequip" },
     "description": "Temporarely unequip all masks (adds instability).  Cast again to re-equip a random mask.",
     "spell_class": "NONE",
     "valid_targets": [ "self" ],
@@ -412,7 +412,7 @@
   {
     "id": "kokoro_shouting_gspider",
     "type": "SPELL",
-    "name": "Shouting giant spider mask",
+    "name": { "str": "Shouting giant spider mask" },
     "description": "Temporarely equip your Shouting Giant Spider mask and unleash webs in front of you, slowing down enemies.",
     "spell_class": "NONE",
     "valid_targets": [ "ground", "hostile" ],
@@ -442,7 +442,7 @@
   {
     "id": "kokoro_spirit_naginata",
     "type": "SPELL",
-    "name": "Summon: Spirit naginata",
+    "name": { "str": "Summon: Spirit naginata" },
     "description": "Spend some spiritual power to briefly materialize it into a naginata.  This is a 2h weapon, so you require both hands to use it.",
     "spell_class": "NONE",
     "valid_targets": [ "none" ],
