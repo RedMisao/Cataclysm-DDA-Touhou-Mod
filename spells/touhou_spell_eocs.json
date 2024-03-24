@@ -2469,7 +2469,7 @@
     "type": "effect_on_condition",
     "condition": { "u_has_effect": "volatile_rot" },
     "effect": [
-      { "math": [ "var_miasmaburst_dmg", "+=", "var_scarletplague_dmg" ] },
+      { "math": [ "var_miasmaburst_dmg", "+=", "var_volatilerot_dmg" ] },
       { "math": [ "u_var_volatilerot_rand", "+=", "1" ] },
       {
         "run_eocs": [
