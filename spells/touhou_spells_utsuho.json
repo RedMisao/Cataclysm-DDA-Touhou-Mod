@@ -2,14 +2,17 @@
   {
     "id": "utsuho_blacksun",
     "type": "SPELL",
-    "name": "Create black sun",
+    "name": { "str": "Create black sun" },
     "description": "Snap your fingers to create a nearby black sun that produces some light.  These can duplicate Hell Wave Cannon after you cast it.",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "self" ],
     "effect": "effect_on_condition",
     "effect_str": "utsuho_blacksun_eoc",
     "shape": "blast",
     "max_level": 1,
+    "min_duration": { "math": [ "( (u_skill('dodge') * 1200 ) + 9600 )" ] },
+    "max_duration": 24000,
     "difficulty": -12,
     "base_casting_time": 200,
     "base_energy_cost": 100,
@@ -19,7 +22,7 @@
   {
     "id": "utsuho_blacksun2",
     "type": "SPELL",
-    "name": "Create black sun",
+    "name": { "str": "Create black sun" },
     "description": "Snap your fingers to create a nearby black sun that produces some light.  These can duplicate Hell Wave Cannon after you cast it.",
     "spell_class": "NONE",
     "valid_targets": [ "ground" ],
@@ -43,7 +46,7 @@
   {
     "id": "utsuho_blacksun2_unc",
     "type": "SPELL",
-    "name": "Create black sun (uncontrollable)",
+    "name": { "str": "Create black sun (uncontrollable)" },
     "description": "Snap your fingers to create a nearby black sun that produces some light.  These can duplicate Hell Wave Cannon after you cast it.",
     "spell_class": "NONE",
     "valid_targets": [ "ground" ],
@@ -67,9 +70,10 @@
   {
     "id": "utsuho_detectrad",
     "type": "SPELL",
-    "name": "Detect radiation",
+    "name": { "str": "Detect radiation" },
     "description": "Concentrate for a while to sense nearby sources of radiation.",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "self" ],
     "effect": "effect_on_condition",
     "effect_str": "utsuho_detectrad_eoc",
@@ -85,7 +89,7 @@
   {
     "id": "utsuho_detectrad2",
     "type": "SPELL",
-    "name": "Detect radiation",
+    "name": { "str": "Detect radiation" },
     "description": "Concentrate for a while to sense nearby sources of radiation.",
     "spell_class": "NONE",
     "valid_targets": [ "field", "hostile", "item", "self" ],
@@ -106,7 +110,7 @@
   {
     "id": "utsuho_detectrad3",
     "type": "SPELL",
-    "name": "Detect radiation (field)",
+    "name": { "str": "Detect radiation (field)" },
     "description": "Field detection component for utsuho_detectrad ",
     "spell_class": "NONE",
     "valid_targets": [ "field" ],
@@ -131,7 +135,7 @@
   {
     "id": "utsuho_detectrad4",
     "type": "SPELL",
-    "name": "Detect radiation",
+    "name": { "str": "Detect radiation (creature)" },
     "description": "Creature component for utsuho_detectrad ",
     "spell_class": "NONE",
     "valid_targets": [ "hostile" ],
@@ -166,7 +170,7 @@
   {
     "id": "utsuho_detectrad5",
     "type": "SPELL",
-    "name": "Detect radiation",
+    "name": { "str": "Detect radiation (item)" },
     "description": "Item component for utsuho_detectrad ",
     "spell_class": "NONE",
     "valid_targets": [ "item" ],
@@ -240,10 +244,11 @@
   {
     "id": "utsuho_fissionaura",
     "type": "SPELL",
-    "name": "Fission aura",
+    "name": { "str": "Fission aura" },
     "description": "Partially reduce fission controllers, greatly increasing the thermal energy you emit.  Drains energy while active.  Cast again to toggle OFF.",
     "//description": "OLD: Increase the flux of energy inside you.  After some time, critical mass will be reached, and the energy will be released in several waves, dealing Fire damage to anything creature in the aoe.",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "self" ],
     "effect": "effect_on_condition",
     "effect_str": "utsuho_fissionaura_eoc",
@@ -261,7 +266,7 @@
   {
     "id": "utsuho_fissionaura2",
     "type": "SPELL",
-    "name": "Fission aura (dmg)",
+    "name": { "str": "Fission aura (dmg)" },
     "description": "Damage component for utsuho_fissionaura ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -285,7 +290,7 @@
   {
     "id": "utsuho_fissionaura2_unc",
     "type": "SPELL",
-    "name": "Fission aura (dmg) (uncontrollable)",
+    "name": { "str": "Fission aura (dmg) (uncontrollable)" },
     "description": "Damage component for utsuho_fissionaura ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -307,9 +312,10 @@
   {
     "id": "utsuho_groundmelt",
     "type": "SPELL",
-    "name": "Ground melt",
+    "name": { "str": "Ground melt" },
     "description": "Scorch the targeted location with your control rod, infusing it with nuclear power and causing it to rapidly melt into lava.",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "self" ],
     "effect": "effect_on_condition",
     "effect_str": "utsuho_groundmelt_eoc",
@@ -325,7 +331,7 @@
   {
     "id": "utsuho_groundmelt2",
     "type": "SPELL",
-    "name": "Ground melt",
+    "name": { "str": "Ground melt" },
     "description": "Scorch the targeted location with your control rod, infusing it with nuclear power and causing it to rapidly melt into lava.",
     "spell_class": "NONE",
     "valid_targets": [ "ground", "hostile" ],
@@ -347,9 +353,10 @@
   {
     "id": "utsuho_hellcannon",
     "type": "SPELL",
-    "name": "Hell wave cannon",
+    "name": { "str": "Hell wave cannon" },
     "description": "Shoot a beam of solar energy, dealing damage to any affected enemy in the path.",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "self" ],
     "effect": "effect_on_condition",
     "effect_str": "utsuho_hellcannon_eoc",
@@ -365,7 +372,7 @@
   {
     "id": "utsuho_hellcannon2",
     "type": "SPELL",
-    "name": "Hell wave cannon",
+    "name": { "str": "Hell wave cannon" },
     "description": "Shoot a beam of solar energy, dealing damage to any affected enemy in the path.",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -392,7 +399,7 @@
   {
     "id": "utsuho_hellcannon2_unc",
     "type": "SPELL",
-    "name": "Hell wave cannon (uncontrollable)",
+    "name": { "str": "Hell wave cannon (uncontrollable)" },
     "description": "Shoot a beam of solar energy, dealing damage to any affected enemy in the path.",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -418,9 +425,10 @@
   {
     "id": "utsuho_nuke",
     "type": "SPELL",
-    "name": "Nuclear explosion (fission)",
+    "name": { "str": "Nuclear explosion (fission)" },
     "description": "Yeah.  Be careful to not get caught in the blast!",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "self" ],
     "effect": "effect_on_condition",
     "effect_str": "utsuho_nuke_eoc",
@@ -436,7 +444,7 @@
   {
     "id": "utsuho_nuke2",
     "type": "SPELL",
-    "name": "Nuclear explosion (fission)",
+    "name": { "str": "Nuclear explosion (fission)" },
     "description": "Yeah.  Be careful to not get caught in the blast!",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "field", "ground", "hostile", "item", "self" ],
@@ -464,7 +472,7 @@
   {
     "id": "utsuho_nuke3_2",
     "type": "SPELL",
-    "name": "Nuclear explosion (fission) (glassing)",
+    "name": { "str": "Nuclear explosion (fission) (glassing)" },
     "description": "Glassing effect for utsuho_nuke ",
     "spell_class": "NONE",
     "valid_targets": [ "ground" ],
@@ -483,7 +491,7 @@
   {
     "id": "utsuho_nuke3",
     "type": "SPELL",
-    "name": "Nuclear explosion (fission) (1st dmg instance)",
+    "name": { "str": "Nuclear explosion (fission) (1st dmg instance)" },
     "description": "Heat damage instance for utsuho_nuke ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "field", "ground", "hostile", "item", "self" ],
@@ -510,7 +518,7 @@
   {
     "id": "utsuho_nuke4",
     "type": "SPELL",
-    "name": "Nuclear explosion (fission) (2nd instance)",
+    "name": { "str": "Nuclear explosion (fission) (2nd instance)" },
     "description": "Terrain damage instance for utsuho_nuke ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "field", "ground", "hostile", "item", "self" ],
@@ -536,7 +544,7 @@
   {
     "id": "utsuho_nuke5",
     "type": "SPELL",
-    "name": "Nuclear explosion (fission) (bash instance)",
+    "name": { "str": "Nuclear explosion (fission) (terrain bash)" },
     "description": "Bash effect for utsuho_nuke ",
     "spell_class": "NONE",
     "valid_targets": [ "field", "ground", "item" ],
@@ -562,9 +570,10 @@
   {
     "id": "utsuho_ugeyser",
     "type": "SPELL",
-    "name": "Subterranean geyser",
+    "name": { "str": "Subterranean geyser" },
     "description": "Trigger a small geyser at the location, which emerges after a brief delay, dealing some damage to hostile creatures and pushing anything caught in the area.  It's not subterranean anymore, is it?",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "self" ],
     "effect": "effect_on_condition",
     "effect_str": "utsuho_ugeyser_eoc",
@@ -579,7 +588,7 @@
   {
     "id": "utsuho_ugeyser2",
     "type": "SPELL",
-    "name": "Subterranean geyser",
+    "name": { "str": "Subterranean geyser" },
     "description": "Trigger a small geyser at the location, dealing some damage to hostile creatures and pushing anything caught in the area.  It's not subterranean anymore, is it?",
     "spell_class": "NONE",
     "valid_targets": [ "ground", "hostile" ],
@@ -610,7 +619,7 @@
   {
     "id": "utsuho_ugeyser2_unc",
     "type": "SPELL",
-    "name": "Subterranean geyser (uncontrollable)",
+    "name": { "str": "Subterranean geyser (uncontrollable)" },
     "description": "Trigger a small geyser at the location, dealing some damage to hostile creatures and pushing anything caught in the area.  It's not subterranean anymore, is it?",
     "spell_class": "NONE",
     "valid_targets": [ "ground", "hostile" ],
@@ -641,7 +650,7 @@
   {
     "id": "utsuho_ugeyser3",
     "type": "SPELL",
-    "name": "Subterranean geyser (cc)",
+    "name": { "str": "Subterranean geyser (stun)" },
     "description": "Stun component for utsuho_ugeyser . This is a qol buff so the targets don't immediately move again after the knockback",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -665,7 +674,7 @@
   {
     "id": "utsuho_ugeyser4",
     "type": "SPELL",
-    "name": "Subterranean geyser (knockback)",
+    "name": { "str": "Subterranean geyser (knockback)" },
     "description": "Knockback component for utsuho_geyser ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "field", "ground", "hostile", "item", "self" ],

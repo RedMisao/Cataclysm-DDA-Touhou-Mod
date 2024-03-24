@@ -85,7 +85,8 @@
           { "value": "PERCEPTION", "add": 2 },
           { "value": "BONUS_DODGE", "add": 1 },
           { "value": "CARRY_WEIGHT", "multiply": -0.2 },
-          { "value": "MOVE_COST", "multiply": -0.1 }
+          { "value": "MOVE_COST", "multiply": -0.1 },
+          { "value": "NIGHT_VIS", "multiply": 2 }
         ] 
       } 
     ],
@@ -255,9 +256,7 @@
     "starting_trait": false,
     "valid": false,
     "active": true,
-    "ugliness": 4,
-    "visibility": 4,
-    "social_modifiers": { "intimidate": -4, "persuade": 2 },
+    "visibility": 2,
     "wet_protection": [
       { "part": "head", "ignored": 12 },
       { "part": "leg_l", "ignored": 12 },
@@ -277,13 +276,15 @@
           { "value": "ARMOR_COLD", "multiply": -0.33 },
           { "value": "ARMOR_HEAT", "multiply": 0.33 },
           { "value": "CRAFTING_SPEED_MULTIPLIER", "multiply": 0.2 },
-          { "value": "MOVECOST_SWIM_MOD", "multiply": -0.33 }
+          { "value": "MOVECOST_SWIM_MOD", "multiply": -0.33 },
+          { "value": "SOCIAL_INTIMIDATE", "add": -4 },
+          { "value": "SOCIAL_PERSUADE", "add": 2 },
+          { "value": "THIRST", "multiply": 0.33 }
         ] 
       } 
     ],
     "cancels": [ "FRESHWATEROSMOSIS", "GILLS", "MEMBRANE", "SCALES", "SLEEK_SCALES", "SLIMY", "WATERSLEEPER", "WEBBED", "WEBBED_FEET" ],
-    "//": "add salt deficiency",
-    "//2": " thirst_modifier was removed :("
+    "//": "add salt deficiency"
   },
   {
     "id": "KASHA_SPECIES",
@@ -321,7 +322,6 @@
     "copy-from": "KASHA_SPECIES",
     "description": "You're a feline-looking youkai originating from (Former) Hell.  Currently, you're transformed into your feline-like form.  Activate the mutation to switch to human form.",
     "active": true,
-    "social_modifiers": { "persuade": -4 },
     "ugliness": 0,
     "visibility": 0,
     "encumbrance_always": [ [ "hand_l", 30 ], [ "hand_r", 30 ] ],
@@ -339,6 +339,7 @@
           { "value": "MELEE_DAMAGE", "multiply": -0.5 },
           { "value": "METABOLISM", "multiply": -0.5 },
           { "value": "MOVE_COST", "multiply": -0.1 },
+          { "value": "SOCIAL_PERSUADE", "add": -4 },
           { "value": "STAMINA_REGEN_MOD", "add": 0.2 },
           { "value": "WEAKNESS_TO_WATER", "add": 0.12 }
         ]
@@ -502,18 +503,19 @@
     "copy-from": "TSUCHIGUMO_SPECIES",
     "description": "You're a spider youkai originating from caves and dark places in the Earth.  Currently, you're (partially) transformed into your youkai form, revealing your hidden legs.  Activate the mutation to switch to human form.",
     "active": true,
-    "social_modifiers": { "intimidate": 4, "persuade": -4 },
     "ugliness": 6,
     "visibility": 8,
     "enchantments": [ 
       { 
         "condition": "ALWAYS", 
-        "mutations": [ "WEB_WALKER" ], 
         "values": [ 
           { "value": "METABOLISM", "multiply": 0.33 },
           { "value": "MOVECOST_OBSTACLE_MOD", "multiply": -0.5 },
-          { "value": "MOVECOST_SWIM_MOD", "multiply": 1.5 }
-        ] 
+          { "value": "MOVECOST_SWIM_MOD", "multiply": 1.5 },
+          { "value": "SOCIAL_INTIMIDATE", "add": 4 },
+          { "value": "SOCIAL_PERSUADE", "add": -4 }
+        ],
+        "mutations": [ "WEB_WALKER" ]
       } 
     ],
     "transform": { "target": "TSUCHIGUMO_SPECIES", "active": false, "moves": 100 },
@@ -529,8 +531,6 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "//": "Should be double or triple that by 'digesting' human blood",
-    "social_modifiers": { "intimidate": 4, "persuade": 4 },
     "ugliness": -4,
     "visibility": 1,
     "vitamins_absorb_multi": [ [ "veggy", [ [ "vitA", 0.33 ], [ "vitB", 0.33 ], [ "vitC", 0.33 ], [ "calcium", 0.33 ], [ "iron", 0.33 ] ] ] ],
@@ -545,7 +545,10 @@
           { "value": "ARMOR_STAB", "multiply": 1 },
           { "value": "MENDING_MODIFIER", "multiply": 1 },
           { "value": "MOVE_COST", "multiply": -0.2 },
+          { "value": "NIGHT_VIS", "multiply": 7 },
           { "value": "REGEN_HP_AWAKE", "multiply": 2 },
+          { "value": "SOCIAL_INTIMIDATE", "add": 4 },
+          { "value": "SOCIAL_PERSUADE", "add": 4 },
           { "value": "WEAKNESS_TO_WATER", "add": 0.12 }
         ],
         "mutations": [ "CANNIBAL", "SUNBURN" ]
@@ -565,6 +568,7 @@
       "VEGETARIAN",
       "HERBIVORE"
     ],
+    "//": "Health regen should be double or triple that by 'digesting' human blood, and reduce to zero at tier 4 blood hunger",
     "//2": "I need to set the penalty (and bonus) of eating human flesh to 0"
   },
   {
@@ -620,12 +624,15 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "social_modifiers": { "intimidate": 4 },
     "visibility": 1,
     "enchantments": [ 
       { 
         "condition": "ALWAYS", 
-        "mutations": [ "CANNIBAL" ] 
+        "values": [ 
+          { "value": "NIGHT_VIS", "multiply": 2 },
+          { "value": "SOCIAL_INTIMIDATE", "add": 4 }
+        ],
+        "mutations": [ "CANNIBAL" ]
       } 
     ],
     "cancels": [ "MORE_PAIN", "MORE_PAIN2", "MORE_PAIN3", "PACIFIST", "PAINRESIST", "PSYCHOPATH", "VEGETARIAN", "HERBIVORE" ],
@@ -869,7 +876,6 @@
     "valid": false,
     "allowed_items": [ "KASEN_BANDAGES" ],
     "no_cbm_on_bp": [ "arm_upper_r", "arm_elbow_r", "arm_lower_r", "hand_r" ],
-    "social_modifiers": { "lie": -99 },
     "visibility": 2,
     "ugliness": -2,
     "initial_ma_styles": [ "style_kasen" ],
@@ -879,7 +885,8 @@
         "modified_bodyparts": [ { "lose": "arm_r" }, { "lose": "hand_r" } ],
         "values": [ 
           { "value": "STRENGTH", "add": 4 },
-          { "value": "METABOLISM", "multiply": 1.16 }
+          { "value": "METABOLISM", "multiply": 1.16 },
+          { "value": "SOCIAL_LIE", "add": -99 }
         ],
         "mutations": [ "KI_STRIKE", "TOLERANCE" ]
       } 
@@ -1064,7 +1071,15 @@
     "points": 0,
     "player_display": false,
     "purifiable": false,
-    "valid": false
+    "valid": false,
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "NIGHT_VIS", "multiply": 1 }
+        ] 
+      } 
+    ]
   },
   {
     "id": "PROF_YAMAME",
@@ -1104,7 +1119,14 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "social_modifiers": { "lie": -4 },
-    "initial_ma_styles": [ "style_youmu" ]
+    "initial_ma_styles": [ "style_youmu" ],
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "SOCIAL_LIE", "add": -4 }
+        ]
+      } 
+    ]
   }
 ]

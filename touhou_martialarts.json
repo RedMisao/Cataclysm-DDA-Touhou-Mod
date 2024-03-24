@@ -535,23 +535,13 @@
       {
         "id": "buff_meiling_onblock2",
         "name": "Counter block",
-        "description": "Allows using \"Repulse the intruder\", \"Stay out\" and \"Mountain breaking cannon\" after blocking attacks.",
+        "description": "Allows using \"Repulse the intruder\" and \"Stay out\" after blocking attacks.",
         "unarmed_allowed": true,
         "melee_allowed": true,
         "buff_duration": 2,
         "max_stacks": 1
       }
     ],
-    "onblock_eocs": [
-      {
-        "id": "buff_meiling_onblock_eoc",
-        "effect": [
-          { "math": [ "var_meilingblock", "=", "1" ] },
-          { "queue_eocs": [ "meiling_mountainbreak_timer2" ], "time_in_future": "2 s" }
-        ]
-      }
-    ],
-    "//var": "The var is used by meiling_mountainbreak_check and set to 0 by the queue'd EOC (both at touhou_spells_eocs.json)",
     "onpause_buffs": [
       {
         "id": "buff_meiling_onpause",

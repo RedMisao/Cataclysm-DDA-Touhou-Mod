@@ -37,7 +37,7 @@
               ]
             },
             "effect": [ 
-              { "math": [ "var_soul_dmg", "=", "( _total_damage * rng( 1.9, 2.1 ) )" ] },
+              { "math": [ "var_soul_dmg", "=", "( _total_damage * rng( 1.8, 2.2 ) )" ] },
               { "npc_cast_spell": { "id": "souldmg_spell" } }
             ]
           },
@@ -50,8 +50,8 @@
               ]
             },
             "effect": [ 
-              { "math": [ "var_soul_dmg", "=", "( - ( _total_damage * rng( 0.3, 0.7 ) ) )" ] },
-              { "npc_cast_spell": { "id": "souldmg_spell" } }
+              { "math": [ "var_soul_dmg", "=", "( - ( _total_damage * rng( 0.2, 0.8 ) ) )" ] },
+              { "npc_cast_spell": { "id": "souldmg_spell2" } }
             ]
           }
         ]
@@ -83,5 +83,26 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SILENT" ]
+  },
+  {
+    "id": "souldmg_spell2",
+    "type": "SPELL",
+    "name": { "str": "Soul dmg (extra) (no vfx)" },
+    "description": "Bonus dmg for soul-type attacks, without the vfx",
+    "valid_targets": [ "self" ],
+    "shape": "blast",
+    "effect": "attack",
+    "damage_type": "pure",
+    "min_damage": { "math": [ "var_soul_dmg" ] },
+    "max_damage": { "math": [ "var_soul_dmg" ] },
+    "min_pierce": 999,
+    "max_pierce": 999,
+    "max_level": 1,
+    "difficulty": -50,
+    "message": "",
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SILENT" ]
   }
 ]

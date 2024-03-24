@@ -2,9 +2,10 @@
   {
     "id": "aa_notespell",
     "type": "SPELL",
-    "name": "Note spell",
+    "name": { "str": "Note spell" },
     "description": "These spells don't work, there's a critical component missing, they just don't work at all, or their implementation isn't the best",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "none" ],
     "effect": "attack",
     "shape": "blast",
@@ -97,9 +98,10 @@
   {
     "id": "sakuya_timestop_wip",
     "type": "SPELL",
-    "name": "Time manipulation (Time stop)",
+    "name": { "str": "Time manipulation (Time stop)" },
     "description": "Stop time around yourself.  Costs 33 mana to activate, and drains 166 mana while active, over the duration.  Cast again to toggle OFF.  \nMaximum duration is increased with higher skill levels.",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "self" ],
     "effect": "effect_on_condition",
     "effect_str": "sakuya_timestop_eoc",
@@ -118,7 +120,7 @@
   {
     "id": "sakuya_timestop2",
     "type": "SPELL",
-    "name": "Time manipulation (Time stop) (freeze component)",
+    "name": { "str": "Time manipulation (Time stop) (freeze component)" },
     "description": "Freeze component of sakuya_timestop ",
     "spell_class": "NONE",
     "valid_targets": [ "self" ],
@@ -206,6 +208,7 @@
     "name": { "str": "TEST Pass through wall TEST" },
     "description": "Use your ability to cut through walls.",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "self" ],
     "effect": "effect_on_condition",
     "effect_str": "seiga_wallwalk_eoc",
@@ -319,7 +322,7 @@
     "id": "seiga_corpsecurse4",
     "type": "SPELL",
     "name": { "str": "Curse of corpses (dmg)" },
-    "description": "Dmg for the rezz curse of seiga_corpsecurse ",
+    "description": "Damage for the rezz curse of seiga_corpsecurse ",
     "valid_targets": [ "self" ],
     "shape": "blast",
     "effect": "attack",
@@ -368,9 +371,10 @@
   {
     "id": "yamame_damnedrope_UPDATED",
     "type": "SPELL",
-    "name": "Damned's rope",
+    "name": { "str": "Damned's rope" },
     "description": "Entangle a target and pull it towards your position, stunning it for a short time.",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "self" ],
     "effect": "effect_on_condition",
     "effect_str": "yamame_damnedrope_eoc_UPDATED",
@@ -389,7 +393,7 @@
   {
     "id": "yamame_damnedrope2_UPDATED",
     "type": "SPELL",
-    "name": "Damned's rope (pull)",
+    "name": { "str": "Damned's rope (pull)" },
     "description": "Entangle a target and pull it towards your position, stunning it for a short time.",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "hostile" ],
@@ -413,7 +417,7 @@
   {
     "id": "yamame_damnedrope3_UPDATED",
     "type": "SPELL",
-    "name": "Damned's rope (stun)",
+    "name": { "str": "Damned's rope (stun)" },
     "description": "Stun component of yamame_damnedrope ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "hostile" ],
@@ -447,6 +451,45 @@
       { "u_message": "yamame_damnedrope_eoc_2", "type": "mixed" },
       { "u_lose_effect": "damnedrope_strength_effect" },
       { "u_lose_trait": "damnedrope_strength_mut" }
+    ]
+  },
+  {
+    "id": "yamame_disease_icypyrexia_OLD_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "u_var_icypyrexia", "+=", "1" ] },
+      { "run_eocs": [ "yamame_disease_timer_1_OLD" ] }
+    ],
+    "//": "This is forced on the target. It adds the u_DISEASE tag and runs the u_DISEASE_timer "
+  },
+  {
+    "id": "yamame_disease_timer_1_OLD",
+    "type": "effect_on_condition",
+    "effect": [
+      { "queue_eocs": [ "yamame_disease_timer_1_2_OLD" ], "time_in_future": "1 s" }
+    ],
+    "//": "This is the base disease timer. It checks if the target has u_DISEASE and the u_DISEASE_timer is less than the intended duration at that skill level (set at yamame_opens_spellbook_eoc )",
+    "//2": "It adds 1 s to u_DISEASE_timer and queues the second step, which adds u_MIASMA (equivalent of var_DISEASE dmg) and stores it, it also cycles back to this step",
+    "//3": "The u_DISEASE var is removed when the u_DISEASE_timer ends, or when consumed by Yamame's spells",
+    "//note": "Currently non-functional, due queue_eocs not working when used by monsters. It was working around 2024-01-26, and right until the last version I updated from (2024-03-03-1927) for what I can tell"
+  },
+  {
+    "id": "yamame_disease_timer_1_2_OLD",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_var_icypyrexia", ">", "0" ] },
+        { "math": [ "u_var_disease_timer_1", "<", "var_disease_dur" ] }
+      ]
+    },
+    "effect": [
+      { "math": [ "u_var_disease_timer_1", "+=", "100" ] },
+      { "math": [ "var_miasmaburst_dmg", "+=", "var_icypyrexia_dmg" ] },
+      { "run_eocs": [ "yamame_disease_timer_1_OLD" ] }
+    ],
+    "false_effect": [ 
+      { "math": [ "u_var_icypyrexia", "=", "0" ] },
+      { "math": [ "u_var_disease_timer_1", "=", "0" ] }
     ]
   }
 ]

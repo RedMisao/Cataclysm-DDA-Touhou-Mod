@@ -29,6 +29,99 @@
     ]
   },
   {
+    "id": "dash_youmu_eoc",
+    "type": "effect_on_condition",
+    "condition": {
+      "or": [
+        { "u_has_wielded_with_weapon_category": "JAPANESE_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "SHORT_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "MEDIUM_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "LONG_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "FENCING_WEAPONRY" },
+        { "u_has_wielded_with_weapon_category": "LONG_THRUSTING_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "GREAT_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "BIONIC_SWORDS" }
+      ]
+    },
+    "effect": [
+      { "u_location_variable": { "global_val": "var_youmu_dash_start_loc" }, "min_radius": 0, "max_radius": 0 },
+      {
+        "if": {
+          "message": "Set target", 
+          "range": 4,
+          "u_query_tile": "line_of_sight",
+          "target_var": { "global_val": "var_youmu_dash_end_loc" }
+        },
+        "then": [
+          { "u_teleport": { "global_val": "var_youmu_dash_end_loc" } },
+          { "u_cast_spell": { "id": "dash_youmu2" }, "loc": { "global_val": "var_youmu_dash_start_loc" } }
+        ],
+        "else": [
+          { "math": [ "u_val('stamina')", "+=", "2000" ] },
+          { "u_message": "Canceled" }
+        ]
+      }
+    ],
+    "false_effect": [ 
+      {
+        "if": {
+          "message": "Set target", 
+          "range": 4,
+          "u_query_tile": "line_of_sight",
+          "target_var": { "global_val": "var_youmu_dash_end_loc" }
+        },
+        "then": [
+          { "u_cast_spell": { "id": "dash_youmu3" }, "loc": { "global_val": "var_youmu_dash_end_loc" } }
+        ],
+        "else": [
+          { "math": [ "u_val('stamina')", "+=", "2000" ] },
+          { "u_message": "Canceled" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "aya_fanwind_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "if": {
+          "message": "Set target", 
+          "range": 8,
+          "u_query_tile": "line_of_sight",
+          "target_var": { "global_val": "var_aya_fanwind_loc" }
+        },
+        "then": [
+          { "math": [ "var_ayafanwind_dur", "=", "( ( (u_skill('dodge') * 100 ) + 200 ) - 100 )" ] },
+          { "u_cast_spell": { "id": "aya_fanwind3" }, "loc": { "global_val": "var_aya_fanwind_loc" } },
+          { "run_eoc_with": "aya_fanwind_delay_eoc", "variables": { "aya_fanwind_loc": "var_aya_fanwind_loc" } }
+        ],
+        "else": [
+          { "math": [ "u_val('mana')", "+=", "50" ] },
+          { "u_message": "Canceled" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "aya_fanwind_delay_eoc",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "expects_vars": [ "aya_fanwind_loc" ] },
+        { "math": [ "var_ayafanwind_dur", ">=", "0" ] }
+      ]
+    },
+    "effect": [
+      { "math": [ "var_ayafanwind_dur", "-=", "100" ] },
+      { "u_cast_spell": { "id": "aya_fanwind2" }, "loc": { "global_val": "var_aya_fanwind_loc" } },
+      { "queue_eocs": [ "aya_fanwind_delay_eoc" ], "time_in_future": "1 s" }
+    ],
+    "false_effect": [ 
+      { "math": [ "var_ayafanwind_dur", "=", "0" ] }
+    ]
+  },
+  {
     "id": "iku_batteryrestore_eoc",
     "type": "effect_on_condition",
     "effect": [
@@ -243,7 +336,7 @@
               { 
                 "id": "kaenbyou_corpseexplosion_explode", 
                 "effect": [ 
-                  { "math": [ "var_corpseexplosion_dmg", "=", "( ( ( n_val('weight') / 1000000 ) / 2 ) * rng( 0.75, 1.25 ) )" ] },
+                  { "math": [ "var_corpseexplosion_dmg", "=", "( ( ( n_val('weight') / 100000 ) / 2 ) * rng( 0.75, 1.25 ) )" ] },
                   "npc_die",
                   { "math": [ "var_corpseexplosion_aoe", "=", "1 + rand(1)" ] },
                   { "u_cast_spell": { "id": "kaenbyou_corpseexplosion2" }, "loc": { "global_val": "var_corpseexplosion_loc" } },
@@ -719,43 +812,23 @@
     "id": "meiling_mountainbreak_eoc",
     "type": "effect_on_condition",
     "effect": [
-      { "math": [ "var_mountainbreakcasted", "=", "1" ] },
-      { "run_eocs": [ "meiling_mountainbreak_check" ] },
-      { "queue_eocs": [ "meiling_mountainbreak_timer" ], "time_in_future": "2 s" }
+      { "math": [ "u_var_mountainbreak", "=", "1" ] },
+      { "u_add_effect": "parry_effect", "duration": "2 s" },
+      {
+        "queue_eocs": [
+          {
+            "id": "meiling_mountainbreak_timer",
+            "effect": [
+              { "math": [ "u_var_mountainbreak", "=", "0" ] },
+              { "u_lose_effect": "parry_effect" }
+            ]
+          }
+        ],
+        "time_in_future": "2 s"
+      }
     ],
-    "//": "When the spell is cast this sets the var to 1, runs the check and prepares the var to reset after 2 s"
-  },
-  {
-    "id": "meiling_mountainbreak_check",
-    "type": "effect_on_condition",
-    "recurrence": "1 s",
-    "condition": {
-      "and": [
-        { "math": [ "var_mountainbreakcasted", "==", "1" ] },
-        { "math": [ "var_meilingblock", "==", "1" ] }
-      ]
-    },
-    "deactivate_condition": { "math": [ "var_mountainbreakcasted", "==", "0" ] },
-    "effect": [ 
-      { "u_cast_spell": { "id": "meiling_mountainbreak2" }, "targeted": true }
-    ],
-    "//": "The check is active only if: Meiling has cast the spell + she has blocked in the last 2 seconds, if so she will cast the damage component of the spell. The recurrence deactivates if the var is zero, so it doesn't run all the time"
-  },
-  {
-    "id": "meiling_mountainbreak_timer",
-    "type": "effect_on_condition",
-    "effect": [
-      { "math": [ "var_mountainbreakcasted", "=", "0" ] }
-    ],
-    "//": "This is activated 2 s after Meiling gains the 'spell casted' var, window of opportunity"
-  },
-  {
-    "id": "meiling_mountainbreak_timer2",
-    "type": "effect_on_condition",
-    "effect": [
-      { "math": [ "var_meilingblock", "=", "0" ] }
-    ],
-    "//": "This is activated 2 s after Meiling gains the 'blocked' var, window of opportunity"
+    "//": "When the spell is cast this sets the var to 1 and prepares to reset the var after 2 s",
+    "//2": "The var is linked to meiling_mountainbreak_hit "
   },
   {
     "id": "meiling_tigerrelease_eoc",
@@ -904,7 +977,7 @@
       { "run_eocs": [ "nitori_opticalcamouflage_cycle1" ] }
     ],
     "//": "This EOC is a modified version of utsuho_fissionaura_eoc . It adds a 'randomly fail' chance as extra step to make it more FUN",
-    "//2": "Partially fixes the leak from the base aura",
+    "//2": "A different approach to the cycling fixes the leak from the base aura",
     "//note": "And introduces a double stop issue. Has no effect other than printing the u_message twice"
   },
   {
@@ -1467,7 +1540,8 @@
       },
       { "u_message": "You elegantly retrieve nearby knives." }
     ],
-    "//": "Adapted from EOC_map_item_test1 . The extremely long list *is* ugly"
+    "//": "Adapted from EOC_map_item_test1 . The extremely long list *is* ugly",
+    "//2": "max pull radius 8 - 24"
   },
   {
     "id": "sakuya_maidsecret_eoc",
@@ -2373,135 +2447,46 @@
   {
     "id": "yamame_disease_icypyrexia_eoc",
     "type": "effect_on_condition",
+    "condition": { "u_has_effect": "icy_pyrexia" },
     "effect": [
-      { "math": [ "u_var_icypyrexia", "+=", "1" ] },
-      { "run_eocs": [ "yamame_disease_timer_1" ] }
+      { "math": [ "var_miasmaburst_dmg", "+=", "var_icypyrexia_dmg" ] }
     ],
-    "//": "This is forced on the target. It adds the u_DISEASE tag and runs the u_DISEASE_timer "
-  },
-  {
-    "id": "yamame_disease_timer_1",
-    "type": "effect_on_condition",
-    "effect": [
-      { "queue_eocs": [ "yamame_disease_timer_1_2" ], "time_in_future": "1 s" }
-    ],
-    "//": "This is the base disease timer. It checks if the target has u_DISEASE and the u_DISEASE_timer is less than the intended duration at that skill level (set at yamame_opens_spellbook_eoc )",
-    "//2": "It adds 1 s to u_DISEASE_timer and queues the second step, which adds u_MIASMA (equivalent of var_DISEASE dmg) and stores it, it also cycles back to this step",
-    "//3": "The u_DISEASE var is removed when the u_DISEASE_timer ends, or when consumed by Yamame's spells",
-    "//note": "Currently non-functional, due queue_eocs not working when used by monsters. It was working around 2024-01-26, and right until the last version I updated from (2024-03-03-1927) for what I can tell"
-  },
-  {
-    "id": "yamame_disease_timer_1_2",
-    "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "u_var_icypyrexia", ">", "0" ] },
-        { "math": [ "u_var_disease_timer_1", "<", "var_disease_dur" ] }
-      ]
-    },
-    "effect": [
-      { "math": [ "u_var_disease_timer_1", "+=", "100" ] },
-      { "math": [ "var_miasmaburst_dmg", "+=", "var_icypyrexia_dmg" ] },
-      { "run_eocs": [ "yamame_disease_timer_1" ] }
-    ],
-    "false_effect": [ 
-      { "math": [ "u_var_icypyrexia", "=", "0" ] },
-      { "math": [ "u_var_disease_timer_1", "=", "0" ] }
-    ]
+    "//": "OK so the disease spell does several things. First, it applies the DISEASE effect on the target, then it runs a subspell which adds another effect for the player",
+    "//2": "The effect on the player, DISEASE_counter, runs an intermittent spell in aoe. This spell forces any target around to run these EOCs, which detect if these target have any disease",
+    "//3": "If they have any DISEASE effect, it adds to var_MIASMA ",
+    "//4": "This is a workaround for queue_eocs not working on monsters AND enchants not working on monsters either. The second case would allow this same system to be monster-sided"
   },
   {
     "id": "yamame_disease_scarletplague_eoc",
     "type": "effect_on_condition",
+    "condition": { "u_has_effect": "scarlet_plague" },
     "effect": [
-      { "math": [ "u_var_scarletplague", "+=", "1" ] },
-      { "run_eocs": [ "yamame_disease_timer_2" ] }
-    ]
-  },
-  {
-    "id": "yamame_disease_timer_2",
-    "type": "effect_on_condition",
-    "effect": [
-      { "queue_eocs": [ "yamame_disease_timer_2_2" ], "time_in_future": "1 s" }
-    ]
-  },
-  {
-    "id": "yamame_disease_timer_2_2",
-    "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "u_var_scarletplague", ">", "0" ] },
-        { "math": [ "u_var_disease_timer_2", "<", "var_disease_dur" ] }
-      ]
-    },
-    "effect": [
-      { "math": [ "u_var_disease_timer_2", "+=", "100" ] },
-      { "math": [ "var_miasmaburst_dmg", "+=", "var_scarletplague_dmg" ] },
-      { "run_eocs": [ "yamame_disease_timer_2" ] }
-    ],
-    "false_effect": [ 
-      { "math": [ "u_var_scarletplague", "=", "0" ] },
-      { "math": [ "u_var_disease_timer_2", "=", "0" ] }
+      { "math": [ "var_miasmaburst_dmg", "+=", "var_scarletplague_dmg" ] }
     ]
   },
   {
     "id": "yamame_disease_volatilerot_eoc",
     "type": "effect_on_condition",
+    "condition": { "u_has_effect": "volatile_rot" },
     "effect": [
-      { "math": [ "u_var_volatilerot", "+=", "1" ] },
-      { "run_eocs": [ "yamame_disease_timer_3" ] },
-      { "run_eocs": [ "yamame_disease_volatilerot_flare_1" ] }
-    ]
-  },
-  {
-    "id": "yamame_disease_timer_3",
-    "type": "effect_on_condition",
-    "effect": [
-      { "queue_eocs": [ "yamame_disease_timer_3_2" ], "time_in_future": "1 s" }
+      { "math": [ "var_miasmaburst_dmg", "+=", "var_scarletplague_dmg" ] },
+      { "math": [ "u_var_volatilerot_rand", "+=", "1" ] },
+      {
+        "run_eocs": [
+          {
+            "id": "yamame_disease_volatilerot_check",
+            "condition": { "math": [ "u_var_volatilerot_rand", ">", "( min( 4, (1 + rand(3)) ) )" ] },
+            "effect": [
+              { "math": [ "u_var_volatilerot_rand", "=", "0" ] },
+              { "u_cast_spell": { "id": "yamame_disease_volatilerot_flare" }, "targeted": false }
+            ]
+          }
+        ]
+      }
     ],
-    "false_effect": [ 
-      { "math": [ "u_var_volatilerot", "=", "0" ] },
-      { "math": [ "u_var_disease_timer_3", "=", "0" ] }
-    ]
-  },
-  {
-    "id": "yamame_disease_timer_3_2",
-    "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "u_var_volatilerot", ">", "0" ] },
-        { "math": [ "u_var_disease_timer_3", "<", "var_disease_dur" ] }
-      ]
-    },
-    "effect": [
-      { "math": [ "u_var_disease_timer_3", "+=", "100" ] },
-      { "math": [ "var_miasmaburst_dmg", "+=", "var_volatilerot_dmg" ] },
-      { "run_eocs": [ "yamame_disease_timer_3" ] }
-    ],
-    "false_effect": [ 
-      { "math": [ "u_var_volatilerot", "=", "0" ] },
-      { "math": [ "u_var_disease_timer_3", "=", "0" ] }
-    ]
-  },
-  {
-    "id": "yamame_disease_volatilerot_flare_1",
-    "type": "effect_on_condition",
-    "effect": [
-      { "queue_eocs": [ "yamame_disease_volatilerot_flare_2" ], "time_in_future": [ "2 s", "4 s" ] }
-    ],
-    "//": "Casting yamame_disease_volatilerot runs yamame_disease_volatilerot_eoc on the target, which tags it with the u_DISEASE tag + u_DISEASE_timer ",
-    "//2": "It also runs this cycle, which queues the next step between 2 - 4 s",
-    "//3": "The next step forces the target to cast the self-spell for dmg (the aoe 'flare'), and re-queues this",
-    "//4": "It stops if the target no longer has the specific u_DISEASE (which is removed when u_DISEASE_timer ends, or after u_DISEASE is consumed by Yamame's spells)",
-    "//5": "This is separated from the actual DISEASE_timer EOC so the target can flare up randomly instead of every 1 s"
-  },
-  {
-    "id": "yamame_disease_volatilerot_flare_2",
-    "type": "effect_on_condition",
-    "condition": { "math": [ "u_var_volatilerot", ">", "0" ] },
-    "effect": [
-      { "u_cast_spell": { "id": "yamame_disease_volatilerot_flare" }, "targeted": false },
-      { "run_eocs": [ "yamame_disease_volatilerot_flare_1" ] }
-    ]
+    "//": "This EOC checks does two things. First, it adds the var_MIASMA to the target, similar to the previous EOCs",
+    "//2": "It also adds a var_VOLATILE every 1 s, and checks if it's bigger than the minimum number between ( 4 to 2+rnd), if so target will cast the 'flare' spell and reset var_VOLATILE ",
+    "//3": "tl;dr the disease can 'flare' between 2 to 5 seconds"
   },
   {
     "id": "yamame_damnedrope_eoc",
@@ -2577,6 +2562,156 @@
       { "u_cast_spell": { "id": "yamame_miasmarelease3" }, "targeted": false }
     ],
     "//": "Checks if the target has the effects applied by each disease, if true it forces the target to cast the bonus dmg spell"
+  },
+  {
+    "id": "youmu_doublewheel_eoc",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_monsters_nearby('mon_youmumyon', 'radius': 960, 'attitude': 'friendly')", "==", "0" ] },
+        { "math": [ "u_monsters_nearby('mon_youmumyon2', 'radius': 960, 'attitude': 'friendly')", "==", "0" ] }
+      ]
+    },
+    "effect": [
+      {
+        "run_eocs": [
+          {
+            "id": "youmu_doublewheel_check",
+            "condition": { "math": [ "u_val('mana')", ">=", "100" ] },
+            "effect": [
+              { "math": [ "u_val('mana')", "-=", "100" ] },
+              { "u_message": "You materialize your phantom half!", "type": "good" },
+              { "u_cast_spell": { "id": "youmu_doublewheel2" }, "targeted": false }
+            ],
+            "false_effect": [ 
+              { "u_message": "You don't have enough mana.", "type": "mixed" }
+            ]
+          }
+        ]
+      }
+    ],
+    "false_effect": [ 
+      { "u_message": "You move your other half to your side.", "type": "good" },
+      { "u_cast_spell": { "id": "youmu_phantom_tp" }, "targeted": false }
+    ],
+    "//": "This EOC checks if Youmu hasn't casted a spell with her half-phantom half yet, if that's the case it checks for mana and spawns a mon_youmumyon ",
+    "//2": "Otherwise, if she has already casted her one, it casts the tp spell to teleport her"
+  },
+  {
+    "id": "youmu_halfbody_eoc",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_monsters_nearby('mon_youmumyon', 'radius': 960, 'attitude': 'friendly')", "==", "0" ] },
+        { "math": [ "u_monsters_nearby('mon_youmumyon2', 'radius': 960, 'attitude': 'friendly')", "==", "0" ] }
+      ]
+    },
+    "effect": [
+      {
+        "run_eocs": [
+          {
+            "id": "youmu_halfbody_check",
+            "condition": { "math": [ "u_val('mana')", ">=", "100" ] },
+            "effect": [
+              { "math": [ "u_val('mana')", "-=", "100" ] },
+              { "u_message": "You send your phantom half!", "type": "good" },
+              { "u_cast_spell": { "id": "youmu_halfbody2" }, "targeted": false }
+            ],
+            "false_effect": [ 
+              { "u_message": "You don't have enough mana.", "type": "mixed" }
+            ]
+          }
+        ]
+      }
+    ],
+    "false_effect": [ 
+      { "u_message": "You move your other half to your side.", "type": "good" },
+      { "u_cast_spell": { "id": "youmu_phantom_tp" }, "targeted": false }
+    ]
+  },
+  {
+    "id": "youmu_phantom_tp_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_teleport": { "global_val": "var_youmu_loc" } }
+    ]
+  },
+  {
+    "id": "youmu_insightfulsword_eoc",
+    "type": "effect_on_condition",
+    "condition": {
+      "or": [
+        { "u_has_wielded_with_weapon_category": "JAPANESE_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "SHORT_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "MEDIUM_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "LONG_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "FENCING_WEAPONRY" },
+        { "u_has_wielded_with_weapon_category": "LONG_THRUSTING_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "GREAT_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "BIONIC_SWORDS" }
+      ]
+    },
+    "effect": [
+      { "math": [ "u_var_insightfulsword", "=", "1" ] },
+      { "u_add_effect": "parry_effect", "duration": "2 s" },
+      {
+        "queue_eocs": [
+          {
+            "id": "youmu_insightfulsword_timer",
+            "effect": [
+              { "math": [ "u_var_insightfulsword", "=", "0" ] },
+              { "u_lose_effect": "parry_effect" }
+            ]
+          }
+        ],
+        "time_in_future": "2 s"
+      }
+    ],
+    "false_effect": [ 
+      { "u_message": "You need a sword to cast this.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "50" ] }
+    ],
+    "//": "Similar to meiling_mountainbreak_eoc , only checks if Youmu is wielding a weapon",
+    "//2": "The var is linked to youmu_insightfulsword_hit "
+  },
+  {
+    "id": "youmu_insightfulsword_check",
+    "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "var_melee_cut_dmg", ">=", "var_melee_bash_dmg" ] },
+        { "math": [ "var_melee_cut_dmg", ">=", "var_melee_stab_dmg" ] }
+      ]
+    },
+    "effect": [
+      { "u_cast_spell": { "id": "youmu_insightfulsword2_cut" }, "targeted": true }
+    ],
+    "false_effect": [ 
+      { "u_cast_spell": { "id": "youmu_insightfulsword2_bash" }, "targeted": true }
+    ]
+  },
+  {
+    "id": "youmu_reflectionslash_eoc",
+    "type": "effect_on_condition",
+    "condition": {
+      "or": [
+        { "u_has_wielded_with_weapon_category": "JAPANESE_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "SHORT_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "MEDIUM_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "LONG_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "FENCING_WEAPONRY" },
+        { "u_has_wielded_with_weapon_category": "LONG_THRUSTING_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "GREAT_SWORDS" },
+        { "u_has_wielded_with_weapon_category": "BIONIC_SWORDS" }
+      ]
+    },
+    "effect": [
+      { "u_cast_spell": { "id": "youmu_reflectionslash2" }, "targeted": false }
+    ],
+    "false_effect": [ 
+      { "u_message": "You need a sword to cast this.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "50" ] }
+    ]
   },
   {
     "id": "youmu_slasheternal_eoc",

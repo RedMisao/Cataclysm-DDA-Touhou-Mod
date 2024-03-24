@@ -172,6 +172,7 @@
     "required_event": "opens_spellbook",
     "condition": { "u_has_trait": "PROF_YOUMU" },
     "effect": [
+      { "u_location_variable": { "global_val": "var_youmu_loc" }, "min_radius": 1, "max_radius": 2, "passable_only": true },
       { "math": [ "var_slasheternal_dmg", "=", "( ( var_melee_all_dmg * ( (u_skill('cutting') * 0.05 ) + (u_skill('dodge') * 0.05 ) + 0.55 ) ) / 5 )" ] },
       { "math": [ "var_slashnether_dmg", "=", "( var_melee_all_dmg * ( (u_skill('cutting') * 0.1 ) + (u_skill('dodge') * 0.1 ) + 0.1 ) )" ] },
       { "math": [ "var_slashnether_pierce", "=", "( var_melee_all_dmg / 3 )" ] },
@@ -223,8 +224,8 @@
                       {
                         "u_spawn_monster": "mon_vengeful_posessed",
                         "real_count": 1,
-                        "min_radius": 1,
-                        "max_radius": 3,
+                        "min_radius": 0,
+                        "max_radius": 2,
                         "friendly": true,
                         "spawn_message": "A nearby vengeful spirit takes control!",
                         "spawn_message_plural": "",
@@ -240,8 +241,8 @@
                       {
                         "u_spawn_monster": "mon_vengeful_chasm",
                         "real_count": 1,
-                        "min_radius": 1,
-                        "max_radius": 3,
+                        "min_radius": 0,
+                        "max_radius": 2,
                         "friendly": true,
                         "spawn_message": "Nearby vengeful spirits take control, fusing together!",
                         "spawn_message_plural": "",
@@ -269,6 +270,7 @@
       ]
     },
     "effect": [
+      { "npc_location_variable": { "global_val": "var_corpsecursed_loc" } },
       { "npc_lose_effect": "seiga_corpsecurse_effect" },
       { 
         "run_eocs": [
@@ -290,11 +292,12 @@
               {
                 "u_spawn_monster": "mon_risen_child_seiga",
                 "real_count": 1,
-                "min_radius": 1,
-                "max_radius": 3,
+                "min_radius": 0,
+                "max_radius": 1,
                 "friendly": true,
                 "spawn_message": "The soul of your victim erupts from its corpse!",
-                "spawn_message_plural": "The souls of your victims erupts from their corpses!"
+                "spawn_message_plural": "The souls of your victims erupts from their corpses!",
+                 "target_var": { "global_val": "var_corpsecursed_loc" }
               }
             ],
             "false_effect": [ 
@@ -329,11 +332,12 @@
                       {
                         "u_spawn_monster": { "context_val": "victim_type" },
                         "real_count": 1,
-                        "min_radius": 1,
-                        "max_radius": 3,
+                        "min_radius": 0,
+                        "max_radius": 1,
                         "friendly": true,
                         "spawn_message": "Dark energies engulf your victim, quickly healing their wounds!",
-                        "spawn_message_plural": "Dark energies engulf your victims, quickly healing their wounds!"
+                        "spawn_message_plural": "Dark energies engulf your victims, quickly healing their wounds!",
+                        "target_var": { "global_val": "var_corpsecursed_loc" }
                       }
                     ],
                     "false_effect": [ 
@@ -351,11 +355,12 @@
                               {
                                 "u_spawn_monster": "mon_disgrace_seiga",
                                 "real_count": 1,
-                                "min_radius": 1,
-                                "max_radius": 3,
+                                "min_radius": 0,
+                                "max_radius": 1,
                                 "friendly": true,
                                 "spawn_message": "Your victim warps as life leaves its body, turning into a monstrosity!",
-                                "spawn_message_plural": "Your victims warp as life leaves their bodies, turning into monstrosities!"
+                                "spawn_message_plural": "Your victims warp as life leaves their bodies, turning into monstrosities!",
+                                "target_var": { "global_val": "var_corpsecursed_loc" }
                               }
                             ]
                           }
@@ -570,6 +575,24 @@
       { "run_eocs": [ "kokoro_instability_check_eoc" ] }
     ],
     "//": "Reduces var_kokoro_timer every 15 s and checks if she has enough instability"
+  },
+  {
+    "id": "meiling_mountainbreak_hit",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "character_takes_damage",
+    "condition": {
+      "and": [
+        { "u_has_trait": "PROF_MEILING" },
+        { "math": [ "u_var_mountainbreak", ">", "0" ] }
+      ]
+    },
+    "effect": [ 
+      { "u_lose_effect": "parry_effect" },
+      { "math": [ "u_var_mountainbreak", "=", "0" ] },
+      { "u_cast_spell": { "id": "meiling_mountainbreak2" } }
+    ],
+    "//": "Simplified version of udonge_barrierwave_hit. It checks if Meiling has casted Mountain breaking cannon. If that's the case it resets the var and casts the spell"
   },
   {
     "id": "mokou_death_eoc",
@@ -839,5 +862,23 @@
       { "math": [ "var_miasmaburst_dmg", "-=", "2" ] }
     ],
     "//": "Reduces var_miasmaburst_dmg every 7 s"
+  },
+  {
+    "id": "youmu_insightfulsword_hit",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "character_takes_damage",
+    "condition": {
+      "and": [
+        { "u_has_trait": "PROF_YOUMU" },
+        { "math": [ "u_var_insightfulsword", ">", "0" ] }
+      ]
+    },
+    "effect": [ 
+      { "u_lose_effect": "parry_effect" },
+      { "math": [ "u_var_insightfulsword", "=", "0" ] },
+      { "run_eocs": [ "youmu_insightfulsword_check" ] }
+    ],
+    "//": "Similar to meiling_mountainbreak_hit , only checks which is Youmu's highest damage type with the EOC"
   }
 ]

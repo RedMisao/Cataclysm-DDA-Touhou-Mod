@@ -18,8 +18,8 @@
   {
     "id": "fusion_bonk",
     "type": "SPELL",
-    "name": "Fusion blade (dmg)",
-    "description": "dmg component for utsuho_fusionblade ",
+    "name": { "str": "Fusion blade (dmg)" },
+    "description": "Damage component for utsuho_fusionblade ",
     "spell_class": "NONE",
     "effect": "attack",
     "valid_targets": [ "ally", "hostile" ],
@@ -51,7 +51,14 @@
     "rating": "good",
     "apply_message": "You cut the air around yourself, stopping incoming fast-moving proyectiles.",
     "remove_message": "The air around you is restored.",
-    "enchantments": [ { "values": [ { "value": "ARMOR_BULLET", "multiply": -1 } ] } ]
+    "enchantments": [ 
+      { 
+        "values": [  
+          { "value": "ARMOR_BULLET", "add": -999 } 
+        ],
+        "//": "ARMOR_X add -n ADDS armor for n value"
+      } 
+    ]
   },
   {
     "id": "aura_stickleback",
@@ -72,8 +79,8 @@
   {
     "id": "stickleback_shock",
     "type": "SPELL",
-    "name": "Thundercloud Stickleback (shock)",
-    "description": "Dmg component for iku_thundercloud ",
+    "name": { "str": "Thundercloud Stickleback (shock)" },
+    "description": "Damage component for iku_thundercloud ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "hostile" ],
     "effect": "attack",
@@ -94,7 +101,7 @@
   {
     "id": "stickleback_knockback",
     "type": "SPELL",
-    "name": "Thundercloud Stickleback (knockback)",
+    "name": { "str": "Thundercloud Stickleback (knockback)" },
     "description": "Knockback component for iku_thundercloud ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "hostile" ],
@@ -137,8 +144,8 @@
   {
     "id": "tiger_bonk",
     "type": "SPELL",
-    "name": "Tiger qi release (damage)",
-    "description": "dmg component for meiling_tigerrelease ",
+    "name": { "str": "Tiger qi release (dmg)" },
+    "description": "Damage component for meiling_tigerrelease ",
     "spell_class": "NONE",
     "effect": "attack",
     "valid_targets": [ "ally", "hostile" ],
@@ -182,8 +189,8 @@
   {
     "id": "vampiric_claw",
     "type": "SPELL",
-    "name": "Vampiric claw",
-    "description": "dmg component for remilia_vampiricaura ",
+    "name": { "str": "Vampiric claw (dmg)" },
+    "description": "Damage component for remilia_vampiricaura ",
     "spell_class": "NONE",
     "effect": "attack",
     "extra_effects": [ { "id": "vampiric_drain" } ],
@@ -206,8 +213,8 @@
   {
     "id": "vampiric_drain",
     "type": "SPELL",
-    "name": "Vampiric DRAIN",
-    "description": "heal component for remilia_vampiricaura ",
+    "name": { "str": "Vampiric DRAIN" },
+    "description": "Heal component for remilia_vampiricaura ",
     "spell_class": "NONE",
     "effect": "attack",
     "valid_targets": [ "self" ],
@@ -235,13 +242,23 @@
     "rating": "good",
     "apply_message": "You cut the air around yourself, stopping incoming fast-moving proyectiles.",
     "remove_message": "The air around you is restored.",
-    "enchantments": [ { "hit_me_effect": [ { "id": "windsickle_dmg" } ] } ]
+    "enchantments": [ 
+      {
+        "condition": "ALWAYS",
+        "hit_me_effect": [ { "id": "windsickle_dmg" } ],
+        "values": [
+          { "value": "ARMOR_BASH", "add": { "math": [ "( - (u_skill('dodge') - 2 ) )" ] } },
+          { "value": "ARMOR_CUT", "add": { "math": [ "( - (u_skill('dodge') - 2 ) )" ] } }
+        ],
+        "//": "ARMOR_X add -n ADDS armor for n value. This equals 2 - 12 bonus armor"
+      }
+    ]
   },
   {
     "id": "windsickle_dmg",
     "type": "SPELL",
-    "name": "Wind sickle (dmg)",
-    "description": "Dmg component for aya_windsickle ",
+    "name": { "str": "Wind sickle (dmg)" },
+    "description": "Damage component for aya_windsickle ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "hostile" ],
     "effect": "attack",

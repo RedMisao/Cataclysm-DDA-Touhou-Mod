@@ -154,7 +154,7 @@
   {
     "id": "mon_youmumyon_slasheternal_reduce",
     "type": "SPELL",
-    "name": "Slash of the eternal future (reduce EOC)",
+    "name": { "str": "Slash of the eternal future (reduce EOC)" },
     "description": "Forces the target to run the EOC, which reduces u_var_slasheternal_ to (their) self",
     "spell_class": "NONE",
     "valid_targets": [ "self" ],
@@ -305,7 +305,7 @@
   {
     "id": "mon_youmumyon2_slashnether2_reduce",
     "type": "SPELL",
-    "name": "Slash of nether meditation (phantom) (reduce EOC)",
+    "name": { "str": "Slash of nether meditation (phantom) (reduce EOC)" },
     "description": "Forces the target to run the EOC, which has a chance to reduce u_var_slashnether_cast to (their) self",
     "spell_class": "NONE",
     "valid_targets": [ "self" ],

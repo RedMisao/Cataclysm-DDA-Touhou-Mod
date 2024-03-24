@@ -41,11 +41,6 @@
     "//2": "Not present here: her knife, the artifact knife, switchblade, bone_knife, blade, office_letter_opener, multitool, pockknife. The first two because they're unique, the others because I don't want to"
   },
   {
-    "id": "spell_components_tengufan",
-    "type": "requirement",
-    "tools": [ [ [ "tengu_fan", -1 ] ] ]
-  },
-  {
     "id": "spell_components_tenkojian",
     "type": "requirement",
     "tools": [ [ [ "tenshi_jian_extended", -1 ] ] ]
@@ -59,20 +54,5 @@
     "id": "spell_components_utsuhorod",
     "type": "requirement",
     "tools": [ [ [ "utsuho_rod", -1 ] ] ]
-  },
-  {
-    "id": "spell_components_youmuhaku",
-    "type": "requirement",
-    "tools": [ [ [ "youmu_hakurouken", -1 ] ] ]
-  },
-  {
-    "id": "spell_components_youmurouka",
-    "type": "requirement",
-    "tools": [ [ [ "youmu_roukanken", -1 ] ] ]
-  },
-  {
-    "id": "spell_components_youmuswords",
-    "type": "requirement",
-    "tools": [ [ [ "youmu_roukanken", -1 ], [ "youmu_hakurouken", -1 ] ] ]
   }
 ]

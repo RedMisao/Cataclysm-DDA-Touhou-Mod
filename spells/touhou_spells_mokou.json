@@ -2,7 +2,7 @@
   {
     "id": "mokou_kick_bonus",
     "type": "SPELL",
-    "name": "Front kick (tec) (bonus dmg)",
+    "name": { "str": "Front kick (tec) (bonus dmg)" },
     "description": "Bonus dmg component for tec_mokou_kick ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -24,7 +24,7 @@
   {
     "id": "mokou_kick_bonus2",
     "type": "SPELL",
-    "name": "Front kick (tec) (crit) (bonus dmg)",
+    "name": { "str": "Front kick (tec) (crit) (bonus dmg)" },
     "description": "Bonus dmg component for tec_mokou_kick2 ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -46,7 +46,7 @@
   {
     "id": "mokou_liver_punch_bonus",
     "type": "SPELL",
-    "name": "Liver punch (tec) (bonus dmg)",
+    "name": { "str": "Liver punch (tec) (bonus dmg)" },
     "description": "Bonus dmg component for tec_mokou_liver_punch ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -68,7 +68,7 @@
   {
     "id": "mokou_punch_down_bonus",
     "type": "SPELL",
-    "name": "Downward punch (tec) (bonus dmg)",
+    "name": { "str": "Downward punch (tec) (bonus dmg)" },
     "description": "Bonus dmg component for tec_mokou_punch_down ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -84,13 +84,13 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "IGNITE_FLAMMABLE", "NO_HANDS", "NO_LEGS", "RANDOM_DAMAGE" ],
+    "flags": [ "NO_HANDS", "NO_LEGS", "RANDOM_DAMAGE" ],
     "//": "dmg (bonus) is 5 - 10 ± 25% variance"
   },
   {
     "id": "mokou_sommersault_kick_bonus",
     "type": "SPELL",
-    "name": "Sommersault kick (tec) (bonus dmg)",
+    "name": { "str": "Sommersault kick (tec) (bonus dmg)" },
     "description": "Bonus dmg component for tec_mokou_sommersault_kick ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -106,13 +106,13 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "IGNITE_FLAMMABLE", "NO_HANDS", "NO_LEGS", "RANDOM_DAMAGE" ],
+    "flags": [ "NO_HANDS", "NO_LEGS", "RANDOM_DAMAGE" ],
     "//": "dmg (bonus) is 13 - 26 as bonus of ~17 (min skills) ± 25% variance"
   },
   {
     "id": "mokou_tackle_bonus",
     "type": "SPELL",
-    "name": "Tackle (tec) (bonus dmg)",
+    "name": { "str": "Tackle (tec) (bonus dmg)" },
     "description": "Bonus dmg component for tec_mokou_tackle ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -134,9 +134,10 @@
   {
     "id": "mokou_blazekick",
     "type": "SPELL",
-    "name": "Blaze kick",
+    "name": { "str": "Blaze kick" },
     "description": "Spin into a whirldwind of flames, dealing damage and kicking enemies back.",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "ally", "ground", "hostile" ],
     "effect": "attack",
     "extra_effects": [ { "id": "mokou_blazekick2" } ],
@@ -159,7 +160,7 @@
   {
     "id": "mokou_blazekick2",
     "type": "SPELL",
-    "name": "Blaze kick (cc)",
+    "name": { "str": "Blaze kick (stun)" },
     "description": "Stun component for mokou_blazekick . This is a qol buff so the targets don't immediately move again after the knockback",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -183,8 +184,8 @@
   {
     "id": "mokou_blazekick3",
     "type": "SPELL",
-    "name": "Blaze kick (kick)",
-    "description": "Kick component of mokou_blazekick ",
+    "name": { "str": "Blaze kick (knockback)" },
+    "description": "Knockback component of mokou_blazekick ",
     "valid_targets": [ "ally", "ground", "hostile" ],
     "effect": "directed_push",
     "shape": "cone",
@@ -204,9 +205,10 @@
   {
     "id": "mokou_cauterize",
     "type": "SPELL",
-    "name": "Cauterize",
+    "name": { "str": "Cauterize" },
     "description": "Burn your wounds, dealing a small amount of damage upfront, and healing a larger amount over time.",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "self" ],
     "effect": "attack",
     "extra_effects": [ { "id": "mokou_cauterize2" }, { "id": "mokou_cauterize3" } ],
@@ -219,12 +221,12 @@
     "base_casting_time": 300,
     "base_energy_cost": 100,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS" ]
+    "flags": [ "NO_LEGS", "SOMATIC" ]
   },
   {
     "id": "mokou_cauterize2",
     "type": "SPELL",
-    "name": "Cauterize (healing)",
+    "name": { "str": "Cauterize (healing)" },
     "description": "Healing over time effect for mokou_cauterize ",
     "spell_class": "NONE",
     "valid_targets": [ "self" ],
@@ -246,7 +248,7 @@
   {
     "id": "mokou_cauterize3",
     "type": "SPELL",
-    "name": "Cauterize (limb dmg balance)",
+    "name": { "str": "Cauterize (limb dmg balance)" },
     "description": "Limb damage balancing component for mokou_cauterize ",
     "spell_class": "NONE",
     "valid_targets": [ "self" ],
@@ -264,9 +266,10 @@
   {
     "id": "mokou_combustion",
     "type": "SPELL",
-    "name": "Spontaneous combustion",
+    "name": { "str": "Spontaneous combustion" },
     "description": "Engulf yourself in flames, damaging any nearby creature over time.  The initial burst deals a small amount of damage, triggering your healing factor for a short time.",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "self" ],
     "effect": "effect_on_condition",
     "effect_str": "mokou_combustion_eoc",
@@ -284,7 +287,7 @@
   {
     "id": "mokou_combustion2",
     "type": "SPELL",
-    "name": "Spontaneous combustion (dmg)",
+    "name": { "str": "Spontaneous combustion (dmg)" },
     "description": "Damage component for mokou_combustion ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -306,7 +309,7 @@
   {
     "id": "mokou_combustion3",
     "type": "SPELL",
-    "name": "Spontaneous combustion (self dmg)",
+    "name": { "str": "Spontaneous combustion (self dmg)" },
     "description": "Self dmg component of mokou_combustion ",
     "spell_class": "NONE",
     "valid_targets": [ "self" ],
@@ -325,7 +328,7 @@
   {
     "id": "mokou_combustion4",
     "type": "SPELL",
-    "name": "Spontaneous combustion (hot) (lol)",
+    "name": { "str": "Spontaneous combustion (hot) (lol)" },
     "description": "Healing over time effect for mokou_combustion ",
     "spell_class": "NONE",
     "valid_targets": [ "self" ],
@@ -348,9 +351,10 @@
   {
     "id": "mokou_fireball",
     "type": "SPELL",
-    "name": "Create fire ball",
+    "name": { "str": "Create fire ball" },
     "description": "Create a fiery ball on your hand.  The sphere is metastable, meaning you can trigger it into a fiery explosion, or focus the flames on a target so it works as a fire source.",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "self" ],
     "effect": "spawn_item",
     "effect_str": "mokou_fireball2",
@@ -369,9 +373,10 @@
   {
     "id": "mokou_fujiyamakazan",
     "type": "SPELL",
-    "name": "Mt. Fuji's caldera",
+    "name": { "str": "Mt. Fuji's caldera" },
     "description": "Create a pillar of fire at the location, to burn your enemies and igniting the terrain.",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "ally", "ground", "hostile", "item" ],
     "effect": "attack",
     "shape": "blast",
@@ -399,9 +404,10 @@
   {
     "id": "mokou_resurrectionphoenix",
     "type": "SPELL",
-    "name": "Resurrection Phoenix",
+    "name": { "str": "Resurrection Phoenix" },
     "description": "Spell that is casted after Mokou's resurrection, should help in her not getting stunlocked by monsters",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "ally", "ground", "hostile" ],
     "effect": "attack",
     "extra_effects": [ { "id": "mokou_resurrectionphoenix2" } ],
@@ -422,7 +428,7 @@
   {
     "id": "mokou_resurrectionphoenix2",
     "type": "SPELL",
-    "name": "Resurrection Phoenix (cc)",
+    "name": { "str": "Resurrection Phoenix (stun)" },
     "description": "Stun component for mokou_resurrectionphoenix2 . This is a qol buff so the targets don't immediately move again after the knockback",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -444,7 +450,7 @@
   {
     "id": "mokou_resurrectionphoenix3",
     "type": "SPELL",
-    "name": "Resurrection Phoenix (knockback)",
+    "name": { "str": "Resurrection Phoenix (knockback)" },
     "description": "Knockback effect for mokou_resurrectionphoenix ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "hostile" ],
@@ -463,9 +469,10 @@
   {
     "id": "mokou_talons",
     "type": "SPELL",
-    "name": "Fire talons",
+    "name": { "str": "Fire talons" },
     "description": "Create talons of fire to slash in front of you.  Caution: the fire ignites flammables.",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "ally", "ground", "hostile" ],
     "effect": "attack",
     "shape": "cone",
@@ -487,7 +494,7 @@
   {
     "id": "mokou_talons2",
     "type": "SPELL",
-    "name": "Fire talons (tec)",
+    "name": { "str": "Fire talons (tec)" },
     "description": "Damage component for tec_mokou_talons ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "ground", "hostile" ],
@@ -505,7 +512,7 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "IGNITE_FLAMMABLE", "NO_LEGS", "RANDOM_DAMAGE", "SOMATIC" ],
+    "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SOMATIC" ],
     "//": "dmg 17 - 43 ± 25% variance"
   }
 ]

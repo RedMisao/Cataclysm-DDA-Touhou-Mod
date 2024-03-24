@@ -75,10 +75,9 @@
   {
     "id": "damnedrope_strength_effect",
     "type": "effect_type",
-    "name": [ "Spider strength (effect)" ],
-    "desc": [ " " ],
+    "name": [ "" ],
+    "desc": [ "" ],
     "rating": "good",
-    "show_in_info": false,
     "base_mods": { "str_mod": [ 72 ] },
     "enchantments": [ 
       { "values": [ { "value": "STRENGTH", "add": 72 } ] }
@@ -89,38 +88,96 @@
   {
     "id": "dash_levitation",
     "type": "effect_type",
-    "name": [ "Dash (effect)" ],
-    "desc": [ " " ],
+    "name": [ "" ],
+    "desc": [ "" ],
     "rating": "good",
-    "show_in_info": false,
     "flags": [ "LEVITATION" ],
     "//": "This effect is used in dashes, so the caster can 'jump' between z-level falls without dropping, breaking some bones, and moving to the end position"
   },
   {
     "id": "icy_pyrexia",
     "type": "effect_type",
-    "name": [ "Icy pyrexia (effect)" ],
+    "name": [ "Icy pyrexia (disease)" ],
     "desc": [ "Your limbs feel cold and rigid.  Movement speed is reduced." ],
+    "show_in_info": true,
     "base_mods": { "dex_mod": [ -4 ], "speed_mod": [ -17 ] },
     "max_intensity": 1,
     "max_effective_intensity": 1
   },
   {
+    "id": "icy_pyrexia_counter",
+    "type": "effect_type",
+    "name": [ "" ],
+    "desc": [ "" ],
+    "max_intensity": 1,
+    "max_effective_intensity": 1,
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "intermittent_activation": 
+          { 
+            "effects": [ 
+              { "spell_effects": [ { "id": "yamame_disease_icypyrexia2_2" } ], "frequency": "1 s" }
+          ] 
+        }
+      }
+    ]
+  },
+  {
     "id": "immolate_light",
     "type": "effect_type",
-    "name": [ "Immolate (light)" ],
+    "name": [ "Immolate (hellfire)" ],
     "desc": [ "Lumination effect for kaenbyou_immolate " ],
+    "show_in_info": true,
     "rating": "bad",
     "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "LUMINATION", "add": 36 } ] } ]
   },
   {
+    "id": "parry_effect",
+    "type": "effect_type",
+    "name": [ "" ],
+    "desc": [ "" ],
+    "rating": "good",
+    "max_intensity": 1,
+    "max_effective_intensity": 1,
+    "enchantments": [ 
+      { 
+        "values": [ 
+          { "value": "FORCEFIELD", "add": 1 } 
+        ] 
+      }
+    ],
+    "max_duration": "2 s",
+    "//": "Parry effect for some pseudo-melee spells"
+  },
+  {
     "id": "scarlet_plague",
     "type": "effect_type",
-    "name": [ "Scarlet plague (effect)" ],
+    "name": [ "Scarlet plague (disease)" ],
     "desc": [ "You feel debilitated and numb.  Your attacks are weaker." ],
+    "show_in_info": true,
     "base_mods": { "bash_mod": [ -2 ], "cut_mod": [ -2 ], "hit_mod": [ -1 ], "str_mod": [ -2 ] },
     "max_intensity": 1,
     "max_effective_intensity": 1
+  },
+  {
+    "id": "scarlet_plague_counter",
+    "type": "effect_type",
+    "name": [ "" ],
+    "desc": [ "" ],
+    "max_intensity": 1,
+    "max_effective_intensity": 1,
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "intermittent_activation": 
+          { 
+            "effects": [ 
+              { "spell_effects": [ { "id": "yamame_disease_scarletplague2_2" } ], "frequency": "1 s" }
+          ] 
+        }
+      }
+    ]
   },
   {
     "id": "slow_fantornado",
@@ -128,6 +185,7 @@
     "name": [ "Slow (Wind)" ],
     "desc": [ "Winds around you impede your movement." ],
     "base_mods": { "dex_mod": [ -1 ], "speed_mod": [ -25 ] },
+    "show_in_info": true,
     "max_intensity": 1,
     "max_effective_intensity": 1
   },
@@ -144,15 +202,35 @@
     "base_mods": { "str_mod": [ -1 ], "dex_mod": [ -1 ], "cough_chance": [ 10 ] },
     "show_in_info": true,
     "immune_flags": [ "PROF_MOKOU" ],
-    "//": "Exactly the same flag, only adds immunity for Mokou"
+    "//": "Exactly the same effect, only adds immunity for Mokou"
   },
   {
     "id": "volatile_rot",
     "type": "effect_type",
-    "name": [ "Volatile rot (effect)" ],
+    "name": [ "Volatile rot (disease)" ],
     "desc": [ "Your skin feels as if bursting out!" ],
+    "show_in_info": true,
     "max_intensity": 1,
     "max_effective_intensity": 1
+  },
+  {
+    "id": "volatile_rot_counter",
+    "type": "effect_type",
+    "name": [ "" ],
+    "desc": [ "" ],
+    "max_intensity": 1,
+    "max_effective_intensity": 1,
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "intermittent_activation": 
+          { 
+            "effects": [ 
+              { "spell_effects": [ { "id": "yamame_disease_volatilerot2_2" } ], "frequency": "1 s" }
+          ] 
+        }
+      }
+    ]
   },
   {
     "id": "aya_levitation",
@@ -160,7 +238,6 @@
     "name": [ "Crow wings (flight) (effect)" ],
     "desc": [ "Allows you to fly over ledges.  Also increases your movement speed." ],
     "rating": "good",
-    "show_in_info": false,
     "base_mods": { "speed_mod": [ 33 ] },
     "flags": [ "LEVITATION" ],
     "//": "~1.66 total movement speed, up from ~1.33 movement speed from base Aya"
@@ -426,6 +503,26 @@
     "base_mods": { "bash_mod": [ -2 ], "cut_mod": [ -2 ], "dodge_mod": [ -1 ], "speed_mod": [ -20 ] },
     "max_intensity": 1,
     "max_effective_intensity": 1
+  },
+  {
+    "id": "meiling_qiheal_effect",
+    "type": "effect_type",
+    "name": [ "Qi heal (effect)" ],
+    "desc": [ "Healing…" ],
+    "show_in_info": true,
+    "max_intensity": 1,
+    "max_effective_intensity": 1,
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "intermittent_activation": 
+          { 
+            "effects": [ 
+              { "spell_effects": [ { "id": "meiling_qiheal2" } ], "frequency": "1 s" }
+          ] 
+        }
+      }
+    ]
   },
   {
     "id": "mokou_resurrectcleanse",
@@ -727,7 +824,6 @@
     "name": [ "Bat wings (flight) (effect)" ],
     "desc": [ "Allows you to fly over ledges.  Also increases your movement speed." ],
     "rating": "good",
-    "show_in_info": false,
     "base_mods": { "speed_mod": [ 25 ] },
     "flags": [ "LEVITATION" ],
     "//": "~1.5 total movement speed, up from the 1.25x movement speed from base vampires"
@@ -737,6 +833,7 @@
     "type": "effect_type",
     "name": [ "Temporal contraction (effect)" ],
     "desc": [ "Your personal bubble is being contracted." ],
+    "show_in_info": true,
     "apply_message": "The world seems to accelerate around you!",
     "remove_message": "Time is flowing normally again.",
     "rating": "mixed",
@@ -785,8 +882,9 @@
   {
     "id": "seiga_corpsecurse_effect",
     "type": "effect_type",
-    "name": [ "Curse of corpses (effect)" ],
+    "name": [ "Curse of corpses (curse)" ],
     "desc": [ "You're cursed to something worse than eternal rest." ],
+    "show_in_info": true,
     "max_intensity": 1,
     "max_effective_intensity": 1
   },
@@ -795,6 +893,7 @@
     "type": "effect_type",
     "name": [ "Cripple (curse)" ],
     "desc": [ "Cripple (curse)" ],
+    "show_in_info": true,
     "max_duration": "10 s",
     "base_mods": { "speed_mod": [ -60 ] },
     "max_intensity": 1,
@@ -805,6 +904,7 @@
     "type": "effect_type",
     "name": [ "Cripple (curse)" ],
     "desc": [ "Cripple (curse)" ],
+    "show_in_info": true,
     "max_duration": "60 s",
     "base_mods": { "speed_mod": [ -20 ] },
     "max_intensity": 1,
@@ -815,6 +915,7 @@
     "type": "effect_type",
     "name": [ "Frenzied (curse)" ],
     "desc": [ "Frenzied (curse)" ],
+    "show_in_info": true,
     "max_duration": "60 m",
     "base_mods": { 
       "str_mod": [ 4 ],
@@ -829,6 +930,25 @@
     },
     "max_intensity": 1,
     "max_effective_intensity": 1
+  },
+  {
+    "id": "seiga_heal",
+    "type": "effect_type",
+    "name": [ "Xiè qì (effect)" ],
+    "desc": [ "Healing…" ],
+    "max_intensity": 1,
+    "max_effective_intensity": 1,
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "intermittent_activation": 
+          { 
+            "effects": [ 
+              { "spell_effects": [ { "id": "seiga_chidrain3" } ], "frequency": "1 s" }
+          ] 
+        }
+      }
+    ]
   },
   {
     "id": "seiga_mspeed",
@@ -915,7 +1035,6 @@
     "name": [ "Hell raven wings (flight) (effect)" ],
     "desc": [ "Allows you to fly over ledges." ],
     "rating": "good",
-    "show_in_info": false,
     "flags": [ "LEVITATION" ]
   },
   {
@@ -923,6 +1042,7 @@
     "type": "effect_type",
     "name": [ "Knee slasher (effect)" ],
     "desc": [ "Movement speed is reduced." ],
+    "show_in_info": true,
     "base_mods": { "speed_mod": [ -20 ] },
     "max_intensity": 1,
     "max_effective_intensity": 1
@@ -932,6 +1052,7 @@
     "type": "effect_type",
     "name": [ "Phantom aura (effect)" ],
     "desc": [ "Movement speed is reduced." ],
+    "show_in_info": true,
     "base_mods": { "speed_mod": [ -25 ] },
     "max_intensity": 1,
     "max_effective_intensity": 1

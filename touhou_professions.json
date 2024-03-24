@@ -266,6 +266,7 @@
       { "level": 1, "id": "nitori_turretdeploy" },
       { "level": 1, "id": "nitori_weathermissile" },
       { "level": 1, "id": "nitori_transformate" },
+      { "level": 1, "id": "nitori_TEST" },
       { "level": 1, "id": "nitori_zz_kappascrap" }
     ],
     "traits": [ "YOUKAI_SPECIES", "KAPPA_SPECIES", "PROF_NITORI", "SPIRIT_USER", "eye_blue_touhou", "FACIAL_HAIR_NONE", "hair_nitori" ],
@@ -703,6 +704,7 @@
       { "level": 1, "id": "dash_youmu" },
       { "level": 1, "id": "youmu_doublewheel" },
       { "level": 1, "id": "youmu_halfbody" },
+      { "level": 1, "id": "youmu_insightfulsword" },
       { "level": 1, "id": "youmu_reflectionslash" },
       { "level": 1, "id": "youmu_slasheternal" },
       { "level": 1, "id": "youmu_slashnether" }

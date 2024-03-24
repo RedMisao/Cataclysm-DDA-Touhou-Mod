@@ -41,6 +41,7 @@
       "yamame_kurodani",
       "youmu_konpaku"
     ],
+    "start_of_game": { "hour": 8, "day": 62, "season": "spring", "year": 1 },
     "start_name": "Outdoors starting locations."
   }
 ]
