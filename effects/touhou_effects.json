@@ -866,7 +866,7 @@
     "apply_message": "You make use of your ability to take a quick rest.",
     "remove_message": "Your quick rest has ended",
     "rating": "good",
-    "base_mods": { "fatigue_amount": [ -100 ], "pkill_amount": [ 1 ], "stamina_amount": [ 1000 ], "stim_amount": [ 2 ] }
+    "base_mods": { "sleepiness_amount": [ -100 ], "pkill_amount": [ 1 ], "stamina_amount": [ 1000 ], "stim_amount": [ 2 ] }
   },
   {
     "id": "sakuya_timestop_effect",
