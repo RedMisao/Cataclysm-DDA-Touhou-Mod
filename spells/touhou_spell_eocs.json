@@ -463,14 +463,14 @@
     "condition": {
       "and": [
         { "math": [ "u_val('mana')", "<=", "u_val('mana_max')" ] },
-        { "math": [ "u_val('stored_kcal')", ">=", "5500" ] },
+        { "math": [ "u_calories()", ">=", "5500" ] },
         { "math": [ "var_kasencalorieburn", ">", "0" ] },
         { "math": [ "var_kasencalorieburn", "<", "2" ] }
       ]
     },
     "effect": [
       { "math": [ "u_val('mana')", "+=", "6 + rand(8)" ] },
-      { "math": [ "u_val('stored_kcal')", "-=", "110 + rand(110)" ] },
+      { "math": [ "u_calories()", "-=", "110 + rand(110)" ] },
       { "u_add_effect": "kasen_calorieburn", "duration": "5 s" },
       { "queue_eocs": [ "kasen_calorieburn_cycle1" ], "time_in_future": [ "2 s", "5 s" ] }
     ],

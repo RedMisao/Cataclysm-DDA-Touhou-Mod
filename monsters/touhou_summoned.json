@@ -122,7 +122,7 @@
     "special_attacks": [ [ "grab", 12 ] ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
     "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s dissipates." },
-    "flags": [ "GRABS", "GROUP_MORALE", "HEARS", "NO_BREATHE", "PATH_AVOID_DANGER_1", "SEES", "SOULDMG_EXTRA" ]
+    "flags": [ "GRABS", "GROUP_MORALE", "HEARS", "NO_BREATHE", "PATH_AVOID_DANGER", "SEES", "SOULDMG_EXTRA" ]
   },
   {
     "id": "mon_sakuya_alternate",
@@ -144,7 +144,7 @@
     "morale": 99,
     "luminance": 1,
     "dodge": 8,
-    "path_settings": { "max_dist": 3 },
+    "path_settings": { "max_dist": 3, "avoid_traps": true, "avoid_dangerous_fields": true },
     "starting_ammo": { "alternate_knife_knife": 12 },
     "special_attacks": [
       {
@@ -173,7 +173,7 @@
       "NO_BREATHE",
       "NOT_HALLUCINATION",
       "PACIFIST",
-      "PATH_AVOID_DANGER_2",
+      "PATH_AVOID_DANGER",
       "PET_WONT_FOLLOW",
       "RANGED_ATTACKER",
       "SEES",
@@ -224,7 +224,7 @@
       "NO_BREATHE",
       "NOT_HALLUCINATION",
       "PACIFIST",
-      "PATH_AVOID_DANGER_2",
+      "PATH_AVOID_DANGER",
       "PET_WONT_FOLLOW",
       "RANGED_ATTACKER",
       "SEES",
@@ -232,6 +232,7 @@
       "STUN_IMMUNE",
       "WARM"
     ],
+    "path_settings": { "avoid_traps": true, "avoid_dangerous_fields": true },
     "//": "In AoCF they shoot with their fingers, not the gun. May change in the future idk"
   },
   {
@@ -392,7 +393,7 @@
     "luminance": 3,
     "vision_day": 20,
     "vision_night": 20,
-    "path_settings": { "max_dist": 20 },
+    "path_settings": { "max_dist": 20, "avoid_traps": true, "avoid_dangerous_fields": true },
     "special_attacks": [ 
       [ "grab", 11 ], 
       [ "PARROT_AT_DANGER", 16 ], 
@@ -414,7 +415,7 @@
       "HEARS",
       "NO_BREATHE",
       "NOT_HALLUCINATION",
-      "PATH_AVOID_DANGER_2",
+      "PATH_AVOID_DANGER",
       "SEES", 
       "SOULDMG_EXTRA",
       "STUN_IMMUNE",
@@ -470,7 +471,7 @@
       "GROUP_MORALE",
       "HEARS",
       "NOT_HALLUCINATION",
-      "PATH_AVOID_DANGER_1",
+      "PATH_AVOID_DANGER",
       "SEES", 
       "SOULDMG_EXTRA",
       "WARM"
@@ -529,7 +530,7 @@
     ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
     "death_function": { "corpse_type": "NO_CORPSE", "message": "%s's talisman safeguard activates just before she receives the last hit, immediately pulling her back to your Senkai." },
-    "flags": [ "CLIMBS", "GRABS", "HEARS", "NOT_HALLUCINATION", "PATH_AVOID_DANGER_1", "SEES", "SOULDMG_EXTRA" ]
+    "flags": [ "CLIMBS", "GRABS", "HEARS", "NOT_HALLUCINATION", "PATH_AVOID_DANGER", "SEES", "SOULDMG_EXTRA" ]
   },
   {
     "id": "mon_youmumyon",
@@ -554,7 +555,7 @@
     "melee_damage": [ { "damage_type": "cut", "amount": 8 }, { "damage_type": "soul", "amount": 8 } ],
     "luminance": 1,
     "dodge": 8,
-    "path_settings": { "max_dist": 6 },
+    "path_settings": { "max_dist": 6, "avoid_traps": true, "avoid_dangerous_fields": true },
     "special_attacks": [
       {
         "id": "youmumyon_slasheternal_cut",
@@ -581,7 +582,7 @@
     "anger_triggers": [ "FRIEND_ATTACKED", "HURT" ],
     "fear_triggers": [ "PLAYER_CLOSE" ],
     "death_function": { "corpse_type": "NO_CORPSE", "message": "Your phantom half returns to your side." },
-    "flags": [ "BASHES", "CAN_OPEN_DOORS", "CLIMBS", "FLIES", "NO_BREATHE", "NOT_HALLUCINATION", "PATH_AVOID_DANGER_2", "SEES" ]
+    "flags": [ "BASHES", "CAN_OPEN_DOORS", "CLIMBS", "FLIES", "NO_BREATHE", "NOT_HALLUCINATION", "PATH_AVOID_DANGER", "SEES" ]
   },
   {
     "id": "mon_youmumyon2",
@@ -602,7 +603,7 @@
     "morale": 99,
     "luminance": 2,
     "dodge": 6,
-    "path_settings": { "max_dist": 4 },
+    "path_settings": { "max_dist": 4, "avoid_traps": true, "avoid_dangerous_fields": true },
     "starting_ammo": { "myon_bullet_bullet": 20 },
     "special_attacks": [
       {
@@ -651,7 +652,7 @@
       "NOHEAD",
       "NOT_HALLUCINATION",
       "PACIFIST",
-      "PATH_AVOID_DANGER_2",
+      "PATH_AVOID_DANGER",
       "PLASTIC",
       "RANGED_ATTACKER",
       "SEES"
