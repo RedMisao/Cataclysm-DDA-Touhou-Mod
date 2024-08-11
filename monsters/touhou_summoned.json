@@ -1,5 +1,61 @@
 [
   {
+    "id": "mon_darksphere_seiga",
+    "type": "MONSTER",
+    "name": { "str": "Dark sphere" },
+    "description": "A floating sphere composed of a very bright core, surrounded by a thick mantle that seems to swallow external light.  Barely visible in the center is…",
+    "volume": "1 ml",
+    "weight": "1 kg",
+    "default_faction": "touhou_summon",
+    "bodytype": "blob",
+    "species": [ "UNKNOWN" ],
+    "harvest": "exempt",
+    "hp": 35,
+    "speed": 100,
+    "symbol": "ʘ",
+    "looks_like": "fd_electricity",
+    "color": "black",
+    "aggression": 99,
+    "morale": 99,
+    "luminance": 2,
+    "dodge": 4,
+    "armor": { "electric": 22 },
+    "path_settings": { 
+      "allow_climb_stairs": true,
+      "allow_open_doors": false,
+      "avoid_traps": true,
+      "max_dist": 24
+    },
+    "special_attacks": [
+      {
+        "id": "darksphere_1",
+        "type": "spell",
+        "spell_data": { "id": "darksphere_attack" },
+        "cooldown": 1
+      },
+      {
+        "id": "darksphere_2",
+        "type": "spell",
+        "spell_data": { "id": "darksphere_speed" },
+        "cooldown": { "math": [ "6 + rand(6)" ] },
+        "allow_no_target": true
+      }
+    ],
+    "death_function": { "corpse_type": "NO_CORPSE", "message": "" },
+    "flags": [
+      "CLIMBS",
+      "FLIES",
+      "NOHEAD",
+      "NO_BREATHE",
+      "NOT_HALLUCINATION",
+      "PACIFIST",
+      "PLASTIC",
+      "SEES",
+      "SILENT_DISAPPEAR",
+      "STUN_IMMUNE"
+    ]
+  },
+  {
     "id": "mon_kappa_turret",
     "type": "MONSTER",
     "name": { "str": "kappa turret" },
@@ -76,7 +132,7 @@
     "vision_day": 12,
     "vision_night": 8,
     "path_settings": { "max_dist": 12 },
-    "special_attacks": [ [ "grab", 12 ] ],
+    "special_attacks": [ [ "grab", { "math": [ "6 + rand(8)" ] } ] ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
     "death_function": {
       "corpse_type": "NO_CORPSE",
@@ -90,7 +146,7 @@
     "id": "mon_risen_child_seiga",
     "type": "MONSTER",
     "name": { "str": "risen child", "str_pl": "risen children" },
-    "description": "A specter in the shape of a human child, born from an amalgamation between dark hermit arts and some human essence.  Seems to have a mix between sadness, as if it was under a constant torment and anger, as if it was told to hurt others to relieve from it.",
+    "description": "A specter in the shape of a human child, born from an amalgamation between dark hermit arts and some human essence.  Gloom in appearance, torment and anger can be felt from being too close to it.",
     "volume": "35000 ml",
     "weight": "30000 g",
     "default_faction": "touhou_summon",
@@ -119,7 +175,7 @@
     "vision_day": 12,
     "vision_night": 10,
     "path_settings": { "max_dist": 12 },
-    "special_attacks": [ [ "grab", 12 ] ],
+    "special_attacks": [ [ "grab", { "math": [ "6 + rand(8)" ] } ] ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
     "death_function": { "corpse_type": "NO_CORPSE", "message": "The %s dissipates." },
     "flags": [ "GRABS", "GROUP_MORALE", "HEARS", "NO_BREATHE", "PATH_AVOID_DANGER", "SEES", "SOULDMG_EXTRA" ]
@@ -152,7 +208,7 @@
         "type": "gun",
         "description": "The maid throws a knife!",
         "ammo_type": "alternate_knife_knife",
-        "cooldown": 2,
+        "cooldown": { "math": [ "2 + rand(1)" ] },
         "fake_dex": 11,
         "fake_skills": [ [ "throw", 7 ] ],
         "max_ammo": 12,
@@ -283,6 +339,7 @@
       "CLIMBS",
       "FLIES",
       "KEEP_DISTANCE",
+      "NOHEAD",
       "NO_BREATHE",
       "NO_SOUL",
       "NOT_HALLUCINATION",
@@ -327,14 +384,14 @@
     "path_settings": { "max_dist": 8 },
     "starting_ammo": { "chasm_ammo_ammo": 999 },
     "special_attacks": [ 
-      [ "grab", 7 ], 
-      [ "PARROT_AT_DANGER", 16 ],
+      [ "grab", { "math": [ "4 + rand(5)" ] } ], 
+      [ "PARROT_AT_DANGER", { "math": [ "10 + rand(10)" ] } ],
       {
         "gun_type": "chasm_gun",
         "type": "gun",
         "description": "",
         "ammo_type": "chasm_ammo_ammo",
-        "cooldown": 3,
+        "cooldown": { "math": [ "3 + rand(3)" ] },
         "fake_dex": 4,
         "fake_skills": [ [ "gun", 1 ], [ "smg", 1 ] ],
         "max_ammo": 99,
@@ -395,9 +452,9 @@
     "vision_night": 20,
     "path_settings": { "max_dist": 20, "avoid_traps": true, "avoid_dangerous_fields": true },
     "special_attacks": [ 
-      [ "grab", 11 ], 
-      [ "PARROT_AT_DANGER", 16 ], 
-      [ "vs_stab2d2", 5 ]
+      [ "grab", { "math": [ "6 + rand(8)" ] } ], 
+      [ "PARROT_AT_DANGER", { "math": [ "10 + rand(10)" ] } ], 
+      [ "vs_stab2d2", { "math": [ "4 + rand(2)" ] } ]
     ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
     "death_function": {
@@ -456,7 +513,7 @@
     "vision_day": 20,
     "vision_night": 20,
     "path_settings": { "max_dist": 20 },
-    "special_attacks": [ [ "grab", 7 ], [ "PARROT_AT_DANGER", 16 ], [ "vs_stab2d2", 5 ] ],
+    "special_attacks": [ [ "grab", { "math": [ "4 + rand(5)" ] } ], [ "PARROT_AT_DANGER", { "math": [ "10 + rand(10)" ] } ], [ "vs_stab2d2", { "math": [ "4 + rand(2)" ] } ] ],
     "anger_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
     "death_function": {
       "corpse_type": "NO_CORPSE",
@@ -510,7 +567,7 @@
         "id": "yoshika_nails_1",
         "type": "spell", 
         "spell_data": { "id": "yoshika_nails" },
-        "cooldown": 5,
+        "cooldown": { "math": [ "2 + rand(6)" ] },
         "monster_message" : ""
       },
       { 
@@ -630,7 +687,7 @@
         "type": "gun",
         "description": "",
         "ammo_type": "myon_bullet_bullet",
-        "cooldown": 3,
+        "cooldown": { "math": [ "2 + rand(2)" ] },
         "fake_dex": 11,
         "fake_skills": [ [ "gun", 6 ] ],
         "max_ammo": 99,

@@ -8,7 +8,12 @@
         "run_eocs": [
           {
             "id": "kaenbyou_starting_soulshards",
-            "condition": { "or": [ { "u_has_trait": "KASHA_SPECIES" }, { "u_has_trait": "KASHA_SPECIES_active" } ] },
+            "condition": { 
+              "or": [ 
+                { "u_has_trait": "KASHA_SPECIES" }, 
+                { "u_has_trait": "KASHA_SPECIES_active" }
+              ]
+            },
             "effect": [ { "math": [ "u_var_soulshard", "+=", "2 + rand(2)" ] } ],
             "//": "Adds 2 - 4 soulshards"
           },
@@ -34,7 +39,9 @@
           {
             "id": "vampire_bloodthirst_start",
             "condition": { "u_has_trait": "VAMPIRE_SPECIES" },
-            "effect": [ { "math": [ "u_vitamin('hblood_vitamin')", "=", "648 + rand(144)" ] } ],
+            "effect": [
+              { "math": [ "u_vitamin('hblood_vitamin')", "=", "648 + rand(144)" ] }
+            ],
             "//": "Adds hblood_vitamin for VAMPIRE_SPECIES plus a smaller random amount, see vampire_bloodthirst_eoc below"
           }
         ]
@@ -56,7 +63,9 @@
         { "u_has_trait": "PROF_YOUMU" }
       ]
     },
-    "effect": [ { "npc_location_variable": { "global_val": "var_target_monster_loc" } } ]
+    "effect": [
+      { "npc_location_variable": { "global_val": "var_target_monster_loc" } }
+    ]
   },
   {
     "id": "wield_weapon_dmg_eoc",
@@ -91,7 +100,9 @@
     "eoc_type": "EVENT",
     "required_event": "opens_spellbook",
     "condition": { "u_has_trait": "PROF_KAENBYOU" },
-    "effect": [ { "math": [ "var_immolate_duration", "=", "( (u_skill('speech') * 120 ) + 720 )" ] } ],
+    "effect": [
+      { "math": [ "var_immolate_duration", "=", "( (u_skill('speech') * 120 ) + 720 )" ] }
+    ],
     "//": "This automatically sets the vars each time Kaenbyou opens the 'cast spell' window"
   },
   {
@@ -101,27 +112,9 @@
     "required_event": "opens_spellbook",
     "condition": { "u_has_trait": "PROF_KOKORO" },
     "effect": [
-      {
-        "math": [
-          "var_kokoro_anger_mod",
-          "=",
-          "( 1 + var_kokoro_anger * rng( -0.2, 0.4 ) + var_kokoro_anger_boost * rng( -0.1, 0.8 ) )"
-        ]
-      },
-      {
-        "math": [
-          "var_kokoro_deter_aoe_mod",
-          "=",
-          "( 1 + ( var_kokoro_melancholy * ( 1/5 ) ) + ( var_kokoro_melancholy_boost * ( 1/3 ) ) )"
-        ]
-      },
-      {
-        "math": [
-          "var_kokoro_melancholy_mod",
-          "=",
-          "( 1 + ( var_kokoro_melancholy * ( 1/3 ) ) + ( var_kokoro_melancholy_boost * ( 2/3 ) ) )"
-        ]
-      }
+      { "math": [ "var_kokoro_anger_mod", "=", "( 1 + var_kokoro_anger * rng( -0.2, 0.4 ) + var_kokoro_anger_boost * rng( -0.1, 0.8 ) )" ] },
+      { "math": [ "var_kokoro_deter_aoe_mod", "=", "( 1 + ( var_kokoro_melancholy * ( 1/5 ) ) + ( var_kokoro_melancholy_boost * ( 1/3 ) ) )" ] },
+      { "math": [ "var_kokoro_melancholy_mod", "=", "( 1 + ( var_kokoro_melancholy * ( 1/3 ) ) + ( var_kokoro_melancholy_boost * ( 2/3 ) ) )" ] }
     ],
     "//": "This automatically sets the vars each time Kokoro opens the 'cast spell' window. The vars are set here because they're awful to work with manually",
     "//2": "The anger mod is thus ~1.2 for the base anger stance and ~1.35 for the boosted anger stance (used for dmg)",
@@ -164,12 +157,8 @@
     "condition": { "u_has_trait": "PROF_YAMAME" },
     "effect": [
       { "math": [ "var_icypyrexia_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.95 )" ] },
-      {
-        "math": [ "var_scarletplague_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.95 )" ]
-      },
-      {
-        "math": [ "var_volatilerot_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.95 )" ]
-      },
+      { "math": [ "var_scarletplague_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.95 )" ] },
+      { "math": [ "var_volatilerot_dmg", "=", "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) + 0.95 )" ] },
       { "math": [ "var_disease_dur", "=", "( (u_skill('speech') * 30 ) + (u_skill('dodge') * 30 ) + 1290 )" ] },
       { "math": [ "var_miasmar_bonus", "=", "( (u_skill('speech') * 1.3 ) + (u_skill('dodge') * 1.3 ) + 7.9 )" ] }
     ],
@@ -184,27 +173,11 @@
     "condition": { "u_has_trait": "PROF_YOUMU" },
     "effect": [
       { "u_location_variable": { "global_val": "var_youmu_loc" }, "min_radius": 1, "max_radius": 2, "passable_only": true },
-      {
-        "math": [
-          "var_slasheternal_dmg",
-          "=",
-          "( ( var_melee_all_dmg * ( (u_skill('cutting') * 0.05 ) + (u_skill('dodge') * 0.05 ) + 0.55 ) ) / 5 )"
-        ]
-      },
-      {
-        "math": [
-          "var_slashnether_dmg",
-          "=",
-          "( var_melee_all_dmg * ( (u_skill('cutting') * 0.1 ) + (u_skill('dodge') * 0.1 ) + 0.1 ) )"
-        ]
-      },
+      { "math": [ "var_slasheternal_dmg", "=", "( ( var_melee_all_dmg * ( (u_skill('cutting') * 0.05 ) + (u_skill('dodge') * 0.05 ) + 0.55 ) ) / 5 )" ] },
+      { "math": [ "var_slashnether_dmg", "=", "( var_melee_all_dmg * ( (u_skill('cutting') * 0.1 ) + (u_skill('dodge') * 0.1 ) + 0.1 ) )" ] },
       { "math": [ "var_slashnether_pierce", "=", "( var_melee_all_dmg / 3 )" ] },
-      {
-        "math": [ "var_slashnether_range", "=", "( (u_skill('cutting') * 0.4 ) + (u_skill('dodge') * 0.4 ) + 0.4 )" ]
-      },
-      {
-        "math": [ "var_slasheternal2_dur", "=", "( (u_skill('cutting') * 320 ) + (u_skill('dodge') * 320 ) + 320 - 200 )" ]
-      },
+      { "math": [ "var_slashnether_range", "=", "( (u_skill('cutting') * 0.4 ) + (u_skill('dodge') * 0.4 ) + 0.4 )" ] },
+      { "math": [ "var_slasheternal2_dur", "=", "( (u_skill('cutting') * 320 ) + (u_skill('dodge') * 320 ) + 320 - 200 )" ] },
       { "math": [ "var_slashnether2_dmg", "=", "( var_melee_all_dmg / 6 )" ] }
     ],
     "//": "This automatically sets the vars each time Youmu opens the 'cast spell' window"
@@ -226,7 +199,12 @@
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
     "required_event": "character_kills_monster",
-    "condition": { "and": [ { "u_has_trait": "PROF_KAENBYOU" }, { "math": [ "n_var_vspossess", ">", "0" ] } ] },
+    "condition": {
+      "and": [
+        { "u_has_trait": "PROF_KAENBYOU" },
+        { "math": [ "n_var_vspossess", ">", "0" ] }
+      ]
+    },
     "effect": [
       { "math": [ "n_var_vspossess", "=", "0" ] },
       { "npc_location_variable": { "global_val": "var_vspossess_loc" } },
@@ -234,26 +212,14 @@
         "run_eocs": [
           {
             "id": "kaenbyou_vspossess_kill_check_1",
-            "condition": {
-              "math": [
-                "monsters_nearby('mon_vengeful_spirit', 'location': var_vspossess_loc, 'radius': 3, 'attitude': 'friendly')",
-                ">",
-                "0"
-              ]
-            },
-            "effect": [
-              {
+            "condition": { "math": [ "monsters_nearby('mon_vengeful_spirit', 'location': var_vspossess_loc, 'radius': 3, 'attitude': 'friendly')", ">", "0" ] },
+            "effect": [ 
+              { 
                 "run_eocs": [
                   {
                     "id": "kaenbyou_vspossess_kill_check_2",
-                    "condition": {
-                      "math": [
-                        "monsters_nearby('mon_vengeful_spirit', 'location': var_vspossess_loc, 'radius': 3, 'attitude': 'friendly')",
-                        "==",
-                        "1"
-                      ]
-                    },
-                    "effect": [
+                    "condition": { "math": [ "monsters_nearby('mon_vengeful_spirit', 'location': var_vspossess_loc, 'radius': 3, 'attitude': 'friendly')", "==", "1" ] },
+                    "effect": [ 
                       { "u_cast_spell": { "id": "kaenbyou_vspossess2" }, "loc": { "global_val": "var_vspossess_loc" } },
                       {
                         "u_spawn_monster": "mon_vengeful_posessed",
@@ -269,14 +235,8 @@
                   },
                   {
                     "id": "kaenbyou_vspossess_kill_check_3",
-                    "condition": {
-                      "math": [
-                        "monsters_nearby('mon_vengeful_spirit', 'location': var_vspossess_loc, 'radius': 3, 'attitude': 'friendly')",
-                        ">",
-                        "1"
-                      ]
-                    },
-                    "effect": [
+                    "condition": { "math": [ "monsters_nearby('mon_vengeful_spirit', 'location': var_vspossess_loc, 'radius': 3, 'attitude': 'friendly')", ">", "1" ] },
+                    "effect": [ 
                       { "u_cast_spell": { "id": "kaenbyou_vspossess2" }, "loc": { "global_val": "var_vspossess_loc" } },
                       {
                         "u_spawn_monster": "mon_vengeful_chasm",
@@ -303,7 +263,12 @@
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
     "required_event": "character_kills_monster",
-    "condition": { "and": [ { "u_has_trait": "PROF_SEIGA" }, { "npc_has_effect": "seiga_corpsecurse_effect" } ] },
+    "condition": {
+      "and": [
+        { "u_has_trait": "PROF_SEIGA" },
+        { "npc_has_effect": "seiga_corpsecurse_effect" }
+      ]
+    },
     "effect": [
       { "npc_location_variable": { "global_val": "var_corpsecursed_loc" } },
       { "npc_lose_effect": "seiga_corpsecurse_effect" },
@@ -342,7 +307,13 @@
                     "id": "seiga_corpsecursed_kill_check_2",
                     "condition": {
                       "or": [
-                        { "or": [ { "npc_has_species": "FERAL" }, { "npc_has_species": "HUMAN" }, { "npc_has_species": "ZOMBIE" } ] },
+                        {
+                          "or": [
+                            { "npc_has_species": "FERAL" },
+                            { "npc_has_species": "HUMAN" },
+                            { "npc_has_species": "ZOMBIE" }
+                          ]
+                        },
                         {
                           "or": [
                             { "compare_string": [ "mon_mutant_alpha", { "context_val": "victim_type" } ] },
@@ -374,8 +345,13 @@
                         "run_eocs": [
                           {
                             "id": "seiga_corpsecursed_kill_check_3",
-                            "condition": { "or": [ { "math": [ "n_val('volume')", ">=", "65000" ] }, { "math": [ "n_val('weight')", ">=", "65000" ] } ] },
-                            "effect": [
+                            "condition": {
+                              "or": [
+                                { "math": [ "n_val('volume')", ">=", "65000" ] },
+                                { "math": [ "n_val('weight')", ">=", "65000" ] }
+                              ]
+                            },
+                            "effect": [ 
                               {
                                 "u_spawn_monster": "mon_disgrace_seiga",
                                 "real_count": 1,
@@ -410,20 +386,28 @@
     "eoc_type": "EVENT",
     "required_event": "character_kills_monster",
     "condition": {
-      "and": [
-        { "or": [ { "u_has_trait": "KASHA_SPECIES" }, { "u_has_trait": "KASHA_SPECIES_active" } ] },
-        {
-          "or": [
-            { "npc_has_species": "FERAL" },
-            { "npc_has_species": "HUMAN" },
-            { "npc_has_species": "NETHER" },
-            { "npc_has_species": "ZOMBIE" }
+      "and": [ 
+        { 
+          "or": [ 
+            { "u_has_trait": "KASHA_SPECIES" }, 
+            { "u_has_trait": "KASHA_SPECIES_active" }
           ]
+        },
+        { 
+          "or": [ 
+            { "npc_has_species": "FERAL" }, 
+            { "npc_has_species": "HUMAN" }, 
+            { "npc_has_species": "NETHER" }, 
+            { "npc_has_species": "ZOMBIE" } 
+          ] 
         },
         { "math": [ "u_var_soulshard", "<", "16" ] }
       ]
     },
-    "effect": [ { "math": [ "u_var_soulshard", "+=", "1" ] }, { "u_message": "You gained a soulshard", "type": "mixed" } ],
+    "effect": [ 
+      { "math": [ "u_var_soulshard", "+=", "1" ] },
+      { "u_message": "You gained a soulshard", "type": "mixed" }
+    ],
     "//": "Simple EOC checks when a Kasha kills anything, if it's humanoid or close enough it adds the u_var "
   },
   {
@@ -431,10 +415,15 @@
     "type": "effect_on_condition",
     "recurrence": "1 s",
     "condition": {
-      "and": [ { "u_has_trait": "celestial_stance_mut" }, { "not": { "u_using_martial_art": "style_celestial_brawling_tenko" } } ]
+      "and": [
+        { "u_has_trait": "celestial_stance_mut" },
+        { "not": { "u_using_martial_art": "style_celestial_brawling_tenko" } }
+      ]
     },
     "deactivate_condition": { "not": { "u_has_trait": "celestial_stance_mut" } },
-    "effect": [ { "u_lose_trait": "celestial_stance_mut" } ],
+    "effect": [ 
+      { "u_lose_trait": "celestial_stance_mut" }
+    ],
     "//": "This removes the knockback and knockdown immunity of Tenko's MA if she's not using it"
   },
   {
@@ -442,14 +431,26 @@
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
     "required_event": "character_takes_damage",
-    "condition": { "and": [ { "u_has_trait": "PROF_KASEN" }, { "math": [ "var_kasencalorieburn", ">", "0" ] } ] },
-    "effect": [ { "math": [ "var_kasencalorieburn", "+=", "1" ] } ]
+    "condition": {
+      "and": [
+        { "u_has_trait": "PROF_KASEN" },
+        { "math": [ "var_kasencalorieburn", ">", "0" ] }
+      ]
+    },
+    "effect": [ 
+      { "math": [ "var_kasencalorieburn", "+=", "1" ] }
+    ]
   },
   {
     "id": "kokoro_morale_eoc",
     "type": "effect_on_condition",
     "recurrence": "1 s",
-    "condition": { "and": [ { "u_has_trait": "PROF_KOKORO" }, { "not": { "math": [ "u_val('morale')", "==", "0" ] } } ] },
+    "condition": {
+      "and": [
+        { "u_has_trait": "PROF_KOKORO" },
+        { "not": { "math": [ "u_val('morale')", "==", "0" ] } }
+      ]
+    },
     "deactivate_condition": { "not": { "u_has_trait": "PROF_KOKORO" } },
     "effect": [
       {
@@ -569,7 +570,10 @@
     "recurrence": "15 s",
     "condition": { "u_has_trait": "PROF_KOKORO" },
     "deactivate_condition": { "not": { "u_has_trait": "PROF_KOKORO" } },
-    "effect": [ { "math": [ "var_kokoro_timer", "-=", "15" ] }, { "run_eocs": [ "kokoro_instability_check_eoc" ] } ],
+    "effect": [ 
+      { "math": [ "var_kokoro_timer", "-=", "15" ] },
+      { "run_eocs": [ "kokoro_instability_check_eoc" ] }
+    ],
     "//": "Reduces var_kokoro_timer every 15 s and checks if she has enough instability"
   },
   {
@@ -577,8 +581,13 @@
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
     "required_event": "character_takes_damage",
-    "condition": { "and": [ { "u_has_trait": "PROF_MEILING" }, { "math": [ "u_var_mountainbreak", ">", "0" ] } ] },
-    "effect": [
+    "condition": {
+      "and": [
+        { "u_has_trait": "PROF_MEILING" },
+        { "math": [ "u_var_mountainbreak", ">", "0" ] }
+      ]
+    },
+    "effect": [ 
       { "u_lose_effect": "parry_effect" },
       { "math": [ "u_var_mountainbreak", "=", "0" ] },
       { "u_cast_spell": { "id": "meiling_mountainbreak2" } }
@@ -589,7 +598,12 @@
     "id": "mokou_death_eoc",
     "type": "effect_on_condition",
     "eoc_type": "PREVENT_DEATH",
-    "condition": { "and": [ { "u_has_trait": "PROF_MOKOU" }, { "math": [ "var_mokoudeath", "<", "rand(504)" ] } ] },
+    "condition": {
+      "and": [
+        { "u_has_trait": "PROF_MOKOU" },
+        { "math": [ "var_mokoudeath", "<", "rand(504)" ] }
+      ]
+    },
     "effect": [
       { "u_message": "Too bad you can't actually die for good.", "popup": true },
       "u_prevent_death",
@@ -611,9 +625,16 @@
     "id": "mokou_resurrect_counter_eoc",
     "type": "effect_on_condition",
     "recurrence": "1 hour",
-    "condition": { "and": [ { "u_has_trait": "PROF_MOKOU" }, { "math": [ "var_mokoudeath", ">", "0" ] } ] },
+    "condition": {
+      "and": [
+        { "u_has_trait": "PROF_MOKOU" },
+        { "math": [ "var_mokoudeath", ">", "0" ] }
+      ]
+    },
     "deactivate_condition": { "math": [ "var_mokoudeath", "<=", "0" ] },
-    "effect": [ { "math": [ "var_mokoudeath", "-=", "1" ] } ],
+    "effect": [ 
+      { "math": [ "var_mokoudeath", "-=", "1" ] } 
+    ],
     "//": "Reduces var_mokoudeath over time"
   },
   {
@@ -642,7 +663,12 @@
     "id": "seiga_death_eoc",
     "type": "effect_on_condition",
     "eoc_type": "PREVENT_DEATH",
-    "condition": { "and": [ { "u_has_trait": "PROF_SEIGA" }, { "u_has_effect": "seiga_shikaisen_effect" } ] },
+    "condition": {
+      "and": [
+        { "u_has_trait": "PROF_SEIGA" },
+        { "u_has_effect": "seiga_shikaisen_effect" }
+      ]
+    },
     "effect": [
       { "u_message": "The safeguard you prepared activates, instantly swapping identities." },
       "u_prevent_death",
@@ -684,7 +710,10 @@
         { "math": [ "var_barrierwave", ">", "0" ] }
       ]
     },
-    "effect": [ { "math": [ "var_barrierwave", "-=", "1" ] }, { "run_eocs": [ "udonge_barrierwave_hit2" ] } ],
+    "effect": [ 
+      { "math": [ "var_barrierwave", "-=", "1" ] },
+      { "run_eocs": [ "udonge_barrierwave_hit2" ] }
+    ],
     "//": "This EOC checks if Udonge has the barrierwave effect and at least one charge of it. If that's the case it reduces the charge by one and runs the following EOC",
     "//2": "The on-being-hit vfx is handled by the effect itself",
     "//3": "Currently there's a bug #72281 that makes the vfx not proc when hit by ranged attacks. The FORCEFIELD effect still works despite that"
@@ -693,23 +722,41 @@
     "id": "udonge_barrierwave_hit2",
     "type": "effect_on_condition",
     "condition": { "math": [ "var_barrierwave", "==", "0" ] },
-    "effect": [ { "u_lose_effect": "udonge_barrierwave" } ]
+    "effect": [ 
+      { "u_lose_effect": "udonge_barrierwave" }
+    ]
   },
   {
     "id": "udonge_barrierwave_game_load",
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
     "required_event": "game_load",
-    "condition": { "and": [ { "u_has_trait": "PROF_UDONGE" }, { "u_has_effect": "udonge_barrierwave" } ] },
-    "effect": [ { "math": [ "var_barrierwave", "=", "0" ] }, { "u_lose_effect": "udonge_barrierwave" } ]
+    "condition": {
+      "and": [
+        { "u_has_trait": "PROF_UDONGE" },
+        { "u_has_effect": "udonge_barrierwave" }
+      ]
+    },
+    "effect": [
+      { "math": [ "var_barrierwave", "=", "0" ] },
+      { "u_lose_effect": "udonge_barrierwave" }
+    ]
   },
   {
     "id": "udonge_barrierwave_sleep",
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
     "required_event": "character_falls_asleep",
-    "condition": { "and": [ { "u_has_trait": "PROF_UDONGE" }, { "u_has_effect": "udonge_barrierwave" } ] },
-    "effect": [ { "math": [ "var_barrierwave", "=", "0" ] }, { "u_lose_effect": "udonge_barrierwave" } ]
+    "condition": {
+      "and": [
+        { "u_has_trait": "PROF_UDONGE" },
+        { "u_has_effect": "udonge_barrierwave" }
+      ]
+    },
+    "effect": [
+      { "math": [ "var_barrierwave", "=", "0" ] },
+      { "u_lose_effect": "udonge_barrierwave" }
+    ]
   },
   {
     "id": "vampire_bloodthirst_eoc",
@@ -722,7 +769,9 @@
           {
             "id": "vampire_bloodthirst_lowerlimit",
             "condition": { "math": [ "u_vitamin('hblood_vitamin')", "<=", "0" ] },
-            "effect": [ { "math": [ "u_vitamin('hblood_vitamin')", "=", "0" ] } ]
+            "effect": [
+              { "math": [ "u_vitamin('hblood_vitamin')", "=", "0" ] }
+            ]
           },
           {
             "id": "vampire_bloodthirst_veryhigh",
@@ -792,7 +841,9 @@
           {
             "id": "vampire_bloodthirst_upperlimit",
             "condition": { "math": [ "u_vitamin('hblood_vitamin')", ">=", "792" ] },
-            "effect": [ { "math": [ "u_vitamin('hblood_vitamin')", "=", "792" ] } ]
+            "effect": [
+              { "math": [ "u_vitamin('hblood_vitamin')", "=", "792" ] }
+            ]
           }
         ]
       }
@@ -807,7 +858,9 @@
     "recurrence": "7 s",
     "condition": { "math": [ "var_miasmaburst_dmg", ">", "0" ] },
     "deactivate_condition": { "not": { "u_has_trait": "PROF_YAMAME" } },
-    "effect": [ { "math": [ "var_miasmaburst_dmg", "-=", "2" ] } ],
+    "effect": [ 
+      { "math": [ "var_miasmaburst_dmg", "-=", "2" ] }
+    ],
     "//": "Reduces var_miasmaburst_dmg every 7 s"
   },
   {
@@ -815,8 +868,13 @@
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
     "required_event": "character_takes_damage",
-    "condition": { "and": [ { "u_has_trait": "PROF_YOUMU" }, { "math": [ "u_var_insightfulsword", ">", "0" ] } ] },
-    "effect": [
+    "condition": {
+      "and": [
+        { "u_has_trait": "PROF_YOUMU" },
+        { "math": [ "u_var_insightfulsword", ">", "0" ] }
+      ]
+    },
+    "effect": [ 
       { "u_lose_effect": "parry_effect" },
       { "math": [ "u_var_insightfulsword", "=", "0" ] },
       { "run_eocs": [ "youmu_insightfulsword_check" ] }

@@ -17,11 +17,14 @@
       { "part": "ARM_R", "neutral": 3 },
       { "part": "TORSO", "neutral": 3 }
     ],
-    "enchantments": [
-      {
-        "condition": "ALWAYS",
-        "values": [ { "value": "PAIN", "multiply": -0.16 }, { "value": "STAMINA_REGEN_MOD", "add": 0.25 } ]
-      }
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "PAIN", "multiply": -0.16 }, 
+          { "value": "STAMINA_REGEN_MOD", "add": 0.25 }
+        ] 
+      } 
     ],
     "cancels": [ "FLIMSY", "FLIMSY2", "FLIMSY3", "PAINRESIST", "THICKSKIN", "THINSKIN", "TOUGH", "TOUGH2", "TOUGH3" ],
     "//": "Maybe replace the passive pain resist for pain resist/reduction while fighting"
@@ -35,11 +38,14 @@
     "player_display": false,
     "purifiable": false,
     "valid": false,
-    "enchantments": [
-      {
-        "condition": "ALWAYS",
-        "values": [ { "value": "KNOCKBACK_RESIST", "add": 100 }, { "value": "KNOCKDOWN_RESIST", "add": 100 } ]
-      }
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "KNOCKBACK_RESIST", "add": 100 },
+          { "value": "KNOCKDOWN_RESIST", "add": 100 } 
+        ] 
+      } 
     ]
   },
   {
@@ -51,7 +57,14 @@
     "player_display": false,
     "purifiable": false,
     "valid": false,
-    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "STRENGTH", "add": 72 } ] } ]
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "STRENGTH", "add": 72 }
+        ] 
+      } 
+    ]
   },
   {
     "id": "GYOKUTO_SPECIES",
@@ -135,8 +148,18 @@
     "valid": false,
     "ugliness": 2,
     "visibility": 8,
-    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "CLIMATE_CONTROL_HEAT", "add": 35 } ] } ],
-    "anger_relations": [ [ "GHOST_TOUHOU", -20 ], [ "PHANTOM_TOUHOU", -20 ] ]
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "CLIMATE_CONTROL_HEAT", "add": 35 }
+        ] 
+      } 
+    ],
+    "anger_relations": [ 
+      [ "GHOST_TOUHOU", -20 ], 
+      [ "PHANTOM_TOUHOU", -20 ] 
+    ]
   },
   {
     "id": "HELLRAVEN_SPECIES",
@@ -201,17 +224,24 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "enchantments": [ { "values": [ { "value": "MENDING_MODIFIER", "multiply": 1 }, { "value": "REGEN_HP_AWAKE", "multiply": 2 } ] } ],
-    "cancels": [
-      "ASTHMA",
-      "CHAOTIC_BAD",
-      "UNSTABLE",
-      "CHEMIMBALANCE",
-      "DISIMMUNE",
-      "DISRESISTANT",
-      "EATPOISON",
-      "INFIMMUNE",
-      "INFRESIST"
+    "enchantments": [
+      {
+        "values": [
+          { "value": "MENDING_MODIFIER", "multiply": 1 },
+          { "value": "REGEN_HP_AWAKE", "multiply": 2 }
+        ]
+      }
+    ],
+    "cancels": [ 
+      "ASTHMA", 
+      "CHAOTIC_BAD", 
+      "UNSTABLE", 
+      "CHEMIMBALANCE", 
+      "DISIMMUNE", 
+      "DISRESISTANT", 
+      "EATPOISON", 
+      "INFIMMUNE", 
+      "INFRESIST" 
     ],
     "flags": [ "BIO_IMMUNE", "INFECTION_IMMUNE", "NO_DISEASE", "NO_RADIATION", "PARAIMMUNE", "POISRESIST" ]
   },
@@ -314,10 +344,12 @@
           { "value": "WEAKNESS_TO_WATER", "add": 0.12 }
         ]
       },
-      {
-        "condition": { "not": "u_has_weapon" },
-        "values": [ { "value": "ITEM_DAMAGE_CUT", "add": { "math": [ "rng( 2, 4 )" ] } } ]
-      }
+      { 
+        "condition": { "not": "u_has_weapon" }, 
+        "values": [
+          { "value": "ITEM_DAMAGE_CUT", "add": { "math": [ "rng( 2, 4 )" ] } }
+        ]
+      } 
     ],
     "transform": { "target": "KASHA_SPECIES", "active": false, "moves": 100 },
     "extend": { "flags": [ "SMALL" ] }
@@ -455,7 +487,12 @@
     "starting_trait": false,
     "valid": false,
     "active": true,
-    "enchantments": [ { "condition": "ALWAYS", "mutations": [ "WEB_WALKER" ] } ],
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "mutations": [ "WEB_WALKER" ]
+      } 
+    ],
     "transform": { "target": "TSUCHIGUMO_SPECIES_active", "active": false, "moves": 100 },
     "//": "This needs some sort of small bonus over the active form below, so she has a reason to switch forms at all"
   },
@@ -588,10 +625,13 @@
     "starting_trait": false,
     "valid": false,
     "visibility": 1,
-    "enchantments": [
-      {
-        "condition": "ALWAYS",
-        "values": [ { "value": "NIGHT_VIS", "multiply": 2 }, { "value": "SOCIAL_INTIMIDATE", "add": 4 } ],
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "NIGHT_VIS", "multiply": 2 },
+          { "value": "SOCIAL_INTIMIDATE", "add": 4 }
+        ],
         "mutations": [ "CANNIBAL" ]
       }
     ],
@@ -609,7 +649,14 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "REGEN_MANA", "multiply": 11 } ] } ],
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "values": [
+          { "value": "REGEN_MANA", "multiply": 11 }
+        ]
+      }
+    ],
     "cancels": [  ],
     "//": "This equals a full mana pool every 40 minutes or so"
   },
@@ -623,7 +670,14 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "REGEN_MANA", "multiply": 5 } ] } ],
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "values": [
+          { "value": "REGEN_MANA", "multiply": 5 }
+        ]
+      }
+    ],
     "cancels": [  ],
     "//": "This equals a full mana pool every 1 h 20 minutes or so. Should have some extra benefit to compensate, but what?"
   },
@@ -637,7 +691,14 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "REGEN_MANA", "multiply": 3 } ] } ],
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "values": [
+          { "value": "REGEN_MANA", "multiply": 3 }
+        ]
+      }
+    ],
     "cancels": [  ],
     "//": "This equals a full mana pool every 2 h or so"
   },
@@ -665,7 +726,12 @@
     "copy-from": "WINGS_HELLRAVEN",
     "description": "Your wings are now prepared for flying.  Activate the mutation to fold your wings, disabling flight.",
     "active": true,
-    "enchantments": [ { "condition": "ALWAYS", "ench_effects": [ { "effect": "utsuho_levitation", "intensity": 1 } ] } ],
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "ench_effects": [ { "effect": "utsuho_levitation", "intensity": 1 } ] 
+      } 
+    ],
     "transform": { "target": "WINGS_HELLRAVEN", "active": false, "moves": 100 }
   },
   {
@@ -691,7 +757,12 @@
     "copy-from": "WINGS_TENGUCROW",
     "description": "Your wings are now prepared for flying.  Activate to disable flight.",
     "active": true,
-    "enchantments": [ { "condition": "ALWAYS", "ench_effects": [ { "effect": "aya_levitation", "intensity": 1 } ] } ],
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "ench_effects": [ { "effect": "aya_levitation", "intensity": 1 } ] 
+      } 
+    ],
     "transform": { "target": "WINGS_TENGUCROW", "msg_transform": "You relax your wings.", "active": false, "moves": 100 }
   },
   {
@@ -704,11 +775,14 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "enchantments": [
-      {
-        "condition": "ALWAYS",
-        "values": [ { "value": "CLIMATE_CONTROL_CHILL", "add": 15 }, { "value": "CLIMATE_CONTROL_HEAT", "add": 20 } ]
-      }
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "CLIMATE_CONTROL_CHILL", "add": 15 },
+          { "value": "CLIMATE_CONTROL_HEAT", "add": 20 }
+        ] 
+      } 
     ],
     "flags": [ "GLARE_RESIST", "HEAT_IMMUNE", "NO_RADIATION", "PARAIMMUNE" ]
   },
@@ -722,9 +796,20 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "enchantments": [
-      { "condition": "ALWAYS", "values": [ { "value": "DEXTERITY", "add": 2 }, { "value": "INTELLIGENCE", "add": 1 } ] },
-      { "condition": { "u_has_move_mode": "run" }, "values": [ { "value": "MOVE_COST", "multiply": -0.1 } ] }
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "DEXTERITY", "add": 2 }, 
+          { "value": "INTELLIGENCE", "add": 1 }
+        ] 
+      },
+      { 
+        "condition": { "u_has_move_mode": "run" }, 
+        "values": [ 
+          { "value": "MOVE_COST", "multiply": -0.1 }
+        ] 
+      }
     ],
     "//": "Aya's base ms is 100 * 0.8 = 80, or 100 * 0.7 * 0.5 = 35 if running. Do note same MOVE_COST stack additively, not multiplicatively"
   },
@@ -773,7 +858,11 @@
     "starting_trait": false,
     "valid": false,
     "armor": [ { "parts": "ALL", "soul": 2 } ],
-    "anger_relations": [ [ "GHOST_TOUHOU", -20 ], [ "JIANGSHI_TOUHOU", -20 ], [ "PHANTOM_TOUHOU", -20 ] ]
+    "anger_relations": [ 
+      [ "GHOST_TOUHOU", -20 ], 
+      [ "JIANGSHI_TOUHOU", -20 ], 
+      [ "PHANTOM_TOUHOU", -20 ] 
+    ]
   },
   {
     "id": "PROF_KASEN",
@@ -812,35 +901,8 @@
       [ "REPTILE", -25 ],
       [ "WORM", -25 ]
     ],
-    "cancels": [
-      "ARM_FEATHERS",
-      "BARBS",
-      "BENDY1",
-      "BURROW",
-      "BURROWLARGE",
-      "CLAWS",
-      "CLAWS_RAT",
-      "CLAWS_RETRACT",
-      "CLAWS_ST",
-      "CLAWS_TENTACLE",
-      "CRUSTACEAN_CLAW",
-      "NAILS",
-      "PAWS",
-      "PAWS_LARGE",
-      "PAWS_LITTLE",
-      "SLIME_HANDS",
-      "TALONS",
-      "WEBBED",
-      "CLUMSY",
-      "LIGHT_BONES",
-      "LIGHTWEIGHT",
-      "NO_RIGHT_ARM",
-      "PRETTY",
-      "UGLY",
-      "DEFORMED",
-      "DEFORMED2",
-      "DEFORMED3"
-    ],
+    "cancels": [ "ARM_FEATHERS", "BARBS", "BENDY1", "BURROW", "BURROWLARGE", "CLAWS", "CLAWS_RAT", "CLAWS_RETRACT", "CLAWS_ST", "CLAWS_TENTACLE", "CRUSTACEAN_CLAW", "NAILS", "PAWS", "PAWS_LARGE", "PAWS_LITTLE", "SLIME_HANDS", "TALONS", "WEBBED",
+    "CLUMSY", "LIGHT_BONES", "LIGHTWEIGHT", "NO_RIGHT_ARM", "PRETTY", "UGLY", "DEFORMED", "DEFORMED2", "DEFORMED3" ],
     "//2": "Overrides the current WIP mutation NO_RIGHT_ARM ",
     "//3": "The restricts_gear field is not set, as while it makes sense it cannot be removed by equipping kasen_bandages , or at least I don't know how to remove the field via enchantments",
     "//4": "Currently, while arm_stub_r can be added, it immediately breaks after starting (no actual effect). Also, it displays the un-handed right arm, and while kasen_bandages grants the proper arm + hand, smashing stuff proccs the stub smash_message instead of the restored limb"
@@ -856,19 +918,15 @@
     "starting_trait": false,
     "valid": false,
     "initial_ma_styles": [ "style_kokoro" ],
-    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "CARDIO_MULTIPLIER", "multiply": 0.25 } ] } ],
-    "cancels": [
-      "JEKYLL",
-      "SEASONAL_AFFECTIVE",
-      "GOODCARDIO",
-      "GOODCARDIO2",
-      "OPTIMISTIC",
-      "BADKNEES",
-      "REALLYBADKNEES",
-      "BADCARDIO",
-      "BADTEMPER",
-      "MOODSWINGS"
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "CARDIO_MULTIPLIER", "multiply": 0.25 }
+        ]
+      } 
     ],
+    "cancels": [ "JEKYLL", "SEASONAL_AFFECTIVE", "GOODCARDIO", "GOODCARDIO2", "OPTIMISTIC", "BADKNEES", "REALLYBADKNEES", "BADCARDIO", "BADTEMPER", "MOODSWINGS" ],
     "flags": [  ]
   },
   {
@@ -906,7 +964,12 @@
     "starting_trait": false,
     "valid": false,
     "initial_ma_styles": [ "style_mokou" ],
-    "enchantments": [ { "condition": "ALWAYS", "mutations": [ "KI_STRIKE" ] } ],
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "mutations": [ "KI_STRIKE" ]
+      }
+    ],
     "cancels": [ "NOPAIN", "PAINRESIST" ],
     "flags": [ "HEAT_IMMUNE" ]
   },
@@ -931,7 +994,15 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "INTELLIGENCE", "add": -1 }, { "value": "MAX_MANA", "add": 100 } ] } ]
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "INTELLIGENCE", "add": -1 },
+          { "value": "MAX_MANA", "add": 100 }
+        ] 
+      } 
+    ]
   },
   {
     "id": "PROF_REISEN",
@@ -1001,7 +1072,14 @@
     "player_display": false,
     "purifiable": false,
     "valid": false,
-    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "NIGHT_VIS", "multiply": 1 } ] } ]
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "NIGHT_VIS", "multiply": 1 }
+        ] 
+      } 
+    ]
   },
   {
     "id": "PROF_YAMAME",
@@ -1013,7 +1091,14 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "ARMOR_BIO", "multiply": -0.33 } ] } ],
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "ARMOR_BIO", "multiply": -0.33 }
+        ] 
+      } 
+    ],
     "anger_relations": [
       [ "ONI_TOUHOU", -25 ],
       [ "YOUKAI_FEMALE_TOUHOU", -25 ],
@@ -1035,6 +1120,13 @@
     "starting_trait": false,
     "valid": false,
     "initial_ma_styles": [ "style_youmu" ],
-    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "SOCIAL_LIE", "add": -4 } ] } ]
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "SOCIAL_LIE", "add": -4 }
+        ]
+      } 
+    ]
   }
 ]

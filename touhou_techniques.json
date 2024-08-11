@@ -111,7 +111,9 @@
     "eocs": [
       {
         "id": "tec_iku_palm_eoc",
-        "effect": [ { "u_cast_spell": { "id": "iku_palm" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [ 
+          { "u_cast_spell": { "id": "iku_palm" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "HAND", "WEAPON" ],
@@ -196,11 +198,15 @@
     "knockback_follow": true,
     "knockback_dist": 1,
     "stun_dur": 1,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 1.1 } ],
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.1 }
+    ],
     "eocs": [
       {
         "id": "tec_iku_rising_drill_eoc",
-        "effect": [ { "u_cast_spell": { "id": "iku_rising_drill" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [ 
+          { "u_cast_spell": { "id": "iku_rising_drill" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "WEAPON" ],
@@ -250,7 +256,9 @@
     "eocs": [
       {
         "id": "tec_iku_slap_elec_eoc",
-        "effect": [ { "u_cast_spell": { "id": "iku_slap_elec" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [ 
+          { "u_cast_spell": { "id": "iku_slap_elec" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "WEAPON" ],
@@ -269,7 +277,14 @@
     "unarmed_allowed": true,
     "crit_tec": true,
     "stun_dur": 2,
-    "eocs": [ { "id": "tec_iku_step_eoc", "effect": [ { "u_cast_spell": { "id": "iku_step" }, "targeted": false } ] } ],
+    "eocs": [
+      {
+        "id": "tec_iku_step_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "iku_step" }, "targeted": false }
+        ]
+      }
+    ],
     "attack_vectors": [ "HAND", "WEAPON" ],
     "//": "WEAPON so it can be used with the weapon equipped",
     "//2": "Spell to allow aoe with single target, also it deals electric dmg"
@@ -343,7 +358,12 @@
     "messages": [ "You quickly chop at %s!", "<npcname> quickly chops at %s!" ],
     "skill_requirements": [ { "name": "unarmed", "level": 2 } ],
     "unarmed_allowed": true,
-    "condition": { "and": [ { "u_has_effect": "mabuff:buff_kasen_static" }, { "math": [ "u_var_kasen_arm", "==", "0" ] } ] },
+    "condition": {
+      "and": [
+        { "u_has_effect": "mabuff:buff_kasen_static" },
+        { "math": [ "u_var_kasen_arm", "==", "0" ] }
+      ]
+    },
     "mult_bonuses": [
       { "stat": "movecost", "scale": 0.66 },
       { "stat": "damage", "type": "bash", "scale": 0.75 },
@@ -351,7 +371,14 @@
       { "stat": "damage", "type": "stab", "scale": 0.75 },
       { "stat": "damage", "type": "soul", "scale": 0.75 }
     ],
-    "eocs": [ { "id": "tec_kasen_chop_eoc", "effect": [ { "math": [ "u_var_kasen_arm", "=", "1" ] } ] } ],
+    "eocs": [
+      {
+        "id": "tec_kasen_chop_eoc",
+        "effect": [ 
+          { "math": [ "u_var_kasen_arm", "=", "1" ] }
+        ]
+      }
+    ],
     "attack_vectors": [ "HAND" ],
     "//": "Based on tec_boxing_rapid (and all other Jab techniques)"
   },
@@ -359,17 +386,18 @@
     "id": "tec_kasen_drillkick",
     "type": "technique",
     "name": "Drill strike (kick)",
-    "messages": [
-      "You shape your bandages as a drill and kick at %s with it!",
-      "<npcname> shapes their wraps as a drill and kicks %s with it!"
-    ],
+    "messages": [ "You shape your bandages as a drill and kick at %s with it!", "<npcname> shapes their wraps as a drill and kicks %s with it!" ],
     "skill_requirements": [ { "name": "unarmed", "level": 2 } ],
     "unarmed_allowed": true,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 1.17 } ],
+    "mult_bonuses": [ 
+      { "stat": "movecost", "scale": 1.17 }
+    ],
     "eocs": [
       {
         "id": "tec_kasen_drillkick_eoc",
-        "effect": [ { "u_cast_spell": { "id": "kasen_drillkick" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [ 
+          { "u_cast_spell": { "id": "kasen_drillkick" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "FOOT" ]
@@ -381,8 +409,15 @@
     "messages": [ "You palm strike %s with your left hand!", "<npcname> palm strikes %s with their left hand!" ],
     "skill_requirements": [ { "name": "unarmed", "level": 2 } ],
     "unarmed_allowed": true,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 1.1 } ],
-    "condition": { "and": [ { "u_has_effect": "mabuff:buff_kasen_static" }, { "math": [ "u_var_kasen_arm", "==", "1" ] } ] },
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.1 }
+    ],
+    "condition": {
+      "and": [
+        { "u_has_effect": "mabuff:buff_kasen_static" },
+        { "math": [ "u_var_kasen_arm", "==", "1" ] }
+      ]
+    },
     "eocs": [
       {
         "id": "tec_kasen_palm_left_eoc",
@@ -402,8 +437,15 @@
     "messages": [ "You palm strike %s with your right hand!", "<npcname> palm strikes %s with their right hand!" ],
     "skill_requirements": [ { "name": "unarmed", "level": 2 } ],
     "unarmed_allowed": true,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 1.1 } ],
-    "condition": { "and": [ { "u_has_effect": "mabuff:buff_kasen_static" }, { "math": [ "u_var_kasen_arm", "==", "0" ] } ] },
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.1 }
+    ],
+    "condition": {
+      "and": [
+        { "u_has_effect": "mabuff:buff_kasen_static" },
+        { "math": [ "u_var_kasen_arm", "==", "0" ] }
+      ]
+    },
     "eocs": [
       {
         "id": "tec_kasen_palm_right_eoc",
@@ -419,14 +461,18 @@
     "id": "tec_kasen_palmfly",
     "type": "technique",
     "name": "Palm strike (Wrap)",
-    "messages": [
-      "You extend your wraps to hit %s, sending them flying!",
-      "<npcname> extend their wraps to hit %s, sending them flying!"
-    ],
+    "messages": [ "You extend your wraps to hit %s, sending them flying!", "<npcname> extend their wraps to hit %s, sending them flying!" ],
     "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
     "unarmed_allowed": true,
-    "condition": { "and": [ { "u_has_effect": "mabuff:buff_kasen_static" }, { "math": [ "u_var_kasen_arm", "==", "1" ] } ] },
-    "mult_bonuses": [ { "stat": "movecost", "scale": 1.17 } ],
+    "condition": {
+      "and": [
+        { "u_has_effect": "mabuff:buff_kasen_static" },
+        { "math": [ "u_var_kasen_arm", "==", "1" ] }
+      ]
+    },
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.17 }
+    ],
     "eocs": [
       {
         "id": "tec_kasen_palmfly_eoc",
@@ -446,8 +492,15 @@
     "messages": [ "You punch %s with your left hand!", "<npcname> punches %s with their left hand!" ],
     "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
     "unarmed_allowed": true,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 1.2 } ],
-    "condition": { "and": [ { "u_has_effect": "mabuff:buff_kasen_static" }, { "math": [ "u_var_kasen_arm", "==", "1" ] } ] },
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.2 }
+    ],
+    "condition": {
+      "and": [
+        { "u_has_effect": "mabuff:buff_kasen_static" },
+        { "math": [ "u_var_kasen_arm", "==", "1" ] }
+      ]
+    },
     "eocs": [
       {
         "id": "tec_kasen_punch_left_eoc",
@@ -468,8 +521,15 @@
     "messages": [ "You punch %s with your right hand!", "<npcname> punches %s with their right hand!" ],
     "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
     "unarmed_allowed": true,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 1.2 } ],
-    "condition": { "and": [ { "u_has_effect": "mabuff:buff_kasen_static" }, { "math": [ "u_var_kasen_arm", "==", "0" ] } ] },
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.2 }
+    ],
+    "condition": {
+      "and": [
+        { "u_has_effect": "mabuff:buff_kasen_static" },
+        { "math": [ "u_var_kasen_arm", "==", "0" ] }
+      ]
+    },
     "eocs": [
       {
         "id": "tec_kasen_punch_right_eoc",
@@ -488,11 +548,15 @@
     "messages": [ "You unwrap your bandages and swipe towards %s!", "<npcname> unwraps their bandages and swipes towards %s!" ],
     "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
     "unarmed_allowed": true,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 1.1 } ],
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.1 }
+    ],
     "eocs": [
       {
         "id": "tec_kasen_swipe_eoc",
-        "effect": [ { "u_cast_spell": { "id": "kasen_swipe" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [
+          { "u_cast_spell": { "id": "kasen_swipe" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "HAND" ]
@@ -506,18 +570,7 @@
       "<npcname> was almost grabbed by %s, but they break its grab!"
     ],
     "skill_requirements": [ { "name": "melee", "level": 4 } ],
-    "weapon_categories_allowed": [
-      "BATONS",
-      "HAND_AXES",
-      "SHORT_SWORDS",
-      "MEDIUM_SWORDS",
-      "LONG_SWORDS",
-      "GREAT_SWORDS",
-      "QUARTERSTAVES",
-      "SPEARS",
-      "POLEARMS",
-      "GREAT_AXES"
-    ],
+    "weapon_categories_allowed": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS", "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
     "melee_allowed": true,
     "defensive": true,
     "grab_break": true,
@@ -528,25 +581,24 @@
     "id": "tec_kokoro_spin",
     "type": "technique",
     "name": "Spin attack",
-    "messages": [ "You spin, hitting nearby enemies!", "<npcname> spins, hitting nearby enemies!" ],
-    "skill_requirements": [ { "name": "melee", "level": 4 } ],
-    "weapon_categories_allowed": [
-      "BATONS",
-      "HAND_AXES",
-      "SHORT_SWORDS",
-      "MEDIUM_SWORDS",
-      "LONG_SWORDS",
-      "GREAT_SWORDS",
-      "QUARTERSTAVES",
-      "SPEARS",
-      "POLEARMS",
-      "GREAT_AXES"
+    "messages": [
+      "You spin, hitting nearby enemies!",
+      "<npcname> spins, hitting nearby enemies!"
     ],
+    "skill_requirements": [ { "name": "melee", "level": 4 } ],
+    "weapon_categories_allowed": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS", "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
     "melee_allowed": true,
     "crit_tec": false,
     "reach_ok": true,
     "stun_dur": 1,
-    "eocs": [ { "id": "tec_kokoro_spin_eoc", "effect": [ { "u_cast_spell": { "id": "kokoro_spin" }, "targeted": false } ] } ],
+    "eocs": [
+      {
+        "id": "tec_kokoro_spin_eoc",
+        "effect": [
+          { "u_cast_spell": { "id": "kokoro_spin" }, "targeted": false }
+        ]
+      }
+    ],
     "attack_vectors": [ "WEAPON" ],
     "//": "This is inspired in her 'jump, fall upside down while spinning' attack, but that would be too long to perform by itself, implement as combo ending if possible",
     "//2": "Turned into a spell to allow aoe with single target"
@@ -578,11 +630,15 @@
     "weapon_categories_allowed": [ "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
     "melee_allowed": true,
     "reach_ok": true,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 1.1 } ],
+    "mult_bonuses": [ 
+      { "stat": "movecost", "scale": 1.1 }
+    ],
     "eocs": [
       {
         "id": "tec_kokoro_sweep_eoc",
-        "effect": [ { "u_cast_spell": { "id": "kokoro_sweep" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [
+          { "u_cast_spell": { "id": "kokoro_sweep" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "WEAPON" ],
@@ -624,24 +680,15 @@
       "<npcname> turns around and attacks %s while moving backwards!"
     ],
     "skill_requirements": [ { "name": "melee", "level": 6 } ],
-    "weapon_categories_allowed": [
-      "BATONS",
-      "HAND_AXES",
-      "SHORT_SWORDS",
-      "MEDIUM_SWORDS",
-      "LONG_SWORDS",
-      "GREAT_SWORDS",
-      "QUARTERSTAVES",
-      "SPEARS",
-      "POLEARMS",
-      "GREAT_AXES"
-    ],
+    "weapon_categories_allowed": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS", "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
     "melee_allowed": true,
     "reach_ok": true,
     "eocs": [
       {
         "id": "tec_kokoro_switch_eoc",
-        "effect": [ { "u_cast_spell": { "id": "kokoro_switch" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [
+          { "u_cast_spell": { "id": "kokoro_switch" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "WEAPON" ],
@@ -656,7 +703,12 @@
     "unarmed_allowed": true,
     "crit_ok": true,
     "down_dur": 1,
-    "condition": { "or": [ { "not": { "npc_has_flag": "FLIES" } }, { "npc_has_flag": "DISABLE_FLIGHT" } ] },
+    "condition": { 
+      "or": [ 
+        { "not": { "npc_has_flag": "FLIES" } }, 
+        { "npc_has_flag": "DISABLE_FLIGHT" } 
+      ] 
+    },
     "mult_bonuses": [
       { "stat": "movecost", "scale": 0.8 },
       { "stat": "damage", "type": "bash", "scale": 0.85 },
@@ -673,7 +725,10 @@
     "messages": [ "You hit %s with your qi-reinforced elbow!", "<npcname> hits %s with their qi-reinforced elbow!" ],
     "skill_requirements": [ { "name": "unarmed", "level": 3 } ],
     "unarmed_allowed": true,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 0.75 }, { "stat": "damage", "type": "bash", "scale": 1.1 } ],
+    "mult_bonuses": [ 
+      { "stat": "movecost", "scale": 0.75 }, 
+      { "stat": "damage", "type": "bash", "scale": 1.1 } 
+    ],
     "attack_vectors": [ "ELBOW" ]
   },
   {
@@ -715,7 +770,13 @@
             }
           ]
         },
-        { "not": { "and": [ { "npc_has_flag": "GRAB_FILTER" }, { "u_has_flag": "GRAB" } ] } }
+        { "not": { 
+            "and": [ 
+              { "npc_has_flag": "GRAB_FILTER" }, 
+              { "u_has_flag": "GRAB" } 
+            ] 
+          } 
+        }
       ]
     },
     "mult_bonuses": [
@@ -753,7 +814,13 @@
             }
           ]
         },
-        { "not": { "and": [ { "npc_has_flag": "GRAB_FILTER" }, { "u_has_flag": "GRAB" } ] } }
+        { "not": { 
+            "and": [ 
+              { "npc_has_flag": "GRAB_FILTER" }, 
+              { "u_has_flag": "GRAB" } 
+            ] 
+          } 
+        }
       ]
     },
     "mult_bonuses": [
@@ -778,7 +845,9 @@
     "eocs": [
       {
         "id": "tec_meiling_qiblast_eoc",
-        "effect": [ { "u_cast_spell": { "id": "meiling_qiblast2" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [
+          { "u_cast_spell": { "id": "meiling_qiblast2" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "PALM" ],
@@ -796,14 +865,24 @@
     "unarmed_allowed": true,
     "down_dur": 2,
     "stun_dur": 1,
-    "condition": { "or": [ { "not": { "npc_has_flag": "FLIES" } }, { "npc_has_flag": "DISABLE_FLIGHT" } ] },
+    "condition": { 
+      "or": [ 
+        { "not": { "npc_has_flag": "FLIES" } }, 
+        { "npc_has_flag": "DISABLE_FLIGHT" } 
+      ] 
+    },
     "mult_bonuses": [
       { "stat": "damage", "type": "bash", "scale": 1.667 },
       { "stat": "damage", "type": "cut", "scale": 1.667 },
       { "stat": "damage", "type": "stab", "scale": 1.667 }
     ],
     "eocs": [
-      { "id": "tec_meiling_stomp_eoc", "effect": [ { "u_cast_spell": { "id": "meiling_stomp_effect" }, "targeted": false } ] }
+      {
+        "id": "tec_meiling_stomp_eoc",
+        "effect": [
+          { "u_cast_spell": { "id": "meiling_stomp_effect" }, "targeted": false }
+        ]
+      }
     ],
     "attack_vectors": [ "FOOT" ],
     "//": "Do not replace with the spell doing dmg, as this is already scaling off her unarmed melee dmg. That is, unless it's dealing 5 dmg or something"
@@ -830,7 +909,9 @@
     "eocs": [
       {
         "id": "tec_mokou_kick_bonus_eoc",
-        "effect": [ { "u_cast_spell": { "id": "mokou_kick_bonus" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [
+          { "u_cast_spell": { "id": "mokou_kick_bonus" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "FOOT" ],
@@ -849,7 +930,9 @@
     "eocs": [
       {
         "id": "tec_mokou_kick_eoc",
-        "effect": [ { "u_cast_spell": { "id": "mokou_kick_bonus2" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [ 
+          { "u_cast_spell": { "id": "mokou_kick_bonus2" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "KNEE" ],
@@ -864,11 +947,15 @@
     "unarmed_allowed": true,
     "crit_ok": true,
     "stun_dur": 2,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 0.95 } ],
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 0.95 }
+    ],
     "eocs": [
       {
         "id": "tec_mokou_liver_punch_eoc",
-        "effect": [ { "u_cast_spell": { "id": "mokou_liver_punch_bonus" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [ 
+          { "u_cast_spell": { "id": "mokou_liver_punch_bonus" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "HAND" ],
@@ -886,7 +973,9 @@
     "eocs": [
       {
         "id": "tec_mokou_punch_down_eoc",
-        "effect": [ { "u_cast_spell": { "id": "mokou_punch_down_bonus" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [ 
+          { "u_cast_spell": { "id": "mokou_punch_down_bonus" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "HAND" ],
@@ -904,7 +993,9 @@
     "eocs": [
       {
         "id": "tec_mokou_sommersault_kick_eoc",
-        "effect": [ { "u_cast_spell": { "id": "mokou_sommersault_kick_bonus" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [ 
+          { "u_cast_spell": { "id": "mokou_sommersault_kick_bonus" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "FOOT" ],
@@ -921,11 +1012,16 @@
     "knockback_dist": 2,
     "down_dur": 2,
     "stun_dur": 1,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 1.33 }, { "stat": "damage", "type": "bash", "scale": 1.1 } ],
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.33 },
+      { "stat": "damage", "type": "bash", "scale": 1.1 }
+    ],
     "eocs": [
       {
         "id": "tec_mokou_tackle_eoc",
-        "effect": [ { "u_cast_spell": { "id": "mokou_tackle_bonus" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [ 
+          { "u_cast_spell": { "id": "mokou_tackle_bonus" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "TORSO" ],
@@ -942,7 +1038,9 @@
     "eocs": [
       {
         "id": "tec_mokou_talons_eoc",
-        "effect": [ { "u_cast_spell": { "id": "mokou_talons2" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [ 
+          { "u_cast_spell": { "id": "mokou_talons2" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "HAND" ],
@@ -955,7 +1053,9 @@
     "messages": [ "You do a cute backflip while attacking %s!", "<npcname> does a cute backflip while attacking %s!" ],
     "skill_requirements": [ { "name": "melee", "level": 4 } ],
     "melee_allowed": true,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 0.9 } ],
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 0.9 }
+    ],
     "attack_vectors": [ "FOOT" ]
   },
   {
@@ -1016,9 +1116,23 @@
     "skill_requirements": [ { "name": "unarmed", "level": 3 } ],
     "unarmed_allowed": true,
     "down_dur": 2,
-    "condition": { "or": [ { "not": { "npc_has_flag": "FLIES" } }, { "npc_has_flag": "DISABLE_FLIGHT" } ] },
-    "mult_bonuses": [ { "stat": "movecost", "scale": 1.1 } ],
-    "eocs": [ { "id": "tec_tenko_stomp_eoc", "effect": [ { "u_cast_spell": { "id": "tenko_stomp" }, "targeted": false } ] } ],
+    "condition": { 
+      "or": [ 
+        { "not": { "npc_has_flag": "FLIES" } }, 
+        { "npc_has_flag": "DISABLE_FLIGHT" } 
+      ] 
+    },
+    "mult_bonuses": [ 
+      { "stat": "movecost", "scale": 1.1 } 
+    ],
+    "eocs": [
+      {
+        "id": "tec_tenko_stomp_eoc",
+        "effect": [ 
+          { "u_cast_spell": { "id": "tenko_stomp" }, "targeted": false }
+        ]
+      }
+    ],
     "attack_vectors": [ "FOOT" ]
   },
   {
@@ -1058,11 +1172,15 @@
     "messages": [ "You strike %s with the hilt of your weapon", "<npcname> strikes %s with the hilt of their weapon" ],
     "skill_requirements": [ { "name": "melee", "level": 4 } ],
     "melee_allowed": true,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 0.9 } ],
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 0.9 } 
+    ],
     "eocs": [
       {
         "id": "tec_youmu_hilt_nudge_eoc",
-        "effect": [ { "u_cast_spell": { "id": "youmu_hilt_nudge" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [
+          { "u_cast_spell": { "id": "youmu_hilt_nudge" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "WEAPON" ],
@@ -1091,11 +1209,15 @@
     "messages": [ "You powerfully stab %s", "<npcname> stabs %s" ],
     "skill_requirements": [ { "name": "melee", "level": 5 } ],
     "melee_allowed": true,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 1.25 } ],
+    "mult_bonuses": [ 
+      { "stat": "movecost", "scale": 1.25 }
+    ],
     "eocs": [
       {
         "id": "tec_youmu_stinger_eoc",
-        "effect": [ { "u_cast_spell": { "id": "youmu_stinger" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [ 
+          { "u_cast_spell": { "id": "youmu_stinger" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "WEAPON" ],
@@ -1109,8 +1231,13 @@
     "skill_requirements": [ { "name": "melee", "level": 4 } ],
     "melee_allowed": true,
     "down_dur": 2,
-    "condition": { "or": [ { "not": { "npc_has_flag": "FLIES" } }, { "npc_has_flag": "DISABLE_FLIGHT" } ] },
-    "mult_bonuses": [
+    "condition": { 
+      "or": [ 
+        { "not": { "npc_has_flag": "FLIES" } }, 
+        { "npc_has_flag": "DISABLE_FLIGHT" } 
+      ] 
+    },
+    "mult_bonuses": [ 
       { "stat": "damage", "type": "bash", "scale": 0.85 },
       { "stat": "damage", "type": "cut", "scale": 0.85 },
       { "stat": "damage", "type": "stab", "scale": 0.85 }
@@ -1126,11 +1253,15 @@
     "melee_allowed": true,
     "unarmed_allowed": false,
     "down_dur": 2,
-    "mult_bonuses": [ { "stat": "movecost", "scale": 0.66 } ],
+    "mult_bonuses": [ 
+      { "stat": "movecost", "scale": 0.66 }
+    ],
     "eocs": [
       {
         "id": "tec_youmu_knee_slasher_eoc",
-        "effect": [ { "u_cast_spell": { "id": "youmu_knee_slasher" }, "loc": { "global_val": "var_target_monster_loc" } } ]
+        "effect": [ 
+          { "u_cast_spell": { "id": "youmu_knee_slasher" }, "loc": { "global_val": "var_target_monster_loc" } }
+        ]
       }
     ],
     "attack_vectors": [ "WEAPON" ]

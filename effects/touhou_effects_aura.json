@@ -218,6 +218,7 @@
     "spell_class": "NONE",
     "effect": "attack",
     "valid_targets": [ "self" ],
+    "affected_body_parts": [ "arm_l", "arm_r", "head", "leg_l", "leg_r", "torso" ],
     "shape": "blast",
     "damage_type": "pure",
     "min_damage": { "math": [ "( - (u_skill('stabbing') * 0.27 ) - (u_skill('melee') * 0.27 ) + 0.3 )" ] },

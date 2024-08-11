@@ -279,8 +279,7 @@
       }
     ],
     "//": "This asks for the player to select a location, checks if there's any wall",
-    "//2": "If true, it saves the location, XYZ",
-    "//3": "It then removes the corpse item, sets a random aoe, and casts the spells plus the vfx at the location"
+    "//2": "If true, it saves the location, AAA"
   },
   {
     "id": "seiga_wallwalk_store",

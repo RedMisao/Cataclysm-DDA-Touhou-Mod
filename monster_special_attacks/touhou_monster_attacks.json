@@ -5,7 +5,7 @@
     "attack_type": "melee",
     "cooldown": 1,
     "move_cost": 66,
-    "damage_max_instance": [ { "damage_type": "stab", "amount": 20, "armor_penetration": 1 } ],
+    "damage_max_instance": [ { "damage_type": "stab", "amount": 20, "armor_penetration": 2 } ],
     "min_mul": 0.1,
     "max_mul": 0.2,
     "hitsize_min": 0,

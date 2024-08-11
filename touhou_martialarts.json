@@ -51,7 +51,9 @@
         "melee_allowed": true,
         "buff_duration": 3,
         "max_stacks": 2,
-        "mult_bonuses": [ { "stat": "movecost", "scale": 0.9 } ]
+        "mult_bonuses": [
+          { "stat": "movecost", "scale": 0.9 }
+        ]
       }
     ],
     "onmove_buffs": [
@@ -80,7 +82,9 @@
         "melee_allowed": true,
         "buff_duration": 2,
         "max_stacks": 2,
-        "flat_bonuses": [ { "stat": "crit_chance", "scale": 9 } ]
+        "flat_bonuses": [
+          { "stat": "crit_chance", "scale": 9 }
+        ]
       },
       {
         "id": "buff_celestial_brawling_iku_onpause2",
@@ -129,7 +133,14 @@
         "flat_bonuses": [ { "stat": "hit", "scale": 1 } ]
       }
     ],
-    "static_eocs": [ { "id": "celestial_brawling_tenko_static_eoc", "effect": [ { "u_add_trait": "celestial_stance_mut" } ] } ],
+    "static_eocs": [
+      {
+        "id": "celestial_brawling_tenko_static_eoc",
+        "effect": [
+          { "u_add_trait": "celestial_stance_mut" }
+        ]
+      }
+    ],
     "onhit_buffs": [
       {
         "id": "buff_celestial_brawling_tenko_onhit",
@@ -157,7 +168,9 @@
     "oncrit_eocs": [
       {
         "id": "buff_celestial_brawling_tenko_oncrit_eoc",
-        "effect": [ { "u_lose_effect": "mabuff:buff_celestial_brawling_tenko_onhit" } ]
+        "effect": [
+          { "u_lose_effect": "mabuff:buff_celestial_brawling_tenko_onhit" }
+        ]
       }
     ],
     "onpause_buffs": [
@@ -208,7 +221,9 @@
         "unarmed_allowed": true,
         "melee_allowed": false,
         "bonus_blocks": 1,
-        "flat_bonuses": [ { "stat": "block_effectiveness", "scale": 1 } ]
+        "flat_bonuses": [
+          { "stat": "block_effectiveness", "scale": 1 }
+        ]
       }
     ],
     "onhit_buffs": [
@@ -227,13 +242,24 @@
       {
         "id": "buff_kasen_onhit_eoc",
         "condition": { "u_has_effect": "mabuff:buff_kasen_static" },
-        "effect": [ { "math": [ "u_val('mana')", "+=", "1 + rand(2)" ] } ]
+        "effect": [
+          { "math": [ "u_val('mana')", "+=", "1 + rand(2)" ] }
+        ]
       },
       {
         "id": "buff_kasen_arm_eoc",
-        "condition": { "and": [ { "u_has_effect": "mabuff:buff_kasen_static" }, { "math": [ "u_var_kasen_arm", "==", "0" ] } ] },
-        "effect": [ { "math": [ "u_var_kasen_arm", "+=", "rand(1)" ] } ],
-        "false_effect": [ { "math": [ "u_var_kasen_arm", "=", "0" ] } ],
+        "condition": {
+          "and": [
+            { "u_has_effect": "mabuff:buff_kasen_static" },
+            { "math": [ "u_var_kasen_arm", "==", "0" ] }
+          ]
+        },
+        "effect": [
+          { "math": [ "u_var_kasen_arm", "+=", "rand(1)" ] }
+        ],
+        "false_effect": [ 
+          { "math": [ "u_var_kasen_arm", "=", "0" ] }
+        ],
         "//": "0 represents her left hand, 1 represents her right hand",
         "//2": "She should always hit harder with her left hand (brute force), but apply special effects with her right hand (soul dmg)",
         "//3": "Every time she uses 0 it has a chance to swap her next attack (1), and every time she uses 1 she defaults to 0 again",
@@ -260,12 +286,26 @@
     "onblock_eocs": [
       {
         "id": "buff_kasen_onblock_eoc",
-        "condition": { "and": [ { "u_has_effect": "mabuff:buff_kasen_static" }, { "math": [ "u_var_kasen_arm", "==", "0" ] } ] },
-        "effect": [ { "math": [ "u_var_kasen_arm", "=", "1" ] } ],
-        "false_effect": [ { "math": [ "u_var_kasen_arm", "=", "0" ] } ],
+        "condition": {
+          "and": [
+            { "u_has_effect": "mabuff:buff_kasen_static" },
+            { "math": [ "u_var_kasen_arm", "==", "0" ] }
+          ]
+        },
+        "effect": [
+          { "math": [ "u_var_kasen_arm", "=", "1" ] }
+        ],
+        "false_effect": [ 
+          { "math": [ "u_var_kasen_arm", "=", "0" ] }
+        ],
         "//": "If she blocked with 0, it swaps to 1, else if she blocked with 1 it swaps to 0"
       },
-      { "id": "buff_kasen_onblock_remove_eoc", "effect": [ { "u_lose_effect": "mabuff:buff_kasen_ondodge" } ] }
+      {
+        "id": "buff_kasen_onblock_remove_eoc",
+        "effect": [
+          { "u_lose_effect": "mabuff:buff_kasen_ondodge" }
+        ]
+      }
     ],
     "ondodge_buffs": [
       {
@@ -277,7 +317,9 @@
         "buff_duration": 2,
         "max_stacks": 3,
         "bonus_dodges": -1,
-        "flat_bonuses": [ { "stat": "block_effectiveness", "scale": 1 } ]
+        "flat_bonuses": [
+          { "stat": "block_effectiveness", "scale": 1 }
+        ]
       }
     ],
     "techniques": [
@@ -303,18 +345,7 @@
     "initiate": [ "You relax yourself and adopt a staging pose.", "%s relaxes and adopts a staging pose." ],
     "primary_skill": "melee",
     "teachable": false,
-    "weapon_category": [
-      "BATONS",
-      "HAND_AXES",
-      "SHORT_SWORDS",
-      "MEDIUM_SWORDS",
-      "LONG_SWORDS",
-      "GREAT_SWORDS",
-      "QUARTERSTAVES",
-      "SPEARS",
-      "POLEARMS",
-      "GREAT_AXES"
-    ],
+    "weapon_category": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS", "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
     "allow_all_weapons": true,
     "static_buffs": [
       {
@@ -343,7 +374,9 @@
         "melee_allowed": true,
         "buff_duration": 3,
         "max_stacks": 3,
-        "mult_bonuses": [ { "stat": "movecost", "scale": 0.89 } ]
+        "mult_bonuses": [
+          { "stat": "movecost", "scale": 0.89 }
+        ]
       }
     ],
     "onblock_buffs": [
@@ -352,13 +385,20 @@
         "name": "Parry (large weapon)",
         "description": "By parrying incoming attacks, you get excited and increase your chances to land effective attacks.",
         "melee_allowed": true,
-        "weapon_categories_allowed": [ "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
+        "weapon_categories_allowed": [ "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ], 
         "buff_duration": 4,
         "max_stacks": 1,
         "flat_bonuses": [ { "stat": "crit_chance", "scale": 8 } ]
       }
     ],
-    "onblock_eocs": [ { "id": "buff_kokoro_onblock_eoc", "effect": [ { "u_lose_effect": "mabuff:buff_kokoro_ondodge" } ] } ],
+    "onblock_eocs": [
+      {
+        "id": "buff_kokoro_onblock_eoc",
+        "effect": [
+          { "u_lose_effect": "mabuff:buff_kokoro_ondodge" }
+        ]
+      }
+    ],
     "ondodge_buffs": [
       {
         "id": "buff_kokoro_ondodge",
@@ -371,7 +411,14 @@
         "flat_bonuses": [ { "stat": "crit_chance", "scale": 8 } ]
       }
     ],
-    "ondodge_eocs": [ { "id": "buff_kokoro_ondodge_eoc", "effect": [ { "u_lose_effect": "mabuff:buff_kokoro_onblock" } ] } ],
+    "ondodge_eocs": [
+      {
+        "id": "buff_kokoro_ondodge_eoc",
+        "effect": [
+          { "u_lose_effect": "mabuff:buff_kokoro_onblock" }
+        ]
+      }
+    ],
     "onmove_buffs": [
       {
         "id": "buff_kokoro_onmove",
@@ -479,7 +526,10 @@
           { "stat": "damage", "type": "cut", "scale": 1.5 },
           { "stat": "damage", "type": "stab", "scale": 1.5 }
         ],
-        "flat_bonuses": [ { "stat": "hit", "scaling-stat": "dex", "scale": 0.13 }, { "stat": "hit", "scaling-stat": "str", "scale": 0.13 } ]
+        "flat_bonuses": [ 
+          { "stat": "hit", "scaling-stat": "dex", "scale": 0.13 }, 
+          { "stat": "hit", "scaling-stat": "str", "scale": 0.13 } 
+        ]
       },
       {
         "id": "buff_meiling_onblock2",
@@ -548,7 +598,10 @@
         "description": "Your fighting skill allows you to block more damage, scaling from strength and dexterity.  Your physical damage is also above average.",
         "unarmed_allowed": true,
         "strictly_unarmed": true,
-        "flat_bonuses": [ { "stat": "block", "scaling-stat": "str", "scale": 0.66 }, { "stat": "block", "scaling-stat": "dex", "scale": 0.5 } ],
+        "flat_bonuses": [
+          { "stat": "block", "scaling-stat": "str", "scale": 0.66 },
+          { "stat": "block", "scaling-stat": "dex", "scale": 0.5 }
+        ],
         "mult_bonuses": [
           { "stat": "damage", "type": "bash", "scale": 1.1 },
           { "stat": "damage", "type": "cut", "scale": 1.1 },
@@ -567,7 +620,9 @@
         "strictly_unarmed": true,
         "buff_duration": 6,
         "max_stacks": 6,
-        "flat_bonuses": [ { "stat": "crit_chance", "scale": 5 } ]
+        "flat_bonuses": [ 
+          { "stat": "crit_chance", "scale": 5 }
+        ]
       }
     ],
     "ongethit_buffs": [
@@ -579,7 +634,10 @@
         "strictly_unarmed": true,
         "buff_duration": 2,
         "max_stacks": 4,
-        "flat_bonuses": [ { "stat": "hit", "scale": 1 }, { "stat": "block_effectiveness", "scale": 1 } ]
+        "flat_bonuses": [ 
+          { "stat": "hit", "scale": 1 }, 
+          { "stat": "block_effectiveness", "scale": 1 }
+        ]
       }
     ],
     "//2": "That description assuming block_effectiveness is blocking chance",
@@ -593,7 +651,10 @@
         "buff_duration": 2,
         "max_stacks": 1,
         "bonus_dodges": 1,
-        "flat_bonuses": [ { "stat": "hit", "scale": -1 }, { "stat": "dodge", "scale": 1 } ],
+        "flat_bonuses": [ 
+          { "stat": "hit", "scale": -1 }, 
+          { "stat": "dodge", "scale": 1 } 
+        ],
         "mult_bonuses": [
           { "stat": "damage", "type": "bash", "scale": 0.84 },
           { "stat": "damage", "type": "cut", "scale": 0.84 },
@@ -646,16 +707,7 @@
     "initiate": [ "You take a firm grasp of your weapon.", "%s firmly grasps their weapon." ],
     "primary_skill": "cutting",
     "teachable": false,
-    "weapon_category": [
-      "JAPANESE_SWORDS",
-      "SHORT_SWORDS",
-      "MEDIUM_SWORDS",
-      "LONG_SWORDS",
-      "FENCING_WEAPONRY",
-      "LONG_THRUSTING_SWORDS",
-      "GREAT_SWORDS",
-      "BIONIC_SWORDS"
-    ],
+    "weapon_category": [ "JAPANESE_SWORDS", "SHORT_SWORDS", "MEDIUM_SWORDS", "LONG_SWORDS", "FENCING_WEAPONRY", "LONG_THRUSTING_SWORDS", "GREAT_SWORDS", "BIONIC_SWORDS" ],
     "strictly_melee": true,
     "static_buffs": [
       {
@@ -665,8 +717,13 @@
         "melee_allowed": true,
         "weapon_categories_allowed": [ "JAPANESE_SWORDS" ],
         "bonus_blocks": 1,
-        "flat_bonuses": [ { "stat": "block_effectiveness", "scale": 1 }, { "stat": "crit_chance", "scale": -14 } ],
-        "mult_bonuses": [ { "stat": "damage", "type": "cut", "scale": 1.1 } ],
+        "flat_bonuses": [
+          { "stat": "block_effectiveness", "scale": 1 },
+          { "stat": "crit_chance", "scale": -14 }
+        ],
+        "mult_bonuses": [
+          { "stat": "damage", "type": "cut", "scale": 1.1 }
+        ],
         "//4": "Removed the stat dodge bonus as her spells scale from dodge now",
         "//crit": "Youmu has reduced crit to rely on her martial art procs"
       }
@@ -679,7 +736,10 @@
         "melee_allowed": true,
         "buff_duration": 2,
         "max_stacks": 4,
-        "mult_bonuses": [ { "stat": "damage", "type": "bash", "scale": 0.83 }, { "stat": "damage", "type": "stab", "scale": 0.83 } ]
+        "mult_bonuses": [
+          { "stat": "damage", "type": "bash", "scale": 0.83 },
+          { "stat": "damage", "type": "stab", "scale": 0.83 }
+        ]
       }
     ],
     "oncrit_buffs": [
@@ -691,7 +751,9 @@
         "buff_duration": 2,
         "max_stacks": 4,
         "bonus_blocks": 1,
-        "flat_bonuses": [ { "stat": "crit_chance", "scale": 17 } ]
+        "flat_bonuses": [
+          { "stat": "crit_chance", "scale": 17 }
+        ]
       }
     ],
     "onmove_buffs": [
@@ -703,7 +765,9 @@
         "buff_duration": 1,
         "max_stacks": 1,
         "bonus_dodges": 2,
-        "flat_bonuses": [ { "stat": "hit", "scale": 0.5 } ]
+        "flat_bonuses": [ 
+          { "stat": "hit", "scale": 0.5 }
+        ]
       }
     ],
     "//3": "Removed the stat dodge bonus as her spells scale from dodge now",
@@ -715,7 +779,11 @@
         "melee_allowed": true,
         "buff_duration": 2,
         "max_stacks": 1,
-        "flat_bonuses": [ { "stat": "crit_chance", "scale": 50 }, { "stat": "hit", "scale": 2 }, { "stat": "dodge", "scale": -2 } ]
+        "flat_bonuses": [ 
+          { "stat": "crit_chance", "scale": 50 },
+          { "stat": "hit", "scale": 2 },
+          { "stat": "dodge", "scale": -2 }
+        ]
       }
     ],
     "techniques": [

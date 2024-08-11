@@ -313,7 +313,7 @@
     "id": "kaenbyou_soulfire2",
     "type": "SPELL",
     "name": "Soulfire",
-    "description": "Hurl a mass of unholy fire towards a target, which explodes burning their soul, and damaging any enemy nearby.",
+    "description": "Hurl a mass of unholy fire towards a target, which explodes by burning their soul, damaging any enemy nearby.",
     "spell_class": "NONE",
     "effect": "attack",
     "extra_effects": [ { "id": "kaenbyou_consume_soulshard" } ],
@@ -355,11 +355,12 @@
     "flags": [ "IGNORE_WALLS", "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ]
   },
   {
-    "id": "kaenbyou_soulshard_fuel2",
+    "id": "kaenbyou_soulshard_fuel",
     "type": "SPELL",
     "name": { "str": "Soulshard to fuel" },
     "description": "Combine 8 soulshards into fuel for your cart.  \nConsumes 8 soulshards.",
     "spell_class": "NONE",
+    "teachable": false,
     "valid_targets": [ "self" ],
     "effect": "effect_on_condition",
     "effect_str": "kaenbyou_soulshard_fuel_eoc",
@@ -370,15 +371,14 @@
     "base_casting_time": 300,
     "base_energy_cost": 100,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "NO_PROJECTILE" ]
+    "flags": [ "NO_LEGS", "NO_PROJECTILE", "SOMATIC" ]
   },
   {
-    "id": "kaenbyou_soulshard_fuel",
+    "id": "kaenbyou_soulshard_fuel2",
     "type": "SPELL",
     "name": { "str": "Soulshard to fuel" },
     "description": "Combine 8 soulshards into fuel for your cart.  \nConsumes 8 soulshards.",
     "spell_class": "NONE",
-    "teachable": false,
     "valid_targets": [ "self" ],
     "effect": "spawn_item",
     "effect_str": "soulshard_fuel",
@@ -389,7 +389,7 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "NO_PROJECTILE", "SOMATIC", "PERMANENT_ALL_LEVELS" ]
+    "flags": [ "NO_LEGS", "NO_PROJECTILE", "PERMANENT_ALL_LEVELS" ]
   },
   {
     "id": "kaenbyou_consume_soulshard_8",
@@ -496,7 +496,7 @@
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 100,
-    "base_energy_cost": 33,
+    "base_energy_cost": 100,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "VERBAL" ],
     "//": "min dmg 2, min dur 1200"
@@ -572,7 +572,7 @@
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 100,
-    "base_energy_cost": 66,
+    "base_energy_cost": 33,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "NO_PROJECTILE", "SOMATIC" ],
     "//": "The simplest way to make real use of the onryou. This kills all onryou, and triggers kaenbyou_vsrelease2 which is the actual damage component",

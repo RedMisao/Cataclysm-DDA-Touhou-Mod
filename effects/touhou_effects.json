@@ -79,9 +79,21 @@
     "desc": [ "" ],
     "rating": "good",
     "base_mods": { "str_mod": [ 72 ] },
-    "enchantments": [ { "values": [ { "value": "STRENGTH", "add": 72 } ] } ],
+    "enchantments": [ 
+      { "values": [ { "value": "STRENGTH", "add": 72 } ] }
+    ],
     "//": "This effect is used for yamame_damnedrope, so she can have extra STR to pull enemies, otherwise her default STR only allows pulling small/light stuff",
     "//2": "The formula at #52155 is y = (10/3)*x - (20/3), where y is the weight in kg of the target and x is the STR of the caster. 8 + 72 str equals 260 kg"
+  },
+  {
+    "id": "darksphere_speed_effect",
+    "type": "effect_type",
+    "name": [ "" ],
+    "desc": [ "" ],
+    "rating": "good",
+    "base_mods": { "speed_mod": [ 33 ] },
+    "max_intensity": 3,
+    "max_effective_intensity": 3
   },
   {
     "id": "dash_levitation",
@@ -89,7 +101,7 @@
     "name": [ "" ],
     "desc": [ "" ],
     "rating": "good",
-    "flags": [ "LEVITATION" ],
+    "flags": [ "ITEM_WATERPROOFING", "LEVITATION", "WATERWALKING" ],
     "//": "This effect is used in dashes, so the caster can 'jump' between z-level falls without dropping, breaking some bones, and moving to the end position"
   },
   {
@@ -112,7 +124,12 @@
     "enchantments": [
       {
         "condition": "ALWAYS",
-        "intermittent_activation": { "effects": [ { "spell_effects": [ { "id": "yamame_disease_icypyrexia2_2" } ], "frequency": "1 s" } ] }
+        "intermittent_activation": 
+          { 
+            "effects": [ 
+              { "spell_effects": [ { "id": "yamame_disease_icypyrexia2_2" } ], "frequency": "1 s" }
+          ] 
+        }
       }
     ]
   },
@@ -133,7 +150,13 @@
     "rating": "good",
     "max_intensity": 1,
     "max_effective_intensity": 1,
-    "enchantments": [ { "values": [ { "value": "FORCEFIELD", "add": 1 } ] } ],
+    "enchantments": [ 
+      { 
+        "values": [ 
+          { "value": "FORCEFIELD", "add": 1 } 
+        ] 
+      }
+    ],
     "max_duration": "2 s",
     "//": "Parry effect for some pseudo-melee spells"
   },
@@ -157,7 +180,12 @@
     "enchantments": [
       {
         "condition": "ALWAYS",
-        "intermittent_activation": { "effects": [ { "spell_effects": [ { "id": "yamame_disease_scarletplague2_2" } ], "frequency": "1 s" } ] }
+        "intermittent_activation": 
+          { 
+            "effects": [ 
+              { "spell_effects": [ { "id": "yamame_disease_scarletplague2_2" } ], "frequency": "1 s" }
+          ] 
+        }
       }
     ]
   },
@@ -205,7 +233,12 @@
     "enchantments": [
       {
         "condition": "ALWAYS",
-        "intermittent_activation": { "effects": [ { "spell_effects": [ { "id": "yamame_disease_volatilerot2_2" } ], "frequency": "1 s" } ] }
+        "intermittent_activation": 
+          { 
+            "effects": [ 
+              { "spell_effects": [ { "id": "yamame_disease_volatilerot2_2" } ], "frequency": "1 s" }
+          ] 
+        }
       }
     ]
   },
@@ -216,7 +249,7 @@
     "desc": [ "Allows you to fly over ledges.  Also increases your movement speed." ],
     "rating": "good",
     "base_mods": { "speed_mod": [ 33 ] },
-    "flags": [ "LEVITATION" ],
+    "flags": [ "ITEM_WATERPROOFING", "LEVITATION", "WATERWALKING" ],
     "//": "~1.66 total movement speed, up from ~1.33 movement speed from base Aya"
   },
   {
@@ -492,7 +525,32 @@
     "enchantments": [
       {
         "condition": "ALWAYS",
-        "intermittent_activation": { "effects": [ { "spell_effects": [ { "id": "meiling_qiheal2" } ], "frequency": "1 s" } ] }
+        "intermittent_activation": 
+          { 
+            "effects": [ 
+              { "spell_effects": [ { "id": "meiling_qiheal2" } ], "frequency": "1 s" }
+          ] 
+        }
+      }
+    ]
+  },
+  {
+    "id": "mokou_cauterize_effect",
+    "type": "effect_type",
+    "name": [ "Cauterize (effect)" ],
+    "desc": [ "Healing…" ],
+    "show_in_info": true,
+    "max_intensity": 1,
+    "max_effective_intensity": 1,
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "intermittent_activation": 
+          { 
+            "effects": [ 
+              { "spell_effects": [ { "id": "mokou_cauterize2" } ], "frequency": "1 s" }
+          ] 
+        }
       }
     ]
   },
@@ -797,7 +855,7 @@
     "desc": [ "Allows you to fly over ledges.  Also increases your movement speed." ],
     "rating": "good",
     "base_mods": { "speed_mod": [ 25 ] },
-    "flags": [ "LEVITATION" ],
+    "flags": [ "ITEM_WATERPROOFING", "LEVITATION", "WATERWALKING" ],
     "//": "~1.5 total movement speed, up from the 1.25x movement speed from base vampires"
   },
   {
@@ -913,7 +971,12 @@
     "enchantments": [
       {
         "condition": "ALWAYS",
-        "intermittent_activation": { "effects": [ { "spell_effects": [ { "id": "seiga_chidrain3" } ], "frequency": "1 s" } ] }
+        "intermittent_activation": 
+          { 
+            "effects": [ 
+              { "spell_effects": [ { "id": "seiga_chidrain3" } ], "frequency": "1 s" }
+          ] 
+        }
       }
     ]
   },
@@ -926,15 +989,13 @@
     "remove_message": "You move normally again.",
     "rating": "good",
     "base_mods": { "speed_mod": [ 25 ] },
-    "flags": [ "LEVITATION" ]
+    "flags": [ "ITEM_WATERPROOFING", "LEVITATION", "WATERWALKING" ]
   },
   {
     "id": "seiga_shikaisen_effect",
     "type": "effect_type",
     "name": [ "Shikaisen ritual (effect)" ],
-    "desc": [
-      "You have placed a replacement for yourself somewhere, which will immediately activate to protect you from lethal harm."
-    ],
+    "desc": [ "You have placed a replacement for yourself somewhere, which will immediately activate to protect you from lethal harm." ],
     "max_intensity": 1,
     "max_effective_intensity": 1,
     "//": "Dummy effect, used to detect she has a double somewhere"
@@ -947,7 +1008,10 @@
     "rating": "good",
     "enchantments": [
       { "values": [ { "value": "FORCEFIELD", "add": 1 } ] },
-      { "condition": "ALWAYS", "hit_me_effect": [ { "id": "udonge_warrierwave_vfx", "hit_self": true } ] }
+      {
+        "condition": "ALWAYS",
+        "hit_me_effect": [ { "id": "udonge_warrierwave_vfx", "hit_self": true } ]
+      }
     ],
     "removes_effects": [ "udonge_insight", "udonge_mfortitude", "udonge_perception", "udonge_stealth" ]
   },
@@ -970,16 +1034,7 @@
     "apply_message": "You enter a mindfulness-like state.",
     "remove_message": "You relax your thoughts.",
     "rating": "good",
-    "removes_effects": [
-      "fearparalyze",
-      "taint",
-      "tindrift",
-      "visuals",
-      "udonge_barrierwave",
-      "udonge_insight",
-      "udonge_perception",
-      "udonge_stealth"
-    ]
+    "removes_effects": [ "fearparalyze", "taint", "tindrift", "visuals", "udonge_barrierwave", "udonge_insight", "udonge_perception", "udonge_stealth" ]
   },
   {
     "id": "udonge_perception",
@@ -1010,7 +1065,7 @@
     "name": [ "Hell raven wings (flight) (effect)" ],
     "desc": [ "Allows you to fly over ledges." ],
     "rating": "good",
-    "flags": [ "LEVITATION" ]
+    "flags": [ "ITEM_WATERPROOFING", "LEVITATION", "WATERWALKING" ]
   },
   {
     "id": "youmu_knee_slasher_slow",

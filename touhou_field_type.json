@@ -225,6 +225,7 @@
     },
     "display_field": true,
     "looks_like": "fd_web",
-    "//": "Web field for kokoro_shouting_gspider , so she can walk over this without suffering the demerit"
+    "//": "Web field for kokoro_shouting_gspider , so she can walk over this without suffering the demerit",
+    "//2": "Doesn't work. Tried to do the same as #75165 by adding an ench_effect that removes the custom webbed3 from fd_web3, but she still suffers the demerit. Seems the webbed effect is hardcoded"
   }
 ]

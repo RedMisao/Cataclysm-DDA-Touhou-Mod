@@ -1,5 +1,126 @@
 [
   {
+    "id": "darksphere_attack",
+    "type": "SPELL",
+    "name": { "str": "Dark sphere attack" },
+    "description": "Attack for mon_darksphere_seiga ",
+    "spell_class": "NONE",
+    "valid_targets": [ "hostile" ],
+    "effect": "attack",
+    "extra_effects": [ { "id": "darksphere_attack2", "hit_self": true } ],
+    "shape": "blast",
+    "damage_type": "electric",
+    "min_damage": { "math": [ " 20 * ( 1 + ( var_seiga_d * 0.1 ) + ( var_seiga_f * 0.1 ) - 0.8 )" ] },
+    "max_damage": { "math": [ " 30 * ( 1 + ( var_seiga_d * 0.1 ) + ( var_seiga_f * 0.1 ) - 0.8 )" ] },
+    "min_range": 1,
+    "max_range": 1,
+    "max_level": 1,
+    "flags": [ "NO_FAIL", "NO_PROJECTILE", "RANDOM_DAMAGE" ],
+    "//": "This deals ( 20 - 30 ) dmg at Seiga's base skill lvls, which increases to x2 that amount at max skill lvls"
+  },
+  {
+    "id": "darksphere_attack2",
+    "type": "SPELL",
+    "name": { "str": "Dark sphere attack (sacrifice)" },
+    "description": "Self kill for mon_darksphere_seiga ",
+    "spell_class": "NONE",
+    "valid_targets": [ "self" ],
+    "effect": "attack",
+    "shape": "blast",
+    "damage_type": "pure",
+    "min_damage": 99,
+    "max_damage": 99,
+    "max_level": 1,
+    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_PROJECTILE", "SILENT" ]
+  },
+  {
+    "id": "darksphere_speed",
+    "type": "SPELL",
+    "name": { "str": "Dark sphere buff" },
+    "description": "Self buff for mon_darksphere_seiga ",
+    "spell_class": "NONE",
+    "valid_targets": [ "self" ],
+    "effect": "effect_on_condition",
+    "effect_str": "darksphere_speed_eoc",
+    "shape": "blast",
+    "damage_type": "pure",
+    "max_level": 1,
+    "difficulty": -50,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ]
+  },
+  {
+    "id": "darksphere_speed_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_monsters_nearby('radius': 16 )", ">", "0" ] },
+    "effect": [
+      {
+        "run_eocs": [
+          {
+            "id": "darksphere_speed_increase",
+            "condition": { "math": [ "u_monsters_nearby('radius': 16 )", ">", "0" ] },
+            "effect": [
+              {
+                "run_eocs": [
+                  {
+                    "id": "darksphere_speed_increase_3",
+                    "condition": { "math": [ "u_effect_intensity('darksphere_speed_effect')", "==", "2"] },
+                    "effect": [
+                      { "u_lose_effect": "darksphere_speed_effect" },
+                      { "u_add_effect": "darksphere_speed_effect", "intensity": 3, "duration": "12 s" }
+                    ]
+                  },
+                  {
+                    "id": "darksphere_speed_increase_2",
+                    "condition": { "math": [ "u_effect_intensity('darksphere_speed_effect')", "==", "1"] },
+                    "effect": [
+                      { "u_lose_effect": "darksphere_speed_effect" },
+                      { "u_add_effect": "darksphere_speed_effect", "intensity": 2, "duration": "12 s" }
+                    ]
+                  },
+                  {
+                    "id": "darksphere_speed_increase_1",
+                    "condition": { "not": { "u_has_effect": "darksphere_speed_effect" } },
+                    "effect": [
+                      { "u_add_effect": "darksphere_speed_effect", "intensity": 1, "duration": "12 s" }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "false_effect": [
+      {
+        "switch": { "math": [ "u_effect_intensity('darksphere_speed_effect')" ] },
+        "cases": [
+          { 
+            "case": 1, 
+            "effect": [ { "u_lose_effect": "darksphere_speed_effect" } ] 
+          },
+          { 
+            "case": 2, 
+            "effect": [
+              { "u_lose_effect": "darksphere_speed_effect" },
+              { "u_add_effect": "darksphere_speed_effect", "intensity": 1, "duration": "12 s" }
+            ] 
+          },
+          { 
+            "case": 3, 
+            "effect": [
+              { "u_lose_effect": "darksphere_speed_effect" },
+              { "u_add_effect": "darksphere_speed_effect", "intensity": 2, "duration": "12 s" }
+            ] 
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "yoshika_nails",
     "type": "SPELL",
     "name": { "str": "Nail slash" },
