@@ -1,7 +1,7 @@
 # Cataclysm-DDA-Touhou-Mod
 This is a fork of Taberone's [Touhou Professions](https://github.com/Taberone/Cataclysm-DDA-Touhou-Mod) mod.
 
-**The mod's folder goes in /data/mods/**.  Last updated for game version: 2024-01-26-0650 experimental.
+**The mod's folder goes in /data/mods/**.  Last updated for game version: 2024-08-10-2317 experimental.
 
 Also check the [Expansion](https://github.com/RedMisao/Cataclysm-DDA-Touhou-Expansion) mod!
 
@@ -63,5 +63,4 @@ Relatively hard or complex things to add, not in order:
 * Kokoro's morale-to-mana passive doesn't remove "physical" morale statuses like being wet, it grants her mana as long as she's upset about it
 * Mokou's resurrection moves her 3 tiles to the right, every time she revives.  I have no idea how or why this happens; this is potentially very very bad for the player.
 * (minor) The auras cycle weird, they don't stop when they should.  This has no effect for the player but it's something to take in consideration when using the backbone, as they require lots of debugging to guarantee nothing will break.  For more information see the //IMPORTANT comments at utsuho_fusionblade_cycle2 .
-* Yamame's Miasma Burst is not storing damage when used on monsters.  I believe the queue_eocs EOCs broke for them at some point earlier this year (although I cannot prove it), which was a core component by allowing an hidden dmg counter on the affected targets to run as long as they were affected by her diseases
 
