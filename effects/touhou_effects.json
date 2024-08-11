@@ -79,9 +79,7 @@
     "desc": [ "" ],
     "rating": "good",
     "base_mods": { "str_mod": [ 72 ] },
-    "enchantments": [ 
-      { "values": [ { "value": "STRENGTH", "add": 72 } ] }
-    ],
+    "enchantments": [ { "values": [ { "value": "STRENGTH", "add": 72 } ] } ],
     "//": "This effect is used for yamame_damnedrope, so she can have extra STR to pull enemies, otherwise her default STR only allows pulling small/light stuff",
     "//2": "The formula at #52155 is y = (10/3)*x - (20/3), where y is the weight in kg of the target and x is the STR of the caster. 8 + 72 str equals 260 kg"
   },
@@ -114,12 +112,7 @@
     "enchantments": [
       {
         "condition": "ALWAYS",
-        "intermittent_activation": 
-          { 
-            "effects": [ 
-              { "spell_effects": [ { "id": "yamame_disease_icypyrexia2_2" } ], "frequency": "1 s" }
-          ] 
-        }
+        "intermittent_activation": { "effects": [ { "spell_effects": [ { "id": "yamame_disease_icypyrexia2_2" } ], "frequency": "1 s" } ] }
       }
     ]
   },
@@ -140,13 +133,7 @@
     "rating": "good",
     "max_intensity": 1,
     "max_effective_intensity": 1,
-    "enchantments": [ 
-      { 
-        "values": [ 
-          { "value": "FORCEFIELD", "add": 1 } 
-        ] 
-      }
-    ],
+    "enchantments": [ { "values": [ { "value": "FORCEFIELD", "add": 1 } ] } ],
     "max_duration": "2 s",
     "//": "Parry effect for some pseudo-melee spells"
   },
@@ -170,12 +157,7 @@
     "enchantments": [
       {
         "condition": "ALWAYS",
-        "intermittent_activation": 
-          { 
-            "effects": [ 
-              { "spell_effects": [ { "id": "yamame_disease_scarletplague2_2" } ], "frequency": "1 s" }
-          ] 
-        }
+        "intermittent_activation": { "effects": [ { "spell_effects": [ { "id": "yamame_disease_scarletplague2_2" } ], "frequency": "1 s" } ] }
       }
     ]
   },
@@ -223,12 +205,7 @@
     "enchantments": [
       {
         "condition": "ALWAYS",
-        "intermittent_activation": 
-          { 
-            "effects": [ 
-              { "spell_effects": [ { "id": "yamame_disease_volatilerot2_2" } ], "frequency": "1 s" }
-          ] 
-        }
+        "intermittent_activation": { "effects": [ { "spell_effects": [ { "id": "yamame_disease_volatilerot2_2" } ], "frequency": "1 s" } ] }
       }
     ]
   },
@@ -286,7 +263,7 @@
       {
         "values": [
           { "value": "STRENGTH", "add": 2 },
-          { "value": "INTELLIGENCE", "add": -2 }, 
+          { "value": "INTELLIGENCE", "add": -2 },
           { "value": "SOCIAL_INTIMIDATE", "add": 4 },
           { "value": "SOCIAL_PERSUADE", "add": -4 },
           { "value": "ATTACK_NOISE", "multiply": 0.16 },
@@ -297,7 +274,7 @@
           { "value": "ARMOR_CUT", "multiply": 0.1 },
           { "value": "ARMOR_STAB", "multiply": 0.1 },
           { "value": "ARMOR_BULLET", "multiply": 0.1 }
-        ] 
+        ]
       }
     ]
   },
@@ -308,14 +285,14 @@
     "desc": [ "You are VERY ANGRY." ],
     "apply_message": "The Hannya mask is overflowing with fury!",
     "rating": "mixed",
-    "enchantments": [ 
-      { 
+    "enchantments": [
+      {
         "values": [
-          { "value": "STRENGTH", "add": 4 }, 
-          { "value": "INTELLIGENCE", "add": -2 }, 
+          { "value": "STRENGTH", "add": 4 },
+          { "value": "INTELLIGENCE", "add": -2 },
           { "value": "SOCIAL_INTIMIDATE", "add": 8 },
           { "value": "SOCIAL_PERSUADE", "add": -8 },
-          { "value": "ATTACK_NOISE", "multiply": 0.33 }, 
+          { "value": "ATTACK_NOISE", "multiply": 0.33 },
           { "value": "OVERKILL_DAMAGE", "multiply": -4 },
           { "value": "WEAPON_DISPERSION", "multiply": 0.33 },
           { "value": "MELEE_DAMAGE", "multiply": 0.22 },
@@ -334,11 +311,11 @@
     "desc": [ "You are motivated." ],
     "apply_message": "You wear the Inari mask.  Motivated!",
     "rating": "mixed",
-    "enchantments": [ 
-      { 
-        "values": [ 
+    "enchantments": [
+      {
+        "values": [
           { "value": "INTELLIGENCE", "add": 2 },
-          { "value": "STRENGTH", "add": -2 }, 
+          { "value": "STRENGTH", "add": -2 },
           { "value": "SOCIAL_LIE", "add": 4 },
           { "value": "SOCIAL_PERSUADE", "add": 4 },
           { "value": "MOVE_COST", "multiply": -0.1 },
@@ -355,11 +332,11 @@
     "desc": [ "You are very motivated!" ],
     "apply_message": "The Inari mask is overflowing with resolve!",
     "rating": "mixed",
-    "enchantments": [ 
-      { 
+    "enchantments": [
+      {
         "values": [
-          { "value": "INTELLIGENCE", "add": 4 }, 
-          { "value": "STRENGTH", "add": -2 }, 
+          { "value": "INTELLIGENCE", "add": 4 },
+          { "value": "STRENGTH", "add": -2 },
           { "value": "SOCIAL_LIE", "add": 8 },
           { "value": "SOCIAL_PERSUADE", "add": 4 },
           { "value": "MOVE_COST", "multiply": -0.2 },
@@ -376,10 +353,10 @@
     "desc": [ "You are happy :)" ],
     "apply_message": "You wear the Hyottoko mask.  Ha ha!",
     "rating": "mixed",
-    "enchantments": [ 
+    "enchantments": [
       {
-        "values": [ 
-          { "value": "DEXTERITY", "add": 2 }, 
+        "values": [
+          { "value": "DEXTERITY", "add": 2 },
           { "value": "PERCEPTION", "add": -2 },
           { "value": "SOCIAL_INTIMIDATE", "add": -4 },
           { "value": "SOCIAL_PERSUADE", "add": 4 },
@@ -397,9 +374,9 @@
     "desc": [ "You are ecstatic 😂😂😂" ],
     "apply_message": "The Hyottoko mask is overflowing with elation!",
     "rating": "mixed",
-    "enchantments": [ 
-      { 
-        "values": [ 
+    "enchantments": [
+      {
+        "values": [
           { "value": "DEXTERITY", "add": 4 },
           { "value": "PERCEPTION", "add": -2 },
           { "value": "SOCIAL_INTIMIDATE", "add": -8 },
@@ -418,11 +395,11 @@
     "desc": [ "You are sad…" ],
     "apply_message": "You wear the Uba mask.  Sadness.",
     "rating": "mixed",
-    "enchantments": [ 
-      { 
-        "values": [ 
-          { "value": "PERCEPTION", "add": 2 }, 
-          { "value": "DEXTERITY", "add": -2 }, 
+    "enchantments": [
+      {
+        "values": [
+          { "value": "PERCEPTION", "add": 2 },
+          { "value": "DEXTERITY", "add": -2 },
           { "value": "SOCIAL_LIE", "add": 4 },
           { "value": "SOCIAL_PERSUADE", "add": 4 },
           { "value": "PAIN", "multiply": 0.05 },
@@ -442,21 +419,21 @@
     "desc": [ "…" ],
     "apply_message": "The Uba mask is overflowing with melancholy!",
     "rating": "mixed",
-    "enchantments": [ 
-      { 
-        "values": [ 
-          { "value": "PERCEPTION", "add": 4 }, 
-          { "value": "DEXTERITY", "add": -2 }, 
+    "enchantments": [
+      {
+        "values": [
+          { "value": "PERCEPTION", "add": 4 },
+          { "value": "DEXTERITY", "add": -2 },
           { "value": "SOCIAL_LIE", "add": 4 },
           { "value": "SOCIAL_PERSUADE", "add": 8 },
-          { "value": "PAIN", "multiply": 0.1 }, 
+          { "value": "PAIN", "multiply": 0.1 },
           { "value": "ATTACK_SPEED", "multiply": -0.16 },
           { "value": "ARMOR_BASH", "multiply": -0.22 },
           { "value": "ARMOR_CUT", "multiply": -0.22 },
           { "value": "ARMOR_STAB", "multiply": -0.22 },
           { "value": "ARMOR_BULLET", "multiply": -0.22 }
         ]
-      }   
+      }
     ]
   },
   {
@@ -515,12 +492,7 @@
     "enchantments": [
       {
         "condition": "ALWAYS",
-        "intermittent_activation": 
-          { 
-            "effects": [ 
-              { "spell_effects": [ { "id": "meiling_qiheal2" } ], "frequency": "1 s" }
-          ] 
-        }
+        "intermittent_activation": { "effects": [ { "spell_effects": [ { "id": "meiling_qiheal2" } ], "frequency": "1 s" } ] }
       }
     ]
   },
@@ -866,7 +838,7 @@
     "apply_message": "You make use of your ability to take a quick rest.",
     "remove_message": "Your quick rest has ended",
     "rating": "good",
-    "base_mods": { "fatigue_amount": [ -100 ], "pkill_amount": [ 1 ], "stamina_amount": [ 1000 ], "stim_amount": [ 2 ] }
+    "base_mods": { "sleepiness_amount": [ -100 ], "pkill_amount": [ 1 ], "stamina_amount": [ 1000 ], "stim_amount": [ 2 ] }
   },
   {
     "id": "sakuya_timestop_effect",
@@ -917,13 +889,13 @@
     "desc": [ "Frenzied (curse)" ],
     "show_in_info": true,
     "max_duration": "60 m",
-    "base_mods": { 
+    "base_mods": {
       "str_mod": [ 4 ],
       "per_mod": [ 1 ],
       "dex_mod": [ 1 ],
       "int_mod": [ -4 ],
-      "speed_mod": [ 35 ], 
-      "hit_mod": [ 3 ], 
+      "speed_mod": [ 35 ],
+      "hit_mod": [ 3 ],
       "dodge_mod": [ 3 ],
       "bash_mod": [ 4, 8 ],
       "cut_mod": [ 4, 8 ]
@@ -941,12 +913,7 @@
     "enchantments": [
       {
         "condition": "ALWAYS",
-        "intermittent_activation": 
-          { 
-            "effects": [ 
-              { "spell_effects": [ { "id": "seiga_chidrain3" } ], "frequency": "1 s" }
-          ] 
-        }
+        "intermittent_activation": { "effects": [ { "spell_effects": [ { "id": "seiga_chidrain3" } ], "frequency": "1 s" } ] }
       }
     ]
   },
@@ -965,7 +932,9 @@
     "id": "seiga_shikaisen_effect",
     "type": "effect_type",
     "name": [ "Shikaisen ritual (effect)" ],
-    "desc": [ "You have placed a replacement for yourself somewhere, which will immediately activate to protect you from lethal harm." ],
+    "desc": [
+      "You have placed a replacement for yourself somewhere, which will immediately activate to protect you from lethal harm."
+    ],
     "max_intensity": 1,
     "max_effective_intensity": 1,
     "//": "Dummy effect, used to detect she has a double somewhere"
@@ -976,12 +945,9 @@
     "name": [ "Barrier wave (effect)" ],
     "desc": [ "Ignoring incoming attacks." ],
     "rating": "good",
-    "enchantments": [ 
+    "enchantments": [
       { "values": [ { "value": "FORCEFIELD", "add": 1 } ] },
-      {
-        "condition": "ALWAYS",
-        "hit_me_effect": [ { "id": "udonge_warrierwave_vfx", "hit_self": true } ]
-      }
+      { "condition": "ALWAYS", "hit_me_effect": [ { "id": "udonge_warrierwave_vfx", "hit_self": true } ] }
     ],
     "removes_effects": [ "udonge_insight", "udonge_mfortitude", "udonge_perception", "udonge_stealth" ]
   },
@@ -1004,7 +970,16 @@
     "apply_message": "You enter a mindfulness-like state.",
     "remove_message": "You relax your thoughts.",
     "rating": "good",
-    "removes_effects": [ "fearparalyze", "taint", "tindrift", "visuals", "udonge_barrierwave", "udonge_insight", "udonge_perception", "udonge_stealth" ]
+    "removes_effects": [
+      "fearparalyze",
+      "taint",
+      "tindrift",
+      "visuals",
+      "udonge_barrierwave",
+      "udonge_insight",
+      "udonge_perception",
+      "udonge_stealth"
+    ]
   },
   {
     "id": "udonge_perception",

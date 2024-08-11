@@ -1,7 +1,7 @@
 [
   {
     "type": "mod_tileset",
-    "compatibility": [ "Chibi_Ultica", "MshockXottoplus" ],
+    "compatibility": [ "Chibi_Ultica", "MshockXottoplus", "UNDEAD_PEOPLE" ],
     "tiles-new": [
       {
         "file": "sprites/touhou_hair.png",
