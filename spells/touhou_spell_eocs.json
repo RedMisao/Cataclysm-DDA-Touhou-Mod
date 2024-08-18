@@ -81,6 +81,93 @@
     ]
   },
   {
+    "id": "fly_downwards_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_location_variable": { "u_val": "u_winged_loc" } },
+      { "location_variable_adjust": { "context_val": "u_winged_loc" }, "z_adjust": 0 },
+      {
+        "if": { "map_terrain_with_flag": "EMPTY_SPACE", "loc": { "context_val": "u_winged_loc" } },
+        "then": { "run_eocs": [ "fly_downwards2_eoc" ] },
+        "else": { "u_message": "You can't descend there.", "type": "mixed" }
+      }
+    ]
+  },
+  {
+    "id": "fly_downwards2_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_location_variable": { "u_val": "u_winged_loc" } },
+      { "location_variable_adjust": { "context_val": "u_winged_loc" }, "z_adjust": -1 },
+      {
+        "if": { "map_terrain_with_flag": "FLAT", "loc": { "context_val": "u_winged_loc" } },
+        "then": [
+          { "u_message": "You fly downwards.", "type": "good" },
+          { "u_teleport": { "context_val": "u_winged_loc" } }
+        ],
+        "else": { "run_eocs": [ "fly_downwards3_eoc" ] }
+      }
+    ]
+  },
+  {
+    "id": "fly_downwards3_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "if": { "map_terrain_with_flag": "ROAD", "loc": { "context_val": "u_winged_loc" } },
+        "then": [
+          { "u_message": "You fly downwards.", "type": "good" },
+          { "u_teleport": { "context_val": "u_winged_loc" } }
+        ],
+        "else": { "run_eocs": [ "fly_downwards4_eoc" ] }
+      }
+    ]
+  },
+  {
+    "id": "fly_downwards4_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "if": { "map_terrain_with_flag": "BURROWABLE", "loc": { "context_val": "u_winged_loc" } },
+        "then": [
+          { "u_message": "You fly downwards.", "type": "good" },
+          { "u_teleport": { "context_val": "u_winged_loc" } }
+        ],
+        "else": { "run_eocs": [ "fly_downwards5_eoc" ] }
+      }
+    ]
+  },
+  {
+    "id": "fly_downwards5_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "if": { "map_terrain_with_flag": "TRANSPARENT", "loc": { "context_val": "u_winged_loc" } },
+        "then": [
+          { "u_message": "You fly downwards.", "type": "good" },
+          { "u_teleport": { "context_val": "u_winged_loc" } }
+        ],
+        "else": { "u_message": "You can't descend there.", "type": "mixed" }
+      }
+    ]
+  },
+  {
+    "id": "fly_upwards_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_location_variable": { "u_val": "u_winged_loc" } },
+      { "location_variable_adjust": { "context_val": "u_winged_loc" }, "z_adjust": 1 },
+      {
+        "if": { "map_terrain_with_flag": "EMPTY_SPACE", "loc": { "context_val": "u_winged_loc" } },
+        "then": [
+          { "u_message": "You fly upwards.", "type": "good" },
+          { "u_teleport": { "context_val": "u_winged_loc" } }
+        ],
+        "else": { "u_message": "You can't fly there.", "type": "mixed" }
+      }
+    ]
+  },
+  {
     "id": "aya_fanwind_eoc",
     "type": "effect_on_condition",
     "effect": [
@@ -148,7 +235,8 @@
     "//": "This checks if Iku is wielding a battery, and if so runs the EOCs below, which detect which kind of battery she has and 'recharges' it, draining proportional mana",
     "//2": "As u_consume_item with a negative charge value just destroys the item, the trick is to destroy + create a new battery, which thankfully spawns with full charge, else the spell wouldn't work",
     "//3": "Current issue at base cdda #70651 causes the false_eocs to be run more than once",
-    "//4": "Other than repeating the fail message, this has no effect on the player, but forces me to split the EOC into above and below, instead of just running all of them sequentially above"
+    "//4": "Other than repeating the fail message, this has no effect on the player, but forces me to split the EOC into above and below, instead of just running all of them sequentially above",
+    "//note": "Could be simplified by #74748"
   },
   {
     "id": "iku_batteryrestore_check",
@@ -1398,8 +1486,8 @@
     "type": "effect_on_condition",
     "effect": [ 
       { "u_cast_spell": { "id": "remilia_darkdrain4" }, "targeted": false },
-      { "math": [ "u_vitamin('blood')", "+=", "var_remidrain" ] },
-      { "math": [ "u_vitamin('hblood_vitamin')", "+=", "var_remidrain" ] }
+      { "math": [ "u_vitamin('blood')", "+=", "var_remidrain * 1.1" ] },
+      { "math": [ "u_vitamin('hblood_vitamin')", "+=", "var_remidrain * 1.1" ] }
     ]
   },
   {

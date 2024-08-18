@@ -27,6 +27,13 @@
     "flags": [ "SOULDMG_EXTRA" ]
   },
   {
+    "id": "TSUKUMOGAMI_TOUHOU",
+    "type": "SPECIES",
+    "description": "a reanimated object",
+    "anger_triggers": [ "HURT", "STALK" ],
+    "flags": [ "SOULDMG_EXTRA" ]
+  },
+  {
     "id": "YOUKAI_BEAST_TOUHOU",
     "type": "SPECIES",
     "description": "a youkai",

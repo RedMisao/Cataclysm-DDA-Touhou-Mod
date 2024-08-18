@@ -492,7 +492,7 @@
       { "level": 1, "id": "sakuya_timestop" },
       { "level": 1, "id": "sakuya_vanishingeverything" }
     ],
-    "traits": [ "MYSTERIOUS", "PSYCHOPATH", "PROF_SAKUYA", "SPIRIT_USER", "eye_silver_touhou", "FACIAL_HAIR_NONE", "hair_sakuya" ],
+    "traits": [ "HUMAN_SPECIES", "MYSTERIOUS", "PSYCHOPATH", "PROF_SAKUYA", "SPIRIT_USER", "eye_silver_touhou", "FACIAL_HAIR_NONE", "hair_sakuya" ],
     "//note": "Change PSYCHOPATH for something like CALLOUS instead: no bonuses like PSYCHOPATH but no demerits for killing and butchering humans and children specifically",
     "items": {
       "both": {
@@ -544,7 +544,7 @@
       { "level": 1, "id": "seiga_wallwalk" },
       { "level": 1, "id": "seiga_yoshika_summon" }
     ],
-    "traits": [ "HERMIT_SPECIES", "PSYCHOPATH", "LIAR", "PROF_SEIGA", "SPIRITUAL", "SPIRIT_HERMIT", "eye_blue_touhou", "FACIAL_HAIR_NONE", "hair_seiga" ],
+    "traits": [ "WICKED_HERMIT", "PROF_SEIGA", "SPIRIT_HERMIT", "eye_blue_touhou", "FACIAL_HAIR_NONE", "hair_seiga" ],
     "items": {
       "both": {
         "entries": [
@@ -561,7 +561,7 @@
       "female": [ "bra", "panties" ]
     },
     "flags": [ "SCEN_ONLY" ],
-    "//note": "PSYCHOPATH + LIAR + SPIRITUAL -> WICKED_HERMIT "
+    "//": "HERMIT_SPECIES + LIAR + PSYCHOPATH + SPIRITUAL -> WICKED_HERMIT "
   },
   {
     "id": "tenshi_hinanawi",
@@ -709,7 +709,7 @@
       { "level": 1, "id": "youmu_slasheternal" },
       { "level": 1, "id": "youmu_slashnether" }
     ],
-    "traits": [ "HALF_PHANTOM_SPECIES", "PROF_YOUMU", "TRUTHTELLER", "SPIRIT_UNTRAINED", "eye_silver_touhou", "FACIAL_HAIR_NONE", "hair_youmu" ],
+    "traits": [ "HALF_PHANTOM_SPECIES", "HUMAN_SPECIES", "PROF_YOUMU", "TRUTHTELLER", "SPIRIT_UNTRAINED", "eye_silver_touhou", "FACIAL_HAIR_NONE", "hair_youmu" ],
     "//": "Add parry and dual wield somewhere",
     "items": {
       "both": {

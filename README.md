@@ -58,9 +58,3 @@ Relatively hard or complex things to add, not in order:
 * Things that are currently hardcoded, like new resources (plus a visual indicator), new kind of spells (like using proyectiles, different shape, etc.), more mechanics, etc.
 * Spellcards?
 
-
-## Known bugs
-* Kokoro's morale-to-mana passive doesn't remove "physical" morale statuses like being wet, it grants her mana as long as she's upset about it
-* Mokou's resurrection moves her 3 tiles to the right, every time she revives.  I have no idea how or why this happens; this is potentially very very bad for the player.
-* (minor) The auras cycle weird, they don't stop when they should.  This has no effect for the player but it's something to take in consideration when using the backbone, as they require lots of debugging to guarantee nothing will break.  For more information see the //IMPORTANT comments at utsuho_fusionblade_cycle2 .
-

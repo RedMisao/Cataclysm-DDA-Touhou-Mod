@@ -5,7 +5,8 @@
     "copy-from": "mutant_human_blood",
     "name": { "str_sp": "mutant human blood" },
     "extend": { "vitamins": [ [ "hblood_vitamin", 30 ] ] },
-    "//": "Adds hblood_vitamin as x5 value of iron"
+    "//": "Adds hblood_vitamin as x5 value of iron",
+    "//note": "The vitamins are not getting extended nor added. I tried debugging this with an hblood_vitamin counter and eating the items, but it doesn't go up"
   },
   {
     "type": "COMESTIBLE",

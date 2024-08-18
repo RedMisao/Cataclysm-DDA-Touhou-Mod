@@ -3,7 +3,7 @@
     "id": "seiga_charm",
     "type": "SPELL",
     "name": { "str": "Mèihuò rénxíng" },
-    "description": "A dark taoist technique that allows the user to charm humans (*), working better the worse state the target is.  \n(*) Should work for beings that are close enough too, right?",
+    "description": "A dark taoist technique that allows the user to charm humans (*), working better the worse state the target is.  \n \n(*) Should work for beings that are close enough too, right?",
     "spell_class": "NONE",
     "teachable": false,
     "valid_targets": [ "ally", "hostile" ],

@@ -38,7 +38,7 @@
         "message": "The weapon of %s has been forced out ot their hands!"
       }
     ],
-    "attack_vectors": [ "WEAPON" ],
+    "attack_vectors": [ "vector_null" ],
     "//": "Based on tec_brawl_disarm_melee "
   },
   {
@@ -58,7 +58,7 @@
         "message": "The weapon of %s has been forced out ot their hands!"
       }
     ],
-    "attack_vectors": [ "HAND" ],
+    "attack_vectors": [ "vector_grasp" ],
     "//": "Based on tec_brawl_disarm_unarmed "
   },
   {
@@ -75,7 +75,7 @@
       { "stat": "damage", "type": "cut", "scale": 1.1 },
       { "stat": "damage", "type": "stab", "scale": 0.9 }
     ],
-    "attack_vectors": [ "WEAPON" ],
+    "attack_vectors": [ "vector_null" ],
     "//": "Horizontal slash"
   },
   {
@@ -93,7 +93,7 @@
       { "stat": "damage", "type": "cut", "scale": 1.1 },
       { "stat": "damage", "type": "stab", "scale": 0.9 }
     ],
-    "attack_vectors": [ "WEAPON" ],
+    "attack_vectors": [ "vector_null" ],
     "//": "Only difference is that Iku requires a previous hit, to emulate a combo"
   },
   {
@@ -116,7 +116,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "HAND", "WEAPON" ],
+    "attack_vectors": [ "vector_palm", "vector_null" ],
     "//2": "Spell to allow line with single target, also it deals electric dmg"
   },
   {
@@ -133,7 +133,7 @@
       { "stat": "damage", "type": "cut", "scale": 1.2 },
       { "stat": "damage", "type": "stab", "scale": 1.5 }
     ],
-    "attack_vectors": [ "WEAPON" ]
+    "attack_vectors": [ "vector_null" ]
   },
   {
     "id": "tec_iku_poke2",
@@ -150,7 +150,7 @@
       { "stat": "damage", "type": "cut", "scale": 2 },
       { "stat": "damage", "type": "stab", "scale": 3.33 }
     ],
-    "attack_vectors": [ "WEAPON" ]
+    "attack_vectors": [ "vector_null" ]
   },
   {
     "id": "tec_iku_rising",
@@ -167,7 +167,7 @@
       { "stat": "damage", "type": "cut", "scale": 1.33 },
       { "stat": "damage", "type": "stab", "scale": 1.1 }
     ],
-    "attack_vectors": [ "WEAPON" ]
+    "attack_vectors": [ "vector_null" ]
   },
   {
     "id": "tec_iku_rising2",
@@ -184,7 +184,7 @@
       { "stat": "damage", "type": "cut", "scale": 2.33 },
       { "stat": "damage", "type": "stab", "scale": 1.66 }
     ],
-    "attack_vectors": [ "WEAPON" ]
+    "attack_vectors": [ "vector_null" ]
   },
   {
     "id": "tec_iku_rising_drill",
@@ -209,7 +209,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "WEAPON" ],
+    "attack_vectors": [ "vector_null" ],
     "//": "Turned into a spell to transform weapon dmg -> stab"
   },
   {
@@ -226,7 +226,7 @@
       { "stat": "damage", "type": "cut", "scale": 0.9 },
       { "stat": "damage", "type": "stab", "scale": 0.9 }
     ],
-    "attack_vectors": [ "WEAPON" ]
+    "attack_vectors": [ "vector_null" ]
   },
   {
     "id": "tec_iku_slap_reverse",
@@ -242,7 +242,7 @@
       { "stat": "damage", "type": "cut", "scale": 0.85 },
       { "stat": "damage", "type": "stab", "scale": 0.85 }
     ],
-    "attack_vectors": [ "WEAPON" ]
+    "attack_vectors": [ "vector_null" ]
   },
   {
     "id": "tec_iku_slap_elec",
@@ -261,7 +261,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "WEAPON" ],
+    "attack_vectors": [ "vector_null" ],
     "//": "Name needs to be more chuu2"
   },
   {
@@ -285,8 +285,8 @@
         ]
       }
     ],
-    "attack_vectors": [ "HAND", "WEAPON" ],
-    "//": "WEAPON so it can be used with the weapon equipped",
+    "attack_vectors": [ "vector_punch", "vector_null" ],
+    "//": " vector_null so it can be used with the weapon equipped",
     "//2": "Spell to allow aoe with single target, also it deals electric dmg"
   },
   {
@@ -328,7 +328,7 @@
         "message": "The weapon of %s has been forced out ot their hands!"
       }
     ],
-    "attack_vectors": [ "WEAPON" ],
+    "attack_vectors": [ "vector_null" ],
     "//": "Based on tec_brawl_disarm_melee "
   },
   {
@@ -348,7 +348,7 @@
         "message": "The weapon of %s has been forced out ot their hands!"
       }
     ],
-    "attack_vectors": [ "HAND" ],
+    "attack_vectors": [ "vector_grasp" ],
     "//": "Based on tec_brawl_disarm_unarmed "
   },
   {
@@ -379,7 +379,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "HAND" ],
+    "attack_vectors": [ "vector_punch" ],
     "//": "Based on tec_boxing_rapid (and all other Jab techniques)"
   },
   {
@@ -400,7 +400,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "FOOT" ]
+    "attack_vectors": [ "vector_foot_toes" ]
   },
   {
     "id": "tec_kasen_palm_left",
@@ -427,7 +427,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "PALM" ],
+    "attack_vectors": [ "vector_palm" ],
     "//": "Partially based on tec_taichi_palm "
   },
   {
@@ -455,7 +455,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "PALM" ]
+    "attack_vectors": [ "vector_palm" ]
   },
   {
     "id": "tec_kasen_palmfly",
@@ -482,7 +482,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "PALM", "HAND" ],
+    "attack_vectors": [ "vector_palm", "vector_punch" ],
     "//": "This is the 'diagonal palm strike' attack that knocks enemies vertically"
   },
   {
@@ -510,7 +510,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "HAND" ],
+    "attack_vectors": [ "vector_punch" ],
     "//": "Replaces the 'poke' attack to give her a proper punch attack",
     "//2": "movecost should be added at the end of the attack, like a wind down, instead of a wind up"
   },
@@ -539,7 +539,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "HAND" ]
+    "attack_vectors": [ "vector_punch" ]
   },
   {
     "id": "tec_kasen_swipe",
@@ -559,7 +559,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "HAND" ]
+    "attack_vectors": [ "vector_punch", "vector_arm" ]
   },
   {
     "id": "tec_kokoro_grab_break",
@@ -574,7 +574,7 @@
     "melee_allowed": true,
     "defensive": true,
     "grab_break": true,
-    "attack_vectors": [ "WEAPON" ],
+    "attack_vectors": [ "vector_null" ],
     "//": "Based on tec_break "
   },
   {
@@ -599,7 +599,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "WEAPON" ],
+    "attack_vectors": [ "vector_null" ],
     "//": "This is inspired in her 'jump, fall upside down while spinning' attack, but that would be too long to perform by itself, implement as combo ending if possible",
     "//2": "Turned into a spell to allow aoe with single target"
   },
@@ -619,7 +619,7 @@
       { "stat": "damage", "type": "cut", "scale": 0.33 },
       { "stat": "damage", "type": "stab", "scale": 0.33 }
     ],
-    "attack_vectors": [ "WEAPON" ]
+    "attack_vectors": [ "vector_null" ]
   },
   {
     "id": "tec_kokoro_sweep",
@@ -641,7 +641,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "WEAPON" ],
+    "attack_vectors": [ "vector_null" ],
     "//2": "Turned into a spell to allow cone with single target"
   },
   {
@@ -653,7 +653,7 @@
     "weapon_categories_allowed": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS" ],
     "melee_allowed": true,
     "mult_bonuses": [ { "stat": "movecost", "scale": 0.85 } ],
-    "attack_vectors": [ "WEAPON" ]
+    "attack_vectors": [ "vector_null" ]
   },
   {
     "id": "tec_kokoro_swing_2h",
@@ -669,7 +669,7 @@
       { "stat": "damage", "type": "cut", "scale": 1.1 },
       { "stat": "damage", "type": "stab", "scale": 1.1 }
     ],
-    "attack_vectors": [ "WEAPON" ]
+    "attack_vectors": [ "vector_null" ]
   },
   {
     "id": "tec_kokoro_switch",
@@ -691,7 +691,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "WEAPON" ],
+    "attack_vectors": [ "vector_null" ],
     "//": "This is inspired in her 'stab while looking away' attack. Thus, obviously transforms her dmg into stab. Yes, including blunt weapons"
   },
   {
@@ -715,7 +715,7 @@
       { "stat": "damage", "type": "cut", "scale": 0.85 },
       { "stat": "damage", "type": "stab", "scale": 0.85 }
     ],
-    "attack_vectors": [ "FOOT" ],
+    "attack_vectors": [ "vector_shin", "vector_foot_toes" ],
     "//": "Original tec_taichi_counter "
   },
   {
@@ -729,7 +729,7 @@
       { "stat": "movecost", "scale": 0.75 }, 
       { "stat": "damage", "type": "bash", "scale": 1.1 } 
     ],
-    "attack_vectors": [ "ELBOW" ]
+    "attack_vectors": [ "vector_elbow" ]
   },
   {
     "id": "tec_meiling_kick",
@@ -745,7 +745,7 @@
       { "stat": "damage", "type": "cut", "scale": 1.33 },
       { "stat": "damage", "type": "stab", "scale": 1.33 }
     ],
-    "attack_vectors": [ "FOOT" ]
+    "attack_vectors": [ "vector_foot_toes" ]
   },
   {
     "id": "tec_meiling_palm",
@@ -784,7 +784,7 @@
       { "stat": "damage", "type": "cut", "scale": 1.33 },
       { "stat": "damage", "type": "stab", "scale": 1.33 }
     ],
-    "attack_vectors": [ "PALM" ],
+    "attack_vectors": [ "vector_palm" ],
     "//": "Original tec_taichi_palm "
   },
   {
@@ -828,7 +828,7 @@
       { "stat": "damage", "type": "cut", "scale": 1.83 },
       { "stat": "damage", "type": "stab", "scale": 1.83 }
     ],
-    "attack_vectors": [ "SHOULDER", "ELBOW", "PALM" ],
+    "attack_vectors": [ "vector_shoulder", "vector_elbow", "vector_palm" ],
     "//": "Original tec_taichi_precise "
   },
   {
@@ -850,7 +850,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "PALM" ],
+    "attack_vectors": [ "vector_palm" ],
     "//": "Turned into a spell as it's a cone"
   },
   {
@@ -884,7 +884,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "FOOT" ],
+    "attack_vectors": [ "vector_foot_sole" ],
     "//": "Do not replace with the spell doing dmg, as this is already scaling off her unarmed melee dmg. That is, unless it's dealing 5 dmg or something"
   },
   {
@@ -914,7 +914,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "FOOT" ],
+    "attack_vectors": [ "vector_foot_sole" ],
     "//": "The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats"
   },
   {
@@ -935,7 +935,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "KNEE" ],
+    "attack_vectors": [ "vector_knee" ],
     "//": "The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats"
   },
   {
@@ -958,7 +958,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "HAND" ],
+    "attack_vectors": [ "vector_punch" ],
     "//": "The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats"
   },
   {
@@ -978,7 +978,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "HAND" ],
+    "attack_vectors": [ "vector_punch" ],
     "//": "The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats, also to allow igniting the target"
   },
   {
@@ -998,7 +998,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "FOOT" ],
+    "attack_vectors": [ "vector_foot_sole" ],
     "//": "The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats, also to allow igniting the target"
   },
   {
@@ -1024,7 +1024,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "TORSO" ],
+    "attack_vectors": [ "vector_shoulder" ],
     "//": "Lunge but called tackle. The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats"
   },
   {
@@ -1043,7 +1043,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "HAND" ],
+    "attack_vectors": [ "vector_punch" ],
     "//": "Turned into a spell so the heat dmg can scale, also to allow igniting the target"
   },
   {
@@ -1056,7 +1056,7 @@
     "mult_bonuses": [
       { "stat": "movecost", "scale": 0.9 }
     ],
-    "attack_vectors": [ "FOOT" ]
+    "attack_vectors": [ "vector_foot_toes" ]
   },
   {
     "id": "tec_tenko_heaven_crescent",
@@ -1073,7 +1073,7 @@
       { "stat": "damage", "type": "cut", "scale": 1.1 },
       { "stat": "damage", "type": "stab", "scale": 1.1 }
     ],
-    "attack_vectors": [ "WEAPON" ],
+    "attack_vectors": [ "vector_null" ],
     "//": "Vertical slash"
   },
   {
@@ -1090,7 +1090,7 @@
       { "stat": "damage", "type": "bash", "scaling-stat": "per", "scale": 1 },
       { "stat": "damage", "type": "bash", "scaling-stat": "str", "scale": 1 }
     ],
-    "attack_vectors": [ "FOOT" ]
+    "attack_vectors": [ "vector_foot_sole" ]
   },
   {
     "id": "tec_tenko_kick2",
@@ -1106,7 +1106,7 @@
       { "stat": "damage", "type": "bash", "scaling-stat": "per", "scale": 1.33 },
       { "stat": "damage", "type": "bash", "scaling-stat": "str", "scale": 1.33 }
     ],
-    "attack_vectors": [ "FOOT" ]
+    "attack_vectors": [ "vector_foot_sole" ]
   },
   {
     "id": "tec_tenko_stomp",
@@ -1133,7 +1133,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "FOOT" ]
+    "attack_vectors": [ "vector_foot_sole" ]
   },
   {
     "id": "tec_youmu_downward_slash",
@@ -1148,7 +1148,7 @@
       { "stat": "damage", "type": "cut", "scale": 1.25 },
       { "stat": "damage", "type": "stab", "scale": 1.25 }
     ],
-    "attack_vectors": [ "WEAPON" ]
+    "attack_vectors": [ "vector_null" ]
   },
   {
     "id": "tec_youmu_high_slash",
@@ -1162,7 +1162,7 @@
       { "stat": "damage", "type": "cut", "scale": 1.16 },
       { "stat": "damage", "type": "stab", "scale": 1.16 }
     ],
-    "attack_vectors": [ "WEAPON" ],
+    "attack_vectors": [ "vector_null" ],
     "//": "Should target torso and head only"
   },
   {
@@ -1183,7 +1183,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "WEAPON" ],
+    "attack_vectors": [ "vector_null" ],
     "//": "Turned into a spell to transform weapon dmg -> bash"
   },
   {
@@ -1199,7 +1199,7 @@
       { "stat": "damage", "type": "cut", "scale": 1.5 },
       { "stat": "damage", "type": "stab", "scale": 1.5 }
     ],
-    "attack_vectors": [ "WEAPON" ],
+    "attack_vectors": [ "vector_null" ],
     "//": "Swatter but called Rising Fang"
   },
   {
@@ -1220,7 +1220,7 @@
         ]
       }
     ],
-    "attack_vectors": [ "WEAPON" ],
+    "attack_vectors": [ "vector_null" ],
     "//": "Turned into a spell to transform weapon dmg -> stab"
   },
   {
@@ -1242,7 +1242,7 @@
       { "stat": "damage", "type": "cut", "scale": 0.85 },
       { "stat": "damage", "type": "stab", "scale": 0.85 }
     ],
-    "attack_vectors": [ "WEAPON" ]
+    "attack_vectors": [ "vector_null" ]
   },
   {
     "id": "tec_youmu_knee_slasher",
@@ -1264,6 +1264,6 @@
         ]
       }
     ],
-    "attack_vectors": [ "WEAPON" ]
+    "attack_vectors": [ "vector_null" ]
   }
 ]

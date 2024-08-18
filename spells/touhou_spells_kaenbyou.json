@@ -618,6 +618,6 @@
     "base_casting_time": { "math": [ "u_var_soulshard" ] },
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_LEGS", "NO_PROJECTILE", "SOMATIC", "SILENT" ]
+    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SOMATIC", "SILENT" ]
   }
 ]

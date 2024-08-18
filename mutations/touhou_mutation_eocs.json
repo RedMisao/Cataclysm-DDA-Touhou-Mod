@@ -1,5 +1,14 @@
 [
   {
+    "id": "WINGS_forget_fly_spells",
+    "type": "effect_on_condition",
+    "effect": [ 
+      { "math": [ "u_spell_level('fly_upwards')", "=", "-1" ] },
+      { "math": [ "u_spell_level('fly_downwards')", "=", "-1" ] } 
+    ],
+    "//": "This removes the spells when the WINGS_ mutations are disabled"
+  },
+  {
     "id": "WINGS_BAT_REMI_activate",
     "type": "effect_on_condition",
     "condition": { "math": [ "u_val('stamina')", ">=", "111" ] },
@@ -46,6 +55,8 @@
       { "u_lose_effect": "WINGS_BAT_REMI_drain1" },
       { "u_lose_effect": "WINGS_BAT_REMI_drain2" },
       { "u_lose_trait": "VAMPIRE_BAT_REMI_active" },
+      { "math": [ "u_spell_level('fly_upwards')", "=", "-1" ] },
+      { "math": [ "u_spell_level('fly_downwards')", "=", "-1" ] },
       { "u_add_trait": "VAMPIRE_BAT_REMI" }
     ]
   },
@@ -92,6 +103,8 @@
       { "u_lose_effect": "WINGS_HELLRAVEN_drain1" },
       { "u_lose_effect": "WINGS_HELLRAVEN_drain2" },
       { "u_lose_trait": "WINGS_HELLRAVEN_spread" },
+      { "math": [ "u_spell_level('fly_upwards')", "=", "-1" ] },
+      { "math": [ "u_spell_level('fly_downwards')", "=", "-1" ] },
       { "u_add_trait": "WINGS_HELLRAVEN" }
     ]
   },
@@ -139,6 +152,8 @@
       { "u_lose_effect": "WINGS_TENGUCROW_drain1" },
       { "u_lose_effect": "WINGS_TENGUCROW_drain2" },
       { "u_lose_trait": "WINGS_TENGUCROW_spread" },
+      { "math": [ "u_spell_level('fly_upwards')", "=", "-1" ] },
+      { "math": [ "u_spell_level('fly_downwards')", "=", "-1" ] },
       { "u_add_trait": "WINGS_TENGUCROW" }
     ]
   }

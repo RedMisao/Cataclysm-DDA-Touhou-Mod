@@ -436,5 +436,39 @@
     "base_energy_cost": 2333,
     "energy_source": "STAMINA",
     "flags": [ "EXTRA_EFFECTS_FIRST", "NO_HANDS", "NO_LEGS" ]
+  },
+  {
+    "id": "fly_downwards",
+    "type": "SPELL",
+    "name": "[↓] Fly downwards",
+    "description": "Fly downwards.",
+    "spell_class": "NONE",
+    "teachable": false,
+    "valid_targets": [ "self" ],
+    "effect": "effect_on_condition",
+    "effect_str": "fly_downwards_eoc",
+    "shape": "blast",
+    "difficulty": -50,
+    "message": "",
+    "base_casting_time": 85,
+    "flags": [ "NO_FAIL", "NO_HANDS", "NO_LEGS", "NON_MAGICAL", "SILENT" ],
+    "//": "Adapted from #74988",
+    "//2": "This and fly_upwards work perfectly good. Not deleting them yet to keep the syntax somewhere"
+  },
+  {
+    "id": "fly_upwards",
+    "type": "SPELL",
+    "name": "[↑] Fly upwards",
+    "description": "Fly upwards.",
+    "spell_class": "NONE",
+    "teachable": false,
+    "valid_targets": [ "self" ],
+    "effect": "effect_on_condition",
+    "effect_str": "fly_upwards_eoc",
+    "shape": "blast",
+    "difficulty": -50,
+    "message": "",
+    "base_casting_time": 85,
+    "flags": [ "NO_FAIL", "NO_HANDS", "NO_LEGS", "NON_MAGICAL", "SILENT" ]
   }
 ]

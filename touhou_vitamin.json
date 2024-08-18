@@ -5,10 +5,10 @@
     "vit_type": "counter",
     "name": { "str": "Blood thirst" },
     "min": 0,
-    "max": 792,
-    "rate": "20 m",
+    "max": 7920,
+    "rate": "365 d",
     "weight_per_unit": "188 ug",
     "flags": [ "NO_DISPLAY" ],
-    "//": "No deficiency field/effect so this can be only detected by a trait (VAMPIRE_SPECIES) + vit counter EOC. See the vampire_bloodthirst sub-EOCs"
+    "//": "No deficiency field/effect so this can be only detected by VAMPIRE_SPECIES + a vit counter EOC. See the vampire_bloodthirst sub-EOCs"
   }
 ]
