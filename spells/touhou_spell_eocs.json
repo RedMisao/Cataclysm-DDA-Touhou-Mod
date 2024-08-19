@@ -1486,8 +1486,8 @@
     "type": "effect_on_condition",
     "effect": [ 
       { "u_cast_spell": { "id": "remilia_darkdrain4" }, "targeted": false },
-      { "math": [ "u_vitamin('blood')", "+=", "var_remidrain * 1.1" ] },
-      { "math": [ "u_vitamin('hblood_vitamin')", "+=", "var_remidrain * 1.1" ] }
+      { "math": [ "u_vitamin('blood')", "+=", "var_remidrain * 1" ] },
+      { "math": [ "u_vitamin('hblood_vitamin')", "+=", "var_remidrain * 1.5" ] }
     ]
   },
   {

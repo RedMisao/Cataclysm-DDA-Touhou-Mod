@@ -861,11 +861,11 @@
     "effect": [ 
       {
         "if": { "compare_string": [ "blood", { "context_val": "itype" } ] },
-        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "60" ] }
+        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "60 * 9" ] }
       },
       {
         "if": { "compare_string": [ "human_liver", { "context_val": "itype" } ] },
-        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "56" ] }
+        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "56 * 9" ] }
       },
       {
         "if": { 
@@ -875,7 +875,7 @@
             { "compare_string": [ "pepperhuman", { "context_val": "itype" } ] }
           ]
         },
-        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "36" ] }
+        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "36 * 9" ] }
       },
       {
         "if": { 
@@ -886,7 +886,7 @@
             { "compare_string": [ "human_kidney", { "context_val": "itype" } ] }
           ]
         },
-        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "30" ] }
+        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "30 * 9" ] }
       },
       {
         "if": { 
@@ -895,11 +895,11 @@
             { "compare_string": [ "human_marrow", { "context_val": "itype" } ] }
           ]
         },
-        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "28" ] }
+        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "28 * 9" ] }
       },
       {
         "if": { "compare_string": [ "human_brain", { "context_val": "itype" } ] },
-        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "20" ] }
+        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "20 * 9" ] }
       },
       {
         "if": { 
@@ -909,15 +909,15 @@
             { "compare_string": [ "peppermutant_human", { "context_val": "itype" } ] }
           ]
         },
-        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "18" ] }
+        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "18 * 9" ] }
       },
       { 
         "if": { "compare_string": [ "human_sweetbread", { "context_val": "itype" } ] },
-        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "15" ] }
+        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "15 * 9" ] }
       },
       {
         "if": { "compare_string": [ "mutant_human_marrow", { "context_val": "itype" } ] },
-        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "14" ] }
+        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "14 * 9" ] }
       },
       {
         "if": { 
@@ -926,7 +926,7 @@
             { "compare_string": [ "small_hstomach_boiled", { "context_val": "itype" } ] }
           ]
         },
-        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "13" ] }
+        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "13 * 9" ] }
       },
       {
         "if": { 
@@ -936,7 +936,7 @@
             { "compare_string": [ "human_lard", { "context_val": "itype" } ] }
           ]
         },
-        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "5" ] }
+        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "5 * 9" ] }
       },
       {
         "if": { 
@@ -946,7 +946,7 @@
             { "compare_string": [ "mutant_human_tallow", { "context_val": "itype" } ] }
           ]
         },
-        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "3" ] }
+        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "3 * 9" ] }
       },
       {
         "if": { 
@@ -955,7 +955,7 @@
             { "compare_string": [ "raw_hfur", { "context_val": "itype" } ] }
           ]
         },
-        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "2.6" ] }
+        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "2.6 * 9" ] }
       }
     ],
     "//": "This is an approach copied and expanded from #74709, which while effective makes the list above difficult to maintain",

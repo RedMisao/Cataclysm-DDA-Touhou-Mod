@@ -290,7 +290,8 @@
       [ "YOUKAI_PSEUDO_TOUHOU", 20 ],
       [ "YOUKAI_SKINWALKER_TOUHOU", 20 ]
     ],
-    "flags": [ "PSYCHOPATH" ]
+    "flags": [ "PSYCHOPATH" ],
+    "//": "Not sure if LIAR works from flags, so it's set above"
   },
   {
     "id": "HERMIT_CONSTITUTION",
@@ -1131,7 +1132,8 @@
         "mutations": [ "DEFT", "HEAVYSLEEPER" ]
       }
     ],
-    "cancels": [ "EASYSLEEPER", "EASYSLEEPER2", "HEAVYSLEEPER2", "INSOMNIA", "SLEEPY", "SLEEPY2" ]
+    "cancels": [ "EASYSLEEPER", "EASYSLEEPER2", "HEAVYSLEEPER2", "INSOMNIA", "SLEEPY", "SLEEPY2" ],
+    "//": "Not sure if DEFT and HEAVYSLEEPER work from flags, so it's set above"
   },
   {
     "id": "PROF_MOKOU",
