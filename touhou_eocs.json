@@ -590,7 +590,7 @@
     "effect": [ 
       { "u_lose_effect": "parry_effect" },
       { "math": [ "u_var_mountainbreak", "=", "0" ] },
-      { "u_cast_spell": { "id": "meiling_mountainbreak2" } }
+      { "u_cast_spell": { "id": "meiling_mountainbreak2", "message": "You strike back!" }, "targeted": true }
     ],
     "//": "Simplified version of udonge_barrierwave_hit. It checks if Meiling has casted Mountain breaking cannon. If that's the case it resets the var and casts the spell"
   },

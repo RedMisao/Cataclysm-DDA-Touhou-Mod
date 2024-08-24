@@ -55,7 +55,6 @@
     "max_range": 1,
     "max_level": 1,
     "difficulty": -11,
-    "message": "You strike back!",
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
