@@ -84,7 +84,6 @@
     "bleeds": "fd_blood",
     "flags": [ "SOUL_XDIMEN" ],
     "//": "cdda zombies are not proper undead (i.e. corpses reanimated with either magic or a soul), they're corpses parasited by another (extradimensional) entity, and this entity lacks a soul",
-    "//2": "However and for balancing purposes, they should drop soul shards, otherwise Kaenbyou is forced to go murderhobo to fuel spells and such (are there that many humans left too? they're non-renewable fuel now)",
-    "//3": "An alternative is to make them take a flat 50% soul dmg reduction. A more spicy alternative is to make extradimensional entities take a rand( 0, 1 ) amount of soul dmg"
+    "//2": "An alternative is to make them take a flat 50% soul dmg reduction. A more spicy alternative is to make extradimensional entities take a rand( 0, 1 ) amount of soul dmg"
   }
 ]

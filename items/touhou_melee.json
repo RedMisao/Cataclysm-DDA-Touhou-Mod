@@ -115,7 +115,7 @@
     "looks_like": "jian",
     "color": "red",
     "techniques": [ "WBLOCK_2" ],
-    "weapon_category": [ "JAPANESE_SWORDS", "SHORT_SWORDS" ],
+    "weapon_category": [ "MEDIUM_SWORDS" ],
     "use_action": { "menu_text": "Dismiss Sword", "type": "transform", "target": "tenshi_jian", "msg": "You dismiss your sword." },
     "flags": [ "DURABLE_MELEE", "MAGIC_FOCUS", "SHEATH_SWORD", "STURDY", "TRADER_AVOID" ]
   },
@@ -136,7 +136,7 @@
     "color": "light_gray",
     "techniques": [ "VORPAL", "WBLOCK_2" ],
     "qualities": [ [ "CUT", 1 ], [ "BUTCHER", 4 ] ],
-    "weapon_category": [ "JAPANESE_SWORDS", "SHORT_SWORDS" ],
+    "weapon_category": [ "MEDIUM_SWORDS" ],
     "flags": [ "DURABLE_MELEE", "MAGIC_FOCUS", "SHEATH_SWORD" ],
     "//": " For me, 'send phantoms to Nirvana' is synonymous with 'instakill phantoms' "
   },
@@ -161,7 +161,8 @@
     "color": "light_gray",
     "techniques": [ "VORPAL", "WBLOCK_1", "WIDE" ],
     "qualities": [ [ "CUT", 1 ] ],
-    "weapon_category": [ "GREAT_SWORDS", "JAPANESE_SWORDS", "LONG_SWORDS" ],
-    "flags": [ "DURABLE_MELEE", "MAGIC_FOCUS", "SHEATH_SWORD" ]
+    "weapon_category": [ "GREAT_SWORDS", "LONG_SWORDS" ],
+    "flags": [ "DURABLE_MELEE", "MAGIC_FOCUS", "SHEATH_SWORD" ],
+    "//3": "The weapon category GREAT_SWORDS is kept for no particular reason"
   }
 ]

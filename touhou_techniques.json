@@ -100,24 +100,35 @@
     "id": "tec_iku_palm",
     "type": "technique",
     "name": "Double palm discharge",
-    "messages": [
-      "You cross your hands and discharge energy at %s!",
-      "<npcname> crosses their hands, sending a bolt of electricity at %s!"
-    ],
+    "messages": [ "","" ],
     "skill_requirements": [ { "name": "melee", "level": 3 } ],
-    "weapon_categories_allowed": [ "WHIPS" ],
     "melee_allowed": true,
     "crit_tec": false,
+    "mult_bonuses": [
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
+    ],
     "eocs": [
       {
         "id": "tec_iku_palm_eoc",
         "effect": [ 
+          { "u_message": "You cross your hands and discharge energy at the <npc_name>!", "type": "good" },
+          { "npc_message": "<npc_name> crosses their hands, sending a bolt of electricity at %s!", "type": "good" },
           { "u_cast_spell": { "id": "iku_palm" }, "loc": { "global_val": "var_target_monster_loc" } }
         ]
       }
     ],
-    "attack_vectors": [ "vector_palm", "vector_null" ],
-    "//2": "Spell to allow line with single target, also it deals electric dmg"
+    "attack_vectors": [ "vector_palm" ],
+    "//": "Spell to allow line with single target, also it deals electric dmg"
   },
   {
     "id": "tec_iku_poke",
@@ -145,6 +156,7 @@
     "melee_allowed": true,
     "crit_tec": true,
     "stun_dur": 1,
+    "weighting": -2,
     "mult_bonuses": [
       { "stat": "damage", "type": "bash", "scale": 2 },
       { "stat": "damage", "type": "cut", "scale": 2 },
@@ -156,7 +168,7 @@
     "id": "tec_iku_rising",
     "type": "technique",
     "name": "Rising whip",
-    "messages": [ "You whip your weapon upwards %s, knocking them back!", "<npcname> whips upwards at %s, knocking them back!" ],
+    "messages": [ "You whip your weapon upwards at %s, knocking them back!", "<npcname> whips upwards at %s, knocking them back!" ],
     "skill_requirements": [ { "name": "melee", "level": 4 } ],
     "weapon_categories_allowed": [ "WHIPS" ],
     "melee_allowed": true,
@@ -173,12 +185,13 @@
     "id": "tec_iku_rising2",
     "type": "technique",
     "name": "Rising whip (Crit)",
-    "messages": [ "You whip your weapon upwards %s, knocking them back!", "<npcname> whips upwards at %s, knocking them back!" ],
+    "messages": [ "You whip your weapon upwards at %s, knocking them back!", "<npcname> whips upwards at %s, knocking them back!" ],
     "skill_requirements": [ { "name": "melee", "level": 5 } ],
     "weapon_categories_allowed": [ "WHIPS" ],
     "melee_allowed": true,
     "crit_tec": true,
     "knockback_dist": 2,
+    "weighting": -5,
     "mult_bonuses": [
       { "stat": "damage", "type": "bash", "scale": 2.33 },
       { "stat": "damage", "type": "cut", "scale": 2.33 },
@@ -190,7 +203,7 @@
     "id": "tec_iku_rising_drill",
     "type": "technique",
     "name": "Rising drill",
-    "messages": [ "You charge your weapon with static, and drill upwards through %s!", "<npcname> drills upwards through %s!" ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "melee", "level": 6 } ],
     "weapon_categories_allowed": [ "WHIPS" ],
     "melee_allowed": true,
@@ -199,12 +212,25 @@
     "knockback_dist": 1,
     "stun_dur": 1,
     "mult_bonuses": [
-      { "stat": "movecost", "scale": 1.1 }
+      { "stat": "movecost", "scale": 1.1 },
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
     ],
     "eocs": [
       {
         "id": "tec_iku_rising_drill_eoc",
         "effect": [ 
+          { "u_message": "You charge your weapon with static, and drill upwards through the <npc_name>!", "type": "good" },
+          { "npc_message": "<npc_name> drills upwards through %s!", "type": "good" },
           { "u_cast_spell": { "id": "iku_rising_drill" }, "loc": { "global_val": "var_target_monster_loc" } }
         ]
       }
@@ -248,15 +274,30 @@
     "id": "tec_iku_slap_elec",
     "type": "technique",
     "name": "Ionic whip",
-    "messages": [ "You charge your weapon and use it to whip %s!", "<npcname> electrifies their weapon and strikes %s!" ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "melee", "level": 4 } ],
     "required_buffs_all": [ "buff_celestial_brawling_iku_onpause2" ],
     "weapon_categories_allowed": [ "WHIPS" ],
     "melee_allowed": true,
+    "mult_bonuses": [
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
+    ],
     "eocs": [
       {
         "id": "tec_iku_slap_elec_eoc",
         "effect": [ 
+          { "u_message": "You charge your weapon and use it to whip the <npc_name>!", "type": "good" },
+          { "npc_message": "<npc_name> electrifies their weapon and strikes %s!", "type": "good" },
           { "u_cast_spell": { "id": "iku_slap_elec" }, "loc": { "global_val": "var_target_monster_loc" } }
         ]
       }
@@ -268,19 +309,31 @@
     "id": "tec_iku_step",
     "type": "technique",
     "name": "Shock step",
-    "messages": [
-      "One hand on your hip, finger pointing to the sky, a lightning strikes %s! Sick!",
-      "<npcname> does a sick dance move and lightning hits %s!"
-    ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "melee", "level": 3 } ],
     "required_buffs_all": [ "buff_celestial_brawling_iku_onpause2" ],
     "unarmed_allowed": true,
     "crit_tec": true,
     "stun_dur": 2,
+    "mult_bonuses": [
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
+    ],
     "eocs": [
       {
         "id": "tec_iku_step_eoc",
         "effect": [ 
+          { "u_message": "One hand on your hip, finger pointing to the sky, a lightning strikes the <npc_name>! Sick!", "type": "good" },
+          { "npc_message": "<npc_name> does a sick dance move and lightning hits %s!", "type": "good" },
           { "u_cast_spell": { "id": "iku_step" }, "targeted": false }
         ]
       }
@@ -386,16 +439,29 @@
     "id": "tec_kasen_drillkick",
     "type": "technique",
     "name": "Drill strike (kick)",
-    "messages": [ "You shape your bandages as a drill and kick at %s with it!", "<npcname> shapes their wraps as a drill and kicks %s with it!" ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "unarmed", "level": 2 } ],
     "unarmed_allowed": true,
-    "mult_bonuses": [ 
-      { "stat": "movecost", "scale": 1.17 }
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.2 },
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
     ],
     "eocs": [
       {
         "id": "tec_kasen_drillkick_eoc",
         "effect": [ 
+          { "u_message": "You shape your bandages as a drill and kick at the <npc_name> with it!", "type": "good" },
+          { "npc_message": "<npc_name> shapes their wraps as a drill and kicks %s with it!", "type": "good" },
           { "u_cast_spell": { "id": "kasen_drillkick" }, "loc": { "global_val": "var_target_monster_loc" } }
         ]
       }
@@ -406,22 +472,35 @@
     "id": "tec_kasen_palm_left",
     "type": "technique",
     "name": "Palm strike (left)",
-    "messages": [ "You palm strike %s with your left hand!", "<npcname> palm strikes %s with their left hand!" ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "unarmed", "level": 2 } ],
     "unarmed_allowed": true,
-    "mult_bonuses": [
-      { "stat": "movecost", "scale": 1.1 }
-    ],
     "condition": {
       "and": [
         { "u_has_effect": "mabuff:buff_kasen_static" },
         { "math": [ "u_var_kasen_arm", "==", "1" ] }
       ]
     },
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.1 },
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
+    ],
     "eocs": [
       {
         "id": "tec_kasen_palm_left_eoc",
         "effect": [
+          { "u_message": "You palm strike the <npc_name> with your left hand!", "type": "good" },
+          { "npc_message": "<npc_name> palm strikes %s with their left hand!", "type": "good" },
           { "u_cast_spell": { "id": "kasen_palm_left" }, "loc": { "global_val": "var_target_monster_loc" } },
           { "math": [ "u_var_kasen_arm", "=", "0" ] }
         ]
@@ -434,23 +513,36 @@
     "id": "tec_kasen_palm_right",
     "type": "technique",
     "name": "Palm strike (right)",
-    "messages": [ "You palm strike %s with your right hand!", "<npcname> palm strikes %s with their right hand!" ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "unarmed", "level": 2 } ],
     "unarmed_allowed": true,
-    "mult_bonuses": [
-      { "stat": "movecost", "scale": 1.1 }
-    ],
     "condition": {
       "and": [
         { "u_has_effect": "mabuff:buff_kasen_static" },
         { "math": [ "u_var_kasen_arm", "==", "0" ] }
       ]
     },
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.1 },
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
+    ],
     "eocs": [
       {
         "id": "tec_kasen_palm_right_eoc",
         "effect": [
-          { "u_cast_spell": { "id": "kasen_palm_right" }, "loc": { "global_val": "var_target_monster_loc" } },
+          { "u_message": "You palm strike the <npc_name> with your right hand!", "type": "good" },
+          { "npc_message": "<npc_name> palm strikes %s with their right hand!", "type": "good" },
+          { "u_cast_spell": { "id": "kasen_palm_left" }, "loc": { "global_val": "var_target_monster_loc" } },
           { "math": [ "u_var_kasen_arm", "=", "1" ] }
         ]
       }
@@ -461,7 +553,7 @@
     "id": "tec_kasen_palmfly",
     "type": "technique",
     "name": "Palm strike (Wrap)",
-    "messages": [ "You extend your wraps to hit %s, sending them flying!", "<npcname> extend their wraps to hit %s, sending them flying!" ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
     "unarmed_allowed": true,
     "condition": {
@@ -471,12 +563,25 @@
       ]
     },
     "mult_bonuses": [
-      { "stat": "movecost", "scale": 1.17 }
+      { "stat": "movecost", "scale": 1.17 },
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
     ],
     "eocs": [
       {
         "id": "tec_kasen_palmfly_eoc",
         "effect": [
+          { "u_message": "You extend your wraps to hit the <npc_name>, sending them flying!", "type": "good" },
+          { "npc_message": "<npc_name> extend their wraps to hit %s, sending them flying!", "type": "good" },
           { "u_cast_spell": { "id": "kasen_palmfly2" }, "loc": { "global_val": "var_target_monster_loc" } },
           { "math": [ "u_var_kasen_arm", "=", "0" ] }
         ]
@@ -489,22 +594,35 @@
     "id": "tec_kasen_punch_left",
     "type": "technique",
     "name": "Punch (left)",
-    "messages": [ "You punch %s with your left hand!", "<npcname> punches %s with their left hand!" ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
     "unarmed_allowed": true,
-    "mult_bonuses": [
-      { "stat": "movecost", "scale": 1.2 }
-    ],
     "condition": {
       "and": [
         { "u_has_effect": "mabuff:buff_kasen_static" },
         { "math": [ "u_var_kasen_arm", "==", "1" ] }
       ]
     },
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.2 },
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
+    ],
     "eocs": [
       {
         "id": "tec_kasen_punch_left_eoc",
         "effect": [
+          { "u_message": "You punch the <npc_name> with your left hand!", "type": "good" },
+          { "npc_message": "<npc_name> punches %s with their left hand!", "type": "good" },
           { "u_cast_spell": { "id": "kasen_punch_left" }, "loc": { "global_val": "var_target_monster_loc" } },
           { "math": [ "u_var_kasen_arm", "=", "0" ] }
         ]
@@ -518,22 +636,35 @@
     "id": "tec_kasen_punch_right",
     "type": "technique",
     "name": "Punch (right)",
-    "messages": [ "You punch %s with your right hand!", "<npcname> punches %s with their right hand!" ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
     "unarmed_allowed": true,
-    "mult_bonuses": [
-      { "stat": "movecost", "scale": 1.2 }
-    ],
     "condition": {
       "and": [
         { "u_has_effect": "mabuff:buff_kasen_static" },
         { "math": [ "u_var_kasen_arm", "==", "0" ] }
       ]
     },
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.2 },
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
+    ],
     "eocs": [
       {
         "id": "tec_kasen_punch_right_eoc",
         "effect": [
+          { "u_message": "You punch the <npc_name> with your right hand!", "type": "good" },
+          { "npc_message": "<npc_name> punches %s with their right hand!", "type": "good" },
           { "u_cast_spell": { "id": "kasen_punch_right" }, "loc": { "global_val": "var_target_monster_loc" } },
           { "math": [ "u_var_kasen_arm", "=", "1" ] }
         ]
@@ -545,16 +676,29 @@
     "id": "tec_kasen_swipe",
     "type": "technique",
     "name": "Swipe (Wrap)",
-    "messages": [ "You unwrap your bandages and swipe towards %s!", "<npcname> unwraps their bandages and swipes towards %s!" ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
     "unarmed_allowed": true,
     "mult_bonuses": [
-      { "stat": "movecost", "scale": 1.1 }
+      { "stat": "movecost", "scale": 1.1 },
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
     ],
     "eocs": [
       {
         "id": "tec_kasen_swipe_eoc",
         "effect": [
+          { "u_message": "You unwrap your bandages and swipe towards the <npc_name>!", "type": "good" },
+          { "npc_message": "<npc_name> unwraps their bandages and swipes towards %s!", "type": "good" },
           { "u_cast_spell": { "id": "kasen_swipe" }, "loc": { "global_val": "var_target_monster_loc" } }
         ]
       }
@@ -581,20 +725,32 @@
     "id": "tec_kokoro_spin",
     "type": "technique",
     "name": "Spin attack",
-    "messages": [
-      "You spin, hitting nearby enemies!",
-      "<npcname> spins, hitting nearby enemies!"
-    ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "melee", "level": 4 } ],
     "weapon_categories_allowed": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS", "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
     "melee_allowed": true,
     "crit_tec": false,
     "reach_ok": true,
     "stun_dur": 1,
+    "mult_bonuses": [
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
+    ],
     "eocs": [
       {
         "id": "tec_kokoro_spin_eoc",
         "effect": [
+          { "u_message": "You spin, hitting nearby enemies!", "type": "good" },
+          { "npc_message": "<npc_name> spins, hitting nearby enemies!", "type": "good" },
           { "u_cast_spell": { "id": "kokoro_spin" }, "targeted": false }
         ]
       }
@@ -625,18 +781,31 @@
     "id": "tec_kokoro_sweep",
     "type": "technique",
     "name": "Sweep",
-    "messages": [ "You sweep %s!", "<npcname> sweeps %s!" ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "melee", "level": 4 } ],
     "weapon_categories_allowed": [ "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
     "melee_allowed": true,
     "reach_ok": true,
-    "mult_bonuses": [ 
-      { "stat": "movecost", "scale": 1.1 }
+    "mult_bonuses": [
+      { "stat": "movecost", "scale": 1.1 },
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
     ],
     "eocs": [
       {
         "id": "tec_kokoro_sweep_eoc",
         "effect": [
+          { "u_message": "You sweep the <npc_name>!", "type": "good" },
+          { "npc_message": "<npc_name> sweeps %s!", "type": "good" },
           { "u_cast_spell": { "id": "kokoro_sweep" }, "loc": { "global_val": "var_target_monster_loc" } }
         ]
       }
@@ -675,18 +844,30 @@
     "id": "tec_kokoro_switch",
     "type": "technique",
     "name": "Switch attack",
-    "messages": [
-      "You turn around and attack %s while moving backwards!",
-      "<npcname> turns around and attacks %s while moving backwards!"
-    ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "melee", "level": 6 } ],
     "weapon_categories_allowed": [ "BATONS", "HAND_AXES", "SHORT_SWORDS", "MEDIUM_SWORDS", "LONG_SWORDS", "GREAT_SWORDS", "QUARTERSTAVES", "SPEARS", "POLEARMS", "GREAT_AXES" ],
     "melee_allowed": true,
     "reach_ok": true,
+    "mult_bonuses": [
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
+    ],
     "eocs": [
       {
         "id": "tec_kokoro_switch_eoc",
         "effect": [
+          { "u_message": "You turn around and attack the <npc_name> while moving backwards!", "type": "good" },
+          { "npc_message": "<npc_name> turns around and attacks %s while moving backwards!", "type": "good" },
           { "u_cast_spell": { "id": "kokoro_switch" }, "loc": { "global_val": "var_target_monster_loc" } }
         ]
       }
@@ -835,17 +1016,29 @@
     "id": "tec_meiling_qi_blast",
     "type": "technique",
     "name": "Qi blast",
-    "messages": [
-      "You thrust your palms forward, and release qi through %s!",
-      "<npcname> thrusts their hands forward, and release qi through %s!"
-    ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "unarmed", "level": 5 } ],
     "required_buffs_all": [ "buff_meiling_onpause2" ],
     "unarmed_allowed": true,
+    "mult_bonuses": [
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
+    ],
     "eocs": [
       {
         "id": "tec_meiling_qiblast_eoc",
         "effect": [
+          { "u_message": "You thrust your palms forward, and release qi through the <npc_name>!", "type": "good" },
+          { "npc_message": "<npc_name> thrusts their hands forward, and release qi through %s!", "type": "good" },
           { "u_cast_spell": { "id": "meiling_qiblast2" }, "loc": { "global_val": "var_target_monster_loc" } }
         ]
       }
@@ -915,7 +1108,7 @@
       }
     ],
     "attack_vectors": [ "vector_foot_sole" ],
-    "//": "The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats"
+    "//": "The spell is bonus dmg to the normal attack, otherwise the bonus is flat from stats"
   },
   {
     "id": "tec_mokou_kick2",
@@ -936,7 +1129,7 @@
       }
     ],
     "attack_vectors": [ "vector_knee" ],
-    "//": "The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats"
+    "//": "The spell is bonus dmg to the normal attack, otherwise the bonus is flat from stats"
   },
   {
     "id": "tec_mokou_liver_punch",
@@ -959,7 +1152,7 @@
       }
     ],
     "attack_vectors": [ "vector_punch" ],
-    "//": "The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats"
+    "//": "The spell is bonus dmg to the normal attack, otherwise the bonus is flat from stats"
   },
   {
     "id": "tec_mokou_punch_down",
@@ -979,7 +1172,7 @@
       }
     ],
     "attack_vectors": [ "vector_punch" ],
-    "//": "The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats, also to allow igniting the target"
+    "//": "The spell is bonus dmg to the normal attack, otherwise the bonus is flat from stats, also to allow igniting the target"
   },
   {
     "id": "tec_mokou_sommersault_kick",
@@ -999,7 +1192,7 @@
       }
     ],
     "attack_vectors": [ "vector_foot_sole" ],
-    "//": "The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats, also to allow igniting the target"
+    "//": "The spell is bonus dmg to the normal attack, otherwise the bonus is flat from stats, also to allow igniting the target"
   },
   {
     "id": "tec_mokou_tackle",
@@ -1025,20 +1218,35 @@
       }
     ],
     "attack_vectors": [ "vector_shoulder" ],
-    "//": "Lunge but called tackle. The spell is bonus dmg to the normal attack (lacks attack_override ), otherwise the bonus is flat from stats"
+    "//": "Lunge but called tackle. The spell is bonus dmg to the normal attack, otherwise the bonus is flat from stats"
   },
   {
     "id": "tec_mokou_talons",
     "type": "technique",
     "name": "Fire talons",
-    "messages": [ "You claw fire at %s", "<npcname> claws fire at %s" ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "unarmed", "level": 2 } ],
     "unarmed_allowed": true,
     "crit_ok": false,
+    "mult_bonuses": [
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
+    ],
     "eocs": [
       {
         "id": "tec_mokou_talons_eoc",
         "effect": [ 
+          { "u_message": "You claw fire at the <npc_name>", "type": "good" },
+          { "npc_message": "<npc_name> claws fire at %s", "type": "good" },
           { "u_cast_spell": { "id": "mokou_talons2" }, "loc": { "global_val": "var_target_monster_loc" } }
         ]
       }
@@ -1090,7 +1298,8 @@
       { "stat": "damage", "type": "bash", "scaling-stat": "per", "scale": 1 },
       { "stat": "damage", "type": "bash", "scaling-stat": "str", "scale": 1 }
     ],
-    "attack_vectors": [ "vector_foot_sole" ]
+    "attack_vectors": [ "vector_foot_sole" ],
+    "//attack_override": ""
   },
   {
     "id": "tec_tenko_kick2",
@@ -1106,13 +1315,14 @@
       { "stat": "damage", "type": "bash", "scaling-stat": "per", "scale": 1.33 },
       { "stat": "damage", "type": "bash", "scaling-stat": "str", "scale": 1.33 }
     ],
-    "attack_vectors": [ "vector_foot_sole" ]
+    "attack_vectors": [ "vector_foot_sole" ],
+    "//attack_override": ""
   },
   {
     "id": "tec_tenko_stomp",
     "type": "technique",
     "name": "Earth stomp",
-    "messages": [ "You stomp the ground, knocking nearby enemies!", "<npcname> stomps the ground, knocking nearby enemies!" ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "unarmed", "level": 3 } ],
     "unarmed_allowed": true,
     "down_dur": 2,
@@ -1123,12 +1333,25 @@
       ] 
     },
     "mult_bonuses": [ 
-      { "stat": "movecost", "scale": 1.1 } 
+      { "stat": "movecost", "scale": 1.1 },
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
     ],
     "eocs": [
       {
         "id": "tec_tenko_stomp_eoc",
         "effect": [ 
+          { "u_message": "You stomp the ground, knocking nearby enemies!", "type": "good" },
+          { "npc_message": "<npc_name> stomps the ground, knocking nearby enemies!", "type": "good" },
           { "u_cast_spell": { "id": "tenko_stomp" }, "targeted": false }
         ]
       }
@@ -1206,16 +1429,29 @@
     "id": "tec_youmu_stinger",
     "type": "technique",
     "name": "Stinger",
-    "messages": [ "You powerfully stab %s", "<npcname> stabs %s" ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "melee", "level": 5 } ],
     "melee_allowed": true,
     "mult_bonuses": [ 
-      { "stat": "movecost", "scale": 1.25 }
+      { "stat": "movecost", "scale": 1.25 },
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
     ],
     "eocs": [
       {
         "id": "tec_youmu_stinger_eoc",
         "effect": [ 
+          { "u_message": "You powerfully stab the <npc_name>!", "type": "good" },
+          { "npc_message": "<npcname> stabs the <npc_name>!", "type": "good" },
           { "u_cast_spell": { "id": "youmu_stinger" }, "loc": { "global_val": "var_target_monster_loc" } }
         ]
       }
@@ -1248,18 +1484,31 @@
     "id": "tec_youmu_knee_slasher",
     "type": "technique",
     "name": "Knee slasher",
-    "messages": [ "You perform a low slash at %s", "<npcname> perform a low slash at %s" ],
+    "messages": [ "", "" ],
     "skill_requirements": [ { "name": "melee", "level": 6 } ],
     "melee_allowed": true,
     "unarmed_allowed": false,
     "down_dur": 2,
     "mult_bonuses": [ 
-      { "stat": "movecost", "scale": 0.66 }
+      { "stat": "movecost", "scale": 0.66 },
+      { "stat": "damage", "type": "bash", "scale": 0 },
+      { "stat": "damage", "type": "cut", "scale": 0 },
+      { "stat": "damage", "type": "stab", "scale": 0 },
+      { "stat": "damage", "type": "bullet", "scale": 0 },
+      { "stat": "damage", "type": "acid", "scale": 0 },
+      { "stat": "damage", "type": "biological", "scale": 0 },
+      { "stat": "damage", "type": "cold", "scale": 0 },
+      { "stat": "damage", "type": "electric", "scale": 0 },
+      { "stat": "damage", "type": "heat", "scale": 0 },
+      { "stat": "damage", "type": "pure", "scale": 0 },
+      { "stat": "damage", "type": "soul", "scale": 0 }
     ],
     "eocs": [
       {
         "id": "tec_youmu_knee_slasher_eoc",
         "effect": [ 
+          { "u_message": "You perform a low slash at the <npc_name>!", "type": "good" },
+          { "npc_message": "<npcname> perform a low slash at %s!", "type": "good" },
           { "u_cast_spell": { "id": "youmu_knee_slasher" }, "loc": { "global_val": "var_target_monster_loc" } }
         ]
       }

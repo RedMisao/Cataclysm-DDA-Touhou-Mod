@@ -32,7 +32,7 @@
     "id": "CELESTIAL_CONSTITUTION",
     "type": "mutation",
     "name": { "str": "Celestial constitution" },
-    "description": "Reduced pain penalties go here instead of the base mutation",
+    "description": "Reduced pain penalties go here instead of the base mutation. Pasive pain reduction at pain_removal_eoc ",
     "points": 0,
     "player_display": false,
     "purifiable": false,
@@ -46,7 +46,7 @@
           { "value": "PAIN_PENALTY_MOD_INT", "multiply": -0.33 },
           { "value": "PAIN_PENALTY_MOD_PER", "multiply": -0.33 },
           { "value": "PAIN_PENALTY_MOD_STR", "multiply": -0.33 },
-          { "value": "PAIN_PENALTY_MOD_SPEED", "multiply": -0.85 }
+          { "value": "PAIN_PENALTY_MOD_SPEED", "multiply": -0.66 }
         ]
       }
     ]
@@ -137,7 +137,7 @@
     "id": "GYOKUTO_CONSTITUTION",
     "type": "mutation",
     "name": { "str": "Gyokuto constitution" },
-    "description": "Reduced pain penalties go here instead of the base mutation",
+    "description": "Reduced pain penalties go here instead of the base mutation. Pasive pain reduction at pain_removal_eoc ",
     "points": 0,
     "player_display": false,
     "purifiable": false,
@@ -146,10 +146,10 @@
       { 
         "condition": "ALWAYS", 
         "values": [ 
-          { "value": "PAIN_PENALTY_MOD_DEX", "multiply": -0.33 },
-          { "value": "PAIN_PENALTY_MOD_INT", "multiply": -0.33 },
-          { "value": "PAIN_PENALTY_MOD_PER", "multiply": -0.33 },
-          { "value": "PAIN_PENALTY_MOD_STR", "multiply": -0.33 },
+          { "value": "PAIN_PENALTY_MOD_DEX", "multiply": -0.25 },
+          { "value": "PAIN_PENALTY_MOD_INT", "multiply": -0.25 },
+          { "value": "PAIN_PENALTY_MOD_PER", "multiply": -0.25 },
+          { "value": "PAIN_PENALTY_MOD_STR", "multiply": -0.25 },
           { "value": "PAIN_PENALTY_MOD_SPEED", "multiply": -0.66 }
         ]
       }
@@ -226,7 +226,8 @@
           { "value": "ARMOR_HEAT", "multiply": -0.66 },
           { "value": "CLIMATE_CONTROL_CHILL", "add": 20 },
           { "value": "MOVE_COST", "multiply": -0.2 },
-          { "value": "WEAKNESS_TO_WATER", "add": 0.06 }
+          { "value": "WEAKNESS_TO_WATER", "add": 0.0166 },
+          { "value": "SWEAT_MULTIPLIER", "multiply": -1 }
         ]
       }
     ]
@@ -297,7 +298,7 @@
     "id": "HERMIT_CONSTITUTION",
     "type": "mutation",
     "name": { "str": "Hermit constitution" },
-    "description": "Reduced pain penalties go here instead of the base mutation",
+    "description": "Reduced pain penalties go here instead of the base mutation. Pasive pain reduction at pain_removal_eoc ",
     "points": 0,
     "player_display": false,
     "purifiable": false,
@@ -307,11 +308,11 @@
         "condition": "ALWAYS", 
         "values": [ 
           { "value": "PAIN", "multiply": -0.25 },
-          { "value": "PAIN_PENALTY_MOD_DEX", "multiply": -0.41 },
-          { "value": "PAIN_PENALTY_MOD_INT", "multiply": -0.41 },
-          { "value": "PAIN_PENALTY_MOD_PER", "multiply": -0.41 },
-          { "value": "PAIN_PENALTY_MOD_STR", "multiply": -0.41 },
-          { "value": "PAIN_PENALTY_MOD_SPEED", "multiply": -0.85 }
+          { "value": "PAIN_PENALTY_MOD_DEX", "multiply": -0.25 },
+          { "value": "PAIN_PENALTY_MOD_INT", "multiply": -0.25 },
+          { "value": "PAIN_PENALTY_MOD_PER", "multiply": -0.25 },
+          { "value": "PAIN_PENALTY_MOD_STR", "multiply": -0.25 },
+          { "value": "PAIN_PENALTY_MOD_SPEED", "multiply": -0.66 }
         ]
       }
     ]
@@ -368,7 +369,7 @@
     "id": "HUMAN_CONSTITUTION",
     "type": "mutation",
     "name": { "str": "Human constitution" },
-    "description": "Reduced pain penalties go here instead of the base mutation",
+    "description": "Reduced pain penalties go here instead of the base mutation. Pasive pain reduction at pain_removal_eoc ",
     "points": 0,
     "player_display": false,
     "purifiable": false,
@@ -377,10 +378,10 @@
       { 
         "condition": "ALWAYS", 
         "values": [ 
-          { "value": "PAIN_PENALTY_MOD_DEX", "multiply": -0.33 },
-          { "value": "PAIN_PENALTY_MOD_INT", "multiply": -0.33 },
-          { "value": "PAIN_PENALTY_MOD_PER", "multiply": -0.33 },
-          { "value": "PAIN_PENALTY_MOD_STR", "multiply": -0.33 },
+          { "value": "PAIN_PENALTY_MOD_DEX", "multiply": -0.25 },
+          { "value": "PAIN_PENALTY_MOD_INT", "multiply": -0.25 },
+          { "value": "PAIN_PENALTY_MOD_PER", "multiply": -0.25 },
+          { "value": "PAIN_PENALTY_MOD_STR", "multiply": -0.25 },
           { "value": "PAIN_PENALTY_MOD_SPEED", "multiply": -0.66 }
         ]
       }
@@ -448,7 +449,8 @@
           { "value": "ARMOR_HEAT", "multiply": -0.33 },
           { "value": "CLIMATE_CONTROL_CHILL", "add": 20 },
           { "value": "FALL_DAMAGE", "multiply": -0.33 },
-          { "value": "WEAKNESS_TO_WATER", "add": 0.06 }
+          { "value": "WEAKNESS_TO_WATER", "add": 0.0166 },
+          { "value": "SWEAT_MULTIPLIER", "multiply": -1 }
         ]
       }
     ],
@@ -482,7 +484,8 @@
           { "value": "MOVE_COST", "multiply": -0.1 },
           { "value": "SOCIAL_PERSUADE", "add": -4 },
           { "value": "STAMINA_REGEN_MOD", "add": 0.2 },
-          { "value": "WEAKNESS_TO_WATER", "add": 0.12 }
+          { "value": "WEAKNESS_TO_WATER", "add": 0.0333 },
+          { "value": "SWEAT_MULTIPLIER", "multiply": -1 }
         ]
       },
       { 
@@ -702,7 +705,8 @@
           { "value": "REGEN_HP_AWAKE", "multiply": 2 },
           { "value": "SOCIAL_INTIMIDATE", "add": 4 },
           { "value": "SOCIAL_PERSUADE", "add": 4 },
-          { "value": "WEAKNESS_TO_WATER", "add": 0.12 }
+          { "value": "WEAKNESS_TO_WATER", "add": 0.0333 },
+          { "value": "SWEAT_MULTIPLIER", "multiply": -1 }
         ],
         "mutations": [ "YOUKAI_CONSTITUTION" ]
       }
@@ -721,7 +725,7 @@
       "VEGETARIAN",
       "HERBIVORE"
     ],
-    "flags": [ "CANNIBAL", "SUNBURN" ],
+    "flags": [ "CANNIBAL", "HEMOVORE", "SUNBURN" ],
     "//": "Health regen should be double or triple that by 'digesting' human blood, and reduce to zero at tier 4 blood hunger",
     "//2": "I need to set the penalty (and bonus) of eating human flesh to 0"
   },
@@ -800,7 +804,7 @@
     "id": "YOUKAI_CONSTITUTION",
     "type": "mutation",
     "name": { "str": "Youkai constitution" },
-    "description": "Reduced pain penalties go here instead of the base mutation",
+    "description": "Reduced pain penalties go here instead of the base mutation. Pasive pain reduction at pain_removal_eoc ",
     "points": 0,
     "player_display": false,
     "purifiable": false,
@@ -813,7 +817,7 @@
           { "value": "PAIN_PENALTY_MOD_INT", "multiply": -0.66 },
           { "value": "PAIN_PENALTY_MOD_PER", "multiply": -0.66 },
           { "value": "PAIN_PENALTY_MOD_STR", "multiply": -0.66 },
-          { "value": "PAIN_PENALTY_MOD_SPEED", "multiply": -0.85 }
+          { "value": "PAIN_PENALTY_MOD_SPEED", "multiply": -0.66 }
         ]
       }
     ]
@@ -1010,6 +1014,8 @@
         "values": [
           { "value": "STRENGTH", "add": 2 },
           { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "rng( 3, 5 )" ] } },
+          { "value": "ITEM_DAMAGE_CUT", "add": { "math": [ "rng( 1, 1.5 )" ] } },
+          { "value": "ITEM_DAMAGE_STAB", "add": { "math": [ "rng( 1, 1.5 )" ] } },
           { "value": "OVERKILL_DAMAGE", "multiply": -4 }
         ]
       }
@@ -1068,10 +1074,19 @@
           { "value": "METABOLISM", "multiply": 1.16 },
           { "value": "SOCIAL_LIE", "add": -99 }
         ],
-        "mutations": [ "KI_STRIKE", "TOLERANCE" ]
+        "mutations": [ "TOLERANCE" ]
+      },
+      {
+        "condition": { "not": "u_has_weapon" },
+        "values": [ 
+          { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "u_skill('unarmed') * 2" ] } },
+          { "value": "ITEM_DAMAGE_CUT", "add": { "math": [ "u_skill('unarmed') * 2" ] } },
+          { "value": "ITEM_DAMAGE_STAB", "add": { "math": [ "u_skill('unarmed') * 2" ] } }
+        ]
       }
     ],
     "//": "This overrides the HERMIT_SPECIES -66% metabolism -> total +50%",
+    "//6": "Default KI_STRIKE , no reason just to not forget she has bonus dmg",
     "anger_relations": [
       [ "AMPHIBIAN", -25 ],
       [ "BIRD", -25 ],
@@ -1130,10 +1145,19 @@
           { "value": "SLEEPY", "add": 25 }
         ],
         "mutations": [ "DEFT", "HEAVYSLEEPER" ]
+      },
+      {
+        "condition": { "not": "u_has_weapon" },
+        "values": [ 
+          { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "( u_skill('swimming') + u_skill('melee') + u_skill('unarmed') ) * 0.5" ] } },
+          { "value": "ITEM_DAMAGE_CUT", "add": { "math": [ "( u_skill('swimming') + u_skill('melee') + u_skill('unarmed') ) * 0.5" ] } },
+          { "value": "ITEM_DAMAGE_STAB", "add": { "math": [ "( u_skill('swimming') + u_skill('melee') + u_skill('unarmed') ) * 0.5" ] } }
+        ]
       }
     ],
     "cancels": [ "EASYSLEEPER", "EASYSLEEPER2", "HEAVYSLEEPER2", "INSOMNIA", "SLEEPY", "SLEEPY2" ],
-    "//": "Not sure if DEFT and HEAVYSLEEPER work from flags, so it's set above"
+    "//": "Not sure if DEFT and HEAVYSLEEPER work from flags, so it's set above",
+    "//2": "Half bonus dmg here, the other half at meiling_tigerrelease . This is to make her total bonus conditional with her mana regen. Breakpoint vs KI_STRIKE at 7 for each skill (28 vs 29)"
   },
   {
     "id": "PROF_MOKOU",
@@ -1150,17 +1174,25 @@
       {
         "condition": "ALWAYS",
         "values": [ 
-          { "value": "PAIN_PENALTY_MOD_DEX", "multiply": -0.66 },
-          { "value": "PAIN_PENALTY_MOD_INT", "multiply": -0.66 },
-          { "value": "PAIN_PENALTY_MOD_PER", "multiply": -0.66 },
-          { "value": "PAIN_PENALTY_MOD_STR", "multiply": -0.66 },
-          { "value": "PAIN_PENALTY_MOD_SPEED", "multiply": -0.85 }
-        ],
-        "mutations": [ "KI_STRIKE" ]
+          { "value": "PAIN_PENALTY_MOD_DEX", "multiply": -0.5 },
+          { "value": "PAIN_PENALTY_MOD_INT", "multiply": -0.5 },
+          { "value": "PAIN_PENALTY_MOD_PER", "multiply": -0.5 },
+          { "value": "PAIN_PENALTY_MOD_STR", "multiply": -0.5 },
+          { "value": "PAIN_PENALTY_MOD_SPEED", "multiply": -0.66 }
+        ]
+      },
+      {
+        "condition": { "not": "u_has_weapon" },
+        "values": [ 
+          { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "( u_skill('melee') + u_skill('unarmed') + (u_pain() * 0.25 ) )" ] } },
+          { "value": "ITEM_DAMAGE_CUT", "add": { "math": [ "( u_skill('melee') + u_skill('unarmed') + (u_pain() * 0.25 ) )" ] } },
+          { "value": "ITEM_DAMAGE_STAB", "add": { "math": [ "( u_skill('melee') + u_skill('unarmed') + (u_pain() * 0.25 ) )" ] } }
+        ]
       }
     ],
     "cancels": [ "NOPAIN", "PAINRESIST" ],
-    "flags": [ "HEAT_IMMUNE" ]
+    "flags": [ "HEAT_IMMUNE" ],
+    "//": "Bonus melee scales as KI_STRIKE , plus some extra from pain to compensate from two skills instead of just unarmed "
   },
   {
     "id": "PROF_NITORI",

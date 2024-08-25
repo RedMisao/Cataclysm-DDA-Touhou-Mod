@@ -33,7 +33,6 @@
     "type": "effect_on_condition",
     "condition": {
       "or": [
-        { "u_has_wielded_with_weapon_category": "JAPANESE_SWORDS" },
         { "u_has_wielded_with_weapon_category": "SHORT_SWORDS" },
         { "u_has_wielded_with_weapon_category": "MEDIUM_SWORDS" },
         { "u_has_wielded_with_weapon_category": "LONG_SWORDS" },
@@ -584,6 +583,27 @@
     ]
   },
   {
+    "id": "kasen_parry_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "u_var_kasenparry", "=", "1" ] },
+      { "u_add_effect": "parry_effect", "duration": "2 s" },
+      {
+        "queue_eocs": [
+          {
+            "id": "kasen_parry_timer",
+            "effect": [
+              { "math": [ "u_var_kasenparry", "=", "0" ] },
+              { "u_lose_effect": "parry_effect" }
+            ]
+          }
+        ],
+        "time_in_future": "2 s"
+      }
+    ],
+    "//": "This EOC is a the same as meiling_mountainbreak_eoc "
+  },
+  {
     "id": "kasen_rainboworb_eoc",
     "type": "effect_on_condition",
     "condition": { "math": [ "u_val('mana')", ">=", "100" ] },
@@ -915,8 +935,8 @@
         "time_in_future": "2 s"
       }
     ],
-    "//": "When the spell is cast this sets the var to 1 and prepares to reset the var after 2 s",
-    "//2": "The var is linked to meiling_mountainbreak_hit "
+    "//": "When the spell is cast, this sets the u_CASTED_PARRY var to 1, adds the 'protect yourself from any attack' effect, and prepares to reset the system after 2 s",
+    "//2": "The var is linked to meiling_mountainbreak_hit_eoc "
   },
   {
     "id": "meiling_tigerrelease_eoc",
@@ -928,8 +948,7 @@
     ],
     "false_effect": [ 
       { "math": [ "var_meiling_tigerrelease", "=", "0" ] },
-      { "u_lose_effect": "aura_tigerrelease" },
-      { "u_lose_trait": "KI_STRIKE" }
+      { "u_lose_effect": "aura_tigerrelease" }
     ],
     "//": "This EOC is a simplified version of utsuho_fusionblade_eoc "
   },
@@ -947,8 +966,7 @@
     ],
     "false_effect": [ 
       { "math": [ "var_meiling_tigerrelease", "=", "0" ] },
-      { "u_lose_effect": "aura_tigerrelease" },
-      { "u_lose_trait": "KI_STRIKE" }
+      { "u_lose_effect": "aura_tigerrelease" }
     ]
   },
   {
@@ -961,8 +979,7 @@
     ],
     "false_effect": [ 
       { "math": [ "var_meiling_tigerrelease", "=", "0" ] },
-      { "u_lose_effect": "aura_tigerrelease" },
-      { "u_lose_trait": "KI_STRIKE" }
+      { "u_lose_effect": "aura_tigerrelease" }
     ]
   },
   {
@@ -1311,7 +1328,8 @@
           }
         ]
       }
-    ]
+    ],
+    "//": "Update with u_has_items_sum "
   },
 
 
@@ -2231,11 +2249,285 @@
     "type": "effect_on_condition",
     "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
     "effect": [
-      { "u_cast_spell": { "id": "utsuho_detectrad2" }, "targeted": true }
+      { "run_eocs": [ "utsuho_detectrad_field_eoc" ] },
+      { "run_eocs": [ "utsuho_detectrad_furn_eoc" ] },
+      { "run_eocs": [ "utsuho_detectrad_item_eoc" ] },
+      { "run_eocs": [ "utsuho_detectrad_monster_eoc" ] },
+      { "run_eocs": [ "utsuho_detectrad_ter_eoc" ] }
     ],
     "false_effect": [ 
       { "u_message": "Something's wrong… you cannot detect anything.", "type": "mixed" },
       { "math": [ "u_val('mana')", "+=", "rand(50)" ] }
+    ]
+  },
+  {
+    "id": "utsuho_detectrad_field_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_field_1" }, "field": "fd_nuke_gas", "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_field_1_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_field_1" } } ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "utsuho_detectrad_furn_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_1" }, "min_radius": 0, "max_radius": 32,
+        "furniture": "ap_compact_ASRG_containment", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_1_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_1" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_2" }, "min_radius": 0, "max_radius": 32,
+        "furniture": "f_reactor_meltdown", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_2_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_2" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_3" }, "min_radius": 0, "max_radius": 32,
+        "furniture": "f_exodii_generator_1", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_3_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_3" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_4" }, "min_radius": 0, "max_radius": 32,
+        "furniture": "f_exodii_generator_2", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_4_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_4" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_5" }, "min_radius": 0, "max_radius": 32,
+        "furniture": "f_exodii_generator_3", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_5_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_5" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_6" }, "min_radius": 0, "max_radius": 32,
+        "furniture": "f_exodii_generator_4", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_6_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_6" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_7" }, "min_radius": 0, "max_radius": 32,
+        "furniture": "f_compact_ASRG_containment", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_7_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_7" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_8" }, "min_radius": 0, "max_radius": 32,
+        "furniture": "f_nuclear_fuel_cell", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_8_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_8" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_9" }, "min_radius": 0, "max_radius": 32,
+        "furniture": "f_afs_reactor_meltdown", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_9_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_9" } } ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "utsuho_detectrad_item_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "u_map_run_item_eocs": "all",
+        "search_data": [ 
+          { "flags": [ "LEAK_DAM" ] },
+          { "flags": [ "RADIOACTIVE" ] },
+          { "id": "afs_atompot" },
+          { "id": "afs_archeotech_cartridge" },
+          { "id": "afs_cRTG" },
+          { "id": "bio_radleak" },
+          { "id": "compact_ASRG_containment" },
+          { "id": "grenade_cryo" },
+          { "id": "minireactor" },
+          { "id": "banana" }
+        ],
+        "loc": { "global_val": "var_detectrad_item_1" },
+        "min_radius": 0,
+        "max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_item_1_1_eoc",
+            "effect": [ 
+              { "npc_location_variable": { "global_val": "var_detectrad_item_1_1" } },
+              { "u_set_field": "fd_clairvoyant", "radius": 2, "intensity": 1, "age": "2 s", "target_var": { "global_val": "var_detectrad_item_1_1" } },
+              { "message": "<global_val:var_detectrad_item_1_1> AAA", "type": "mixed" }
+            ]
+          }
+        ]
+      }
+    ],
+    "//note": "This is setting the fd_clairvoyant at the item's location, even when there's more than one, however the field itself is weak; try setting it with a spell instead",
+    "//note2": "Given this is detecting more than one of the same item, test two different items",
+    "//note3": "Then, test more than one monster, furniture, etc. if possible"
+  },
+  {
+    "id": "utsuho_detectrad_monster_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_1" }, "min_radius": 0, "max_radius": 32,
+        "monster": "mon_dks_emissary_plague", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_1_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_1" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_2" }, "min_radius": 0, "max_radius": 32,
+        "monster": "mon_science_bot", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_2_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_2" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_3" }, "min_radius": 0, "max_radius": 32,
+        "monster": "mon_hazmatbot", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_3_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_3" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_4" }, "min_radius": 0, "max_radius": 32,
+        "monster": "mon_zombie_hazmat", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_4_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_4" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_5" }, "min_radius": 0, "max_radius": 32,
+        "monster": "mon_charred_nightmare", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_5_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_5" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_6" }, "min_radius": 0, "max_radius": 32,
+        "monster": "mon_irradiated_wanderer_1", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_6_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_6" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_7" }, "min_radius": 0, "max_radius": 32,
+        "monster": "mon_irradiated_wanderer_2", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_7_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_7" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_8" }, "min_radius": 0, "max_radius": 32,
+        "monster": "mon_irradiated_wanderer_3", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_8_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_8" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_9" }, "min_radius": 0, "max_radius": 32,
+        "monster": "mon_irradiated_wanderer_4", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_9_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_9" } } ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "utsuho_detectrad_ter_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_ter_1" }, "min_radius": 0, "max_radius": 32,
+        "terrain": "t_rad_platform", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_ter_1_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_ter_1" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_ter_2" }, "min_radius": 0, "max_radius": 32,
+        "terrain": "t_missile", "target_min_radius": 0, "target_max_radius": 1,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_ter_2_1",
+            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_ter_2" } } ]
+          }
+        ]
+      }
     ]
   },
   {
@@ -2725,7 +3017,6 @@
     "type": "effect_on_condition",
     "condition": {
       "or": [
-        { "u_has_wielded_with_weapon_category": "JAPANESE_SWORDS" },
         { "u_has_wielded_with_weapon_category": "SHORT_SWORDS" },
         { "u_has_wielded_with_weapon_category": "MEDIUM_SWORDS" },
         { "u_has_wielded_with_weapon_category": "LONG_SWORDS" },
@@ -2779,7 +3070,6 @@
     "type": "effect_on_condition",
     "condition": {
       "or": [
-        { "u_has_wielded_with_weapon_category": "JAPANESE_SWORDS" },
         { "u_has_wielded_with_weapon_category": "SHORT_SWORDS" },
         { "u_has_wielded_with_weapon_category": "MEDIUM_SWORDS" },
         { "u_has_wielded_with_weapon_category": "LONG_SWORDS" },
@@ -2802,7 +3092,6 @@
     "type": "effect_on_condition",
     "condition": {
       "or": [
-        { "u_has_wielded_with_weapon_category": "JAPANESE_SWORDS" },
         { "u_has_wielded_with_weapon_category": "SHORT_SWORDS" },
         { "u_has_wielded_with_weapon_category": "MEDIUM_SWORDS" },
         { "u_has_wielded_with_weapon_category": "LONG_SWORDS" },
@@ -2844,7 +3133,6 @@
     "type": "effect_on_condition",
     "condition": {
       "or": [
-        { "u_has_wielded_with_weapon_category": "JAPANESE_SWORDS" },
         { "u_has_wielded_with_weapon_category": "SHORT_SWORDS" },
         { "u_has_wielded_with_weapon_category": "MEDIUM_SWORDS" },
         { "u_has_wielded_with_weapon_category": "LONG_SWORDS" },

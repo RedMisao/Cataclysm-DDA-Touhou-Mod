@@ -132,36 +132,17 @@
     "remove_message": "The Tiger qi goes away.",
     "enchantments": [ 
       {
-        "hit_you_effect": [ { "id": "tiger_bonk" } ],
+        "condition": { "not": "u_has_weapon" },
         "values": [ 
           { "value": "LUMINATION", "add": 2 },
-          { "value": "REGEN_MANA", "multiply": -9 }
-        ],
-        "mutations": [ "KI_STRIKE" ]
+          { "value": "REGEN_MANA", "multiply": -9 },
+          { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "( u_skill('swimming') + u_skill('melee') + u_skill('unarmed') ) * 0.5" ] } },
+          { "value": "ITEM_DAMAGE_CUT", "add": { "math": [ "( u_skill('swimming') + u_skill('melee') + u_skill('unarmed') ) * 0.5" ] } },
+          { "value": "ITEM_DAMAGE_STAB", "add": { "math": [ "( u_skill('swimming') + u_skill('melee') + u_skill('unarmed') ) * 0.5" ] } }
+        ]
       }
-    ]
-  },
-  {
-    "id": "tiger_bonk",
-    "type": "SPELL",
-    "name": { "str": "Tiger qi release (dmg)" },
-    "description": "Damage component for meiling_tigerrelease ",
-    "spell_class": "NONE",
-    "effect": "attack",
-    "valid_targets": [ "ally", "hostile" ],
-    "shape": "blast",
-    "damage_type": "bash",
-    "min_damage": { "math": [ "( (u_skill('swimming') * 0.25 ) + (u_skill('melee') * 0.25 ) + (u_skill('unarmed') * 0.25 ) + 1.75 )" ] },
-    "max_damage": { "math": [ "( (u_skill('swimming') * 0.4 ) + (u_skill('melee') * 0.4 ) + (u_skill('unarmed') * 0.4 ) + 2.8 )" ] },
-    "min_range": 1,
-    "max_range": 1,
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "NO_PROJECTILE", "RANDOM_DAMAGE" ],
-    "//": "max dmg 6 - 18, relatively low as it gives KI_STRIKE too"
+    ],
+    "//": "Half bonus dmg here, the other half is always active at PROF_MEILING "
   },
   {
     "id": "aura_vampiric",

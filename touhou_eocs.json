@@ -49,7 +49,7 @@
     ]
   },
   {
-    "id": "monster_coordinates_melee",
+    "id": "monster_coordinates_melee_eoc",
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
     "required_event": "character_melee_attacks_monster",
@@ -66,6 +66,13 @@
     "effect": [
       { "npc_location_variable": { "global_val": "var_target_monster_loc" } }
     ]
+  },
+  {
+    "id": "pain_removal_eoc",
+    "type": "effect_on_condition",
+    "recurrence": "50 seconds",
+    "effect": [ { "math": [ "u_pain()", "-=", "1" ] } ],
+    "//": "Removes 12 pain every 5 min, which is x12 times increase in pain reduction compared to the baseline"
   },
   {
     "id": "wield_weapon_dmg_eoc",
@@ -195,7 +202,7 @@
     ]
   },
   {
-    "id": "kaenbyou_vspossess_kill",
+    "id": "kaenbyou_vspossess_kill_monster_eoc",
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
     "required_event": "character_kills_monster",
@@ -211,13 +218,13 @@
       {
         "run_eocs": [
           {
-            "id": "kaenbyou_vspossess_kill_check_1",
+            "id": "kaenbyou_vspossess_kill_monster_check_1",
             "condition": { "math": [ "monsters_nearby('mon_vengeful_spirit', 'location': var_vspossess_loc, 'radius': 3, 'attitude': 'friendly')", ">", "0" ] },
             "effect": [ 
               { 
                 "run_eocs": [
                   {
-                    "id": "kaenbyou_vspossess_kill_check_2",
+                    "id": "kaenbyou_vspossess_kill_monster_check_2",
                     "condition": { "math": [ "monsters_nearby('mon_vengeful_spirit', 'location': var_vspossess_loc, 'radius': 3, 'attitude': 'friendly')", "==", "1" ] },
                     "effect": [ 
                       { "u_cast_spell": { "id": "kaenbyou_vspossess2" }, "loc": { "global_val": "var_vspossess_loc" } },
@@ -234,7 +241,7 @@
                     ]
                   },
                   {
-                    "id": "kaenbyou_vspossess_kill_check_3",
+                    "id": "kaenbyou_vspossess_kill_monster_check_3",
                     "condition": { "math": [ "monsters_nearby('mon_vengeful_spirit', 'location': var_vspossess_loc, 'radius': 3, 'attitude': 'friendly')", ">", "1" ] },
                     "effect": [ 
                       { "u_cast_spell": { "id": "kaenbyou_vspossess2" }, "loc": { "global_val": "var_vspossess_loc" } },
@@ -256,10 +263,12 @@
           }
         ]
       }
-    ]
+    ],
+    "//": "If Kaenbyou kills a monster, and the monster was tagged by kaenbyou_vspossess , and there are nearby vss, she spawns one of two monsters depending on the number of nearby vss",
+    "//2": "This can't be just copied for character_kills_character as there's some beta talker issue"
   },
   {
-    "id": "seiga_corpsecursed_kill",
+    "id": "seiga_corpsecursed_kill_monster_eoc",
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
     "required_event": "character_kills_monster",
@@ -275,7 +284,7 @@
       {
         "run_eocs": [
           {
-            "id": "seiga_corpsecursed_kill_check_1",
+            "id": "seiga_corpsecursed_kill_monster_check_1",
             "condition": {
               "or": [
                 { "compare_string": [ "mon_zombie_anklebiter", { "context_val": "victim_type" } ] },
@@ -304,7 +313,7 @@
               {
                 "run_eocs": [
                   {
-                    "id": "seiga_corpsecursed_kill_check_2",
+                    "id": "seiga_corpsecursed_kill_monster_check_2",
                     "condition": {
                       "or": [
                         {
@@ -344,7 +353,7 @@
                       {
                         "run_eocs": [
                           {
-                            "id": "seiga_corpsecursed_kill_check_3",
+                            "id": "seiga_corpsecursed_kill_monster_check_3",
                             "condition": {
                               "or": [
                                 { "math": [ "n_val('volume')", ">=", "65000" ] },
@@ -375,13 +384,36 @@
         ]
       }
     ],
-    "//": "Checks if Seiga's target is cursed, if so it revives it as an ally, depending on the monster's characteristics",
+    "//": "Checks if Seiga's target is a monster and is cursed, if so it revives it as an ally, depending on the monster's characteristics",
     "//2": "The priority is child > zombie/human mutant > whatever else with at least 65 L or kg",
     "//3": "It spawns a risen child, the same zombie/human mutant, or a disgrace, respectively",
-    "//4": "Adapted from the now reverted #71702"
+    "//4": "Adapted from the now reverted #71702",
+    "//5": "This can't be just copied for character_kills_character as there's some beta talker issue"
   },
   {
-    "id": "soulshard_eoc",
+    "id": "soulshard_from_character_eoc",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "character_kills_character",
+    "condition": {
+      "and": [ 
+        { 
+          "or": [ 
+            { "u_has_trait": "KASHA_SPECIES" }, 
+            { "u_has_trait": "KASHA_SPECIES_active" }
+          ]
+        },
+        { "math": [ "u_var_soulshard", "<", "16" ] }
+      ]
+    },
+    "effect": [ 
+      { "math": [ "u_var_soulshard", "+=", "1" ] },
+      { "u_message": "You gained a soulshard", "type": "mixed" }
+    ],
+    "//": "Simple EOC checks when a Kasha kills characters (avatars and npcs), if it's humanoid or close enough it adds the u_var "
+  },
+  {
+    "id": "soulshard_from_monster_eoc",
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
     "required_event": "character_kills_monster",
@@ -408,7 +440,8 @@
       { "math": [ "u_var_soulshard", "+=", "1" ] },
       { "u_message": "You gained a soulshard", "type": "mixed" }
     ],
-    "//": "Simple EOC checks when a Kasha kills anything, if it's humanoid or close enough it adds the u_var "
+    "//": "Simple EOC checks when a Kasha kills monsters, if it's humanoid or close enough it adds the u_var ",
+    "//2": "For balancing purposes, ZOMBIES drop soul shards, otherwise Kaenbyou is forced to go murderhobo on humans (are there that many humans left too? they're non-renewable fuel now)"
   },
   {
     "id": "celestial_stance_check",
@@ -425,6 +458,25 @@
       { "u_lose_trait": "celestial_stance_mut" }
     ],
     "//": "This removes the knockback and knockdown immunity of Tenko's MA if she's not using it"
+  },
+  {
+    "id": "kasen_parry_hit_eoc",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "character_takes_damage",
+    "condition": {
+      "and": [
+        { "u_has_trait": "PROF_KASEN" },
+        { "math": [ "u_var_kasenparry", ">", "0" ] }
+      ]
+    },
+    "effect": [ 
+      { "u_lose_effect": "parry_effect" },
+      { "math": [ "u_var_kasenparry", "=", "0" ] },
+      { "u_cast_spell": { "id": "kasen_parry2", "message": "You parry!" }, "targeted": true }
+    ],
+    "//": "Similar to meiling_mountainbreak_hit_eoc . This should be above kasen_calorieburn_dmg so it can be run first",
+    "//2": "The dodge-detection component is at buff_kasen_ondodge_eoc "
   },
   {
     "id": "kasen_calorieburn_dmg",
@@ -577,7 +629,7 @@
     "//": "Reduces var_kokoro_timer every 15 s and checks if she has enough instability"
   },
   {
-    "id": "meiling_mountainbreak_hit",
+    "id": "meiling_mountainbreak_hit_eoc",
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
     "required_event": "character_takes_damage",
@@ -592,7 +644,8 @@
       { "math": [ "u_var_mountainbreak", "=", "0" ] },
       { "u_cast_spell": { "id": "meiling_mountainbreak2", "message": "You strike back!" }, "targeted": true }
     ],
-    "//": "Simplified version of udonge_barrierwave_hit. It checks if Meiling has casted Mountain breaking cannon. If that's the case it resets the var and casts the spell"
+    "//": "Simplified version of udonge_barrierwave_hit_eoc . It checks if Meiling has casted Mountain breaking cannon. If that's the case it resets the var and casts the spell",
+    "//2": "The dodge-detection component is at buff_meiling_ondodge_eoc "
   },
   {
     "id": "mokou_death_eoc",
@@ -699,7 +752,7 @@
     "//4": "ANY trait that revives the character should be lost every time Seiga dies. So far, it's just PORTAL_RESURRECTION "
   },
   {
-    "id": "udonge_barrierwave_hit",
+    "id": "udonge_barrierwave_hit_eoc",
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
     "required_event": "character_takes_damage",
@@ -973,7 +1026,7 @@
     "//": "Reduces var_miasmaburst_dmg every 7 s"
   },
   {
-    "id": "youmu_insightfulsword_hit",
+    "id": "youmu_insightfulsword_hit_eoc",
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
     "required_event": "character_takes_damage",
@@ -988,6 +1041,7 @@
       { "math": [ "u_var_insightfulsword", "=", "0" ] },
       { "run_eocs": [ "youmu_insightfulsword_check" ] }
     ],
-    "//": "Similar to meiling_mountainbreak_hit , only checks which is Youmu's highest damage type with the EOC"
+    "//": "Similar to meiling_mountainbreak_hit_eoc , only checks which is Youmu's highest damage type with the EOC",
+    "//2": "The dodge-detection component is at buff_youmu_ondodge_eoc "
   }
 ]

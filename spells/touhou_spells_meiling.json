@@ -24,7 +24,7 @@
     "id": "meiling_mountainbreak",
     "type": "SPELL",
     "name": { "str": "Mountain breaking cannon" },
-    "description": "Prepare your entire body in order to deal massive damage to an enemy after parrying an attack.  The attack will have no effect if you don't parry immediately after using it.",
+    "description": "Prepare your entire body in order to deal massive damage to an enemy after parrying an attack.  Will have no effect if you don't parry or evade immediately after using it.",
     "spell_class": "NONE",
     "teachable": false,
     "valid_targets": [ "self" ],
@@ -34,7 +34,7 @@
     "max_level": 1,
     "difficulty": -11,
     "message": "You prepare yourself…",
-    "base_casting_time": 66,
+    "base_casting_time": 33,
     "base_energy_cost": 100,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ]
@@ -249,7 +249,8 @@
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SOMATIC" ],
     "//": "The original spell mentions that this destroys walls, but I'm not sure how to limit it to that, plus maybe it's more interactive this way",
-    "//2": " meiling_redrelease2 should have a red aoe field effect"
+    "//2": " meiling_redrelease2 should have a red aoe field effect",
+    "//3": "min dmg 20"
   },
   {
     "id": "meiling_redrelease2",
@@ -269,7 +270,8 @@
     "difficulty": -11,
     "base_casting_time": 0,
     "base_energy_cost": 0,
-    "energy_source": "MANA"
+    "energy_source": "MANA",
+    "//": "min dmg 120"
   },
   {
     "id": "meiling_stomp_effect",

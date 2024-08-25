@@ -221,6 +221,7 @@
       { "level": 1, "id": "kasen_fangshu_place" },
       { "level": 1, "id": "kasen_fangshu_move" },
       { "level": 1, "id": "kasen_palmfly" },
+      { "level": 1, "id": "kasen_parry" },
       { "level": 1, "id": "kasen_punch_right" },
       { "level": 1, "id": "kasen_rainboworb" },
       { "level": 1, "id": "kasen_unravel" }

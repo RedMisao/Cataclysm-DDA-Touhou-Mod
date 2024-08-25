@@ -207,7 +207,7 @@
     "id": "youmu_insightfulsword",
     "type": "SPELL",
     "name": { "str": "Insightful sword" },
-    "description": "Prepare yourself to parry the next attack.  If successful, you will retaliate, briefly stunning the attacker.  The attack will have no effect if you don't parry immediately after using it.  \nRequires a sword.",
+    "description": "Prepare yourself to counter the next attack.  If successful, you will retaliate, briefly stunning the attacker.  Will have no effect if you don't parry or evade immediately after using it.  \nRequires a sword.",
     "spell_class": "NONE",
     "teachable": false,
     "valid_targets": [ "self" ],
@@ -217,7 +217,7 @@
     "max_level": 1,
     "difficulty": -11,
     "message": "You prepare yourself…",
-    "base_casting_time": 66,
+    "base_casting_time": 33,
     "base_energy_cost": 133,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ]
