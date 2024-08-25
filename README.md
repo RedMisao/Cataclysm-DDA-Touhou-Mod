@@ -1,7 +1,7 @@
 # Cataclysm-DDA-Touhou-Mod
 This is a fork of Taberone's [Touhou Professions](https://github.com/Taberone/Cataclysm-DDA-Touhou-Mod) mod.
 
-**The mod's folder goes in /data/mods/**.  Last updated for game version: 2024-08-10-2317 experimental.
+**The mod's folder goes in /data/mods/**.  Last updated for game version: 2024-08-20-2135 experimental.
 
 Also check the [Expansion](https://github.com/RedMisao/Cataclysm-DDA-Touhou-Expansion) mod!
 
@@ -28,16 +28,17 @@ This mod adds Touhou Project characters as professions.  Characters (2hus) have 
 * **Youmu Konpaku:** Uses sword techniques.  Also trained in gardening, she wields Roukanken and Hakurouken, two Youkai katana capable of cutting anything!
 
 
-## New mechanics
-* Auras.  Various characters have toggle-able "aura" style abilities, each granting different effects as long as they're active.  Can be turned ON or OFF by casting specific spells.
+## New mechanics and stuff
+* New spells.  Explore a variety of new spells and spell interactions by yourself :)
+* Auras.  Various characters have toggle-able "aura" style abilities, each granting different effects as long as they're active.  Can be turned ON or OFF by casting spells.
 * Blood thirst.  Remi now has to consume blood (or human flesh, with less effectiveness) in any shape or form, in order to keep the thirst at bay.
 * Immortality.  Mokou resurrects after dying, immediately restoring her body.  She can die as many times as she wants, but there's a soft cap relative to how many times she has died in a period of time, plus a small-ish pain debuff that stacks, to discourage savescumming.
-* Martial arts (custom effects).  Some characters have martial arts with different effects, such as automatic spell casting at the target (with no cost), cosmetic effects, conditional effects depending on the equipped weapon, etc.
+* Custom Martial arts.  Some characters have martial arts with new effects, such as automatic spell casting at the target (with no cost), cosmetic effects, conditional effects depending on the equipped weapon, the ability to parry, etc.
 * Spell growth.  All character spells and spell effects now scale proportionally to their main skills, instead of spell level.
 * Spell tags.  Some spells can now "tag" monsters, which enables FUN stuff like spreading diseases between monsters, monster copying spellcasts by the player, spell interactions, conditional spell effects, and more.
 * Weapon scaling.  Some spells now also scale from the equipped weapon's damage.
-* Wings.  Aya, Remi and Utsuho can now "fly" (read: hover) over over ledges and open spaces, consuming stamina until they're tired enough.  This is done by activating a mutation (View/active mutations key).
-* Youkai form toggle.  Kaenbyou and Remi can now switch between their human and youkai forms, each having different effects.  This is done by activating a mutation (View/active mutations key).
+* Wings.  Aya, Remi and Utsuho can now fly in three dimensional space, consuming stamina until they're tired enough.  This is done by activating a mutation (View/active mutations key).
+* Youkai form toggle.  Kaenbyou, Remi and Yamame can now switch between their human and youkai forms, each having different effects.  This is done by activating a mutation (View/active mutations key).
 
 
 ## Clothing
