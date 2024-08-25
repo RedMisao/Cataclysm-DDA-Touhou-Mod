@@ -32,6 +32,17 @@
     "//": "Extra bloody blood"
   },
   {
+    "id": "fd_clairvoyant2",
+    "type": "field_type",
+    "intensity_levels": [ { "name": "clairvoyance", "sym": "8", "dangerous": false, "light_emitted": 1 } ],
+    "priority": 9999,
+    "half_life": "6 seconds",
+    "phase": "solid",
+    "display_items": true,
+    "display_field": false,
+    "//": "Custom fd_clairvoyant2 so it's more reliable for Detection spells"
+  },
+  {
     "id": "fd_incendiary2",
     "type": "field_type",
     "legacy_enum_id": 10,

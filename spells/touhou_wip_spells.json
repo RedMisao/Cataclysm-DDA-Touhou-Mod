@@ -368,6 +368,274 @@
     ]
   },
   {
+    "id": "utsuho_detectrad_WIP",
+    "type": "SPELL",
+    "name": { "str": "Detect radiation" },
+    "description": "This is casted via eocs. It places the field by a spell instead of using u_set_field . There's virtually no difference",
+    "spell_class": "NONE",
+    "teachable": false,
+    "valid_targets": [ "ally", "hostile", "ground" ],
+    "effect": "attack",
+    "shape": "blast",
+    "max_level": 1,
+    "min_aoe": 0,
+    "max_aoe": 0,
+    "field_id": "fd_clairvoyant2",
+    "field_chance": 1,
+    "min_field_intensity": 1,
+    "max_field_intensity": 1,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "difficulty": -12,
+    "energy_source": "MANA",
+    "flags": [ "IGNORE_WALLS", "NO_HANDS", "NO_LEGS", "NO_EXPLOSION_SFX", "NO_PROJECTILE", "SILENT" ]
+  },
+  {
+    "id": "utsuho_detectrad_field_eoc_WIP",
+    "type": "effect_on_condition",
+    "effect": [
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_field_1" }, "furniture": "fd_nuke_gas", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_field_1_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_field_1" } } ]
+          }
+        ]
+      }
+    ],
+    "//": "These only detect the first field, furniture or terrain under the aoe (top left)",
+    "//2": "Important: these center the u_LOC_VAR on the player, and search for the type:id around"
+  },
+  {
+    "id": "utsuho_detectrad_furn_eoc_WIP",
+    "type": "effect_on_condition",
+    "//": "I tried running the default option (TEST_1) or one that detects map_furniture_id (TEST_2). However, the issue seems to be u_location_variable because in both cases the same bench (top left) is detected",
+    "effect": [
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_TEST_1" }, "furniture": "f_bench", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_TEST_1_eoc",
+            "effect": [ 
+              { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_TEST_1" } },
+              { "message": "<global_val:var_detectrad_furn_TEST_1> AAA", "type": "mixed" }
+            ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_TEST_2" }, "furniture": "f_bench", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_TEST_2_eoc",
+            "effect": [ 
+              {
+                "if": { "map_furniture_id": "f_bench", "loc": { "global_val": "var_detectrad_furn_TEST_2" } },
+                "then": [
+                  { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_TEST_2" } },
+                  { "message": "<global_val:var_detectrad_furn_TEST_2> BBB", "type": "mixed" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_1" }, "furniture": "ap_compact_ASRG_containment", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_1_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_1" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_2" }, "furniture": "f_reactor_meltdown", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_2_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_2" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_3" }, "furniture": "f_exodii_generator_1", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_3_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_3" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_4" }, "furniture": "f_exodii_generator_2", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_4_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_4" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_5" }, "furniture": "f_exodii_generator_3", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_5_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_5" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_6" }, "furniture": "f_exodii_generator_4", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_6_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_6" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_7" }, "furniture": "f_compact_ASRG_containment", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_7_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_7" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_8" }, "furniture": "f_nuclear_fuel_cell", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_8_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_8" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_furn_9" }, "furniture": "f_afs_reactor_meltdown", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_furn_9_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_9" } } ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "utsuho_detectrad_monster_eoc_WIP",
+    "type": "effect_on_condition",
+    "effect": [
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_1" }, "monster": "mon_dks_emissary_plague", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_1_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_1" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_2" }, "monster": "mon_science_bot", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_2_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_2" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_3" }, "monster": "mon_hazmatbot", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_3_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_3" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_4" }, "monster": "mon_zombie_hazmat", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_4_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_4" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_5" }, "monster": "mon_charred_nightmare", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_5_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_5" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_6" }, "monster": "mon_irradiated_wanderer_1", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_6_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_6" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_7" }, "monster": "mon_irradiated_wanderer_2", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_7_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_7" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_8" }, "monster": "mon_irradiated_wanderer_3", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_8_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_8" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_monster_9" }, "monster": "mon_irradiated_wanderer_4", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_monster_9_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_9" } } ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "utsuho_detectrad_ter_eoc_WIP",
+    "type": "effect_on_condition",
+    "effect": [
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_ter_1" }, "terrain": "t_rad_platform", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_ter_1_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_ter_1" } } ]
+          }
+        ]
+      },
+      { 
+        "u_location_variable": { "global_val": "var_detectrad_ter_2" }, "terrain": "t_missile", "target_min_radius": 0, "target_max_radius": 32,
+        "true_eocs": [
+          {
+            "id": "var_detectrad_ter_2_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_ter_2" } } ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "yamame_damnedrope_UPDATED",
     "type": "SPELL",
     "name": { "str": "Damned's rope" },

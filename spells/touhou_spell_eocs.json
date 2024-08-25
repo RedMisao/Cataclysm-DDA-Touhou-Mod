@@ -2249,127 +2249,15 @@
     "type": "effect_on_condition",
     "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
     "effect": [
-      { "run_eocs": [ "utsuho_detectrad_field_eoc" ] },
-      { "run_eocs": [ "utsuho_detectrad_furn_eoc" ] },
       { "run_eocs": [ "utsuho_detectrad_item_eoc" ] },
-      { "run_eocs": [ "utsuho_detectrad_monster_eoc" ] },
-      { "run_eocs": [ "utsuho_detectrad_ter_eoc" ] }
+      { "run_eocs": [ "utsuho_detectrad_monster_eoc" ] }
     ],
     "false_effect": [ 
       { "u_message": "Something's wrong… you cannot detect anything.", "type": "mixed" },
       { "math": [ "u_val('mana')", "+=", "rand(50)" ] }
-    ]
-  },
-  {
-    "id": "utsuho_detectrad_field_eoc",
-    "type": "effect_on_condition",
-    "effect": [
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_field_1" }, "field": "fd_nuke_gas", "target_max_radius": 32,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_field_1_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_field_1" } } ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "utsuho_detectrad_furn_eoc",
-    "type": "effect_on_condition",
-    "effect": [
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_furn_1" }, "min_radius": 0, "max_radius": 32,
-        "furniture": "ap_compact_ASRG_containment", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_furn_1_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_1" } } ]
-          }
-        ]
-      },
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_furn_2" }, "min_radius": 0, "max_radius": 32,
-        "furniture": "f_reactor_meltdown", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_furn_2_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_2" } } ]
-          }
-        ]
-      },
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_furn_3" }, "min_radius": 0, "max_radius": 32,
-        "furniture": "f_exodii_generator_1", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_furn_3_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_3" } } ]
-          }
-        ]
-      },
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_furn_4" }, "min_radius": 0, "max_radius": 32,
-        "furniture": "f_exodii_generator_2", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_furn_4_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_4" } } ]
-          }
-        ]
-      },
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_furn_5" }, "min_radius": 0, "max_radius": 32,
-        "furniture": "f_exodii_generator_3", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_furn_5_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_5" } } ]
-          }
-        ]
-      },
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_furn_6" }, "min_radius": 0, "max_radius": 32,
-        "furniture": "f_exodii_generator_4", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_furn_6_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_6" } } ]
-          }
-        ]
-      },
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_furn_7" }, "min_radius": 0, "max_radius": 32,
-        "furniture": "f_compact_ASRG_containment", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_furn_7_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_7" } } ]
-          }
-        ]
-      },
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_furn_8" }, "min_radius": 0, "max_radius": 32,
-        "furniture": "f_nuclear_fuel_cell", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_furn_8_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_8" } } ]
-          }
-        ]
-      },
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_furn_9" }, "min_radius": 0, "max_radius": 32,
-        "furniture": "f_afs_reactor_meltdown", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_furn_9_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_9" } } ]
-          }
-        ]
-      }
-    ]
+    ],
+    "//": "Works with items and monsters. Fields, furniture and terrain are only detected once each in the aoe (top left)",
+    "//2": "Additionally, the field isn't revealed through walls"
   },
   {
     "id": "utsuho_detectrad_item_eoc",
@@ -2397,137 +2285,19 @@
             "id": "var_detectrad_item_1_1_eoc",
             "effect": [ 
               { "npc_location_variable": { "global_val": "var_detectrad_item_1_1" } },
-              { "u_set_field": "fd_clairvoyant", "radius": 2, "intensity": 1, "age": "2 s", "target_var": { "global_val": "var_detectrad_item_1_1" } },
-              { "message": "<global_val:var_detectrad_item_1_1> AAA", "type": "mixed" }
+              { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_item_1_1" } }
             ]
           }
         ]
       }
     ],
-    "//note": "This is setting the fd_clairvoyant at the item's location, even when there's more than one, however the field itself is weak; try setting it with a spell instead",
-    "//note2": "Given this is detecting more than one of the same item, test two different items",
-    "//note3": "Then, test more than one monster, furniture, etc. if possible"
+    "//": "Thankfully it automatically runs it for *every* item, even of the same id"
   },
   {
     "id": "utsuho_detectrad_monster_eoc",
     "type": "effect_on_condition",
     "effect": [
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_monster_1" }, "min_radius": 0, "max_radius": 32,
-        "monster": "mon_dks_emissary_plague", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_monster_1_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_1" } } ]
-          }
-        ]
-      },
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_monster_2" }, "min_radius": 0, "max_radius": 32,
-        "monster": "mon_science_bot", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_monster_2_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_2" } } ]
-          }
-        ]
-      },
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_monster_3" }, "min_radius": 0, "max_radius": 32,
-        "monster": "mon_hazmatbot", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_monster_3_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_3" } } ]
-          }
-        ]
-      },
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_monster_4" }, "min_radius": 0, "max_radius": 32,
-        "monster": "mon_zombie_hazmat", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_monster_4_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_4" } } ]
-          }
-        ]
-      },
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_monster_5" }, "min_radius": 0, "max_radius": 32,
-        "monster": "mon_charred_nightmare", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_monster_5_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_5" } } ]
-          }
-        ]
-      },
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_monster_6" }, "min_radius": 0, "max_radius": 32,
-        "monster": "mon_irradiated_wanderer_1", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_monster_6_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_6" } } ]
-          }
-        ]
-      },
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_monster_7" }, "min_radius": 0, "max_radius": 32,
-        "monster": "mon_irradiated_wanderer_2", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_monster_7_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_7" } } ]
-          }
-        ]
-      },
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_monster_8" }, "min_radius": 0, "max_radius": 32,
-        "monster": "mon_irradiated_wanderer_3", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_monster_8_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_8" } } ]
-          }
-        ]
-      },
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_monster_9" }, "min_radius": 0, "max_radius": 32,
-        "monster": "mon_irradiated_wanderer_4", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_monster_9_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_monster_9" } } ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "utsuho_detectrad_ter_eoc",
-    "type": "effect_on_condition",
-    "effect": [
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_ter_1" }, "min_radius": 0, "max_radius": 32,
-        "terrain": "t_rad_platform", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_ter_1_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_ter_1" } } ]
-          }
-        ]
-      },
-      { 
-        "u_location_variable": { "global_val": "var_detectrad_ter_2" }, "min_radius": 0, "max_radius": 32,
-        "terrain": "t_missile", "target_min_radius": 0, "target_max_radius": 1,
-        "true_eocs": [
-          {
-            "id": "var_detectrad_ter_2_1",
-            "effect": [ { "u_set_field": "fd_clairvoyant", "radius": 1, "intensity": 1, "target_var": { "global_val": "var_detectrad_ter_2" } } ]
-          }
-        ]
-      }
+      { "u_cast_spell": { "id": "utsuho_detectrad2" }, "targeted": false }
     ]
   },
   {
