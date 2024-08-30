@@ -216,9 +216,8 @@
         "search_data": [ 
           { "id": "light_minus_battery_cell", "wielded_only": true },
           { "id": "light_battery_cell", "wielded_only": true },
-          { "id": "light_plus_battery_cell", "wielded_only": true },
+          { "id": "light_cell_rechargeable", "wielded_only": true },
           { "id": "medium_battery_cell", "wielded_only": true },
-          { "id": "medium_plus_battery_cell", "wielded_only": true },
           { "id": "heavy_battery_cell", "wielded_only": true },
           { "id": "heavy_plus_battery_cell", "wielded_only": true }
         ],
@@ -233,9 +232,8 @@
     ],
     "//": "This checks if Iku is wielding a battery, and if so runs the EOCs below, which detect which kind of battery she has and 'recharges' it, draining proportional mana",
     "//2": "As u_consume_item with a negative charge value just destroys the item, the trick is to destroy + create a new battery, which thankfully spawns with full charge, else the spell wouldn't work",
-    "//3": "Current issue at base cdda #70651 causes the false_eocs to be run more than once",
-    "//4": "Other than repeating the fail message, this has no effect on the player, but forces me to split the EOC into above and below, instead of just running all of them sequentially above",
-    "//note": "Could be simplified by #74748"
+    "//note": "#70651 was fixed, the eoc below can be merged with this one without issues",
+    "//note2": "Could be simplified by #74748"
   },
   {
     "id": "iku_batteryrestore_check",
@@ -247,7 +245,7 @@
         "true_eocs": [
           {
             "id": "batteryrestore1_eoc",
-            "condition": { "math": [ "u_val('mana')", ">=", "25" ] },
+            "condition": { "math": [ "u_val('mana')", ">=", "10" ] },
             "effect": [
               { "math": [ "u_val('mana')", "-=", "25" ] },
               { "u_consume_item": "light_minus_battery_cell", "count": 1 },
@@ -275,15 +273,15 @@
       },
       {
         "u_run_inv_eocs": "all",
-        "search_data": [ { "id": "light_plus_battery_cell", "wielded_only": true } ],
+        "search_data": [ { "id": "light_cell_rechargeable", "wielded_only": true } ],
         "true_eocs": [
           {
             "id": "batteryrestore3_eoc",
-            "condition": { "math": [ "u_val('mana')", ">=", "75" ] },
+            "condition": { "math": [ "u_val('mana')", ">=", "50" ] },
             "effect": [
-              { "math": [ "u_val('mana')", "-=", "75" ] },
-              { "u_consume_item": "light_plus_battery_cell", "count": 1 },
-              { "u_spawn_item": "light_plus_battery_cell", "force_equip": true, "suppress_message": true }
+              { "math": [ "u_val('mana')", "-=", "50" ] },
+              { "u_consume_item": "light_cell_rechargeable", "count": 1 },
+              { "u_spawn_item": "light_cell_rechargeable", "force_equip": true, "suppress_message": true }
             ],
             "false_effect": [ { "u_message": "You don't have enough energy.", "type": "mixed" } ]
           }
@@ -295,27 +293,11 @@
         "true_eocs": [
           {
             "id": "batteryrestore4_eoc",
-            "condition": { "math": [ "u_val('mana')", ">=", "250" ] }, 
+            "condition": { "math": [ "u_val('mana')", ">=", "200" ] }, 
             "effect": [
-              { "math": [ "u_val('mana')", "-=", "250" ] },
+              { "math": [ "u_val('mana')", "-=", "200" ] },
               { "u_consume_item": "medium_battery_cell", "count": 1 },
               { "u_spawn_item": "medium_battery_cell", "force_equip": true, "suppress_message": true }
-            ],
-            "false_effect": [ { "u_message": "You don't have enough energy.", "type": "mixed" } ]
-          }
-        ]
-      },
-      {
-        "u_run_inv_eocs": "all",
-        "search_data": [ { "id": "medium_plus_battery_cell", "wielded_only": true } ],
-        "true_eocs": [
-          {
-            "id": "batteryrestore5_eoc",
-            "condition": { "math": [ "u_val('mana')", ">=", "300" ] }, 
-            "effect": [
-              { "math": [ "u_val('mana')", "-=", "300" ] },
-              { "u_consume_item": "medium_plus_battery_cell", "count": 1 },
-              { "u_spawn_item": "medium_plus_battery_cell", "force_equip": true, "suppress_message": true }
             ],
             "false_effect": [ { "u_message": "You don't have enough energy.", "type": "mixed" } ]
           }
@@ -326,7 +308,7 @@
         "search_data": [ { "id": "heavy_battery_cell", "wielded_only": true } ],
         "true_eocs": [
           {
-            "id": "batteryrestore6_eoc",
+            "id": "batteryrestore5_eoc",
             "condition": { "math": [ "u_val('mana')", ">=", "500" ] }, 
             "effect": [
               { "math": [ "u_val('mana')", "-=", "500" ] },
@@ -342,7 +324,7 @@
         "search_data": [ { "id": "heavy_plus_battery_cell", "wielded_only": true } ],
         "true_eocs": [
           {
-            "id": "batteryrestore7_eoc",
+            "id": "batteryrestore6_eoc",
             "condition": { "math": [ "u_val('mana')", ">=", "625" ] }, 
             "effect": [
               { "math": [ "u_val('mana')", "-=", "625" ] },
@@ -1491,7 +1473,8 @@
         ]
       }
     ],
-    "//": "Resets the var to 0 and checks for the species/traits of the target she's draining, and sets var -> sets less var -> sets negative var -> sets no var, accordingly to the blood they have"
+    "//": "Resets the var to 0 and checks for the species/traits of the target she's draining, and sets var -> sets less var -> sets negative var -> sets no var, accordingly to the blood they have",
+    "//note": "Eventually, this will be improved by using #71956"
   },
   {
     "id": "remilia_darkdrain3_eoc",
@@ -2037,7 +2020,11 @@
       { "run_eocs": [ "udonge_waveinsight_cycle1" ] }
     ],
     "//": "Adds aura-specific var to signal it is ON, also sets the other auras + bonuses OFF",
-    "//2": "Original 'aura', the others are modeled after this"
+    "//2": "Original 'aura', the others are modeled after this",
+    "//IMPORTANT": "There's a 'leak', where toggling the aura OFF cycles one more time and defaults to the false_effect before stopping properly (set debug u_message to each effect and run it ingame to understand)",
+    "//IMPORTANT2": "I think this happens with all aura EOCs based on this one",
+    "//IMPORTANT3": "My guess is that happens due the queue'd EOC running not being 'cancelled'. The > 0 check is what actually stops the momentum. DO NOT REMOVE BEFORE FINDING A SOLUTION",
+    "//IMPORTANT4": "I tried my best in trying to simplify all the cycle1 - cycle2 based EOCs but couldn't find a solution. Maybe in the future, idk these work as they are"
   },
   {
     "id": "udonge_waveinsight_cycle1",
@@ -2407,11 +2394,7 @@
     "type": "effect_on_condition",
     "condition": { "math": [ "var_utsuho_fusionblade", "<", "2" ] },
     "effect": [ { "run_eocs": [ "utsuho_fusionblade_cycle3" ] } ],
-    "false_effect": { "run_eocs": "utsuho_fusionblade_toggle" },
-    "//IMPORTANT": "The toggle doesn't stop here, it runs cycle1 and cycle2 one more time before stopping (set debug u_message to each effect and run it ingame to understand)",
-    "//IMPORTANT2": "I think this happens with all 'auras' set up the same way. Udonge's 'wave' auras have the same problem",
-    "//IMPORTANT3": "My guess is that happens due the queue'd EOC running one more time. The > 0 check in the next EOC is what actually stops the momentum. DO NOT REMOVE BEFORE FINDING A SOLUTION",
-    "//IMPORTANT4": "I tried my best in trying to simplify all the cycle1 - cycle2 based EOCs but couldn't find a solution. Maybe in the future, idk these work as they are"
+    "false_effect": { "run_eocs": "utsuho_fusionblade_toggle" }
   },
   {
     "id": "utsuho_fusionblade_cycle3",

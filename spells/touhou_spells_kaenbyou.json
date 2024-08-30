@@ -606,7 +606,7 @@
     "id": "kaenbyou_zz_soulshard",
     "type": "SPELL",
     "name": "Soulshards",
-    "description": "You gain soulshards by killing humanoids, which you can use to fuel some of your spells.  Casting time displays how many you currently have.  \nMax 16 soulshards.",
+    "description": "You gain soulshards by killing humanoids, which you can use to fuel some of your spells.  \nSpell cost displays how many you currently have.  \nMax 16 soulshards.",
     "spell_class": "NONE",
     "teachable": false,
     "valid_targets": [ "none" ],
@@ -615,8 +615,8 @@
     "max_level": 1,
     "difficulty": -11,
     "message": "",
-    "base_casting_time": { "math": [ "u_var_soulshard" ] },
-    "base_energy_cost": 0,
+    "base_casting_time": 0,
+    "base_energy_cost": { "math": [ "u_var_soulshard" ] },
     "energy_source": "MANA",
     "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SOMATIC", "SILENT" ]
   }

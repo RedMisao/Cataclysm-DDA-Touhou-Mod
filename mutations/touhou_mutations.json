@@ -1013,13 +1013,12 @@
         "condition": "ALWAYS",
         "values": [
           { "value": "STRENGTH", "add": 2 },
-          { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "rng( 3, 5 )" ] } },
-          { "value": "ITEM_DAMAGE_CUT", "add": { "math": [ "rng( 1, 1.5 )" ] } },
-          { "value": "ITEM_DAMAGE_STAB", "add": { "math": [ "rng( 1, 1.5 )" ] } },
+          { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "rng( 0.75, 2.25 )" ] } },
           { "value": "OVERKILL_DAMAGE", "multiply": -4 }
         ]
       }
-    ]
+    ],
+    "//": "WIP"
   },
   {
     "id": "PROF_IKU",
@@ -1079,9 +1078,7 @@
       {
         "condition": { "not": "u_has_weapon" },
         "values": [ 
-          { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "u_skill('unarmed') * 2" ] } },
-          { "value": "ITEM_DAMAGE_CUT", "add": { "math": [ "u_skill('unarmed') * 2" ] } },
-          { "value": "ITEM_DAMAGE_STAB", "add": { "math": [ "u_skill('unarmed') * 2" ] } }
+          { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "u_skill('unarmed') * 2" ] } }
         ]
       }
     ],
@@ -1149,15 +1146,14 @@
       {
         "condition": { "not": "u_has_weapon" },
         "values": [ 
-          { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "( u_skill('swimming') + u_skill('melee') + u_skill('unarmed') ) * 0.5" ] } },
-          { "value": "ITEM_DAMAGE_CUT", "add": { "math": [ "( u_skill('swimming') + u_skill('melee') + u_skill('unarmed') ) * 0.5" ] } },
-          { "value": "ITEM_DAMAGE_STAB", "add": { "math": [ "( u_skill('swimming') + u_skill('melee') + u_skill('unarmed') ) * 0.5" ] } }
+          { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "( u_skill('swimming') + u_skill('melee') + u_skill('unarmed') ) * 0.5" ] } }
         ]
       }
     ],
     "cancels": [ "EASYSLEEPER", "EASYSLEEPER2", "HEAVYSLEEPER2", "INSOMNIA", "SLEEPY", "SLEEPY2" ],
     "//": "Not sure if DEFT and HEAVYSLEEPER work from flags, so it's set above",
-    "//2": "Half bonus dmg here, the other half at meiling_tigerrelease . This is to make her total bonus conditional with her mana regen. Breakpoint vs KI_STRIKE at 7 for each skill (28 vs 29)"
+    "//2": "Bonus dmg 4 - 19",
+    "//3": "Half bonus dmg here, the other half at meiling_tigerrelease . This is to make her total bonus conditional with her mana regen. Breakpoint vs KI_STRIKE at 7 for each skill (28 vs 29)"
   },
   {
     "id": "PROF_MOKOU",
@@ -1184,9 +1180,7 @@
       {
         "condition": { "not": "u_has_weapon" },
         "values": [ 
-          { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "( u_skill('melee') + u_skill('unarmed') + (u_pain() * 0.25 ) )" ] } },
-          { "value": "ITEM_DAMAGE_CUT", "add": { "math": [ "( u_skill('melee') + u_skill('unarmed') + (u_pain() * 0.25 ) )" ] } },
-          { "value": "ITEM_DAMAGE_STAB", "add": { "math": [ "( u_skill('melee') + u_skill('unarmed') + (u_pain() * 0.25 ) )" ] } }
+          { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "( u_skill('melee') + u_skill('unarmed') + (u_pain() * 0.25 ) )" ] } }
         ]
       }
     ],

@@ -8,38 +8,18 @@
     "max_effective_intensity": 1,
     "rating": "good",
     "apply_message": "A jet of plasma emerges from the end of your control rod.",
-    "enchantments": [ 
+    "enchantments": [
       {
-        "hit_you_effect": [ { "id": "fusion_bonk" } ],
-        "values": [ { "value": "LUMINATION", "add": 20 } ]
+        "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
+        "values": [ 
+          { "value": "LUMINATION", "add": 4 },
+          { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "rng( ( (u_skill('dodge') + 10 ) / 2 ), ( (u_skill('dodge') + 10 ) ) )" ] } },
+          { "value": "ITEM_DAMAGE_HEAT", "add": { "math": [ "rng( ( (u_skill('dodge') + 10 ) / 2 ), ( (u_skill('dodge') + 10 ) ) )" ] } }
+        ]
       }
-    ]
-  },
-  {
-    "id": "fusion_bonk",
-    "type": "SPELL",
-    "name": { "str": "Fusion blade (dmg)" },
-    "description": "Damage component for utsuho_fusionblade ",
-    "spell_class": "NONE",
-    "effect": "attack",
-    "valid_targets": [ "ally", "hostile" ],
-    "components": "spell_components_utsuhorod",
-    "shape": "blast",
-    "damage_type": "heat",
-    "min_damage": { "math": [ "( (u_skill('dodge') * 1.3 ) + 8.4 )" ] },
-    "max_damage": { "math": [ "( (u_skill('dodge') * 2.6 ) + 16.8 )" ] },
-    "min_pierce": 3,
-    "max_pierce": 3,
-    "min_range": 1,
-    "max_range": 1,
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "IGNITE_FLAMMABLE", "NO_LEGS", "NO_PROJECTILE", "RANDOM_DAMAGE", "SILENT" ],
-    "//": "max dmg 24 - 48",
-    "//2": "Should do half bash (due replacing melee attacks for Utsuho) half heat, but implementing a subspell for bash will flood the P window"
+    ],
+    "//": "min dmg (6 - 12)*2 - max dmg (11 - 22)*2 ",
+    "//2": "The toggle OFF, mana drain and everything else at utsuho_fusionblade_eoc "
   },
   {
     "id": "aura_reflectionslash",
@@ -136,13 +116,12 @@
         "values": [ 
           { "value": "LUMINATION", "add": 2 },
           { "value": "REGEN_MANA", "multiply": -9 },
-          { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "( u_skill('swimming') + u_skill('melee') + u_skill('unarmed') ) * 0.5" ] } },
-          { "value": "ITEM_DAMAGE_CUT", "add": { "math": [ "( u_skill('swimming') + u_skill('melee') + u_skill('unarmed') ) * 0.5" ] } },
-          { "value": "ITEM_DAMAGE_STAB", "add": { "math": [ "( u_skill('swimming') + u_skill('melee') + u_skill('unarmed') ) * 0.5" ] } }
+          { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "( u_skill('swimming') + u_skill('melee') + u_skill('unarmed') ) * 0.5" ] } }
         ]
       }
     ],
-    "//": "Half bonus dmg here, the other half is always active at PROF_MEILING "
+    "//": "Half bonus dmg here, the other half is always active at PROF_MEILING ",
+    "//2": "The toggle OFF and everything else at meiling_tigerrelease_eoc "
   },
   {
     "id": "aura_vampiric",
@@ -155,64 +134,21 @@
     "apply_message": "You release a portion of your true essence, a red presence covers your hands.",
     "enchantments": [ 
       {
-        "condition": "ALWAYS",
-        "hit_you_effect": [ { "id": "vampiric_claw" } ],
+        "condition": { "not": "u_has_weapon" },
         "values": [
           { "value": "ARMOR_BASH", "add": 2 },
           { "value": "ARMOR_CUT", "add": 2 },
           { "value": "ARMOR_STAB", "add": 2 },
-          { "value": "ARMOR_BULLET", "add": 2 }
+          { "value": "ARMOR_BULLET", "add": 2 },
+          { "value": "ITEM_DAMAGE_CUT", "add": { "math": [ "rng( ( (u_skill('stabbing') * 0.525 ) + (u_skill('melee') * 0.525 ) + 1.3 ), ( (u_skill('stabbing') * 1.050 ) + (u_skill('melee') * 1.050 ) + 2.6 ) )" ] } }
         ],
         "//": "ARMOR_X add +n REDUCES armor for n value, this is intended here as the aura increases melee dmg while reducing defense"
       }
-    ]
-  },
-  {
-    "id": "vampiric_claw",
-    "type": "SPELL",
-    "name": { "str": "Vampiric claw (dmg)" },
-    "description": "Damage component for remilia_vampiricaura ",
-    "spell_class": "NONE",
-    "effect": "attack",
-    "extra_effects": [ { "id": "vampiric_drain" } ],
-    "valid_targets": [ "hostile" ],
-    "ignored_monster_species": [ "HALLUCINATION", "HORROR", "NETHER_EMANATION", "ROBOT" ],
-    "shape": "blast",
-    "damage_type": "cut",
-    "min_damage": { "math": [ "( (u_skill('stabbing') * 0.53 ) + (u_skill('melee') * 0.53 ) + 0.8 )" ] },
-    "max_damage": { "math": [ "( (u_skill('stabbing') * 1.05 ) + (u_skill('melee') * 1.05 ) + 1.6 )" ] },
-    "min_range": 1,
-    "max_range": 1,
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_LEGS", "RANDOM_DAMAGE", "SILENT" ],
-    "//": "max dmg 10 - 31, based on a portion of Gungnir's total dmg"
-  },
-  {
-    "id": "vampiric_drain",
-    "type": "SPELL",
-    "name": { "str": "Vampiric DRAIN" },
-    "description": "Heal component for remilia_vampiricaura ",
-    "spell_class": "NONE",
-    "effect": "attack",
-    "valid_targets": [ "self" ],
-    "affected_body_parts": [ "arm_l", "arm_r", "head", "leg_l", "leg_r", "torso" ],
-    "shape": "blast",
-    "damage_type": "pure",
-    "min_damage": { "math": [ "( - (u_skill('stabbing') * 0.27 ) - (u_skill('melee') * 0.27 ) + 0.3 )" ] },
-    "max_damage": { "math": [ "( - (u_skill('stabbing') * 0.55 ) - (u_skill('melee') * 0.55 ) + 0.6 )" ] },
-    "min_aoe": 2,
-    "max_aoe": 2,
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_LEGS", "RANDOM_DAMAGE", "SILENT" ],
-    "//": "max dmg (heal) 5 - 16, based on a portion of above's dmg"
+    ],
+    "//": "dmg min lvl (5.5 - 11), dmg max lvl (16 - 32), based on 25 - 75% of Gungnir's dmg",
+    "//2": "Heal effect at vampiric_drain_eoc ",
+    "//3": "Using this instead of hit_you_effect because that casts spells, which cannot miss, even if the player does miss the melee",
+    "//4": "Sadly, this means different monster species cannot be filtered out from the heal effect"
   },
   {
     "id": "aura_windsickle",

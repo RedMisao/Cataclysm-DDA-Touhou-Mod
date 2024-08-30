@@ -342,5 +342,26 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC", "NO_PROJECTILE" ]
+  },
+  {
+    "id": "vampiric_drain_spell",
+    "type": "SPELL",
+    "name": { "str": "Vampiric DRAIN" },
+    "description": "Heal component for remilia_vampiricaura ",
+    "spell_class": "NONE",
+    "effect": "attack",
+    "valid_targets": [ "self" ],
+    "affected_body_parts": [ "arm_l", "arm_r", "head", "leg_l", "leg_r", "torso" ],
+    "shape": "blast",
+    "damage_type": "pure",
+    "min_damage": { "math": [ "( - var_remidrain )" ] },
+    "max_damage": { "math": [ "( - var_remidrain )" ] },
+    "max_level": 1,
+    "difficulty": -50,
+    "base_casting_time": 0,
+    "base_energy_cost": 0,
+    "energy_source": "MANA",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_LEGS", "RANDOM_DAMAGE", "SILENT" ],
+    "//": "max dmg (heal) 6 - 16, based on the damage done by aura_vampiric , which is checked and stored by vampiric_drain_eoc "
   }
 ]
