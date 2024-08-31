@@ -40,7 +40,7 @@
             "id": "vampire_bloodthirst_start",
             "condition": { "u_has_trait": "VAMPIRE_SPECIES" },
             "effect": [
-              { "math": [ "u_vitamin('hblood_vitamin')", "=", "6480 + rand(720)" ] }
+              { "math": [ "u_vitamin('hblood_vitamin')", "=", "648 + rand(72)" ] }
             ],
             "//": "Adds hblood_vitamin for VAMPIRE_SPECIES plus a smaller random amount, see vampire_bloodthirst_eoc below"
           }
@@ -843,13 +843,6 @@
       {
         "run_eocs": [
           {
-            "id": "vampire_hblood_vitamin_drain",
-            "condition": { "math": [ "u_vitamin('hblood_vitamin')", ">", "0" ] },
-            "effect": [
-              { "math": [ "u_vitamin('hblood_vitamin')", "-=", "15" ] }
-            ]
-          },
-          {
             "id": "vampire_bloodthirst_lowerlimit",
             "condition": { "math": [ "u_vitamin('hblood_vitamin')", "<=", "0" ] },
             "effect": [
@@ -858,7 +851,7 @@
           },
           {
             "id": "vampire_bloodthirst_veryhigh",
-            "condition": { "math": [ "u_vitamin('hblood_vitamin')", "<", "1440" ] },
+            "condition": { "math": [ "u_vitamin('hblood_vitamin')", "<", "144" ] },
             "effect": [
               { "u_lose_effect": "bloodthirst_low" },
               { "u_lose_effect": "bloodthirst_medium" },
@@ -870,8 +863,8 @@
             "id": "vampire_bloodthirst_high",
             "condition": {
               "and": [
-                { "math": [ "u_vitamin('hblood_vitamin')", ">=", "1441" ] },
-                { "math": [ "u_vitamin('hblood_vitamin')", "<", "2880" ] }
+                { "math": [ "u_vitamin('hblood_vitamin')", ">=", "145" ] },
+                { "math": [ "u_vitamin('hblood_vitamin')", "<", "288" ] }
               ]
             },
             "effect": [
@@ -885,8 +878,8 @@
             "id": "vampire_bloodthirst_medium",
             "condition": {
               "and": [
-                { "math": [ "u_vitamin('hblood_vitamin')", ">=", "2881" ] },
-                { "math": [ "u_vitamin('hblood_vitamin')", "<", "4320" ] }
+                { "math": [ "u_vitamin('hblood_vitamin')", ">=", "289" ] },
+                { "math": [ "u_vitamin('hblood_vitamin')", "<", "432" ] }
               ]
             },
             "effect": [
@@ -900,8 +893,8 @@
             "id": "vampire_bloodthirst_low",
             "condition": {
               "and": [
-                { "math": [ "u_vitamin('hblood_vitamin')", ">=", "4321" ] },
-                { "math": [ "u_vitamin('hblood_vitamin')", "<", "5760" ] }
+                { "math": [ "u_vitamin('hblood_vitamin')", ">=", "433" ] },
+                { "math": [ "u_vitamin('hblood_vitamin')", "<", "576" ] }
               ]
             },
             "effect": [
@@ -913,7 +906,7 @@
           },
           {
             "id": "vampire_bloodthirst_verylow",
-            "condition": { "and": [ { "math": [ "u_vitamin('hblood_vitamin')", ">=", "5761" ] } ] },
+            "condition": { "and": [ { "math": [ "u_vitamin('hblood_vitamin')", ">=", "577" ] } ] },
             "effect": [
               { "u_lose_effect": "bloodthirst_low" },
               { "u_lose_effect": "bloodthirst_medium" },
@@ -924,9 +917,9 @@
         ]
       }
     ],
-    "//": "The hblood_vitamin decays by 15 points every 30 min, so 720 points equals 24 hours of not consuming human blood/flesh",
+    "//": "The hblood_vitamin decays by 1 point every 20 min, so 72 points equals 24 hours of not consuming human blood/flesh",
     "//2": "Each blood thirst tier consists of two days of not consumining blood",
-    "//3": "This means that, assuming the little vampires start at the lower boundary of day 0 (6480), they can go up to 24 hours with no thirst (reach 5760), and then get increasing thirst every two days, peaking at one week (1440) without consumption",
+    "//3": "This means that, assuming the little vampires start at the lower boundary of day 0 (648), they can go up to 24 hours with no thirst (reach 576), and then get increasing thirst every two days, peaking at one week (144) without consumption",
     "//4": "Upper boundary set at hblood_vitamin itself"
   },
   {
@@ -947,135 +940,6 @@
     "//": "This checks how much dmg has Remi done, sets the var_HEAL to 66% of that and casts the healing spell",
     "//2": "Optimally, this would heal proportionally to the dmg done, but there's no way to track that without a custom dmg type",
     "//3": "And to track it by custom dmg an ITEM_DAMAGE_X enchant is required"
-  },
-  {
-    "id": "vampire_hblood_food_eoc",
-    "type": "effect_on_condition",
-    "eoc_type": "EVENT",
-    "required_event": "character_eats_item",
-    "condition": { "u_has_trait": "VAMPIRE_SPECIES" },
-    "effect": [ 
-      {
-        "if": { "compare_string": [ "blood", { "context_val": "itype" } ] },
-        "then": [
-          { "math": [ "u_vitamin('hblood_vitamin')", "+=", "60 * 9" ] }
-        ]
-      },
-      {
-        "if": { "compare_string": [ "human_liver", { "context_val": "itype" } ] },
-        "then": [
-          { "math": [ "u_vitamin('hblood_vitamin')", "+=", "56 * 9" ] }
-        ]
-      },
-      {
-        "if": { 
-          "or": [
-            { "compare_string": [ "human_flesh", { "context_val": "itype" } ] },
-            { "compare_string": [ "human_cooked", { "context_val": "itype" } ] },
-            { "compare_string": [ "pepperhuman", { "context_val": "itype" } ] }
-          ]
-        },
-        "then": [
-          { "math": [ "u_vitamin('hblood_vitamin')", "+=", "36 * 9" ] }
-        ]
-      },
-      {
-        "if": { 
-          "or": [
-            { "compare_string": [ "mutant_human_blood", { "context_val": "itype" } ] },
-            { "compare_string": [ "hstomach", { "context_val": "itype" } ] },
-            { "compare_string": [ "hstomach_boiled", { "context_val": "itype" } ] },
-            { "compare_string": [ "human_kidney", { "context_val": "itype" } ] }
-          ]
-        },
-        "then": [
-          { "math": [ "u_vitamin('hblood_vitamin')", "+=", "30 * 9" ] }
-        ]
-      },
-      {
-        "if": { 
-          "or": [
-            { "compare_string": [ "human_lung", { "context_val": "itype" } ] },
-            { "compare_string": [ "human_marrow", { "context_val": "itype" } ] }
-          ]
-        },
-        "then": [
-          { "math": [ "u_vitamin('hblood_vitamin')", "+=", "28 * 9" ] }
-        ]
-      },
-      {
-        "if": { "compare_string": [ "human_brain", { "context_val": "itype" } ] },
-        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "20 * 9" ] }
-      },
-      {
-        "if": { 
-          "or": [
-            { "compare_string": [ "mutant_human_flesh", { "context_val": "itype" } ] },
-            { "compare_string": [ "mutant_human_cooked", { "context_val": "itype" } ] },
-            { "compare_string": [ "peppermutant_human", { "context_val": "itype" } ] }
-          ]
-        },
-        "then": [
-          { "math": [ "u_vitamin('hblood_vitamin')", "+=", "28 * 9" ] }
-        ]
-      },
-      { 
-        "if": { "compare_string": [ "human_sweetbread", { "context_val": "itype" } ] },
-        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "15 * 9" ] }
-      },
-      {
-        "if": { "compare_string": [ "mutant_human_marrow", { "context_val": "itype" } ] },
-        "then": [
-          { "math": [ "u_vitamin('hblood_vitamin')", "+=", "14 * 9" ] }
-        ]
-      },
-      {
-        "if": { 
-          "or": [
-
-            { "compare_string": [ "small_hstomach_boiled", { "context_val": "itype" } ] }
-          ]
-        },
-        "then": { "math": [ "u_vitamin('hblood_vitamin')", "+=", "13 * 9" ] }
-      },
-      {
-        "if": { 
-          "or": [
-            { "compare_string": [ "human_fat", { "context_val": "itype" } ] },
-            { "compare_string": [ "human_tallow", { "context_val": "itype" } ] },
-            { "compare_string": [ "human_lard", { "context_val": "itype" } ] }
-          ]
-        },
-        "then": [
-          { "math": [ "u_vitamin('hblood_vitamin')", "+=", "5 * 9" ] }
-        ]
-      },
-      {
-        "if": { 
-          "or": [
-            { "compare_string": [ "human_meat_scrap", { "context_val": "itype" } ] },
-            { "compare_string": [ "mutant_human_fat", { "context_val": "itype" } ] },
-            { "compare_string": [ "mutant_human_tallow", { "context_val": "itype" } ] }
-          ]
-        },
-        "then": [
-          { "math": [ "u_vitamin('hblood_vitamin')", "+=", "3 * 9" ] }
-        ]
-      },
-      {
-        "if": { 
-          "or": [
-            { "compare_string": [ "raw_hleather", { "context_val": "itype" } ] },
-            { "compare_string": [ "raw_hfur", { "context_val": "itype" } ] }
-          ]
-        },
-        "then": [
-          { "math": [ "u_vitamin('hblood_vitamin')", "+=", "2.6 * 9" ] }
-        ]
-      }
-    ],
-    "//": "From #74709, which while effective makes the list above difficult to maintain",
-    "//2": "A solution would be to fix whatever is wrong with hblood_vitamin not being detected by comestibles nor materials"
   },
   {
     "id": "yamame_miasmaburst_stored_eoc",

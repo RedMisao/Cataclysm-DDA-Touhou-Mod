@@ -4,168 +4,150 @@
     "type": "COMESTIBLE",
     "copy-from": "mutant_human_blood",
     "name": { "str_sp": "mutant human blood" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 30 ] ] },
-    "//": "Adds hblood_vitamin as x5 value of iron",
-    "//note": "The vitamins are not getting extended nor added. I tried debugging this with an hblood_vitamin counter and eating the items, but it doesn't go up"
+    "vitamins": [ [ "hblood_vitamin", 30 ] ]
   },
   {
     "type": "COMESTIBLE",
     "id": "blood",
     "name": { "str_sp": "blood" },
     "copy-from": "blood",
-    "extend": { "vitamins": [ [ "hblood_vitamin", 60 ] ] },
-    "//": "Adds hblood_vitamin as x5 value of iron"
+    "vitamins": [ [ "hblood_vitamin", 120 ] ],
+    "//": "Consuming one unit of blood sates for 1.66 days",
+    "//2": "All the other values are relative to this and 72, which is the vitamin decay per day",
+    "//3": "Vitamins are similar to monstergroups in that they extend, not replace, by default. So this *adds* hblood_vitamin to the mutant_human_blood item",
+    "//4": "Also, vitamins take some time to digest, so eating these don't immediately raises the vitamin value until after ~30 min or so"
   },
   {
     "id": "hstomach",
     "copy-from": "hstomach",
     "type": "COMESTIBLE",
     "name": { "str": "human stomach" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 30 ] ] },
-    "//": "Adds hblood_vitamin as x5 value of iron"
+    "vitamins": [ [ "hblood_vitamin", 48 ] ]
   },
   {
     "id": "human_fat",
     "copy-from": "human_fat",
     "type": "COMESTIBLE",
     "name": { "str": "chunk of human fat", "str_pl": "chunks of human fat" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 5 ] ] },
-    "//": "Adds 5 hblood_vitamin"
+    "vitamins": [ [ "hblood_vitamin", 6 ] ]
   },
   {
     "type": "COMESTIBLE",
     "id": "human_tallow",
     "name": { "str_sp": "human tallow" },
     "copy-from": "human_tallow",
-    "extend": { "vitamins": [ [ "hblood_vitamin", 5 ] ] },
-    "//": "Adds 5 hblood_vitamin"
+    "vitamins": [ [ "hblood_vitamin", 6 ] ]
   },
   {
     "id": "human_flesh",
     "copy-from": "human_flesh",
     "type": "COMESTIBLE",
     "name": { "str_sp": "human flesh" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 36 ] ] },
-    "//": "Adds hblood_vitamin as x3 value of iron"
+    "vitamins": [ [ "hblood_vitamin", 48 ] ]
   },
   {
     "id": "human_meat_scrap",
     "type": "COMESTIBLE",
     "copy-from": "human_meat_scrap",
     "name": { "str": "scrap of human flesh", "str_pl": "scraps of human flesh" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 3 ] ] },
-    "//": "Adds hblood_vitamin as x3 value of iron"
+    "vitamins": [ [ "hblood_vitamin", 4 ] ]
   },
   {
     "id": "mutant_human_flesh",
     "copy-from": "mutant_human_flesh",
     "type": "COMESTIBLE",
     "name": { "str_sp": "mutant humanoid meat" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 18 ] ] },
-    "//": "Adds hblood_vitamin as x3 value of iron"
+    "vitamins": [ [ "hblood_vitamin", 12 ] ]
   },
   {
     "id": "human_lung",
     "type": "COMESTIBLE",
     "copy-from": "human_lung",
     "name": { "str": "piece of raw human lung", "str_pl": "pieces of raw human lung" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 28 ] ] },
-    "//": "Adds hblood_vitamin as x2 value of iron"
+    "vitamins": [ [ "hblood_vitamin", 48 ] ]
   },
   {
     "id": "human_liver",
     "type": "COMESTIBLE",
     "copy-from": "human_liver",
     "name": { "str_sp": "raw human liver" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 56 ] ] },
-    "//": "Adds hblood_vitamin as x2 value of iron"
+    "vitamins": [ [ "hblood_vitamin", 54 ] ]
   },
   {
     "id": "human_marrow",
     "type": "COMESTIBLE",
     "copy-from": "human_marrow",
     "name": { "str_sp": "human bone marrow" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 28 ] ] },
-    "//": "Adds hblood_vitamin as x2 value of iron"
+    "vitamins": [ [ "hblood_vitamin", 36 ] ]
   },
   {
     "id": "mutant_human_marrow",
     "type": "COMESTIBLE",
     "copy-from": "mutant_human_marrow",
     "name": { "str_sp": "mutant human bone marrow" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 14 ] ] },
-    "//": "Adds hblood_vitamin as x2 value of iron"
+    "vitamins": [ [ "hblood_vitamin", 9 ] ]
   },
   {
     "id": "human_brain",
     "type": "COMESTIBLE",
     "copy-from": "human_brain",
     "name": { "str_sp": "raw human brains" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 20 ] ] },
-    "//": "Adds hblood_vitamin as x2 value of iron"
+    "vitamins": [ [ "hblood_vitamin", 48 ] ]
   },
   {
     "id": "human_kidney",
     "type": "COMESTIBLE",
     "copy-from": "human_kidney",
     "name": { "str_sp": "raw human kidney" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 30 ] ] },
-    "//": "Adds hblood_vitamin as x2 value of iron"
+    "vitamins": [ [ "hblood_vitamin", 48 ] ]
   },
   {
     "id": "human_sweetbread",
     "type": "COMESTIBLE",
     "copy-from": "human_sweetbread",
     "name": { "str_sp": "raw human sweetbread" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 15 ] ] },
-    "//": "Adds hblood_vitamin as x3 value of iron"
+    "vitamins": [ [ "hblood_vitamin", 48 ] ]
   },
   {
     "id": "mutant_human_fat",
     "type": "COMESTIBLE",
     "copy-from": "mutant_human_fat",
     "name": { "str": "chunk of mutant humanoid fat", "str_pl": "chunks of mutant humanoid fat" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 3 ] ] },
-    "//": "Adds 3 hblood_vitamin"
+    "vitamins": [ [ "hblood_vitamin", 1 ] ]
   },
   {
     "type": "COMESTIBLE",
     "id": "mutant_human_tallow",
     "name": { "str_sp": "mutant humanoid tallow" },
     "copy-from": "mutant_human_tallow",
-    "extend": { "vitamins": [ [ "hblood_vitamin", 3 ] ] },
-    "//": "Adds 3 hblood_vitamin"
+    "vitamins": [ [ "hblood_vitamin", 1 ] ]
   },
   {
     "type": "COMESTIBLE",
     "id": "hstomach_boiled",
     "copy-from": "hstomach_boiled",
     "name": { "str": "boiled large human stomach" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 13 ] ] },
-    "//": "Adds hblood_vitamin as x10 value of iron (small_stomach lacks vitamins so it's pulled directly from the material)"
+    "vitamins": [ [ "hblood_vitamin", 48 ] ]
   },
   {
     "type": "COMESTIBLE",
     "id": "small_hstomach_boiled",
     "copy-from": "small_hstomach_boiled",
     "name": { "str": "boiled human stomach" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 13 ] ] },
-    "//": "Adds hblood_vitamin as x10 value of iron (small_stomach lacks vitamins so it's pulled directly from the material)"
+    "vitamins": [ [ "hblood_vitamin", 24 ] ]
   },
   {
     "type": "COMESTIBLE",
     "id": "raw_hleather",
     "copy-from": "raw_hleather",
     "name": { "str_sp": "raw human skin" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 2.6 ] ] },
-    "//": "Adds hblood_vitamin as x2 value of iron (raw_leather lacks vitamins so it's pulled directly from the material)"
+    "vitamins": [ [ "hblood_vitamin", 6 ] ]
   },
   {
     "type": "COMESTIBLE",
     "id": "raw_hfur",
     "copy-from": "raw_hfur",
     "name": { "str_sp": "raw human pelt" },
-    "extend": { "vitamins": [ [ "hblood_vitamin", 2.6 ] ] },
-    "//": "Adds hblood_vitamin as x2 value of iron (raw_leather lacks vitamins so it's pulled directly from the material)"
+    "vitamins": [ [ "hblood_vitamin", 2 ] ]
   }
 ]
