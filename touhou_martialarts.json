@@ -261,7 +261,7 @@
         "false_effect": [ 
           { "math": [ "u_var_kasen_arm", "=", "0" ] }
         ],
-        "//": "0 represents her left hand, 1 represents her right hand",
+        "//": "0 represents her left hand, 1 represents her right hand (the wrapped one)",
         "//2": "She should always hit harder with her left hand (brute force), but apply special effects with her right hand (soul dmg)",
         "//3": "Every time she uses 0 it has a chance to swap her next attack (1), and every time she uses 1 she defaults to 0 again",
         "//4": "This means that she will be attacking with her left hand more than with her right hand"
@@ -324,7 +324,7 @@
       {
         "id": "buff_kasen_ondodge",
         "name": "Flow",
-        "description": "The path that can be walked through is not the way.  Evading attacks increase your parry chance, but makes it more difficult to evade sucessive attacks.",
+        "description": "The path that can be walked through is not the way.  Evading attacks makes it easier to parry, but more difficult to evade sucessive attacks.",
         "unarmed_allowed": true,
         "melee_allowed": true,
         "buff_duration": 2,

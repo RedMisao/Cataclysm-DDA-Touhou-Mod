@@ -12,7 +12,7 @@
       {
         "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
         "values": [ 
-          { "value": "LUMINATION", "add": 4 },
+          { "value": "LUMINATION", "add": 16 },
           { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "rng( ( (u_skill('dodge') + 10 ) / 2 ), ( (u_skill('dodge') + 10 ) ) )" ] } },
           { "value": "ITEM_DAMAGE_HEAT", "add": { "math": [ "rng( ( (u_skill('dodge') + 10 ) / 2 ), ( (u_skill('dodge') + 10 ) ) )" ] } }
         ]
@@ -114,7 +114,7 @@
       {
         "condition": { "not": "u_has_weapon" },
         "values": [ 
-          { "value": "LUMINATION", "add": 2 },
+          { "value": "LUMINATION", "add": 8 },
           { "value": "REGEN_MANA", "multiply": -9 },
           { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "( u_skill('swimming') + u_skill('melee') + u_skill('unarmed') ) * 0.5" ] } }
         ]

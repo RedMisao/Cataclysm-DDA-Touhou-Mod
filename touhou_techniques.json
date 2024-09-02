@@ -478,7 +478,7 @@
     "condition": {
       "and": [
         { "u_has_effect": "mabuff:buff_kasen_static" },
-        { "math": [ "u_var_kasen_arm", "==", "1" ] }
+        { "math": [ "u_var_kasen_arm", ">=", "1" ] }
       ]
     },
     "mult_bonuses": [
@@ -542,7 +542,7 @@
         "effect": [
           { "u_message": "You palm strike the <npc_name> with your right hand!", "type": "good" },
           { "npc_message": "<npc_name> palm strikes %s with their right hand!", "type": "good" },
-          { "u_cast_spell": { "id": "kasen_palm_left" }, "loc": { "global_val": "var_target_monster_loc" } },
+          { "u_cast_spell": { "id": "kasen_palm_right" }, "loc": { "global_val": "var_target_monster_loc" } },
           { "math": [ "u_var_kasen_arm", "=", "1" ] }
         ]
       }
@@ -559,7 +559,7 @@
     "condition": {
       "and": [
         { "u_has_effect": "mabuff:buff_kasen_static" },
-        { "math": [ "u_var_kasen_arm", "==", "1" ] }
+        { "math": [ "u_var_kasen_arm", "==", "0" ] }
       ]
     },
     "mult_bonuses": [
@@ -582,8 +582,8 @@
         "effect": [
           { "u_message": "You extend your wraps to hit the <npc_name>, sending them flying!", "type": "good" },
           { "npc_message": "<npc_name> extend their wraps to hit %s, sending them flying!", "type": "good" },
-          { "u_cast_spell": { "id": "kasen_palmfly2" }, "loc": { "global_val": "var_target_monster_loc" } },
-          { "math": [ "u_var_kasen_arm", "=", "0" ] }
+          { "u_cast_spell": { "id": "kasen_palmfly" }, "loc": { "global_val": "var_target_monster_loc" } },
+          { "math": [ "u_var_kasen_arm", "=", "1" ] }
         ]
       }
     ],
@@ -600,7 +600,7 @@
     "condition": {
       "and": [
         { "u_has_effect": "mabuff:buff_kasen_static" },
-        { "math": [ "u_var_kasen_arm", "==", "1" ] }
+        { "math": [ "u_var_kasen_arm", ">=", "1" ] }
       ]
     },
     "mult_bonuses": [
@@ -679,6 +679,12 @@
     "messages": [ "", "" ],
     "skill_requirements": [ { "name": "unarmed", "level": 4 } ],
     "unarmed_allowed": true,
+    "condition": {
+      "and": [
+        { "u_has_effect": "mabuff:buff_kasen_static" },
+        { "math": [ "u_var_kasen_arm", "==", "0" ] }
+      ]
+    },
     "mult_bonuses": [
       { "stat": "movecost", "scale": 1.1 },
       { "stat": "damage", "type": "bash", "scale": 0 },
@@ -699,7 +705,8 @@
         "effect": [
           { "u_message": "You unwrap your bandages and swipe towards the <npc_name>!", "type": "good" },
           { "npc_message": "<npc_name> unwraps their bandages and swipes towards %s!", "type": "good" },
-          { "u_cast_spell": { "id": "kasen_swipe" }, "loc": { "global_val": "var_target_monster_loc" } }
+          { "u_cast_spell": { "id": "kasen_swipe" }, "loc": { "global_val": "var_target_monster_loc" } },
+          { "math": [ "u_var_kasen_arm", "=", "1" ] }
         ]
       }
     ],

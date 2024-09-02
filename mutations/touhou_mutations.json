@@ -700,11 +700,11 @@
           { "value": "STRENGTH", "add": 2 },
           { "value": "ARMOR_STAB", "multiply": 1 },
           { "value": "MENDING_MODIFIER", "multiply": 1 },
-          { "value": "MOVE_COST", "multiply": -0.2 },
           { "value": "NIGHT_VIS", "multiply": 7 },
           { "value": "REGEN_HP_AWAKE", "multiply": 2 },
           { "value": "SOCIAL_INTIMIDATE", "add": 4 },
           { "value": "SOCIAL_PERSUADE", "add": 4 },
+          { "value": "SPEED", "multiply": 0.2 },
           { "value": "WEAKNESS_TO_WATER", "add": 0.0333 },
           { "value": "SWEAT_MULTIPLIER", "multiply": -1 }
         ],
@@ -995,7 +995,7 @@
         ] 
       }
     ],
-    "//": "Aya's base ms is 100 * 0.8 = 80, or 100 * 0.7 * 0.5 = 35 if running. Do note same MOVE_COST stack additively, not multiplicatively"
+    "//": "Aya's base ms is 100 * 0.8 = 80, or 100 * 0.7 * 0.5 = 35 if running (and not flying). Do note same MOVE_COST stack additively, not multiplicatively"
   },
   {
     "id": "PROF_FLAN",

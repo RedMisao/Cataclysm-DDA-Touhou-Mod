@@ -232,7 +232,7 @@
     ],
     "//": "This checks if Iku is wielding a battery, and if so runs the EOCs below, which detect which kind of battery she has and 'recharges' it, draining proportional mana",
     "//2": "As u_consume_item with a negative charge value just destroys the item, the trick is to destroy + create a new battery, which thankfully spawns with full charge, else the spell wouldn't work",
-    "//note": "#70651 was fixed, the eoc below can be merged with this one without issues",
+    "//note": "#70651 was fixed, the EOC below can be merged with this one without issues",
     "//note2": "Could be simplified by #74748"
   },
   {
@@ -550,18 +550,236 @@
     "//": "Assuming a mana pool of 1000 and the default of 55000 cal, this burns 90% of the stored energy for ~3000 mana over (400 - 1000) s"
   },
   {
-    "id": "kasen_fangshu_place_eoc",
+    "id": "kasen_fangshu_selector_eoc",
     "type": "effect_on_condition",
     "effect": [
-      { "u_location_variable": { "global_val": "var_kasen_fangshu" } }
+      {
+        "run_eoc_selector": [
+          "kasen_fangshu_set_eoc",
+          "kasen_fangshu_move_eoc",
+          "kasen_fangshu_delete_eoc"
+        ],
+        "title": "Fangshu: Path",
+        "names": [
+          "Set exit point.",
+          "Traverse through exit point.",
+          "Delete all exit points."
+        ],
+        "keys": [ "1", "2", "3" ],
+        "descriptions": [
+          "Set one of three exit points to traverse through.  Costs 133 mana.",
+          "Traverse through any previously placed exit points.",
+          "Delete all placed exit points."
+        ],
+        "hide_failing": true,
+        "allow_cancel": true
+      }
+    ],
+    "//": "Adapted from #75872. Each cast opens a window. The first cast asks the Kasen to Set an exit point -> pick any of the three slots -> (optional) name it",
+    "//2": "The second cast allows Kasen to set point/tp to point/delete all points",
+    "//3": "If Kasen sets tp it just overwrites it; the other two options are self-explanatory",
+    "//4": "Do note that the move_eoc and the delete_eoc won't be available unless their conditions are met. Which is pretty nice, and disables their false_effects from running"
+  },
+  {
+    "id": "kasen_fangshu_set_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "run_eoc_selector": [
+          "kasen_fangshu_set_1",
+          "kasen_fangshu_set_2",
+          "kasen_fangshu_set_3"
+        ],
+        "title": "Set exit point:",
+        "names": [
+          "Exit point 1.",
+          "Exit point 2.",
+          "Exit point 3."
+        ],
+        "keys": [ "1", "2", "3" ],
+        "descriptions": [
+          "Set up exit point 1.",
+          "Set up exit point 2.",
+          "Set up exit point 3."
+        ],
+        "hide_failing": true,
+        "allow_cancel": true
+      }
+    ]
+  },
+  {
+    "id": "kasen_fangshu_set_1",
+    "type": "effect_on_condition",
+    "effect": [ 
+      {
+        "set_string_var": "Exit point 1",
+        "string_input": {
+          "title": { "i18n": true, "str": "Input exit point name:" },
+          "description": { "i18n": true, "str": "Exit point 1 name:" },
+          "//default_text": { "i18n": true, "str": "First exit" },
+          "width": 35,
+          "identifier": ""
+        },
+        "target_var": { "u_val": "u_var_kasen_fangshu_1_name" }
+      },
+      { "u_location_variable": { "global_val": "var_kasen_fangshu_1" } },
+      { "u_message": "You set an exit point at the location.", "type": "mixed" },
+      { "math": [ "u_var_kasen_fangshu_placed_1", "=", "1" ] },
+      { "math": [ "u_val('mana')", "-=", "133" ] }
+    ],
+    "//": "Not exaclty sure how, but thankfully the u_VAR_NAMEs get reset when kasen_fangshu_delete_eoc is run. I'm assuming it's because they're stored as u_ , but still why?"
+  },
+  {
+    "id": "kasen_fangshu_set_2",
+    "type": "effect_on_condition",
+    "effect": [ 
+      {
+        "set_string_var": "Exit point 2",
+        "string_input": {
+          "title": { "i18n": true, "str": "Input exit point name:" },
+          "description": { "i18n": true, "str": "Exit point 2 name:" },
+          "//default_text": { "i18n": true, "str": "Second exit" },
+          "width": 35,
+          "identifier": ""
+        },
+        "target_var": { "u_val": "u_var_kasen_fangshu_2_name" }
+      },
+      { "u_location_variable": { "global_val": "var_kasen_fangshu_2" } },
+      { "u_message": "You set an exit point at the location.", "type": "mixed" },
+      { "math": [ "u_var_kasen_fangshu_placed_2", "=", "1" ] },
+      { "math": [ "u_val('mana')", "-=", "133" ] }
+    ]
+  },
+  {
+    "id": "kasen_fangshu_set_3",
+    "type": "effect_on_condition",
+    "effect": [ 
+      {
+        "set_string_var": "Exit point 3",
+        "string_input": {
+          "title": { "i18n": true, "str": "Input exit point name:" },
+          "description": { "i18n": true, "str": "Exit point 3 name:" },
+          "//default_text": { "i18n": true, "str": "Third exit" },
+          "width": 35,
+          "identifier": ""
+        },
+        "target_var": { "u_val": "u_var_kasen_fangshu_3_name" }
+      },
+      { "u_location_variable": { "global_val": "var_kasen_fangshu_3" } },
+      { "u_message": "You set an exit point at the location.", "type": "mixed" },
+      { "math": [ "u_var_kasen_fangshu_placed_3", "=", "1" ] },
+      { "math": [ "u_val('mana')", "-=", "133" ] }
     ]
   },
   {
     "id": "kasen_fangshu_move_eoc",
     "type": "effect_on_condition",
+    "condition": {
+      "or": [
+        { "math": [ "u_var_kasen_fangshu_placed_1", ">=", "1" ] },
+        { "math": [ "u_var_kasen_fangshu_placed_2", ">=", "1" ] },
+        { "math": [ "u_var_kasen_fangshu_placed_3", ">=", "1" ] }
+      ]
+    },
     "effect": [
-      { "u_teleport": { "global_val": "var_kasen_fangshu" } },
-      { "u_message": "You pass through the entry point, and walk past the exit point.", "type": "mixed" }
+      {
+        "run_eoc_selector": [
+          "kasen_fangshu_move_1",
+          "kasen_fangshu_move_2",
+          "kasen_fangshu_move_3"
+        ],
+        "title": "Traverse through:",
+        "names": [
+          "Exit point 1, <u_val:u_var_kasen_fangshu_1_name>.",
+          "Exit point 2, <u_val:u_var_kasen_fangshu_2_name>.",
+          "Exit point 3, <u_val:u_var_kasen_fangshu_3_name>."
+        ],
+        "keys": [ "1", "2", "3" ],
+        "descriptions": [
+          "Open and traverse through exit point 1.",
+          "Open and traverse through exit point 2.",
+          "Open and traverse through exit point 3."
+        ],
+        "hide_failing": true,
+        "allow_cancel": true
+      }
+    ],
+    "false_effect": [ 
+      { "u_message": "There are no active exit points.", "type": "mixed" }
+    ]
+  },
+  {
+    "id": "kasen_fangshu_move_1",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_kasen_fangshu_placed_1", ">=", "1" ] },
+    "effect": [ 
+      { "u_teleport": { "global_val": "var_kasen_fangshu_1" } },
+      { "u_message": "You open a crack in space time, and walk through the exit point.", "type": "mixed" }
+    ],
+    "false_effect": [ 
+      { "u_message": "You haven't placed that exit point yet.", "type": "mixed" }
+    ]
+  },
+  {
+    "id": "kasen_fangshu_move_2",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_kasen_fangshu_placed_2", ">=", "1" ] },
+    "effect": [ 
+      { "u_teleport": { "global_val": "var_kasen_fangshu_2" } },
+      { "u_message": "You open a crack in space time, and walk through the exit point.", "type": "mixed" }
+    ],
+    "false_effect": [ 
+      { "u_message": "You haven't placed that exit point yet.", "type": "mixed" }
+    ]
+  },
+  {
+    "id": "kasen_fangshu_move_3",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_var_kasen_fangshu_placed_3", ">=", "1" ] },
+    "effect": [ 
+      { "u_teleport": { "global_val": "var_kasen_fangshu_3" } },
+      { "u_message": "You open a crack in space time, and walk through the exit point.", "type": "mixed" }
+    ],
+    "false_effect": [ 
+      { "u_message": "You haven't placed that exit point yet.", "type": "mixed" }
+    ]
+  },
+  {
+    "id": "kasen_fangshu_delete_eoc",
+    "type": "effect_on_condition",
+    "condition": {
+      "or": [
+        { "math": [ "u_var_kasen_fangshu_placed_1", ">=", "1" ] },
+        { "math": [ "u_var_kasen_fangshu_placed_2", ">=", "1" ] },
+        { "math": [ "u_var_kasen_fangshu_placed_3", ">=", "1" ] }
+      ]
+    },
+    "effect": [
+      {
+        "run_eoc_selector": [
+          "kasen_fangshu_delete_1"
+        ],
+        "title": "Delete all exit points",
+        "names": [
+          "Delete exit points?"
+        ],
+        "keys": [ "1" ],
+        "descriptions": [
+          "Warning: this cannot be undone."
+        ],
+        "hide_failing": true,
+        "allow_cancel": true
+      }
+    ]
+  },
+  {
+    "id": "kasen_fangshu_delete_1",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "u_var_kasen_fangshu_placed_1", "=", "0" ] },
+      { "math": [ "u_var_kasen_fangshu_placed_2", "=", "0" ] },
+      { "math": [ "u_var_kasen_fangshu_placed_3", "=", "0" ] },
+      { "u_message": "All exit points have been reset.", "type": "mixed" }
     ]
   },
   {
@@ -625,6 +843,78 @@
     "effect": [
       { "u_cast_spell": { "id": "kasen_rainboworb3" }, "loc": { "global_val": "var_kasen_rainboworb_loc" } }
     ]
+  },
+  {
+    "id": "kasen_summon_pet_eoc",
+    "type": "effect_on_condition",
+    "condition": {
+      "or": [
+        { "math": [ "u_monsters_nearby('mon_houso', 'radius': 960, 'attitude': 'friendly')", "==", "0" ] },
+        { "math": [ "u_monsters_nearby('mon_kanda', 'radius': 960, 'attitude': 'friendly')", "==", "0" ] },
+        { "math": [ "u_monsters_nearby('mon_koutei', 'radius': 960, 'attitude': 'friendly')", "==", "0" ] },
+        { "math": [ "u_monsters_nearby('mon_mukou', 'radius': 960, 'attitude': 'friendly')", "==", "0" ] }
+      ]
+    },
+    "effect": [ 
+      {
+        "if": {
+          "message": "Set target", 
+          "range": 5,
+          "u_query_tile": "line_of_sight",
+          "target_var": { "global_val": "var_kasen_summon_pet_loc" }
+        },
+        "then": [ { "run_eocs": [ "kasen_summon_pet_check_repeater" ] } ],
+        "else": { "u_message": "Canceled" }
+      }
+    ],
+    "false_effect": [ 
+      { "u_message": "You have already summoned all your pets.", "type": "mixed" },
+      { "math": [ "u_val('mana')", "+=", "50" ] }
+    ],
+    "//": "This EOC checks if ALL her pets have been summoned, if at least one is missing it runs the next EOC",
+    "//2": "The next is a repeater, which randomly runs one of four 'check if this pet is missing, if it is then summon it, if it not missing re-run the repeater'"
+  },
+  {
+    "id": "kasen_summon_pet_check_repeater",
+    "type": "effect_on_condition",
+    "effect": [ 
+      {
+        "weighted_list_eocs": [
+          [ "kasen_summon_pet_check_1", 1 ],
+          [ "kasen_summon_pet_check_2", 1 ],
+          [ "kasen_summon_pet_check_3", 1 ],
+          [ "kasen_summon_pet_check_4", 1 ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kasen_summon_pet_check_1",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_monsters_nearby('mon_houso', 'radius': 960, 'attitude': 'friendly')", "==", "0" ] },
+    "effect": [ { "u_cast_spell": { "id": "kasen_summon_pet_1" }, "loc": { "global_val": "var_kasen_summon_pet_loc" } } ],
+    "false_effect": [ { "run_eocs": [ "kasen_summon_pet_check_repeater" ] } ]
+  },
+  {
+    "id": "kasen_summon_pet_check_2",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_monsters_nearby('mon_kanda', 'radius': 960, 'attitude': 'friendly')", "==", "0" ] },
+    "effect": [ { "u_cast_spell": { "id": "kasen_summon_pet_2" }, "loc": { "global_val": "var_kasen_summon_pet_loc" } } ],
+    "false_effect": [ { "run_eocs": [ "kasen_summon_pet_check_repeater" ] } ]
+  },
+  {
+    "id": "kasen_summon_pet_check_3",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_monsters_nearby('mon_koutei', 'radius': 960, 'attitude': 'friendly')", "==", "0" ] },
+    "effect": [ { "u_cast_spell": { "id": "kasen_summon_pet_3" }, "loc": { "global_val": "var_kasen_summon_pet_loc" } } ],
+    "false_effect": [ { "run_eocs": [ "kasen_summon_pet_check_repeater" ] } ]
+  },
+  {
+    "id": "kasen_summon_pet_check_4",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_monsters_nearby('mon_mukou', 'radius': 960, 'attitude': 'friendly')", "==", "0" ] },
+    "effect": [ { "u_cast_spell": { "id": "kasen_summon_pet_4" }, "loc": { "global_val": "var_kasen_summon_pet_loc" } } ],
+    "false_effect": [ { "run_eocs": [ "kasen_summon_pet_check_repeater" ] } ]
   },
   {
     "id": "kokoro_backsweep_eoc",
@@ -1056,6 +1346,117 @@
     ]
   },
   {
+    "id": "nitori_extendo_arm_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "if": {
+          "message": "Set target", 
+          "range": { "math": [ "u_skill('mechanics')" ] },
+          "u_query_tile": "line_of_sight",
+          "target_var": { "global_val": "var_extendo_arm_loc" }
+        },
+        "then": [
+          { 
+            "u_location_variable": { "global_val": "var_extendo_arm_loc" }, 
+            "min_radius": 15, 
+            "max_radius": 15,
+            "monster": "", "target_min_radius": 15, "target_max_radius": 15,
+            "true_eocs": [
+              {
+                "id": "nitori_extendo_arm_check_1",
+                "condition": { "math": [ "u_val('weight')", ">=", "n_val('weight')" ] },
+                "effect": [ 
+                  { "u_cast_spell": { "id": "nitori_extendo_arm_pull" }, "loc": { "global_val": "var_extendo_arm_loc" } },
+                  { "u_message": "AAA", "type": "mixed" }
+                ],
+                "false_effect": [ 
+                  {
+                    "run_eocs": [
+                      {
+                        "id": "nitori_extendo_arm_check_2",
+                        "condition": { "math": [ "u_val('weight')", "<", "n_val('weight')" ] },
+                        "effect": [ 
+                          { "u_cast_spell": { "id": "nitori_extendo_arm_self_pull" }, "loc": { "global_val": "var_extendo_arm_loc" } },
+                          { "u_message": "BBB", "type": "mixed" }
+                        ],
+                        "false_effect": [ 
+                          { "math": [ "u_val('mana')", "+=", "75" ] },
+                          { "u_message": "CCC", "type": "mixed" }
+                        ]
+                      }
+                    ]
+                  },
+                  { "u_message": "DDD", "type": "mixed" }
+                ]
+              }
+            ],
+            "false_eocs": [ 
+              {
+                "id": "nitori_extendo_arm_fail2",
+                "effect": [ 
+                  { "math": [ "u_val('mana')", "+=", "75" ] },
+                  { "u_message": "EEE", "type": "mixed" }
+                ]
+              }
+            ]
+          },
+          {
+            "u_map_run_item_eocs": "all",
+            "//search_data": [  ],
+            "loc": { "global_val": "var_extendo_arm_loc" },
+            "min_radius": 0,
+            "max_radius": 0,
+            "true_eocs": [ 
+              {
+                "id": "nitori_extendo_arm_check_3",
+                "condition": { "math": [ "u_val('weight')", ">=", "n_val('weight')" ] },
+                "effect": [ 
+                  { "u_cast_spell": { "id": "nitori_extendo_arm_pull" }, "loc": { "global_val": "var_extendo_arm_loc" } },
+                  { "u_message": "FFF", "type": "mixed" }
+                ],
+                "false_effect": [ 
+                  {
+                    "run_eocs": [
+                      {
+                        "id": "nitori_extendo_arm_check_4",
+                        "condition": { "math": [ "u_val('weight')", "<", "n_val('weight')" ] },
+                        "effect": [ 
+                          { "u_cast_spell": { "id": "nitori_extendo_arm_self_pull" }, "loc": { "global_val": "var_extendo_arm_loc" } },
+                          { "u_message": "GGG", "type": "mixed" }
+                        ],
+                        "false_effect": [ 
+                          { "math": [ "u_val('mana')", "+=", "75" ] },
+                          { "u_message": "HHH", "type": "mixed" }
+                        ]
+                      }
+                    ]
+                  },
+                  { "u_message": "III", "type": "mixed" }
+                ]
+              } 
+            ],
+            "false_eocs": [ 
+              {
+                "id": "nitori_extendo_arm_fail",
+                "effect": [ 
+                  { "math": [ "u_val('mana')", "+=", "75" ] },
+                  { "u_message": "JJJ", "type": "mixed" }
+                ]
+              }
+            ]
+          }
+        ],
+        "else": [
+          { "math": [ "u_val('mana')", "+=", "75" ] },
+          { "u_message": "Canceled" }
+        ]
+      }
+    ],
+    "//WIP": "It's not pulling monsters",
+    "//WIP2": "Add NPC pull after fixing the monsters"
+  },
+  {
     "id": "nitori_opticalcamouflage_eoc",
     "type": "effect_on_condition",
     "effect": [
@@ -1229,94 +1630,6 @@
     "effect": [ { "u_cast_spell": { "id": "nitori_toolswing_eoc2" }, "targeted": true } ],
     "false_effect": { "u_cast_spell": { "id": "nitori_toolswing_eoc3" }, "targeted": true }
   },
-  
-  
-  
-  
-  {
-    "id": "nitori_transformate_eoc",
-    "type": "effect_on_condition",
-    "effect": [
-      { "queue_eoc_with": "nitori_transformate_2", "variables": { "WIP1": "WIP2" }, "time_in_future": "3 s" }
-    ]
-  },
-  {
-    "id": "nitori_transformate_2",
-    "type": "effect_on_condition",
-    "effect": [
-      {
-        "u_run_inv_eocs": "all",
-        "search_data": [ { "flags": [ "NITORI_RESOURCE_FLAG" ] } ],
-        "true_eocs": [
-          {
-            "id": "nitori_transformate_dialog",
-            "effect": [
-              { "open_dialogue": { "topic": "TALK_TRANSFORMATE" } }
-            ]
-          }
-        ],
-        "false_eocs": [ 
-          {
-            "id": "transformate_no",
-            "effect": [ { "u_message": "You don't have human scrap with you.", "type": "mixed" } ]
-          }
-        ]
-      }
-    ],
-    "//": "This is a modified version of iku_batteryrestore_eoc ",
-    "//note": " "
-  },
-  {
-    "id": "TALK_TRANSFORMATE",
-    "type": "talk_topic",
-    "dynamic_line": "Transformate how much human scrap?",
-    "responses": [
-      { 
-        "text": "1 piece (default)", 
-        "effect": [ 
-          { "math": [ "u_var_kappascrap_transform", "=", "0" ] },
-          { "math": [ "u_var_kappascrap_transform", "=", "1" ] },
-          { "run_eocs": "nitori_transformate_kappascrap" }
-        ], 
-        "topic": "TALK_DONE" 
-      },
-      { 
-        "text": "More...", 
-        "effect": [ 
-          { "math": [ "u_var_kappascrap_transform", "=", "0" ] },
-          { "math": [ "u_var_kappascrap_transform", "=", "num_input( 1, 'How much human scrap?')" ] },
-          { "run_eoc_with": "nitori_transformate_kappascrap", "variables": { "scrap_id": "var_TEST" } } 
-        ], 
-        "topic": "TALK_DONE" 
-      }
-    ],
-    "//note": "WIP. Missing a way to detect the scrap_id "
-  },
-  {
-    "id": "nitori_transformate_kappascrap",
-    "type": "effect_on_condition",
-    "effect": [
-      {
-        "u_run_inv_eocs": "manual",
-        "search_data": [ { "flags": [ "NITORI_RESOURCE_FLAG" ] } ],
-        "true_eocs": [
-          {
-            "id": "nitori_transformate_kappascrap2",
-            "effect": [
-              { "u_consume_item": "scrap_id", "count": { "math": [ "u_var_kappascrap_transform" ] } },
-              { "math": [ "u_var_kappascrap", "+=", "u_var_kappascrap_transform" ] },
-              { "u_message": "Transformed <u_val:u_var_kappascrap_transform> scrap into kappascrap", "type": "mixed" }
-            ]
-          }
-        ]
-      }
-    ],
-    "//": "Update with u_has_items_sum "
-  },
-
-
-
-
   {
     "id": "nitori_weathermissile_eoc",
     "type": "effect_on_condition",

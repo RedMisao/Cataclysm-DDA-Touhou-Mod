@@ -113,6 +113,17 @@
     "//": "This automatically sets the vars each time Kaenbyou opens the 'cast spell' window"
   },
   {
+    "id": "kasen_opens_spellbook_eoc",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "opens_spellbook",
+    "condition": { "u_has_trait": "PROF_KASEN" },
+    "effect": [
+      { "math": [ "var_kasen_pet_dmg", "=", "( (max( u_skill('dodge'), u_skill('speech') ) ) * 1.8 + ( u_skill('dodge') ) * 1.8 + 23.4 )" ] }
+    ],
+    "//": "This automatically sets the vars each time Kaenbyou opens the 'cast spell' window"
+  },
+  {
     "id": "kokoro_opens_spellbook_eoc",
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
