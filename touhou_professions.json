@@ -204,7 +204,7 @@
     "id": "kasen_ibaraki",
     "type": "profession",
     "name": "One-Armed Horned Hermit",
-    "description": "WIP",
+    "description": "At first, you thought it was some sort of prank or plot coming from her, to get you involved in the next incident.  Curiosity caused you to go check for yourself, and just when you crossed the second Barrier, you realized something was wrong.  It's just you now.",
     "points": 4,
     "proficiencies": [ "prof_food_prep" ],
     "skills": [
@@ -518,7 +518,7 @@
     "id": "seiga_kaku",
     "type": "profession",
     "name": "Wicked Hermit",
-    "description": "You're a wicked, amoral hermit with the ability to pass through walls and enslave the undead.  You never really cared about anyone else, only seeing fit to manipulate them for your own ends. Surviving the cataclysm should be… interesting.",
+    "description": "You're a wicked, amoral hermit with the ability to pass through walls and enslave the undead.  You never really cared about anyone else, only seeing fit to manipulate them for your own ends. Surviving the Cataclysm should be… interesting.",
     "points": 4,
     "proficiencies": [ "prof_intro_biology", "prof_intro_chemistry", "prof_lockpicking", "prof_pharmaceutical", "prof_physiology" ],
     "skills": [
@@ -609,7 +609,7 @@
     "id": "utsuho_reiuji",
     "type": "profession",
     "name": "Subterranean sun",
-    "description": "Resuming your duties after lunch, you master asked you to go look for Orin, and she was indeed missing again.  You went to the surface, noticing the friendly cave spider wasn't at her usual spot, maybe both went together!  You know she likes to go nap at the Shrine, so you went… to the wrong one, and noticing this was no mountain, nothing close.  Looking back, you saw no \"back\".  You're aware you can get lost sometimes, but this is too much even for yourself.  Now you have to find Orin, find the Tsuchigumo, and return.",
+    "description": "Resuming your duties after lunch, you master asked you to go look for Orin, and she was indeed missing again.  You went to the surface, noticing the friendly cave spider wasn't at her usual spot, maybe both went together!  You know she likes to go nap at the Shrine, so you went… to the wrong one.  Noticing there was no mountain, nothing close.  Looking back, you saw no \"back\".  You're aware you can get lost sometimes, but this is too much even for yourself.  Now you have to find Orin, find the Tsuchigumo, and return.",
     "points": 4,
     "skills": [ 
       { "level": 3, "name": "bashing" }, 
@@ -648,7 +648,7 @@
     "id": "yamame_kurodani",
     "type": "profession",
     "name": "Friendly Youkai of the Cave",
-    "description": "It was sales day at the nearby market, so you left home at the entrance to try that new \"coffee\" product, perhaps share it at the weekly danmaku exhibitions, or at the hotsprings.  However, seems you somehow lost yourself on the way back, not recognizing landmarks, and not meeting anyone to ask about it.",
+    "description": "It was sales day at the nearby market, so you left home at the entrance to try that new \"coffee\" product, perhaps share it at the weekly danmaku exhibitions, or at the hotsprings.  However, you somehow lost yourself on the way back, not recognizing any landmarks.",
     "points": 4,
     "skills": [
       { "level": 3, "name": "dodge" },
