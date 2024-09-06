@@ -1,19 +1,174 @@
 [
   {
+    "id": "blood",
+    "type": "material",
+    "name": "Blood",
+    "copy-from": "blood",
+    "vitamins": [ [ "impurity", 1 ] ]
+  },
+  {
+    "id": "bone",
+    "type": "material",
+    "name": "Bone",
+    "copy-from": "bone",
+    "vitamins": [ [ "impurity", 1 ] ]
+  },
+  {
+    "id": "cheese",
+    "type": "material",
+    "name": "Cheese",
+    "copy-from": "cheese",
+    "vitamins": [ [ "impurity", 0.5 ] ]
+  },
+  {
+    "id": "cured_meat",
+    "type": "material",
+    "name": "Cured Meat",
+    "copy-from": "cured_meat",
+    "vitamins": [ [ "impurity", 1 ] ]
+  },
+  {
+    "id": "egg",
+    "type": "material",
+    "name": "Egg",
+    "copy-from": "egg",
+    "vitamins": [ [ "impurity", 0.66 ] ]
+  },
+  {
+    "id": "flesh",
+    "type": "material",
+    "name": "Flesh",
+    "copy-from": "flesh",
+    "vitamins": [ [ "impurity", 1 ] ]
+  },
+  {
+    "id": "fruit",
+    "type": "material",
+    "name": "Fruit Matter",
+    "copy-from": "fruit",
+    "vitamins": [ [ "impurity", 0.1 ] ]
+  },
+  {
     "id": "hblood",
     "type": "material",
     "name": "Human Blood",
-    "copy-from": "blood",
-    "vitamins": [ [ "calcium", 0.1 ], [ "iron", 1.3 ], [ "hblood_vitamin", 26 ] ],
-    "//": "Only adds hblood_vitamin as x20 of iron"
+    "copy-from": "hblood",
+    "vitamins": [ [ "hblood_vitamin", 26 ], [ "impurity", 1 ] ],
+    "//": "Adds hblood_vitamin as x20 of iron, and impurity"
   },
   {
     "id": "hflesh",
     "type": "material",
     "name": "Human Flesh",
     "copy-from": "hflesh",
-    "vitamins": [ [ "calcium", 0.1 ], [ "iron", 1.3 ], [ "hblood_vitamin", 13 ] ],
-    "//": "Adds hblood_vitamin as x10 of iron"
+    "vitamins": [ [ "hblood_vitamin", 13 ], [ "impurity", 1 ] ],
+    "//": "Adds hblood_vitamin as x20 of iron, and impurity"
+  },
+  {
+    "id": "honey",
+    "type": "material",
+    "name": "Honey",
+    "copy-from": "honey",
+    "vitamins": [ [ "impurity", 0.1 ] ]
+  },
+  {
+    "id": "ice_cream",
+    "type": "material",
+    "name": "Ice Cream",
+    "copy-from": "ice_cream",
+    "vitamins": [ [ "impurity", 0.5 ] ]
+  },
+  {
+    "id": "iflesh",
+    "type": "material",
+    "name": "Insect Flesh",
+    "copy-from": "iflesh",
+    "vitamins": [ [ "impurity", 1 ] ]
+  },
+  {
+    "id": "milk",
+    "type": "material",
+    "name": "Dairy",
+    "copy-from": "milk",
+    "vitamins": [ [ "impurity", 0.5 ] ]
+  },
+  {
+    "id": "mushroom",
+    "type": "material",
+    "name": "Mushroom",
+    "copy-from": "mushroom",
+    "vitamins": [ [ "impurity", 0.2 ] ],
+    "//": "Did you know fungi are closer to animals than to plants?"
+  },
+  {
+    "id": "veggy",
+    "type": "material",
+    "name": "Vegetable Matter",
+    "copy-from": "veggy",
+    "vitamins": [ [ "impurity", 0.1 ] ]
+  },
+  {
+    "id": "veggy_heaven",
+    "type": "material",
+    "name": "Vegetable Matter",
+    "copy-from": "veggy",
+    "vitamins": [ [ "impurity", 0 ] ]
+  },
+  {
+    "id": "bean",
+    "type": "material",
+    "name": "Bean",
+    "copy-from": "bean",
+    "vitamins": [ [ "impurity", 0.1 ] ]
+  },
+  {
+    "id": "dried_vegetable",
+    "type": "material",
+    "name": "Dried Vegetable",
+    "copy-from": "dried_vegetable",
+    "vitamins": [ [ "impurity", 0.1 ] ]
+  },
+  {
+    "id": "garlic",
+    "type": "material",
+    "name": "Garlic",
+    "copy-from": "garlic",
+    "vitamins": [ [ "impurity", 0.1 ] ]
+  },
+  {
+    "id": "nut",
+    "type": "material",
+    "name": "Nut",
+    "copy-from": "nut",
+    "vitamins": [ [ "impurity", 0.1 ] ]
+  },
+  {
+    "id": "tomato",
+    "type": "material",
+    "name": "Tomato",
+    "copy-from": "tomato",
+    "vitamins": [ [ "impurity", 0.1 ] ]
+  },
+  {
+    "id": "wheat",
+    "type": "material",
+    "name": "Wheat",
+    "copy-from": "wheat",
+    "vitamins": [ [ "impurity", 0.1 ] ]
+  },
+  {
+    "id": "water",
+    "type": "material",
+    "name": "Water",
+    "copy-from": "water",
+    "vitamins": [ [ "impurity", 0.01 ] ]
+  },
+  {
+    "id": "processed_food",
+    "type": "material",
+    "name": "Processed Food",
+    "copy-from": "processed_food",
+    "vitamins": [ [ "impurity", 0.5 ] ]
   },
   {
     "id": "hcorpse",
@@ -56,7 +211,7 @@
     "specific_heat_solid": 1.2,
     "latent_heat": 334,
     "soft": true,
-    "resist": { "bash": 1, "cut": 1, "bullet": 1, "acid": 3, "heat": 2000 },
+    "resist": { "bash": 1, "cut": 1, "stab": 1, "bullet": 1, "acid": 3, "biological": 0, "cold": 0, "heat": 2000, "electric": 0, "soul": 0 },
     "chip_resist": 6,
     "wind_resist": 70,
     "breathability": "AVERAGE",
@@ -76,7 +231,7 @@
     "specific_heat_solid": 1.2,
     "latent_heat": 334,
     "soft": true,
-    "resist": { "bash": 1, "cut": 1, "bullet": 1, "acid": 3, "heat": 200 },
+    "resist": { "bash": 1, "cut": 1, "stab": 1, "bullet": 1, "acid": 3, "biological": 0, "cold": 0, "heat": 200, "electric": 0, "soul": 0 },
     "chip_resist": 6,
     "wind_resist": 70,
     "breathability": "AVERAGE",
@@ -98,7 +253,7 @@
     "specific_heat_solid": 1.5,
     "latent_heat": 334,
     "soft": true,
-    "resist": { "bash": 1, "cut": 3, "bullet": 2, "acid": 4, "heat": 200 },
+    "resist": { "bash": 1, "cut": 3, "stab": 1, "bullet": 2, "acid": 4, "biological": 0, "cold": 0, "heat": 200, "electric": 0, "soul": 0 },
     "chip_resist": 10,
     "wind_resist": 90,
     "breathability": "POOR",
@@ -120,7 +275,7 @@
     "specific_heat_solid": 0.25,
     "latent_heat": 250,
     "soft": true,
-    "resist": { "bash": 4, "cut": 4, "bullet": 8, "acid": 3, "heat": 2, "electric": 3 },
+    "resist": { "bash": 4, "cut": 4, "stab": 2, "bullet": 8, "acid": 3, "biological": 0, "cold": 2, "heat": 2, "electric": 2, "soul": 0 },
     "chip_resist": 10,
     "wind_resist": 70,
     "breathability": "AVERAGE",
@@ -146,7 +301,7 @@
     "specific_heat_solid": 1.5,
     "latent_heat": 273,
     "soft": true,
-    "resist": { "bash": 4, "cut": 4, "bullet": 12, "acid": 4, "heat": 2, "electric": 4 },
+    "resist": { "bash": 4, "cut": 4, "stab": 2, "bullet": 12, "acid": 4, "biological": 0, "cold": 2, "heat": 2, "electric": 4, "soul": 0 },
     "chip_resist": 12,
     "wind_resist": 90,
     "breathability": "POOR",
@@ -171,7 +326,7 @@
     "specific_heat_solid": 2.108,
     "latent_heat": 334,
     "edible": false,
-    "resist": { "bash": 0, "cut": 0, "bullet": 0, "acid": 0, "heat": 100 },
+    "resist": { "bash": 0, "cut": 0, "stab": 0, "bullet": 0, "acid": 0, "biological": 0, "cold": 0, "heat": 0, "electric": 0, "soul": 0 },
     "chip_resist": 100,
     "conductive": false,
     "dmg_adj": [ "sullied", "stained", "murky", "polluted" ],
@@ -191,7 +346,7 @@
     "specific_heat_liquid": 1,
     "specific_heat_solid": 1,
     "latent_heat": 334,
-    "resist": { "bash": 0, "cut": 0, "bullet": 0, "acid": 0, "heat": 0, "electric": 4 },
+    "resist": { "bash": 0, "cut": 0, "stab": 0, "bullet": 0, "acid": 0, "biological": 0, "cold": 0, "heat": 0, "electric": 100, "soul": 0 },
     "chip_resist": 100,
     "wind_resist": 100,
     "breathability": "SECOND_SKIN",
@@ -209,7 +364,7 @@
     "specific_heat_solid": 8,
     "latent_heat": 334,
     "edible": false,
-    "resist": { "bash": 0, "cut": 0, "bullet": 0, "acid": 0, "cold": 100, "heat": 100 },
+    "resist": { "bash": 0, "cut": 0, "stab": 0, "bullet": 0, "acid": 0, "biological": 0, "cold": 100, "heat": 100, "electric": 0, "soul": 0 },
     "chip_resist": 100,
     "dmg_adj": [ "sullied", "stained", "murky", "polluted" ],
     "bash_dmg_verb": "impacted",
@@ -230,7 +385,7 @@
     "specific_heat_liquid": 1,
     "specific_heat_solid": 1,
     "latent_heat": 334,
-    "resist": { "bash": 0, "cut": 0, "bullet": 0, "acid": 0, "heat": 100 },
+    "resist": { "bash": 0, "cut": 0, "stab": 0, "bullet": 0, "acid": 0, "biological": 0, "cold": 0, "heat": 0, "electric": 0, "soul": 0 },
     "chip_resist": 1000,
     "wind_resist": 0,
     "breathability": "GOOD",
@@ -247,7 +402,7 @@
     "specific_heat_liquid": 1,
     "specific_heat_solid": 1,
     "latent_heat": 334,
-    "resist": { "bash": 2, "cut": 2, "bullet": 0, "acid": 0, "heat": 0 },
+    "resist": { "bash": 0, "cut": 0, "stab": 0, "bullet": 0, "acid": 0, "biological": 0, "cold": 0, "heat": 0, "electric": 0, "soul": 0 },
     "chip_resist": 100,
     "wind_resist": 100,
     "breathability": "SECOND_SKIN",
@@ -280,7 +435,7 @@
       "energy": "1521500 kJ",
       "explosion_data": { "chance_hot": 20, "chance_cold": 1000, "factor": 0.2, "fiery": false, "size_factor": 0.1 }
     },
-    "resist": { "bash": 0, "cut": 0, "acid": 0, "heat": 0, "bullet": 0 },
+    "resist": { "bash": 0, "cut": 0, "stab": 0, "bullet": 0, "acid": 0, "biological": 0, "cold": 0, "heat": 0, "electric": 0, "soul": 0 },
     "//": "Based on hflesh + glass + hydrocarbons + diesel ",
     "//2": "1 soulshard = 10 mL and 5 g. Combining 4 = 40 mL and 20 g, which is arbitrarily as good as 1 L of diesel (850 g, 35800 kJ), energy-wise"
   }

@@ -3,7 +3,9 @@
     "id": "GHOST_TOUHOU",
     "type": "SPECIES",
     "description": "a ghost",
-    "flags": [ "SOULDMG_EXTRA" ]
+    "anger_triggers": [ "HURT" ],
+    "flags": [ "SOULDMG_EXTRA" ],
+    "//": "These are human-type phantoms"
   },
   {
     "id": "JIANGSHI_TOUHOU",
@@ -16,49 +18,50 @@
     "id": "ONI_TOUHOU",
     "type": "SPECIES",
     "description": "an oni",
-    "anger_triggers": [ "HURT", "PLAYER_CLOSE" ],
+    "anger_triggers": [ "HURT" ],
     "bleeds": "fd_blood"
   },
   {
     "id": "PHANTOM_TOUHOU",
     "type": "SPECIES",
     "description": "a phantom",
-    "anger_triggers": [ "HURT", "STALK" ],
-    "flags": [ "SOULDMG_EXTRA" ]
+    "anger_triggers": [ "HURT" ],
+    "flags": [ "SOULDMG_EXTRA" ],
+    "//": "These are blob-type ghosts"
   },
   {
     "id": "TSUKUMOGAMI_TOUHOU",
     "type": "SPECIES",
     "description": "a reanimated object",
-    "anger_triggers": [ "HURT", "STALK" ],
+    "anger_triggers": [ "HURT" ],
     "flags": [ "SOULDMG_EXTRA" ]
   },
   {
     "id": "YOUKAI_BEAST_TOUHOU",
     "type": "SPECIES",
     "description": "a youkai",
+    "anger_triggers": [ "HURT" ],
     "flags": [ "SOULDMG_EXTRA" ]
   },
   {
     "id": "YOUKAI_FEMALE_TOUHOU",
     "type": "SPECIES",
     "description": "a female apparition",
-    "anger_triggers": [ "HURT", "PLAYER_CLOSE", "PLAYER_NEAR_BABY", "PLAYER_WEAK" ],
-    "flags": [ "SOULDMG_EXTRA" ],
-    "//": "Just YOUKAI_HOSTILE_TOUHOU with a different description"
+    "anger_triggers": [ "HURT", "PLAYER_NEAR_BABY" ],
+    "flags": [ "SOULDMG_EXTRA" ]
   },
   {
     "id": "YOUKAI_HOSTILE_TOUHOU",
     "type": "SPECIES",
     "description": "a youkai",
-    "anger_triggers": [ "HURT", "PLAYER_CLOSE", "PLAYER_NEAR_BABY", "PLAYER_WEAK" ],
+    "anger_triggers": [ "HURT", "PLAYER_CLOSE", "PLAYER_WEAK" ],
     "flags": [ "SOULDMG_EXTRA" ]
   },
   {
     "id": "YOUKAI_NEUTRAL_TOUHOU",
     "type": "SPECIES",
     "description": "a youkai",
-    "anger_triggers": [ "HURT", "PLAYER_NEAR_BABY" ],
+    "anger_triggers": [ "HURT" ],
     "flags": [ "SOULDMG_EXTRA" ]
   },
   {
@@ -74,7 +77,6 @@
     "type": "SPECIES",
     "description": "a skinwalker",
     "anger_triggers": [ "HURT", "PLAYER_CLOSE", "PLAYER_NEAR_BABY", "PLAYER_WEAK" ],
-    "flags": [ "SOULDMG_EXTRA" ],
-    "//": "Just YOUKAI_HOSTILE_TOUHOU with a different description"
+    "flags": [ "SOULDMG_EXTRA" ]
   }
 ]

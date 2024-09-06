@@ -534,14 +534,46 @@
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
-    "vitamins_absorb_multi": [
-      [ "cured_meat", [ [ "calcium", 0.5 ], [ "iron", 0.5 ], [ "vitA", 0.5 ], [ "vitB", 0.5 ], [ "vitC", 0.5 ] ] ],
-      [ "flesh", [ [ "calcium", 0.5 ], [ "iron", 0.5 ], [ "vitA", 0.5 ], [ "vitB", 0.5 ], [ "vitC", 0.5 ] ] ],
+    "triggers": [
       [
-        "processed_food",
-        [ [ "calcium", 0.85 ], [ "iron", 0.85 ], [ "vitA", 0.85 ], [ "vitB", 0.85 ], [ "vitC", 0.85 ] ]
-      ],
-      [ "veggy", [ [ "calcium", 0.9 ], [ "iron", 0.9 ], [ "vitA", 0.9 ], [ "vitB", 0.9 ], [ "vitC", 0.9 ] ] ]
+        {
+          "condition": {
+            "and": [
+              { "u_has_trait": "IMPURE" },
+              { "math": [ "u_vitamin('impurity')", "<=", "503" ] }
+            ]
+          }
+        }
+      ]
+    ],
+    "vitamins_absorb_multi": [
+      [ "cured_meat", [ [ "calcium", 0.1 ], [ "iron", 0.1 ], [ "vitA", 0.1 ], [ "vitB", 0.1 ], [ "vitC", 0.1 ] ] ],
+      [ "flesh", [ [ "calcium", 0.1 ], [ "iron", 0.1 ], [ "vitA", 0.1 ], [ "vitB", 0.1 ], [ "vitC", 0.1 ] ] ],
+      [ "processed_food", [ [ "calcium", 0.65 ], [ "iron", 0.65 ], [ "vitA", 0.65 ], [ "vitB", 0.65 ], [ "vitC", 0.65 ] ] ],
+      [ "veggy", [ [ "calcium", 0.8 ], [ "iron", 0.8 ], [ "vitA", 0.8 ], [ "vitB", 0.8 ], [ "vitC", 0.8 ] ] ]
+    ]
+  },
+  {
+    "id": "IMPURE",
+    "type": "mutation",
+    "name": { "str": "Impure" },
+    "description": "Well, that's it.  You've gained impurity.  The good news is that Earthly food doesn't feel as… empty anymore.",
+    "points": 0,
+    "profession": false,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": true,
+    "triggers": [
+      [
+        {
+          "condition": {
+            "and": [
+              { "u_has_trait": "LUNARDIET" },
+              { "math": [ "u_vitamin('impurity')", ">", "504" ] }
+            ]
+          }
+        }
+      ]
     ]
   },
   {
