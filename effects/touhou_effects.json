@@ -169,7 +169,8 @@
             "effects": [ 
               { "spell_effects": [ { "id": "yamame_disease_icypyrexia2_2" } ], "frequency": "1 s" }
           ] 
-        }
+        },
+        "mutations": [ "YAMAME_COUNTER_MUT" ]
       }
     ]
   },
@@ -241,7 +242,8 @@
             "effects": [ 
               { "spell_effects": [ { "id": "yamame_disease_scarletplague2_2" } ], "frequency": "1 s" }
           ] 
-        }
+        },
+        "mutations": [ "YAMAME_COUNTER_MUT" ]
       }
     ]
   },
@@ -294,7 +296,8 @@
             "effects": [ 
               { "spell_effects": [ { "id": "yamame_disease_volatilerot2_2" } ], "frequency": "1 s" }
           ] 
-        }
+        },
+        "mutations": [ "YAMAME_COUNTER_MUT" ]
       }
     ]
   },

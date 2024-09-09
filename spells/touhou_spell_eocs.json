@@ -2954,6 +2954,16 @@
     ]
   },
   {
+    "id": "yamame_miasmaburst_stored_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_miasmaburst_dmg", ">", "0" ] },
+    "effect": [ 
+      { "math": [ "var_miasmaburst_dmg", "-=", "2" ] },
+      { "queue_eocs": [ "yamame_miasmaburst_stored_eoc"  ], "time_in_future": "7 s" }
+    ],
+    "//": "Reduces var_miasmaburst_dmg every 7 s"
+  },
+  {
     "id": "yamame_miasmaepidemic_eoc",
     "type": "effect_on_condition",
     "effect": [

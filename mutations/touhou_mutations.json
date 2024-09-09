@@ -68,7 +68,16 @@
           { "value": "KNOCKDOWN_RESIST", "add": 100 } 
         ] 
       } 
-    ]
+    ],
+    "processed_eocs": [ 
+      {
+        "id": "celestial_stance_check",
+        "condition": { "not": { "u_using_martial_art": "style_celestial_brawling_tenko" } },
+        "deactivate_condition": { "u_using_martial_art": "style_celestial_brawling_tenko" },
+        "effect": [ { "u_lose_trait": "celestial_stance_mut" } ]
+      }
+    ],
+    "//": "Should always deactivate if Tenko is not using her custom MA. Also I'm not sure the deactivate_condition is actually working, it's there to prevent this run all the time"
   },
   {
     "id": "damnedrope_strength_mut",
@@ -539,8 +548,8 @@
         {
           "condition": {
             "and": [
-              { "u_has_trait": "IMPURE" },
-              { "math": [ "u_vitamin('impurity')", "<=", "503" ] }
+              { "u_has_trait": "LUNARDIET" },
+              { "math": [ "u_vitamin('impurity')", ">", "504" ] }
             ]
           }
         }
@@ -551,7 +560,8 @@
       [ "flesh", [ [ "calcium", 0.1 ], [ "iron", 0.1 ], [ "vitA", 0.1 ], [ "vitB", 0.1 ], [ "vitC", 0.1 ] ] ],
       [ "processed_food", [ [ "calcium", 0.65 ], [ "iron", 0.65 ], [ "vitA", 0.65 ], [ "vitB", 0.65 ], [ "vitC", 0.65 ] ] ],
       [ "veggy", [ [ "calcium", 0.8 ], [ "iron", 0.8 ], [ "vitA", 0.8 ], [ "vitB", 0.8 ], [ "vitC", 0.8 ] ] ]
-    ]
+    ],
+    "transform": { "target": "IMPURE" }
   },
   {
     "id": "IMPURE",
@@ -568,13 +578,14 @@
         {
           "condition": {
             "and": [
-              { "u_has_trait": "LUNARDIET" },
-              { "math": [ "u_vitamin('impurity')", ">", "504" ] }
+              { "u_has_trait": "IMPURE" },
+              { "math": [ "u_vitamin('impurity')", "<=", "503" ] }
             ]
           }
         }
       ]
-    ]
+    ],
+    "transform": { "target": "LUNARDIET" }
   },
   {
     "id": "MENREIKI_SPECIES",
@@ -805,6 +816,26 @@
     "spells_learned": [ [ "fly_downwards", 1 ], [ "fly_upwards", 1 ] ],
     "transform": { "target": "VAMPIRE_BAT_REMI", "active": false, "moves": 100 },
     "extend": { "flags": [ "SMALL" ] }
+  },
+  {
+    "id": "YAMAME_COUNTER_MUT",
+    "type": "mutation",
+    "name": { "str": "" },
+    "description": "",
+    "points": 0,
+    "player_display": false,
+    "purifiable": false,
+    "valid": false,
+    "processed_eocs": [ 
+      {
+        "id": "YAMAME_COUNTER_MUT_eoc",
+        "effect": [
+          { "u_lose_trait": "YAMAME_COUNTER_MUT" },
+          { "queue_eocs": [ "yamame_miasmaburst_stored_eoc" ], "time_in_future": "30 s" }
+        ]
+      }
+    ],
+    "//": "Dummy mutation, used to queue the EOC"
   },
   {
     "id": "YOUKAI_SPECIES",
@@ -1144,6 +1175,18 @@
     "starting_trait": false,
     "valid": false,
     "initial_ma_styles": [ "style_kokoro" ],
+    "triggers": [
+      [
+        {
+          "condition": {
+            "and": [
+              { "u_has_trait": "PROF_KOKORO" },
+              { "not": { "math": [ "u_val('morale')", "==", "0" ] } }
+            ]
+          }
+        }
+      ]
+    ],
     "enchantments": [ 
       { 
         "condition": "ALWAYS", 
@@ -1152,7 +1195,28 @@
         ]
       } 
     ],
+    "transform": { "target": "PROF_KOKORO_morale" },
     "cancels": [ "JEKYLL", "SEASONAL_AFFECTIVE", "GOODCARDIO", "GOODCARDIO2", "OPTIMISTIC", "BADKNEES", "REALLYBADKNEES", "BADCARDIO", "BADTEMPER", "MOODSWINGS" ]
+  },
+  {
+    "id": "PROF_KOKORO_morale",
+    "type": "mutation",
+    "name": { "str": "Emotionless and expressive Menreiki" },
+    "copy-from": "PROF_KOKORO",
+    "triggers": [
+      [
+        {
+          "condition": {
+            "and": [
+              { "u_has_trait": "PROF_KOKORO_morale" },
+              { "math": [ "u_val('morale')", "==", "0" ] }
+            ]
+          }
+        }
+      ]
+    ],
+    "transform": { "target": "PROF_KOKORO" },
+    "processed_eocs": [ "kokoro_morale_eoc" ]
   },
   {
     "id": "PROF_MEILING",

@@ -1,17 +1,17 @@
 [
   {
-    "type": "snippet",
     "category": "wicked_field_dress_msg",
+    "type": "snippet",
     "text": [ "You notice some strange organs, harvestable via careful dissection." ]
   },
   {
-    "type": "snippet",
     "category": "wicked_butcher_msg",
+    "type": "snippet",
     "text": [ "Butchering wildly ruins the content of useful organs." ]
   },
   {
-    "type": "snippet",
     "category": "wicked_dissect_failed",
+    "type": "snippet",
     "text": [ "You can't recover the useful bits." ]
   }
 ]

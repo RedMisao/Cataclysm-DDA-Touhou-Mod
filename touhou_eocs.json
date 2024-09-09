@@ -201,22 +201,6 @@
     "//": "This automatically sets the vars each time Youmu opens the 'cast spell' window"
   },
   {
-    "id": "celestial_stance_check",
-    "type": "effect_on_condition",
-    "recurrence": "1 s",
-    "condition": {
-      "and": [
-        { "u_has_trait": "celestial_stance_mut" },
-        { "not": { "u_using_martial_art": "style_celestial_brawling_tenko" } }
-      ]
-    },
-    "deactivate_condition": { "not": { "u_has_trait": "celestial_stance_mut" } },
-    "effect": [ 
-      { "u_lose_trait": "celestial_stance_mut" }
-    ],
-    "//": "This removes the knockback and knockdown immunity of Tenko's MA if she's not using it"
-  },
-  {
     "id": "kaenbyou_vspossess_kill_monster_eoc",
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
@@ -342,14 +326,12 @@
   {
     "id": "kokoro_morale_eoc",
     "type": "effect_on_condition",
-    "recurrence": "1 s",
     "condition": {
       "and": [
-        { "u_has_trait": "PROF_KOKORO" },
+        { "u_has_trait": "PROF_KOKORO_morale" },
         { "not": { "math": [ "u_val('morale')", "==", "0" ] } }
       ]
     },
-    "deactivate_condition": { "not": { "u_has_trait": "PROF_KOKORO" } },
     "effect": [
       {
         "run_eocs": [
@@ -459,6 +441,10 @@
       { "u_lose_morale": "morale_impossible_shape" },
       { "u_lose_morale": "morale_afs_drugs" }
     ],
+    "false_effect": [ 
+      { "u_add_trait": "PROF_KOKORO" },
+      { "u_lose_trait": "PROF_KOKORO_morale" }
+    ],
     "//": "Turns morale into mana, only for Kokoro, deactivates if her morale is zero, also removes ALL morale_type , except for morale_perm_debug ",
     "//2": "Works good enough to remove endpoint morale like 'protein rations', but for continous stuff like 'wet' it keeps removing as long as she's wet"
   },
@@ -515,7 +501,8 @@
       { "math": [ "u_val('stamina')", "=", "8500" ] },
       { "math": [ "u_pain()", "=", "0" ] },
       { "u_add_effect": "mokou_resurrectpain", "duration": "168 hours" },
-      { "u_cast_spell": { "id": "mokou_resurrectionphoenix" }, "targeted": false }
+      { "u_cast_spell": { "id": "mokou_resurrectionphoenix" }, "targeted": false },
+      { "run_eocs": [ "mokou_resurrect_counter_eoc" ] }
     ],
     "//": "This EOC enables PROF_MOKOU to resurrect/revive. Every time Mokou dies she gets var_mokoudeath, which lasts for 7 days and decreases slowly over time. Every time she revives, the value is checked vs a random number, so the more she dies in a short time the harder it is for her to not give up for real",
     "//2": "ANY trait that revives the character should be lost every time Mokou dies. So far, it's just PORTAL_RESURRECTION "
@@ -523,16 +510,15 @@
   {
     "id": "mokou_resurrect_counter_eoc",
     "type": "effect_on_condition",
-    "recurrence": "1 hour",
     "condition": {
       "and": [
         { "u_has_trait": "PROF_MOKOU" },
         { "math": [ "var_mokoudeath", ">", "0" ] }
       ]
     },
-    "deactivate_condition": { "math": [ "var_mokoudeath", "<=", "0" ] },
     "effect": [ 
-      { "math": [ "var_mokoudeath", "-=", "1" ] } 
+      { "math": [ "var_mokoudeath", "-=", "1" ] },
+      { "queue_eocs": [ "mokou_resurrect_counter_eoc" ], "time_in_future": "1 h" }
     ],
     "//": "Reduces var_mokoudeath over time"
   },
@@ -951,17 +937,6 @@
     "//": "This checks how much dmg has Remi done, sets the var_HEAL to 66% of that and casts the healing spell",
     "//2": "Optimally, this would heal proportionally to the dmg done, but there's no way to track that without a custom dmg type",
     "//3": "And to track it by custom dmg an ITEM_DAMAGE_X enchant is required"
-  },
-  {
-    "id": "yamame_miasmaburst_stored_eoc",
-    "type": "effect_on_condition",
-    "recurrence": "7 s",
-    "condition": { "math": [ "var_miasmaburst_dmg", ">", "0" ] },
-    "deactivate_condition": { "not": { "u_has_trait": "PROF_YAMAME" } },
-    "effect": [ 
-      { "math": [ "var_miasmaburst_dmg", "-=", "2" ] }
-    ],
-    "//": "Reduces var_miasmaburst_dmg every 7 s"
   },
   {
     "id": "youmu_insightfulsword_hit_eoc",
