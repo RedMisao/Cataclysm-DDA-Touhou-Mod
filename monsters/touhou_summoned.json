@@ -439,6 +439,7 @@
     "morale": 99,
     "dodge": 8,
     "luminance": 1,
+    "path_settings": { "avoid_traps": true, "avoid_dangerous_fields": true },
     "starting_ammo": { "ammo_lunar_small_1_illusionary": 1 },
     "anger_triggers": [ "FRIEND_ATTACKED", "HURT" ],
     "special_attacks": [
@@ -472,7 +473,6 @@
       "STUN_IMMUNE",
       "WARM"
     ],
-    "path_settings": { "avoid_traps": true, "avoid_dangerous_fields": true },
     "//": "In AoCF they shoot with their fingers, not the gun. May change in the future idk"
   },
   {

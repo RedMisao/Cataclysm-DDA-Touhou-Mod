@@ -98,7 +98,7 @@
       ]
     },
     "effect": [
-      { "u_location_variable": { "global_val": "var_youmu_dash_start_loc" }, "min_radius": 0, "max_radius": 0 },
+      { "u_location_variable": { "global_val": "var_youmu_dash_start_loc" } },
       {
         "if": {
           "message": "Set target", 
@@ -565,7 +565,7 @@
               { 
                 "id": "kaenbyou_corpseexplosion_explode", 
                 "effect": [ 
-                  { "math": [ "var_corpseexplosion_dmg", "=", "( ( ( n_val('weight') / 1000000 ) / 2 ) * 100 * rng( 0.75, 1.25 ) )" ] },
+                  { "math": [ "var_corpseexplosion_dmg", "=", "( ( ( n_weight() / 1000000 ) / 2 ) * 100 * rng( 0.75, 1.25 ) )" ] },
                   "npc_die",
                   { "math": [ "var_corpseexplosion_aoe", "=", "1 + rand(1)" ] },
                   { "u_cast_spell": { "id": "kaenbyou_corpseexplosion2" }, "loc": { "global_val": "var_corpseexplosion_loc" } },
@@ -1659,7 +1659,7 @@
         "run_eocs": [ 
           {
             "id": "nitori_extendo_arm_pulling_1",
-            "condition": { "math": [ "n_val('weight')", ">=", "u_val('weight')" ] },
+            "condition": { "math": [ "n_weight()", ">=", "u_weight()" ] },
             "effect": [ 
               { "u_cast_spell": { "id": "nitori_extendo_arm2" } },
               { "npc_cast_spell": { "id": "nitori_extendo_arm_pull" }, "loc": { "global_val": "var_extendo_arm_creature_loc" } },
@@ -1693,7 +1693,7 @@
         "true_eocs": [ 
           {
             "id": "nitori_extendo_arm_pulling_2",
-            "condition": { "math": [ "u_val('weight')", ">=", "n_val('weight')" ] },
+            "condition": { "math": [ "u_weight()", ">=", "n_weight()" ] },
             "effect": [ 
               { "u_cast_spell": { "id": "nitori_extendo_arm_pull" }, "loc": { "global_val": "var_extendo_arm_loc" } },
               { "u_message": "You pull your target towards you!", "type": "good" },
@@ -2327,7 +2327,7 @@
       }
     ],
     "//": "This iterates a check for a bed or something close enough at the location, then runs either EOC below",
-    "//note": "I'm sure there is another way... but I'm too exhausted as of lately"
+    "//note": "Replace by using u_map_run_eocs (#76994), as mikoto_wings_check_eoc and stuff"
   },
   {
     "id": "seiga_shikaisenritual_bed_found",
@@ -2599,7 +2599,9 @@
     "//IMPORTANT": "There's a 'leak', where toggling the aura OFF cycles one more time and defaults to the false_effect before stopping properly (set debug u_message to each effect and run it ingame to understand)",
     "//IMPORTANT2": "I think this happens with all aura EOCs based on this one",
     "//IMPORTANT3": "My guess is that happens due the queue'd EOC running not being 'cancelled'. The > 0 check is what actually stops the momentum. DO NOT REMOVE BEFORE FINDING A SOLUTION",
-    "//IMPORTANT4": "I tried my best in trying to simplify all the cycle1 - cycle2 based EOCs but couldn't find a solution. Maybe in the future, idk these work as they are"
+    "//IMPORTANT4": "I tried my best in trying to simplify all the cycle1 - cycle2 based EOCs but couldn't find a solution. Maybe in the future, idk these work as they are",
+    "//note": "An updated version stance_ninja_taijutsu_eoc apparently fixes the double stop issue. Apply after 0.H",
+    "//note2": "A further alternative would be to apply the queue at cycle1 instead of cycle2"
   },
   {
     "id": "udonge_waveinsight_cycle1",
@@ -3252,7 +3254,7 @@
                 "run_eocs": [ 
                   {
                     "id": "yamame_damnedrope_pulling_1",
-                    "condition": { "math": [ "( n_val('weight') * 2 )", ">=", "u_val('weight')" ] },
+                    "condition": { "math": [ "( n_weight() * 2 )", ">=", "u_weight()" ] },
                     "effect": [ 
                       { "u_cast_spell": { "id": "yamame_damnedrope3" } },
                       { "npc_cast_spell": { "id": "yamame_damnedrope_pull" }, "loc": { "global_val": "var_damnedrope_creature_loc" } },
@@ -3307,7 +3309,7 @@
                 "run_eocs": [ 
                   {
                     "id": "yamame_damnedrope_pulling_2",
-                    "condition": { "math": [ "( u_val('weight') * 2 )", ">=", "n_val('weight')" ] },
+                    "condition": { "math": [ "( u_weight() * 2 )", ">=", "n_weight()" ] },
                     "effect": [ 
                       { "u_cast_spell": { "id": "yamame_damnedrope_pull" }, "loc": { "global_val": "var_damnedrope_loc" } },
                       { "u_message": "You pull your target towards you!", "type": "good" },

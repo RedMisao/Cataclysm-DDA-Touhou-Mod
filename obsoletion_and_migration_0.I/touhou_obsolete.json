@@ -21,5 +21,14 @@
     "id": "damnedrope_strength_mut",
     "type": "TRAIT_MIGRATION",
     "remove": true
+  },
+  {
+    "id": "kokoro_morale_eoc",
+    "type": "effect_on_condition"
+  },
+  {
+    "id": "PROF_KOKORO_morale",
+    "type": "TRAIT_MIGRATION",
+    "remove": true
   }
 ]

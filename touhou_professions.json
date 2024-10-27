@@ -101,7 +101,7 @@
       { "level": 1, "id": "kokoro_throw_weapon" },
       { "level": 1, "id": "kokoro_unleash_emotion" }
     ],
-    "traits": [ "MENREIKI_SPECIES", "PROF_KOKORO", "SPIRIT_USER", "eye_pink_touhou", "FACIAL_HAIR_NONE", "hair_kokoro" ],
+    "traits": [ "KOKORO_MORALE_1", "MENREIKI_SPECIES", "PROF_KOKORO", "SPIRIT_USER", "eye_pink_touhou", "FACIAL_HAIR_NONE", "hair_kokoro" ],
     "items": {
       "both": {
         "entries": [

@@ -18,7 +18,7 @@
     "loudness": 168,
     "dispersion": 15,
     "range": 100,
-    "recoil": 2600,
+    "recoil": 3144,
     "effects": [ "CASELESS_ROUNDS", "NEVER_MISFIRES" ],
     "//2": "The basis is 77x58a ammo, however delete field doesn't remove the casing"
   },
@@ -40,7 +40,8 @@
     "loudness": 105,
     "dispersion": 35,
     "range": 64,
-    "recoil": 100,
+    "recoil": 483,
+    "//": "Currently 45_acp has recoil of 100, which is too low",
     "effects": [ "CASELESS_ROUNDS", "NEVER_MISFIRES" ],
     "//2": "The basis is 45_acp ammo, however delete field doesn't remove the casing"
   },

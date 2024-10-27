@@ -72,10 +72,19 @@
                 "run_eocs": [
                   {
                     "id": "soul_dmg_bonus_character",
-                    "condition": {
+                    "condition": { 
                       "and": [ 
-                        { "npc_has_flag": "SOULDMG_EXTRA" },
-                        { "math": [ "_total_damage", ">", "0" ] }
+                        { "math": [ "_total_damage", ">", "0" ] }, 
+                        { 
+                          "or": [ 
+                            { "npc_has_flag": "SOULDMG_EXTRA" }, 
+                            { "npc_has_trait": "MENREIKI_SPECIES" }, 
+                            { "npc_has_trait": "OARFISH_SPECIES" }, 
+                            { "npc_has_trait": "YOUKAI_SPECIES" }, 
+                            { "npc_has_trait": "VAMPIRE_SPECIES" }, 
+                            { "npc_has_trait": "YOUKAI_CONSTITUTION" } 
+                          ]
+                        }
                       ]
                     },
                     "effect": [ 

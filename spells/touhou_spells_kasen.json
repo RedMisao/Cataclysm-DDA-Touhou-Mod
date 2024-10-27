@@ -207,7 +207,7 @@
   {
     "id": "kasen_calorieburn",
     "type": "SPELL",
-    "name": { "str": "Calories to mana" },
+    "name": { "str": "Bigu (accelerated)" },
     "description": "Enter a meditative state, burning calories over time to increase your spiritual energy regeneration.  Getting hit while in this state deactivates the effect.",
     "spell_class": "NONE",
     "teachable": false,
@@ -221,7 +221,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC", "CONCENTRATE" ],
-    "//note": "Change name"
+    "//": "Bigu means/implies fasting to purge toxins, slow aging, restore energy balance"
   },
   {
     "id": "kasen_charm",

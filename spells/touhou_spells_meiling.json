@@ -255,7 +255,7 @@
   {
     "id": "meiling_redrelease2",
     "type": "SPELL",
-    "name": { "str": "Red energy release (terrain bash)" },
+    "name": { "str": "Red energy release (bash)" },
     "description": "Bash effect for meiling_redrelease ",
     "spell_class": "NONE",
     "valid_targets": [ "ground", "item" ],

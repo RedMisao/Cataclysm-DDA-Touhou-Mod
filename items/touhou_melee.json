@@ -143,7 +143,7 @@
     "looks_like": "baton",
     "color": "yellow",
     "techniques": [ "WBLOCK_1" ],
-    "use_action": { "type": "transform", "target": "tenshi_jian_extended", "menu_text": "Summon Sword", "msg": "You summon your sword." },
+    "use_action": { "type": "transform", "target": "tenshi_jian_extended", "menu_text": "Summon Sword", "msg": "You summon your sword.", "need_wielding": true },
     "flags": [ "DURABLE_MELEE", "MAGIC_FOCUS", "TRADER_AVOID" ]
   },
   {
@@ -167,7 +167,7 @@
     "color": "red",
     "techniques": [ "WBLOCK_2" ],
     "weapon_category": [ "MEDIUM_SWORDS" ],
-    "use_action": { "menu_text": "Dismiss Sword", "type": "transform", "target": "tenshi_jian", "msg": "You dismiss your sword." },
+    "use_action": { "menu_text": "Dismiss Sword", "type": "transform", "target": "tenshi_jian", "msg": "You dismiss your sword.", "need_wielding": true },
     "flags": [ "DURABLE_MELEE", "LIGHT_16", "MAGIC_FOCUS", "SHEATH_SWORD", "STURDY", "TRADER_AVOID" ]
   },
   {

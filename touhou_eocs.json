@@ -94,7 +94,7 @@
               { "math": [ "var_melee_all_dmg", "=", "n_melee_damage('ALL')" ] },
               { "math": [ "var_melee_phys_dmg", "=", "var_melee_bash_dmg + var_melee_cut_dmg + var_melee_stab_dmg" ] },
               { "math": [ "var_gun_dmg", "=", "n_gun_damage('ALL')" ] },
-              { "math": [ "var_weapon_weight_kg", "=", "( n_val('weight') / 1000000 )" ] }
+              { "math": [ "var_weapon_weight_kg", "=", "( n_weight() / 1000000 )" ] }
             ]
           }
         ]
@@ -331,137 +331,6 @@
     ]
   },
   {
-    "id": "kokoro_morale_eoc",
-    "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "u_has_trait": "PROF_KOKORO_morale" },
-        { "not": { "math": [ "u_val('morale')", "==", "0" ] } }
-      ]
-    },
-    "effect": [
-      {
-        "run_eocs": [
-          {
-            "id": "kokoro_morale_add",
-            "condition": { "math": [ "u_val('morale')", "<", "0" ] },
-            "effect": [
-              { "math": [ "u_val('morale')", "+=", "1" ] },
-              { "math": [ "var_kokoro_instability", "+=", "1" ] },
-              { "math": [ "u_val('mana')", "+=", "2" ] }
-            ]
-          },
-          {
-            "id": "kokoro_morale_remove",
-            "condition": { "math": [ "u_val('morale')", ">", "0" ] },
-            "effect": [
-              { "math": [ "u_val('morale')", "-=", "1" ] },
-              { "math": [ "var_kokoro_instability", "+=", "1" ] },
-              { "math": [ "u_val('mana')", "+=", "2" ] }
-            ]
-          }
-        ]
-      },
-      { "u_lose_morale": "morale_food_good" },
-      { "u_lose_morale": "morale_food_hot" },
-      { "u_lose_morale": "morale_chat" },
-      { "u_lose_morale": "morale_ate_with_table" },
-      { "u_lose_morale": "morale_ate_without_table" },
-      { "u_lose_morale": "morale_music" },
-      { "u_lose_morale": "morale_honey" },
-      { "u_lose_morale": "morale_game" },
-      { "u_lose_morale": "morale_marloss" },
-      { "u_lose_morale": "morale_mutagen" },
-      { "u_lose_morale": "morale_feeling_good" },
-      { "u_lose_morale": "morale_support" },
-      { "u_lose_morale": "morale_photos" },
-      { "u_lose_morale": "morale_craving_nicotine" },
-      { "u_lose_morale": "morale_craving_caffeine" },
-      { "u_lose_morale": "morale_craving_alcohol" },
-      { "u_lose_morale": "morale_craving_opiate" },
-      { "u_lose_morale": "morale_craving_speed" },
-      { "u_lose_morale": "morale_craving_cocaine" },
-      { "u_lose_morale": "morale_craving_crack" },
-      { "u_lose_morale": "morale_craving_mutagen" },
-      { "u_lose_morale": "morale_craving_diazepam" },
-      { "u_lose_morale": "morale_craving_marloss" },
-      { "u_lose_morale": "morale_food_bad" },
-      { "u_lose_morale": "morale_cannibal" },
-      { "u_lose_morale": "morale_demicannibal" },
-      { "u_lose_morale": "morale_vegetarian" },
-      { "u_lose_morale": "morale_antiveggy" },
-      { "u_lose_morale": "morale_meatarian" },
-      { "u_lose_morale": "morale_antimeat" },
-      { "u_lose_morale": "morale_antifruit" },
-      { "u_lose_morale": "morale_lactose" },
-      { "u_lose_morale": "morale_antijunk" },
-      { "u_lose_morale": "morale_antiwheat" },
-      { "u_lose_morale": "morale_sweettooth" },
-      { "u_lose_morale": "morale_no_digest" },
-      { "u_lose_morale": "morale_wet" },
-      { "u_lose_morale": "morale_dried_off" },
-      { "u_lose_morale": "morale_cold" },
-      { "u_lose_morale": "morale_hot" },
-      { "u_lose_morale": "morale_feeling_bad" },
-      { "u_lose_morale": "morale_bad_protein_bar" },
-      { "u_lose_morale": "morale_killed_innocent" },
-      { "u_lose_morale": "morale_killed_friend" },
-      { "u_lose_morale": "morale_killed_monster" },
-      { "u_lose_morale": "morale_mutilate_corpse" },
-      { "u_lose_morale": "morale_mutagen_elf" },
-      { "u_lose_morale": "morale_mutagen_chimera" },
-      { "u_lose_morale": "morale_mutagen_mutation" },
-      { "u_lose_morale": "morale_moodswing" },
-      { "u_lose_morale": "morale_book" },
-      { "u_lose_morale": "morale_comfy" },
-      { "u_lose_morale": "morale_scream" },
-      { "u_lose_morale": "morale_perm_masochist" },
-      { "u_lose_morale": "morale_perm_radiophile" },
-      { "u_lose_morale": "morale_perm_noface" },
-      { "u_lose_morale": "morale_perm_fpmode_on" },
-      { "u_lose_morale": "morale_perm_hoarder" },
-      { "u_lose_morale": "morale_perm_fancy" },
-      { "u_lose_morale": "morale_perm_optimist" },
-      { "u_lose_morale": "morale_perm_badtemper" },
-      { "u_lose_morale": "morale_perm_numb" },
-      { "u_lose_morale": "morale_perm_constrained" },
-      { "u_lose_morale": "morale_perm_nomad" },
-      { "u_lose_morale": "morale_game_found_kitten" },
-      { "u_lose_morale": "morale_haircut" },
-      { "u_lose_morale": "morale_shave" },
-      { "u_lose_morale": "morale_vomited" },
-      { "u_lose_morale": "morale_play_with_pet" },
-      { "u_lose_morale": "morale_pyromania_startfire" },
-      { "u_lose_morale": "morale_pyromania_nearfire" },
-      { "u_lose_morale": "morale_pyromania_nofire" },
-      { "u_lose_morale": "morale_killer_has_killed" },
-      { "u_lose_morale": "morale_killer_need_to_kill" },
-      { "u_lose_morale": "morale_perm_filthy" },
-      { "u_lose_morale": "morale_butcher" },
-      { "u_lose_morale": "morale_gravedigger" },
-      { "u_lose_morale": "morale_funeral" },
-      { "u_lose_morale": "morale_tree_communion" },
-      { "u_lose_morale": "morale_accomplishment" },
-      { "u_lose_morale": "morale_failure" },
-      { "u_lose_morale": "morale_perm_debug" },
-      { "u_lose_morale": "morale_nightmare" },
-      { "u_lose_morale": "morale_migo_bio_tech" },
-      { "u_lose_morale": "morale_impossible_shape" },
-      { "u_lose_morale": "morale_afs_drugs" },
-      { "u_lose_morale": "morale_social" },
-      { "u_lose_morale": "morale_asocial" },
-      { "u_lose_morale": "morale_bile" },
-      { "u_lose_morale": "morale_sunrise" },
-      { "u_lose_morale": "morale_sunset" }
-    ],
-    "false_effect": [ 
-      { "u_add_trait": "PROF_KOKORO" },
-      { "u_lose_trait": "PROF_KOKORO_morale" }
-    ],
-    "//": "Turns morale into mana, only for Kokoro, deactivates if her morale is zero, also removes ALL morale_type , except for morale_perm_debug ",
-    "//2": "Works good enough to remove endpoint morale like 'protein rations', but for continous stuff like 'wet' it keeps removing as long as she's wet"
-  },
-  {
     "id": "kokoro_timer_eoc",
     "type": "effect_on_condition",
     "recurrence": "15 s",
@@ -659,8 +528,8 @@
                             "id": "seiga_corpsecursed_kill_monster_check_3",
                             "condition": {
                               "or": [
-                                { "math": [ "n_val('volume')", ">=", "65000" ] },
-                                { "math": [ "n_val('weight')", ">=", "65000" ] }
+                                { "math": [ "n_volume()", ">=", "65000" ] },
+                                { "math": [ "n_weight()", ">=", "65000" ] }
                               ]
                             },
                             "effect": [ 

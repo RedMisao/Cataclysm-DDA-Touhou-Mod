@@ -1157,18 +1157,6 @@
     "starting_trait": false,
     "valid": false,
     "initial_ma_styles": [ "style_kokoro" ],
-    "triggers": [
-      [
-        {
-          "condition": {
-            "and": [
-              { "u_has_trait": "PROF_KOKORO" },
-              { "not": { "math": [ "u_val('morale')", "==", "0" ] } }
-            ]
-          }
-        }
-      ]
-    ],
     "enchantments": [ 
       { 
         "condition": "ALWAYS", 
@@ -1177,29 +1165,61 @@
         ]
       } 
     ],
-    "transform": { "target": "PROF_KOKORO_morale" },
     "cancels": [ "JEKYLL", "SEASONAL_AFFECTIVE", "GOODCARDIO", "GOODCARDIO2", "OPTIMISTIC", "BADKNEES", "REALLYBADKNEES", "BADCARDIO", "BADTEMPER", "MOODSWINGS" ],
     "flags": [ "KOKORO_WEBS" ]
   },
   {
-    "id": "PROF_KOKORO_morale",
+    "id": "KOKORO_MORALE_1",
     "type": "mutation",
-    "name": { "str": "Emotionless and expressive Menreiki" },
-    "copy-from": "PROF_KOKORO",
+    "name": { "str": "Kokoro mood" },
+    "description": "This is Kokoro's default mood, which is hidden.  If she gets upset enough, it transforms into below, used to activate its EOC",
+    "points": 0,
+    "player_display": false,
+    "purifiable": false,
     "triggers": [
       [
         {
-          "condition": {
-            "and": [
-              { "u_has_trait": "PROF_KOKORO_morale" },
-              { "math": [ "u_val('morale')", "==", "0" ] }
-            ]
-          }
+          "condition": { "math": [ "u_val('morale')", "!=", "0" ] },
+          "msg_on": { "text": "", "rating": "mixed" }
         }
       ]
     ],
-    "transform": { "target": "PROF_KOKORO" },
-    "processed_eocs": [ "kokoro_morale_eoc" ]
+    "transform": { "target": "KOKORO_MORALE_2" },
+    "//": "Based on the approach of MISAKA_MOOD_1 "
+  },
+  {
+    "id": "KOKORO_MORALE_2",
+    "type": "mutation",
+    "name": { "str": "" },
+    "description": "",
+    "points": 0,
+    "player_display": false,
+    "purifiable": false,
+    "processed_eocs": [ 
+      {
+        "id": "KOKORO_MORALE_2_1_eoc",
+        "condition": { "math": [ "u_val('morale')", ">", "0" ] },
+        "effect": [ 
+          { "u_add_morale": "morale_kokoro", "bonus": -1, "max_bonus": -200, "capped": true },
+          { "math": [ "var_kokoro_instability", "+=", "1" ] },
+          { "math": [ "u_val('mana')", "+=", "rand(25)" ] },
+          { "u_lose_trait": "KOKORO_MORALE_2" },
+          { "u_add_trait": "KOKORO_MORALE_1" }
+        ]
+      },
+      {
+        "id": "KOKORO_MORALE_2_2_eoc",
+        "condition": { "math": [ "u_val('morale')", "<", "0" ] },
+        "effect": [ 
+          { "u_add_morale": "morale_kokoro", "bonus": 1, "max_bonus": 200, "capped": true },
+          { "math": [ "var_kokoro_instability", "+=", "1" ] },
+          { "math": [ "u_val('mana')", "+=", "rand(25)" ] },
+          { "u_lose_trait": "KOKORO_MORALE_2" },
+          { "u_add_trait": "KOKORO_MORALE_1" }
+        ]
+      }
+    ],
+    "//": "Dummy mutation, used only for the EOC effects"
   },
   {
     "id": "PROF_MEILING",

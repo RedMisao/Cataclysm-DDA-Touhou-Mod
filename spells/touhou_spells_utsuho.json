@@ -423,7 +423,7 @@
   {
     "id": "utsuho_nuke5",
     "type": "SPELL",
-    "name": { "str": "Nuclear explosion (fission) (terrain bash)" },
+    "name": { "str": "Nuclear explosion (fission) (bash)" },
     "description": "Bash effect for utsuho_nuke ",
     "spell_class": "NONE",
     "valid_targets": [ "field", "ground", "item" ],

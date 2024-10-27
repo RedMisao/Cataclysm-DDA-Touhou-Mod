@@ -61,7 +61,7 @@
   {
     "id": "tenko_earthquake2",
     "type": "SPELL",
-    "name": { "str": "Earthquake signs (terrain bash)" },
+    "name": { "str": "Earthquake signs (bash)" },
     "description": "Bash effect for tenko_earthquake ",
     "spell_class": "NONE",
     "valid_targets": [ "ground", "item" ],
@@ -176,7 +176,7 @@
   {
     "id": "tenko_keystonecrash4",
     "type": "SPELL",
-    "name": { "str": "Keystone crash (terrain bash)" },
+    "name": { "str": "Keystone crash (bash)" },
     "description": "Bash effect for tenko_keystonecrash ",
     "spell_class": "NONE",
     "valid_targets": [ "ground", "item" ],
@@ -403,7 +403,7 @@
   {
     "id": "tenko_unletting_soil4",
     "type": "SPELL",
-    "name": { "str": "Unletting soil (terrain bash)" },
+    "name": { "str": "Unletting soil (bash)" },
     "description": "Bash effect for tenko_unletting_soil ",
     "spell_class": "NONE",
     "valid_targets": [ "ground", "item" ],

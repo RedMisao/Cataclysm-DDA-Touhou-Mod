@@ -8,5 +8,10 @@
     "id": "morale_hblood_vitamin",
     "type": "morale_type",
     "text": "Consumed human."
+  },
+  {
+    "id": "morale_kokoro",
+    "type": "morale_type",
+    "text": ""
   }
 ]

@@ -299,7 +299,7 @@
     "id": "aya_levitation",
     "type": "effect_type",
     "name": [ "Crow wings (flight) (effect)" ],
-    "desc": [ "Allows you to fly over ledges.  Also increases your movement speed when not running." ],
+    "desc": [ "You're flying.  Also increases your movement speed when not running." ],
     "rating": "good",
     "enchantments": [ 
       { 
@@ -945,7 +945,7 @@
     "id": "remi_levitation",
     "type": "effect_type",
     "name": [ "Bat wings (flight) (effect)" ],
-    "desc": [ "Allows you to fly over ledges.  Also increases your movement speed." ],
+    "desc": [ "You're flying.  Also increases your movement speed." ],
     "rating": "good",
     "enchantments": [
       {
@@ -1189,7 +1189,23 @@
     "apply_message": "You enter a mindfulness-like state.",
     "remove_message": "You relax your thoughts.",
     "rating": "good",
-    "removes_effects": [ "fearparalyze", "taint", "tindrift", "visuals", "udonge_barrierwave", "udonge_insight", "udonge_perception", "udonge_stealth" ]
+    "removes_effects": [ 
+      "amigara", 
+      "fearparalyze", 
+      "hallu", 
+      "hallucination_attacks", 
+      "pd_dex_bad", 
+      "pd_int_bad", 
+      "pd_per_bad", 
+      "pd_str_bad", 
+      "taint", 
+      "tindrift", 
+      "visuals", 
+      "udonge_barrierwave", 
+      "udonge_insight", 
+      "udonge_perception", 
+      "udonge_stealth" 
+    ]
   },
   {
     "id": "udonge_perception",
@@ -1218,7 +1234,7 @@
     "id": "utsuho_levitation",
     "type": "effect_type",
     "name": [ "Hell raven wings (flight) (effect)" ],
-    "desc": [ "Allows you to fly over ledges." ],
+    "desc": [ "You're flying." ],
     "rating": "good",
     "flags": [ "CLIMB_FLYING", "ITEM_WATERPROOFING", "LEVITATION", "WATERWALKING" ]
   },
