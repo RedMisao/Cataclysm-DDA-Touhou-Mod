@@ -177,10 +177,10 @@
     "price_postapoc": 500,
     "material": [ "lunarian_cloth" ],
     "material_thickness": 2,
+    "environmental_protection": 2,
     "symbol": "[",
     "looks_like": "blazer",
     "color": "light_gray",
-    "environmental_protection": 2,
     "warmth": 20,
     "pocket_data": [
       { "pocket_type": "CONTAINER", "max_contains_volume": "500 ml", "max_contains_weight": "1 kg", "moves": 80 },

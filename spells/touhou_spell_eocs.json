@@ -235,7 +235,7 @@
         "then": [
           { "math": [ "var_ayafanwind_dur", "=", "( ( (u_skill('dodge') * 100 ) + 200 ) - 100 )" ] },
           { "u_cast_spell": { "id": "aya_fanwind3" }, "loc": { "global_val": "var_aya_fanwind_loc" } },
-          { "run_eoc_with": "aya_fanwind_delay_eoc", "variables": { "aya_fanwind_loc": "var_aya_fanwind_loc" } }
+          { "run_eocs": "aya_fanwind_delay_eoc", "variables": { "aya_fanwind_loc": "var_aya_fanwind_loc" } }
         ],
         "else": [
           { "math": [ "u_val('mana')", "+=", "50" ] },
@@ -256,7 +256,7 @@
     "effect": [
       { "math": [ "var_ayafanwind_dur", "-=", "100" ] },
       { "u_cast_spell": { "id": "aya_fanwind2" }, "loc": { "global_val": "var_aya_fanwind_loc" } },
-      { "queue_eocs": [ "aya_fanwind_delay_eoc" ], "time_in_future": "1 s" }
+      { "run_eocs": [ "aya_fanwind_delay_eoc" ], "time_in_future": "1 s" }
     ],
     "false_effect": [ 
       { "math": [ "var_ayafanwind_dur", "=", "0" ] }
@@ -511,7 +511,7 @@
         },
         "then": [
           { 
-            "queue_eoc_with": "kaenbyou_blazingwheel_delay_eoc", 
+            "run_eocs": "kaenbyou_blazingwheel_delay_eoc", 
             "variables": { "kaenbyou_blazingwheel_loc": "var_kaenbyou_blazingwheel_loc" }, 
             "time_in_future": "1 s" 
           }
@@ -702,7 +702,7 @@
       { "math": [ "u_val('mana')", "+=", "6 + rand(8)" ] },
       { "math": [ "u_calories()", "-=", "110 + rand(110)" ] },
       { "u_add_effect": "kasen_calorieburn", "duration": "5 s" },
-      { "queue_eocs": [ "kasen_calorieburn_cycle1" ], "time_in_future": [ "2 s", "5 s" ] }
+      { "run_eocs": [ "kasen_calorieburn_cycle1" ], "time_in_future": [ "2 s", "5 s" ] }
     ],
     "false_effect": [
       { "math": [ "var_kasencalorieburn", "=", "0" ] },
@@ -950,7 +950,7 @@
       { "math": [ "u_var_kasenparry", "=", "1" ] },
       { "u_add_effect": "parry_effect", "duration": "2 s" },
       {
-        "queue_eocs": [
+        "run_eocs": [
           {
             "id": "kasen_parry_timer",
             "effect": [
@@ -979,12 +979,12 @@
         "then": [
           { "u_cast_spell": { "id": "kasen_rainboworb2" }, "loc": { "global_val": "var_kasen_rainboworb_loc" } },
           { 
-            "queue_eoc_with": "kasen_rainboworb_delay", 
+            "run_eocs": "kasen_rainboworb_delay", 
             "variables": { "rainboworb_loc": "var_kasen_rainboworb_loc" }, 
             "time_in_future": "2 s" 
           },
           { 
-            "queue_eoc_with": "kasen_rainboworb_delay", 
+            "run_eocs": "kasen_rainboworb_delay", 
             "variables": { "rainboworb_loc": "var_kasen_rainboworb_loc" }, 
             "time_in_future": "3 s" 
           },
@@ -1216,7 +1216,7 @@
       { "math": [ "var_spirit_naginata", "+=", "1" ] },
       { "u_message": "You materialize your spirit naginata.", "type": "good" },
       { "u_cast_spell": { "id": "kokoro_spirit_naginata2" } },
-      { "queue_eocs": [ "kokoro_spirit_naginata_timer_eoc" ], "time_in_future": { "math": [ "( ( ( (u_skill('stabbing') * 90 ) + (u_skill('melee') * 90 ) + 240 ) * var_kokoro_melancholy_mod ) / 100 ) - 1" ] } }
+      { "run_eocs": [ "kokoro_spirit_naginata_timer_eoc" ], "time_in_future": { "math": [ "( ( ( (u_skill('stabbing') * 90 ) + (u_skill('melee') * 90 ) + 240 ) * var_kokoro_melancholy_mod ) / 100 ) - 1" ] } }
     ],
     "false_effect": [ 
       { "u_message": "Your naginata is already materialized.", "type": "mixed" }
@@ -1467,7 +1467,7 @@
       { "math": [ "u_var_mountainbreak", "=", "1" ] },
       { "u_add_effect": "parry_effect", "duration": "2 s" },
       {
-        "queue_eocs": [
+        "run_eocs": [
           {
             "id": "meiling_mountainbreak_timer",
             "effect": [
@@ -1519,7 +1519,7 @@
     "condition": { "math": [ "var_meiling_tigerrelease", ">", "0" ] },
     "effect": [ 
       { "u_add_effect": "aura_tigerrelease", "duration": "2 s" },
-      { "queue_eocs": [ "meiling_tigerrelease_cycle1" ], "time_in_future": "1 s" } 
+      { "run_eocs": [ "meiling_tigerrelease_cycle1" ], "time_in_future": "1 s" } 
     ],
     "false_effect": [ 
       { "math": [ "var_meiling_tigerrelease", "=", "0" ] },
@@ -1550,7 +1550,7 @@
     "effect": [
       { "math": [ "var_mokou_combustion", "+=", "1" ] },
       { "math": [ "u_pain()", "-=", "2" ] },
-      { "queue_eocs": [ "mokou_combustion_cycle1" ], "time_in_future": "3 s" }
+      { "run_eocs": [ "mokou_combustion_cycle1" ], "time_in_future": "3 s" }
     ]
   },
   {
@@ -1567,17 +1567,17 @@
         },
         "then": [
           { 
-            "queue_eoc_with": "nitori_aerialtorpedoes_impact", 
+            "run_eocs": "nitori_aerialtorpedoes_impact", 
             "variables": { "atorpedo_loc": "var_nitori_atorpedo_loc" }, 
             "time_in_future": "3 s" 
           },
           { 
-            "queue_eoc_with": "nitori_aerialtorpedoes_impact2", 
+            "run_eocs": "nitori_aerialtorpedoes_impact2", 
             "variables": { "atorpedo_loc": "var_nitori_atorpedo_loc" }, 
             "time_in_future": "5 s" 
           },
           { 
-            "queue_eoc_with": "nitori_aerialtorpedoes_impact3", 
+            "run_eocs": "nitori_aerialtorpedoes_impact3", 
             "variables": { "atorpedo_loc": "var_nitori_atorpedo_loc" }, 
             "time_in_future": "7 s" 
           },
@@ -1590,8 +1590,8 @@
       { "u_message": "You don't have enough mana.", "type": "mixed" }
     ],
     "//": "Basic spell-at-location, queue'd in 2 s. It asks the position (saves coordinates) -> queues the actual spell as '_eoc_with' (below)",
-    "//2": "While run_eoc_with detects (*) both global_val and context_val , queue_eoc_with doesn't detect (*) context_val and casts it centered on Nitori",
-    "//3": "(*) if debugging with u_message it shows the coordinates, which are missing for the queue_eoc_with + context_val combination . Maybe they're lost due the delay?"
+    "//WIP_obsolete?": "While run_eoc_with detects (*) both global_val and context_val , queue_eoc_with doesn't detect (*) context_val and casts it centered on Nitori",
+    "//WIP2_obsolete?": "(*) if debugging with u_message it shows the coordinates, which are missing for the queue_eoc_with + context_val combination . Maybe they're lost due the delay?"
   },
   {
     "id": "nitori_aerialtorpedoes_impact",
@@ -1778,7 +1778,7 @@
       { "math": [ "var_nitoricamouflage_fail", "+=", "1 + rand(9)" ] },
       { "math": [ "u_val('mana')", "-=", "3" ] },
       { "u_add_effect": "nitori_camouflage", "duration": "3 s" },
-      { "queue_eocs": [ "nitori_opticalcamouflage_cycle1" ], "time_in_future": "2 s" }
+      { "run_eocs": [ "nitori_opticalcamouflage_cycle1" ], "time_in_future": "2 s" }
     ],
     "false_effect": [
       { "math": [ "var_nitoricamouflage", "=", "0" ] },
@@ -1860,7 +1860,7 @@
       { "math": [ "var_nitoricamouflage_fail_timer", "+=", "1" ] },
       { "math": [ "u_val('mana')", "-=", "1.5" ] },
       { "u_add_effect": "nitori_camouflage_fake", "duration": "2 s" },
-      { "queue_eocs": [ "nitori_opticalcamouflage_fail_1" ], "time_in_future": "1 s" }
+      { "run_eocs": [ "nitori_opticalcamouflage_fail_1" ], "time_in_future": "1 s" }
     ],
     "false_effect": [
       { "math": [ "var_nitoricamouflage", "=", "0" ] },
@@ -1979,7 +1979,7 @@
   {
     "id": "remilia_darkdrain3_eoc",
     "type": "effect_on_condition",
-    "effect": [ { "queue_eocs": [ "remilia_darkdrain_heal" ], "time_in_future": "3 s" } ],
+    "effect": [ { "run_eocs": [ "remilia_darkdrain_heal" ], "time_in_future": "3 s" } ],
     "//": "This runs at the same time (shortly after) the previous EOC. It just delays the self-heal spell by 3 s"
   },
   {
@@ -1999,7 +1999,7 @@
       { "math": [ "var_gungnir", "+=", "1" ] },
       { "u_message": "You summon the Gungnir!", "type": "good" },
       { "u_cast_spell": { "id": "remilia_gungnir2" } },
-      { "queue_eocs": [ "remilia_gungnir_timer_eoc" ], "time_in_future": { "math": [ "( (u_skill('stabbing') * 21 ) + (u_skill('melee') * 21 ) + 12 ) - 1" ] } }
+      { "run_eocs": [ "remilia_gungnir_timer_eoc" ], "time_in_future": { "math": [ "( (u_skill('stabbing') * 21 ) + (u_skill('melee') * 21 ) + 12 ) - 1" ] } }
     ],
     "false_effect": [ 
       { "u_message": "Your Gungnir is already summoned.", "type": "mixed" }
@@ -2084,7 +2084,7 @@
     "type": "effect_on_condition",
     "condition": { "u_has_effect": "aura_vampiric" },
     "effect": [ 
-      { "queue_eocs": [ "remilia_vampiricaura_cycle1" ], "time_in_future": "1 s" }
+      { "run_eocs": [ "remilia_vampiricaura_cycle1" ], "time_in_future": "1 s" }
     ],
     "false_effect": [ 
       { "u_lose_effect": "aura_vampiric" }
@@ -2200,7 +2200,7 @@
     "effect": [
       { "math": [ "u_val('stamina')", "+=", "1" ] },
       { "u_add_effect": "sakuya_maidsecret_effect", "duration": "3 s" },
-      { "queue_eocs": [ "sakuya_maidsecret_cycle1" ], "time_in_future": "2 s" }
+      { "run_eocs": [ "sakuya_maidsecret_cycle1" ], "time_in_future": "2 s" }
     ],
     "false_effect": [
       { "u_message": "You lose your concentration.", "type": "mixed" },
@@ -2216,7 +2216,7 @@
       { "math": [ "var_sakuya_ve_casted", "+=", "1" ] },
       { "u_location_variable": { "global_val": "var_sakuya_ve_loc" } },
       { "u_cast_spell": { "id": "sakuya_vanishingeverything2" }, "targeted": true },
-      { "queue_eocs": [ "sakuya_vanishingeverything_off" ], "time_in_future": "3 s" }
+      { "run_eocs": [ "sakuya_vanishingeverything_off" ], "time_in_future": "3 s" }
     ],
     "false_effect": [ 
       { "math": [ "var_sakuya_ve_casted", "=", "0" ] },
@@ -2623,7 +2623,7 @@
     "effect": [
       { "math": [ "u_val('mana')", "-=", "1" ] },
       { "u_add_effect": "udonge_insight", "duration": "3 s" },
-      { "queue_eocs": [ "udonge_waveinsight_cycle1" ], "time_in_future": "2 s" }
+      { "run_eocs": [ "udonge_waveinsight_cycle1" ], "time_in_future": "2 s" }
     ],
     "false_effect": { "run_eocs": "udonge_wave_oom" },
     "//": "Checks if Udonge has enough mana to keep the aura bonus, and reduces mana. If she runs out of mana it runs the oom EOC instead"
@@ -2689,7 +2689,7 @@
     "effect": [
       { "math": [ "u_val('mana')", "-=", "6" ] },
       { "u_add_effect": "udonge_mfortitude", "duration": "3 s" },
-      { "queue_eocs": [ "udonge_wavemfortitude_cycle1" ], "time_in_future": "2 s" }
+      { "run_eocs": [ "udonge_wavemfortitude_cycle1" ], "time_in_future": "2 s" }
     ],
     "false_effect": { "run_eocs": "udonge_wave_oom" }
   },
@@ -2736,7 +2736,7 @@
     "effect": [
       { "math": [ "u_val('mana')", "-=", "6" ] },
       { "u_add_effect": "udonge_perception", "duration": "3 s" },
-      { "queue_eocs": [ "udonge_waveperception_cycle1" ], "time_in_future": "2 s" }
+      { "run_eocs": [ "udonge_waveperception_cycle1" ], "time_in_future": "2 s" }
     ],
     "false_effect": { "run_eocs": "udonge_wave_oom" }
   },
@@ -2783,7 +2783,7 @@
     "effect": [
       { "math": [ "u_val('mana')", "-=", "10" ] },
       { "u_add_effect": "udonge_stealth", "duration": "3 s" },
-      { "queue_eocs": [ "udonge_wavestealth_cycle1" ], "time_in_future": "2 s" }
+      { "run_eocs": [ "udonge_wavestealth_cycle1" ], "time_in_future": "2 s" }
     ],
     "false_effect": { "run_eocs": "udonge_wave_oom" }
   },
@@ -2903,7 +2903,7 @@
     },
     "effect": [
       { "math": [ "u_val('mana')", "-=", "11" ] },
-      { "queue_eocs": [ "utsuho_fissionaura_cycle1" ], "time_in_future": "3 s" }
+      { "run_eocs": [ "utsuho_fissionaura_cycle1" ], "time_in_future": "3 s" }
     ],
     "false_effect": { "run_eocs": "utsuho_fissionaura_oom" }
   },
@@ -2928,7 +2928,7 @@
     },
     "effect": [
       { "math": [ "u_val('mana')", "-=", "11 + rand(6)" ] },
-      { "queue_eocs": [ "utsuho_fissionaura_cycle1" ], "time_in_future": [ "2 s", "4 s" ] }
+      { "run_eocs": [ "utsuho_fissionaura_cycle1" ], "time_in_future": [ "2 s", "4 s" ] }
     ],
     "false_effect": { "run_eocs": "utsuho_fissionaura_oom" }
   },
@@ -2985,7 +2985,7 @@
     "effect": [
       { "math": [ "u_val('mana')", "-=", "2" ] },
       { "u_add_effect": "aura_fusionblade", "duration": "2 s" },
-      { "queue_eocs": [ "utsuho_fusionblade_cycle1" ], "time_in_future": "1 s" }
+      { "run_eocs": [ "utsuho_fusionblade_cycle1" ], "time_in_future": "1 s" }
     ],
     "false_effect": { "run_eocs": "utsuho_fusionblade_oom" },
     "//": "-2 mana/s equals +8 min of keeping this active"
@@ -3061,7 +3061,7 @@
         },
         "then": [
           { 
-            "queue_eoc_with": "utsuho_nuke_delay_eoc", 
+            "run_eocs": "utsuho_nuke_delay_eoc", 
             "variables": { "utsuho_nuke_loc": "var_utsuho_nuke_loc" }, 
             "time_in_future": "3 s" 
           }
@@ -3100,7 +3100,7 @@
         },
         "then": [
           { 
-            "queue_eoc_with": "utsuho_ugeyser_delay_1", 
+            "run_eocs": "utsuho_ugeyser_delay_1", 
             "variables": { "utsuho_ugeyser_loc": "var_utsuho_ugeyser_loc" }, 
             "time_in_future": "3 s" 
           }
@@ -3121,7 +3121,7 @@
         },
         "then": [
           { 
-            "queue_eoc_with": "utsuho_ugeyser_delay_2", 
+            "run_eocs": "utsuho_ugeyser_delay_2", 
             "variables": { "utsuho_ugeyser_loc": "var_utsuho_ugeyser_loc" }, 
             "time_in_future": [ "2 s", "5 s" ] 
           }
@@ -3160,7 +3160,7 @@
     "//": "OK so the disease spell does several things. First, it applies the DISEASE effect on the target, then it runs a subspell which adds another effect for the player",
     "//2": "The effect on the player, DISEASE_counter, runs an intermittent spell in aoe. This spell forces any target around to run these EOCs, which detect if these target have any disease",
     "//3": "If they have any DISEASE effect, it adds to var_MIASMA ",
-    "//4": "This is a workaround for queue_eocs not working on monsters AND enchants not working on monsters either. The second case would allow this same system to be monster-sided"
+    "//WIP": "This is a workaround for queue_eocs not working on monsters AND enchants not working on monsters either. The second case would allow this same system to be monster-sided"
   },
   {
     "id": "yamame_disease_scarletplague_eoc",
@@ -3402,7 +3402,7 @@
     "condition": { "math": [ "var_miasmaburst_dmg", ">", "0" ] },
     "effect": [ 
       { "math": [ "var_miasmaburst_dmg", "-=", "2" ] },
-      { "queue_eocs": [ "yamame_miasmaburst_stored_eoc"  ], "time_in_future": "7 s" }
+      { "run_eocs": [ "yamame_miasmaburst_stored_eoc"  ], "time_in_future": "7 s" }
     ],
     "//": "Reduces var_miasmaburst_dmg every 7 s"
   },
@@ -3549,7 +3549,7 @@
       { "math": [ "u_var_insightfulsword", "=", "1" ] },
       { "u_add_effect": "parry_effect", "duration": "2 s" },
       {
-        "queue_eocs": [
+        "run_eocs": [
           {
             "id": "youmu_insightfulsword_timer",
             "effect": [

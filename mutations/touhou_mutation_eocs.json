@@ -12,9 +12,9 @@
     "id": "WINGS_BAT_REMI_activate",
     "type": "effect_on_condition",
     "condition": { "math": [ "u_val('stamina')", ">=", "111" ] },
-    "effect": { "queue_eocs": [ "WINGS_BAT_REMI_drain1" ], "time_in_future": "2 s" },
+    "effect": { "run_eocs": [ "WINGS_BAT_REMI_drain1" ], "time_in_future": "2 s" },
     "false_effect": { "run_eocs": "WINGS_BAT_REMI_stop" },
-    "//": "queue_eocs instead of run_eocs as the latter triggers immediately, before WINGS_BAT_REMI_spread (and remi_levitation) are present, not running the cycle",
+    "//": "run_eocs instead of run_eocs as the latter triggers immediately, before WINGS_BAT_REMI_spread (and remi_levitation) are present, not running the cycle",
     "//2": "Stamina pool is 10000, so 111 stamina/s ~ 90 s of flying"
   },
   {
@@ -42,7 +42,7 @@
         { "u_has_effect": "remi_levitation" } 
       ]
     },
-    "effect": { "queue_eocs": [ "WINGS_BAT_REMI_drain1" ], "time_in_future": "2 s" },
+    "effect": { "run_eocs": [ "WINGS_BAT_REMI_drain1" ], "time_in_future": "2 s" },
     "false_effect": { "run_eocs": "WINGS_BAT_REMI_stop" }
   },
   {
@@ -64,7 +64,7 @@
     "id": "WINGS_HELLRAVEN_activate",
     "type": "effect_on_condition",
     "condition": { "math": [ "u_val('stamina')", ">=", "111" ] },
-    "effect": { "queue_eocs": [ "WINGS_HELLRAVEN_drain1" ], "time_in_future": "2 s" },
+    "effect": { "run_eocs": [ "WINGS_HELLRAVEN_drain1" ], "time_in_future": "2 s" },
     "false_effect": { "run_eocs": "WINGS_HELLRAVEN_stop" }
   },
   {
@@ -90,7 +90,7 @@
         { "u_has_effect": "utsuho_levitation" } 
       ]
     },
-    "effect": { "queue_eocs": [ "WINGS_HELLRAVEN_drain1" ], "time_in_future": "2 s" },
+    "effect": { "run_eocs": [ "WINGS_HELLRAVEN_drain1" ], "time_in_future": "2 s" },
     "false_effect": { "run_eocs": "WINGS_HELLRAVEN_stop" }
   },
   {
@@ -112,7 +112,7 @@
     "id": "WINGS_TENGUCROW_activate",
     "type": "effect_on_condition",
     "condition": { "math": [ "u_val('stamina')", ">=", "83" ] },
-    "effect": { "queue_eocs": [ "WINGS_TENGUCROW_drain1" ], "time_in_future": "2 s" },
+    "effect": { "run_eocs": [ "WINGS_TENGUCROW_drain1" ], "time_in_future": "2 s" },
     "false_effect": { "run_eocs": "WINGS_TENGUCROW_stop" }
   },
   {
@@ -139,7 +139,7 @@
         { "u_has_effect": "aya_levitation" } 
       ]
     },
-    "effect": { "queue_eocs": [ "WINGS_TENGUCROW_drain1" ], "time_in_future": "2 s" },
+    "effect": { "run_eocs": [ "WINGS_TENGUCROW_drain1" ], "time_in_future": "2 s" },
     "false_effect": { "run_eocs": "WINGS_TENGUCROW_stop" }
   },
   {

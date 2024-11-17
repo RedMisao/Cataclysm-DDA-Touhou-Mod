@@ -400,7 +400,7 @@
     },
     "effect": [ 
       { "math": [ "var_mokoudeath", "-=", "1" ] },
-      { "queue_eocs": [ "mokou_resurrect_counter_eoc" ], "time_in_future": "1 h" }
+      { "run_eocs": [ "mokou_resurrect_counter_eoc" ], "time_in_future": "1 h" }
     ],
     "//": "Reduces var_mokoudeath over time"
   },
@@ -584,7 +584,7 @@
       { "math": [ "u_val('stamina')", "=", "8500" ] },
       { "math": [ "u_pain()", "=", "0" ] },
       {
-        "queue_eocs": [
+        "run_eocs": [
           {
             "id": "seiga_revive_eoc",
             "effect": [

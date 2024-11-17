@@ -693,6 +693,7 @@
     "to_hit": { "balance": "neutral", "grip": "solid", "length": "hand", "surface": "any" },
     "material": [ "mokou_paper" ],
     "material_thickness": 5,
+    "environmental_protection": 10,
     "symbol": "[",
     "color": "light_gray",
     "warmth": 0,
@@ -703,7 +704,6 @@
         "encumbrance": [ 0, 0 ]
       }
     ],
-    "environmental_protection": 10,
     "flags": [ "ALLOWS_NATURAL_ATTACKS", "OUTER", "STURDY", "VARSIZE", "ZERO_WEIGHT" ],
     "//": "I'm disabling this because I can't a way for the item to cover specific parts + protect those parts from fire + ignore physical attacks so it doesn't get destroyed by melee damage. Instead I'm going the easy way of making a fire immune mat for Mokou's pants (and ribbon) and fire resistant mats for her shirt and booots"
   },

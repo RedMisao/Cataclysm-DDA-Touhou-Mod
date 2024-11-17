@@ -67,7 +67,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "SILENT" ],
-    "//": "Workaround for queue_eocs not working on monsters AND enchants not working on monsters either",
+    "//WIP": "Workaround for queue_eocs not working on monsters AND enchants not working on monsters either",
     "//2": "This means the (slightly) simpler: effect (monster) -> ench -> intermittent_eff -> eoc (player) doesn't work",
     "//3": "This is a workaround of that workaround: effect (player) -> ench -> intermittent_eff -> spell (monster) -> eoc (monster) to add var_MIASMA "
   },

@@ -813,7 +813,7 @@
         "id": "YAMAME_COUNTER_MUT_eoc",
         "effect": [
           { "u_lose_trait": "YAMAME_COUNTER_MUT" },
-          { "queue_eocs": [ "yamame_miasmaburst_stored_eoc" ], "time_in_future": "30 s" }
+          { "run_eocs": [ "yamame_miasmaburst_stored_eoc" ], "time_in_future": "30 s" }
         ]
       }
     ],
