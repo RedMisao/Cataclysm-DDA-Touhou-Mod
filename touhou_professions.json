@@ -19,7 +19,7 @@
       { "level": 1, "id": "aya_stormgust" },
       { "level": 1, "id": "aya_windsickle" }
     ],
-    "traits": [ "YOUKAI_SPECIES", "TENGUCROW_SPECIES", "WINGS_TENGUCROW", "PROF_AYA", "SPIRIT_USER", "ear_tengu", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_aya" ],
+    "traits": [ "YOUKAI_SPECIES", "TENGUCROW_SPECIES", "WINGS_TOUHOU_TENGUCROW", "PROF_AYA", "SPIRIT_USER", "ear_tengu", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_aya" ],
     "items": {
       "both": {
         "entries": [
@@ -403,7 +403,7 @@
       { "level": 1, "id": "remilia_miserablefate" },
       { "level": 1, "id": "remilia_vampiricaura" }
     ],
-    "traits": [ "VAMPIRE_SPECIES", "VAMPIRE_BAT_REMI", "PROF_REMI", "SPIRIT_USER", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_remilia" ],
+    "traits": [ "VAMPIRE_SPECIES", "WINGS_TOUHOU_VAMPIRE", "PROF_REMI", "SPIRIT_USER", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_remilia" ],
     "items": {
       "both": {
         "entries": [
@@ -627,7 +627,7 @@
       { "level": 1, "id": "utsuho_nuke" },
       { "level": 1, "id": "utsuho_ugeyser" }
     ],
-    "traits": [ "YATAGARASU_VESSEL", "YOUKAI_SPECIES", "HELLRAVEN_SPECIES", "WINGS_HELLRAVEN", "PROF_OKUU", "SPIRIT_USER", "eye_black_touhou", "FACIAL_HAIR_NONE", "hair_utsuho" ],
+    "traits": [ "YATAGARASU_VESSEL", "YOUKAI_SPECIES", "HELLRAVEN_SPECIES", "WINGS_TOUHOU_HELLRAVEN", "PROF_OKUU", "SPIRIT_USER", "eye_black_touhou", "FACIAL_HAIR_NONE", "hair_utsuho" ],
     "items": {
       "both": {
         "entries": [

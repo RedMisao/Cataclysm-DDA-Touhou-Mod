@@ -1154,9 +1154,10 @@
     "//note": "Replace by using u_map_run_eocs , as mikoto_wings_check_eoc and stuff"
   },
   {
-    "id": "yamame_disease_icypyrexia_OLD_eoc",
+    "id": "yamame_disease_icypyrexia_eoc_OLD",
     "type": "effect_on_condition",
     "effect": [
+      { "message": "TIMER_0", "type": "mixed" },
       { "math": [ "u_var_icypyrexia", "+=", "1" ] },
       { "run_eocs": [ "yamame_disease_timer_1_OLD" ] }
     ],
@@ -1165,13 +1166,26 @@
   {
     "id": "yamame_disease_timer_1_OLD",
     "type": "effect_on_condition",
+    "condition": {
+      "and": [
+        { "math": [ "u_var_icypyrexia", ">", "0" ] },
+        { "math": [ "u_var_disease_timer_1", "<", "var_disease_dur" ] }
+      ]
+    },
     "effect": [
+      { "message": "TIMER_1", "type": "mixed" },
+      { "math": [ "u_var_disease_timer_1", "+=", "100" ] },
       { "run_eocs": [ "yamame_disease_timer_1_2_OLD" ], "time_in_future": "1 s" }
+    ],
+    "false_effect": [ 
+      { "message": "TIMER_1", "type": "mixed" },
+      { "math": [ "u_var_icypyrexia", "=", "0" ] },
+      { "math": [ "u_var_disease_timer_1", "=", "0" ] }
     ],
     "//": "This is the base disease timer. It checks if the target has u_DISEASE and the u_DISEASE_timer is less than the intended duration at that skill level (set at yamame_opens_spellbook_eoc )",
     "//2": "It adds 1 s to u_DISEASE_timer and queues the second step, which adds u_MIASMA (equivalent of var_DISEASE dmg) and stores it, it also cycles back to this step",
     "//3": "The u_DISEASE var is removed when the u_DISEASE_timer ends, or when consumed by Yamame's spells",
-    "//WIP": "This is not working because: queue_eocs not working when used by monsters. It was working around 2024-01-26, and right until the last version I updated from (2024-03-03-1927) for what I can tell"
+    "//4": "This is not working because: queue_eocs/run_eocs + time_in_future is not run by monsters. It was working around 2024-01-26, and right until the last version I updated from (2024-03-03-1927) for what I can tell"
   },
   {
     "id": "yamame_disease_timer_1_2_OLD",
@@ -1183,11 +1197,12 @@
       ]
     },
     "effect": [
-      { "math": [ "u_var_disease_timer_1", "+=", "100" ] },
+      { "message": "TIMER_2", "type": "mixed" },
       { "math": [ "var_miasmaburst_dmg", "+=", "var_icypyrexia_dmg" ] },
       { "run_eocs": [ "yamame_disease_timer_1_OLD" ] }
     ],
     "false_effect": [ 
+      { "message": "FALSE_TIMER_2", "type": "mixed" },
       { "math": [ "u_var_icypyrexia", "=", "0" ] },
       { "math": [ "u_var_disease_timer_1", "=", "0" ] }
     ]

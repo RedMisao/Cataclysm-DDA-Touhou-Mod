@@ -130,6 +130,49 @@
     "//": "Dummy effect, used by dash_meiling_eoc "
   },
   {
+    "id": "flight_hellraven_effect",
+    "type": "effect_type",
+    "name": [ "Hell raven wings (flight)" ],
+    "desc": [ "You're flying." ],
+    "rating": "good",
+    "flags": [ "CLIMB_FLYING", "ITEM_WATERPROOFING", "LEVITATION", "WATERWALKING" ]
+  },
+  {
+    "id": "flight_tengucrow_effect",
+    "type": "effect_type",
+    "name": [ "Crow wings (flight)" ],
+    "desc": [ "You're flying.  Also increases your movement speed when not running." ],
+    "rating": "good",
+    "enchantments": [ 
+      { 
+        "condition": { "not": { "u_has_move_mode": "run" } }, 
+        "values": [ 
+          { "value": "MOVE_COST", "multiply": -0.15 }
+        ] 
+      }
+    ],
+    "flags": [ "CLIMB_FLYING", "ITEM_WATERPROOFING", "LEVITATION", "WATERWALKING" ],
+    "//": "Aya's base ms is 100 * 0.8 = 80, or 100 * 0.65 = 65 if flying (and not running). Do note same enchantments stack additively, not multiplicatively"
+  },
+  {
+    "id": "flight_vampire_effect",
+    "type": "effect_type",
+    "name": [ "Bat form (flight)" ],
+    "desc": [ "You're flying.  Also increases your movement speed." ],
+    "apply_message": "You shapeshift into a bat.",
+    "rating": "good",
+    "enchantments": [
+      {
+        "condition": { "not": { "u_has_move_mode": "run" } }, 
+        "values": [
+          { "value": "MOVE_COST", "multiply": -0.3 }
+        ]
+      }
+    ],
+    "flags": [ "CLIMB_FLYING", "ITEM_WATERPROOFING", "LEVITATION", "WATERWALKING" ],
+    "//": "~1.5 total movement speed, up from the 1.2x movement speed from base vampires"
+  },
+  {
     "id": "icy_pyrexia",
     "type": "effect_type",
     "name": [ "Icy pyrexia (disease)" ],
@@ -294,23 +337,6 @@
         "mutations": [ "YAMAME_COUNTER_MUT" ]
       }
     ]
-  },
-  {
-    "id": "aya_levitation",
-    "type": "effect_type",
-    "name": [ "Crow wings (flight) (effect)" ],
-    "desc": [ "You're flying.  Also increases your movement speed when not running." ],
-    "rating": "good",
-    "enchantments": [ 
-      { 
-        "condition": { "not": { "u_has_move_mode": "run" } }, 
-        "values": [ 
-          { "value": "MOVE_COST", "multiply": -0.15 }
-        ] 
-      }
-    ],
-    "flags": [ "CLIMB_FLYING", "ITEM_WATERPROOFING", "LEVITATION", "WATERWALKING" ],
-    "//": "Aya's base ms is 100 * 0.8 = 80, or 100 * 0.65 = 65 if flying (and not running). Do note same MOVE_COST stack additively, not multiplicatively"
   },
   {
     "id": "aya_mspeed",
@@ -942,23 +968,6 @@
     "//": "Should remove all 'external' or imposed effects, focused on movement speed effects"
   },
   {
-    "id": "remi_levitation",
-    "type": "effect_type",
-    "name": [ "Bat wings (flight) (effect)" ],
-    "desc": [ "You're flying.  Also increases your movement speed." ],
-    "rating": "good",
-    "enchantments": [
-      {
-        "condition": { "not": { "u_has_move_mode": "run" } }, 
-        "values": [
-          { "value": "MOVE_COST", "multiply": -0.3 }
-        ]
-      }
-    ],
-    "flags": [ "CLIMB_FLYING", "ITEM_WATERPROOFING", "LEVITATION", "WATERWALKING" ],
-    "//": "~1.5 total movement speed, up from the 1.2x movement speed from base vampires"
-  },
-  {
     "id": "sakuya_contraction_effect",
     "type": "effect_type",
     "name": [ "Temporal contraction (effect)" ],
@@ -1229,14 +1238,6 @@
     "rating": "good",
     "removes_effects": [ "udonge_barrierwave", "udonge_insight", "udonge_mfortitude", "udonge_perception" ],
     "flags": [ "INVISIBLE", "NO_SCENT" ]
-  },
-  {
-    "id": "utsuho_levitation",
-    "type": "effect_type",
-    "name": [ "Hell raven wings (flight) (effect)" ],
-    "desc": [ "You're flying." ],
-    "rating": "good",
-    "flags": [ "CLIMB_FLYING", "ITEM_WATERPROOFING", "LEVITATION", "WATERWALKING" ]
   },
   {
     "id": "youmu_knee_slasher_slow",

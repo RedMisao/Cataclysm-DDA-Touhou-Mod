@@ -3160,7 +3160,7 @@
     "//": "OK so the disease spell does several things. First, it applies the DISEASE effect on the target, then it runs a subspell which adds another effect for the player",
     "//2": "The effect on the player, DISEASE_counter, runs an intermittent spell in aoe. This spell forces any target around to run these EOCs, which detect if these target have any disease",
     "//3": "If they have any DISEASE effect, it adds to var_MIASMA ",
-    "//WIP": "This is a workaround for queue_eocs not working on monsters AND enchants not working on monsters either. The second case would allow this same system to be monster-sided"
+    "//note": "This is a workaround for queue_eocs/run_eocs not working on monsters AND enchants not working on monsters either. The second case would allow this same system to be monster-sided"
   },
   {
     "id": "yamame_disease_scarletplague_eoc",

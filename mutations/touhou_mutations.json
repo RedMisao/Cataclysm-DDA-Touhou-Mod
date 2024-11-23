@@ -755,51 +755,6 @@
     "//2": "I need to set the penalty (and bonus) of eating human flesh to 0"
   },
   {
-    "id": "VAMPIRE_BAT_REMI",
-    "type": "mutation",
-    "name": { "str": "Vampire shapeshifting (human)" },
-    "description": "Your nature allows you to shapeshift, although almost completely as your bat wings are still visible.  Currently, you're posing as a human.  Activate the mutation to switch to youkai form.",
-    "points": 0,
-    "profession": true,
-    "purifiable": false,
-    "starting_trait": false,
-    "valid": false,
-    "active": true,
-    "activated_eocs": [ "WINGS_BAT_REMI_activate" ],
-    "ugliness": 1,
-    "visibility": 8,
-    "transform": { "target": "VAMPIRE_BAT_REMI_active", "active": false, "moves": 100 },
-    "cancels": [ "WINGS_BAT", "WINGS_BIRD", "WINGS_BUTTERFLY", "WINGS_INSECT", "WINGS_STUB" ]
-  },
-  {
-    "id": "VAMPIRE_BAT_REMI_active",
-    "type": "mutation",
-    "name": { "str": "Vampire shapeshifting (bat)" },
-    "copy-from": "VAMPIRE_BAT_REMI",
-    "description": "If nothing else revealed you're a vampire, this will surely do.  You're currently transformed into bat form.  Activate the mutation to switch to human form.",
-    "active": true,
-    "activated_eocs": [ "WINGS_forget_fly_spells" ],
-    "ugliness": 4,
-    "visibility": 6,
-    "encumbrance_always": [ [ "hand_l", 50 ], [ "hand_r", 50 ] ],
-    "override_look": { "id": "mon_bat", "tile_category": "monster" },
-    "enchantments": [
-      {
-        "condition": "ALWAYS",
-        "ench_effects": [ { "effect": "remi_levitation", "intensity": 1 } ],
-        "values": [
-          { "value": "CARRY_WEIGHT", "multiply": -0.66 },
-          { "value": "FOOTSTEP_NOISE", "multiply": -0.8 },
-          { "value": "MELEE_DAMAGE", "multiply": -0.5 },
-          { "value": "METABOLISM", "multiply": -0.5 }
-        ]
-      }
-    ],
-    "spells_learned": [ [ "fly_downwards", 1 ], [ "fly_upwards", 1 ] ],
-    "transform": { "target": "VAMPIRE_BAT_REMI", "active": false, "moves": 100 },
-    "extend": { "flags": [ "SMALL" ] }
-  },
-  {
     "id": "YAMAME_COUNTER_MUT",
     "type": "mutation",
     "name": { "str": "" },
@@ -928,71 +883,79 @@
     "//": "This equals a full mana pool every 2 h or so"
   },
   {
-    "id": "WINGS_HELLRAVEN",
+    "id": "WINGS_TOUHOU_VAMPIRE",
+    "type": "mutation",
+    "name": { "str": "Vampire shapeshifting" },
+    "description": "Your nature allows you to shapeshift between humanoid and bat forms.  Activating this trait allows you to switch back and forth, enabling flight.  \nSwitch cost: <color_light_blue>111</color> stamina.  Drains stamina while active.  Cast again to toggle.",
+    "points": 0,
+    "profession": true,
+    "purifiable": false,
+    "starting_trait": false,
+    "valid": false,
+    "active": true,
+    "activated_eocs": [ "wings_activate_eoc" ],
+    "activation_msg": "",
+    "ugliness": 1,
+    "visibility": 8,
+    "cancels": [ "WINGS_BAT", "WINGS_BIRD", "WINGS_BUTTERFLY", "WINGS_INSECT", "WINGS_STUB" ]
+  },
+  {
+    "id": "WINGS_TOUHOU_VAMPIRE_bat_mode",
+    "type": "mutation",
+    "name": { "str": "Bat form" },
+    "description": "If nothing else revealed you're a vampire, this will surely do.  You're currently in bat form.",
+    "points": 0,
+    "purifiable": false,
+    "valid": false,
+    "ugliness": 3,
+    "visibility": -2,
+    "encumbrance_always": [ [ "hand_l", 50 ], [ "hand_r", 50 ] ],
+    "override_look": { "id": "mon_bat", "tile_category": "monster" },
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "values": [
+          { "value": "CARRY_WEIGHT", "multiply": -0.66 },
+          { "value": "FOOTSTEP_NOISE", "multiply": -0.8 },
+          { "value": "MELEE_DAMAGE", "multiply": -0.5 },
+          { "value": "METABOLISM", "multiply": -0.5 }
+        ]
+      }
+    ],
+    "flags": [ "SMALL" ]
+  },
+  {
+    "id": "WINGS_TOUHOU_HELLRAVEN",
     "type": "mutation",
     "name": { "str": "Hell raven wings" },
-    "description": "You have a pair of large raven wings.  Activate the mutation to spread your wings, enabling you to fly.",
+    "description": "You have a pair of large raven wings.  Activating this trait allows you to spread and close your wings, enabling flight.  \nActivation cost: <color_light_blue>111</color> stamina.  Drains stamina while active.  Cast again to toggle.",
     "points": 0,
     "profession": true,
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
     "active": true,
-    "activated_eocs": [ "WINGS_HELLRAVEN_activate" ],
+    "activated_eocs": [ "wings_activate_eoc" ],
+    "activation_msg": "",
     "ugliness": 2,
     "visibility": 8,
-    "transform": { "target": "WINGS_HELLRAVEN_spread", "active": false, "moves": 100 },
     "cancels": [ "WINGS_BAT", "WINGS_BIRD", "WINGS_BUTTERFLY", "WINGS_INSECT", "WINGS_STUB" ]
   },
   {
-    "id": "WINGS_HELLRAVEN_spread",
-    "type": "mutation",
-    "name": { "str": "Hell raven wings (flight)" },
-    "copy-from": "WINGS_HELLRAVEN",
-    "description": "Your wings are now prepared for flying.  Activate the mutation to fold your wings, disabling flight.",
-    "active": true,
-    "activated_eocs": [ "WINGS_forget_fly_spells" ],
-    "enchantments": [ 
-      { 
-        "condition": "ALWAYS", 
-        "ench_effects": [ { "effect": "utsuho_levitation", "intensity": 1 } ] 
-      } 
-    ],
-    "spells_learned": [ [ "fly_downwards", 1 ], [ "fly_upwards", 1 ] ],
-    "transform": { "target": "WINGS_HELLRAVEN", "active": false, "moves": 100 }
-  },
-  {
-    "id": "WINGS_TENGUCROW",
+    "id": "WINGS_TOUHOU_TENGUCROW",
     "type": "mutation",
     "name": { "str": "Crow wings" },
-    "description": "You have a pair of relatively small crow wings.  Activate the mutation to enable flight.",
+    "description": "You have a pair of relatively small crow wings.  Activating this trait allows you to spread and close your wings, enabling flight.  \nActivation cost: <color_light_blue>111</color> stamina.  Drains stamina while active.  Cast again to toggle.",
     "points": 0,
     "profession": true,
     "purifiable": false,
     "starting_trait": false,
     "valid": false,
     "active": true,
-    "activated_eocs": [ "WINGS_TENGUCROW_activate" ],
+    "activated_eocs": [ "wings_activate_eoc" ],
+    "activation_msg": "",
     "visibility": 4,
-    "transform": { "target": "WINGS_TENGUCROW_spread", "msg_transform": "You prepare your wings to fly.", "active": false, "moves": 100 },
     "cancels": [ "WINGS_BAT", "WINGS_BIRD", "WINGS_BUTTERFLY", "WINGS_INSECT", "WINGS_STUB" ]
-  },
-  {
-    "id": "WINGS_TENGUCROW_spread",
-    "type": "mutation",
-    "name": { "str": "Crow wings (flight)" },
-    "copy-from": "WINGS_TENGUCROW",
-    "description": "Your wings are now prepared for flying.  Activate to disable flight.",
-    "active": true,
-    "activated_eocs": [ "WINGS_forget_fly_spells" ],
-    "enchantments": [ 
-      { 
-        "condition": "ALWAYS", 
-        "ench_effects": [ { "effect": "aya_levitation", "intensity": 1 } ] 
-      } 
-    ],
-    "spells_learned": [ [ "fly_downwards", 1 ], [ "fly_upwards", 1 ] ],
-    "transform": { "target": "WINGS_TENGUCROW", "msg_transform": "You relax your wings.", "active": false, "moves": 100 }
   },
   {
     "id": "YATAGARASU_VESSEL",
