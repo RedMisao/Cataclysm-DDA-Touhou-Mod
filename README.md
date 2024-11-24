@@ -1,7 +1,14 @@
 # Cataclysm-DDA-Touhou-Mod
 This is a fork of Taberone's [Touhou Professions](https://github.com/Taberone/Cataclysm-DDA-Touhou-Mod) mod.
 
-**The mod's folder goes in /data/mods/**.  Last updated for game version: 2022-12-24 experimental.
+**The mod's folder goes in /data/mods/**.  Last updated for game version: 0.G.
+
+```json
+This is an old and busted version of the mod. Here only for archival purposes.
+There's a **lot** of stuff updated over the experimentals, that was never fixed here.
+Your will experience a **bad product** if you play this version over the master_0.H or the current testing.
+Open an issue (at the Experimental, link below) if for some reason, you cannot run master_0.H or current testing.
+```
 
 Also check the [Expansion](https://github.com/RedMisao/Cataclysm-DDA-Touhou-Expansion) mod!
 
