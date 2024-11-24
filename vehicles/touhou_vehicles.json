@@ -2,47 +2,33 @@
   {
     "id": "kaenbyou_wheelbarrow",
     "type": "vehicle",
-    "name": "Corpse wheelbarrow",
-    "blueprint": [ "#" ],
-    "parts": [ { "x": 0, "y": 0, "parts": [ "frame_corpsecart", "wheel_corpsecart", "storage_corpsecart" ] } ],
-    "items": [ { "x": 0, "y": 0, "chance": 100, "items": [ "ash" ] } ]
+    "name": "Corpse cart",
+    "blueprint": [ ">#" ],
+    "parts": [ 
+      { "x": 0, "y": 0, "parts": [ "frame_corpsecart", "wheel_corpsecart", "storage_corpsecart" ] },
+      { "x": 0, "y": 0, "parts": [ "tank_corpsecart" ] },
+      { "x": 0, "y": 0, "parts": [ "reactor_corpsecart" ] },
+      { "x": -1, "y": 0, "parts": [ "frame_corpsecart", "wheel_corpsecart", "seat_corpsecart", "controls_corpsecart" ] }
+    ],
+    "items": [ { "x": 0, "y": 0, "chance": 50, "items": [ "corpse_ash" ] } ]
   },
   {
     "id": "kaenbyou_wheelbarrow2",
     "type": "vehicle",
-    "name": "Corpse wheelbarrow (test for engine and fuels)",
-    "blueprint": [
-      [ " -###> " ],
-      [ " -###> " ]
+    "name": "Corpse cart (TEST)",
+    "blueprint": [ ">#" ],
+    "parts": [ 
+      { "x": 0, "y": 0, "parts": [ "frame_corpsecart", "wheel_corpsecart", "storage_corpsecart" ] },
+      { "x": 0, "y": 0, "parts": [ "tank_corpsecart2" ] },
+      { "x": 0, "y": 0, "parts": [ "reactor_corpsecart2" ] },
+      { "x": -1, "y": 0, "parts": [ "frame_corpsecart", "wheel_corpsecart", "seat_corpsecart", "controls_corpsecart" ] }
     ],
-    "parts": [
-      { "x": 1, "y": 0, "parts": [ "frame_corpsecart", "front_corpsecart" ] },
-      { "x": 1, "y": 1, "parts": [ "frame_corpsecart", "front_corpsecart" ] },
-      {
-        "x": 0,
-        "y": 0,
-        "parts": [ "frame_corpsecart", "seat_corpsecart", "wheelmount_corpsecart", "wheel_corpsecart" ]
-      },
-      {
-        "x": 0,
-        "y": 1,
-        "parts": [ "frame_corpsecart", "seat_corpsecart", "wheelmount_corpsecart", "wheel_corpsecart" ]
-      },
-      { "x": -1, "y": 0, "parts": [ "frame_corpsecart", "storage_corpsecart", "support_corpsecart" ] },
-      { "x": -1, "y": 1, "parts": [ "frame_corpsecart", "storage_corpsecart", "support_corpsecart" ] },
-      { "x": -2, "y": 0, "parts": [ "frame_corpsecart", "wheelmount_corpsecart", "wheel_corpsecart" ] },
-      { "x": -2, "y": 1, "parts": [ "frame_corpsecart", "wheelmount_corpsecart", "wheel_corpsecart" ] },
-      { "x": -3, "y": 0, "parts": [ "handle_corpsecart" ] },
-      { "x": -3, "y": 1, "parts": [ "handle_corpsecart" ] },
-      { "x": 0, "y": 0, "parts": [ "controls_corpsecart" ] },
-      { "x": -1, "y": 0, "parts": [ "tank_corpsecart" ] },
-      { "x": -1, "y": 0, "parts": [ "reactor_corpsecart" ] }
-    ],
-    "items": [
-      { "x": -1, "y": 0, "chance": 100, "items": [ "ash" ] },
-      { "x": -1, "y": 0, "chance": 100, "item_groups": [ "fuel_diesel" ] }
-    ],
-    "//": "This one is for testing engines and fuels. The objective is to directly use corpses as fuel. However, I don't know how to do that, and the alternative is to process the corpses and then use that as fuel, which is not comfortable"
+    "items": [ { "x": 0, "y": 0, "chance": 50, "items": [ "corpse_ash" ] } ],
+    "//": "Just discovered the undocumented ammo_data field lol corpses can be loaded again, and revival shouldn't break",
+    "//note": "I was wrong, merely using copy-from the corpse items also breaks their revival",
+    "//note2": "Thus, the whole file has to be deleted, as merely renaming as corpses.json_ it doesn't prevent loading. Last version 0.9.7.8b",
+    "//2": "However I cannot limit the engine accepting only human or human-derived corpses",
+    "//3": "The fun thing is that this works with no fuel_data set in either flesh or hflesh . Which is not supposed to happen"
   },
   {
     "id": "keystone_floating",

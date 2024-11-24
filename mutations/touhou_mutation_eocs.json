@@ -1,118 +1,108 @@
 [
   {
-    "id": "WINGS_BAT_REMI_activate",
+    "id": "wings_activate_eoc",
     "type": "effect_on_condition",
-    "condition": { "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 200 } ] },
-    "effect": { "queue_eocs": [ "WINGS_BAT_REMI_drain1" ], "time_in_future": "2 s" },
-    "false_effect": { "run_eocs": "WINGS_BAT_REMI_stop" },
-    "//": "queue_eocs instead of run_eocs as the latter triggers immediately, before WINGS_BAT_REMI_spread (and remi_levitation) are present, not running the cycle"
-  },
-  {
-    "id": "WINGS_BAT_REMI_drain1",
-    "type": "effect_on_condition",
-    "condition": {
-      "and": [ { "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 200 } ] }, { "u_has_effect": "remi_levitation" } ]
-    },
-    "effect": [ { "arithmetic": [ { "u_val": "stamina" }, "-=", { "const": 200 } ] }, { "run_eocs": "WINGS_BAT_REMI_drain2" } ],
-    "false_effect": { "run_eocs": "WINGS_BAT_REMI_stop" },
-    "//": "Uses remi_levitation so the cycle can be stopped early by 'disabling' VAMPIRE_BAT_REMI_active"
-  },
-  {
-    "id": "WINGS_BAT_REMI_drain2",
-    "type": "effect_on_condition",
-    "condition": {
-      "and": [ { "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 200 } ] }, { "u_has_effect": "remi_levitation" } ]
-    },
-    "effect": { "queue_eocs": [ "WINGS_BAT_REMI_drain1" ], "time_in_future": "2 s" },
-    "false_effect": { "run_eocs": "WINGS_BAT_REMI_stop" }
-  },
-  {
-    "id": "WINGS_BAT_REMI_stop",
-    "type": "effect_on_condition",
-    "condition": { "compare_int": [ { "u_val": "stamina" }, "<=", { "const": 200 } ] },
+    "condition": { "math": [ "var_wings_active", "==", "0" ] },
     "effect": [
-      { "u_message": "You are too tired to fly!", "type": "bad" },
-      { "u_lose_effect": "WINGS_BAT_REMI_activate" },
-      { "u_lose_effect": "WINGS_BAT_REMI_drain1" },
-      { "u_lose_effect": "WINGS_BAT_REMI_drain2" },
-      { "u_lose_trait": "VAMPIRE_BAT_REMI_active" },
-      { "u_add_trait": "VAMPIRE_BAT_REMI" }
+      { "math": [ "var_wings_active", "=", "1" ] },
+      { "run_eocs": [ "wings_start_eoc" ] }
+    ],
+    "false_effect": [ { "run_eocs": "wings_toggle_eoc" } ],
+    "//": "Based on sharingan_eoc , which is in turn the mutation-activated version of stance_ninja_taijutsu_eoc ",
+    "//2": "Stamina pool is 10000, so 111 stamina/s ~ 90 s of flying",
+    "//3": "Activating the you mutations will run this, so it will check for the var_WINGS every time, and either 'spread' the wings, or remove the flight mode accordingly"
+  },
+  {
+    "id": "wings_start_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_val('stamina')", ">=", "111" ] },
+    "effect": [ 
+      { "u_message": "You prepare your wings to fly.", "type": "mixed" },
+      { "run_eocs": [ "wings_cycle_1_eoc" ] }
+    ],
+    "false_effect": [ { "run_eocs": "wings_oom_eoc" } ],
+    "//": "The cost check is run after the activation_EOC , so it can be toggled ON and OFF with no cost"
+  },
+  {
+    "id": "wings_cycle_1_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_wings_active", "==", "1" ] },
+    "effect": [ { "run_eocs": [ "wings_cycle_2_eoc" ] } ],
+    "//": "This re-checks if var_WINGS is already active, if so it runs the next EOC",
+    "//IMPORTANT": "No false_effect here because the toggle is handled upstream. Adding a(ny) false effect results in duplicating the message"
+  },
+  {
+    "id": "wings_cycle_2_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_val('stamina')", ">=", "111" ] },
+    "effect": [
+      { "math": [ "u_val('stamina')", "-=", "111" ] },
+      { 
+        "run_eocs": [ 
+          {
+            "id": "wings_cycle_hellraven_eoc",
+            "condition": { "u_has_trait": "HELLRAVEN_SPECIES" },
+            "effect": [
+              { "u_add_effect": "flight_hellraven_effect", "duration": "3 s" },
+              { "queue_eocs": [ "wings_cycle_1_eoc" ], "time_in_future": "2 s" }
+            ]
+          }
+        ]
+      },
+      { 
+        "run_eocs": [ 
+          {
+            "id": "wings_cycle_tengucrow_eoc",
+            "condition": { "u_has_trait": "TENGUCROW_SPECIES" },
+            "effect": [
+              { "u_add_effect": "flight_tengucrow_effect", "duration": "3 s" },
+              { "queue_eocs": [ "wings_cycle_1_eoc" ], "time_in_future": "2 s" }
+            ]
+          }
+        ]
+      },
+      { 
+        "run_eocs": [ 
+          {
+            "id": "wings_cycle_vampire_eoc",
+            "condition": { "u_has_trait": "VAMPIRE_SPECIES" },
+            "effect": [
+              { "u_add_effect": "flight_vampire_effect", "duration": "3 s" },
+              { "queue_eocs": [ "wings_cycle_1_eoc" ], "time_in_future": "2 s" }
+            ]
+          }
+        ]
+      }
+    ],
+    "false_effect": [ { "run_eocs": "wings_oom_eoc" } ],
+    "//": "Repeater for each character with wings, better than repeating the whole cycles xN times",
+    "//2": "Aya used to consume 83 stamina instead of 111 per cycle, but she's already very fast, so it's just normalized to everyone else"
+  },
+  {
+    "id": "wings_toggle_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_message": "You relax your wings.", "type": "mixed" },
+      { "run_eocs": [ "wings_deactivate_eoc" ] }
     ]
   },
   {
-    "id": "WINGS_HELLRAVEN_activate",
+    "id": "wings_oom_eoc",
     "type": "effect_on_condition",
-    "condition": { "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 200 } ] },
-    "effect": { "queue_eocs": [ "WINGS_HELLRAVEN_drain1" ], "time_in_future": "2 s" },
-    "false_effect": { "run_eocs": "WINGS_HELLRAVEN_stop" }
-  },
-  {
-    "id": "WINGS_HELLRAVEN_drain1",
-    "type": "effect_on_condition",
-    "condition": {
-      "and": [ { "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 200 } ] }, { "u_has_effect": "utsuho_levitation" } ]
-    },
-    "effect": [ { "arithmetic": [ { "u_val": "stamina" }, "-=", { "const": 200 } ] }, { "run_eocs": "WINGS_HELLRAVEN_drain2" } ],
-    "false_effect": { "run_eocs": "WINGS_HELLRAVEN_stop" }
-  },
-  {
-    "id": "WINGS_HELLRAVEN_drain2",
-    "type": "effect_on_condition",
-    "condition": {
-      "and": [ { "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 200 } ] }, { "u_has_effect": "utsuho_levitation" } ]
-    },
-    "effect": { "queue_eocs": [ "WINGS_HELLRAVEN_drain1" ], "time_in_future": "2 s" },
-    "false_effect": { "run_eocs": "WINGS_HELLRAVEN_stop" }
-  },
-  {
-    "id": "WINGS_HELLRAVEN_stop",
-    "type": "effect_on_condition",
-    "condition": { "compare_int": [ { "u_val": "stamina" }, "<=", { "const": 200 } ] },
     "effect": [
       { "u_message": "You are too tired to fly!", "type": "bad" },
-      { "u_lose_effect": "WINGS_HELLRAVEN_activate" },
-      { "u_lose_effect": "WINGS_HELLRAVEN_drain1" },
-      { "u_lose_effect": "WINGS_HELLRAVEN_drain2" },
-      { "u_lose_trait": "WINGS_HELLRAVEN_spread" },
-      { "u_add_trait": "WINGS_HELLRAVEN" }
+      { "run_eocs": [ "wings_deactivate_eoc" ] }
     ]
   },
   {
-    "id": "WINGS_TENGUCROW_activate",
+    "id": "wings_deactivate_eoc",
     "type": "effect_on_condition",
-    "condition": { "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 250 } ] },
-    "effect": { "queue_eocs": [ "WINGS_TENGUCROW_drain1" ], "time_in_future": "2 s" },
-    "false_effect": { "run_eocs": "WINGS_TENGUCROW_stop" }
-  },
-  {
-    "id": "WINGS_TENGUCROW_drain1",
-    "type": "effect_on_condition",
-    "condition": {
-      "and": [ { "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 250 } ] }, { "u_has_effect": "aya_levitation" } ]
-    },
-    "effect": [ { "arithmetic": [ { "u_val": "stamina" }, "-=", { "const": 250 } ] }, { "run_eocs": "WINGS_TENGUCROW_drain2" } ],
-    "false_effect": { "run_eocs": "WINGS_TENGUCROW_stop" }
-  },
-  {
-    "id": "WINGS_TENGUCROW_drain2",
-    "type": "effect_on_condition",
-    "condition": {
-      "and": [ { "compare_int": [ { "u_val": "stamina" }, ">=", { "const": 250 } ] }, { "u_has_effect": "aya_levitation" } ]
-    },
-    "effect": { "queue_eocs": [ "WINGS_TENGUCROW_drain1" ], "time_in_future": "2 s" },
-    "false_effect": { "run_eocs": "WINGS_TENGUCROW_stop" }
-  },
-  {
-    "id": "WINGS_TENGUCROW_stop",
-    "type": "effect_on_condition",
-    "condition": { "compare_int": [ { "u_val": "stamina" }, "<=", { "const": 250 } ] },
     "effect": [
-      { "u_message": "You are too tired to fly!", "type": "bad" },
-      { "u_lose_effect": "WINGS_TENGUCROW_activate" },
-      { "u_lose_effect": "WINGS_TENGUCROW_drain1" },
-      { "u_lose_effect": "WINGS_TENGUCROW_drain2" },
-      { "u_lose_trait": "WINGS_TENGUCROW_spread" },
-      { "u_add_trait": "WINGS_TENGUCROW" }
-    ]
+      { "math": [ "var_wings_active", "=", "0" ] },
+      { "u_lose_effect": "flight_hellraven_effect" },
+      { "u_lose_effect": "flight_tengucrow_effect" },
+      { "u_lose_effect": "flight_vampire_effect" }
+    ],
+    "//": "Wings-granted abilities are handled by flight_gain_effect_eoc and flight_lose_effect_eoc "
   }
 ]

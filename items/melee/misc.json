@@ -3,16 +3,16 @@
     "id": "bullwhip",
     "type": "GENERIC",
     "name": { "str": "bullwhip" },
-    "cutting": 6,
     "copy-from": "bullwhip",
+    "melee_damage": { "cut": 6 },
     "extend": { "weapon_category": [ "WHIPS" ] }
   },
   {
     "id": "bullwhip_razor",
     "type": "GENERIC",
     "name": { "str": "scourge" },
-    "cutting": 13,
     "copy-from": "bullwhip_razor",
+    "melee_damage": { "cut": 13 },
     "extend": { "weapon_category": [ "WHIPS" ] }
   }
 ]

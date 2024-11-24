@@ -12,15 +12,27 @@
     "default": "ammo_lunar_small_2"
   },
   {
+    "id": "ammo_lunar_small_illusionary",
+    "type": "ammunition_type",
+    "name": "lunar ammo (small) (illusionary)",
+    "default": "ammo_lunar_small_1_illusionary"
+  },
+  {
     "id": "alternate_knife",
     "type": "ammunition_type",
     "name": "silver knife",
     "default": "alternate_knife_knife"
   },
   {
-    "id": "magic_fuel_ammo",
-    "name": "magic fuel",
+    "id": "chasm_ammo",
     "type": "ammunition_type",
+    "name": "chasm ammo",
+    "default": "chasm_ammo_ammo"
+  },
+  {
+    "id": "magic_fuel_ammo",
+    "type": "ammunition_type",
+    "name": "magic fuel",
     "default": "mana_fuel"
   },
   {
@@ -30,9 +42,15 @@
     "default": "myon_bullet_bullet"
   },
   {
+    "id": "soulshard_fuel_type",
+    "type": "ammunition_type",
+    "name": "soul (fuel) (type)",
+    "default": "soulshard_fuel"
+  },
+  {
     "id": "touhou_corpse_ammo",
     "type": "ammunition_type",
-    "name": "corpse",
-    "default": "touhou_corpse_medium"
+    "name": "corpse (ammo)",
+    "default": "corpse_generic_human"
   }
 ]

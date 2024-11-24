@@ -2,26 +2,26 @@
   {
     "id": "camera_aya",
     "type": "TOOL",
-    "category": "tools",
     "name": { "str": "old-fashioned camera", "str_pl": "old-fashioned cameras" },
     "description": "A relatively old-looking photo camera.  You can look at your photos on the screen.  Uses conventional batteries.",
     "volume": "650 ml",
     "weight": "1000 g",
     "longest_side": "12 cm",
-    "price_postapoc": 50,
+    "price_postapoc": "50 cent",
     "to_hit": { "balance": "neutral", "grip": "solid", "length": "hand", "surface": "any" },
+    "melee_damage": { "bash": 2 },
     "material": [ "plastic", "steel" ],
     "symbol": ";",
     "color": "black",
-    "bashing": 2,
-    "charges_per_use": 5,
+    "ammo": [ "battery" ],
+    "charges_per_use": 2,
     "use_action": [ { "type": "cast_spell", "spell_id": "camera_aya_flash", "no_fail": true, "level": 1 } ],
     "pocket_data": [
       {
         "pocket_type": "MAGAZINE_WELL",
         "rigid": true,
-        "flag_restriction": [ "BATTERY_ULTRA_LIGHT", "BATTERY_LIGHT" ],
-        "default_magazine": "light_plus_battery_cell"
+        "default_magazine": "light_battery_cell",
+        "flag_restriction": [ "BATTERY_ULTRA_LIGHT", "BATTERY_LIGHT" ]
       }
     ],
     "flags": [ "BELT_CLIP" ]

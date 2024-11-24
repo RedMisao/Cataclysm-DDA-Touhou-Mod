@@ -11,14 +11,13 @@
     "price": 52000,
     "price_postapoc": 5200,
     "to_hit": { "balance": "good", "grip": "weapon", "length": "hand", "surface": "point" },
-    "bashing": 1,
-    "cutting": 8,
-    "material": [ { "type": "silver" }, { "type": "steel", "portion": 9 } ],
+    "melee_damage": { "bash": 1, "stab": 7, "soul": 7 },
+    "thrown_damage": [ { "damage_type": "stab", "amount": 10 }, { "damage_type": "soul", "amount": 8 } ],
+    "material": [ { "type": "silver" }, { "type": "steel", "portion": 8 } ],
     "symbol": ";",
     "looks_like": "throwing_knife",
     "color": "light_gray",
-    "thrown_damage": [ { "damage_type": "stab", "amount": 16 } ],
     "weapon_category": [ "KNIVES" ],
-    "flags": [ "SHEATH_KNIFE", "STAB", "STURDY" ]
+    "flags": [ "SHEATH_KNIFE", "STURDY" ]
   }
 ]

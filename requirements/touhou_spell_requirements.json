@@ -1,25 +1,5 @@
 [
   {
-    "id": "spell_components_battery_ultralight",
-    "type": "requirement",
-    "components": [ [ [ "light_minus_battery_cell", 1 ] ] ]
-  },
-  {
-    "id": "spell_components_battery_light",
-    "type": "requirement",
-    "components": [ [ [ "light_battery_cell", 1 ] ] ]
-  },
-  {
-    "id": "spell_components_battery_medium",
-    "type": "requirement",
-    "components": [ [ [ "medium_battery_cell", 1 ] ] ]
-  },
-  {
-    "id": "spell_components_battery_heavy",
-    "type": "requirement",
-    "components": [ [ [ "heavy_battery_cell", 1 ] ] ]
-  },
-  {
     "id": "spell_components_blood",
     "type": "requirement",
     "components": [ [ [ "blood", 1 ] ] ],
@@ -42,9 +22,24 @@
     "tools": [ [ [ "iku_long_scarf", -1 ], [ "iku_long_scarf_loose", -1 ] ] ]
   },
   {
-    "id": "spell_components_tengufan",
+    "id": "spell_components_kapparesource",
     "type": "requirement",
-    "tools": [ [ [ "tengu_fan", -1 ] ] ]
+    "tools": [ [ [ "nitori_backpack", -1 ], [ "kappa_transformator", -1 ] ] ]
+  },
+  {
+    "id": "spell_components_knives",
+    "type": "requirement",
+    "components": [ [
+      [ "silver_knife", 1 ], [ "knife_combat", 1 ],
+      [ "knife_butcher", 1 ], [ "knife_steak", 1 ], [ "knife_paring", 1 ], [ "knife_chef", 1 ], [ "knife_carving", 1 ], [ "knife_bread", 1 ], [ "knife_meat_cleaver", 1 ], [ "knife_vegetable_cleaver", 1 ],
+      [ "knife_folding", 1 ], [ "knife_combat_marine", 1 ], [ "knife_combat_army", 1 ], [ "knife_hunting", 1 ], [ "knife_KABAR", 1 ], [ "knife_rambo", 1 ], [ "ch_knife_rambo", 1 ], [ "hc_knife_rambo", 1 ], [ "lc_knife_rambo", 1 ], [ "mc_knife_rambo", 1 ], [ "qt_knife_rambo", 1 ], [ "knife_rm42", 1 ], [ "knife_swissarmy", 1 ], [ "knife_trench", 1 ], [ "ch_knife_trench", 1 ], [ "hc_knife_trench", 1 ], [ "lc_knife_trench", 1 ], [ "mc_knife_trench", 1 ], [ "qt_knife_trench", 1 ], [ "makeshift_knife", 1 ], [ "knife_baselard", 1 ], [ "kris", 1 ], [ "kris_fake", 1 ], [ "kukri", 1 ], [ "ch_kukri", 1 ], [ "hc_kukri", 1 ], [ "lc_kukri", 1 ], [ "mc_kukri", 1 ], [ "qt_kukri", 1 ], [ "tanto", 1 ], [ "tanto_inferior", 1 ], [ "tanto_fake", 1 ], [ "karambit", 1 ], [ "kirpan", 1 ], [ "enfield_bayonet", 1 ],
+      [ "throwing_knife", 1 ],
+      [ "copper_knife", 1 ], [ "bronze_knife", 1 ], [ "diveknife", 1 ], [ "primitive_knife", 1 ],
+      [ "knife_butter", 1 ], [ "scalpel", 1 ],  [ "xacto", 1 ], [ "boxcutter", 1 ]
+    ] ],
+    "//": " *dies internally* ",
+    "//2": "Not present here: her knife, the artifact knife, switchblade, bone_knife, blade, office_letter_opener, multitool, pockknife. The first two because they're unique, the others because I don't want to",
+    "//0.H": "knife_huge -> knife_butcher , knife_small -> knife_steak + knife_paring , knife_large -> knife_chef + knife_carving + knife_bread , knife_cleaver -> knife_meat_cleaver + knife_vegetable_cleaver "
   },
   {
     "id": "spell_components_tenkojian",
@@ -60,25 +55,5 @@
     "id": "spell_components_utsuhorod",
     "type": "requirement",
     "tools": [ [ [ "utsuho_rod", -1 ] ] ]
-  },
-  {
-    "id": "spell_components_utsuhosun",
-    "type": "requirement",
-    "components": [ [ [ "utsuho_minisun", 1 ] ] ]
-  },
-  {
-    "id": "spell_components_youmuhaku",
-    "type": "requirement",
-    "tools": [ [ [ "youmu_hakurouken", -1 ] ] ]
-  },
-  {
-    "id": "spell_components_youmurouka",
-    "type": "requirement",
-    "tools": [ [ [ "youmu_roukanken", -1 ] ] ]
-  },
-  {
-    "id": "spell_components_youmuswords",
-    "type": "requirement",
-    "tools": [ [ [ "youmu_roukanken", -1 ], [ "youmu_hakurouken", -1 ] ] ]
   }
 ]

@@ -1,32 +1,23 @@
 [
   {
-    "id": "touhou_corpse_medium",
+    "id": "soulshard_fuel",
     "type": "AMMO",
-    "name": { "str_sp": "corpse (prepared)" },
     "category": "fuel",
-    "description": "A corpse, prepared for use in special reactors",
-    "weight": "70000 g",
-    "volume": "65 L",
-    "price": 0,
-    "price_postapoc": 0,
-    "material": [ "hcorpse" ],
-    "symbol": "💀",
-    "color": "dark_gray",
-    "ammo_type": "touhou_corpse_ammo",
-    "count": 1,
-    "stack_size": 1,
+    "name": { "str": "soulshard (fuel)", "str_pl": "soulshards (fuel)" },
+    "description": "The crystallized fragment of a humanoid soul, ready to be used as an energy source.  Renewable?",
+    "volume": "80 ml",
+    "weight": "40 mg",
     "phase": "solid",
-    "effects": [ "NEVER_MISFIRES", "SMOKE" ],
-    "flags": [ "IRREPLACEABLE_CONSUMABLE" ]
-  },
-  {
-    "id": "touhou_corpse_small",
-    "type": "AMMO",
-    "name": { "str_sp": "corpse (prepared)" },
-    "category": "fuel",
-    "copy-from": "touhou_corpse_medium",
-    "description": "A small corpse, prepared for use in special reactors",
-    "weight": "35000 g",
-    "volume": "30 L"
+    "material": [ "soulshard_fuel_mat" ],
+    "symbol": "💀",
+    "color": "pink",
+    "ammo_type": "soulshard_fuel_type",
+    "count": 1,
+    "stack_size": 16,
+    "damage": { "damage_type": "soul", "amount": 1 },
+    "range": 1,
+    "effects": [ "FLAME", "INCENDIARY", "MAGIC_FOCUS", "NEVER_MISFIRES", "STREAM", "TRADER_AVOID", "UNBREAKABLE_MELEE" ],
+    "//": "Based on diesel ",
+    "//2": "1 soulshard = 10 mL and 5 g. Combining 8 = 80 mL and 40 g, which is arbitrarily as good as 1 L of diesel, energy-wise"
   }
 ]

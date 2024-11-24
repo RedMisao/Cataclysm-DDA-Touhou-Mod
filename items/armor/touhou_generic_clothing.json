@@ -2,7 +2,7 @@
   {
     "id": "bloomers",
     "type": "ARMOR",
-    "name": "bloomers",
+    "name": { "str": "bloomers", "str_pl": "bloomers" },
     "description": "A pair of comfortable, louse white trousers worn beneath the dress but over other undergarments.  As important as your hat.",
     "repairs_like": "jeans",
     "volume": "1000 ml",
@@ -20,13 +20,13 @@
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_hip_l", "leg_hip_r" ],
         "coverage": 100,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_upper_l", "leg_upper_r" ],
         "coverage": 35,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       }
     ]
   },
@@ -52,7 +52,7 @@
         "covers": [ "arm_l", "arm_r" ],
         "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ],
         "coverage": 8,
-        "encumbrance": [ 0, 2 ]
+        "encumbrance": [ 2, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
@@ -64,21 +64,21 @@
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_upper_l", "leg_upper_r" ],
         "coverage": 95,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_knee_l", "leg_knee_r" ],
         "coverage": 95,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_lower_l", "leg_lower_r" ],
         "coverage": 20,
-        "encumbrance": [ 0, 2 ]
+        "encumbrance": [ 0, 4 ]
       },
-      { "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 8, 16 ] }
+      { "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 2, 12 ] }
     ],
     "flags": [ "FANCY", "VARSIZE" ],
     "//": "Generic below the knee version, no silk material so it's made of cotton instead"
@@ -105,7 +105,7 @@
         "covers": [ "arm_l", "arm_r" ],
         "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ],
         "coverage": 8,
-        "encumbrance": [ 0, 2 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
@@ -117,15 +117,15 @@
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_upper_l", "leg_upper_r" ],
         "coverage": 95,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_knee_l", "leg_knee_r" ],
         "coverage": 45,
-        "encumbrance": [ 0, 2 ]
+        "encumbrance": [ 0, 4 ]
       },
-      { "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 8, 16 ] }
+      { "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 2, 16 ] }
     ],
     "flags": [ "FANCY", "VARSIZE" ],
     "//": "Ends around 4-6 cm below the knee"
@@ -152,7 +152,7 @@
         "covers": [ "arm_l", "arm_r" ],
         "specifically_covers": [ "arm_shoulder_l", "arm_shoulder_r" ],
         "coverage": 8,
-        "encumbrance": [ 0, 2 ]
+        "encumbrance": [ 0, 4 ]
       },
       {
         "covers": [ "leg_l", "leg_r" ],
@@ -166,7 +166,7 @@
         "coverage": 30,
         "encumbrance": [ 2, 4 ]
       },
-      { "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 8, 16 ] }
+      { "covers": [ "torso" ], "coverage": 95, "encumbrance": [ 2, 16 ] }
     ],
     "flags": [ "FANCY", "VARSIZE" ],
     "//": "Covers one third of the thigh at best"
@@ -174,7 +174,7 @@
   {
     "id": "tai_chi_pants",
     "type": "ARMOR",
-    "name": { "str": "tai chi pants" },
+    "name": { "str": "tai chi pants", "str_pl": "tai chi pants" },
     "description": "White baggy pants for practicing Tai Chi.  Very comfy.",
     "volume": "2000 ml",
     "weight": "350 g",
@@ -186,14 +186,14 @@
     "looks_like": "pants",
     "color": "white",
     "warmth": 4,
-    "armor": [ { "covers": [ "leg_l", "leg_r" ], "coverage": 85, "encumbrance": [ 1, 3 ] } ],
+    "armor": [ { "covers": [ "leg_l", "leg_r" ], "coverage": 85, "encumbrance": [ 0, 2 ] } ],
     "flags": [ "VARSIZE" ]
   },
   {
     "id": "tang_shirt",
     "type": "ARMOR",
     "category": "armor",
-    "name": "tang shirt",
+    "name": { "str": "tang shirt", "str_pl": "tang shirts" },
     "copy-from": "longshirt",
     "description": "A long sleeved shirt made in characteristic Chinese style.  It has a short, somewhat flexible collar, knots replacing buttons, with the fabric feeling different to the touch compared to the average longshirt.",
     "repairs_like": "longshirt",
@@ -208,8 +208,8 @@
     "color": "light_gray",
     "warmth": 6,
     "armor": [
-      { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 2, 4 ] },
-      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 2, 5 ] }
+      { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 0, 4 ] },
+      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 0, 4 ] }
     ],
     "flags": [ "VARSIZE" ]
   },
@@ -217,7 +217,7 @@
     "id": "tang_suit",
     "type": "ARMOR",
     "category": "armor",
-    "name": "Tang suit",
+    "name": { "str": "tang suit", "str_pl": "tang suits" },
     "copy-from": "jacket_jean",
     "description": "A long sleeved jacket made in characteristic Chinese style.  Despite looking like a shirt, it's worn over it, so it qualifies as a jacket.  Has the characteristic collar and the knots replacing buttons, featuring inner pockets.  Special cut allows to hold the overall shape, so it doesn't look loose or baggy.  Putting this on makes you want to try those sick moves.",
     "repairs_like": "jacket_jean",
@@ -248,15 +248,15 @@
       }
     ],
     "armor": [
-      { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 6, 10 ] },
-      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 6, 12 ] }
+      { "covers": [ "arm_l", "arm_r" ], "coverage": 90, "encumbrance": [ 4, 8 ] },
+      { "covers": [ "torso" ], "coverage": 90, "encumbrance": [ 2, 8 ] }
     ],
-    "flags": [ "OUTER", "POCKETS", "VARSIZE" ]
+    "flags": [ "OUTER", "VARSIZE" ]
   },
   {
     "id": "ribbon_black",
     "type": "TOOL_ARMOR",
-    "name": "black ribbon",
+    "name": { "str": "black ribbon", "str_pl": "black ribbons" },
     "description": "A small black ribbon, used to tie your hair.",
     "repairs_like": "tie_bow",
     "volume": "200 ml",
@@ -267,7 +267,7 @@
     "color": "black",
     "material": [ "cotton" ],
     "armor": [ { "covers": [ "head" ], "coverage": 0, "encumbrance": [ 0, 0 ] } ],
-    "flags": [ "FANCY", "NO_WEAR_EFFECT" ]
+    "flags": [ "FANCY", "NO_WEAR_EFFECT", "SEMITANGIBLE" ]
   },
   {
     "id": "ribbon_neck",
@@ -304,12 +304,12 @@
     "color": "black",
     "warmth": 8,
     "armor": [
-      { "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 1, 2 ] },
+      { "covers": [ "foot_l", "foot_r" ], "coverage": 100, "encumbrance": [ 0, 2 ] },
       {
         "covers": [ "leg_l", "leg_r" ],
         "specifically_covers": [ "leg_lower_l", "leg_lower_r" ],
         "coverage": 25,
-        "encumbrance": [ 2, 4 ]
+        "encumbrance": [ 0, 2 ]
       }
     ],
     "flags": [ "SKINTIGHT", "VARSIZE" ]

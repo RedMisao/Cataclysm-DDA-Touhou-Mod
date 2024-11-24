@@ -5,14 +5,42 @@
     "legacy_enum_id": 1,
     "intensity_levels": [ { "name": "blood splatter", "color": "red" }, { "name": "blood stain" }, { "name": "puddle of blood" } ],
     "description_affix": "covered_in",
-    "underwater_age_speedup": "2 turns",
+    "underwater_age_speedup": "3 turns",
     "decay_amount_factor": 2,
     "is_splattering": true,
-    "half_life": "12 turns",
+    "half_life": "4 turns",
     "phase": "liquid",
     "accelerated_decay": true,
     "display_field": true,
-    "//": "faster decaying blood for effects"
+    "looks_like": "fd_blood",
+    "//": "Faster decaying blood for vfx"
+  },
+  {
+    "id": "fd_blood3",
+    "type": "field_type",
+    "legacy_enum_id": 3,
+    "intensity_levels": [ { "name": "blood splatters", "color": "red" }, { "name": "blood puddles" }, { "name": "bloody chunks" }, { "name": "bloody gore" } ],
+    "description_affix": "covered_in",
+    "underwater_age_speedup": "25 minutes",
+    "decay_amount_factor": 2,
+    "is_splattering": true,
+    "half_life": "6 turns",
+    "phase": "liquid",
+    "accelerated_decay": true,
+    "display_field": true,
+    "looks_like": "fd_gibs_flesh",
+    "//": "Extra bloody blood"
+  },
+  {
+    "id": "fd_clairvoyant2",
+    "type": "field_type",
+    "intensity_levels": [ { "name": "clairvoyance", "sym": "8", "dangerous": false, "light_emitted": 1 } ],
+    "priority": 9999,
+    "half_life": "6 seconds",
+    "phase": "solid",
+    "display_items": true,
+    "display_field": false,
+    "//": "Custom fd_clairvoyant2 so it's more reliable for Detection spells"
   },
   {
     "id": "fd_incendiary2",
@@ -34,13 +62,23 @@
     "description_affix": "on",
     "has_fire": true,
     "priority": 4,
-    "half_life": "12 turns",
+    "half_life": "4 turns",
     "phase": "plasma",
     "display_items": false,
     "display_field": true,
     "looks_like": "fd_fire",
-    "immunity_data": { "traits": [ "PROF_MOKOU" ] },
+    "immunity_data": { "flags": [ "PROF_MOKOU" ] },
     "//": "Fire field for mokou_fujiyamakazan , closest thing to the 6 - 9 turn fire field I wanted"
+  },
+  {
+    "id": "fd_fangshu",
+    "type": "field_type",
+    "legacy_enum_id": 26,
+    "intensity_levels": [ { "name": "point", "sym": "·", "light_emitted": 1 } ],
+    "priority": 9,
+    "phase": "solid",
+    "display_field": true,
+    "looks_like": "t_null"
   },
   {
     "id": "fd_poison",
@@ -68,7 +106,7 @@
       { "name": "poison streak" },
       { "name": "pool of poison" }
     ],
-    "immunity_data": { "traits": [ "BIO_IMMUNE" ] },
+    "immunity_data": { "flags": [ "BIO_IMMUNE" ] },
     "underwater_age_speedup": "2 turns",
     "decay_amount_factor": 3,
     "gas_absorption_factor": 6,
@@ -159,6 +197,46 @@
       "msg_success": "You brush aside some webs."
     },
     "display_field": true,
-    "looks_like": "fd_web"
+    "looks_like": "fd_web",
+    "//": "Web field for Yamame spell effects, main change is phase gas and reduced duration"
+  },
+  {
+    "id": "fd_web3",
+    "type": "field_type",
+    "legacy_enum_id": 5,
+    "intensity_levels": [
+      {
+        "name": "cobwebs",
+        "sym": "}",
+        "effects": [
+          { "effect_id": "webbed", "intensity": 1, "min_duration": "4 s", "immune_in_vehicle": true, "is_environmental": false }
+        ]
+      },
+      {
+        "name": "webs",
+        "effects": [
+          { "effect_id": "webbed", "intensity": 2, "min_duration": "4 s", "immune_in_vehicle": true, "is_environmental": false }
+        ]
+      }
+    ],
+    "description_affix": "covered_in",
+    "immunity_data": { "flags": [ "WEBWALK", "KOKORO_WEBS" ] },
+    "decrease_intensity_on_contact": false,
+    "priority": 2,
+    "half_life": "6 seconds",
+    "phase": "gas",
+    "display_items": true,
+    "bash": {
+      "str_min": 10,
+      "str_max": 20,
+      "sound_vol": 2,
+      "sound_fail_vol": 2,
+      "sound": " !",
+      "msg_success": "You brush aside some webs."
+    },
+    "display_field": true,
+    "looks_like": "fd_web",
+    "//": "Web field for kokoro_shouting_gspider , so she can walk over this without suffering the demerit",
+    "//2": "Doesn't work. Tried to do the same as #75165 by adding an ench_effect that removes the custom webbed3 from fd_web3, but she still suffers the demerit. Seems the webbed effect is hardcoded"
   }
 ]
