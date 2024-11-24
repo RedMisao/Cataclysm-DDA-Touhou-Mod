@@ -40,7 +40,6 @@ This mod adds Touhou Project characters as professions.  Characters (2hus) have 
 * Immortality.  Mokou resurrects after dying, immediately restoring her body.  She can die as many times as she wants, but there's a soft cap relative to how many times she has died in a period of time, plus a small-ish pain debuff that stacks, to discourage savescumming.
 * Custom Martial arts.  Some characters have martial arts with new effects, such as automatic spell casting at the target (with no cost), cosmetic effects, conditional effects depending on the equipped weapon, the ability to parry, etc.
 * Soul damage.  A custom damage, which deals extra damage to spiritual beings, and reduced to extradimensional beings (mostly used at the Expansion)
-* Weapon scaling.  Some spells now also scale from the equipped weapon's damage.
 * Wings/Flight.  Aya, Remi and Utsuho can now fly in three dimensional space, consuming stamina until they're tired enough.  This is done by activating a mutation (View/active mutations key).
 * Youkai form toggle.  Kaenbyou, Remi and Yamame can now switch between their human and youkai forms, each having different effects.  This is done by activating a mutation (View/active mutations key).
 
