@@ -19,8 +19,8 @@ This mod adds Touhou Project characters as professions.  Characters (2hus) have 
 * **Hata no Kokoro:** Uses emotion.  Constantly swaps between four masks representing emotions, each grants her different effects (affects spells too!).
 * **Iku Nagae:** Uses electric spells.  Fights by whipping and shocking enemies to death, while dancing on the battlefield.
 * **Kasen Ibaraki:** Uses variant taoist techniques.  Fights by weaving blows between her hard hitting arm, and the harder hitting arm.
-* **Reisen:** Uses a mysterious ability.  Recently conscripted into the Lunarian Defence Corps, fights aided by her service Lunarian rifle and basic military training.  She's trying her best!
-* **Reisen Udongein Inaba:** Uses wavelength manipulation.  Former member of the Elite Lunarian Defence Corps, proficient with firearms and skilled in special operations.  Starts with a Lunarian tech pistol.
+* **Reisen:** Uses a mysterious ability.  Recently conscripted into the Lunarian Defense Corps, fights aided by her service Lunarian rifle and basic military training.  She's trying her best!
+* **Reisen Udongein Inaba:** Uses wavelength manipulation.  Former member of the Elite Lunarian Defense Corps, proficient with firearms and skilled in special operations.  Starts with a Lunarian tech pistol.
 * **Remilia Scarlet:** Uses Red Magic.  The charismatic vampire leader of the Scarlet Devil Mansion, nothing can oppose her when she's serious.
 * **Rin Kaenbyou :** Uses destructive fire spells and calls forth Vengeful spirits to assist her in battle.  Collects corpses with her wooden wheelbarrow.
 * **Sakuya Izayoi:** Uses time manipulation.  Fights by elegantly throwing knives, then cleaning it all perfectly afterwards.
@@ -47,22 +47,24 @@ This mod adds Touhou Project characters as professions.  Characters (2hus) have 
 
 <details>
     <summary>A more exhaustive list of the mod's spell system:</summary>
-    * Spell **tags** alone enable the following:
-      * Double damage
-      * Spreading diseases between monsters
-      * Jump-kicking a target to a location (or in othe words, kick a target and move together to the intended destination.  Or a wall).
-      * Corpse explosion!
-      * Summoned allies casting spells after the master
-      * Literally necromancy (throwback to the good old 0.C times)
-      * Ritual spells
-    * Some spells were updated to now automatically **cast at a location** without further player input
-      * This was expanded to the custom martial arts, so techniques can now proc mini-spells
-      * This was also expanded by adding **delayed directional spells** without player input
+
+  * Spell **tags** alone enable the following:
+    * Double damage
+    * Spreading diseases between monsters
+    * Jump-kicking a target to a location (or in othe words, kick a target and move together to the intended destination.  Or a wall)
+    * Corpse explosion!
+    * Summoned allies casting spells after the master
+    * Literally necromancy (throwback to the good old 0.C times)
+    * Ritual spells
+  * Some spells were updated to now automatically **cast at a location** without further player input
+    * This was expanded to the custom martial arts, so techniques can now proc **mini-spells**
+    * This was also expanded by adding **delayed directional spells** without player input
     * Throw weapon.  Kokoro **throws her weapon**
-    * Pull enemy to you.  Or item.  Or pull yourself tow- oops that's spoilers
+    * **Pull enemy to you**.  Or item.  Or pull yourself tow- oops that's spoilers
     * An active **Parry** mechanic, which counterattacks incoming damage
     * Spell VFX wherever possible, including some custom martial arts techniques
     * Probably more stuff I forgot
+
 </details>
 
 
@@ -71,7 +73,7 @@ Every 2hu has their own custom set of clothing.  Not all are just cosmetics chan
 
 
 ## Other/Misc
-* A lot of functional-but-as-a-workaround stuff present in the previous Master version (0.9.5.0c) is now fully functional as intended
+* A lot of functional-but-as-a-workaround stuff present in master_0.G is now fully functional as intended
 * A **lot** of bugfixes, too many I lost count, the issue tracker (at the Expansion) is not even remotely representative. Thank you contributors.
 
 
