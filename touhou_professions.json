@@ -587,8 +587,7 @@
       { "level": 1, "id": "seiga_hermitwalk" },
       { "level": 1, "id": "seiga_shikaisenritual" },
       { "level": 1, "id": "seiga_raisechild" },
-      { "level": 1, "id": "seiga_wallwalk" },
-      { "level": 1, "id": "seiga_yoshika_summon" }
+      { "level": 1, "id": "seiga_wallwalk" }
     ],
     "traits": [ "WICKED_HERMIT", "PROF_SEIGA", "SPIRIT_HERMIT", "eye_blue_touhou", "FACIAL_HAIR_NONE", "hair_seiga" ],
     "items": {
@@ -607,6 +606,7 @@
       "female": [ "bra", "panties" ]
     },
     "flags": [ "SCEN_ONLY" ],
+    "//0.H": "Removed seiga_yoshika_summon as it requires #71222 to detect friendly monsters, and I cannot think of a way to summon only one Yoshika at any time"
     "//": "HERMIT_SPECIES + LIAR + PSYCHOPATH + SPIRITUAL -> WICKED_HERMIT "
   },
   {
