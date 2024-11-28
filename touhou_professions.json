@@ -488,7 +488,8 @@
       "male": [ "boxer_shorts" ],
       "female": [ "bra", "panties" ]
     },
-    "flags": [ "SCEN_ONLY" ]
+    "flags": [ "SCEN_ONLY" ],
+    "//0.H": "Removed kaenbyou_vspossess as it requires #71222 to detect nearby friendly monsters"
   },
   {
     "id": "sakuya_izayoi",
