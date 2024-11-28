@@ -606,8 +606,8 @@
       "female": [ "bra", "panties" ]
     },
     "flags": [ "SCEN_ONLY" ],
+    "//": "HERMIT_SPECIES + LIAR + PSYCHOPATH + SPIRITUAL -> WICKED_HERMIT ",
     "//0.H": "Removed seiga_yoshika_summon as it requires #71222 to detect friendly monsters, and I cannot think of a way to summon only one Yoshika at any time"
-    "//": "HERMIT_SPECIES + LIAR + PSYCHOPATH + SPIRITUAL -> WICKED_HERMIT "
   },
   {
     "id": "tenshi_hinanawi",
