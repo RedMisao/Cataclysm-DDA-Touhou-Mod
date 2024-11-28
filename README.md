@@ -9,7 +9,7 @@ Also check the [Project Moon](https://github.com/Sliperr34/PM_World) mod!
 
 
 ## About the mod
-This mod adds Touhou Project characters as professions.  Characters (2hus) have custom spells, abilities, clothing, martial arts, traits (mutations), appearances, and more.  To pick any of the 2hus, you have to select the **Touhou Mod** scenario when creating a new character.
+This mod adds Touhou Project characters as professions.  Characters (2hus) have custom spells, abilities, clothing, martial arts, traits (mutations), appearances, and more.  To pick any of the 2hus, you have to select the "☯ Touhou Mod ☯" scenario when creating a new character.
 
 
 ## 2hus
