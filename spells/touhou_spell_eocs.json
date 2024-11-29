@@ -756,11 +756,10 @@
     "//": "Adapted from #75872. Each cast opens a window. The first cast asks the Kasen to Set an exit point -> pick any of the three slots -> (optional) name it",
     "//2": "The second cast allows Kasen to set point/tp to point/delete all points",
     "//3": "If Kasen sets tp it just overwrites it; the other two options are self-explanatory",
-    "//4": "Do note that the move_eoc and the delete_eoc won't be available unless their conditions are met. Which is pretty nice, and disables their false_effects from running",
-    "//0.H": "Not run by anything as it requires string_input to work (#75675)"
+    "//4": "Do note that the move_eoc and the delete_eoc won't be available unless their conditions are met. Which is pretty nice, and disables their false_effects from running"
   },
   {
-    "id": "kasen_fangshu_move_eoc_NEW",
+    "id": "kasen_fangshu_move_eoc",
     "type": "effect_on_condition",
     "condition": {
       "or": [
@@ -870,7 +869,7 @@
       { "math": [ "u_val('mana')", "-=", "133" ] }
     ],
     "//": "Not exaclty sure how, but thankfully the u_VAR_NAMEs get reset when kasen_fangshu_delete_eoc is run. I'm assuming it's because they're stored as u_ , but still why?",
-    "//0.H": "The empty line is where set_string_var should be"
+    "//0.H": "The empty lines (here and below) is where set_string_var should be, not present in 0.H"
   },
   {
     "id": "kasen_fangshu_set_2",
