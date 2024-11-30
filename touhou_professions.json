@@ -498,7 +498,6 @@
     "description": "Despite being suspicious of the errand your Mistress' gave you outside the Barrier, you went to carry it out.  The Cataclysm struck in the middle of that, interrumpting you.  How annoying.",
     "points": 4,
     "proficiencies": [ 
-      "prof_butchering_basic", 
       "prof_food_prep", 
       "prof_knife_skills", 
       "prof_baking", 
