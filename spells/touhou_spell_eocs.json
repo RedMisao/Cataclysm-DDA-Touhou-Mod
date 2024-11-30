@@ -720,14 +720,6 @@
     "//0.H": "This and below replace kasen_fangshu_selector_eoc "
   },
   {
-    "id": "kasen_fangshu_move_eoc",
-    "type": "effect_on_condition",
-    "effect": [
-      { "u_teleport": { "global_val": "var_kasen_fangshu" } },
-      { "u_message": "You pass through the entry point, and walk past the exit point.", "type": "mixed" }
-    ]
-  },
-  {
     "id": "kasen_fangshu_selector_eoc",
     "type": "effect_on_condition",
     "effect": [
