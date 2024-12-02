@@ -105,6 +105,18 @@
     "//0.H": "n_melee_damage() and n_gun_damage('ALL') weren't backported... whereas n_weight() -> n_val('weight') "
   },
   {
+    "id": "iku_opens_spellbook_eoc",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "opens_spellbook",
+    "condition": { "u_has_trait": "PROF_IKU" },
+    "effect": [
+      { "math": [ "var_iku_bonus", "=", "( max( 0, u_val('dexterity') - 8 ) * 1 )" ] }
+    ],
+    "//": "This automatically sets the vars each time Iku opens the 'cast spell' window",
+    "//2": "The var_BONUS scales with bonus DEX, relative to Iku's starting stat"
+  },
+  {
     "id": "kaenbyou_opens_spellbook_eoc",
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
@@ -113,8 +125,7 @@
     "effect": [
       { "math": [ "var_immolate_duration", "=", "( (u_skill('speech') * 120 ) + 720 )" ] }
     ],
-    "//": "This automatically sets the vars each time Kaenbyou opens the 'cast spell' window",
-    "//note": "Move all the opens_spellbook formulas to jmath when possible"
+    "//": "This automatically sets the vars each time Kaenbyou opens the 'cast spell' window"
   },
   {
     "id": "kasen_opens_spellbook_eoc",
@@ -123,9 +134,11 @@
     "required_event": "opens_spellbook",
     "condition": { "u_has_trait": "PROF_KASEN" },
     "effect": [
+      { "math": [ "var_kasen_bonus", "=", "( max( 0, u_val('strength') - 12 ) * 1 )" ] },
       { "math": [ "var_kasen_pet_dmg", "=", "( (max( u_skill('dodge'), u_skill('speech') ) ) * 1.8 + ( u_skill('dodge') ) * 1.8 + 23.4 )" ] }
     ],
-    "//": "This automatically sets the vars each time Kaenbyou opens the 'cast spell' window"
+    "//": "This automatically sets the vars each time Kasen opens the 'cast spell' window",
+    "//2": "The var_BONUS scales with bonus STR, relative to Kasen's starting stat"
   },
   {
     "id": "kokoro_opens_spellbook_eoc",
@@ -146,6 +159,30 @@
     "//5": "The melancholy mod is thus +33% or +66% (used as duration mod)"
   },
   {
+    "id": "meiling_opens_spellbook_eoc",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "opens_spellbook",
+    "condition": { "u_has_trait": "PROF_MEILING" },
+    "effect": [
+      { "math": [ "var_meiling_bonus", "=", "( max( 0, u_val('strength') - 8, u_val('dexterity') - 8 ) * 1 )" ] }
+    ],
+    "//": "This automatically sets the vars each time Meiling opens the 'cast spell' window",
+    "//2": "The var_BONUS scales with bonus DEX/STR, whatever is higher, relative to Meiling's starting stats"
+  },
+  {
+    "id": "mokou_opens_spellbook_eoc",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "opens_spellbook",
+    "condition": { "u_has_trait": "PROF_MOKOU" },
+    "effect": [
+      { "math": [ "var_mokou_bonus", "=", "( max( 0, u_val('strength') - 8 ) * 1 )" ] }
+    ],
+    "//": "This automatically sets the vars each time Mokou opens the 'cast spell' window",
+    "//2": "The var_BONUS scales with bonus STR, relative to Mokou's starting stat"
+  },
+  {
     "id": "seiga_opens_spellbook_eoc",
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
@@ -158,6 +195,18 @@
       { "math": [ "var_seiga_s", "=", "u_skill('speech')" ] }
     ],
     "//": "This automatically sets the vars each time Seiga opens the 'cast spell' window"
+  },
+  {
+    "id": "tenko_opens_spellbook_eoc",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "opens_spellbook",
+    "condition": { "u_has_trait": "PROF_TENKO" },
+    "effect": [
+      { "math": [ "var_tenko_bonus", "=", "( max( 0, u_val('strength') - 8 ) * 1 )" ] }
+    ],
+    "//": "This automatically sets the vars each time Tenko opens the 'cast spell' window",
+    "//2": "The var_BONUS scales with bonus STR, relative to Tenko's starting stat"
   },
   {
     "id": "utsuho_opens_spellbook_eoc",
@@ -198,6 +247,7 @@
     "condition": { "u_has_trait": "PROF_YOUMU" },
     "effect": [
       { "u_location_variable": { "global_val": "var_youmu_loc" }, "min_radius": 1, "max_radius": 2, "passable_only": true },
+      { "math": [ "var_youmu_bonus", "=", "( max( 0, u_val('dexterity') - 8, u_val('perception') - 8 ) * 1 )" ] },
       { "math": [ "var_slasheternal_dmg", "=", "( ( 52 * ( (u_skill('cutting') * 0.05 ) + (u_skill('dodge') * 0.05 ) + 0.55 ) ) / 5 )" ] },
       { "math": [ "var_slashnether_dmg", "=", "( 52 * ( (u_skill('cutting') * 0.1 ) + (u_skill('dodge') * 0.1 ) + 0.1 ) )" ] },
       { "math": [ "var_slashnether_pierce", "=", "( 52 / 3 )" ] },
@@ -206,6 +256,7 @@
       { "math": [ "var_slashnether2_dmg", "=", "( 52 / 6 )" ] }
     ],
     "//": "This automatically sets the vars each time Youmu opens the 'cast spell' window",
+    "//2": "The var_BONUS scales with bonus DEX/PER, whatever is higher, relative to Youmu's starting stats",
     "//0.H": "Replaced all var_melee_all_dmg by 52 (based on youmu_roukanken total dmg)"
   },
   {
