@@ -1889,14 +1889,14 @@
     "id": "nitori_toolswing_check",
     "type": "effect_on_condition",
     "condition": { "math": [ "var_toolswing", "==", "0" ] },
-    "effect": [ { "u_cast_spell": { "id": "nitori_toolswing_eoc2" }, "targeted": true } ],
-    "false_effect": { "u_cast_spell": { "id": "nitori_toolswing_eoc3" }, "targeted": true }
+    "effect": [ { "u_cast_spell": { "id": "nitori_toolswing2" }, "targeted": true } ],
+    "false_effect": { "u_cast_spell": { "id": "nitori_toolswing3" }, "targeted": true }
   },
   {
     "id": "remilia_darkdrain2_eoc",
     "type": "effect_on_condition",
     "effect": [
-      { "math": [ "var_remidrain", "=", "0" ] },
+      { "math": [ "var_darkdrain_heal", "=", "0" ] },
       {
         "run_eocs": [
           {
@@ -1907,7 +1907,7 @@
                 { "u_has_species": "HUMAN" }
               ]
             },
-            "effect": [ { "math": [ "var_remidrain", "=", "( (u_skill('stabbing') * 0.133 ) + (u_skill('melee') * 0.133 ) + (u_skill('dodge') * 0.133 ) + 2.404 )" ] } ]
+            "effect": [ { "math": [ "var_darkdrain_heal", "=", "( (u_skill('stabbing') * 0.444 ) + (u_skill('melee') * 0.444 ) + (u_skill('dodge') * 0.444 ) - 1.333 )" ] } ]
           },
           {
             "id": "remilia_darkdrain_reduced",
@@ -1937,7 +1937,7 @@
                 { "u_has_trait": "PLANTBLOOD" }
               ]
             },
-            "effect": [ { "math": [ "var_remidrain", "=", "( ( (u_skill('stabbing') * 0.133 ) + (u_skill('melee') * 0.133 ) + (u_skill('dodge') * 0.133 ) + 2.404 ) * rng( 0.17, 0.66 ) )" ] } ]
+            "effect": [ { "math": [ "var_darkdrain_heal", "=", "( ( (u_skill('stabbing') * 0.444 ) + (u_skill('melee') * 0.444 ) + (u_skill('dodge') * 0.444 ) - 1.333 ) * rng( 0.17, 0.66 ) )" ] } ]
           },
           {
             "id": "remilia_darkdrain_hazard",
@@ -1952,7 +1952,7 @@
                 { "u_has_trait": "ACIDBLOOD" }
               ]
             },
-            "effect": [ { "math": [ "var_remidrain", "=", "( ( - (u_skill('stabbing') * 0.133 ) - (u_skill('melee') * 0.133 ) - (u_skill('dodge') * 0.133 ) - 2.404 ) * rng( 0.33, 0.5 ) )" ] } ]
+            "effect": [ { "math": [ "var_darkdrain_heal", "=", " - ( ( (u_skill('stabbing') * 0.444 ) + (u_skill('melee') * 0.444 ) + (u_skill('dodge') * 0.444 ) - 1.333 ) * rng( 0.33, 0.5 ) )" ] } ]
           },
           {
             "id": "remilia_darkdrain_noblood",
@@ -1962,7 +1962,7 @@
                 { "u_has_trait": "BLEED_IMMUNE" }
               ]
             },
-            "effect": [ { "math": [ "var_remidrain", "=", "0" ] } ]
+            "effect": [ { "math": [ "var_darkdrain_heal", "=", "0" ] } ]
           }
         ]
       }
@@ -1981,8 +1981,8 @@
     "type": "effect_on_condition",
     "effect": [ 
       { "u_cast_spell": { "id": "remilia_darkdrain4" }, "targeted": false },
-      { "math": [ "u_vitamin('blood')", "+=", "var_remidrain * 1" ] },
-      { "math": [ "u_vitamin('hblood_vitamin')", "+=", "var_remidrain * 1.5" ] }
+      { "math": [ "u_vitamin('blood')", "+=", "( var_darkdrain_heal * 1 )" ] },
+      { "math": [ "u_vitamin('hblood_vitamin')", "+=", "( var_darkdrain_heal * 1.5 )" ] }
     ]
   },
   {
@@ -1993,7 +1993,7 @@
       { "math": [ "var_gungnir", "+=", "1" ] },
       { "u_message": "You summon the Gungnir!", "type": "good" },
       { "u_cast_spell": { "id": "remilia_gungnir2" } },
-      { "queue_eocs": [ "remilia_gungnir_timer_eoc" ], "time_in_future": { "math": [ "( (u_skill('stabbing') * 21 ) + (u_skill('melee') * 21 ) + 12 ) - 1" ] } }
+      { "queue_eocs": [ "remilia_gungnir_timer_eoc" ], "time_in_future": { "math": [ "( ( var_gungnir_dur / 100 ) - 1 )" ] } }
     ],
     "false_effect": [ 
       { "u_message": "Your Gungnir is already summoned.", "type": "mixed" }
@@ -2046,7 +2046,7 @@
     ],
     "//": "This EOC is a simplified version of utsuho_fusionblade_eoc ",
     "//2": "Different approach for effect-only aura-like effects",
-    "//3": "First, it checks if the Meiling is wielding a weapon or already has the aura, if so it deactivates it",
+    "//3": "First, it checks if Remi is wielding a weapon or already has the aura, if so it deactivates it",
     "//4": "Then, it casts the self spell that grants the effect for the duration, and runs the cycle to continuously check wielded items or re-activations of the EOC",
     "//5": "No timer as the effect has a fixed duration by the spell, also no toggle or oom EOCs as those don't apply"
   },
@@ -2198,6 +2198,15 @@
     ],
     "false_effect": [
       { "u_message": "You lose your concentration.", "type": "mixed" },
+      { "math": [ "var_sakuyafocus", "=", "0" ] },
+      { "u_lose_effect": "sakuya_maidsecret_effect" }
+    ]
+  },
+  {
+    "id": "sakuya_maidsecret_end_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_message": "You lose your concentration!", "type": "bad" },
       { "math": [ "var_sakuyafocus", "=", "0" ] },
       { "u_lose_effect": "sakuya_maidsecret_effect" }
     ]
@@ -3153,7 +3162,7 @@
     "type": "effect_on_condition",
     "condition": { "u_has_effect": "icy_pyrexia" },
     "effect": [
-      { "math": [ "var_miasmaburst_dmg", "+=", "var_icypyrexia_dmg" ] }
+      { "math": [ "var_miasmaburst_dmg", "+=", "var_icypyrexia_dot" ] }
     ],
     "//": "OK so the disease spell does several things. First, it applies the DISEASE effect on the target, then it runs a subspell which adds another effect for the player",
     "//2": "The effect on the player, DISEASE_counter, runs an intermittent spell in aoe. This spell forces any target around to run these EOCs, which detect if these target have any disease",
@@ -3165,7 +3174,7 @@
     "type": "effect_on_condition",
     "condition": { "u_has_effect": "scarlet_plague" },
     "effect": [
-      { "math": [ "var_miasmaburst_dmg", "+=", "var_scarletplague_dmg" ] }
+      { "math": [ "var_miasmaburst_dmg", "+=", "var_scarletplague_dot" ] }
     ]
   },
   {
@@ -3173,7 +3182,7 @@
     "type": "effect_on_condition",
     "condition": { "u_has_effect": "volatile_rot" },
     "effect": [
-      { "math": [ "var_miasmaburst_dmg", "+=", "var_volatilerot_dmg" ] },
+      { "math": [ "var_miasmaburst_dmg", "+=", "var_volatilerot_dot" ] },
       { "math": [ "u_var_volatilerot_rand", "+=", "1" ] },
       {
         "run_eocs": [

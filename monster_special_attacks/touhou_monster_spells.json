@@ -116,12 +116,12 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "cut",
-    "min_damage": { "math": [ "( var_kasen_pet_dmg * rng( 0.9, 1.1 ) )" ] },
-    "max_damage": 72,
+    "min_damage": { "math": [ "( var_kasen_pet_dmg * 0.9 )" ] },
+    "max_damage": { "math": [ "( var_kasen_pet_dmg * 1.1 )" ] },
     "message": "Houso claws!",
     "flags": [ "RANDOM_DAMAGE", "SILENT" ],
-    "//": "min dmg 36. The vars are set at kasen_opens_spellbook_eoc ",
-    "//2": "Merge with the leap so it jumps and immediately deals dmg, instead of having to cast two separated things"
+    "//": "The vars are set at kasen_opens_spellbook_eoc ",
+    "//note": "Merge with the leap so it jumps and immediately deals dmg, instead of having to cast two separated things"
   },
   {
     "id": "kanda_zoom",
@@ -133,13 +133,13 @@
     "extra_effects": [ { "id": "kanda_zoom2" } ],
     "shape": "blast",
     "damage_type": "bash",
-    "min_damage": { "math": [ "( var_kasen_pet_dmg * rng( 0.9, 1.1 ) )" ] },
-    "max_damage": 72,
+    "min_damage": { "math": [ "( var_kasen_pet_dmg * 0.9 )" ] },
+    "max_damage": { "math": [ "( var_kasen_pet_dmg * 1.1 )" ] },
     "min_range": 5,
     "max_range": 5,
     "message": "Kanda charges!",
     "flags": [ "RANDOM_DAMAGE", "SILENT" ],
-    "//": "min dmg 36. The vars are set at kasen_opens_spellbook_eoc ",
+    "//": "The vars are set at kasen_opens_spellbook_eoc ",
     "//2": "Remade when so it zooms and immediately deals dmg, instead of having to shoot the spell"
   },
   {
@@ -166,15 +166,15 @@
     "effect": "attack",
     "shape": "cone",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( var_kasen_pet_dmg * rng( 0.9, 1.1 ) )" ] },
-    "max_damage": 72,
+    "min_damage": { "math": [ "( var_kasen_pet_dmg * 0.9 )" ] },
+    "max_damage": { "math": [ "( var_kasen_pet_dmg * 1.1 )" ] },
     "min_range": 4,
     "max_range": 4,
     "min_aoe": 40,
     "max_aoe": 40,
     "message": "Koutei breathes fire!",
     "flags": [ "RANDOM_DAMAGE", "SILENT" ],
-    "//": "min dmg 36. The vars are set at kasen_opens_spellbook_eoc "
+    "//": "The vars are set at kasen_opens_spellbook_eoc "
   },
   {
     "id": "mukou_discharge",
@@ -185,14 +185,14 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "electric",
-    "min_damage": { "math": [ "( var_kasen_pet_dmg * rng( 0.9, 1.1 ) )" ] },
-    "max_damage": 72,
+    "min_damage": { "math": [ "( var_kasen_pet_dmg * 0.9 )" ] },
+    "max_damage": { "math": [ "( var_kasen_pet_dmg * 1.1 )" ] },
     "min_range": 4,
     "max_range": 4,
     "min_aoe": 1,
     "max_aoe": 2,
     "message": "Mukou shoots lightning!",
     "flags": [ "RANDOM_AOE", "RANDOM_DAMAGE", "SILENT" ],
-    "//": "min dmg 36. The vars are set at kasen_opens_spellbook_eoc "
+    "//": "The vars are set at kasen_opens_spellbook_eoc "
   }
 ]

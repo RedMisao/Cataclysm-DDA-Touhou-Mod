@@ -104,7 +104,7 @@
     "effect": "effect_on_condition",
     "effect_str": "youmu_doublewheel_eoc",
     "shape": "blast",
-    "min_duration": { "math": [ "( (u_skill('cutting') * 320 ) + (u_skill('dodge') * 320 ) + 320 )" ] },
+    "min_duration": { "math": [ "( (u_skill('cutting') * 581.818 ) + (u_skill('dodge') * 581.818 ) - 2036.363 )" ] },
     "max_duration": 9600,
     "max_level": 1,
     "difficulty": -11,
@@ -112,7 +112,8 @@
     "base_casting_time": 100,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ]
+    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
+    "//": "min dur 3200"
   },
   {
     "id": "youmu_doublewheel2",
@@ -128,15 +129,14 @@
     "max_damage": 1,
     "min_aoe": 3,
     "max_aoe": 3,
-    "min_duration": { "math": [ "( (u_skill('cutting') * 320 ) + (u_skill('dodge') * 320 ) + 320 )" ] },
+    "min_duration": { "math": [ "( (u_skill('cutting') * 581.818 ) + (u_skill('dodge') * 581.818 ) - 2036.363 )" ] },
     "max_duration": 9600,
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ],
-    "//": "min dur 3200"
+    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ]
   },
   {
     "id": "youmu_halfbody",
@@ -149,7 +149,7 @@
     "effect": "effect_on_condition",
     "effect_str": "youmu_halfbody_eoc",
     "shape": "blast",
-    "min_duration": { "math": [ "( (u_skill('cutting') * 320 ) + (u_skill('dodge') * 320 ) + 320 )" ] },
+    "min_duration": { "math": [ "( (u_skill('cutting') * 581.818 ) + (u_skill('dodge') * 581.818 ) - 2036.363 )" ] },
     "max_duration": 9600,
     "max_level": 1,
     "difficulty": -11,
@@ -173,15 +173,14 @@
     "max_damage": 1,
     "min_aoe": 3,
     "max_aoe": 3,
-    "min_duration": { "math": [ "( (u_skill('cutting') * 320 ) + (u_skill('dodge') * 320 ) + 320 )" ] },
+    "min_duration": { "math": [ "( (u_skill('cutting') * 581.818 ) + (u_skill('dodge') * 581.818 ) - 2036.363 )" ] },
     "max_duration": 9600,
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ],
-    "//": "min dur 3200"
+    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ]
   },
   {
     "id": "youmu_phantom_tp",
@@ -235,8 +234,8 @@
     "extra_effects": [ { "id": "youmu_insightfulsword3" } ],
     "shape": "blast",
     "damage_type": "cut",
-    "min_damage": { "math": [ "( 52 * 1.66 )" ] },
-    "max_damage": { "math": [ "( 52 * 2.33 )" ] },
+    "min_damage": { "math": [ "( 52 * 1.75 )" ] },
+    "max_damage": { "math": [ "( 52 * 2.25 )" ] },
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,
@@ -246,7 +245,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC", "RANDOM_DAMAGE" ],
-    "//": "Deals ~ x2 ± 33% weapon dmg"
+    "//": "Deals ~ x2 ± 25% weapon dmg"
   },
   {
     "id": "youmu_insightfulsword2_bash",
@@ -259,8 +258,8 @@
     "extra_effects": [ { "id": "youmu_insightfulsword3" } ],
     "shape": "blast",
     "damage_type": "cut",
-    "min_damage": { "math": [ "( 52 * 1.66 )" ] },
-    "max_damage": { "math": [ "( 52 * 2.33 )" ] },
+    "min_damage": { "math": [ "( 52 * 1.75 )" ] },
+    "max_damage": { "math": [ "( 52 * 2.25 )" ] },
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,
@@ -303,7 +302,7 @@
     "effect": "effect_on_condition",
     "effect_str": "youmu_reflectionslash_eoc",
     "shape": "blast",
-    "min_duration": { "math": [ "( (u_skill('cutting') * 70 ) + (u_skill('dodge') * 70 ) + 770 )" ] },
+    "min_duration": { "math": [ "( (u_skill('cutting') * 127.272 ) + (u_skill('dodge') * 127.272 ) + 254.545 )" ] },
     "max_duration": 2800,
     "max_level": 1,
     "difficulty": -11,
@@ -323,7 +322,7 @@
     "effect": "attack",
     "effect_str": "aura_reflectionslash",
     "shape": "blast",
-    "min_duration": { "math": [ "( (u_skill('cutting') * 70 ) + (u_skill('dodge') * 70 ) + 770 )" ] },
+    "min_duration": { "math": [ "( (u_skill('cutting') * 127.272 ) + (u_skill('dodge') * 127.272 ) + 254.545 )" ] },
     "max_duration": 2800,
     "max_level": 1,
     "difficulty": -11,
@@ -386,8 +385,8 @@
     "effect": "attack",
     "shape": "cone",
     "damage_type": "cut",
-    "min_damage": { "math": [ "( ( 52 * ( (u_skill('cutting') * 0.05 ) + (u_skill('dodge') * 0.05 ) + 0.55 ) ) / 5 )" ] },
-    "max_damage": { "math": [ "( ( 52 * ( (u_skill('cutting') * 0.05 ) + (u_skill('dodge') * 0.05 ) + 0.55 ) ) / 5 )" ] },
+    "min_damage": { "math": [ "( var_slasheternal_dmg * 0.9 )" ] },
+    "max_damage": { "math": [ "( var_slasheternal_dmg * 1.1 )" ] },
     "min_pierce": 2,
     "max_pierce": 2,
     "min_range": 3,
@@ -401,7 +400,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "RANDOM_DAMAGE", "SOMATIC" ],
-    "//2": "Deals x1 - 2 weapon dmg, 3 - 7 times. The spell uses x5 repeats as x1 weapon dmg"
+    "//": "The vars are set at youmu_opens_spellbook_eoc "
   },
   {
     "id": "youmu_slasheternal2_bash",
@@ -436,8 +435,8 @@
     "effect": "attack",
     "shape": "cone",
     "damage_type": "bash",
-    "min_damage": { "math": [ "( ( 52 * ( (u_skill('cutting') * 0.05 ) + (u_skill('dodge') * 0.05 ) + 0.55 ) ) / 5 )" ] },
-    "max_damage": { "math": [ "( ( 52 * ( (u_skill('cutting') * 0.05 ) + (u_skill('dodge') * 0.05 ) + 0.55 ) ) / 5 )" ] },
+    "min_damage": { "math": [ "( var_slasheternal_dmg * 0.9 )" ] },
+    "max_damage": { "math": [ "( var_slasheternal_dmg * 1.1 )" ] },
     "min_range": 3,
     "max_range": 3,
     "min_aoe": 90,
@@ -448,8 +447,7 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
-    "//2": "Deals x1 - 2 weapon dmg, 3 - 7 times. The spell uses x5 repeats as x1 weapon dmg. No pierce as a weapon that deals more bash is suboptimal for Youmu"
+    "flags": [ "NO_HANDS", "NO_LEGS", "RANDOM_DAMAGE", "SOMATIC" ]
   },
   {
     "id": "youmu_slasheternal4",
@@ -502,11 +500,11 @@
     "extra_effects": [ { "id": "youmu_slashnether3" } ],
     "shape": "line",
     "damage_type": "cut",
-    "min_damage": { "math": [ "( 52 * ( (u_skill('cutting') * 0.1 ) + (u_skill('dodge') * 0.1 ) + 0.1 ) )" ] },
-    "max_damage": { "math": [ "( 52 * ( (u_skill('cutting') * 0.1 ) + (u_skill('dodge') * 0.1 ) + 0.1 ) )" ] },
-    "min_pierce": { "math": [ "( 52 / 3 )" ] },
-    "max_pierce": { "math": [ "( 52 / 3 )" ] },
-    "min_range": { "math": [ "( (u_skill('cutting') * 0.4 ) + (u_skill('dodge') * 0.4 ) + 0.4 )" ] },
+    "min_damage": { "math": [ "( var_slashnether_dmg * 0.9 )" ] },
+    "max_damage": { "math": [ "( var_slashnether_dmg * 1.1 )" ] },
+    "min_pierce": { "math": [ "var_slashnether_pierce" ] },
+    "max_pierce": { "math": [ "var_slashnether_pierce" ] },
+    "min_range": { "math": [ "var_slashnether_range" ] },
     "max_range": 12,
     "max_level": 1,
     "difficulty": -11,
@@ -514,7 +512,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
-    "//": "Deals x1 - 3 weapon dmg, x0.33 weapon dmg as pierce, min range 4"
+    "//": "The vars are set at youmu_opens_spellbook_eoc "
   },
   {
     "id": "youmu_slashnether3",
@@ -526,7 +524,7 @@
     "effect": "ter_transform",
     "effect_str": "youmugardening_ter",
     "shape": "line",
-    "min_range": { "math": [ "( (u_skill('cutting') * 0.4 ) + (u_skill('dodge') * 0.4 ) + 0.4 )" ] },
+    "min_range": { "math": [ "var_slashnether_range" ] },
     "max_range": 12,
     "max_level": 1,
     "difficulty": -11,
