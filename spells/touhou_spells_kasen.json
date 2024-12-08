@@ -9,8 +9,8 @@
     "effect": "attack",
     "shape": "line",
     "damage_type": "stab",
-    "min_damage": { "math": [ "( ( (u_skill('unarmed') * 1 ) + (u_skill('dodge') * 1 ) + var_kasen_bonus + 14 ) * 0.75 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('unarmed') * 1 ) + (u_skill('dodge') * 1 ) + var_kasen_bonus + 14 ) * 1.25 )" ] },
+    "min_damage": { "math": [ "( ( var_kasen_attack * 1.1 + var_kasen_bonus ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( var_kasen_attack * 1.1 + var_kasen_bonus ) * 1.25 )" ] },
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,
@@ -19,7 +19,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SOMATIC" ],
-    "//": "dmg is (18 - 36) * 1.1 ± 25% variance"
+    "//": "The vars are set at kasen_opens_spellbook_eoc ",
+    "//2": "dmg (18 - 36) * 1.1 ± 25% variance (skill scaling only)"
   },
   {
     "id": "kasen_palmfly",
@@ -32,8 +33,8 @@
     "extra_effects": [ { "id": "kasen_palmfly3" } ],
     "shape": "blast",
     "damage_type": "bash",
-    "min_damage": { "math": [ "( ( (u_skill('unarmed') * 1 ) + (u_skill('dodge') * 1 ) + var_kasen_bonus + 14 ) * 0.75 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('unarmed') * 1 ) + (u_skill('dodge') * 1 ) + var_kasen_bonus + 14 ) * 1.25 )" ] },
+    "min_damage": { "math": [ "( ( var_kasen_attack * 1.1 + var_kasen_bonus ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( var_kasen_attack * 1.1 + var_kasen_bonus ) * 1.25 )" ] },
     "min_range": 2,
     "max_range": 2,
     "max_level": 1,
@@ -42,7 +43,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SOMATIC" ],
-    "//": "dmg is (18 - 36) * 1.1 ± 25% variance"
+    "//": "The vars are set at kasen_opens_spellbook_eoc ",
+    "//2": "dmg (18 - 36) * 1.1 ± 25% variance (skill scaling only)"
   },
   {
     "id": "kasen_palm_left",
@@ -54,8 +56,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "bash",
-    "min_damage": { "math": [ "( ( (u_skill('unarmed') * 1.35 ) + (u_skill('dodge') * 1.35 ) + var_kasen_bonus + 18.9 ) * 0.75 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('unarmed') * 1.35 ) + (u_skill('dodge') * 1.35 ) + var_kasen_bonus + 18.9 ) * 1.25 )" ] },
+    "min_damage": { "math": [ "( ( var_kasen_attack * 1.5 + var_kasen_bonus ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( var_kasen_attack * 1.5 + var_kasen_bonus ) * 1.25 )" ] },
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,
@@ -64,7 +66,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SOMATIC" ],
-    "//": "dmg is 27 - 54 ± 25% variance"
+    "//": "The vars are set at kasen_opens_spellbook_eoc ",
+    "//2": "dmg is (27 - 54) ± 25% variance (skill scaling only)"
   },
   {
     "id": "kasen_palm_right",
@@ -76,8 +79,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "soul",
-    "min_damage": { "math": [ "( ( (u_skill('unarmed') * 0.9 ) + (u_skill('dodge') * 0.9 ) + var_kasen_bonus + 12.6 ) * 0.75 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('unarmed') * 0.9 ) + (u_skill('dodge') * 0.9 ) + var_kasen_bonus + 12.6 ) * 1.25 )" ] },
+    "min_damage": { "math": [ "( ( var_kasen_attack + var_kasen_bonus ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( var_kasen_attack + var_kasen_bonus ) * 1.25 )" ] },
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,
@@ -86,7 +89,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SOMATIC" ],
-    "//": "dmg is 18 - 36 ± 25% variance"
+    "//": "The vars are set at kasen_opens_spellbook_eoc ",
+    "//2": "dmg is 18 - 36 ± 25% variance (skill scaling only)"
   },
   {
     "id": "kasen_punch_left",
@@ -98,8 +102,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "bash",
-    "min_damage": { "math": [ "( ( (u_skill('unarmed') * 1.8 ) + (u_skill('dodge') * 1.8 ) + var_kasen_bonus + 25.2 ) * 0.75 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('unarmed') * 1.8 ) + (u_skill('dodge') * 1.8 ) + var_kasen_bonus + 25.2 ) * 1.25 )" ] },
+    "min_damage": { "math": [ "( ( var_kasen_attack * 2 + var_kasen_bonus ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( var_kasen_attack * 2 + var_kasen_bonus ) * 1.25 )" ] },
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,
@@ -108,7 +112,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SOMATIC" ],
-    "//": "dmg is 36 - 72 ± 25% variance"
+    "//": "The vars are set at kasen_opens_spellbook_eoc ",
+    "//2": "dmg is 36 - 72 ± 25% variance (skill scaling only)"
   },
   {
     "id": "kasen_punch_right",
@@ -120,8 +125,8 @@
     "effect": "attack",
     "shape": "cone",
     "damage_type": "soul",
-    "min_damage": { "math": [ "( ( (u_skill('unarmed') * 1.35 ) + (u_skill('dodge') * 1.35 ) + var_kasen_bonus + 18.9 ) * 0.75 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('unarmed') * 1.35 ) + (u_skill('dodge') * 1.35 ) + var_kasen_bonus + 18.9 ) * 1.25 )" ] },
+    "min_damage": { "math": [ "( ( var_kasen_attack * 1.5 + var_kasen_bonus ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( var_kasen_attack * 1.5 + var_kasen_bonus ) * 1.25 )" ] },
     "min_range": 2,
     "max_range": 2,
     "min_aoe": 45,
@@ -132,7 +137,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SOMATIC" ],
-    "//": "dmg is 27 - 54 ± 25% variance"
+    "//": "The vars are set at kasen_opens_spellbook_eoc ",
+    "//2": "dmg is 27 - 54 ± 25% variance (skill scaling only)"
   },
   {
     "id": "kasen_swipe",
@@ -144,8 +150,8 @@
     "effect": "attack",
     "shape": "cone",
     "damage_type": "bash",
-    "min_damage": { "math": [ "( ( (u_skill('unarmed') * 1.1 ) + (u_skill('dodge') * 1.1 ) + var_kasen_bonus + 15.4 ) * 0.75 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('unarmed') * 1.1 ) + (u_skill('dodge') * 1.1 ) + var_kasen_bonus + 15.4 ) * 1.25 )" ] },
+    "min_damage": { "math": [ "( ( var_kasen_attack * 1.222 + var_kasen_bonus ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( var_kasen_attack * 1.222 + var_kasen_bonus ) * 1.25 )" ] },
     "min_range": 2,
     "max_range": 2,
     "min_aoe": 105,
@@ -156,7 +162,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SOMATIC" ],
-    "//": "dmg is 22 - 44 ± 25% variance"
+    "//": "The vars are set at kasen_opens_spellbook_eoc ",
+    "//2": "dmg is 22.5 - 44 ± 25% variance (skill scaling only)"
   },
   {
     "id": "kasen_biting_strike",
@@ -170,8 +177,8 @@
     "extra_effects": [ { "id": "kasen_biting_strike2" } ],
     "shape": "line",
     "damage_type": "bash",
-    "min_damage": { "math": [ "( ( (u_skill('unarmed') * 2.7 ) + (u_skill('dodge') * 2.7 ) + 10.8 ) * 0.75 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('unarmed') * 2.7 ) + (u_skill('dodge') * 2.7 ) + 10.8 ) * 1.25 )" ] },
+    "min_damage": { "math": [ "( ( (u_skill('unarmed') * 3.857 ) + (u_skill('dodge') * 3.857 ) + var_kasen_bonus + 3.857 ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( (u_skill('unarmed') * 3.857 ) + (u_skill('dodge') * 3.857 ) + var_kasen_bonus + 3.857 ) * 1.25 )" ] },
     "min_range": 3,
     "max_range": 3,
     "max_level": 1,
@@ -180,7 +187,7 @@
     "base_energy_cost": 100,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SOMATIC" ],
-    "//": "dmg is 27 - 81 ± 25% variance",
+    "//": "dmg is 27 - 81 ± 25% variance (skill scaling only)",
     "//2": "The original technique knocks back, but she already has some knockback cc"
   },
   {
@@ -236,13 +243,13 @@
     "effect": "charm_monster",
     "shape": "blast",
     "damage_type": "pure",
-    "min_damage": { "math": [ "( (u_skill('unarmed') * 14 ) + (u_skill('dodge') * 14 ) - 44 )" ] },
+    "min_damage": { "math": [ "( (u_skill('speech') * 18.666 ) + (u_skill('dodge') * 18.666 ) - 53.333 )" ] },
     "max_damage": 320,
     "min_range": 5,
     "max_range": 5,
     "min_aoe": 0,
     "max_aoe": 0,
-    "min_duration": { "math": [ "( (u_skill('unarmed') * 700 ) + (u_skill('dodge') * 700 ) - 700 )" ] },
+    "min_duration": { "math": [ "( (u_skill('speech') * 933.33 ) + (u_skill('dodge') * 933.33 ) - 1166.66 )" ] },
     "max_duration": 17500,
     "max_level": 1,
     "difficulty": -11,
@@ -321,8 +328,8 @@
     "extra_effects": [ { "id": "kasen_palmfly3" } ],
     "shape": "blast",
     "damage_type": "bash",
-    "min_damage": { "math": [ "( ( (u_skill('unarmed') * 1 ) + (u_skill('dodge') * 1 ) + 14 ) * 0.75 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('unarmed') * 1 ) + (u_skill('dodge') * 1 ) + 14 ) * 1.25 )" ] },
+    "min_damage": { "math": [ "( ( var_kasen_attack * 1.1 + var_kasen_bonus ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( var_kasen_attack * 1.1 + var_kasen_bonus ) * 1.25 )" ] },
     "min_range": 2,
     "max_range": 2,
     "max_level": 1,
@@ -365,7 +372,7 @@
     "shape": "blast",
     "damage_type": "pure",
     "min_damage": 1,
-    "max_damage": { "math": [ "( (u_skill('unarmed') * 0.4 ) + (u_skill('dodge') * 0.4 ) + 0.4 )" ] },
+    "max_damage": { "math": [ "( (u_skill('unarmed') * 0.285 ) + (u_skill('dodge') * 0.285 ) + 0.285 )" ] },
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 0,
@@ -405,7 +412,7 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "soul",
-    "min_damage": { "math": [ "( (u_skill('unarmed') * 9.6 ) + (u_skill('dodge') * 9.6 ) + 9.6 )" ] },
+    "min_damage": { "math": [ "( (u_skill('unarmed') * 13.714 ) + (u_skill('dodge') * 13.714 ) - 34.286 )" ] },
     "max_damage": 240,
     "min_range": 1,
     "max_range": 1,
@@ -428,8 +435,8 @@
     "effect": "attack",
     "shape": "cone",
     "damage_type": "soul",
-    "min_damage": { "math": [ "( ( (u_skill('unarmed') * 1.35 ) + (u_skill('dodge') * 1.35 ) + 18.9 ) * 0.75 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('unarmed') * 1.35 ) + (u_skill('dodge') * 1.35 ) + 18.9 ) * 1.25 )" ] },
+    "min_damage": { "math": [ "( ( var_kasen_attack * 1.5 + var_kasen_bonus ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( var_kasen_attack * 1.5 + var_kasen_bonus ) * 1.25 )" ] },
     "min_range": 2,
     "max_range": 2,
     "min_aoe": 45,
@@ -470,7 +477,7 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "soul",
-    "min_damage": { "math": [ "( (u_skill('unarmed') * 2.7 ) + (u_skill('dodge') * 2.7 ) + 19.8 )" ] },
+    "min_damage": { "math": [ "var_rainboworb_dmg" ] },
     "max_damage": 90,
     "min_range": 5,
     "max_range": 5,
@@ -480,7 +487,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
-    "//": "min dmg 36"
+    "//": "The vars are set at kasen_opens_spellbook_eoc "
   },
   {
     "id": "kasen_rainboworb3",
@@ -492,7 +499,7 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "soul",
-    "min_damage": { "math": [ "( (u_skill('unarmed') * 0.9 ) + (u_skill('dodge') * 0.9 ) + 6.6 )" ] },
+    "min_damage": { "math": [ "( var_rainboworb_dmg / 3 )" ] },
     "max_damage": 30,
     "min_aoe": 1,
     "max_aoe": 1,
@@ -502,7 +509,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
-    "//": "dmg (12 - 30), triggers twice"
+    "//": "Triggers twice"
   },
   {
     "id": "kasen_summon_pet",
@@ -732,7 +739,7 @@
     "effect": "attack",
     "shape": "cone",
     "damage_type": "bash",
-    "min_damage": { "math": [ "( (u_skill('unarmed') * 1.2 ) + (u_skill('dodge') * 1.2 ) + 4.8 )" ] },
+    "min_damage": { "math": [ "( (u_skill('unarmed') * 1.714 ) + (u_skill('dodge') * 1.714 ) + 1.714 )" ] },
     "max_damage": 36,
     "min_range": 4,
     "max_range": 4,

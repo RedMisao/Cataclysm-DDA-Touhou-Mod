@@ -11,7 +11,7 @@
     "effect_str": "utsuho_blacksun_eoc",
     "shape": "blast",
     "max_level": 1,
-    "min_duration": { "math": [ "( (u_skill('dodge') * 1200 ) + 9600 )" ] },
+    "min_duration": { "math": [ "var_blacksun_dur" ] },
     "max_duration": 24000,
     "difficulty": -12,
     "base_casting_time": 200,
@@ -31,7 +31,7 @@
     "shape": "blast",
     "min_damage": 1,
     "max_damage": 1,
-    "min_duration": { "math": [ "( (u_skill('dodge') * 1200 ) + 9600 )" ] },
+    "min_duration": { "math": [ "var_blacksun_dur" ] },
     "max_duration": 24000,
     "min_aoe": 4,
     "max_aoe": 4,
@@ -41,7 +41,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ],
-    "//": "min dur 12000"
+    "//": "The vars are set at utsuho_opens_spellbook_eoc "
   },
   {
     "id": "utsuho_blacksun2_unc",
@@ -55,8 +55,8 @@
     "shape": "blast",
     "min_damage": 1,
     "max_damage": 1,
-    "min_duration": 3000,
-    "max_duration": { "math": [ "( ( (u_skill('dodge') * 1200 ) + 9600 ) * 2 )" ] },
+    "min_duration": { "math": [ "( var_blacksun_dur * 0.25 )" ] },
+    "max_duration": { "math": [ "( var_blacksun_dur * 2 )" ] },
     "min_aoe": 4,
     "max_aoe": 4,
     "max_level": 1,
@@ -64,8 +64,7 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS" ],
-    "//": "dur 0.25x - 2x utsuho_blacksun2 "
+    "flags": [ "NO_HANDS", "NO_LEGS", "RANDOM_DURATION" ]
   },
   {
     "id": "utsuho_detectrad",
@@ -152,9 +151,9 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "heat",
-    "min_duration": { "math": [ "( (u_skill('dodge') * 1.4 ) + 4.2 )" ] },
-    "max_damage": 21,
-    "min_pierce": { "math": [ "( (u_skill('dodge') * 0.5 ) - 1 )" ] },
+    "min_damage": { "math": [ "var_fissionaura_dmg" ] },
+    "max_damage": { "math": [ "var_fissionaura_dmg" ] },
+    "min_pierce": { "math": [ "( (u_skill('dodge') * 0.625 ) - 0.25 )" ] },
     "max_pierce": 6,
     "min_aoe": 4,
     "max_aoe": 4,
@@ -164,7 +163,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "min dmg 7, min pierce 1; dmg every 3 s"
+    "//": "The vars are set at utsuho_opens_spellbook_eoc . min pierce 1; dmg every 3 s"
   },
   {
     "id": "utsuho_fissionaura2_unc",
@@ -176,8 +175,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "heat",
-    "min_duration": 0,
-    "max_damage": { "math": [ "( ( (u_skill('dodge') * 1.4 ) + 4.2 ) * 2 )" ] },
+    "min_damage": 0,
+    "max_damage": { "math": [ "( var_fissionaura_dmg * 2 )" ] },
     "min_aoe": 1,
     "max_aoe": 7,
     "max_level": 1,
@@ -186,7 +185,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC", "RANDOM_AOE", "RANDOM_DAMAGE" ],
-    "//": "max dmg x2 utsuho_fissionaura2 , random aoe. It also costs more mana per cycle, and cycles randomly (see utsuho_fissionaura_cycle1_unc)"
+    "//": "It also costs more mana per cycle, and cycles randomly (see utsuho_fissionaura_cycle1_unc )"
   },
   {
     "id": "utsuho_groundmelt",
@@ -217,9 +216,9 @@
     "effect": "ter_transform",
     "effect_str": "groundmelt_ter",
     "shape": "blast",
-    "min_range": { "math": [ "( (u_skill('dodge') * 0.6 ) + 4.8 )" ] },
+    "min_range": { "math": [ "( (u_skill('dodge') * 0.75 ) + 4.5 )" ] },
     "max_range": 12,
-    "min_aoe": { "math": [ "( (u_skill('dodge') * 0.4 ) + 0.2 )" ] },
+    "min_aoe": { "math": [ "( (u_skill('dodge') * 0.5 ) )" ] },
     "max_aoe": 5,
     "max_level": 1,
     "difficulty": -12,
@@ -258,9 +257,9 @@
     "effect": "attack",
     "shape": "line",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( (u_skill('dodge') * 26.4 ) - 19.8 )" ] },
+    "min_damage": { "math": [ "var_hellcannon_dmg" ] },
     "max_damage": 297,
-    "min_range": { "math": [ "( (u_skill('dodge') * 1.5 ) + 6 )" ] },
+    "min_range": { "math": [ "var_hellcannon_range" ] },
     "max_range": 24,
     "field_id": "fd_laser",
     "field_chance": 1,
@@ -272,8 +271,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS" ],
-    "//": "This spell should have its range set to maximum, stopping only with walls or obstacles, going past any enemy targeted closer than its max range",
-    "//2": "min dmg 33, min range 9"
+    "//note": "This spell should have its range set to maximum, stopping only with walls or obstacles, going past any enemy targeted closer than its max range",
+    "//": "The vars are set at utsuho_opens_spellbook_eoc "
   },
   {
     "id": "utsuho_hellcannon2_unc",
@@ -286,8 +285,8 @@
     "shape": "line",
     "damage_type": "heat",
     "min_damage": 0,
-    "max_damage": { "math": [ "( ( (u_skill('dodge') * 26.4 ) - 19.8 ) * 2 )" ] },
-    "min_range": { "math": [ "( (u_skill('dodge') * 1.5 ) + 6 )" ] },
+    "max_damage": { "math": [ "( var_hellcannon_dmg * 2 )" ] },
+    "min_range": { "math": [ "var_hellcannon_range" ] },
     "max_range": 24,
     "field_id": "fd_laser",
     "field_chance": 1,
@@ -298,8 +297,7 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "RANDOM_DAMAGE" ],
-    "//": "max dmg x2 utsuho_hellcannon2 "
+    "flags": [ "NO_HANDS", "NO_LEGS", "RANDOM_DAMAGE" ]
   },
   {
     "id": "utsuho_nuke",
@@ -331,7 +329,7 @@
     "extra_effects": [ { "id": "utsuho_nuke3" }, { "id": "utsuho_nuke3_2" } ],
     "shape": "blast",
     "damage_type": "pure",
-    "min_damage": { "math": [ "( (u_skill('dodge') * 30 ) + 60 )" ] },
+    "min_damage": { "math": [ "var_utsuho_nuke" ] },
     "max_damage": 420,
     "min_range": 32,
     "max_range": 32,
@@ -346,7 +344,7 @@
     "energy_source": "MANA",
     "flags": [ "CONCENTRATE", "NO_EXPLOSION_SFX", "LOUD" ],
     "//": "The destructive effect is diminished only by the fact I don't know how to automatically center the camera on the aoe",
-    "//2": "min dmg 120"
+    "//2": "The vars are set at utsuho_opens_spellbook_eoc "
   },
   {
     "id": "utsuho_nuke3_2",
@@ -370,7 +368,7 @@
   {
     "id": "utsuho_nuke3",
     "type": "SPELL",
-    "name": { "str": "Nuclear explosion (fission) (1st dmg instance)" },
+    "name": { "str": "Nuclear explosion (fission) (2nd dmg instance)" },
     "description": "Heat damage instance for utsuho_nuke ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "field", "ground", "hostile", "item", "self" ],
@@ -378,7 +376,7 @@
     "extra_effects": [ { "id": "utsuho_nuke4" } ],
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( (u_skill('dodge') * 30 ) + 60 )" ] },
+    "min_damage": { "math": [ "var_utsuho_nuke" ] },
     "max_damage": 420,
     "min_range": 32,
     "max_range": 32,
@@ -391,22 +389,25 @@
     "base_casting_time": 100,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX" ],
-    "//2": "min dmg 120"
+    "flags": [ "NO_EXPLOSION_SFX" ]
   },
   {
     "id": "utsuho_nuke4",
     "type": "SPELL",
-    "name": { "str": "Nuclear explosion (fission) (2nd instance)" },
+    "name": { "str": "Nuclear explosion (fission) (3rd instance)" },
     "description": "Terrain damage instance for utsuho_nuke ",
     "spell_class": "NONE",
     "valid_targets": [ "ally", "field", "ground", "hostile", "item", "self" ],
     "effect": "attack",
-    "extra_effects": [ { "id": "utsuho_nuke5" } ],
+    "extra_effects": [ 
+      { "id": "utsuho_nuke5" }, 
+      { "id": "utsuho_nuke5" }, 
+      { "id": "utsuho_nuke5" } 
+    ],
     "shape": "blast",
     "damage_type": "bash",
-    "min_damage": { "math": [ "( (u_skill('dodge') * 60 ) + 60 )" ] },
-    "max_damage": 840,
+    "min_damage": { "math": [ "var_utsuho_nuke" ] },
+    "max_damage": 420,
     "min_range": 32,
     "max_range": 32,
     "min_aoe": 12,
@@ -417,8 +418,7 @@
     "difficulty": -12,
     "base_casting_time": 33,
     "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "//2": "min dmg 240"
+    "energy_source": "MANA"
   },
   {
     "id": "utsuho_nuke5",
@@ -430,7 +430,7 @@
     "effect": "bash",
     "shape": "blast",
     "damage_type": "bash",
-    "min_damage": { "math": [ "( (u_skill('dodge') * 30 ) + 60 )" ] },
+    "min_damage": { "math": [ "var_utsuho_nuke" ] },
     "max_damage": 420,
     "min_range": 32,
     "max_range": 32,
@@ -444,7 +444,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_EXPLOSION_SFX", "SILENT" ],
-    "//2": "min dmg 120"
+    "//": "This is repeated x3 to allow the bash dmg to hit several times instead of just once"
   },
   {
     "id": "utsuho_ugeyser",
@@ -475,9 +475,9 @@
     "extra_effects": [ { "id": "utsuho_ugeyser3" } ],
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( (u_skill('dodge') * 4.5 ) + 21 )" ] },
+    "min_damage": { "math": [ "var_ugeyser_dmg" ] },
     "max_damage": 75,
-    "min_pierce": { "math": [ "( (u_skill('dodge') * 1.2 ) + 4.6 )" ] },
+    "min_pierce": { "math": [ "var_ugeyser_pierce" ] },
     "max_pierce": 19,
     "min_range": 8,
     "max_range": 8,
@@ -493,7 +493,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
-    "//2": "min dmg 30, min pierce 7. The pierce exists to emulate steam and rock dmg. No friendly fire because"
+    "//": "The vars are set at utsuho_opens_spellbook_eoc . The pierce exists to emulate steam and rock dmg. No friendly fire because"
   },
   {
     "id": "utsuho_ugeyser2_unc",
@@ -507,9 +507,9 @@
     "shape": "blast",
     "damage_type": "heat",
     "min_damage": 1,
-    "max_damage": { "math": [ "( ( (u_skill('dodge') * 4.5 ) + 21 ) * 2 )" ] },
-    "min_pierce": 1,
-    "max_pierce": { "math": [ "( (u_skill('dodge') * 1.2 ) + 4.6 )" ] },
+    "max_damage": { "math": [ "( var_ugeyser_dmg * 2 )" ] },
+    "min_pierce": { "math": [ "( var_ugeyser_pierce / 2 )" ] },
+    "max_pierce": { "math": [ "( var_ugeyser_pierce / 2 )" ] },
     "min_range": 8,
     "max_range": 8,
     "min_aoe": 1,
@@ -523,8 +523,7 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS", "SOMATIC", "RANDOM_AOE", "RANDOM_DAMAGE" ],
-    "//": "max dmg x2 utsuho_ugeyser2 , overall less pierce"
+    "flags": [ "NO_LEGS", "SOMATIC", "RANDOM_AOE", "RANDOM_DAMAGE" ]
   },
   {
     "id": "utsuho_ugeyser3",
@@ -560,7 +559,7 @@
     "effect": "directed_push",
     "shape": "blast",
     "damage_type": "pure",
-    "min_damage": { "math": [ "( (u_skill('dodge') * 0.4 ) + 1.2 )" ] },
+    "min_damage": { "math": [ "( (u_skill('dodge') * 0.5 ) + 1 )" ] },
     "max_damage": 6,
     "min_aoe": 2,
     "max_aoe": 2,

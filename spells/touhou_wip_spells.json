@@ -1194,7 +1194,7 @@
     },
     "effect": [
       { "message": "TIMER_2", "type": "mixed" },
-      { "math": [ "var_miasmaburst_dmg", "+=", "var_icypyrexia_dmg" ] },
+      { "math": [ "var_miasmaburst_dmg", "+=", "var_icypyrexia_dot" ] },
       { "run_eocs": [ "yamame_disease_timer_1_OLD" ] }
     ],
     "false_effect": [ 

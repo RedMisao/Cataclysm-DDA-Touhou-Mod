@@ -9,8 +9,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( ( (u_skill('melee') * 0.4 ) + (u_skill('unarmed') * 0.4 ) + var_mokou_bonus + (u_pain() * 0.11 ) + 4.8 ) * 0.5 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('melee') * 0.4 ) + (u_skill('unarmed') * 0.4 ) + var_mokou_bonus + (u_pain() * 0.11 ) + 4.8 ) * 1.5 )" ] },
+    "min_damage": { "math": [ "( ( var_mokou_attack + var_mokou_bonus + ( u_pain() * 0.11 ) ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( var_mokou_attack + var_mokou_bonus + ( u_pain() * 0.11 ) ) * 1.25 )" ] },
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,
@@ -19,7 +19,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "RANDOM_DAMAGE" ],
-    "//": "dmg (bonus) is 8 - 16 as bonus of ~20 (min skills) ± 50% variance (tested the pre-spell tec and it did ~20 with min 11 max 31)"
+    "//": "The vars are set at mokou_opens_spellbook_eoc ",
+    "//2": "dmg (bonus) is 8 - 16 ± 25% variance (skill scaling only)"
   },
   {
     "id": "mokou_kick_bonus2",
@@ -31,8 +32,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( ( (u_skill('melee') * 0.8 ) + (u_skill('unarmed') * 0.8 ) + var_mokou_bonus + (u_pain() * 0.11 ) + 9.6 ) * 0.75 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('melee') * 0.8 ) + (u_skill('unarmed') * 0.8 ) + var_mokou_bonus + (u_pain() * 0.11 ) + 9.6 ) * 1.25 )" ] },
+    "min_damage": { "math": [ "( ( var_mokou_attack * 2 + var_mokou_bonus + ( u_pain() * 0.11 ) ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( var_mokou_attack * 2 + var_mokou_bonus + ( u_pain() * 0.11 ) ) * 1.25 )" ] },
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,
@@ -41,7 +42,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "RANDOM_DAMAGE" ],
-    "//": "dmg (bonus) is 16 - 32 as bonus of ~40 (min skills) ± 25% variance (tested the pre-spell tec and it did ~40 with min 31 max 55)"
+    "//": "The vars are set at mokou_opens_spellbook_eoc ",
+    "//2": "dmg (bonus) is 16 - 32 ± 25% variance (skill scaling only)"
   },
   {
     "id": "mokou_liver_punch_bonus",
@@ -53,8 +55,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( ( (u_skill('melee') * 0.25 ) + (u_skill('unarmed') * 0.25 ) + var_mokou_bonus + (u_pain() * 0.11 ) + 3 ) * 0.75 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('melee') * 0.25 ) + (u_skill('unarmed') * 0.25 ) + var_mokou_bonus + (u_pain() * 0.11 ) + 3 ) * 1.25 )" ] },
+    "min_damage": { "math": [ "( ( var_mokou_attack + var_mokou_bonus + ( u_pain() * 0.11 ) ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( var_mokou_attack + var_mokou_bonus + ( u_pain() * 0.11 ) ) * 1.25 )" ] },
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,
@@ -63,7 +65,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "RANDOM_DAMAGE" ],
-    "//": "dmg (bonus) is 5 - 10 ± 25% variance"
+    "//": "The vars are set at mokou_opens_spellbook_eoc ",
+    "//2": "dmg (bonus) is 8 - 16 ± 25% variance (skill scaling only)"
   },
   {
     "id": "mokou_punch_down_bonus",
@@ -75,8 +78,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( ( (u_skill('melee') * 0.25 ) + (u_skill('unarmed') * 0.25 ) + var_mokou_bonus + (u_pain() * 0.11 ) + 3 ) * 0.75 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('melee') * 0.25 ) + (u_skill('unarmed') * 0.25 ) + var_mokou_bonus + (u_pain() * 0.11 ) + 3 ) * 1.25 )" ] },
+    "min_damage": { "math": [ "( ( var_mokou_attack + var_mokou_bonus + ( u_pain() * 0.11 ) ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( var_mokou_attack + var_mokou_bonus + ( u_pain() * 0.11 ) ) * 1.25 )" ] },
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,
@@ -85,7 +88,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "RANDOM_DAMAGE" ],
-    "//": "dmg (bonus) is 5 - 10 ± 25% variance"
+    "//": "The vars are set at mokou_opens_spellbook_eoc ",
+    "//2": "dmg (bonus) is 8 - 16 ± 25% variance (skill scaling only)"
   },
   {
     "id": "mokou_sommersault_kick_bonus",
@@ -97,8 +101,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( ( (u_skill('melee') * 0.65 ) + (u_skill('unarmed') * 0.65 ) + var_mokou_bonus + (u_pain() * 0.11 ) + 7.8 ) * 0.75 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('melee') * 0.65 ) + (u_skill('unarmed') * 0.65 ) + var_mokou_bonus + (u_pain() * 0.11 ) + 7.8 ) * 1.25 )" ] },
+    "min_damage": { "math": [ "( ( var_mokou_attack * 1.625 + var_mokou_bonus + ( u_pain() * 0.11 ) ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( var_mokou_attack * 1.625 + var_mokou_bonus + ( u_pain() * 0.11 ) ) * 1.25 )" ] },
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,
@@ -107,7 +111,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "RANDOM_DAMAGE" ],
-    "//": "dmg (bonus) is 13 - 26 as bonus of ~17 (min skills) ± 25% variance"
+    "//": "The vars are set at mokou_opens_spellbook_eoc ",
+    "//2": "dmg (bonus) is 13 - 26 ± 25% variance (skill scaling only)"
   },
   {
     "id": "mokou_tackle_bonus",
@@ -119,8 +124,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( ( (u_skill('melee') * 0.45 ) + (u_skill('unarmed') * 0.45 ) + var_mokou_bonus + (u_pain() * 0.11 ) + 5.4 ) * 0.75 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('melee') * 0.45 ) + (u_skill('unarmed') * 0.45 ) + var_mokou_bonus + (u_pain() * 0.11 ) + 5.4 ) * 1.25 )" ] },
+    "min_damage": { "math": [ "( ( var_mokou_attack * 1.125 + var_mokou_bonus + ( u_pain() * 0.11 ) ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( var_mokou_attack * 1.125 + var_mokou_bonus + ( u_pain() * 0.11 ) ) * 1.25 )" ] },
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,
@@ -129,7 +134,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "RANDOM_DAMAGE" ],
-    "//": "dmg (bonus) is 9 - 18 as bonus of ~18 (min skills) ± 25% variance"
+    "//": "The vars are set at mokou_opens_spellbook_eoc ",
+    "//2": "dmg (bonus) is 9 - 18 as bonus of ~18 (min skills) ± 25% variance (skill scaling only)"
   },
   {
     "id": "mokou_blazekick",
@@ -143,8 +149,8 @@
     "extra_effects": [ { "id": "mokou_blazekick2" } ],
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( (u_skill('melee') * 3.6 ) + (u_skill('unarmed') * 3.6 ) + (u_pain() * 0.25 ) - 4.8 )" ] },
-    "max_damage": 96,
+    "min_damage": { "math": [ "( (u_skill('melee') * 6 ) + (u_skill('unarmed') * 6 ) + var_mokou_bonus + ( u_pain() * 0.25 ) - 24 )" ] },
+    "max_damage": { "math": [ "( (u_skill('melee') * 6 ) + (u_skill('unarmed') * 6 ) + var_mokou_bonus + ( u_pain() * 0.25 ) - 24 )" ] },
     "min_range": 1,
     "max_range": 1,
     "min_aoe": 1,
@@ -155,7 +161,7 @@
     "base_energy_cost": 150,
     "energy_source": "MANA",
     "flags": [ "LOUD", "NO_HANDS", "SOMATIC" ],
-    "//": "min dmg 24"
+    "//": "dmg 24 - 96 (skill scaling only)"
   },
   {
     "id": "mokou_blazekick2",
@@ -190,7 +196,7 @@
     "effect": "directed_push",
     "shape": "cone",
     "damage_type": "bash",
-    "min_damage": { "math": [ "( (u_skill('melee') * 0.1 ) + (u_skill('unarmed') * 0.1 ) + 1.2 )" ] },
+    "min_damage": { "math": [ "( (u_skill('melee') * 0.166 ) + (u_skill('unarmed') * 0.166 ) + 0.666 )" ] },
     "max_damage": 4,
     "min_aoe": 1,
     "max_aoe": 1,
@@ -217,7 +223,7 @@
     "damage_type": "pure",
     "min_damage": 11,
     "max_damage": 11,
-    "min_duration": { "math": [ "( (u_skill('melee') * 27 ) + (u_skill('unarmed') * 27 ) + (u_skill('firstaid') * 58 ) + 172 )" ] },
+    "min_duration": { "math": [ "( (u_skill('melee') * 39 ) + (u_skill('unarmed') * 39 ) + (u_skill('firstaid') * 79 ) + 30 )" ] },
     "max_duration": 1600,
     "max_level": 1,
     "difficulty": -11,
@@ -280,8 +286,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( (u_skill('melee') * 1.35 ) + (u_skill('unarmed') * 1.35 ) + (u_pain() * 0.15 ) - 1.8 )" ] },
-    "max_damage": 45,
+    "min_damage": { "math": [ "( (u_skill('melee') * 2.25 ) + (u_skill('unarmed') * 2.25 ) + var_mokou_bonus + ( u_pain() * 0.166 ) - 9 )" ] },
+    "max_damage": { "math": [ "( (u_skill('melee') * 2.25 ) + (u_skill('unarmed') * 2.25 ) + var_mokou_bonus + ( u_pain() * 0.166 ) - 9 )" ] },
     "min_aoe": 3,
     "max_aoe": 3,
     "max_level": 1,
@@ -290,7 +296,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "min dmg 9 x5, max dmg with skills 36 x5, the gap is reached with the pain modifier"
+    "//": "dmg (9 - 36) x5 (skill scaling only)"
   },
   {
     "id": "mokou_combustion3",
@@ -323,7 +329,7 @@
     "damage_type": "pure",
     "min_dot": -2,
     "max_dot": -2,
-    "min_duration": { "math": [ "( (u_skill('melee') * 12 ) + (u_skill('unarmed') * 12 ) + (u_skill('firstaid') * 26 ) + 452 )" ] },
+    "min_duration": { "math": [ "( (u_skill('melee') * 19 ) + (u_skill('unarmed') * 19 ) + (u_skill('firstaid') * 34 ) + 380 )" ] },
     "max_duration": 1100,
     "max_level": 1,
     "difficulty": -11,
@@ -347,7 +353,7 @@
     "shape": "blast",
     "min_damage": 1,
     "max_damage": 1,
-    "min_duration": { "math": [ "( (u_skill('melee') * 5100 ) + (u_skill('unarmed') * 5100 ) - 22800 )" ] },
+    "min_duration": { "math": [ "( (u_skill('melee') * 7500 ) + (u_skill('unarmed') * 7500 ) - 30000 )" ] },
     "max_duration": 120000,
     "max_level": 1,
     "difficulty": -11,
@@ -369,8 +375,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( (u_skill('melee') * 5 ) + (u_skill('unarmed') * 5 ) + (u_pain() * 0.3 ) - 15 )" ] },
-    "max_damage": 125,
+    "min_damage": { "math": [ "( (u_skill('melee') * 8.333 ) + (u_skill('unarmed') * 8.333 ) + var_mokou_bonus + ( u_pain() * 0.333 ) - 41.666 )" ] },
+    "max_damage": { "math": [ "( (u_skill('melee') * 8.333 ) + (u_skill('unarmed') * 8.333 ) + var_mokou_bonus + ( u_pain() * 0.333 ) - 41.666 )" ] },
     "min_range": 6,
     "max_range": 6,
     "min_aoe": 3,
@@ -385,7 +391,7 @@
     "base_energy_cost": 200,
     "energy_source": "MANA",
     "flags": [ "IGNITE_FLAMMABLE", "NO_LEGS" ],
-    "//": "min dmg 25",
+    "//": "dmg 25 - 125 (skill scaling only)",
     "//2": "Inspired on Hourai 'South Wind, Clear Sky -Fujiyama Volcano' ",
     "//3": "Using fd_fire instead of the modified harmless field basically instakills normal zombies that walk into it, which is not good"
   },
@@ -401,8 +407,8 @@
     "extra_effects": [ { "id": "mokou_resurrectionphoenix2" } ],
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( (u_skill('melee') * 2 ) + (u_skill('unarmed') * 2 ) + 24 )" ] },
-    "max_damage": { "math": [ "( (u_skill('melee') * 4 ) + (u_skill('unarmed') * 4 ) + 48 )" ] },
+    "min_damage": { "math": [ "( ( (u_skill('melee') * 6.666 ) + (u_skill('unarmed') * 6.666 ) + 26.666 ) * 0.5 )" ] },
+    "max_damage": { "math": [ "( ( (u_skill('melee') * 6.666 ) + (u_skill('unarmed') * 6.666 ) + 26.666 ) * 1 )" ] },
     "min_aoe": 4,
     "max_aoe": 4,
     "max_level": 1,
@@ -411,7 +417,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "IGNITE_FLAMMABLE", "NO_HANDS", "NO_LEGS", "RANDOM_DAMAGE" ],
-    "//": "max dmg 80 - 160"
+    "//": "dmg 80 - 160"
   },
   {
     "id": "mokou_resurrectionphoenix2",
@@ -445,7 +451,7 @@
     "effect": "directed_push",
     "shape": "blast",
     "min_damage": 3,
-    "max_damage": { "math": [ "( (u_skill('melee') * 0.15 ) + (u_skill('unarmed') * 0.15 ) + 1.8 )" ] },
+    "max_damage": { "math": [ "( (u_skill('melee') * 0.25 ) + (u_skill('unarmed') * 0.25 ) + 1 )" ] },
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 0,
@@ -465,8 +471,8 @@
     "effect": "attack",
     "shape": "cone",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( ( (u_skill('melee') * 1.3 ) + (u_skill('unarmed') * 1.3 ) + var_mokou_bonus + (u_pain() * 0.11 ) + 6.6 ) * 0.75 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('melee') * 1.3 ) + (u_skill('unarmed') * 1.3 ) + var_mokou_bonus + (u_pain() * 0.11 ) + 6.6 ) * 1.25 )" ] },
+    "min_damage": { "math": [ "( ( var_mokou_talons + var_mokou_bonus + ( u_pain() * 0.11 ) ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( var_mokou_talons + var_mokou_bonus + ( u_pain() * 0.11 ) ) * 1.25 )" ] },
     "min_range": 2,
     "max_range": 2,
     "min_aoe": 135,
@@ -489,8 +495,8 @@
     "effect": "attack",
     "shape": "cone",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( ( (u_skill('melee') * 1.3 ) + (u_skill('unarmed') * 1.3 ) + var_mokou_bonus + (u_pain() * 0.11 ) + 6.6 ) * 0.75 )" ] },
-    "max_damage": { "math": [ "( ( (u_skill('melee') * 1.3 ) + (u_skill('unarmed') * 1.3 ) + var_mokou_bonus + (u_pain() * 0.11 ) + 6.6 ) * 1.25 )" ] },
+    "min_damage": { "math": [ "( ( var_mokou_talons + var_mokou_bonus + ( u_pain() * 0.11 ) ) * 0.75 )" ] },
+    "max_damage": { "math": [ "( ( var_mokou_talons + var_mokou_bonus + ( u_pain() * 0.11 ) ) * 1.25 )" ] },
     "min_range": 2,
     "max_range": 2,
     "min_aoe": 135,
@@ -501,6 +507,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SOMATIC" ],
-    "//": "dmg 17 - 43 ± 25% variance"
+    "//": "The vars are set at mokou_opens_spellbook_eoc ",
+    "//2": "dmg 17 - 43 ± 25% variance (skill scaling only)"
   }
 ]
