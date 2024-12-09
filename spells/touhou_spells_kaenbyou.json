@@ -10,9 +10,9 @@
     "effect": "ter_transform",
     "effect_str": "dismiss_fire_field",
     "shape": "blast",
-    "min_range": { "math": [ "( (u_skill('speech') * 0.2 ) + (u_skill('dodge') * 0.2 ) + 2.6 )" ] },
+    "min_range": { "math": [ "( (u_skill('speech') * 0.307 ) + (u_skill('dodge') * 0.307 ) + 1.846 )" ] },
     "max_range": 8,
-    "min_aoe": { "math": [ "( (u_skill('speech') * 0.2 ) + (u_skill('dodge') * 0.2 ) - 0.4 )" ] },
+    "min_aoe": { "math": [ "( (u_skill('speech') * 0.307 ) + (u_skill('dodge') * 0.307 ) - 1.154 )" ] },
     "max_aoe": 5,
     "max_level": 1,
     "difficulty": -11,
@@ -99,8 +99,8 @@
     "extra_effects": [ { "id": "kaenbyou_immolate2" } ],
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( (u_skill('speech') * 1.7 ) + 4.2 )" ] },
-    "max_damage": 28,
+    "min_damage": { "math": [ "var_immolate_dmg" ] },
+    "max_damage": 29,
     "min_range": 12,
     "max_range": 12,
     "max_level": 1,
@@ -109,7 +109,7 @@
     "base_energy_cost": 100,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
-    "//2": "min dmg 11, min dur 1200"
+    "//": "The vars are set at kaenbyou_opens_spellbook_eoc "
   },
   {
     "id": "kaenbyou_immolate2",
@@ -122,13 +122,13 @@
     "effect_str": "immolate_light",
     "shape": "blast",
     "damage_type": "heat",
-    "min_dot": { "math": [ "( (u_skill('speech') * 0.4 ) + 0.4 )" ] },
+    "min_dot": { "math": [ "var_immolate_dot" ] },
     "max_dot": 6,
-    "min_pierce": { "math": [ "( (u_skill('speech') * 0.3 ) - 0.2 )" ] },
+    "min_pierce": { "math": [ "var_immolate_pierce" ] },
     "max_pierce": 4,
     "min_range": 12,
     "max_range": 12,
-    "min_duration": { "math": [ "( (u_skill('speech') * 120 ) + 720 )" ] },
+    "min_duration": { "math": [ "var_immolate_dur" ] },
     "max_duration": 2400,
     "max_level": 1,
     "difficulty": -11,
@@ -137,7 +137,7 @@
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS" ],
     "//": "Ideally, the dot should have a flame field visual effect",
-    "//2": "min dot 2, min pierce 1, min dur 1200. The granularity of small dots isn't the best"
+    "//2": "The vars are set at kaenbyou_opens_spellbook_eoc . The granularity of small dots isn't the best"
   },
   {
     "id": "kaenbyou_infernoburst",
@@ -151,7 +151,7 @@
     "valid_targets": [ "ally", "hostile" ],
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( (u_skill('speech') * 1.8 ) + 5.8 )" ] },
+    "min_damage": { "math": [ "( var_immolate_dmg + 2 )" ] },
     "max_damage": 31,
     "min_range": 12,
     "max_range": 12,
@@ -160,8 +160,7 @@
     "base_casting_time": 100,
     "base_energy_cost": 100,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
-    "//": "min dmg 13"
+    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ]
   },
   {
     "id": "kaenbyou_infernoburst2",
@@ -192,15 +191,14 @@
     "valid_targets": [ "self" ],
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( (u_skill('speech') * 1.8 ) + 5.8 )" ] },
+    "min_damage": { "math": [ "( var_immolate_dmg + 2 )" ] },
     "max_damage": 31,
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ],
-    "//": "Always the same dmg as kaenbyou_infernoburst "
+    "flags": [ "NO_HANDS", "NO_LEGS", "SOMATIC" ]
   },
   {
     "id": "kaenbyou_blazingwheel",
@@ -232,8 +230,8 @@
     "extra_effects": [ { "id": "kaenbyou_blazingwheel3" }, { "id": "kaenbyou_consume_soulshard_2" } ],
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( (u_skill('speech') * 6 ) - 4 )" ] },
-    "max_damage": 80,
+    "min_damage": { "math": [ "( var_immolate_dmg * 2 )" ] },
+    "max_damage": 58,
     "min_range": 12,
     "max_range": 12,
     "min_aoe": 3,
@@ -244,7 +242,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "CONCENTRATE", "NO_HANDS", "NO_LEGS", "SOMATIC" ],
-    "//": "min dmg 20"
+    "//": "The vars are set at kaenbyou_opens_spellbook_eoc "
   },
   {
     "id": "kaenbyou_blazingwheel3",
@@ -257,11 +255,11 @@
     "effect_str": "immolate_light",
     "shape": "blast",
     "damage_type": "heat",
-    "min_dot": { "math": [ "( (u_skill('speech') * 0.9 ) + 0.4 )" ] },
-    "max_dot": 13,
-    "min_pierce": { "math": [ "( (u_skill('speech') * 0.4 ) + 0.4 )" ] },
-    "max_pierce": 6,
-    "min_duration": { "math": [ "( (u_skill('speech') * 120 ) + 720 )" ] },
+    "min_dot": { "math": [ "( var_immolate_dot * 2 )" ] },
+    "max_dot": 12,
+    "min_pierce": { "math": [ "( var_immolate_pierce * 2 )" ] },
+    "max_pierce": 8,
+    "min_duration": { "math": [ "var_immolate_dur" ] },
     "max_duration": 2400,
     "max_level": 1,
     "difficulty": -11,
@@ -269,7 +267,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS" ],
-    "//": "min dot 4, min pierce 2, min dur 1200"
+    "//": "The vars are set at kaenbyou_opens_spellbook_eoc "
   },
   {
     "id": "kaenbyou_consume_soulshard_2",
@@ -288,7 +286,7 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "IGNORE_WALLS", "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ]
+    "flags": [ "IGNORE_WALLS", "NO_EXPLOSION_SFX", "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ]
   },
   {
     "id": "kaenbyou_soulfire",
@@ -320,9 +318,9 @@
     "valid_targets": [ "ally", "hostile" ],
     "shape": "blast",
     "damage_type": "soul",
-    "min_damage": { "math": [ "( (u_skill('speech') * 32 ) - 88 )" ] },
+    "min_damage": { "math": [ "( u_skill('speech') * 53.333 - 173.333 )" ] },
     "max_damage": 360,
-    "min_range": { "math": [ "( (u_skill('speech') * 0.9 ) + 5.4 )" ] },
+    "min_range": { "math": [ "( u_skill('speech') * 1.5 + 3 )" ] },
     "max_range": 18,
     "min_aoe": 1,
     "max_aoe": 1,
@@ -333,7 +331,7 @@
     "energy_source": "MANA",
     "flags": [ "IGNITE_FLAMMABLE", "NO_LEGS", "SOMATIC" ],
     "//": "This spell is unrelated to Magiclysm's Soulfire. I just find the word really cool",
-    "//2": "min dmg 40"
+    "//2": "min dmg 40, min range 9"
   },
   {
     "id": "kaenbyou_consume_soulshard",
@@ -352,7 +350,7 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "IGNORE_WALLS", "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ]
+    "flags": [ "IGNORE_WALLS", "NO_EXPLOSION_SFX", "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ]
   },
   {
     "id": "kaenbyou_soulshard_fuel",
@@ -408,7 +406,7 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "IGNORE_WALLS", "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ]
+    "flags": [ "IGNORE_WALLS", "NO_EXPLOSION_SFX", "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ]
   },
   {
     "id": "kaenbyou_soulshatter",
@@ -443,7 +441,7 @@
     "damage_type": "pure",
     "min_duration": 100,
     "max_duration": 200,
-    "min_aoe": { "math": [ "( (u_skill(speech) * 1.6 ) + 9.6 )" ] },
+    "min_aoe": { "math": [ "( u_skill(speech) * 2.666 + 5.333 )" ] },
     "max_aoe": 32,
     "max_level": 1,
     "difficulty": -11,
@@ -464,7 +462,7 @@
     "effect_str": "kaenbyou_soulshatter",
     "shape": "blast",
     "damage_type": "pure",
-    "min_duration": { "math": [ "( (u_skill(speech) * 0.4 ) + 1.4 )" ] },
+    "min_duration": { "math": [ "(u_skill(speech) * 66.666 + 33.333 )" ] },
     "max_duration": 700,
     "max_level": 1,
     "difficulty": -11,
@@ -485,13 +483,13 @@
     "effect": "summon",
     "effect_str": "mon_vengeful_spirit",
     "shape": "blast",
-    "min_damage": { "math": [ "( (u_skill('speech') * 0.6 ) - 0.4 )" ] },
+    "min_damage": { "math": [ "( u_skill('speech') - 2 )" ] },
     "max_damage": 8,
     "min_range": 5,
     "max_range": 5,
     "min_aoe": 2,
     "max_aoe": 2,
-    "min_duration": { "math": [ "( (u_skill('speech') * 360 ) - 240 )" ] },
+    "min_duration": { "math": [ "( u_skill('speech') * 600 - 1200 )" ] },
     "max_duration": 4800,
     "max_level": 1,
     "difficulty": -11,
@@ -564,7 +562,7 @@
     "damage_type": "pure",
     "min_damage": 99,
     "max_damage": 99,
-    "min_range": { "math": [ "( (u_skill('speech') * 0.8 ) + 4.8 )" ] },
+    "min_range": { "math": [ "( u_skill('speech') * 1.333 + 2.666 )" ] },
     "max_range": 16,
     "min_aoe": 4,
     "max_aoe": 4,
@@ -588,9 +586,9 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "heat",
-    "min_damage": { "math": [ "( (u_skill('speech') * 34 ) - 116 )" ] },
+    "min_damage": { "math": [ "( u_skill('speech') * 1.666 + 13.333 )" ] },
     "max_damage": 30,
-    "min_pierce": { "math": [ "( (u_skill('speech') * 0.8 ) - 2.2 )" ] },
+    "min_pierce": { "math": [ "( u_skill('speech') * 1.333 - 4.333 )" ] },
     "max_pierce": 9,
     "min_aoe": 1,
     "max_aoe": 2,
