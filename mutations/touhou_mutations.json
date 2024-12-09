@@ -69,7 +69,15 @@
         ] 
       } 
     ],
-    "//": "This is handled by tenko_celestial_stance_1_eoc and tenko_celestial_stance_2_eoc "
+    "processed_eocs": [ 
+      {
+        "id": "celestial_stance_check",
+        "condition": { "not": { "u_using_martial_art": "style_celestial_brawling_tenko" } },
+        "deactivate_condition": { "u_using_martial_art": "style_celestial_brawling_tenko" },
+        "effect": [ { "u_lose_trait": "celestial_stance_mut" } ]
+      }
+    ],
+    "//": "Should always deactivate if Tenko is not using her custom MA. Also I'm not sure the deactivate_condition is actually working, it's there to prevent this run all the time"
   },
   {
     "id": "GYOKUTO_SPECIES",
@@ -1202,13 +1210,13 @@
       {
         "condition": { "not": "u_has_weapon" },
         "melee_damage_bonus": [ 
-          { "type": "bash", "add": { "math": [ "( u_skill('swimming') * 1.546 + u_skill('melee') * 1.546 + u_skill('unarmed') * 1.546 - 8.34 ) * 0.5" ] } } 
+          { "type": "bash", "add": { "math": [ "( u_skill('swimming') + u_skill('melee') + u_skill('unarmed') ) * 0.5" ] } } 
         ]
       }
     ],
     "cancels": [ "EASYSLEEPER", "EASYSLEEPER2", "HEAVYSLEEPER2", "INSOMNIA", "SLEEPY", "SLEEPY2" ],
     "//": "Not sure if DEFT and HEAVYSLEEPER work from flags, so it's set above",
-    "//2": "Bonus dmg ( 4 - 38 )/2",
+    "//2": "Bonus dmg 4 - 19",
     "//3": "Half bonus dmg here, the other half at meiling_tigerrelease . This is to make her total bonus conditional with her mana regen. Breakpoint vs KI_STRIKE at 7 for each skill (28 vs 29)"
   },
   {
@@ -1236,7 +1244,7 @@
       {
         "condition": { "not": "u_has_weapon" },
         "melee_damage_bonus": [ 
-          { "type": "bash", "add": { "math": [ "( u_skill('melee') + u_skill('unarmed') + ( u_pain() * 0.25 ) )" ] } } 
+          { "type": "bash", "add": { "math": [ "( u_skill('melee') + u_skill('unarmed') + (u_pain() * 0.25 ) )" ] } } 
         ]
       }
     ],

@@ -134,6 +134,14 @@
         "flat_bonuses": [ { "stat": "hit", "scale": 1 } ]
       }
     ],
+    "static_eocs": [
+      {
+        "id": "celestial_brawling_tenko_static_eoc",
+        "effect": [
+          { "u_add_trait": "celestial_stance_mut" }
+        ]
+      }
+    ],
     "onhit_buffs": [
       {
         "id": "buff_celestial_brawling_tenko_onhit",

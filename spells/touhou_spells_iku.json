@@ -9,8 +9,8 @@
     "effect": "attack",
     "shape": "line",
     "damage_type": "electric",
-    "min_damage": { "math": [ "( (u_skill('dodge') * 4.69 ) + (u_skill('unarmed') * 4.69 ) + var_iku_bonus - 3.75 )" ] },
-    "max_damage": { "math": [ "( (u_skill('dodge') * 4.69 ) + (u_skill('unarmed') * 4.69 ) + var_iku_bonus - 3.75 )" ] },
+    "min_damage": { "math": [ "( (u_skill('dodge') * 1.5 ) + (u_skill('unarmed') * 1.5 ) + 9 )" ] },
+    "max_damage": 45,
     "min_range": 3,
     "max_range": 3,
     "field_id": "fd_electricity",
@@ -24,7 +24,7 @@
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
     "//": "Modified iku_thunderfish_base as this is procced automatically by MA techniques",
-    "//2": "min dmg 15 (skill scaling only)"
+    "//2": "min dmg 15"
   },
   {
     "id": "iku_rising_drill",
@@ -36,9 +36,9 @@
     "effect": "attack",
     "shape": "line",
     "damage_type": "stab",
-    "min_damage": { "math": [ "( ( var_melee_phys_dmg + var_iku_bonus ) * 0.9 )" ] },
-    "max_damage": { "math": [ "( ( var_melee_phys_dmg + var_iku_bonus ) * 1.3 )" ] },
-    "min_pierce": { "math": [ "( (u_skill('dodge') * 0.666 ) + (u_skill('melee') * 0.666 ) - 1.333 )" ] },
+    "min_damage": { "math": [ "( var_melee_phys_dmg * 0.9 )" ] },
+    "max_damage": { "math": [ "( var_melee_phys_dmg * 1.3 )" ] },
+    "min_pierce": { "math": [ "( (u_skill('dodge') * 0.6 ) + (u_skill('melee') * 0.6 ) - 0.8 )" ] },
     "max_pierce": 12,
     "min_range": 1,
     "max_range": 1,
@@ -48,7 +48,8 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC", "RANDOM_DAMAGE" ],
-    "//": "dmg is ~1.1x weapon dmg, min pierce 4"
+    "//": "This is procced automatically by MA techniques",
+    "//2": "dmg is ~1.1x weapon dmg, min pierce 4"
   },
   {
     "id": "iku_slap_elec",
@@ -60,8 +61,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "electric",
-    "min_damage": { "math": [ "( ( var_melee_phys_dmg + var_iku_bonus ) * 0.9 )" ] },
-    "max_damage": { "math": [ "( ( var_melee_phys_dmg + var_iku_bonus ) * 1.1 )" ] },
+    "min_damage": { "math": [ "( ( var_melee_all_dmg * 0.9 ) )" ] },
+    "max_damage": { "math": [ "( ( var_melee_all_dmg * 1.1 ) )" ] },
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,
@@ -82,8 +83,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "electric",
-    "min_damage": { "math": [ "( (u_skill('melee') * 5.833 ) + (u_skill('dodge') * 5.833 ) + var_iku_bonus - 26.666 )" ] },
-    "max_damage": { "math": [ "( (u_skill('melee') * 5.833 ) + (u_skill('dodge') * 5.833 ) + var_iku_bonus - 26.666 )" ] },
+    "min_damage": { "math": [ "( (u_skill('melee') * 1.25 ) + (u_skill('dodge') * 1.25 ) + 10 )" ] },
+    "max_damage": 45,
     "min_range": 0,
     "max_range": 0,
     "min_aoe": 1,
@@ -94,7 +95,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "LOUD", "NO_HANDS", "NO_LEGS", "RANDOM_TARGET" ],
-    "//": "dmg 20 - 90 (skill scaling only), based on iku_elekiter2 scaled down, as this procs automatically from techniques"
+    "//": "min dmg 20, based on iku_elekiter2 scaled down, as this procs automatically from techniques"
   },
   {
     "id": "iku_batteryrestore",
@@ -126,7 +127,7 @@
     "effect": "attack",
     "shape": "line",
     "damage_type": "electric",
-    "min_damage": { "math": [ "( (u_skill('melee') * 14.583 ) + (u_skill('dodge') * 14.583 ) - -81.666 )" ] },
+    "min_damage": { "math": [ "( (u_skill('melee') * 8.75 ) + (u_skill('dodge') * 8.75 ) -35 )" ] },
     "max_damage": 210,
     "min_range": 3,
     "max_range": 3,
@@ -137,8 +138,7 @@
     "base_casting_time": 66,
     "base_energy_cost": 200,
     "energy_source": "MANA",
-    "flags": [ "LOUD", "NO_HANDS", "NO_LEGS", "SOMATIC" ],
-    "//": "min dmg 35"
+    "flags": [ "LOUD", "NO_HANDS", "NO_LEGS", "SOMATIC" ]
   },
   {
     "id": "iku_elekiter",
@@ -153,10 +153,10 @@
     "shape": "blast",
     "damage_type": "electric",
     "min_damage": 2,
-    "max_damage": { "math": [ "( u_skill('dodge') - 2 )" ] },
+    "max_damage": { "math": [ "( (u_skill('dodge') * 0.6 ) - 0.4 )" ] },
     "min_range": 0,
     "max_range": 0,
-    "min_aoe": { "math": [ "( (u_skill('dodge') ) )" ] },
+    "min_aoe": { "math": [ "( (u_skill('dodge') * 0.6 ) + 1.6 )" ] },
     "max_aoe": 10,
     "field_id": "fd_electricity",
     "field_chance": 1,
@@ -167,8 +167,7 @@
     "base_casting_time": 125,
     "base_energy_cost": 200,
     "energy_source": "MANA",
-    "flags": [ "LOUD", "NO_LEGS", "RANDOM_TARGET", "SOMATIC", "WONDER" ],
-    "//": "max dmg 8, min aoe 4"
+    "flags": [ "LOUD", "NO_LEGS", "RANDOM_TARGET", "SOMATIC", "WONDER" ]
   },
   {
     "id": "iku_elekiter2",
@@ -180,11 +179,11 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "electric",
-    "min_damage": { "math": [ "( (u_skill('melee') * 5 ) + (u_skill('dodge') * 5 ) - 25 )" ] },
+    "min_damage": { "math": [ "( (u_skill('melee') * 3 ) + (u_skill('dodge') * 3 ) - 9 )" ] },
     "max_damage": 75,
     "min_range": 0,
     "max_range": 0,
-    "min_aoe": { "math": [ "( (u_skill('dodge') ) )" ] },
+    "min_aoe": { "math": [ "( (u_skill('dodge') * 0.6 ) + 1.6 )" ] },
     "max_aoe": 10,
     "max_level": 1,
     "difficulty": -11,
@@ -192,7 +191,7 @@
     "base_energy_cost": 200,
     "energy_source": "MANA",
     "flags": [ "LOUD", "NO_LEGS", "RANDOM_TARGET", "SOMATIC" ],
-    "//": "min dmg 15, same aoe as iku_elekiter "
+    "//": "min dmg 15"
   },
   {
     "id": "iku_readweather",
@@ -225,9 +224,9 @@
     "extra_effects": [ { "id": "iku_staticfield2" } ],
     "shape": "cone",
     "damage_type": "electric",
-    "min_damage": { "math": [ "( (u_skill('speech') * 0.833 ) + (u_skill('dodge') * 0.833 ) - 2.666 )" ] },
+    "min_damage": { "math": [ "( (u_skill('speech') * 0.5 ) + (u_skill('dodge') * 0.5 ) )" ] },
     "max_damage": 14,
-    "min_range": { "math": [ "( (u_skill('speech') * 1.416 ) + (u_skill('dodge') * 1.416 ) - 4.333 )" ] },
+    "min_range": { "math": [ "( (u_skill('speech') * 0.85 ) + (u_skill('dodge') * 0.85 ) + 0.2 )" ] },
     "max_range": 24,
     "min_aoe": 90,
     "max_aoe": 90,
@@ -241,7 +240,7 @@
     "base_energy_cost": 200,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS", "PERCENTAGE_DAMAGE", "SOMATIC" ],
-    "//": "min dmg 4, min range 7"
+    "//": "min dmg 4"
   },
   {
     "id": "iku_staticfield2",
@@ -253,9 +252,9 @@
     "effect": "mod_moves",
     "shape": "cone",
     "damage_type": "pure",
-    "min_damage": { "math": [ " - ( (u_skill('speech') * 250 ) + (u_skill('dodge') * 250 ) + 1000 )" ] },
+    "min_damage": { "math": [ "( - (u_skill('speech') * 150 ) - (u_skill('dodge') * 150 ) - 1800 )" ] },
     "max_damage": -6000,
-    "min_range": { "math": [ "( (u_skill('speech') * 1.416 ) + (u_skill('dodge') * 1.416 ) - 4.333 )" ] },
+    "min_range": { "math": [ "( (u_skill('speech') * 0.85 ) + (u_skill('dodge') * 0.85 ) + 0.2 )" ] },
     "max_range": 24,
     "min_aoe": 90,
     "max_aoe": 90,
@@ -266,7 +265,7 @@
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS" ],
     "//": "Any electric, magnetic, robotic or similar creature should go here",
-    "//2": "min dmg -3000, min range 7"
+    "//2": "min dmg 3000, min range 7"
   },
   {
     "id": "iku_stickleback",
@@ -279,7 +278,7 @@
     "extra_effects": [ { "id": "iku_stickleback2" }, { "id": "iku_stickleback3" } ],
     "shape": "blast",
     "damage_type": "electric",
-    "min_damage": { "math": [ "( (u_skill('speech') * 1.833 ) + (u_skill('dodge') * 1.833 ) + 7.333 )" ] },
+    "min_damage": { "math": [ "( (u_skill('speech') * 1.1 ) + (u_skill('dodge') * 1.1 ) + 13.2 )" ] },
     "max_damage": 44,
     "min_aoe": 2,
     "max_aoe": 2,
@@ -292,8 +291,7 @@
     "base_casting_time": 150,
     "base_energy_cost": 133,
     "energy_source": "MANA",
-    "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ],
-    "//": "min dmg 22"
+    "flags": [ "NO_HANDS", "NO_LEGS", "NO_PROJECTILE" ]
   },
   {
     "id": "iku_stickleback2",
@@ -326,15 +324,14 @@
     "effect": "attack",
     "effect_str": "aura_stickleback",
     "shape": "blast",
-    "min_duration": { "math": [ "( (u_skill('speech') * 150 ) + (u_skill('dodge') * 150 ) )" ] },
+    "min_duration": { "math": [ "( (u_skill('speech') * 90 ) + (u_skill('dodge') * 90 ) + 480 )" ] },
     "max_duration": 3000,
     "max_level": 1,
     "difficulty": -11,
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ],
-    "//": "min dur 1200"
+    "flags": [ "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ]
   },
   {
     "id": "iku_thunderfish_base",
@@ -346,7 +343,7 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "electric",
-    "min_damage": { "math": [ "( (u_skill('speech') * 2.5 ) + (u_skill('dodge') * 2.5 ) - 5 )" ] },
+    "min_damage": { "math": [ "( (u_skill('speech') * 1.5 ) + (u_skill('dodge') * 1.5 ) + 3 )" ] },
     "max_damage": 45,
     "min_range": 5,
     "max_range": 5,
@@ -360,8 +357,7 @@
     "base_energy_cost": 200,
     "energy_source": "MANA",
     "flags": [ "NO_LEGS", "SOMATIC" ],
-    "//": "From Magiclysm's shocking_lash ",
-    "//2": "min dmg 15"
+    "//": "From Magiclysm's shocking_lash "
   },
   {
     "id": "iku_thunderfish",
@@ -371,7 +367,7 @@
     "description": "Shoot a small electric spark that bounces between random enemies, dealing damage that increases as it jumps.",
     "teachable": false,
     "extra_effects": [ { "id": "iku_thunderfish2" } ],
-    "min_damage": { "math": [ "( (u_skill('speech') * 2.5 ) + (u_skill('dodge') * 2.5 ) - 5 )" ] },
+    "min_damage": { "math": [ "( (u_skill('speech') * 1.5 ) + (u_skill('dodge') * 1.5 ) + 3 )" ] },
     "max_damage": 45,
     "flags": [ "RANDOM_TARGET" ]
   },
@@ -382,10 +378,9 @@
     "copy-from": "iku_thunderfish_base",
     "description": "Thundercloud fish shot 2nd jump",
     "extra_effects": [ { "id": "iku_thunderfish3" } ],
-    "min_damage": { "math": [ "( (u_skill('speech') * 3.33 ) + (u_skill('dodge') * 3.33 ) - 11.66 )" ] },
+    "min_damage": { "math": [ "( (u_skill('speech') * 2 ) + (u_skill('dodge') * 2 ) - 1 )" ] },
     "max_damage": 55,
-    "flags": [ "RANDOM_TARGET" ],
-    "//": "min dmg 15"
+    "flags": [ "RANDOM_TARGET" ]
   },
   {
     "id": "iku_thunderfish3",
@@ -394,10 +389,9 @@
     "copy-from": "iku_thunderfish_base",
     "description": "Thundercloud fish shot 3rd jump",
     "extra_effects": [ { "id": "iku_thunderfish4" } ],
-    "min_damage": { "math": [ "( (u_skill('speech') * 4.166 ) + (u_skill('dodge') * 4.166 ) - 18.333 )" ] },
+    "min_damage": { "math": [ "( (u_skill('speech') * 2.5 ) + (u_skill('dodge') * 2.5 ) - 5 )" ] },
     "max_damage": 65,
-    "flags": [ "RANDOM_TARGET" ],
-    "//": "min dmg 15"
+    "flags": [ "RANDOM_TARGET" ]
   },
   {
     "id": "iku_thunderfish4",
@@ -405,10 +399,9 @@
     "name": { "str": "Thundercloud fish shot (3rd jump)" },
     "copy-from": "iku_thunderfish_base",
     "description": "Thundercloud fish shot 4th jump",
-    "min_damage": { "math": [ "( (u_skill('speech') * 5 ) + (u_skill('dodge') * 5 ) - 25 )" ] },
+    "min_damage": { "math": [ "( (u_skill('speech') * 3 ) + (u_skill('dodge') * 3 ) - 9 )" ] },
     "max_damage": 75,
-    "flags": [ "RANDOM_TARGET" ],
-    "//": "min dmg 15"
+    "flags": [ "RANDOM_TARGET" ]
   },
   {
     "id": "iku_waterveil",
@@ -423,7 +416,7 @@
     "extra_effects": [ { "id": "iku_waterveil2" } ],
     "shape": "cone",
     "damage_type": "electric",
-    "min_damage": { "math": [ "( (u_skill('melee') * 3.75 ) + (u_skill('dodge') * 3.75 ) - 15 )" ] },
+    "min_damage": { "math": [ "( (u_skill('melee') * 2.25 ) + (u_skill('dodge') * 2.25 ) - 3 )" ] },
     "max_damage": 60,
     "min_range": 3,
     "max_range": 3,
@@ -434,8 +427,7 @@
     "base_casting_time": 66,
     "base_energy_cost": 120,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS" ],
-    "//": "min dmg 15"
+    "flags": [ "NO_LEGS" ]
   },
   {
     "id": "iku_waterveil2",
@@ -447,7 +439,7 @@
     "effect": "attack",
     "shape": "cone",
     "damage_type": "electric",
-    "min_damage": { "math": [ "( (u_skill('melee') * 3.75 ) + (u_skill('dodge') * 3.75 ) - 15 )" ] },
+    "min_damage": { "math": [ "( (u_skill('melee') * 2.25 ) + (u_skill('dodge') * 2.25 ) - 3 )" ] },
     "max_damage": 60,
     "min_range": 3,
     "max_range": 3,
@@ -458,7 +450,6 @@
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_LEGS" ],
-    "//": "Same dmg as iku_waterveil "
+    "flags": [ "NO_LEGS" ]
   }
 ]
