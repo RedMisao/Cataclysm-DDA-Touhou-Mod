@@ -59,7 +59,6 @@
                 { "math": [ "var_kokoro_instability", ">", "0" ] }
               ]
             },
-            "deactivate_condition": { "math": [ "var_kokoro_instability", "<=", "0" ] },
             "effect": [
               { "math": [ "var_kokoro_instability", "-=", "15" ] }
             ]

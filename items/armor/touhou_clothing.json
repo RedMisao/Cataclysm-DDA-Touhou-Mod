@@ -878,8 +878,8 @@
     "material": [ "bronze" ],
     "symbol": "[",
     "color": "yellow",
-    "use_action": [ "PICK_LOCK" ],
     "qualities": [ [ "LOCKPICK", 3 ] ],
+    "use_action": [ "PICK_LOCK" ],
     "armor": [ { "covers": [ "head" ], "specifically_covers": [ "head_crown" ], "coverage": 5, "encumbrance": [ 0, 0 ] } ],
     "flags": [ "ALLOWS_NATURAL_ATTACKS", "FANCY", "OUTER", "OVERSIZE", "WATER_FRIENDLY" ]
   },
@@ -1091,8 +1091,7 @@
     "//2": "Maybe change it to moriya_wood or something",
     "symbol": "☢",
     "color": "brown",
-    "use_action": 
-    {
+    "use_action": {
       "type": "effect_on_conditions",
       "menu_text": "Activate fusion blade",
       "description": "Activate fusion blade.  It drains energy while active.",

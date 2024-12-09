@@ -268,18 +268,22 @@
     "effect": [
       {
         "u_run_inv_eocs": "all",
-        "search_data": [ 
-          { "id": "light_minus_battery_cell", "wielded_only": true },
-          { "id": "light_battery_cell", "wielded_only": true },
-          { "id": "light_cell_rechargeable", "wielded_only": true },
-          { "id": "medium_battery_cell", "wielded_only": true },
-          { "id": "heavy_battery_cell", "wielded_only": true },
-          { "id": "heavy_plus_battery_cell", "wielded_only": true }
+        "search_data": [ { "uses_energy": true, "wielded_only": true } ],
+        "true_eocs": [ 
+          {
+            "id": "iku_batteryrestore_recharge_eoc",
+            "condition": { "math": [ "n_val('power')", "<", "n_val('power_max')" ] },
+            "effect": [
+              { "math": [ "var_batteryrestore_recharge", "=", "( n_val('power_max') - n_val('power') )" ] },
+              { "math": [ "n_val('power')", "+=", "var_batteryrestore_recharge" ] },
+              { "u_message": "You recharge the battery.", "type": "mixed" }
+            ],
+            "false_effect": [ { "u_message": "It is already full charge.  You can't overcharge it.", "type": "mixed" } ]
+          }
         ],
-        "true_eocs": [ "iku_batteryrestore_check" ],
         "false_eocs": [ 
           {
-            "id": "batteryrestore_no",
+            "id": "iku_batteryrestore_no_eoc",
             "effect": [ { "u_message": "You don't have a battery at hand.", "type": "mixed" } ]
           }
         ]
@@ -287,116 +291,7 @@
     ],
     "//": "This checks if Iku is wielding a battery, and if so runs the EOCs below, which detect which kind of battery she has and 'recharges' it, draining proportional mana",
     "//2": "As u_consume_item with a negative charge value just destroys the item, the trick is to destroy + create a new battery, which thankfully spawns with full charge, else the spell wouldn't work",
-    "//note": "#70651 was fixed, the EOC below can be merged with this one without issues",
-    "//note2": "Could be simplified by #74748"
-  },
-  {
-    "id": "iku_batteryrestore_check",
-    "type": "effect_on_condition",
-    "effect": [
-      {
-        "u_run_inv_eocs": "all",
-        "search_data": [ { "id": "light_minus_battery_cell", "wielded_only": true } ],
-        "true_eocs": [
-          {
-            "id": "batteryrestore1_eoc",
-            "condition": { "math": [ "u_val('mana')", ">=", "10" ] },
-            "effect": [
-              { "math": [ "u_val('mana')", "-=", "25" ] },
-              { "u_consume_item": "light_minus_battery_cell", "count": 1 },
-              { "u_spawn_item": "light_minus_battery_cell", "force_equip": true, "suppress_message": true },
-              { "u_message": "You recharge the battery.", "type": "mixed" }
-            ],
-            "false_effect": [ { "u_message": "You don't have enough energy.", "type": "mixed" } ]
-          }
-        ]
-      },
-      {
-        "u_run_inv_eocs": "all",
-        "search_data": [ { "id": "light_battery_cell", "wielded_only": true } ],
-        "true_eocs": [
-          {
-            "id": "batteryrestore2_eoc",
-            "condition": { "math": [ "u_val('mana')", ">=", "50" ] },
-            "effect": [
-              { "math": [ "u_val('mana')", "-=", "50" ] },
-              { "u_consume_item": "light_battery_cell", "count": 1 },
-              { "u_spawn_item": "light_battery_cell", "force_equip": true, "suppress_message": true },
-              { "u_message": "You recharge the battery.", "type": "mixed" }
-            ],
-            "false_effect": [ { "u_message": "You don't have enough energy.", "type": "mixed" } ]
-          }
-        ]
-      },
-      {
-        "u_run_inv_eocs": "all",
-        "search_data": [ { "id": "light_cell_rechargeable", "wielded_only": true } ],
-        "true_eocs": [
-          {
-            "id": "batteryrestore3_eoc",
-            "condition": { "math": [ "u_val('mana')", ">=", "50" ] },
-            "effect": [
-              { "math": [ "u_val('mana')", "-=", "50" ] },
-              { "u_consume_item": "light_cell_rechargeable", "count": 1 },
-              { "u_spawn_item": "light_cell_rechargeable", "force_equip": true, "suppress_message": true },
-              { "u_message": "You recharge the battery.", "type": "mixed" }
-            ],
-            "false_effect": [ { "u_message": "You don't have enough energy.", "type": "mixed" } ]
-          }
-        ]
-      },
-      {
-        "u_run_inv_eocs": "all",
-        "search_data": [ { "id": "medium_battery_cell", "wielded_only": true } ],
-        "true_eocs": [
-          {
-            "id": "batteryrestore4_eoc",
-            "condition": { "math": [ "u_val('mana')", ">=", "200" ] }, 
-            "effect": [
-              { "math": [ "u_val('mana')", "-=", "200" ] },
-              { "u_consume_item": "medium_battery_cell", "count": 1 },
-              { "u_spawn_item": "medium_battery_cell", "force_equip": true, "suppress_message": true },
-              { "u_message": "You recharge the battery.", "type": "mixed" }
-            ],
-            "false_effect": [ { "u_message": "You don't have enough energy.", "type": "mixed" } ]
-          }
-        ]
-      },
-      {
-        "u_run_inv_eocs": "all",
-        "search_data": [ { "id": "heavy_battery_cell", "wielded_only": true } ],
-        "true_eocs": [
-          {
-            "id": "batteryrestore5_eoc",
-            "condition": { "math": [ "u_val('mana')", ">=", "500" ] }, 
-            "effect": [
-              { "math": [ "u_val('mana')", "-=", "500" ] },
-              { "u_consume_item": "heavy_battery_cell", "count": 1 },
-              { "u_spawn_item": "heavy_battery_cell", "force_equip": true, "suppress_message": true },
-              { "u_message": "You recharge the battery.", "type": "mixed" }
-            ],
-            "false_effect": [ { "u_message": "You don't have enough energy.", "type": "mixed" } ]
-          }
-        ]
-      },
-      {
-        "u_run_inv_eocs": "all",
-        "search_data": [ { "id": "heavy_plus_battery_cell", "wielded_only": true } ],
-        "true_eocs": [
-          {
-            "id": "batteryrestore6_eoc",
-            "condition": { "math": [ "u_val('mana')", ">=", "625" ] }, 
-            "effect": [
-              { "math": [ "u_val('mana')", "-=", "625" ] },
-              { "u_consume_item": "heavy_plus_battery_cell", "count": 1 },
-              { "u_spawn_item": "heavy_plus_battery_cell", "force_equip": true, "suppress_message": true },
-              { "u_message": "You recharge the battery.", "type": "mixed" }
-            ],
-            "false_effect": [ { "u_message": "You don't have enough energy.", "type": "mixed" } ]
-          }
-        ]
-      }
-    ]
+    "//3": "Simplified with #74748, last old version that replaced the item and required IDs at 0.9.7.8e"
   },
   {
     "id": "iku_readweather_eoc",
@@ -1727,148 +1622,110 @@
   {
     "id": "nitori_opticalcamouflage_eoc",
     "type": "effect_on_condition",
+    "condition": { "math": [ "var_nitoricamouflage", "==", "0" ] },
     "effect": [
-      { "math": [ "var_nitoricamouflage", "+=", "1" ] },
-      { "math": [ "var_nitoricamouflage_STOP", "=", "0" ] },
-      { "run_eocs": [ "nitori_opticalcamouflage_cycle1" ] }
+      { "math": [ "var_nitoricamouflage", "=", "1" ] },
+      { "run_eocs": [ "nitori_opticalcamouflage_start_eoc" ] }
     ],
-    "//": "This EOC is a modified version of utsuho_fissionaura_eoc . It adds a 'randomly fail' chance as extra step to make it more FUN",
-    "//2": "A different approach to the cycling fixes the leak from the base aura",
-    "//note": "And introduces a double stop issue. Has no effect other than printing the u_message twice"
+    "false_effect": [ { "run_eocs": "nitori_opticalcamouflage_toggle_eoc" } ],
+    "//": "This EOC is a modified version of stance_ninja_taijutsu_eoc ",
+    "//2": "It adds a 'randomly fail' chance as extra step to make it more FUN"
   },
   {
     "id": "nitori_opticalcamouflage_cycle1",
     "type": "effect_on_condition",
-    "condition": { "math": [ "var_nitoricamouflage_fail", "<", "5250" ] },
-    "effect": [
-      { "run_eocs": [ "nitori_opticalcamouflage_cycle2" ] }
-    ],
-    "false_effect": [ { "run_eocs": [ "nitori_opticalcamouflage_failcheck" ] } ],
-    "//": "A random amount of the var_fail is added every time the stealth effect is granted. On average, this value equals ~12.5% to fail over the full duration (I think)"
+    "condition": { "math": [ "var_nitoricamouflage", "==", "1" ] },
+    "effect": [ { "run_eocs": [ "nitori_opticalcamouflage_cycle2" ] } ],
+    "//IMPORTANT": "No false_effect here because the toggle is handled upstream. Adding a(ny) false effect results in duplicating the message"
   },
   {
     "id": "nitori_opticalcamouflage_cycle2",
     "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "var_nitoricamouflage", "<", "2" ] },
-        { "math": [ "var_nitoricamouflage_STOP", "==", "0" ] }
-      ]
-    },
+    "condition": { "x_in_y_chance": { "x": { "math": [ "( u_val('mana_max') / 100 )" ] }, "y": { "math": [ "( u_val('mana_max') )" ] } } },
     "effect": [ { "run_eocs": [ "nitori_opticalcamouflage_cycle3" ] } ],
-    "false_effect": [
-      { "math": [ "var_nitoricamouflage", "=", "0" ] },
-      { "math": [ "var_nitoricamouflage_fail", "=", "0" ] },
-      { "math": [ "var_nitoricamouflage_STOP", "+=", "1" ] },
-      { "u_lose_effect": "nitori_camouflage" },
-      { "u_message": "You turn the optical camouflage OFF.", "type": "mixed" }
-    ]
+    "false_effect": [ { "run_eocs": [ "nitori_opticalcamouflage_fail_check_eoc" ] } ],
+    "//": "The condition equals 1% to fail every time it's cycled, normalized to total mana (so mana modifiers do not affect the failure chance)"
   },
   {
     "id": "nitori_opticalcamouflage_cycle3",
     "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "u_val('mana')", ">=", "2" ] },
-        { "math": [ "var_nitoricamouflage", ">", "0" ] },
-        { "math": [ "var_nitoricamouflage_STOP", "==", "0" ] }
-      ]
-    },
+    "condition": { "math": [ "u_val('mana')", ">=", "2" ] },
     "effect": [
-      { "math": [ "var_nitoricamouflage_fail", "+=", "1 + rand(9)" ] },
-      { "math": [ "u_val('mana')", "-=", "3" ] },
+      { "math": [ "u_val('mana')", "-=", "2" ] },
       { "u_add_effect": "nitori_camouflage", "duration": "3 s" },
       { "run_eocs": [ "nitori_opticalcamouflage_cycle1" ], "time_in_future": "2 s" }
     ],
-    "false_effect": [
-      { "math": [ "var_nitoricamouflage", "=", "0" ] },
-      { "math": [ "var_nitoricamouflage_fail", "=", "0" ] },
-      { "u_lose_effect": "nitori_camouflage" },
-      { "u_message": "You're too exhausted and the optical camouflage deactivates!", "type": "mixed" }
-    ],
-    "//": "This consumes 90 mana/min = ~11 min of invisibility"
+    "false_effect": [ { "run_eocs": [ "nitori_opticalcamouflage_oom_eoc" ] } ],
+    "//": "This consumes 90 mana/min = ~11 min of invisibility. Regardless of the cost, this equals 500 cycles at base stats"
   },
   {
-    "id": "nitori_opticalcamouflage_failcheck",
+    "id": "nitori_opticalcamouflage_toggle_eoc",
     "type": "effect_on_condition",
-    "condition": { "math": [ "var_nitoricamouflage", ">", "0" ] },
     "effect": [
-      { "math": [ "var_nitoricamouflage_rand", "=", "rand(3)" ] },
-      { "run_eocs": [ "nitori_opticalcamouflage_failcheck2" ] }
-    ],
-    "false_effect": [
       { "math": [ "var_nitoricamouflage", "=", "0" ] },
-      { "math": [ "var_nitoricamouflage_fail", "=", "0" ] },
-      { "u_lose_effect": "nitori_camouflage" }
-    ],
-    "//": "If the var_fail is higher than the number, it runs this which checks if the player has already toggled the aura, if not it runs the check to decide further effects"
-  },
-  {
-    "id": "nitori_opticalcamouflage_failcheck2",
-    "type": "effect_on_condition",
-    "condition": { "math": [ "var_nitoricamouflage_rand", "<", "3" ] },
-    "effect": [
       { "u_lose_effect": "nitori_camouflage" },
-      { "run_eocs": [ "nitori_opticalcamouflage_fail_1" ] }
-    ],
-    "false_effect": [
-      { "math": [ "var_nitoricamouflage", "=", "0" ] },
-      { "math": [ "var_nitoricamouflage_fail", "=", "0" ] },
-      { "u_lose_effect": "nitori_camouflage" }
-    ],
-    "//": "3/4 for it to run a dummy effect, 1/4 for it to fail and deactivate without warning"
-  },
-  {
-    "id": "nitori_opticalcamouflage_fail_1",
-    "type": "effect_on_condition",
-    "condition": { "math": [ "var_nitoricamouflage_fail_timer", "<", "30" ] },
-    "effect": [
-      { "run_eocs": [ "nitori_opticalcamouflage_fail_2" ] }
-    ],
-    "false_effect": [ 
-      { "math": [ "var_nitoricamouflage_fail", "=", "0" ] },
-      { "u_lose_effect": "nitori_camouflage_fake" },
-      { "run_eocs": [ "nitori_opticalcamouflage_cycle1" ] } 
-    ],
-    "//": "This limits the dummy cycle to 30 s, and returns it to the normal one, resetting the var_fail in the process"
-  },
-  {
-    "id": "nitori_opticalcamouflage_fail_2",
-    "type": "effect_on_condition",
-    "condition": { "math": [ "var_nitoricamouflage", "<", "2" ] },
-    "effect": [ { "run_eocs": [ "nitori_opticalcamouflage_fail_3" ] } ],
-    "false_effect": [
-      { "math": [ "var_nitoricamouflage", "=", "0" ] },
-      { "math": [ "var_nitoricamouflage_fail", "=", "0" ] },
-      { "math": [ "var_nitoricamouflage_STOP", "-=", "3" ] },
-      { "u_lose_effect": "nitori_camouflage" },
-      { "u_lose_effect": "nitori_camouflage_fake" },
       { "u_message": "You turn the optical camouflage OFF.", "type": "mixed" }
     ]
   },
   {
-    "id": "nitori_opticalcamouflage_fail_3",
+    "id": "nitori_opticalcamouflage_oom_eoc",
     "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "u_val('mana')", ">=", "2" ] },
-        { "math": [ "var_nitoricamouflage", ">", "0" ] },
-        { "math": [ "var_nitoricamouflage_STOP", ">", "3" ] }
-      ]
-    },
     "effect": [
-      { "math": [ "var_nitoricamouflage_fail_timer", "+=", "1" ] },
-      { "math": [ "u_val('mana')", "-=", "1.5" ] },
-      { "u_add_effect": "nitori_camouflage_fake", "duration": "2 s" },
-      { "run_eocs": [ "nitori_opticalcamouflage_fail_1" ], "time_in_future": "1 s" }
+      { "math": [ "var_nitoricamouflage", "=", "0" ] },
+      { "u_lose_effect": "nitori_camouflage" },
+      { "u_message": "You're too exhausted and the optical camouflage deactivates!", "type": "mixed" }
+    ]
+  },
+  {
+    "id": "nitori_opticalcamouflage_fail_check_eoc",
+    "type": "effect_on_condition",
+    "condition": { "one_in_chance": 4 },
+    "effect": [
+      { "math": [ "var_nitoricamouflage", "=", "0" ] },
+      { "u_lose_effect": "nitori_camouflage" }
     ],
     "false_effect": [
-      { "math": [ "var_nitoricamouflage", "=", "0" ] },
-      { "math": [ "var_nitoricamouflage_fail", "=", "0" ] },
-      { "math": [ "var_nitoricamouflage_fail_timer", "=", "0" ] },
       { "u_lose_effect": "nitori_camouflage" },
+      { "run_eocs": [ "nitori_opticalcamouflage_deactivated1" ] }
+    ],
+    "//": "1/4 for it to deactivate without warning, 3/4 for it to run the alternate cycle"
+  },
+  {
+    "id": "nitori_opticalcamouflage_deactivated1",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_nitoricamouflage_fail_timer", "<", "15" ] },
+    "effect": [ { "run_eocs": [ "nitori_opticalcamouflage_deactivated2" ] } ],
+    "false_effect": [ 
+      { "math": [ "var_nitoricamouflage_fail_timer", "=", "0" ] },
+      { "run_eocs": [ "nitori_opticalcamouflage_cycle1" ] } 
+    ],
+    "//": "This limits the dummy cycle to 30 s, and returns it to the normal one, resetting the var_FAIL in the process"
+  },
+  {
+    "id": "nitori_opticalcamouflage_deactivated2",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_nitoricamouflage", "==", "1" ] },
+    "effect": [ { "run_eocs": [ "nitori_opticalcamouflage_deactivated3" ] } ],
+    "false_effect": [
+      { "math": [ "var_nitoricamouflage_fail_timer", "=", "0" ] },
       { "u_lose_effect": "nitori_camouflage_fake" },
-      { "u_message": "You're too exhausted and the optical camouflage deactivates!", "type": "mixed" }
+      { "run_eocs": "nitori_opticalcamouflage_toggle_eoc" }
+    ]
+  },
+  {
+    "id": "nitori_opticalcamouflage_deactivated3",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_val('mana')", ">=", "2" ] },
+    "effect": [
+      { "math": [ "var_nitoricamouflage_fail_timer", "+=", "1" ] },
+      { "math": [ "u_val('mana')", "-=", "2" ] },
+      { "u_add_effect": "nitori_camouflage_fake", "duration": "3 s" },
+      { "run_eocs": [ "nitori_opticalcamouflage_deactivated1" ], "time_in_future": "2 s" }
+    ],
+    "false_effect": [
+      { "math": [ "var_nitoricamouflage_fail_timer", "=", "0" ] },
+      { "u_lose_effect": "nitori_camouflage_fake" },
+      { "run_eocs": [ "nitori_opticalcamouflage_oom_eoc" ] }
     ]
   },
   {
@@ -1895,14 +1752,14 @@
     "id": "nitori_toolswing_check",
     "type": "effect_on_condition",
     "condition": { "math": [ "var_toolswing", "==", "0" ] },
-    "effect": [ { "u_cast_spell": { "id": "nitori_toolswing_eoc2" }, "targeted": true } ],
-    "false_effect": { "u_cast_spell": { "id": "nitori_toolswing_eoc3" }, "targeted": true }
+    "effect": [ { "u_cast_spell": { "id": "nitori_toolswing2" }, "targeted": true } ],
+    "false_effect": { "u_cast_spell": { "id": "nitori_toolswing3" }, "targeted": true }
   },
   {
     "id": "remilia_darkdrain2_eoc",
     "type": "effect_on_condition",
     "effect": [
-      { "math": [ "var_remidrain", "=", "0" ] },
+      { "math": [ "var_darkdrain_heal", "=", "0" ] },
       {
         "run_eocs": [
           {
@@ -1913,7 +1770,7 @@
                 { "u_has_species": "HUMAN" }
               ]
             },
-            "effect": [ { "math": [ "var_remidrain", "=", "( (u_skill('stabbing') * 0.133 ) + (u_skill('melee') * 0.133 ) + (u_skill('dodge') * 0.133 ) + 2.404 )" ] } ]
+            "effect": [ { "math": [ "var_darkdrain_heal", "=", "( (u_skill('stabbing') * 0.444 ) + (u_skill('melee') * 0.444 ) + (u_skill('dodge') * 0.444 ) - 1.333 )" ] } ]
           },
           {
             "id": "remilia_darkdrain_reduced",
@@ -1943,7 +1800,7 @@
                 { "u_has_trait": "PLANTBLOOD" }
               ]
             },
-            "effect": [ { "math": [ "var_remidrain", "=", "( ( (u_skill('stabbing') * 0.133 ) + (u_skill('melee') * 0.133 ) + (u_skill('dodge') * 0.133 ) + 2.404 ) * rng( 0.17, 0.66 ) )" ] } ]
+            "effect": [ { "math": [ "var_darkdrain_heal", "=", "( ( (u_skill('stabbing') * 0.444 ) + (u_skill('melee') * 0.444 ) + (u_skill('dodge') * 0.444 ) - 1.333 ) * rng( 0.17, 0.66 ) )" ] } ]
           },
           {
             "id": "remilia_darkdrain_hazard",
@@ -1958,7 +1815,7 @@
                 { "u_has_trait": "ACIDBLOOD" }
               ]
             },
-            "effect": [ { "math": [ "var_remidrain", "=", "( ( - (u_skill('stabbing') * 0.133 ) - (u_skill('melee') * 0.133 ) - (u_skill('dodge') * 0.133 ) - 2.404 ) * rng( 0.33, 0.5 ) )" ] } ]
+            "effect": [ { "math": [ "var_darkdrain_heal", "=", " - ( ( (u_skill('stabbing') * 0.444 ) + (u_skill('melee') * 0.444 ) + (u_skill('dodge') * 0.444 ) - 1.333 ) * rng( 0.33, 0.5 ) )" ] } ]
           },
           {
             "id": "remilia_darkdrain_noblood",
@@ -1968,13 +1825,13 @@
                 { "u_has_trait": "BLEED_IMMUNE" }
               ]
             },
-            "effect": [ { "math": [ "var_remidrain", "=", "0" ] } ]
+            "effect": [ { "math": [ "var_darkdrain_heal", "=", "0" ] } ]
           }
         ]
       }
     ],
     "//": "Resets the var to 0 and checks for the species/traits of the target she's draining, and sets var -> sets less var -> sets negative var -> sets no var, accordingly to the blood they have",
-    "//note": "Eventually, this will be improved by using #71956"
+    "//WIP": "Update with #71956 to keep consistency"
   },
   {
     "id": "remilia_darkdrain3_eoc",
@@ -1987,8 +1844,8 @@
     "type": "effect_on_condition",
     "effect": [ 
       { "u_cast_spell": { "id": "remilia_darkdrain4" }, "targeted": false },
-      { "math": [ "u_vitamin('blood')", "+=", "var_remidrain * 1" ] },
-      { "math": [ "u_vitamin('hblood_vitamin')", "+=", "var_remidrain * 1.5" ] }
+      { "math": [ "u_vitamin('blood')", "+=", "( var_darkdrain_heal * 1 )" ] },
+      { "math": [ "u_vitamin('hblood_vitamin')", "+=", "( var_darkdrain_heal * 1.5 )" ] }
     ]
   },
   {
@@ -1999,7 +1856,7 @@
       { "math": [ "var_gungnir", "+=", "1" ] },
       { "u_message": "You summon the Gungnir!", "type": "good" },
       { "u_cast_spell": { "id": "remilia_gungnir2" } },
-      { "run_eocs": [ "remilia_gungnir_timer_eoc" ], "time_in_future": { "math": [ "( (u_skill('stabbing') * 21 ) + (u_skill('melee') * 21 ) + 12 ) - 1" ] } }
+      { "run_eocs": [ "remilia_gungnir_timer_eoc" ], "time_in_future": { "math": [ "( ( var_gungnir_dur / 100 ) - 1 )" ] } }
     ],
     "false_effect": [ 
       { "u_message": "Your Gungnir is already summoned.", "type": "mixed" }
@@ -2052,7 +1909,7 @@
     ],
     "//": "This EOC is a simplified version of utsuho_fusionblade_eoc ",
     "//2": "Different approach for effect-only aura-like effects",
-    "//3": "First, it checks if the Meiling is wielding a weapon or already has the aura, if so it deactivates it",
+    "//3": "First, it checks if Remi is wielding a weapon or already has the aura, if so it deactivates it",
     "//4": "Then, it casts the self spell that grants the effect for the duration, and runs the cycle to continuously check wielded items or re-activations of the EOC",
     "//5": "No timer as the effect has a fixed duration by the spell, also no toggle or oom EOCs as those don't apply"
   },
@@ -2168,42 +2025,67 @@
   {
     "id": "sakuya_maidsecret_eoc",
     "type": "effect_on_condition",
+    "condition": { "math": [ "var_sakuyafocus", "==", "0" ] },
     "effect": [
-      { "math": [ "var_sakuyafocus", "+=", "1" ] },
-      { "math": [ "var_sakuyaradius", "=", "( - (u_skill('stabbing') * 0.4 ) - (u_skill('dodge') * 0.4 ) + 16.8 )" ] },
+      { "math": [ "var_sakuyafocus", "=", "1" ] },
+      { "run_eocs": [ "sakuya_maidsecret_start_eoc" ] }
+    ],
+    "false_effect": [
+      { "math": [ "var_sakuyafocus", "=", "0" ] },
+      { "u_lose_effect": "sakuya_maidsecret_effect" }
+    ],
+    "//": "Simplified version of stance_ninja_taijutsu_eoc ",
+    "//2": "Checks if var_FOCUS is active or not. If it's already active, it toggles OFF, otherwise continues with the mana cost"
+  },
+  {
+    "id": "sakuya_maidsecret_start_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_val('mana')", ">=", "50" ] },
+    "effect": [ 
+      { "math": [ "u_val('mana')", "-=", "50" ] },
+      { "u_cast_spell": { "id": "sakuya_maidsecret_vfx" } },
       { "run_eocs": [ "sakuya_maidsecret_cycle1" ] }
     ],
-    "//": "This EOC is a simplified version of udonge_waveinsight_start ",
-    "//2": "var_sakuyaradius sets the detection radius to that formula, 14 - 6 tiles scaling down with higher (stabbing + dodge)"
+    "false_effect": [
+      { "u_message": "You don't have enough mana.", "type": "mixed" },
+      { "math": [ "var_sakuyafocus", "=", "0" ] },
+      { "u_lose_effect": "sakuya_maidsecret_effect" }
+    ],
+    "//": "The cost check is run after the activation_EOC , so it can be toggled ON and OFF with no cost",
+    "//2": "The false_effect doesn't run the OOM_eoc as the messages are different"
   },
   {
     "id": "sakuya_maidsecret_cycle1",
     "type": "effect_on_condition",
-    "condition": { "math": [ "var_sakuyafocus", "<", "2" ] },
+    "condition": { "math": [ "var_sakuyafocus", "==", "1" ] },
     "effect": [ { "run_eocs": [ "sakuya_maidsecret_cycle2" ] } ],
-    "false_effect": [
-      { "math": [ "var_sakuyafocus", "=", "0" ] },
-      { "u_lose_effect": "sakuya_maidsecret_effect" }
-    ]
+    "//": "This re-checks if var_FOCUS is already active, if so it runs the next EOC",
+    "//IMPORTANT": "No false_effect here because the toggle is handled upstream. Adding a(ny) false effect results in duplicating the message"
   },
   {
     "id": "sakuya_maidsecret_cycle2",
     "type": "effect_on_condition",
     "condition": {
       "and": [
-        { "math": [ "u_val('mana')", ">=", "100" ] },
+        { "math": [ "u_val('mana')", ">=", "50" ] },
         { "math": [ "u_val('stamina')", ">=", "2000" ] },
-        { "math": [ "var_sakuyafocus", ">", "0" ] },
+        { "math": [ "var_sakuyafocus", "==", "1" ] },
         { "math": [ "u_monsters_nearby('radius': var_sakuyaradius )", "<", "1" ] }
       ]
     },
     "effect": [
-      { "math": [ "u_val('stamina')", "+=", "1" ] },
+      { "math": [ "u_val('stamina')", "+=", "rand(1)" ] },
       { "u_add_effect": "sakuya_maidsecret_effect", "duration": "3 s" },
       { "run_eocs": [ "sakuya_maidsecret_cycle1" ], "time_in_future": "2 s" }
     ],
-    "false_effect": [
-      { "u_message": "You lose your concentration.", "type": "mixed" },
+    "false_effect": [ { "run_eocs": [ "sakuya_maidsecret_end_eoc" ] } ],
+    "//": "This checks if Sakuya isn't tired enough to keep her concentration OR if there's no monster closer to var_RADIUS "
+  },
+  {
+    "id": "sakuya_maidsecret_end_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_message": "You lose your concentration!", "type": "bad" },
       { "math": [ "var_sakuyafocus", "=", "0" ] },
       { "u_lose_effect": "sakuya_maidsecret_effect" }
     ]
@@ -2232,102 +2114,47 @@
     "id": "seiga_shikaisenritual_eoc",
     "type": "effect_on_condition",
     "effect": [
-      { 
-        "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_bed", "target_min_radius": 0, "target_max_radius": 1, 
-        "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
-        "false_eocs": [
+      { "u_location_variable": { "global_val": "var_shikaisenritual_loc" } },
+      {
+        "u_map_run_eocs": [ 
           {
-            "id": "seiga_shikaisenritual_1",
-            "effect": [
-              { 
-                "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_bunkbed", "target_min_radius": 0, "target_max_radius": 1, 
-                "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
-                "false_eocs": [
-                  {
-                    "id": "seiga_shikaisenritual_2",
-                    "effect": [
-                      {
-                        "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_bed_down", "target_min_radius": 0, "target_max_radius": 1, 
-                        "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
-                        "false_eocs": [
-                          {
-                            "id": "seiga_shikaisenritual_3",
-                            "effect": [
-                              {
-                                "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_bunkbed_down", "target_min_radius": 0, "target_max_radius": 1, 
-                                "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
-                                "false_eocs": [
-                                  {
-                                    "id": "seiga_shikaisenritual_4",
-                                    "effect": [
-                                      {
-                                        "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_triple_bunkbed", "target_min_radius": 0, "target_max_radius": 1, 
-                                        "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
-                                        "false_eocs": [
-                                          {
-                                            "id": "seiga_shikaisenritual_5",
-                                            "effect": [
-                                              {
-                                                "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_floor_mattress", "target_min_radius": 0, "target_max_radius": 1, 
-                                                "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
-                                                "false_eocs": [
-                                                  {
-                                                    "id": "seiga_shikaisenritual_6",
-                                                    "effect": [
-                                                      {
-                                                        "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_down_mattress", "target_min_radius": 0, "target_max_radius": 1, 
-                                                        "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
-                                                        "false_eocs": [
-                                                          {
-                                                            "id": "seiga_shikaisenritual_7",
-                                                            "effect": [
-                                                              {
-                                                                "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_makeshift_bed", "target_min_radius": 0, "target_max_radius": 1, 
-                                                                "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
-                                                                "false_eocs": [
-                                                                  {
-                                                                    "id": "seiga_shikaisenritual_8",
-                                                                    "effect": [
-                                                                      {
-                                                                        "u_location_variable": { "global_val": "var_shikaisenritual_loc" }, "furniture": "f_straw_bed", "target_min_radius": 0, "target_max_radius": 1, 
-                                                                        "true_eocs": [ "seiga_shikaisenritual_bed_found" ], 
-                                                                        "false_eocs": [ "seiga_shikaisenritual_bed_none" ]
-                                                                      }
-                                                                    ]
-                                                                  }
-                                                                ] 
-                                                              }
-                                                            ]
-                                                          }
-                                                        ]
-                                                      }
-                                                    ]
-                                                  }
-                                                ]
-                                              }
-                                            ]
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
+            "id": "seiga_shikaisenritual_bed_eoc",
+            "effect": [ { "math": [ "var_shikaisenritual_bed_found", "=", "1" ] } ]
           }
+        ],
+        "condition": {
+          "or": [
+            { "map_furniture_id": "f_bed", "loc": { "global_val": "var_shikaisenritual_loc" } },
+            { "map_furniture_id": "f_bunkbed", "loc": { "global_val": "var_shikaisenritual_loc" } },
+            { "map_furniture_id": "f_bed_down", "loc": { "global_val": "var_shikaisenritual_loc" } },
+            { "map_furniture_id": "f_bunkbed_down", "loc": { "global_val": "var_shikaisenritual_loc" } },
+            { "map_furniture_id": "f_triple_bunkbed", "loc": { "global_val": "var_shikaisenritual_loc" } },
+            { "map_furniture_id": "f_floor_mattress", "loc": { "global_val": "var_shikaisenritual_loc" } },
+            { "map_furniture_id": "f_down_mattress", "loc": { "global_val": "var_shikaisenritual_loc" } },
+            { "map_furniture_id": "f_makeshift_bed", "loc": { "global_val": "var_shikaisenritual_loc" } },
+            { "map_furniture_id": "f_straw_bed", "loc": { "global_val": "var_shikaisenritual_loc" } }
+          ]
+        },
+        "range": 1,
+        "store_coordinates_in": { "global_val": "var_shikaisenritual_loc" },
+        "stop_at_first": true
+      },
+      {
+        "if": { "math": [ "var_shikaisenritual_bed_found", "==", "1" ] },
+        "then": [ 
+          { "math": [ "var_shikaisenritual_bed_found", "=", "0" ] },
+          { "run_eocs": [ "seiga_shikaisenritual_bed_found" ] } 
+        ],
+        "else": [
+          { "math": [ "var_shikaisenritual_bed_found", "=", "0" ] },
+          { "u_message": "There is no bed nearby to perform the ritual.", "type": "mixed" },
+          { "math": [ "u_val('mana')", "+=", "250" ] }
         ]
       }
     ],
-    "//": "This iterates a check for a bed or something close enough at the location, then runs either EOC below",
-    "//note": "Replace by using u_map_run_eocs (#76994), as mikoto_wings_check_eoc and stuff"
+    "//": "This block is based on mikoto_wings_check_eoc , using u_map_run_eocs instead of a TRUE-FALSE u_location_variable chain (0.9.7.8e)",
+    "//2": "The ritual consists of using a bed + corpse + cover to create a checkpoint in case Seiga dies",
+    "//3": "This first block checks for a bed or something close enough at the location, then runs either EOC below"
   },
   {
     "id": "seiga_shikaisenritual_bed_found",
@@ -2355,11 +2182,9 @@
         ]
       }
     ],
-    "//": "All human bodies are viable as I remember reading that Taoists were able to change their phenotype at will. Also due gameplay reasons",
-    "//2": "While zombie corpses may be used, I don't know how to pull their ID. Also, by not adding those to the list, she's 'forced' to find a human to 'help' her with the ritual",
-    "//3": "The following EOCs check for sheets or equivalent at the same location as the bed. The last EOC performs the ritual",
-    "//4": "It removes the items, adds a dummy effect, and transforms the bed into a custom bed to serve as a visual checkpoint",
-    "//5": "(and also because I don't know how to copy coordinates directly, so I use the custom bed to set coordinates independent of the furniture check above, which can be refreshed every time she casts the ritual, regardless if it fails or not)"
+    "//" :"This checks for a corpse at the location",
+    "//2": "All human bodies are viable as I remember reading that Taoists were able to change their phenotype at will. Also due gameplay reasons",
+    "//3": "While zombie corpses may be used, I don't know how to pull their ID, and they're too common. Also, by not adding those to the list, she's 'forced' to find a human to 'help' her with the ritual"
   },
   {
     "id": "seiga_shikaisenritual_corpse_found",
@@ -2386,13 +2211,14 @@
           {
             "id": "seiga_shikaisenritual_sheet_none",
             "effect": [ 
-              { "u_message": "There is no proper covering for your replacement at the proper location to perform the ritual.", "type": "mixed" },
+              { "u_message": "There is no proper cover for your replacement at the proper location.", "type": "mixed" },
               { "math": [ "u_val('mana')", "+=", "250" ] }
             ]
           }
         ]
       }
-    ]
+    ],
+    "//": "This checks for a cover at the location"
   },
   {
     "id": "seiga_shikaisenritual_sheet_found",
@@ -2426,8 +2252,18 @@
               { "turn_cost": "5 m" },
               { "u_cast_spell": { "id": "seiga_shikaisenritual2" }, "loc": { "global_val": "var_shikaisenritual_loc" } },
               { "u_add_effect": "seiga_shikaisen_effect", "duration": "PERMANENT" },
-              { "u_message": "The ritual is completed.  Your replacement is ready, in case you need it.", "type": "good" },
-              { "u_location_variable": { "global_val": "var_seiga_revive_loc" }, "furniture": "f_bed_shikaisen", "target_min_radius": 0, "target_max_radius": 1 }
+              {
+                "run_eocs": [
+                  {
+                    "id": "seiga_shikaisenritual_success_delay",
+                    "effect": [
+                      { "u_message": "The ritual is completed.  Your replacement is ready, in case you need it.", "type": "good" },
+                      { "u_location_variable": { "global_val": "var_seiga_revive_loc" }, "furniture": "f_bed_shikaisen", "target_min_radius": 0, "target_max_radius": 1 }
+                    ]
+                  }
+                ], 
+                "time_in_future": "5 m" 
+              }
             ] 
           } 
         ],
@@ -2441,16 +2277,9 @@
           }
         ]
       }
-    ]
-  },
-  {
-    "id": "seiga_shikaisenritual_bed_none",
-    "type": "effect_on_condition",
-    "effect": [
-      { "u_message": "There is no bed nearby to perform the ritual.", "type": "mixed" },
-      { "math": [ "u_val('mana')", "+=", "250" ] }
     ],
-    "//": "This is not run inline as the main EOC is already huge and ugly. Move this whenever the furniture detection is more elegant"
+    "//": "This is the ritual proper. It re-checks the items (to delete them via npc_die), casts the spell (-> terfurn to generate the special furniture), adds a dummy effect, and saves the special furniture location",
+    "//2": "(because I don't know how to copy coordinates directly, I use the custom bed to set coordinates independent of the furniture check above, which can be refreshed every time she casts the ritual, regardless if it fails or not)"
   },
   {
     "id": "seiga_wallwalk_eoc",
@@ -2600,8 +2429,7 @@
     "//IMPORTANT2": "I think this happens with all aura EOCs based on this one",
     "//IMPORTANT3": "My guess is that happens due the queue'd EOC running not being 'cancelled'. The > 0 check is what actually stops the momentum. DO NOT REMOVE BEFORE FINDING A SOLUTION",
     "//IMPORTANT4": "I tried my best in trying to simplify all the cycle1 - cycle2 based EOCs but couldn't find a solution. Maybe in the future, idk these work as they are",
-    "//note": "An updated version stance_ninja_taijutsu_eoc apparently fixes the double stop issue. Apply after 0.H",
-    "//note2": "A further alternative would be to apply the queue at cycle1 instead of cycle2"
+    "//WIP": "Update as stance_ninja_taijutsu_eoc "
   },
   {
     "id": "udonge_waveinsight_cycle1",
@@ -2814,7 +2642,10 @@
     "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
     "effect": [
       { "run_eocs": [ "utsuho_detectrad_item_eoc" ] },
-      { "run_eocs": [ "utsuho_detectrad_monster_eoc" ] }
+      { "run_eocs": [ "utsuho_detectrad_field_eoc" ] },
+      { "run_eocs": [ "utsuho_detectrad_furn_eoc" ] },
+      { "run_eocs": [ "utsuho_detectrad_monster_eoc" ] },
+      { "run_eocs": [ "utsuho_detectrad_ter_eoc" ] }
     ],
     "false_effect": [ 
       { "u_message": "Something's wrong… you cannot detect anything.", "type": "mixed" },
@@ -2830,6 +2661,7 @@
       {
         "u_map_run_item_eocs": "all",
         "search_data": [ 
+          { "flags": [ "LEAK_ALWAYS" ] },
           { "flags": [ "LEAK_DAM" ] },
           { "flags": [ "RADIOACTIVE" ] },
           { "id": "afs_atompot" },
@@ -2858,10 +2690,91 @@
     "//": "Thankfully it automatically runs it for *every* item, even of the same id"
   },
   {
-    "id": "utsuho_detectrad_monster_eoc",
+    "id": "utsuho_detectrad_field_eoc",
     "type": "effect_on_condition",
     "effect": [
-      { "u_cast_spell": { "id": "utsuho_detectrad2" }, "targeted": false }
+      { "u_location_variable": { "global_val": "var_detectrad_field_loc" } },
+      {
+        "u_map_run_eocs": [ 
+          {
+            "id": "utsuho_detectrad_field_found_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_field_loc" } } ]
+          }
+        ],
+        "condition": {
+          "or": [
+            { "map_field_id": "fd_nuke_gas", "loc": { "global_val": "var_detectrad_field_loc" } }
+          ]
+        },
+        "range": 32,
+        "store_coordinates_in": { "global_val": "var_detectrad_field_loc" },
+        "stop_at_first": false
+      }
+    ]
+  },
+  {
+    "id": "utsuho_detectrad_furn_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_location_variable": { "global_val": "var_detectrad_furn_loc" } },
+      {
+        "u_map_run_eocs": [ 
+          {
+            "id": "utsuho_detectrad_furn_found_eoc",
+            "effect": [ { "message": "AAA", "type": "mixed" }, { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_loc" } } ],
+            "false_effect": [ { "message": "AAA_FALSE", "type": "mixed" } ]
+          }
+        ],
+        "condition": {
+          "or": [
+            { "map_furniture_with_flag": "LEAK_ALWAYS", "loc": { "global_val": "var_detectrad_furn_loc" } },
+            { "map_furniture_with_flag": "LEAK_DAM", "loc": { "global_val": "var_detectrad_furn_loc" } },
+            { "map_furniture_with_flag": "RADIOACTIVE", "loc": { "global_val": "var_detectrad_furn_loc" } },
+            { "map_furniture_id": "f_reactor_meltdown", "loc": { "global_val": "var_detectrad_furn_loc" } },
+            { "map_furniture_id": "f_exodii_generator_1", "loc": { "global_val": "var_detectrad_furn_loc" } },
+            { "map_furniture_id": "f_exodii_generator_2", "loc": { "global_val": "var_detectrad_furn_loc" } },
+            { "map_furniture_id": "f_exodii_generator_3", "loc": { "global_val": "var_detectrad_furn_loc" } },
+            { "map_furniture_id": "f_exodii_generator_4", "loc": { "global_val": "var_detectrad_furn_loc" } },
+            { "map_furniture_id": "f_compact_ASRG_containment", "loc": { "global_val": "var_detectrad_furn_loc" } },
+            { "map_furniture_id": "f_nuclear_fuel_cell", "loc": { "global_val": "var_detectrad_furn_loc" } }
+          ]
+        },
+        "range": 32,
+        "store_coordinates_in": { "global_val": "var_detectrad_furn_loc" },
+        "stop_at_first": false
+      }
+    ]
+  },
+  {
+    "id": "utsuho_detectrad_monster_eoc",
+    "type": "effect_on_condition",
+    "effect": [ { "u_cast_spell": { "id": "utsuho_detectrad2" }, "targeted": false } ]
+  },
+  {
+    "id": "utsuho_detectrad_ter_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_location_variable": { "global_val": "var_detectrad_ter_loc" } },
+      {
+        "u_map_run_eocs": [ 
+          {
+            "id": "utsuho_detectrad_ter_found_eoc",
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_ter_loc" } } ]
+          }
+        ],
+        "condition": {
+          "or": [
+            { "map_terrain_with_flag": "LEAK_ALWAYS", "loc": { "global_val": "var_detectrad_ter_loc" } },
+            { "map_terrain_with_flag": "LEAK_DAM", "loc": { "global_val": "var_detectrad_ter_loc" } },
+            { "map_terrain_with_flag": "RADIOACTIVE", "loc": { "global_val": "var_detectrad_ter_loc" } },
+            { "map_terrain_id": "t_rad_platform", "loc": { "global_val": "var_detectrad_ter_loc" } },
+            { "map_terrain_id": "t_missile", "loc": { "global_val": "var_detectrad_ter_loc" } }
+          ]
+        },
+        "range": 32,
+        "store_coordinates_in": { "global_val": "var_detectrad_ter_loc" },
+        "stop_at_first": false
+      }
     ]
   },
   {
@@ -3155,7 +3068,7 @@
     "type": "effect_on_condition",
     "condition": { "u_has_effect": "icy_pyrexia" },
     "effect": [
-      { "math": [ "var_miasmaburst_dmg", "+=", "var_icypyrexia_dmg" ] }
+      { "math": [ "var_miasmaburst_dmg", "+=", "var_icypyrexia_dot" ] }
     ],
     "//": "OK so the disease spell does several things. First, it applies the DISEASE effect on the target, then it runs a subspell which adds another effect for the player",
     "//2": "The effect on the player, DISEASE_counter, runs an intermittent spell in aoe. This spell forces any target around to run these EOCs, which detect if these target have any disease",
@@ -3167,7 +3080,7 @@
     "type": "effect_on_condition",
     "condition": { "u_has_effect": "scarlet_plague" },
     "effect": [
-      { "math": [ "var_miasmaburst_dmg", "+=", "var_scarletplague_dmg" ] }
+      { "math": [ "var_miasmaburst_dmg", "+=", "var_scarletplague_dot" ] }
     ]
   },
   {
@@ -3175,7 +3088,7 @@
     "type": "effect_on_condition",
     "condition": { "u_has_effect": "volatile_rot" },
     "effect": [
-      { "math": [ "var_miasmaburst_dmg", "+=", "var_volatilerot_dmg" ] },
+      { "math": [ "var_miasmaburst_dmg", "+=", "var_volatilerot_dot" ] },
       { "math": [ "u_var_volatilerot_rand", "+=", "1" ] },
       {
         "run_eocs": [

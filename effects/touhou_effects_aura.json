@@ -12,8 +12,8 @@
       {
         "condition": { "u_has_worn_with_flag": "UTSUHO_ROD_FLAG" },
         "melee_damage_bonus": [
-          { "type": "bash", "add": { "math": [ "rng( ( (u_skill('dodge') + 10 ) / 2 ), ( (u_skill('dodge') + 10 ) ) )" ] } },
-          { "type": "heat", "add": { "math": [ "rng( ( (u_skill('dodge') + 10 ) / 2 ), ( (u_skill('dodge') + 10 ) ) )" ] } }
+          { "type": "bash", "add": { "math": [ "rng( ( u_skill('dodge') * 0.75 + 4.5 ), ( (u_skill('dodge') * 1.375 + 8.25 ) ) )" ] } },
+          { "type": "heat", "add": { "math": [ "rng( ( u_skill('dodge') * 0.75 + 4.5 ), ( (u_skill('dodge') * 1.375 + 8.25 ) ) )" ] } }
         ],
         "values": [ 
           { "value": "LUMINATION", "add": 16 }
@@ -68,8 +68,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "electric",
-    "min_damage": { "math": [ "( (u_skill('speech') * 0.25 ) + (u_skill('dodge') * 0.25 ) + 3 )" ] },
-    "max_damage": { "math": [ "( (u_skill('speech') * 0.35 ) + (u_skill('dodge') * 0.35 ) + 4.2 )" ] },
+    "min_damage": { "math": [ "( ( (u_skill('speech') * 0.583 ) + (u_skill('dodge') * 0.583 ) + 2.33 ) * 0.5 )" ] },
+    "max_damage": { "math": [ "( ( (u_skill('speech') * 0.583 ) + (u_skill('dodge') * 0.583 ) + 2.33 ) * 1 )" ] },
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,
@@ -91,7 +91,7 @@
     "shape": "blast",
     "damage_type": "electric",
     "min_damage": 1,
-    "max_damage": { "math": [ "( (u_skill('speech') * 0.15 ) + (u_skill('dodge') * 0.15 ) - 0.2 )" ] },
+    "max_damage": { "math": [ "( (u_skill('speech') * 0.25 ) + (u_skill('dodge') * 0.25 ) - 1 )" ] },
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,
@@ -116,7 +116,7 @@
       {
         "condition": { "not": "u_has_weapon" },
         "melee_damage_bonus": [ 
-          { "type": "bash", "add": { "math": [ "( u_skill('swimming') + u_skill('melee') + u_skill('unarmed') ) * 0.5" ] } } 
+          { "type": "bash", "add": { "math": [ "( u_skill('swimming') * 1.546 + u_skill('melee') * 1.546 + u_skill('unarmed') * 1.546 - 8.34 ) * 0.5" ] } } 
         ],
         "values": [ 
           { "value": "LUMINATION", "add": 8 },
@@ -140,7 +140,7 @@
       {
         "condition": { "not": "u_has_weapon" },
         "melee_damage_bonus": [
-          { "type": "cut", "add": { "math": [ "rng( ( (u_skill('stabbing') * 0.525 ) + (u_skill('melee') * 0.525 ) + 1.3 ), ( (u_skill('stabbing') * 1.050 ) + (u_skill('melee') * 1.050 ) + 2.6 ) )" ] } } 
+          { "type": "cut", "add": { "math": [ "rng( ( (u_skill('stabbing') * 0.875 ) + (u_skill('melee') * 0.875 ) - 1.5 ), ( (u_skill('stabbing') * 1.75 ) + (u_skill('melee') * 1.75 ) - 3 ) )" ] } } 
         ],
         "values": [
           { "value": "ARMOR_BASH", "add": 2 },
@@ -151,7 +151,7 @@
         "//": "ARMOR_X add +n REDUCES armor for n value, this is intended here as the aura increases melee dmg while reducing defense"
       }
     ],
-    "//": "dmg min lvl (5.5 - 11), dmg max lvl (16 - 32), based on 25 - 75% of Gungnir's dmg",
+    "//": "min dmg (5.5 - 11), max dmg (16 - 32), based on 25 - 75% of Gungnir's dmg",
     "//2": "Heal effect at vampiric_drain_eoc ",
     "//3": "Using this instead of hit_you_effect because that casts spells, which cannot miss, even if the player does miss the melee",
     "//4": "Sadly, this means different monster species cannot be filtered out from the heal effect"
@@ -171,8 +171,8 @@
         "condition": "ALWAYS",
         "hit_me_effect": [ { "id": "windsickle_dmg" } ],
         "values": [
-          { "value": "ARMOR_BASH", "add": { "math": [ "( - (u_skill('dodge') - 2 ) )" ] } },
-          { "value": "ARMOR_CUT", "add": { "math": [ "( - (u_skill('dodge') - 2 ) )" ] } }
+          { "value": "ARMOR_BASH", "add": { "math": [ " - ( (u_skill('dodge') * 1.66 - 4.66 ) )" ] } },
+          { "value": "ARMOR_CUT", "add": { "math": [ " - ( (u_skill('dodge') * 1.66 - 4.66 ) )" ] } }
         ],
         "//": "ARMOR_X add -n ADDS armor for n value. This equals 2 - 12 bonus armor"
       }
@@ -188,8 +188,8 @@
     "effect": "attack",
     "shape": "blast",
     "damage_type": "cut",
-    "min_damage": { "math": [ "( (u_skill('dodge') * 0.35 ) + 2.1 )" ] },
-    "max_damage": { "math": [ "( (u_skill('dodge') * 0.7 ) + 4.2 )" ] },
+    "min_damage": { "math": [ "( ( (u_skill('dodge') * 1.166 ) + 2.333 ) * 0.5 )" ] },
+    "max_damage": { "math": [ "( ( (u_skill('dodge') * 1.166 ) + 2.333 ) * 1 )" ] },
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,

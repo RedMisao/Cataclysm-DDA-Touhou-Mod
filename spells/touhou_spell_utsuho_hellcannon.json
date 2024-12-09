@@ -78,7 +78,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_HANDS", "NO_LEGS" ],
-    "//": "The vars are refreshed and set by utsuho_opens_spellbook_eoc every time Utsuho opens the window to cast spells"
+    "//": "The vars are set at utsuho_opens_spellbook_eoc "
   },
   {
     "id": "mon_msun_hellcannon2_unc",
