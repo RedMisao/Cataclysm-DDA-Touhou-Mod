@@ -240,8 +240,6 @@
       { "id": "meiling_redrelease2" },
       { "id": "meiling_redrelease2" },
       { "id": "meiling_redrelease2" },
-      { "id": "meiling_redrelease2" },
-      { "id": "meiling_redrelease2" },
       { "id": "meiling_redrelease2" }
     ],
     "shape": "blast",
@@ -269,8 +267,8 @@
     "effect": "bash",
     "shape": "blast",
     "damage_type": "bash",
-    "min_damage": { "math": [ "( (u_skill('swimming') * 26.18 ) + (u_skill('melee') * 26.18 ) + (u_skill('unarmed') * 26.18 ) - 113.49 )" ] },
-    "max_damage": 672,
+    "min_damage": { "math": [ "( (u_skill('swimming') * 6.357 ) + (u_skill('melee') * 6.357 ) + (u_skill('unarmed') * 6.357 ) + 19.264 )" ] },
+    "max_damage": 210,
     "min_range": 1,
     "max_range": 1,
     "max_level": 1,
@@ -279,7 +277,7 @@
     "base_energy_cost": 0,
     "energy_source": "MANA",
     "flags": [ "NO_EXPLOSION_SFX", "NO_LEGS", "SILENT" ],
-    "//": "min dmg 96, this is repeated x6 to allow the bash dmg to hit several times instead of just once",
+    "//": "min dmg 70, this is repeated x4 to allow the bash dmg to hit several times instead of just once",
     "//2": "Should have a red aoe field effect"
   },
   {
