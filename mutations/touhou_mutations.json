@@ -203,10 +203,12 @@
     "enchantments": [
       {
         "condition": "ALWAYS",
+        "incoming_damage_mod": [
+          { "type": "heat", "multiply": -0.66 }
+        ],
         "values": [
           { "value": "INTELLIGENCE", "add": -2 },
           { "value": "MAX_MANA", "add": 200 },
-          { "value": "ARMOR_HEAT", "multiply": -0.66 },
           { "value": "CLIMATE_CONTROL_CHILL", "add": 20 },
           { "value": "MOVE_COST", "multiply": -0.2 },
           { "value": "WEAKNESS_TO_WATER", "add": 0.0166 },
@@ -397,9 +399,11 @@
     "enchantments": [
       {
         "condition": "ALWAYS",
+        "incoming_damage_mod": [
+          { "type": "cold", "multiply": -0.33 },
+          { "type": "heat", "multiply": 0.33 }
+        ],
         "values": [
-          { "value": "ARMOR_COLD", "multiply": -0.33 },
-          { "value": "ARMOR_HEAT", "multiply": 0.33 },
           { "value": "CRAFTING_SPEED_MULTIPLIER", "multiply": 0.2 },
           { "value": "MOVECOST_SWIM_MOD", "multiply": -0.33 },
           { "value": "SOCIAL_INTIMIDATE", "add": -4 },
@@ -427,9 +431,11 @@
     "enchantments": [
       {
         "condition": "ALWAYS",
+        "incoming_damage_mod": [
+          { "type": "cold", "multiply": 0.33 },
+          { "type": "heat", "multiply": -0.33 }
+        ],
         "values": [
-          { "value": "ARMOR_COLD", "multiply": 0.33 },
-          { "value": "ARMOR_HEAT", "multiply": -0.33 },
           { "value": "CLIMATE_CONTROL_CHILL", "add": 20 },
           { "value": "FALL_DAMAGE", "multiply": -0.33 },
           { "value": "WEAKNESS_TO_WATER", "add": 0.0166 },
@@ -455,9 +461,11 @@
     "enchantments": [
       {
         "condition": "ALWAYS",
+        "incoming_damage_mod": [
+          { "type": "cold", "multiply": 0.33 },
+          { "type": "heat", "multiply": -0.33 }
+        ],
         "values": [
-          { "value": "ARMOR_COLD", "multiply": 0.33 },
-          { "value": "ARMOR_HEAT", "multiply": -0.33 },
           { "value": "CARRY_WEIGHT", "multiply": -0.66 },
           { "value": "CLIMATE_CONTROL_CHILL", "add": 20 },
           { "value": "FALL_DAMAGE", "multiply": -0.66 },
@@ -710,12 +718,14 @@
     "enchantments": [
       {
         "condition": "ALWAYS",
+        "incoming_damage_mod": [
+          { "type": "stab", "multiply": 1 }
+        ],
         "values": [
           { "value": "DEXTERITY", "add": 2 },
           { "value": "INTELLIGENCE", "add": 2 },
           { "value": "PERCEPTION", "add": 2 },
           { "value": "STRENGTH", "add": 2 },
-          { "value": "ARMOR_STAB", "multiply": 1 },
           { "value": "MENDING_MODIFIER", "multiply": 1 },
           { "value": "NIGHT_VIS", "multiply": 7 },
           { "value": "REGEN_HP_AWAKE", "multiply": 2 },
@@ -1379,8 +1389,8 @@
     "enchantments": [ 
       { 
         "condition": "ALWAYS", 
-        "values": [ 
-          { "value": "ARMOR_BIO", "multiply": -0.33 }
+        "incoming_damage_mod": [ 
+          { "type": "bio", "multiply": -0.33 }
         ] 
       } 
     ],
