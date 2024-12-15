@@ -2721,8 +2721,7 @@
         "u_map_run_eocs": [ 
           {
             "id": "utsuho_detectrad_furn_found_eoc",
-            "effect": [ { "message": "AAA", "type": "mixed" }, { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_loc" } } ],
-            "false_effect": [ { "message": "AAA_FALSE", "type": "mixed" } ]
+            "effect": [ { "u_set_field": "fd_clairvoyant2", "radius": 0, "intensity": 1, "target_var": { "global_val": "var_detectrad_furn_loc" } } ]
           }
         ],
         "condition": {
