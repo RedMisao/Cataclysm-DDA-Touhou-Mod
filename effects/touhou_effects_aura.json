@@ -38,7 +38,7 @@
         "incoming_damage_mod": [  
           { "type": "bullet", "add": -999 } 
         ],
-        "//": "ARMOR_X add -n ADDS armor for n value"
+        "//": "Value incoming_damage_mod add -n REDUCES incoming dmg for n value"
       } 
     ]
   },
@@ -148,7 +148,7 @@
           { "type": "stab", "add": 2 },
           { "type": "bullet", "add": 2 }
         ],
-        "//": "ARMOR_X add +n REDUCES armor for n value, this is intended here as the aura increases melee dmg while reducing defense"
+        "//": "Value incoming_damage_mod add +n ADDS incoming dmg for n value, this is intended here as the aura increases melee dmg while reducing defense"
       }
     ],
     "//": "min dmg (5.5 - 11), max dmg (16 - 32), based on 25 - 75% of Gungnir's dmg",
@@ -174,7 +174,7 @@
           { "type": "bash", "add": { "math": [ " - ( (u_skill('dodge') * 1.66 - 4.66 ) )" ] } },
           { "type": "cut", "add": { "math": [ " - ( (u_skill('dodge') * 1.66 - 4.66 ) )" ] } }
         ],
-        "//": "ARMOR_X add -n ADDS armor for n value. This equals 2 - 12 bonus armor"
+        "//": "Value incoming_damage_mod add -n REDUCES incoming dmg for n value. This equals 2 - 12 bonus armor"
       }
     ]
   },
