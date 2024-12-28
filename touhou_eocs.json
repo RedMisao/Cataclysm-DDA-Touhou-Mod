@@ -56,14 +56,14 @@
     "condition": {
       "or": [
         { "u_has_effect": "sakuya_maidsecret_effect" },
-        { "u_has_effect": "udonge_barrierwave" }
+        { "u_has_effect": "udonge_barrierwave_effect" }
       ]
     },
     "effect": [
       { "math": [ "var_sakuyafocus", "=", "0" ] },
       { "u_lose_effect": "sakuya_maidsecret_effect" },
       { "math": [ "var_barrierwave", "=", "0" ] },
-      { "u_lose_effect": "udonge_barrierwave" }
+      { "u_lose_effect": "udonge_barrierwave_effect" }
     ]
   },
   {
@@ -214,12 +214,27 @@
     "effect": [
       { "math": [ "var_mokou_bonus", "=", "( max( 0, u_val('strength') - 8 ) * 1 )" ] },
       { "math": [ "var_mokou_attack", "=", "( u_skill('melee') * 0.666 + u_skill('unarmed') * 0.666 + 2.666 )" ] },
-      { "math": [ "var_mokou_talons", "=", "( (u_skill('melee') * 2.166 ) + (u_skill('unarmed') * 2.166 ) - 0.333 )" ] }
+      { "math": [ "var_mokou_talons", "=", "( (u_skill('melee') * 2.166 ) + (u_skill('unarmed') * 2.166 ) - 0.333 )" ] },
+      {
+        "run_eocs": [
+          {
+            "id": "mokou_stance_belay_eoc",
+            "condition": { "u_has_trait": "MOKOU_STANCE_BELAY" },
+            "effect": [ { "math": [ "var_mokou_stance", "=", "0" ] } ]
+          },
+          {
+            "id": "mokou_stance_release_eoc",
+            "condition": { "u_has_trait": "MOKOU_STANCE_RELEASE" },
+            "effect": [ { "math": [ "var_mokou_stance", "=", "1" ] } ]
+          }
+        ]
+      }
     ],
     "//": "This automatically sets the vars each time Mokou opens the 'cast spell' window",
     "//2": "The var_BONUS scales with bonus STR, relative to Mokou's starting stat",
     "//3": "The var_mokou_attack is 8 - 16, as bonus of ~20 (tested the pre-spell tec, base skills, and it did ~20, min 11 max 31)",
-    "//4": "The var_mokou_talons is 17 - 43"
+    "//4": "The var_mokou_talons is 17 - 43",
+    "//5": "The var_STANCE is used by mokou_stance_24_jmath "
   },
   {
     "id": "nitori_opens_spellbook_eoc",
@@ -231,7 +246,7 @@
       { "math": [ "var_extendo_arm_range", "=", "( u_skill('mechanics') * 1.666 - 1.666 )" ] },
       { "math": [ "var_toolswing_dmg", "=", "( (u_skill('mechanics') * 0.15 ) + 0.5 )" ] }
     ],
-    "//": "This automatically sets the vars each time Mokou opens the 'cast spell' window",
+    "//": "This automatically sets the vars each time Nitori opens the 'cast spell' window",
     "//2": "The var_extendo_arm_range is 5 - 15",
     "//3": "The var_toolswing_dmg is 1.1 - 2"
   },
@@ -260,10 +275,12 @@
     "required_event": "opens_spellbook",
     "condition": { "u_has_trait": "PROF_SAKUYA" },
     "effect": [
-      { "math": [ "var_sakuyaradius", "=", "max( 4, ( - (u_skill('stabbing') * 0.5 ) - (u_skill('dodge') * 0.5 ) + 17.5 ) )" ] }
+      { "math": [ "var_sakuyaradius", "=", "max( 4, ( - (u_skill('stabbing') * 0.5 ) - (u_skill('dodge') * 0.5 ) + 17.5 ) )" ] },
+      { "math": [ "var_timestop_drain", "=", "33" ] }
     ],
     "//": "This automatically sets the vars each time Sakuya opens the 'cast spell' window",
-    "//2": "The var_RADIUS is set to 14 - 4 tiles, scaling down with higher (stabbing + dodge)"
+    "//2": "The var_RADIUS is set to 14 - 4 tiles, scaling down with higher (stabbing + dodge)",
+    "//3": "The var_TIMESTOP is arbitrarily set at 33 mana/s"
   },
   {
     "id": "seiga_opens_spellbook_eoc",
@@ -536,6 +553,46 @@
     "//2": "The dodge-detection component is at buff_meiling_ondodge_eoc "
   },
   {
+    "id": "mokou_attack_spell_eoc",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "spellcasting_finish",
+    "condition": {
+      "and": [
+        { "u_has_trait": "MOKOU_STANCE_RELEASE" },
+        { "math": [ "u_pain()", ">=", "6" ] }
+      ]
+    },
+    "effect": [
+      {
+        "run_eocs": [
+          {
+            "id": "mokou_attack_spell_check_eoc",
+            "condition": { 
+              "or": [ 
+                { "compare_string": [ "mokou_kick_bonus", { "context_val": "spell" } ] },
+                { "compare_string": [ "mokou_kick_bonus2", { "context_val": "spell" } ] },
+                { "compare_string": [ "mokou_liver_punch_bonus", { "context_val": "spell" } ] },
+                { "compare_string": [ "mokou_punch_down_bonus", { "context_val": "spell" } ] },
+                { "compare_string": [ "mokou_sommersault_kick_bonus", { "context_val": "spell" } ] },
+                { "compare_string": [ "mokou_tackle_bonus", { "context_val": "spell" } ] },
+                { "compare_string": [ "dash_mokou", { "context_val": "spell" } ] },
+                { "compare_string": [ "mokou_blazekick", { "context_val": "spell" } ] },
+                { "compare_string": [ "mokou_fujiyamakazan", { "context_val": "spell" } ] },
+                { "compare_string": [ "mokou_talons", { "context_val": "spell" } ] },
+                { "compare_string": [ "mokou_talons2", { "context_val": "spell" } ] }
+              ] 
+            },
+            "effect": [ { "math": [ "u_pain()", "-=", "( _damage / 2 )" ] } ]
+          }
+        ]
+      }
+    ],
+    "//": "All of Mokou's spells scaling from pain should go here (basically every damaging spell, including tech procs)",
+    "//2": "Drains 1/2 of spell dmg as pain if Mokou is on the Release stance",
+    "//note": "Tried setting it up so it would scale proportionally to pain, but a formula of ( _damage * u_pain() * 0.0072 * 0.5 ) drains more pain than it should"
+  },
+  {
     "id": "mokou_death_eoc",
     "type": "effect_on_condition",
     "eoc_type": "PREVENT_DEATH",
@@ -560,23 +617,60 @@
       { "u_cast_spell": { "id": "mokou_resurrectionphoenix" }, "targeted": false },
       { "run_eocs": [ "mokou_resurrect_counter_eoc" ] }
     ],
-    "//": "This EOC enables PROF_MOKOU to resurrect/revive. Every time Mokou dies she gets var_mokoudeath, which lasts for 7 days and decreases slowly over time. Every time she revives, the value is checked vs a random number, so the more she dies in a short time the harder it is for her to not give up for real",
+    "//": "This EOC enables Mokou to resurrect/revive. Every time Mokou dies she gets var_DEATH , which lasts for 7 days and decreases slowly over time. Every time she revives, the value is checked vs a random number, so the more she dies in a short time the harder it is for her to not give up for real",
     "//2": "ANY trait that revives the character should be lost every time Mokou dies. So far, it's just PORTAL_RESURRECTION "
   },
   {
     "id": "mokou_resurrect_counter_eoc",
     "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "u_has_trait": "PROF_MOKOU" },
-        { "math": [ "var_mokoudeath", ">", "0" ] }
-      ]
-    },
+    "condition": { "math": [ "var_mokoudeath", ">", "0" ] },
     "effect": [ 
       { "math": [ "var_mokoudeath", "-=", "1" ] },
       { "run_eocs": [ "mokou_resurrect_counter_eoc" ], "time_in_future": "1 h" }
     ],
     "//": "Reduces var_mokoudeath over time"
+  },
+  {
+    "id": "mokou_stance_gains_mutation_eoc",
+    "type": "effect_on_condition",
+    "//eoc_type": "EVENT",
+    "//required_event": "gains_mutation",
+    "condition": { "compare_string": [ "MOKOU_STANCE_cooldown", { "context_val": "trait" } ] },
+    "effect": [
+      { "u_message": "GAINS_AAA", "type": "mixed" },
+      {
+        "run_eocs": [
+          {
+            "id": "mokou_stance_timer_eoc",
+            "condition": {
+              "and": [
+                { "u_has_trait": "MOKOU_STANCE_cooldown" },
+                { "math": [ "u_pain()", "<=", "0" ] }
+              ]
+            },
+            "effect": [
+              { "u_message": "GAINS_BBB", "type": "mixed" },
+              {
+                "run_eocs": [
+                  {
+                    "id": "mokou_stance_timer_end_eoc",
+                    "effect": [
+                      { "u_lose_trait": "MOKOU_STANCE_cooldown" },
+                      { "u_add_trait": "MOKOU_STANCE_BELAY" },
+                      { "u_message": "You have recovered from pain.  You can switch stances again.", "type": "mixed" }
+                    ]
+                  }
+                ],
+                "time_in_future": [ "60 s", "15 m" ]
+              }
+            ],
+            "false_effect": [ { "u_message": "GAINS_BBB_FALSE", "type": "mixed" }, { "run_eocs": [ "mokou_stance_timer_eoc" ], "time_in_future": "60 s" } ]
+          }
+        ]
+      }
+    ],
+    "false_effect": [ { "u_message": "GAINS_AAA_FALSE", "type": "mixed" } ],
+    "//note": "This does not detect gaining the mutation when tested manually with MOKOU_STANCE_RELEASE "
   },
   {
     "id": "nitori_melee_attack_eoc",
@@ -640,6 +734,15 @@
     "required_event": "character_takes_damage",
     "condition": { "u_has_effect": "sakuya_maidsecret_effect" },
     "effect": [ { "run_eocs": [ "sakuya_maidsecret_end_eoc" ] } ]
+  },
+  {
+    "id": "sakuya_timestop_avatar_moves_eoc",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "avatar_moves",
+    "condition": { "u_has_effect": "sakuya_timestop_self_effect" },
+    "effect": [ { "math": [ "var_timestop_timer", "+=", "1" ] } ],
+    "//": "Assumes moving 1 tile = 1 second"
   },
   {
     "id": "seiga_corpsecursed_kill_monster_eoc",
@@ -798,7 +901,7 @@
         "time_in_future": "1 s"
       }
     ],
-    "//": "This EOC enables PROF_SEIGA to resurrect/revive, if she has performed the Body Replacement ritual (which grants the effect)",
+    "//": "This EOC enables Seiga to resurrect/revive, if she has performed the Body Replacement ritual (which grants the effect)",
     "//2": "It removes the effect, resets her stats (because the alternative is to take snapshots every X min but that would doom her under certain circumstances)",
     "//3": "It also resets her pain, else she's crippled with 0 stats post-revival. It teleports her to where the ritual was performed, and removes the custom bed",
     "//4": "ANY trait that revives the character should be lost every time Seiga dies. So far, it's just PORTAL_RESURRECTION "
@@ -863,8 +966,7 @@
     "required_event": "character_takes_damage",
     "condition": {
       "and": [
-        { "u_has_trait": "PROF_UDONGE" },
-        { "u_has_effect": "udonge_barrierwave" },
+        { "u_has_effect": "udonge_barrierwave_effect" },
         { "math": [ "var_barrierwave", ">", "0" ] }
       ]
     },
@@ -880,24 +982,17 @@
     "id": "udonge_barrierwave_hit2",
     "type": "effect_on_condition",
     "condition": { "math": [ "var_barrierwave", "==", "0" ] },
-    "effect": [ 
-      { "u_lose_effect": "udonge_barrierwave" }
-    ]
+    "effect": [ { "u_lose_effect": "udonge_barrierwave_effect" } ]
   },
   {
     "id": "udonge_barrierwave_game_load",
     "type": "effect_on_condition",
     "eoc_type": "EVENT",
     "required_event": "game_load",
-    "condition": {
-      "and": [
-        { "u_has_trait": "PROF_UDONGE" },
-        { "u_has_effect": "udonge_barrierwave" }
-      ]
-    },
+    "condition": { "u_has_effect": "udonge_barrierwave_effect" },
     "effect": [
       { "math": [ "var_barrierwave", "=", "0" ] },
-      { "u_lose_effect": "udonge_barrierwave" }
+      { "u_lose_effect": "udonge_barrierwave_effect" }
     ],
     "//": "This is just here because it works like that in TH15 (which means it's canon)"
   },

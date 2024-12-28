@@ -63,7 +63,7 @@
       { "level": 1, "id": "mokou_fujiyamakazan" },
       { "level": 1, "id": "mokou_talons" }
     ],
-    "traits": [ "HOURAI_SPECIES", "PROF_MOKOU", "SPIRIT_USER", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_mokou" ],
+    "traits": [ "HOURAI_SPECIES", "PROF_MOKOU", "MOKOU_STANCE", "MOKOU_STANCE_BELAY", "SPIRIT_USER", "eye_red_touhou", "FACIAL_HAIR_NONE", "hair_mokou" ],
     "items": {
       "both": {
         "entries": [

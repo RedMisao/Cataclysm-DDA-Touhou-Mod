@@ -1,0 +1,11 @@
+[
+  {
+    "id": "mokou_stance_jmath",
+    "type": "jmath_function",
+    "num_args": 0,
+    "return": "( var_mokou_stance == 0 ? ( 1 + u_pain() * 0.0018 ) : ( 1 + u_pain() * 0.0072 ) )",
+    "//": "This is either up to x1.25 or x2 dmg, at 140 pain, according to the stance",
+    "//2": "The jmath is used because: first it simplifies the pain formula everywhere, and second it can take a simple boolean which prevents duplicating everything",
+    "//3": "Also, easier to use this and multiply the jmath formula by a factor, instead of making several of them which do the same thing"
+  }
+]

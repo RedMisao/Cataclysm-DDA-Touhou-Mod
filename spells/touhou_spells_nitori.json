@@ -24,7 +24,7 @@
     "id": "nitori_aerialtorpedoes",
     "type": "SPELL",
     "name": { "str": "Aerial torpedoes" },
-    "description": "Fire a bunch of aerial torpedoes over the targeted area.  The arc is high, so they land after some delay.  \nCosts 100 mana.",
+    "description": "Fire a bunch of aerial torpedoes over the targeted area.  The arc is high, so they land after some delay.  \nCosts <color_light_blue>100</color> mana.",
     "spell_class": "NONE",
     "teachable": false,
     "valid_targets": [ "self" ],

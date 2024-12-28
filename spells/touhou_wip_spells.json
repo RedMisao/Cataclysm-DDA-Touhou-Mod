@@ -648,181 +648,26 @@
     "condition": { "math": [ "var_nitori_weather", "==", "4" ] }
   },
   {
-    "id": "sakuya_timestop_wip",
-    "type": "SPELL",
-    "name": { "str": "Time manipulation (Time stop)" },
-    "description": "Stop time around yourself.  Costs 33 mana to activate, and drains 166 mana while active, over the duration.  Cast again to toggle OFF.  \nMaximum duration is increased with higher skill levels.",
-    "spell_class": "NONE",
-    "teachable": false,
-    "valid_targets": [ "self" ],
-    "effect": "effect_on_condition",
-    "effect_str": "sakuya_timestop_eoc",
-    "shape": "blast",
-    "max_level": 1,
-    "difficulty": -11,
-    "base_casting_time": 33,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "LOUD", "NO_HANDS", "NO_LEGS", "SOMATIC", "VERBAL" ],
-    "//": "This works as intended, if the time stop effect is a debuff upon enemies",
-    "//2": "However, if the effect is a +mod_moves buff to Sakuya, it also blocks the EOCs from cycling, effectively duplicating the in-game time stop effect",
-    "//3": "The +mod_moves for Sakuya is better than the -mod_moves on enemies, as it blocks the in-game time, but I want that to be toggle-able at will too",
-    "//4": "This stays as WIP until I figure out how to combine both"
-  },
-  {
-    "id": "sakuya_timestop2",
-    "type": "SPELL",
-    "name": { "str": "Time manipulation (Time stop) (freeze component)" },
-    "description": "Freeze component of sakuya_timestop ",
-    "spell_class": "NONE",
-    "valid_targets": [ "self" ],
-    "effect": "mod_moves",
-    "shape": "blast",
-    "extra_effects": [ { "id": "sakuya_timestop_vfx", "hit_self": true } ],
-    "min_damage": 1000,
-    "max_damage": 2500,
-    "damage_increment": 100,
-    "min_aoe": 1,
-    "max_aoe": 1,
-    "min_duration": 1000,
-    "max_duration": 1800,
-    "duration_increment": 100,
-    "max_level": 10,
-    "difficulty": 40,
-    "base_casting_time": 100,
-    "base_energy_cost": 233,
-    "energy_source": "MANA",
-    "flags": [ "IGNORE_WALLS", "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SILENT", "NO_FAIL" ]
-  },
-  {
-    "id": "sakuya_timestop_eoc",
-    "type": "effect_on_condition",
-    "condition": { "math": [ "var_timestop_active", "<", "2" ] },
-    "effect": [
-      { "u_message": "TIMESTOP_SUCCESSFUL", "type": "mixed" },
-      { "math": [ "u_val('mana')", "-=", "33" ] },
-      { "math": [ "var_timestop_active", "+=", "1" ] },
-      { "math": [ "var_timestop_duration", "=", "( (u_skill('throw') * 35 ) + (u_skill('stabbing') * 35 ) + (u_skill('dodge') * 70 ) + 210 )" ] },
-      { "u_lose_effect": "sakuya_timestop_effect" },
-      { "u_cast_spell": { "id": "sakuya_timestop3" }, "targeted": false },
-      { "u_cast_spell": { "id": "sakuya_timestop_vfx" }, "targeted": false },
-      { "run_eocs": [ "sakuya_timestop_cycle1" ] }
-    ],
-    "//": "This EOC is a modified version of udonge_waveinsight_start . It runs for n times, set by the var above",
-    "//2": "dur 700 - 2100"
-  },
-  {
-    "id": "sakuya_timestop_cycle1",
-    "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "var_timestop_timer", "<", "var_timestop_duration" ] },
-        { "math": [ "var_timestop_active", "<", "2" ] }
-      ]
-    },
-    "effect": [ { "u_message": "BBB", "type": "mixed" }, { "run_eocs": [ "sakuya_timestop_cycle2" ] } ],
-    "false_effect": [ { "run_eocs": [ "sakuya_timestop_end" ] } ]
-  },
-  {
-    "id": "sakuya_timestop_cycle2",
-    "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "u_val('mana')", ">=", "( 133 / ( var_timestop_duration / 100 ) )" ] },
-        { "math": [ "var_timestop_timer", "<", "var_timestop_duration" ] },
-        { "math": [ "var_timestop_active", ">", "0" ] }
-      ]
-    },
-    "effect": [
-      { "u_message": "CCC", "type": "mixed" },
-      { "math": [ "var_timestop_timer", "+=", "100" ] },
-      { "math": [ "u_val('mana')", "-=", "( 133 / ( var_timestop_duration / 100 ) )" ] },
-      { "u_add_effect": "sakuya_timestop_effect", "duration": "2 s" },
-      { "u_cast_spell": { "id": "sakuya_timestop2" }, "targeted": false },
-      { "run_eocs": [ "sakuya_timestop_cycle1" ], "time_in_future": "1 s" }
-    ],
-    "false_effect": [ { "run_eocs": [ "sakuya_timestop_end" ] } ]
-  },
-  {
-    "id": "sakuya_timestop_end",
-    "type": "effect_on_condition",
-    "effect": [
-      { "u_message": "DDD", "type": "mixed" },
-      { "math": [ "var_timestop_active", "=", "0" ] },
-      { "math": [ "var_timestop_timer", "=", "0" ] },
-      { "u_lose_effect": "sakuya_timestop_effect" }
-    ],
-    "//": "Messages can be handled by EOCs once I fix the double-stop requirement of the base aura..."
-  },
-  {
     "id": "seiga_corpsecurse3",
     "type": "SPELL",
-    "name": { "str": "Curse of corpses (EOC) (2)" },
-    "description": "Subpsell that adds a random dot effect on the rezzed target",
+    "name": { "str": "Curse of corpses (dot)" },
+    "description": "Damage over time for seiga_corpsecurse3 ",
     "spell_class": "NONE",
-    "valid_targets": [ "ally", "hostile", "none" ],
+    "valid_targets": [ "ally", "hostile" ],
     "ignored_monster_species": [ "HALLUCINATION", "HORROR", "MIGO", "NETHER_EMANATION" ],
-    "effect": "effect_on_condition",
-    "effect_str": "seiga_corpsecurse_rezzed_eoc",
+    "effect": "attack",
+    "effect_str": "seiga_corpsecurse_dot_effect",
     "shape": "blast",
+    "damage_type": "pure",
+    "min_range": { "math": [ "var_seiga_range" ] },
+    "max_range": 8,
+    "min_duration": 9999,
+    "max_duration": 9999,
     "max_level": 1,
     "difficulty": -11,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
     "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_HANDS", "NO_LEGS", "SILENT" ],
-    "//": "This doesn't work because I can't find a way to tag the monster rezzed by seiga_corpsecursed_check ",
-    "//2": "Tried to set the target's location with a npc_location but the rezzed monster can spawn very far away regardless, so the u_cast_spell for this (used upon the rezzed monster) fails as there's nothing in the location"
-  },
-  {
-    "id": "seiga_corpsecurse4",
-    "type": "SPELL",
-    "name": { "str": "Curse of corpses (dmg)" },
-    "description": "Damage for the rezz curse of seiga_corpsecurse ",
-    "valid_targets": [ "self" ],
-    "shape": "blast",
-    "effect": "attack",
-    "damage_type": "pure",
-    "min_damage": 1,
-    "max_damage": 1,
-    "min_pierce": 999,
-    "max_pierce": 999,
-    "max_level": 1,
-    "difficulty": -50,
-    "base_casting_time": 0,
-    "base_energy_cost": 0,
-    "energy_source": "MANA",
-    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_HANDS", "NO_LEGS", "NO_PROJECTILE", "SILENT" ]
-  },
-  {
-    "id": "seiga_corpsecurse_rezzed_eoc",
-    "type": "effect_on_condition",
-    "effect": [
-      { "run_eocs": [ "seiga_corpsecurse_rezzed_timer_1" ] }
-    ],
-    "//": "This EOC is a simplified version of yamame_disease_icypyrexia_eoc ",
-    "//2": "It rolls a random var and runs every 1 s, if the random var is exactly 1 it casts the spell, which deals 1 unavoidable dmg",
-    "//3": "This doesn't stop, so it runs until the target is dead"
-  },
-  {
-    "id": "seiga_corpsecurse_rezzed_timer_1",
-    "type": "effect_on_condition",
-    "effect": [
-      { "math": [ "var_corpsecurse", "=", "rand(9)" ] },
-      { "run_eocs": [ "seiga_corpsecurse_rezzed_timer_1_2" ] }
-    ]
-  },
-  {
-    "id": "seiga_corpsecurse_rezzed_timer_1_2",
-    "type": "effect_on_condition",
-    "condition": { "math": [ "var_corpsecurse", "==", "1" ] },
-    "effect": [
-      { "u_cast_spell": { "id": "seiga_corpsecurse4" } },
-      { "run_eocs": [ "seiga_corpsecurse_rezzed_timer_1" ], "time_in_future": "1 s" }
-    ],
-    "false_effect": [ 
-      { "run_eocs": [ "seiga_corpsecurse_rezzed_timer_1" ], "time_in_future": "1 s" }
-    ]
+    "flags": [ "NO_EXPLOSION_SFX", "SILENT", "NO_HANDS", "NO_LEGS" ],
+    "//": "Placeholder"
   },
   {
     "id": "tenko_keystonecrash_eoc_WIP",

@@ -570,7 +570,7 @@
       { "math": [ "var_kasencalorieburn", "+=", "1" ] },
       { "run_eocs": [ "kasen_calorieburn_cycle1" ] }
     ],
-    "//": "This EOC is a simplified version of udonge_waveinsight_start "
+    "//": "This EOC is a simplified version of udonge_waveinsight_eoc "
   },
   {
     "id": "kasen_calorieburn_cycle1",
@@ -624,7 +624,7 @@
         "keys": [ "1", "2", "3" ],
         "descriptions": [
           "Traverse through any previously placed exit points.",
-          "Set one of three exit points to traverse through.  Costs 133 mana.",
+          "Set one of three exit points to traverse through.  Costs <color_light_blue>133</color> mana.",
           "Delete all placed exit points."
         ],
         "hide_failing": true,
@@ -2091,6 +2091,116 @@
     ]
   },
   {
+    "id": "sakuya_timestop_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_timestop_active", "==", "0" ] },
+    "effect": [
+      { "math": [ "var_timestop_active", "=", "1" ] },
+      { "run_eocs": [ "sakuya_timestop_start_eoc" ] }
+    ],
+    "false_effect": [ { "run_eocs": "sakuya_timestop_toggle_eoc" } ],
+    "//": "Modified version of stance_ninja_taijutsu_eoc , linked to sakuya_timestop_avatar_moves_eoc due how the time stop works",
+    "//2": "tl;dr these EOCs keep track of time (pressing .), while sakuya_timestop_avatar_moves_eoc keeps track of movement",
+    "//3": "The normal cycling, except mana drain has to be set up differently"
+  },
+  {
+    "id": "sakuya_timestop_start_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_val('mana')", ">=", "33" ] },
+    "effect": [ 
+      { "math": [ "u_val('mana')", "-=", "33" ] },
+      { "u_message": "Time is frozen.  Is it as if the entire world has stopped.", "type": "mixed" },
+      { "u_cast_spell": { "id": "sakuya_timestop_vfx" } },
+      { "u_cast_spell": { "id": "sakuya_timestop3" }, "targeted": false },
+      { "u_add_effect": "sakuya_timestop_self_effect", "duration": "PERMANENT" },
+      { "run_eocs": [ "sakuya_timestop_cycle1" ] }
+    ],
+    "false_effect": [
+      { "math": [ "var_timestop_active", "=", "0" ] },
+      { "math": [ "var_timestop_timer", "=", "0" ] },
+      { "u_lose_effect": "sakuya_timestop_self_effect" },
+      { "u_message": "You don't have enough mana!", "type": "bad" }
+    ],
+    "//": "The cost check is run after the activation_EOC , so it can be toggled ON and OFF with no cost",
+    "//2": "The false_effect doesn't run the OOM_eoc as the messages are different"
+  },
+  {
+    "id": "sakuya_timestop_cycle1",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "var_timestop_active", "==", "1" ] },
+    "effect": [ { "run_eocs": [ "sakuya_timestop_cycle2" ] } ],
+    "//IMPORTANT": "No false_effect here because the toggle is handled upstream. Adding a(ny) false effect results in duplicating the message"
+  },
+  {
+    "id": "sakuya_timestop_cycle2",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_val('mana')", ">=", "var_timestop_drain" ] },
+    "effect": [
+      {
+        "run_eocs": [
+          {
+            "id": "sakuya_timestop_core_eoc",
+            "effect": [
+              {
+                "run_eocs": [
+                  {
+                    "id": "sakuya_timestop_drain_eoc",
+                    "condition": { "math": [ "var_timestop_timer", ">=", "3" ] }, 
+                    "effect": [
+                      { "math": [ "u_val('mana')", "-=", "var_timestop_drain" ] },
+                      { "run_eocs": [ "sakuya_timestop_timer_eoc" ] }
+                    ],
+                    "//note": "mana scaling down with higher skill?"
+                  },
+                  {
+                    "id": "sakuya_timestop_stall_eoc",
+                    "condition": { "math": [ "var_timestop_timer", "<", "3" ] }, 
+                    "effect": [
+                      { "run_eocs": [ "sakuya_timestop_timer_eoc" ] }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      { "run_eocs": [ "sakuya_timestop_cycle1" ], "time_in_future": "1 s" }
+    ],
+    "false_effect": [ { "run_eocs": "sakuya_timestop_oom_eoc" } ],
+    "//": "Two sub-EOCs allow to stall mana drain for X s",
+    "//3": "The CORE_eoc is set up like this so sakuya_timestop_avatar_moves_eoc can connect to it, instead of running each inlined EOC separatedly"
+  },
+  {
+    "id": "sakuya_timestop_timer_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_timestop_timer", "+=", "1" ] },
+      { "u_cast_spell": { "id": "sakuya_timestop2" }, "targeted": false }
+    ],
+    "//": "Common step, less maintenance, although more lines"
+  },
+  {
+    "id": "sakuya_timestop_toggle_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_timestop_active", "=", "0" ] },
+      { "math": [ "var_timestop_timer", "=", "0" ] },
+      { "u_lose_effect": "sakuya_timestop_self_effect" },
+      { "u_message": "Thus, time is flowing again.", "type": "mixed" }
+    ]
+  },
+  {
+    "id": "sakuya_timestop_oom_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_timestop_active", "=", "0" ] },
+      { "math": [ "var_timestop_timer", "=", "0" ] },
+      { "u_lose_effect": "sakuya_timestop_self_effect" },
+      { "u_message": "You ran out of mana!  Time is flowing again.", "type": "bad" }
+    ]
+  },
+  {
     "id": "sakuya_vanishingeverything_eoc",
     "type": "effect_on_condition",
     "condition": { "math": [ "var_sakuya_ve_casted", "==", "0" ] },
@@ -2379,7 +2489,7 @@
     "type": "effect_on_condition",
     "effect": [
       { "math": [ "var_barrierwave", "=", "3" ] },
-      { "u_add_effect": "udonge_barrierwave", "duration": "PERMANENT" }
+      { "u_add_effect": "udonge_barrierwave_effect", "duration": "PERMANENT" }
     ]
   },
   {
@@ -2410,219 +2520,238 @@
     "//": "Simple EOC just checks if Udonge is wielding any pistols, if she isn't the cast fails"
   },
   {
-    "id": "udonge_waveinsight_start",
+    "id": "udonge_waveinsight_eoc",
     "type": "effect_on_condition",
+    "condition": { "math": [ "var_waveinsight", "==", "0" ] },
     "effect": [
-      { "math": [ "var_waveinsight", "+=", "1" ] },
+      { "math": [ "var_barrierwave", "=", "0" ] },
+      { "math": [ "var_waveinsight", "=", "1" ] },
       { "math": [ "var_wavemfortitude", "=", "0" ] },
       { "math": [ "var_waveperception", "=", "0" ] },
       { "math": [ "var_wavestealth", "=", "0" ] },
-      { "u_lose_effect": "udonge_barrierwave" },
-      { "u_lose_effect": "udonge_mfortitude" },
-      { "u_lose_effect": "udonge_perception" },
-      { "u_lose_effect": "udonge_stealth" },
+      { "u_lose_effect": "udonge_barrierwave_effect" },
+      { "u_lose_effect": "udonge_mfortitude_effect" },
+      { "u_lose_effect": "udonge_perception_effect" },
+      { "u_lose_effect": "udonge_stealth_effect" },
+      { "run_eocs": [ "udonge_waveinsight_start_eoc" ] }
+    ],
+    "false_effect": [ { "run_eocs": "udonge_wave_toggle_eoc" } ],
+    "//": "Original aura-EOC, the others are modeled after this",
+    "//2": "Updated with stance_ninja_taijutsu_eoc syntax, which removes the old double-stop issue of the old version ( udonge_waveinsight_start , 0.9.8.0b)"
+  },
+  {
+    "id": "udonge_waveinsight_start_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_val('mana')", ">=", "30" ] },
+    "effect": [ 
+      { "math": [ "u_val('mana')", "-=", "30" ] },
       { "run_eocs": [ "udonge_waveinsight_cycle1" ] }
     ],
-    "//": "Adds aura-specific var to signal it is ON, also sets the other auras + bonuses OFF",
-    "//2": "Original 'aura', the others are modeled after this",
-    "//IMPORTANT": "There's a 'leak', where toggling the aura OFF cycles one more time and defaults to the false_effect before stopping properly (set debug u_message to each effect and run it ingame to understand)",
-    "//IMPORTANT2": "I think this happens with all aura EOCs based on this one",
-    "//IMPORTANT3": "My guess is that happens due the queue'd EOC running not being 'cancelled'. The > 0 check is what actually stops the momentum. DO NOT REMOVE BEFORE FINDING A SOLUTION",
-    "//IMPORTANT4": "I tried my best in trying to simplify all the cycle1 - cycle2 based EOCs but couldn't find a solution. Maybe in the future, idk these work as they are",
-    "//WIP": "Update as stance_ninja_taijutsu_eoc "
+    "false_effect": [
+      { "u_message": "You are too mentally exhausted!  You cannot focus the wavelengths.", "type": "bad" },
+      { "run_eocs": [ "udonge_wave_end_eoc" ] }
+    ],
+    "//": "The cost check is run after the activation_EOC , so it can be toggled ON and OFF with no cost",
+    "//2": "The spell says it costs +2 mana. The difference is because the effect is granted while cycling once, which consumes that amount",
+    "//3": "The false_effect doesn't run the OOM_eoc as the messages are different"
   },
   {
     "id": "udonge_waveinsight_cycle1",
     "type": "effect_on_condition",
-    "condition": { "math": [ "var_waveinsight", "<", "2" ] },
+    "condition": { "math": [ "var_waveinsight", "==", "1" ] },
     "effect": [ { "run_eocs": [ "udonge_waveinsight_cycle2" ] } ],
-    "false_effect": { "run_eocs": "udonge_waveinsight_toggle" },
-    "//": "If Udonge has casted the spell just once the next step is run. However, if the player has casted the spell twice it runs the toggle EOC instead"
+    "//": "This re-checks if var_WAVE_X is already active, if so it runs the next EOC",
+    "//IMPORTANT": "No false_effect here because the toggle is handled upstream. Adding a(ny) false effect results in duplicating the message"
   },
   {
     "id": "udonge_waveinsight_cycle2",
     "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "u_val('mana')", ">=", "33" ] },
-        { "math": [ "var_waveinsight", ">", "0" ] }
-      ]
-    },
+    "condition": { "math": [ "u_val('mana')", ">=", "3" ] },
     "effect": [
       { "math": [ "u_val('mana')", "-=", "1" ] },
-      { "u_add_effect": "udonge_insight", "duration": "3 s" },
+      { "u_add_effect": "udonge_insight_effect", "duration": "3 s" },
       { "run_eocs": [ "udonge_waveinsight_cycle1" ], "time_in_future": "2 s" }
     ],
-    "false_effect": { "run_eocs": "udonge_wave_oom" },
-    "//": "Checks if Udonge has enough mana to keep the aura bonus, and reduces mana. If she runs out of mana it runs the oom EOC instead"
+    "false_effect": [ { "run_eocs": "udonge_wave_oom_eoc" } ],
+    "//": "This checks if there's enough mana to keep var_WAVE_X active, if so it drains mana and cycles back",
+    "//2": "Otherwise it runs OOM_eoc "
   },
   {
-    "id": "udonge_waveinsight_toggle",
+    "id": "udonge_wave_toggle_eoc",
     "type": "effect_on_condition",
-    "condition": { "math": [ "var_waveinsight", ">=", "2" ] },
-    "effect": [
-      { "math": [ "var_waveinsight", "=", "0" ] },
-      { "u_lose_effect": "udonge_insight" }
-    ],
-    "//": "Toggle EOC, deactivates the auras when the spell is casted more than once"
+    "effect": [ { "run_eocs": [ "udonge_wave_end_eoc" ] } ],
+    "//": "The TOGGLE_eoc , deactivates the auras when the spell is casted more than once",
+    "//2": "No u_message as each effect has its own custom message"
   },
   {
-    "id": "udonge_wave_oom",
+    "id": "udonge_wave_oom_eoc",
     "type": "effect_on_condition",
-    "condition": { "math": [ "u_val('mana')", "<", "33" ] },
     "effect": [
       { "u_message": "You are too mentally exhausted!  You lose focus of the wavelengths.", "type": "bad" },
+      { "run_eocs": [ "udonge_wave_end_eoc" ] }
+    ]
+  },
+  {
+    "id": "udonge_wave_end_eoc",
+    "type": "effect_on_condition",
+    "effect": [
+      { "math": [ "var_barrierwave", "=", "0" ] },
       { "math": [ "var_waveinsight", "=", "0" ] },
       { "math": [ "var_wavemfortitude", "=", "0" ] },
       { "math": [ "var_waveperception", "=", "0" ] },
       { "math": [ "var_wavestealth", "=", "0" ] },
-      { "u_lose_effect": "udonge_insight" },
-      { "u_lose_effect": "udonge_mfortitude" },
-      { "u_lose_effect": "udonge_perception" },
-      { "u_lose_effect": "udonge_stealth" }
+      { "u_lose_effect": "udonge_barrierwave_effect" },
+      { "u_lose_effect": "udonge_mfortitude_effect" },
+      { "u_lose_effect": "udonge_perception_effect" },
+      { "u_lose_effect": "udonge_stealth_effect" },
+      { "u_lose_effect": "udonge_insight_effect" }
     ],
-    "//": "oom EOC, resets all aura vars, removes all buffs"
+    "//": "Resets all aura vars, removes all buffs",
+    "//2": "Necessary for Udonge's auras as they're stance-like"
   },
   {
-    "id": "udonge_wavemfortitude_start",
+    "id": "udonge_wavemfortitude_eoc",
     "type": "effect_on_condition",
+    "condition": { "math": [ "var_wavemfortitude", "==", "0" ] },
     "effect": [
+      { "math": [ "var_barrierwave", "=", "0" ] },
       { "math": [ "var_waveinsight", "=", "0" ] },
-      { "math": [ "var_wavemfortitude", "+=", "1" ] },
+      { "math": [ "var_wavemfortitude", "=", "1" ] },
       { "math": [ "var_waveperception", "=", "0" ] },
       { "math": [ "var_wavestealth", "=", "0" ] },
-      { "u_lose_effect": "udonge_barrierwave" },
-      { "u_lose_effect": "udonge_insight" },
-      { "u_lose_effect": "udonge_perception" },
-      { "u_lose_effect": "udonge_stealth" },
+      { "u_lose_effect": "udonge_barrierwave_effect" },
+      { "u_lose_effect": "udonge_insight_effect" },
+      { "u_lose_effect": "udonge_perception_effect" },
+      { "u_lose_effect": "udonge_stealth_effect" },
+      { "run_eocs": [ "udonge_wavemfortitude_start_eoc" ] }
+    ],
+    "false_effect": [ { "run_eocs": "udonge_wave_toggle_eoc" } ]
+  },
+  {
+    "id": "udonge_wavemfortitude_start_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_val('mana')", ">=", "30" ] },
+    "effect": [ 
+      { "math": [ "u_val('mana')", "-=", "30" ] },
       { "run_eocs": [ "udonge_wavemfortitude_cycle1" ] }
+    ],
+    "false_effect": [
+      { "u_message": "You are too mentally exhausted!  You cannot focus the wavelengths.", "type": "bad" },
+      { "run_eocs": [ "udonge_wave_end_eoc" ] }
     ]
   },
   {
     "id": "udonge_wavemfortitude_cycle1",
     "type": "effect_on_condition",
-    "condition": { "math": [ "var_wavemfortitude", "<", "2" ] },
-    "effect": [ { "run_eocs": [ "udonge_wavemfortitude_cycle2" ] } ],
-    "false_effect": { "run_eocs": "udonge_wavemfortitude_toggle" }
+    "condition": { "math": [ "var_wavemfortitude", "==", "1" ] },
+    "effect": [ { "run_eocs": [ "udonge_wavemfortitude_cycle2" ] } ]
   },
   {
     "id": "udonge_wavemfortitude_cycle2",
     "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "u_val('mana')", ">=", "33" ] },
-        { "math": [ "var_wavemfortitude", ">", "0" ] }
-      ]
-    },
+    "condition": { "math": [ "u_val('mana')", ">=", "3" ] },
     "effect": [
       { "math": [ "u_val('mana')", "-=", "6" ] },
-      { "u_add_effect": "udonge_mfortitude", "duration": "3 s" },
+      { "u_add_effect": "udonge_mfortitude_effect", "duration": "3 s" },
       { "run_eocs": [ "udonge_wavemfortitude_cycle1" ], "time_in_future": "2 s" }
     ],
-    "false_effect": { "run_eocs": "udonge_wave_oom" }
+    "false_effect": [ { "run_eocs": "udonge_wave_oom_eoc" } ]
   },
   {
-    "id": "udonge_wavemfortitude_toggle",
+    "id": "udonge_waveperception_eoc",
     "type": "effect_on_condition",
-    "condition": { "math": [ "var_wavemfortitude", ">=", "2" ] },
+    "condition": { "math": [ "var_waveperception", "==", "0" ] },
     "effect": [
-      { "math": [ "var_wavemfortitude", "=", "0" ] },
-      { "u_lose_effect": "udonge_mfortitude" }
-    ]
-  },
-  {
-    "id": "udonge_waveperception_start",
-    "type": "effect_on_condition",
-    "effect": [
+      { "math": [ "var_barrierwave", "=", "0" ] },
       { "math": [ "var_waveinsight", "=", "0" ] },
       { "math": [ "var_wavemfortitude", "=", "0" ] },
-      { "math": [ "var_waveperception", "+=", "1" ] },
+      { "math": [ "var_waveperception", "=", "1" ] },
       { "math": [ "var_wavestealth", "=", "0" ] },
-      { "u_lose_effect": "udonge_barrierwave" },
-      { "u_lose_effect": "udonge_insight" },
-      { "u_lose_effect": "udonge_mfortitude" },
-      { "u_lose_effect": "udonge_stealth" },
+      { "u_lose_effect": "udonge_barrierwave_effect" },
+      { "u_lose_effect": "udonge_insight_effect" },
+      { "u_lose_effect": "udonge_mfortitude_effect" },
+      { "u_lose_effect": "udonge_stealth_effect" },
+      { "run_eocs": [ "udonge_waveperception_start_eoc" ] }
+    ],
+    "false_effect": [ { "run_eocs": "udonge_wave_toggle_eoc" } ]
+  },
+  {
+    "id": "udonge_waveperception_start_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_val('mana')", ">=", "30" ] },
+    "effect": [ 
+      { "math": [ "u_val('mana')", "-=", "30" ] },
       { "run_eocs": [ "udonge_waveperception_cycle1" ] }
+    ],
+    "false_effect": [
+      { "u_message": "You are too mentally exhausted!  You cannot focus the wavelengths.", "type": "bad" },
+      { "run_eocs": [ "udonge_wave_end_eoc" ] }
     ]
   },
   {
     "id": "udonge_waveperception_cycle1",
     "type": "effect_on_condition",
-    "condition": { "math": [ "var_waveperception", "<", "2" ] },
-    "effect": [ { "run_eocs": [ "udonge_waveperception_cycle2" ] } ],
-    "false_effect": { "run_eocs": "udonge_waveperception_toggle" }
+    "condition": { "math": [ "var_waveperception", "==", "1" ] },
+    "effect": [ { "run_eocs": [ "udonge_waveperception_cycle2" ] } ]
   },
   {
     "id": "udonge_waveperception_cycle2",
     "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "u_val('mana')", ">=", "33" ] },
-        { "math": [ "var_waveperception", ">", "0" ] }
-      ]
-    },
+    "condition": { "math": [ "u_val('mana')", ">=", "3" ] },
     "effect": [
       { "math": [ "u_val('mana')", "-=", "6" ] },
-      { "u_add_effect": "udonge_perception", "duration": "3 s" },
+      { "u_add_effect": "udonge_perception_effect", "duration": "3 s" },
       { "run_eocs": [ "udonge_waveperception_cycle1" ], "time_in_future": "2 s" }
     ],
-    "false_effect": { "run_eocs": "udonge_wave_oom" }
+    "false_effect": [ { "run_eocs": "udonge_wave_oom_eoc" } ]
   },
   {
-    "id": "udonge_waveperception_toggle",
+    "id": "udonge_wavestealth_eoc",
     "type": "effect_on_condition",
-    "condition": { "math": [ "var_waveperception", ">=", "2" ] },
+    "condition": { "math": [ "var_wavestealth", "==", "0" ] },
     "effect": [
-      { "math": [ "var_waveperception", "=", "0" ] },
-      { "u_lose_effect": "udonge_perception" }
-    ]
-  },
-  {
-    "id": "udonge_wavestealth_start",
-    "type": "effect_on_condition",
-    "effect": [
+      { "math": [ "var_barrierwave", "=", "0" ] },
       { "math": [ "var_waveinsight", "=", "0" ] },
       { "math": [ "var_wavemfortitude", "=", "0" ] },
       { "math": [ "var_waveperception", "=", "0" ] },
-      { "math": [ "var_wavestealth", "+=", "1" ] },
-      { "u_lose_effect": "udonge_barrierwave" },
-      { "u_lose_effect": "udonge_insight" },
-      { "u_lose_effect": "udonge_mfortitude" },
-      { "u_lose_effect": "udonge_perception" },
+      { "math": [ "var_wavestealth", "=", "1" ] },
+      { "u_lose_effect": "udonge_barrierwave_effect" },
+      { "u_lose_effect": "udonge_insight_effect" },
+      { "u_lose_effect": "udonge_mfortitude_effect" },
+      { "u_lose_effect": "udonge_perception_effect" },
+      { "run_eocs": [ "udonge_wavestealth_start_eoc" ] }
+    ],
+    "false_effect": [ { "run_eocs": "udonge_wave_toggle_eoc" } ]
+  },
+  {
+    "id": "udonge_wavestealth_start_eoc",
+    "type": "effect_on_condition",
+    "condition": { "math": [ "u_val('mana')", ">=", "30" ] },
+    "effect": [ 
+      { "math": [ "u_val('mana')", "-=", "30" ] },
       { "run_eocs": [ "udonge_wavestealth_cycle1" ] }
+    ],
+    "false_effect": [
+      { "u_message": "You are too mentally exhausted!  You cannot focus the wavelengths.", "type": "bad" },
+      { "run_eocs": [ "udonge_wave_end_eoc" ] }
     ]
   },
   {
     "id": "udonge_wavestealth_cycle1",
     "type": "effect_on_condition",
-    "condition": { "math": [ "var_wavestealth", "<", "2" ] },
-    "effect": [ { "run_eocs": [ "udonge_wavestealth_cycle2" ] } ],
-    "false_effect": { "run_eocs": "udonge_wavestealth_toggle" }
+    "condition": { "math": [ "var_wavestealth", "==", "1" ] },
+    "effect": [ { "run_eocs": [ "udonge_wavestealth_cycle2" ] } ]
   },
   {
     "id": "udonge_wavestealth_cycle2",
     "type": "effect_on_condition",
-    "condition": {
-      "and": [
-        { "math": [ "u_val('mana')", ">=", "33" ] },
-        { "math": [ "var_wavestealth", ">", "0" ] }
-      ]
-    },
+    "condition": { "math": [ "u_val('mana')", ">=", "3" ] },
     "effect": [
       { "math": [ "u_val('mana')", "-=", "10" ] },
-      { "u_add_effect": "udonge_stealth", "duration": "3 s" },
+      { "u_add_effect": "udonge_stealth_effect", "duration": "3 s" },
       { "run_eocs": [ "udonge_wavestealth_cycle1" ], "time_in_future": "2 s" }
     ],
-    "false_effect": { "run_eocs": "udonge_wave_oom" }
-  },
-  {
-    "id": "udonge_wavestealth_toggle",
-    "type": "effect_on_condition",
-    "condition": { "math": [ "var_wavestealth", ">=", "2" ] },
-    "effect": [
-      { "math": [ "var_wavestealth", "=", "0" ] },
-      { "u_lose_effect": "udonge_stealth" }
-    ]
+    "false_effect": [ { "run_eocs": "udonge_wave_oom_eoc" } ]
   },
   {
     "id": "utsuho_blacksun_eoc",
@@ -2783,7 +2912,7 @@
       { "math": [ "var_utsuho_fissionaura", "+=", "1" ] },
       { "run_eocs": [ "utsuho_fissionaura_cycle1" ] }
     ],
-    "//": "This EOC is a modified version of udonge_waveinsight_start . It has an extra step that checks if Utsuho is wearing her rod, if she isn't it runs a sub-cycle with different values"
+    "//": "This EOC is a modified version of udonge_waveinsight_eoc . It has an extra step that checks if Utsuho is wearing her rod, if she isn't it runs a sub-cycle with different values"
   },
   {
     "id": "utsuho_fissionaura_cycle1",
@@ -2869,7 +2998,7 @@
       { "math": [ "var_utsuho_fusionblade", "+=", "1" ] },
       { "run_eocs": [ "utsuho_fusionblade_cycle1" ] }
     ],
-    "//": "This EOC is a modified version of udonge_waveinsight_start . It has an extra step to check if Utsuho is wearing her rod"
+    "//": "This EOC is a modified version of udonge_waveinsight_eoc . It has an extra step to check if Utsuho is wearing her rod"
   },
   {
     "id": "utsuho_fusionblade_cycle1",

@@ -1,5 +1,54 @@
 [
   {
+    "id": "mokou_stance_eoc",
+    "type": "effect_on_condition",
+    "condition": { "not": { "u_has_trait": "MOKOU_STANCE_cooldown" } },
+    "effect": [ { "run_eocs": [ "mokou_stance_start_eoc" ] } ],
+    "false_effect": [ { "u_message": "You need to recover first.", "type": "bad" } ],
+    "//": "Based on sharingan_eoc , which is in turn the mutation-activated version of stance_ninja_taijutsu_eoc "
+  },
+  {
+    "id": "mokou_stance_start_eoc",
+    "type": "effect_on_condition",
+    "effect": [ 
+      { "math": [ "var_mokou_stance_lol", "=", "1" ] },
+      { 
+        "run_eocs": [ 
+          {
+            "id": "mokou_stance_set_belay_eoc",
+            "condition": {
+              "and": [
+                { "u_has_trait": "MOKOU_STANCE_RELEASE" },
+                { "math": [ "var_mokou_stance_lol", "==", "1" ] }
+              ]
+            },
+            "effect": [
+              { "u_lose_trait": "MOKOU_STANCE_RELEASE" },
+              { "u_add_trait": "MOKOU_STANCE_BELAY" },
+              { "math": [ "var_mokou_stance_lol", "=", "0" ] },
+              { "u_message": "You enter Belay stance.", "type": "mixed" }
+            ]
+          },
+          {
+            "id": "mokou_stance_set_release_eoc",
+            "condition": {
+              "and": [
+                { "u_has_trait": "MOKOU_STANCE_BELAY" },
+                { "math": [ "var_mokou_stance_lol", "==", "1" ] }
+              ]
+            },
+            "effect": [
+              { "u_lose_trait": "MOKOU_STANCE_BELAY" },
+              { "u_add_trait": "MOKOU_STANCE_RELEASE" },
+              { "math": [ "var_mokou_stance_lol", "=", "0" ] },
+              { "u_message": "You enter Release stance.", "type": "mixed" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "wings_activate_eoc",
     "type": "effect_on_condition",
     "condition": { "math": [ "var_wings_active", "==", "0" ] },

@@ -1030,7 +1030,7 @@
         ]
       }
     ],
-    "//": "WIP"
+    "//WIP": ""
   },
   {
     "id": "PROF_IKU",
@@ -1234,25 +1234,128 @@
     "initial_ma_styles": [ "style_mokou" ],
     "enchantments": [
       {
-        "condition": "ALWAYS",
-        "values": [ 
-          { "value": "PAIN_PENALTY_MOD_DEX", "multiply": -0.5 },
-          { "value": "PAIN_PENALTY_MOD_INT", "multiply": -0.5 },
-          { "value": "PAIN_PENALTY_MOD_PER", "multiply": -0.5 },
-          { "value": "PAIN_PENALTY_MOD_STR", "multiply": -0.5 },
-          { "value": "PAIN_PENALTY_MOD_SPEED", "multiply": -0.66 }
-        ]
-      },
-      {
         "condition": { "not": "u_has_weapon" },
         "melee_damage_bonus": [ 
-          { "type": "bash", "add": { "math": [ "( u_skill('melee') + u_skill('unarmed') + ( u_pain() * 0.25 ) )" ] } } 
+          { "type": "bash", "add": { "math": [ "( ( u_skill('melee') + u_skill('unarmed') ) * mokou_stance_jmath() )" ] } } 
         ]
       }
     ],
     "cancels": [ "NOPAIN", "PAINRESIST" ],
     "flags": [ "HEAT_IMMUNE" ],
-    "//": "Bonus melee scales as KI_STRIKE , plus some extra from pain to compensate from two skills instead of just unarmed "
+    "//": "Bonus melee scales as KI_STRIKE , plus pain modifier"
+  },
+  {
+    "id": "MOKOU_STANCE",
+    "type": "mutation",
+    "name": { "str": "Combat stance" },
+    "description": "You have a very high pain tolerance… until you reach your limit.  You can switch between two stances: Belay and Release.  \n<color_light_red>Belay</color> stance has greatly increased pain resistances, and a minor pain-scaling bonus modifier to all damaging abilities.  \n<color_light_red>Release</color> stance has minor pain resistances, a large pain-scaling bonus modifier to all damaging abilities, and drains pain after every attack.  \nReaching your <color_red>pain limit</color> disables stance passives until you fully recover.  \nActivate to toggle between stances.",
+    "points": 0,
+    "player_display": true,
+    "purifiable": false,
+    "valid": false,
+    "active": true,
+    "activated_is_setup": false,
+    "activated_eocs": [ "mokou_stance_eoc" ],
+    "activation_msg": ""
+  },
+  {
+    "id": "MOKOU_STANCE_BELAY",
+    "type": "mutation",
+    "name": { "str": "" },
+    "description": "",
+    "points": 0,
+    "player_display": false,
+    "purifiable": false,
+    "valid": false,
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "PAIN_PENALTY_MOD_DEX", "multiply": -0.8 },
+          { "value": "PAIN_PENALTY_MOD_INT", "multiply": -0.8 },
+          { "value": "PAIN_PENALTY_MOD_PER", "multiply": -0.8 },
+          { "value": "PAIN_PENALTY_MOD_STR", "multiply": -0.8 },
+          { "value": "PAIN_PENALTY_MOD_SPEED", "multiply": -0.66 }
+        ]
+      }
+    ],
+    "triggers": [
+      [
+        {
+          "condition": { "math": [ "u_pain()", ">", "140" ] },
+          "msg_on": { "text": "", "rating": "mixed" }
+        }
+      ]
+    ],
+    "transform": { "target": "MOKOU_STANCE_cooldown" },
+    "//": "Pain threshold is based on: Severe pain ( >=70 ), falling down 2 stories equals ~200 pain"
+  },
+  {
+    "id": "MOKOU_STANCE_RELEASE",
+    "type": "mutation",
+    "name": { "str": "" },
+    "description": "",
+    "points": 0,
+    "player_display": false,
+    "purifiable": false,
+    "valid": false,
+    "enchantments": [ 
+      { 
+        "condition": "ALWAYS", 
+        "values": [ 
+          { "value": "PAIN", "multiply": -0.2 },
+          { "value": "PAIN_PENALTY_MOD_DEX", "multiply": -0.2 },
+          { "value": "PAIN_PENALTY_MOD_INT", "multiply": -0.2 },
+          { "value": "PAIN_PENALTY_MOD_PER", "multiply": -0.2 },
+          { "value": "PAIN_PENALTY_MOD_STR", "multiply": -0.2 },
+          { "value": "PAIN_PENALTY_MOD_SPEED", "multiply": -0.66 }
+        ]
+      }
+    ],
+    "triggers": [
+      [
+        {
+          "condition": { "math": [ "u_pain()", ">", "140" ] },
+          "msg_on": { "text": "", "rating": "mixed" }
+        }
+      ]
+    ],
+    "transform": { "target": "MOKOU_STANCE_cooldown" },
+    "//": "The small PAIN enchant is a demerit for Mokou, as she relies on u_pain() for bonus scaling"
+  },
+  {
+    "id": "MOKOU_STANCE_cooldown",
+    "type": "mutation",
+    "name": { "str": "" },
+    "description": "",
+    "points": 0,
+    "player_display": false,
+    "purifiable": false,
+    "valid": false,
+    "time": "60 s",
+    "processed_eocs": [ 
+      {
+        "id": "MOKOU_STANCE_cooldown_eoc",
+        "condition": { "math": [ "u_pain()", "<=", "0" ] },
+        "effect": [ 
+          {
+            "run_eocs": [
+              {
+                "id": "MOKOU_STANCE_reset_eoc",
+                "condition": { "u_has_trait": "MOKOU_STANCE_cooldown" },
+                "effect": [
+                  { "u_lose_trait": "MOKOU_STANCE_cooldown" },
+                  { "u_add_trait": "MOKOU_STANCE_BELAY" },
+                  { "u_message": "You have recovered from pain.  You can switch stances again.", "type": "mixed" }
+                ]
+              }
+            ],
+            "time_in_future": [ "5 m", "15 m" ]
+          }
+        ]
+      }
+    ],
+    "//": "Dummy mutation, used only for the EOC effects"
   },
   {
     "id": "PROF_NITORI",

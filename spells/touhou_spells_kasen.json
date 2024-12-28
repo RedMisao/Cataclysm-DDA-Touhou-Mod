@@ -416,7 +416,7 @@
     "id": "kasen_rainboworb",
     "type": "SPELL",
     "name": { "str": "Rainbow orb" },
-    "description": "Shoot a rainbow orb of energy towards the target.  It increases in size after some time, dealing a second instance of damage.  \nCosts 100 mana.",
+    "description": "Shoot a rainbow orb of energy towards the target.  It increases in size after some time, dealing a second instance of damage.  \nCosts <color_light_blue>100</color> mana.",
     "spell_class": "NONE",
     "teachable": false,
     "valid_targets": [ "self" ],

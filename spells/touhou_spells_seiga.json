@@ -538,7 +538,7 @@
     "id": "seiga_yoshika_summon",
     "type": "SPELL",
     "name": { "str": "Summon: Yoshika" },
-    "description": "Summon your trusty Yoshika back from your Senkai.  Her talisman protects her, returning her in case she receives lethal (?) damage.  \nCosts 200 mana.  Cast again at no cost to move her to your location.",
+    "description": "Summon your trusty Yoshika back from your Senkai.  Her talisman protects her, returning her in case she receives lethal (?) damage.  \nCosts <color_light_blue>200</color> mana.  Cast again at no cost to move her to your location.",
     "spell_class": "NONE",
     "teachable": false,
     "valid_targets": [ "self" ],

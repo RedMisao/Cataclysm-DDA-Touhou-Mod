@@ -232,6 +232,7 @@
     "type": "effect_type",
     "name": [ "" ],
     "desc": [ "" ],
+    "max_duration": "2 s",
     "rating": "good",
     "max_intensity": 1,
     "max_effective_intensity": 1,
@@ -243,7 +244,6 @@
         ] 
       }
     ],
-    "max_duration": "2 s",
     "//": "Parry effect for some pseudo-melee spells"
   },
   {
@@ -295,19 +295,73 @@
     "max_effective_intensity": 1
   },
   {
-    "id": "smoke",
     "type": "effect_type",
-    "name": [ { "ctxt": "inhaled", "str": "Smoke" } ],
-    "desc": [ "You've inhaled a lungful of thick smoke." ],
-    "apply_message": "You inhale a lungful of thick smoke.",
-    "rating": "bad",
-    "miss_messages": [ [ "Your lungs burn from the smoke.", 1 ] ],
-    "harmful_cough": true,
-    "max_duration": "10 m",
-    "base_mods": { "str_mod": [ -1 ], "dex_mod": [ -1 ], "cough_chance": [ 10 ] },
+    "id": "smoke_eyes",
+    "name": [ "Little Eye Irritation", "Minor Eye Irritation", "Huge Eye Irritation", "Bad Eye Irritation" ],
+    "desc": [
+      "Your eyes are mildly irritated.",
+      "Your eyes are watering.",
+      "Your eyes sting badly and tears stream from them continuously.",
+      "You can barely see anything due to your massive eye irritation and the flood of tears streaming from them."
+    ],
+    "apply_message": [
+      [ "Your eyes are mildly irritated.", "bad" ],
+      [ "Your eyes are watering.", "bad" ],
+      [ "Your eyes sting badly and tears stream from them continuously.", "bad" ],
+      [
+        "You can barely see anything due to your massive eye irritation and the flood of tears streaming from them.",
+        "bad"
+      ]
+    ],
+    "miss_messages": [ [ "Your eyes sting and tear from the irritation.", 1 ] ],
+    "max_duration": "3 m",
+    "max_intensity": 4,
+    "int_decay_tick": 40,
+    "resist_effects": [ "steroid_eye", "PAINRESIST" ],
+    "base_mods": { "per_mod": [ -1, 0 ], "pain_amount": [ 2, 0 ] },
+    "scaling_mods": { "per_mod": [ -1 ], "pain_amount": [ 2, 1 ] },
+    "limb_score_mods": [
+      { "limb_score": "vision", "modifier": 0.8, "resist_modifier": 1.0, "scaling": -0.2, "resist_scaling": -0.15 },
+      { "limb_score": "night_vis", "modifier": 0.8, "resist_modifier": 1.0, "scaling": -0.2, "resist_scaling": -0.15 }
+    ],
+    "flags": [ "EFFECT_LIMB_SCORE_MOD" ],
     "show_in_info": true,
     "immune_flags": [ "PROF_MOKOU" ],
-    "//": "Exactly the same effect, only adds immunity for Mokou"
+    "//": "Only adds immunity for Mokou"
+  },
+  {
+    "type": "effect_type",
+    "id": "smoke_lungs",
+    "name": [ "Inhaled Some Smoke", "Inhaled Plenty of Smoke", "Smoke Inhalation", "Bad Smoke Inhalation" ],
+    "desc": [
+      "You draw in a faint whiff of smoke.",
+      "A noticeable volume of smoke fills your lungs.",
+      "A dense cloud of smoke enters your lungs.",
+      "You inhale an overwhelming volume of smoke."
+    ],
+    "apply_message": [
+      [ "You draw in a faint whiff of smoke.", "bad" ],
+      [ "A noticeable volume of smoke fills your lungs.", "bad" ],
+      [ "A dense cloud of smoke enters your lungs.", "bad" ],
+      [ "You inhale an overwhelming volume of smoke.", "bad" ]
+    ],
+    "miss_messages": [ [ "Your lungs burn from the smoke.", 1 ] ],
+    "harmful_cough": true,
+    "max_duration": "3 m",
+    "max_intensity": 4,
+    "int_decay_tick": 40,
+    "scaling_mods": { "str_mod": [ -1 ], "dex_mod": [ -1 ], "cough_chance": [ 10 ] },
+    "limb_score_mods": [
+      { "limb_score": "breathing", "resist_modifier": 1, "scaling": -0.25 },
+      { "limb_score": "reaction", "resist_modifier": 1, "scaling": -0.1 },
+      { "limb_score": "balance", "resist_modifier": 1, "scaling": -0.1 },
+      { "limb_score": "lift", "resist_modifier": 1, "scaling": -0.1 },
+      { "limb_score": "manip", "resist_modifier": 1, "scaling": -0.1 }
+    ],
+    "flags": [ "EFFECT_LIMB_SCORE_MOD" ],
+    "show_in_info": true,
+    "immune_flags": [ "PROF_MOKOU" ],
+    "//": "Only adds immunity for Mokou"
   },
   {
     "id": "volatile_rot",
@@ -1041,12 +1095,39 @@
     "id": "sakuya_timestop_effect",
     "type": "effect_type",
     "name": [ "Time stop (effect)" ],
-    "desc": [ "Test effect for sakuya_timestop " ],
+    "desc": [ "" ],
+    "show_in_info": true,
+    "max_duration": "9 s",
     "apply_message": "Time is frozen.  Is it as if the entire world has stopped.",
     "remove_message": "Thus, time is flowing again.",
+    "rating": "bad",
+    "max_intensity": 1,
+    "max_effective_intensity": 1,
+    "flags": [
+      "CANNOT_ATTACK",
+      "CANNOT_CHANGE_TEMPERATURE",
+      "CANNOT_MOVE",
+      "FREEZE_EFFECTS"
+    ],
+    "//": "Similar to effect_xedra_time_freeze , removing the CANNOT_GAIN_EFFECTS and CANNOT_TAKE_DAMAGE so it's more like DIO's time stop"
+  },
+  {
+    "id": "sakuya_timestop_self_effect",
+    "type": "effect_type",
+    "name": [ "Time stop (effect)" ],
+    "desc": [ "Time is frozen." ],
     "rating": "good",
     "max_intensity": 1,
-    "max_effective_intensity": 1
+    "max_effective_intensity": 1,
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "values": [
+          { "value": "MOVE_COST", "multiply": -1 }
+        ]
+      }
+    ],
+    "//note": "WARNING: This 'freezes' EOCs due negating move cost! DO NOT USE SEPARATED FROM THE MAIN EOC"
   },
   {
     "id": "seiga_corpsecurse_effect",
@@ -1054,6 +1135,21 @@
     "name": [ "Curse of corpses (curse)" ],
     "desc": [ "You're cursed to something worse than eternal rest." ],
     "show_in_info": true,
+    "max_intensity": 1,
+    "max_effective_intensity": 1
+  },
+  {
+    "id": "seiga_corpsecurse_dot_effect",
+    "type": "effect_type",
+    "name": [ "Curse of corpses (curse)" ],
+    "desc": [ "" ],
+    "show_in_info": true,
+    "base_mods": {
+      "hurt_amount": [ 1 ],
+      "hurt_chance": [ 1 ],
+      "hurt_tick": [ 1 ],
+      "hurt_min": [ 1 ]
+    },
     "max_intensity": 1,
     "max_effective_intensity": 1
   },
@@ -1168,7 +1264,7 @@
     "//": "Dummy effect, used to detect she has a double somewhere"
   },
   {
-    "id": "udonge_barrierwave",
+    "id": "udonge_barrierwave_effect",
     "type": "effect_type",
     "name": [ "Barrier wave (effect)" ],
     "desc": [ "Ignoring incoming attacks." ],
@@ -1184,22 +1280,28 @@
         "condition": "ALWAYS",
         "hit_me_effect": [ { "id": "udonge_warrierwave_vfx", "hit_self": true } ]
       }
-    ],
-    "removes_effects": [ "udonge_insight", "udonge_mfortitude", "udonge_perception", "udonge_stealth" ]
+    ]
   },
   {
-    "id": "udonge_insight",
+    "id": "udonge_insight_effect",
     "type": "effect_type",
     "name": [ "Wavelength manipulation (Insight)" ],
     "desc": [ "You're concentrated…" ],
     "apply_message": "Mental processes become focused.",
     "remove_message": "You relax your thoughts.",
     "rating": "good",
-    "base_mods": { "int_mod": [ 2 ], "pkill_amount": [ -1 ], "stim_amount": [ 2 ] },
-    "removes_effects": [ "udonge_barrierwave", "udonge_mfortitude", "udonge_perception", "udonge_stealth" ]
+    "base_mods": { "pkill_amount": [ -1 ] },
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "values": [
+          { "value": "INTELLIGENCE", "multiply": 0.2 }
+        ]
+      }
+    ]
   },
   {
-    "id": "udonge_mfortitude",
+    "id": "udonge_mfortitude_effect",
     "type": "effect_type",
     "name": [ "Wavelength manipulation (Mental fortitude)" ],
     "desc": [ "You clear your mind from external interferences, returning your brain waves to a basal state." ],
@@ -1217,34 +1319,35 @@
       "pd_str_bad", 
       "taint", 
       "tindrift", 
-      "visuals", 
-      "udonge_barrierwave", 
-      "udonge_insight", 
-      "udonge_perception", 
-      "udonge_stealth" 
+      "visuals" 
     ]
   },
   {
-    "id": "udonge_perception",
+    "id": "udonge_perception_effect",
     "type": "effect_type",
     "name": [ "Wavelength manipulation (Perception)" ],
     "desc": [ "Awareness is greatly increased." ],
     "apply_message": "You harness the shadows that stride between the worlds.",
     "remove_message": "Your vision becomes normal again.",
     "rating": "good",
-    "base_mods": { "per_mod": [ 2 ] },
-    "removes_effects": [ "udonge_barrierwave", "udonge_insight", "udonge_mfortitude", "udonge_stealth" ],
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "values": [
+          { "value": "PERCEPTION", "multiply": 0.2 }
+        ]
+      }
+    ],
     "flags": [ "INFRARED", "NIGHT_VISION", "SUPER_HEARING" ]
   },
   {
-    "id": "udonge_stealth",
+    "id": "udonge_stealth_effect",
     "type": "effect_type",
     "name": [ "Wavelength manipulation (Stealth)" ],
     "desc": [ "Become imperceptible to those around you." ],
     "apply_message": "Your wavelength becomes minimal, turning you invisible.",
     "remove_message": "You become perceptible again.",
     "rating": "good",
-    "removes_effects": [ "udonge_barrierwave", "udonge_insight", "udonge_mfortitude", "udonge_perception" ],
     "flags": [ "INVISIBLE", "NO_SCENT" ]
   },
   {
