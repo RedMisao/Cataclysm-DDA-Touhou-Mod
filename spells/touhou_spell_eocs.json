@@ -108,7 +108,7 @@
         },
         "then": [
           { "u_teleport": { "global_val": "var_dash_youmu_end_loc" } },
-          { "u_cast_spell": { "id": "dash_youmu2" }, "loc": { "global_val": "var_dash_youmu_end_loc" } }
+          { "u_cast_spell": { "id": "dash_youmu2" }, "loc": { "global_val": "var_youmu_dash_start_loc" } }
         ],
         "else": [
           { "math": [ "u_val('stamina')", "+=", "2000" ] },
