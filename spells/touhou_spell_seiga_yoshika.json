@@ -137,6 +137,7 @@
     "min_aoe": 65,
     "max_aoe": 65,
     "max_level": 1,
+    "message": "",
     "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SOMATIC" ],
     "//": "This deals ( 15 - 22 ) dmg at Seiga's base skill lvls, which increases to x2 that amount at max skill lvls"
   },
@@ -158,6 +159,7 @@
     "min_aoe": 65,
     "max_aoe": 65,
     "max_level": 1,
+    "message": "",
     "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SOMATIC" ],
     "//": "This deals ( 22 - 30 ) dmg at Seiga's base skill lvls, which increases to x2 that amount at max skill lvls"
   },
@@ -174,6 +176,7 @@
     "damage_type": "pure",
     "max_level": 1,
     "difficulty": -50,
+    "message": "",
     "base_casting_time": 0,
     "base_energy_cost": 0,
     "energy_source": "MANA",
@@ -197,7 +200,7 @@
     "effect": "attack",
     "extra_effects": [ { "id": "yoshika_drain2", "hit_self": true } ],
     "shape": "blast",
-    "damage_type": "pure",
+    "damage_type": "soul",
     "min_damage": 1,
     "max_damage": 4,
     "min_dot": { "math": [ "( 3 * var_seiga_minion_scaling_2 )" ] },
@@ -207,10 +210,10 @@
     "min_duration": 700,
     "max_duration": 700,
     "max_level": 1,
+    "message": "",
     "flags": [ "NO_LEGS", "RANDOM_DAMAGE", "SOMATIC" ],
     "//": "The dot is ( 3 - 7 ), scaling with Seiga's skill lvls",
-    "//note": "Damage cannot be soul, as there's some weird interaction with this proccing soul_dmg_check_eoc (invalid alpha talker). Change to soul whenever possible",
-    "//WIP": "TEST THIS AGAIN WITH SOUL DMG"
+    "//note": "Damage cannot be soul, as there's some weird interaction with this proccing soul_dmg_check_eoc (invalid alpha talker). Change to soul whenever possible"
   },
   {
     "id": "yoshika_drain2",
@@ -229,6 +232,7 @@
     "min_duration": 700,
     "max_duration": 700,
     "max_level": 1,
+    "message": "",
     "flags": [ "NO_FAIL", "NO_LEGS", "SOMATIC" ]
   }
 ]
